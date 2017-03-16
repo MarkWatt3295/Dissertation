@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "type=basic": { "model": "maw79:machine_frame_basic" },
+        "type=advanced": { "model": "maw79:machine_frame_advanced" }
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "half=top": { "model": "maw79:steel_block" },
+		"half=bottom": { "model": "maw79:steel_block" }
+    }
+}

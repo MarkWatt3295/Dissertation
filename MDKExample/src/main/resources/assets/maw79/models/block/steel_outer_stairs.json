@@ -1,0 +1,8 @@
+{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "maw79:blocks/steel_block",
+        "top": "maw79:blocks/steel_block",
+        "side": "maw79:blocks/steel_block"
+    }
+}

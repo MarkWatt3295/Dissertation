@@ -1,0 +1,37 @@
+{
+	"block.steel_fence_gate.open": {
+		"category": "block",
+		"subtitle": "block.steel_fence_gate.open",
+		"sounds": [ { "name": "maw79:block/steel_fence_gate/open", "stream": true } ]
+	},
+	"block.steel_fence_gate.close": {
+		"category": "block",
+		"subtitle": "block.steel_fence_gate.close",
+		"sounds": [ { "name": "maw79:block/steel_fence_gate/close", "stream": true } ]
+	},
+	"block.steel_button.click_on": {
+		"category": "block",
+		"subtitle": "block.steel_button.click_on",
+		"sounds": [ { "name": "maw79:block/steel_button/click_on", "stream": true } ]
+	},
+	"block.steel_button.click_off": {
+		"category": "block",
+		"subtitle": "block.steel_button.click_off",
+		"sounds": [ { "name": "maw79:block/steel_button/click_off", "stream": true } ]
+	},
+	"mawsound.open": {
+        "category": "block",
+        "subtitle": "mawsound.open",
+        "sounds": [ { "name": "maw79:mawsound/open", "stream": true } ]
+   },
+    "mawsound.coin": {
+        "category": "block",
+        "subtitle": "mawsound.coin",
+        "sounds": [ { "name": "maw79:mawsound/coin", "stream": true } ]
+     },
+    "mawsound.squelch": {
+        "category": "block",
+        "subtitle": "mawsound.squelch",
+        "sounds": [ { "name": "maw79:mawsound/squelch", "stream": true } ]
+    }
+}

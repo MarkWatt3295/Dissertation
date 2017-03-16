@@ -1,0 +1,6 @@
+{
+    "parent": "block/wall_gate_open",
+    "textures": {
+        "texture": "maw79:blocks/steel_block"
+    }
+}

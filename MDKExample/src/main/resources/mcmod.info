@@ -1,0 +1,16 @@
+[
+{
+  "modid": "maw79",
+  "name": "Teaching Keystage 2 Via Minecraft",
+  "description": "This MOD adds various content to the game. It aims to help teach KS2 pupils through the use of Minecraft.",
+  "version": "0.40 mathsbuild - Alpha",
+  "mcversion": "1.11",
+  "url": "http://markwatt.co.uk/category/dissertation-diary/",
+  "updateUrl": "",
+  "authorList": ["Mark Watt"],
+  "credits": "Thank you to the Forge API team for creating the API I use to mod the game.",
+  "logoFile": "screenshot1.png",
+  "screenshots": ["screenshot1.png"],
+  "dependencies": []
+}
+]

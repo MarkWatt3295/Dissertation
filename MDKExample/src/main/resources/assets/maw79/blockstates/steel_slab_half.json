@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "half=bottom": { "model": "maw79:steel_slab_bottom" },
+        "half=top": { "model": "maw79:steel_slab_top" }
+    }
+}

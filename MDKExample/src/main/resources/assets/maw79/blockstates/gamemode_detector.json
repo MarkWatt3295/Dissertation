@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "gamemode=0": { "model": "maw79:gamemode_detector" },
+        "gamemode=1": { "model": "maw79:gamemode_detector" },
+        "gamemode=2": { "model": "maw79:gamemode_detector" },
+        "gamemode=3": { "model": "maw79:gamemode_detector" }
+    }
+}
