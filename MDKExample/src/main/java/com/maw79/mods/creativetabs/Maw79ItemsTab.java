@@ -1,11 +1,9 @@
 package com.maw79.mods.creativetabs;
 
 
-	import com.maw79.mods.init.ModBlocks;
-import com.maw79.mods.init.ModItems;
+	import com.maw79.mods.init.ModItems;
 
 import net.minecraft.creativetab.CreativeTabs;
-	import net.minecraft.item.Item;
 	import net.minecraft.item.ItemStack;
 
 	/**

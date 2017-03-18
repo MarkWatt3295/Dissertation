@@ -29,7 +29,7 @@ fullscreen:false
 enableVsync:true
 useVbo:true
 hideServerAddress:false
-advancedItemTooltips:false
+advancedItemTooltips:true
 pauseOnLostFocus:true
 touchscreen:false
 overrideWidth:0
@@ -39,7 +39,7 @@ chatHeightFocused:1.0
 chatHeightUnfocused:0.44366196
 chatScale:1.0
 chatWidth:1.0
-showInventoryAchievementHint:true
+showInventoryAchievementHint:false
 mipmapLevels:4
 forceUnicodeFont:false
 reducedDebugInfo:false
@@ -81,8 +81,8 @@ key_key.hotbar.6:7
 key_key.hotbar.7:8
 key_key.hotbar.8:9
 key_key.hotbar.9:10
-soundCategory_master:1.0
-soundCategory_music:1.0
+soundCategory_master:0.5033113
+soundCategory_music:0.0
 soundCategory_record:1.0
 soundCategory_weather:1.0
 soundCategory_block:1.0

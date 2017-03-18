@@ -1,7 +1,5 @@
 package com.maw79.mods.init;
 
-import com.maw79.mods.creativetabs.Maw79BlocksTab;
-import com.maw79.mods.creativetabs.Maw79MathsBlocksTab;
 import com.maw79.mods.handlers.EnumHandler;
 import com.maw79.mods.items.ItemBookOne;
 import com.maw79.mods.items.ItemBurntLoaf;
@@ -13,7 +11,6 @@ import com.maw79.mods.items.ItemModFood;
 import com.maw79.mods.items.ItemMw;
 import com.maw79.mods.items.ItemObsidianSword;
 import com.maw79.mods.items.ItemObsidianingot;
-import com.maw79.mods.items.ItemPaintBrush;
 import com.maw79.mods.items.ItemReversePaintBrush;
 import com.maw79.mods.items.ItemRuby;
 import com.maw79.mods.items.ItemSteelIngot;
@@ -22,6 +19,7 @@ import com.maw79.mods.items.ItemTutorial;
 import com.maw79.mods.items.ItemXAxisTool;
 import com.maw79.mods.items.ItemYAxisTool;
 import com.maw79.mods.items.ItemZAxisTool;
+import com.maw79.mods.items.mathsitems.ItemPictureWall;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.util.Utils;
@@ -30,13 +28,10 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
-import net.minecraft.item.ItemBook;
 import net.minecraft.item.ItemSword;
-import net.minecraft.item.ItemWrittenBook;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -60,6 +55,7 @@ public class ModItems {
 	public static Item tutorialItem;
 	public static Item reversepaintbrush;
 	public static Item gameswitcher;
+	public static Item completedwall1;
 	
 	
 	//Tool Materials
@@ -95,6 +91,7 @@ public class ModItems {
 		//Debug Items
 		reversepaintbrush = new ItemReversePaintBrush("reverse_paint_brush");
 		gameswitcher = new ItemGameSwitcher("game_switcher");
+		completedwall1 = new ItemPictureWall("completed_wall1");
 		
 		
 	}
@@ -124,6 +121,7 @@ public class ModItems {
 		registerItem(xaxistool);
 		registerItem(yaxistool);
 		registerItem(zaxistool);
+		registerItem(completedwall1);
 		
 		//Debug Items
 		registerItem(reversepaintbrush);
@@ -149,6 +147,7 @@ public class ModItems {
 		registerRender(yaxistool);
 		registerRender(zaxistool);
 		registerRender(tutorialItem);
+		registerRender(completedwall1);
 		
 		//Food
 		registerRender(tomato);

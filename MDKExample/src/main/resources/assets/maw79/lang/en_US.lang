@@ -24,6 +24,7 @@ item.z_axis_tool.name=Z Axis Tool
 item.paint_brush.name=Good Paint Brush
 item.rusty_paint_brush.name=Rusty Paint Brush
 item.medium_paint_brush.name=Medium Paint Brush
+item.completed_picturewall1.name=Completed Picture Wall 1
 
 //Debug Items
 item.reverse_paint_brush.name=Reverse Paint Brush
