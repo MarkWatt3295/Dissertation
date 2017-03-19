@@ -4,6 +4,7 @@ import com.maw79.mods.client.gui.GuiHandler;
 import com.maw79.mods.init.ModArmour;
 import com.maw79.mods.init.ModBlocks;
 import com.maw79.mods.init.ModItems;
+import com.maw79.mods.init.ModNumberBlocks;
 import com.maw79.mods.init.ModTools;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
@@ -23,6 +24,7 @@ public class ClientProxy extends CommonProxy {
 		NetworkRegistry.INSTANCE.registerGuiHandler(Maw79Mod.instance, new GuiHandler());
 		ModItems.registerRenders();
 		ModBlocks.registerRenders();
+		ModNumberBlocks.registerRenders();
 		ModArmour.registerRenders();
 		ModTools.registerRenders();
 	}

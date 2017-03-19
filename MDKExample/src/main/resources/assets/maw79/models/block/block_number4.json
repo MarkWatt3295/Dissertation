@@ -1,0 +1,6 @@
+ { 
+    "parent": "block/cube_all",
+        "textures": {
+            "all": "maw79:blocks/numbers/block_number4"
+      }
+   }

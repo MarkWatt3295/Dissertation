@@ -112,6 +112,24 @@ tile.mathtexts_grey_block.name=Grey Maths Text Block
 tile.block_number1.name=Number 1 Block
 tile.block_number2.name=Number 2 Block
 tile.block_number3.name=Number 3 Block
+tile.block_number4.name=Number 4 Block
+tile.block_number5.name=Number 5 Block
+tile.block_number6.name=Number 6 Block
+tile.block_number7.name=Number 7 Block
+tile.block_number8.name=Number 8 Block
+tile.block_number9.name=Number 9 Block
+tile.block_number10.name=Number 10 Block
+tile.block_number11.name=Number 11 Block
+tile.block_number12.name=Number 12 Block
+tile.block_number13.name=Number 13 Block
+tile.block_number14.name=Number 14 Block
+tile.block_number15.name=Number 15 Block
+tile.block_number16.name=Number 16 Block
+tile.block_number17.name=Number 17 Block
+tile.block_number18.name=Number 18 Block
+tile.block_number19.name=Number 19 Block
+tile.block_number20.name=Number 20 Block
+tile.block_number21.name=Number 21 Block
 
 //Achievements
 achievement.newingot=New Ingot

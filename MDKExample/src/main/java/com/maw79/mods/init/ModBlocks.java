@@ -122,6 +122,8 @@ public class ModBlocks {
 	public static Block number2;
 	public static Block number3;
 	
+	
+	
 
 	public static void init(){
 		rubyblock = new BlockRuby();
@@ -189,9 +191,9 @@ public class ModBlocks {
 		mathtextblockgrey= new BlockBasicBlock("mathtexts_grey_block");
 		
 		//Number Face Blocks
-		number1= new BlockBasicBlock("block_number1");
-		number2= new BlockBasicBlock("block_number2");
-		number3= new BlockBasicBlock("block_number3");
+		//number1= new BlockBasicBlock("block_number1");
+		//number2= new BlockBasicBlock("block_number2");
+		//number3= new BlockBasicBlock("block_number3");
 		
 	}
 	
@@ -292,9 +294,9 @@ public class ModBlocks {
 		mathtextblockgrey.setCreativeTab(Maw79Mod.mathsscratchblocks); 
 		
 		//Number Face Blocks
-		registerBlock(number1);
-		registerBlock(number2);
-		registerBlock(number3);
+		//registerBlock(number1);
+		//registerBlock(number2);
+		//registerBlock(number3);
 	}
 	
 	
@@ -377,9 +379,9 @@ public class ModBlocks {
 		registerRender(mathtextblockgrey);
 		
 		//Number Face Blocks
-		registerRender(number1);
-		registerRender(number2);
-		registerRender(number3);
+		//registerRender(number1);
+		//registerRender(number2);
+		//registerRender(number3);
 		
 	
 		
