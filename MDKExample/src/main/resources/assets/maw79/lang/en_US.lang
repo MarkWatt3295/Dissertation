@@ -24,7 +24,8 @@ item.z_axis_tool.name=Z Axis Tool
 item.paint_brush.name=Good Paint Brush
 item.rusty_paint_brush.name=Rusty Paint Brush
 item.medium_paint_brush.name=Medium Paint Brush
-item.completed_picturewall1.name=Completed Picture Wall 1
+item.picture_wall.name=Picture Wall 1
+item.apple_wall.name=Picture Wall 2
 
 //Debug Items
 item.reverse_paint_brush.name=Reverse Paint Brush
@@ -81,13 +82,24 @@ tile.maths_blue_block.name=Blue Maths Block
 tile.maths_green_block.name=Green Maths Block
 tile.maths_peach_block.name=Peach Maths Block
 tile.maths_white_block.name=White Maths Block
+tile.maths_black_block.name=Black Maths Block
+tile.maths_marrowbrown_block.name=Marrow Brown Maths Block
+tile.maths_gold_block.name=Gold Maths Block
+tile.maths_orange_block.name=Orange Maths Block
+tile.maths_lightorange_block.name=Light Orange Maths Block
+tile.maths_grey_block.name=Grey Maths Block
 tile.mathtexts_white_block.name=White Maths Text Block
 tile.mathtexts_brown_block.name=Brown Maths Text Block
 tile.mathtexts_aqua_block.name=Aqua Maths Text Block
 tile.mathtexts_blue_block.name=Blue Maths Text Block
 tile.mathtexts_green_block.name=Green Maths Text Block
 tile.mathtexts_peach_block.name=Peach Maths Text Block
-
+tile.mathtexts_black_block.name=Black Maths Text Block
+tile.mathtexts_marrowbrown_block.name=Marrow Brown Maths Text Block
+tile.mathtexts_gold_block.name=Gold Maths Text Block
+tile.mathtexts_orange_block.name=Orange Maths Text Block
+tile.mathtexts_lightorange_block.name=Light Orange Maths Text Block
+tile.mathtexts_grey_block.name=Grey Maths Text Block
 //Achievements
 achievement.newingot=New Ingot
 achievement.newingot.desc=Collecting the new ingot
@@ -130,6 +142,8 @@ maw79.y_axis_tool.tooltip=A Tool To Help Navigate The Y Axis
 maw79.z_axis_tool.tooltip=A Tool To Help Navigate The Z Axis
 maw79.paint_brush.tooltip= Use this to paint blocks
 maw79.game_switcher.tooltip=Use this to quickly swap game modes
+maw79.picture_wall.tooltip=Right Click to Spawn Picture wall (Requires 20x20 block space)
+maw79.apple_wall.tooltip=Right Click to Spawn Picture wall (Requires 20x20 block space)
 
 maw79.soul_stealer.tooltip=Takes Hearts From Entities
 

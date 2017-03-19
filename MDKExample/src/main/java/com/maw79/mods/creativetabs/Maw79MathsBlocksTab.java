@@ -12,7 +12,7 @@ import net.minecraft.creativetab.CreativeTabs;
 		 * Just says the unlocalized name of our creative tab
 		 */
 		public Maw79MathsBlocksTab() {
-			super("Maw79 Math Blocks");
+			super("maw79 mathsblocks");
 		}
 
 		/**

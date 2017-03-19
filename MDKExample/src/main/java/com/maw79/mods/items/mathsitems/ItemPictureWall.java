@@ -2,37 +2,21 @@ package com.maw79.mods.items.mathsitems;
 
 import java.util.List;
 
-import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.fml.relauncher.Side;
 import net.minecraft.world.World;
-import net.minecraft.world.IBlockAccess;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.EnumHand;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.BlockRenderLayer;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.MobEffects;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.SoundType;
-import java.util.Random;
-
 import com.maw79.mods.init.ModBlocks;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.util.Utils;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockFalling;
 
 public class ItemPictureWall  extends Item{
 	
@@ -51,7 +35,7 @@ public  ItemPictureWall (String unlocalizedName) {
 @Override
 public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
 	super.addInformation(stack, playerIn, tooltip, advanced);
-	tooltip.add(TextFormatting.BLACK.BOLD + Utils.getLang().localize("picture_wall.tooltip"));
+	tooltip.add(Utils.getLang().localize("picture_wall.tooltip"));
 }
 
 @Override
@@ -541,7 +525,7 @@ public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer entity
 	world.setBlockState(new BlockPos(i + 0, j + 21, k + 19), Block.getBlockById(1).getStateFromMeta(0), 3);
 	world.setBlockState(new BlockPos(i + 0, j + 21, k + 20), Block.getBlockById(1).getStateFromMeta(0), 3);
 	
-	entity.inventory.getCurrentItem().damageItem(1, entity );
+	entity.inventory.getCurrentItem().damageItem(2, entity );
 		return ar;
 }
 

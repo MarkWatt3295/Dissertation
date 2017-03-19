@@ -94,6 +94,14 @@ public class ModBlocks {
 	public static Block mathblockblue;
 	public static Block mathblockpeach;
 	public static Block mathblockwhite;
+	
+	public static Block mathblockblack;
+	public static Block mathblockgold;
+	public static Block mathblockorange;
+	public static Block mathblocklightorange;
+	public static Block mathblockmarrowbrown;
+	public static Block mathblockgrey;
+	
 	//MATH BLOCK TextBlocks
 	public static Block mathtextblockbrown;
 	public static Block mathtextblockgreen;
@@ -101,6 +109,13 @@ public class ModBlocks {
 	public static Block mathtextblockblue;
 	public static Block mathtextblockpeach;
 	public static Block mathtextblockwhite;
+	
+	public static Block mathtextblockblack;
+	public static Block mathtextblockgold;
+	public static Block mathtextblockorange;
+	public static Block mathtextblocklightorange;
+	public static Block mathtextblockmarrowbrown;
+	public static Block mathtextblockgrey;
 
 	public static void init(){
 		rubyblock = new BlockRuby();
@@ -132,8 +147,6 @@ public class ModBlocks {
 		mathblock1 = new BlockBasicBlock("math_block_1");
 		mathblock2 = new BlockBasicBlock("math_block_2");
 		newtestblock = new mcreator_testBlock("newtestblock");
-		
-		
 		mathsquestionblock = new BlockMathsQuestionBlock("maths_question_block");
 		mathsquestionblock2 = new BlockMathsQuestionBlock("maths_question_block2");
 		mathsquizblock = new BlockMathsQuizBlock("maths_quiz1");
@@ -146,6 +159,14 @@ public class ModBlocks {
 		mathblockblue= new BlockBasicBlock("maths_blue_block");
 		mathblockpeach= new BlockBasicBlock("maths_peach_block");
 		mathblockwhite= new BlockBasicBlock("maths_white_block");
+		
+		mathblockblack= new BlockBasicBlock("maths_black_block");
+		mathblockgold= new BlockBasicBlock("maths_gold_block");
+		mathblockorange= new BlockBasicBlock("maths_orange_block");
+		mathblocklightorange= new BlockBasicBlock("maths_lightorange_block");
+		mathblockmarrowbrown= new BlockBasicBlock("maths_marrowbrown_block");
+		mathblockgrey= new BlockBasicBlock("maths_grey_block"); 
+		
 		//MATHS BLOCK Text
 		mathtextblockbrown= new BlockBasicBlock("mathtexts_brown_block");
 		mathtextblockgreen= new BlockBasicBlock("mathtexts_green_block");
@@ -153,6 +174,14 @@ public class ModBlocks {
 		mathtextblockblue= new BlockBasicBlock("mathtexts_blue_block");
 		mathtextblockpeach= new BlockBasicBlock("mathtexts_peach_block");
 		mathtextblockwhite= new BlockBasicBlock("mathtexts_white_block");
+		
+		mathtextblockblack= new BlockBasicBlock("mathtexts_black_block");
+		mathtextblockgold= new BlockBasicBlock("mathtexts_gold_block");
+		mathtextblockorange= new BlockBasicBlock("mathtexts_orange_block");
+		mathtextblocklightorange= new BlockBasicBlock("mathtexts_lightorange_block");
+		mathtextblockmarrowbrown= new BlockBasicBlock("mathtexts_marrowbrown_block");
+		mathtextblockgrey= new BlockBasicBlock("mathtexts_grey_block");
+		
 		
 	}
 	
@@ -211,6 +240,19 @@ public class ModBlocks {
 		registerBlock(mathblockwhite);
 		mathblockwhite.setCreativeTab(Maw79Mod.mathsblocks);
 		
+		registerBlock(mathblockblack);
+		mathblockblack.setCreativeTab(Maw79Mod.mathsblocks);
+		registerBlock(mathblockgold);
+		mathblockgold.setCreativeTab(Maw79Mod.mathsblocks);
+		registerBlock(mathblockorange);
+		mathblockorange.setCreativeTab(Maw79Mod.mathsblocks);
+		registerBlock(mathblocklightorange);
+		mathblocklightorange.setCreativeTab(Maw79Mod.mathsblocks);
+		registerBlock(mathblockmarrowbrown);
+		mathblockmarrowbrown.setCreativeTab(Maw79Mod.mathsblocks);
+		registerBlock(mathblockgrey);
+		mathblockgrey.setCreativeTab(Maw79Mod.mathsblocks); 
+		
 		//MATHS BLOCK Text
 		registerBlock(mathtextblockbrown);
 		mathtextblockbrown.setCreativeTab(Maw79Mod.mathsblocks);
@@ -225,24 +267,24 @@ public class ModBlocks {
 		registerBlock(mathtextblockwhite);
 		mathtextblockwhite.setCreativeTab(Maw79Mod.mathsblocks);
 		
+		
+		registerBlock(mathtextblockblack);
+		mathtextblockblack.setCreativeTab(Maw79Mod.mathsblocks);
+		registerBlock(mathtextblockgold);
+		mathtextblockgold.setCreativeTab(Maw79Mod.mathsblocks);
+		registerBlock(mathtextblockorange);
+		mathtextblockorange.setCreativeTab(Maw79Mod.mathsblocks);
+		registerBlock(mathtextblocklightorange);
+		mathtextblocklightorange.setCreativeTab(Maw79Mod.mathsblocks);
+		registerBlock(mathtextblockmarrowbrown);
+		mathtextblockmarrowbrown.setCreativeTab(Maw79Mod.mathsblocks);
+		registerBlock(mathtextblockgrey);
+		mathtextblockgrey.setCreativeTab(Maw79Mod.mathsblocks); 
+		
+		
 	}
 	
-	/*private static void registerBlock(Block block){
-		block.setCreativeTab(Maw79Mod.maw79blocksTab);
-		GameRegistry.register(rubyblock);
-		GameRegistry.register(obsidianingotblock);
-		GameRegistry.register(steelOre);
-		GameRegistry.register(breaker);
-		
-		ItemBlock item = new ItemBlock(block);
-		item.setRegistryName(block.getRegistryName());
-		GameRegistry.register(item);
-		
-		GameRegistry.register(block);
-		GameRegistry.register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
-		Utils.getLogger().info("Registered Block: " + block.getUnlocalizedName().substring(5));
-		
-	} */
+	
 	public static void registerBlock(Block block) {
 		block.setCreativeTab(Maw79Mod.blocks);
 		GameRegistry.register(block);
@@ -250,13 +292,7 @@ public class ModBlocks {
 		Utils.getLogger().info("Registered Block: " + block.getUnlocalizedName().substring(5));
 	}
 	
-	/*private static void registerBlock(Block block, ItemBlock itemBlock){
-		block.setCreativeTab(Maw79Mod.maw79blocksTab);
-		GameRegistry.register(block);
-		GameRegistry.register(itemBlock.setRegistryName(block.getRegistryName()));
-		Utils.getLogger().info("Registered Block: "+ block.getUnlocalizedName().substring(5));
-	} */
-	
+
 	public static void registerBlock(Block block, ItemBlock itemBlock) {
 		block.setCreativeTab(Maw79Mod.blocks);
 		GameRegistry.register(block);
@@ -303,6 +339,15 @@ public class ModBlocks {
 		registerRender(mathblockblue);
 		registerRender(mathblockpeach);
 		registerRender(mathblockwhite);
+		
+		registerRender(mathblockblack);
+		registerRender(mathblockgold);
+		registerRender(mathblockorange);
+		registerRender(mathblocklightorange);
+		registerRender(mathblockmarrowbrown);
+		registerRender(mathblockgrey);
+		
+		
 		//MATHS BLOCK Text
 		registerRender(mathtextblockbrown);
 		registerRender(mathtextblockgreen);
@@ -310,6 +355,14 @@ public class ModBlocks {
 		registerRender(mathtextblockblue);
 		registerRender(mathtextblockpeach);
 		registerRender(mathtextblockwhite);
+		
+		registerRender(mathtextblockblack);
+		registerRender(mathtextblockgold);
+		registerRender(mathtextblockorange);
+		registerRender(mathtextblocklightorange);
+		registerRender(mathtextblockmarrowbrown);
+		registerRender(mathtextblockgrey);
+	
 		
 		for(int i = 0; i < EnumHandler.OreType.values().length; i++) {
 			registerRender(steelOre, i, "steel_ore_" + EnumHandler.OreType.values()[i].getName());

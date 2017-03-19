@@ -1,7 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "maw79:items/game_switcher"
+        "layer0": "maw79:items/picture_wall"
      },
       
     "display": {
