@@ -17,4 +17,5 @@ public class MaterialHandler {
 	public static final ToolMaterial paintBrushToolMaterial = EnumHelper.addToolMaterial(Reference.MOD_ID + ":paint_brush", 0, 4, 0, 1, 1);
 	public static final ToolMaterial rustyPaintBrushToolMaterial = EnumHelper.addToolMaterial(Reference.MOD_ID + ":rusty_paint_brush", 0, 1, 0, 1, 0);
 	public static final ToolMaterial mediumPaintBrushToolMaterial = EnumHelper.addToolMaterial(Reference.MOD_ID + ":medium_paint_brush", 0, 2, 0, 1, 0);
+	public static final ToolMaterial infinitePaintBrushToolMaterial = EnumHelper.addToolMaterial(Reference.MOD_ID + ":infinite_paint_brush", 0, 0, 0, 10, 2);
 }

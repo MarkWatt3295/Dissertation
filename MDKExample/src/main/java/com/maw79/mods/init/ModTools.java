@@ -41,6 +41,7 @@ public class ModTools {
 		public static ItemPaintBrush paintbrush;
 		public static ItemPaintBrush rustypaintbrush;
 		public static ItemPaintBrush mediumpaintbrush;
+		public static ItemPaintBrush infinitepaintbrush;
 		
 		
 	
@@ -59,9 +60,10 @@ public class ModTools {
 			paintbrush = new ItemPaintBrush(MaterialHandler.paintBrushToolMaterial,"paint_brush");
 			
 			rustypaintbrush = new ItemPaintBrush(MaterialHandler.rustyPaintBrushToolMaterial,"rusty_paint_brush");
-			String tm = rustypaintbrush.getToolMaterialName();
-			System.out.println("***********************"+tm+"*************************");
+			//String tm = rustypaintbrush.getToolMaterialName();
+			//System.out.println("***********************"+tm+"*************************");
 			mediumpaintbrush = new ItemPaintBrush(MaterialHandler.mediumPaintBrushToolMaterial,"medium_paint_brush");
+			infinitepaintbrush = new ItemPaintBrush(MaterialHandler.infinitePaintBrushToolMaterial,"infinite_paint_brush");
 			
 			
 			
@@ -84,6 +86,9 @@ public class ModTools {
 			registerItem(rustypaintbrush);
 			registerItem(mediumpaintbrush);
 			
+			registerItem(infinitepaintbrush);
+			infinitepaintbrush.setCreativeTab(Maw79Mod.debug);
+			
 			GameRegistry.register(steelSword);
 			
 		}
@@ -100,6 +105,7 @@ public class ModTools {
 			registerRender(paintbrush);
 			registerRender(rustypaintbrush);
 			registerRender(mediumpaintbrush);
+			registerRender(infinitepaintbrush);
 			registerRender(soulStealer);
 			registerRender(steelSword);
 			

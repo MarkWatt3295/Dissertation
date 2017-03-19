@@ -9,6 +9,7 @@ import com.maw79.mods.creativetabs.Maw79BlocksTab;
 import com.maw79.mods.creativetabs.Maw79DebugTab;
 import com.maw79.mods.creativetabs.Maw79ItemsTab;
 import com.maw79.mods.creativetabs.Maw79MathsBlocksTab;
+import com.maw79.mods.creativetabs.Maw79ScratchBlocksTab;
 import com.maw79.mods.entity.passive.mcreator_chris;
 import com.maw79.mods.events.SoulStealerEvents;
 import com.maw79.mods.handlers.AchievementHandler;
@@ -71,6 +72,7 @@ public class Maw79Mod {
 	public static final CreativeTabs debug = new Maw79DebugTab();
 	public static final CreativeTabs items = new Maw79ItemsTab();
 	public static final CreativeTabs mathsblocks = new Maw79MathsBlocksTab();
+	public static final CreativeTabs mathsscratchblocks = new Maw79ScratchBlocksTab();
 	
 	public static Object instance2;
 	public static int GUIID = 4;

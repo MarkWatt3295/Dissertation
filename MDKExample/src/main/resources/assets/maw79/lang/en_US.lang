@@ -3,6 +3,7 @@ itemGroup.maw79 blocks=Maw79 Blocks
 itemGroup.maw79 items=Maw79 Items
 itemGroup.maw79 mathsblocks=Maw79 Maths Blocks
 itemGroup.maw79 debug=Maw79 Debug Tools
+itemGroup.maw79 scratch blocks=Maw79 Scratch Blocks
 
 //Items
 item.obsidianingot.name=Obsidian Ingot
@@ -29,6 +30,7 @@ item.apple_wall.name=Picture Wall 2
 
 //Debug Items
 item.reverse_paint_brush.name=Reverse Paint Brush
+item.infinite_paint_brush.name=Infinite Paint Brush
 item.game_switcher.name=Game Mode Switcher
 item.complete_apple_wall.name=Completed Picture Wall 2
 

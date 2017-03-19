@@ -68,36 +68,72 @@ public class ItemReversePaintBrush extends Item {
     	if (world.getBlockState(pos).getBlock() == ModBlocks.mathblockblue) {
             world.setBlockState(pos, ModBlocks.mathtextblockblue.getDefaultState());
             playerIn.playSound(ModSoundHandler.MAWSOUND_SQUELCH, 3.0F, 3.0F);
-            //playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
+            
             return EnumActionResult.SUCCESS;
         }else   if (world.getBlockState(pos).getBlock() == ModBlocks.mathblockbrown) {
             world.setBlockState(pos, ModBlocks.mathtextblockbrown.getDefaultState());
             playerIn.playSound(ModSoundHandler.MAWSOUND_SQUELCH, 1.0F, 1.0F);
-            //playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
+            
             return EnumActionResult.SUCCESS;
         }
         else   if (world.getBlockState(pos).getBlock() == ModBlocks.mathblockaqua) {
             world.setBlockState(pos, ModBlocks.mathtextblockaqua.getDefaultState());
             playerIn.playSound(ModSoundHandler.MAWSOUND_SQUELCH, 1.0F, 1.0F);
-            //playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
+           
             return EnumActionResult.SUCCESS;
         }
         else   if (world.getBlockState(pos).getBlock() == ModBlocks.mathblockgreen) {
             world.setBlockState(pos, ModBlocks.mathtextblockgreen.getDefaultState());
             playerIn.playSound(ModSoundHandler.MAWSOUND_SQUELCH, 1.0F, 1.0F);
-            //playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
+          
             return EnumActionResult.SUCCESS;
         }
         else   if (world.getBlockState(pos).getBlock() == ModBlocks.mathblockpeach) {
             world.setBlockState(pos, ModBlocks.mathtextblockpeach.getDefaultState());
             playerIn.playSound(ModSoundHandler.MAWSOUND_SQUELCH, 1.0F, 1.0F);
-           // playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
+          
             return EnumActionResult.SUCCESS;
         }
         else   if (world.getBlockState(pos).getBlock() == ModBlocks.mathblockwhite) {
             world.setBlockState(pos, ModBlocks.mathtextblockwhite.getDefaultState());
             playerIn.playSound(ModSoundHandler.MAWSOUND_SQUELCH, 1.0F, 1.0F);
-            //playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
+          
+            return EnumActionResult.SUCCESS;
+        }
+        else   if (world.getBlockState(pos).getBlock() == ModBlocks.mathblockgold) {
+            world.setBlockState(pos, ModBlocks.mathtextblockgold.getDefaultState());
+            playerIn.playSound(ModSoundHandler.MAWSOUND_SQUELCH, 1.0F, 1.0F);
+           
+            return EnumActionResult.SUCCESS;
+        }
+        else   if (world.getBlockState(pos).getBlock() == ModBlocks.mathblockmarrowbrown) {
+            world.setBlockState(pos, ModBlocks.mathtextblockmarrowbrown.getDefaultState());
+            playerIn.playSound(ModSoundHandler.MAWSOUND_SQUELCH, 1.0F, 1.0F);
+          
+            return EnumActionResult.SUCCESS;
+        }
+        else   if (world.getBlockState(pos).getBlock() == ModBlocks.mathblockgrey) {
+            world.setBlockState(pos, ModBlocks.mathtextblockgrey.getDefaultState());
+            playerIn.playSound(ModSoundHandler.MAWSOUND_SQUELCH, 1.0F, 1.0F);
+         
+            return EnumActionResult.SUCCESS;
+        }
+        else   if (world.getBlockState(pos).getBlock() == ModBlocks.mathblocklightorange) {
+            world.setBlockState(pos, ModBlocks.mathtextblocklightorange.getDefaultState());
+            playerIn.playSound(ModSoundHandler.MAWSOUND_SQUELCH, 1.0F, 1.0F);
+         
+            return EnumActionResult.SUCCESS;
+        }
+        else   if (world.getBlockState(pos).getBlock() == ModBlocks.mathblockorange) {
+            world.setBlockState(pos, ModBlocks.mathtextblockorange.getDefaultState());
+            playerIn.playSound(ModSoundHandler.MAWSOUND_SQUELCH, 1.0F, 1.0F);
+          
+            return EnumActionResult.SUCCESS;
+        }
+        else   if (world.getBlockState(pos).getBlock() == ModBlocks.mathblockblack) {
+            world.setBlockState(pos, ModBlocks.mathtextblockblack.getDefaultState());
+            playerIn.playSound(ModSoundHandler.MAWSOUND_SQUELCH, 1.0F, 1.0F);
+         
             return EnumActionResult.SUCCESS;
         }
         return EnumActionResult.PASS;

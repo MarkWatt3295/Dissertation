@@ -255,31 +255,31 @@ public class ModBlocks {
 		
 		//MATHS BLOCK Text
 		registerBlock(mathtextblockbrown);
-		mathtextblockbrown.setCreativeTab(Maw79Mod.mathsblocks);
+		mathtextblockbrown.setCreativeTab(Maw79Mod.mathsscratchblocks);
 		registerBlock(mathtextblockgreen);
-		mathtextblockgreen.setCreativeTab(Maw79Mod.mathsblocks);
+		mathtextblockgreen.setCreativeTab(Maw79Mod.mathsscratchblocks);
 		registerBlock(mathtextblockaqua);
-		mathtextblockaqua.setCreativeTab(Maw79Mod.mathsblocks);
+		mathtextblockaqua.setCreativeTab(Maw79Mod.mathsscratchblocks);
 		registerBlock(mathtextblockblue);
-		mathtextblockblue.setCreativeTab(Maw79Mod.mathsblocks);
+		mathtextblockblue.setCreativeTab(Maw79Mod.mathsscratchblocks);
 		registerBlock(mathtextblockpeach);
-		mathtextblockpeach.setCreativeTab(Maw79Mod.mathsblocks);
+		mathtextblockpeach.setCreativeTab(Maw79Mod.mathsscratchblocks);
 		registerBlock(mathtextblockwhite);
-		mathtextblockwhite.setCreativeTab(Maw79Mod.mathsblocks);
+		mathtextblockwhite.setCreativeTab(Maw79Mod.mathsscratchblocks);
 		
 		
 		registerBlock(mathtextblockblack);
-		mathtextblockblack.setCreativeTab(Maw79Mod.mathsblocks);
+		mathtextblockblack.setCreativeTab(Maw79Mod.mathsscratchblocks);
 		registerBlock(mathtextblockgold);
-		mathtextblockgold.setCreativeTab(Maw79Mod.mathsblocks);
+		mathtextblockgold.setCreativeTab(Maw79Mod.mathsscratchblocks);
 		registerBlock(mathtextblockorange);
-		mathtextblockorange.setCreativeTab(Maw79Mod.mathsblocks);
+		mathtextblockorange.setCreativeTab(Maw79Mod.mathsscratchblocks);
 		registerBlock(mathtextblocklightorange);
-		mathtextblocklightorange.setCreativeTab(Maw79Mod.mathsblocks);
+		mathtextblocklightorange.setCreativeTab(Maw79Mod.mathsscratchblocks);
 		registerBlock(mathtextblockmarrowbrown);
-		mathtextblockmarrowbrown.setCreativeTab(Maw79Mod.mathsblocks);
+		mathtextblockmarrowbrown.setCreativeTab(Maw79Mod.mathsscratchblocks);
 		registerBlock(mathtextblockgrey);
-		mathtextblockgrey.setCreativeTab(Maw79Mod.mathsblocks); 
+		mathtextblockgrey.setCreativeTab(Maw79Mod.mathsscratchblocks); 
 		
 		
 	}
