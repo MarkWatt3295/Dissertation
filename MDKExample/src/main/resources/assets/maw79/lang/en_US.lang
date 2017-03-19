@@ -28,12 +28,15 @@ item.rusty_paint_brush.name=Rusty Paint Brush
 item.medium_paint_brush.name=Medium Paint Brush
 item.picture_wall.name=Picture Wall 1
 item.apple_wall.name=Picture Wall 2
+item.apple_wall_wool.name=Apple Wall Wool
+item.apple_wall_axis.name=Picture Wall 2 (AXIS)
 
 //Debug Items
 item.reverse_paint_brush.name=Reverse Paint Brush
 item.infinite_paint_brush.name=Infinite Paint Brush
 item.game_switcher.name=Game Mode Switcher
 item.complete_apple_wall.name=Completed Picture Wall 2
+item.apple_wall_border.name=Apple Wall Border
 
 
 
@@ -104,6 +107,12 @@ tile.mathtexts_gold_block.name=Gold Maths Text Block
 tile.mathtexts_orange_block.name=Orange Maths Text Block
 tile.mathtexts_lightorange_block.name=Light Orange Maths Text Block
 tile.mathtexts_grey_block.name=Grey Maths Text Block
+
+//Number Face Blocks
+tile.block_number1.name=Number 1 Block
+tile.block_number2.name=Number 2 Block
+tile.block_number3.name=Number 3 Block
+
 //Achievements
 achievement.newingot=New Ingot
 achievement.newingot.desc=Collecting the new ingot
@@ -148,7 +157,11 @@ maw79.paint_brush.tooltip= Use this to paint blocks
 maw79.game_switcher.tooltip=Use this to quickly swap game modes
 maw79.picture_wall.tooltip=Right Click to Spawn Picture wall (Requires 20x20 block space)
 maw79.apple_wall.tooltip=Right Click to Spawn Picture wall (Requires 20x20 block space)
+maw79.apple_wool_wall.tooltip=Spawn Complete Wool Wall (Debug)
 maw79.complete_apple_wall.tooltip=Spawns the filled in version
+maw79.apple_wall_axis.tooltip=Right Click to Spawn Picture wall (Requires 20x20 block space)
+maw79.apple_wool_border.tooltip=Spawn Wool Wall with border (Debug)
+
 
 maw79.soul_stealer.tooltip=Takes Hearts From Entities
 

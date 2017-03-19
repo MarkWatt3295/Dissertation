@@ -20,6 +20,9 @@ import com.maw79.mods.items.ItemXAxisTool;
 import com.maw79.mods.items.ItemYAxisTool;
 import com.maw79.mods.items.ItemZAxisTool;
 import com.maw79.mods.items.mathsitems.ItemAppleWall;
+import com.maw79.mods.items.mathsitems.ItemAppleWallAxis;
+import com.maw79.mods.items.mathsitems.ItemAppleWallBorder;
+import com.maw79.mods.items.mathsitems.ItemAppleWallWool;
 import com.maw79.mods.items.mathsitems.ItemCompleteAppleWall;
 import com.maw79.mods.items.mathsitems.ItemPictureWall;
 import com.maw79.mods.items.mathsitems.ItemXyzDevice;
@@ -60,8 +63,11 @@ public class ModItems {
 	public static Item gameswitcher;
 	public static Item stevepicturewall;
 	public static Item applepicturewall;
+	public static Item applepicturewallwool;
 	public static Item completeapplepicturewall;
 	public static Item xyzdevice;
+	public static Item applepicturewallborder;
+	public static Item applewallaxis;
 	
 	
 	//Tool Materials
@@ -80,6 +86,9 @@ public class ModItems {
 		heart = new ItemHeart("heart");
 		bolt = new ItemLightningSpawner("bolt");
 		chip = new ItemChip("chip");
+		applepicturewall = new ItemAppleWall("apple_wall");
+		applewallaxis = new ItemAppleWallAxis("apple_wall_axis");
+		
 		//Food
 		tomato = new ItemTomato();
 		burntloaf = new ItemBurntLoaf("burntloaf");
@@ -99,7 +108,9 @@ public class ModItems {
 		reversepaintbrush = new ItemReversePaintBrush("reverse_paint_brush");
 		gameswitcher = new ItemGameSwitcher("game_switcher");
 		stevepicturewall = new ItemPictureWall("picture_wall");
-		applepicturewall = new ItemAppleWall("apple_wall");
+		
+		applepicturewallwool = new ItemAppleWallWool("apple_wall_wool");
+		applepicturewallborder = new ItemAppleWallBorder("apple_wall_border");
 		completeapplepicturewall = new ItemCompleteAppleWall("complete_apple_wall");
 		
 		
@@ -133,11 +144,14 @@ public class ModItems {
 		registerItem(stevepicturewall);
 		registerItem(applepicturewall);
 		registerItem(xyzdevice);
+		registerItem(applewallaxis);
 		
 		//Debug Items
 		registerItem(reversepaintbrush);
 		registerItem(gameswitcher);
 		registerItem(completeapplepicturewall);
+		registerItem(applepicturewallwool);
+		registerItem(applepicturewallborder);
 		
 		
 		
@@ -161,6 +175,8 @@ public class ModItems {
 		registerRender(tutorialItem);
 		registerRender(stevepicturewall);
 		registerRender(applepicturewall);
+		registerRender(applewallaxis);
+		
 		registerRender(xyzdevice);
 		
 		//Food
@@ -177,6 +193,13 @@ public class ModItems {
 		gameswitcher.setCreativeTab(Maw79Mod.debug);
 		registerRender(completeapplepicturewall);
 		completeapplepicturewall.setCreativeTab(Maw79Mod.debug);
+		registerRender(applepicturewall);
+		applepicturewall.setCreativeTab(Maw79Mod.debug);
+		registerRender(applepicturewallwool);
+		applepicturewallwool.setCreativeTab(Maw79Mod.debug);
+		registerRender(applepicturewallborder);
+		applepicturewallborder.setCreativeTab(Maw79Mod.debug);
+		
 		
 		//Meta Data
 		for(int i = 0; i < EnumHandler.ChipTypes.values().length; i++) {

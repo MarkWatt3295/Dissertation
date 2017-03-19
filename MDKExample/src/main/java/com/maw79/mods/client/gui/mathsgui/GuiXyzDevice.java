@@ -140,6 +140,10 @@ public class GuiXyzDevice extends GuiScreen {
  
     @Override
     protected void actionPerformed(GuiButton button) throws IOException {
+    	if(answer >= 20){
+    		answer = 20;
+    		mc.player.sendMessage(new TextComponentString("Cannot Go Higher than 20 Blocks"));
+    	}
     	updateTextBoxes();
         switch (button.id) {
             case BUTTON1:
