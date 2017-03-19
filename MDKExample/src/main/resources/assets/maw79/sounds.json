@@ -33,5 +33,10 @@
         "category": "block",
         "subtitle": "mawsound.squelch",
         "sounds": [ { "name": "maw79:mawsound/squelch", "stream": true } ]
+     },
+    "mawsound.flyby": {
+        "category": "block",
+        "subtitle": "mawsound.flyby",
+        "sounds": [ { "name": "maw79:mawsound/flyby", "stream": true } ]
     }
 }

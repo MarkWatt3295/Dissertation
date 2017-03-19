@@ -1,8 +1,5 @@
 package com.maw79.mods.main;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-
 import com.maw79.mods.client.gui.Overlay.GUIRenderEventClass;
 import com.maw79.mods.commands.FlamingPigs;
 import com.maw79.mods.creativetabs.Maw79BlocksTab;
@@ -10,7 +7,6 @@ import com.maw79.mods.creativetabs.Maw79DebugTab;
 import com.maw79.mods.creativetabs.Maw79ItemsTab;
 import com.maw79.mods.creativetabs.Maw79MathsBlocksTab;
 import com.maw79.mods.creativetabs.Maw79ScratchBlocksTab;
-import com.maw79.mods.entity.passive.mcreator_chris;
 import com.maw79.mods.events.SoulStealerEvents;
 import com.maw79.mods.handlers.AchievementHandler;
 import com.maw79.mods.handlers.DropHandler;
@@ -25,26 +21,26 @@ import com.maw79.mods.init.ModCrafting;
 import com.maw79.mods.init.ModItems;
 import com.maw79.mods.init.ModTools;
 import com.maw79.mods.network.MathsMessage;
+import com.maw79.mods.network.NXmanagerMessage;
+import com.maw79.mods.network.NXmanagerPacketHandler;
+import com.maw79.mods.network.NYmanagerMessage;
+import com.maw79.mods.network.NYmanagerPacketHandler;
+import com.maw79.mods.network.NZmanagerMessage;
+import com.maw79.mods.network.NZmanagerPacketHandler;
 import com.maw79.mods.network.PacketHandler;
 import com.maw79.mods.network.TeleportMessage;
+import com.maw79.mods.network.XmanagerMessage;
+import com.maw79.mods.network.XmanagerPacketHandler;
+import com.maw79.mods.network.YmanagerMessage;
+import com.maw79.mods.network.YmanagerPacketHandler;
+import com.maw79.mods.network.ZmanagerMessage;
+import com.maw79.mods.network.ZmanagerPacketHandler;
 import com.maw79.mods.network.mathsPacketHandler;
 import com.maw79.mods.proxy.CommonProxy;
 import com.maw79.mods.worldgen.OreGen;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.model.ModelBiped;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.client.renderer.entity.RenderBiped;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.world.biome.Biome;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -55,17 +51,15 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
-import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.NAME, version = Reference.VERSION, acceptedMinecraftVersions = Reference.ACCEPTED_VERSION)
 
 public class Maw79Mod {
 	
-	public static SimpleNetworkWrapper networkWrapper, networkWrapper2;
+	public static SimpleNetworkWrapper networkWrapper, networkWrapper2, networkWrapper3, networkWrapper4, networkWrapper5,
+	networkWrapper6, networkWrapper7, networkWrapper8;
 
 	
 	public static final CreativeTabs blocks = new Maw79BlocksTab();
@@ -116,9 +110,21 @@ public class Maw79Mod {
 		
 		 networkWrapper = NetworkRegistry.INSTANCE.newSimpleChannel("maw79");/* I recommend you to use your mod id, the channel name should be unique */
 		 networkWrapper2 = NetworkRegistry.INSTANCE.newSimpleChannel("mathsMessage");
+		 networkWrapper3 = NetworkRegistry.INSTANCE.newSimpleChannel("xmanagerMessage");
+		 networkWrapper4 = NetworkRegistry.INSTANCE.newSimpleChannel("nxmanagerMessage");
+		 networkWrapper5 = NetworkRegistry.INSTANCE.newSimpleChannel("yanagerMessage");
+		 networkWrapper6 = NetworkRegistry.INSTANCE.newSimpleChannel("nymanagerMessage");
+		 networkWrapper7 = NetworkRegistry.INSTANCE.newSimpleChannel("zmanagerMessage");
+		 networkWrapper8 = NetworkRegistry.INSTANCE.newSimpleChannel("nzmanagerMessage");
 		 
 		 networkWrapper.registerMessage(PacketHandler.class, TeleportMessage.class, 0, Side.SERVER); 
 		 networkWrapper2.registerMessage(mathsPacketHandler.class, MathsMessage.class, 0, Side.SERVER); 
+		 networkWrapper3.registerMessage(XmanagerPacketHandler.class, XmanagerMessage.class, 0, Side.SERVER); 
+		 networkWrapper4.registerMessage(NXmanagerPacketHandler.class, NXmanagerMessage.class, 0, Side.SERVER); 
+		 networkWrapper5.registerMessage(YmanagerPacketHandler.class, YmanagerMessage.class, 0, Side.SERVER); 
+		 networkWrapper6.registerMessage(NYmanagerPacketHandler.class, NYmanagerMessage.class, 0, Side.SERVER);
+		 networkWrapper7.registerMessage(ZmanagerPacketHandler.class, ZmanagerMessage.class, 0, Side.SERVER); 
+		 networkWrapper8.registerMessage(NZmanagerPacketHandler.class, NZmanagerMessage.class, 0, Side.SERVER);
 	
 		 
 	}
@@ -135,6 +141,7 @@ public class Maw79Mod {
 		GameRegistry.registerWorldGenerator(new OreGen(), 0);
 		GameRegistry.registerFuelHandler(new FuelHandler());
 		ModSoundHandler.init();
+		
 		
 		//ModEntities.addSpawns();
 	}

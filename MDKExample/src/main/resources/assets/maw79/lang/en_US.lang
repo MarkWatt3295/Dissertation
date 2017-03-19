@@ -19,6 +19,7 @@ item.custom fuel.name=Long lasting Fuel
 
 //MATHS ITEMS
 item.first_book.name=Maw79 Mod Book
+item.xyz_device.name=XYZ Device
 item.x_axis_tool.name=X Axis Tool
 item.y_axis_tool.name=Y Axis Tool
 item.z_axis_tool.name=Z Axis Tool

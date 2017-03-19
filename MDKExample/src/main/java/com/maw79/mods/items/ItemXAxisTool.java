@@ -50,22 +50,7 @@ public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player
 		 player.move(null, 1, 0, 0);
 	 }
 	
-	/*
-	 * 	if(player.isSneaking()){
-			//player.move(null, -1, 0, 0); 
-			player.posX = -1;
-			System.out.println("Think your sneaking?");
-			///int playerX = (int) player.posX;
-			 player.sendMessage(new TextComponentString("Moving Along -X Axis ")); //+ playerX));
-		}
-	
-	else if (!player.world.isRemote & !player.isSneaking()){
-		System.out.println("Not sneaking?");
-		 player.sendMessage(new TextComponentString("Moving Along +X Axis"+ player.posX));
-		 player.move(null, 1, 0, 0);
-	 }
-	 
-	 */
+
 
 	
 	return super.onItemRightClick(world, player, hand);

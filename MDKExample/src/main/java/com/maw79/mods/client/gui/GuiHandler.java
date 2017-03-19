@@ -14,6 +14,7 @@ public class GuiHandler implements IGuiHandler{
 	 * Each gui needs an ID
 	 */
 	public static final int BLOCK_BREAKER = 0;
+	public static final int GUI_DEVICE = 1;
 	
 	/**
 	 * Should return the container for that gui. This is called server side because servers handle items in guis
@@ -21,6 +22,9 @@ public class GuiHandler implements IGuiHandler{
 	@Override
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		if(ID == BLOCK_BREAKER) {
+			return new ContainerBlockBreaker(player.inventory, (TileEntityBlockBreaker) world.getTileEntity(new BlockPos(x, y, z)));
+		}
+		if(ID == GUI_DEVICE) {
 			return new ContainerBlockBreaker(player.inventory, (TileEntityBlockBreaker) world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		return null;
@@ -33,6 +37,9 @@ public class GuiHandler implements IGuiHandler{
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		if(ID == BLOCK_BREAKER) {
 			return new GuiBlockBreaker(player.inventory, (TileEntityBlockBreaker) world.getTileEntity(new BlockPos(x, y, z)));
+		}
+		if(ID == GUI_DEVICE) {
+			return new ContainerBlockBreaker(player.inventory, (TileEntityBlockBreaker) world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		return null;
 	}

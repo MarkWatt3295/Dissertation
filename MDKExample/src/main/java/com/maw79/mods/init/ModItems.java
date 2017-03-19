@@ -22,6 +22,7 @@ import com.maw79.mods.items.ItemZAxisTool;
 import com.maw79.mods.items.mathsitems.ItemAppleWall;
 import com.maw79.mods.items.mathsitems.ItemCompleteAppleWall;
 import com.maw79.mods.items.mathsitems.ItemPictureWall;
+import com.maw79.mods.items.mathsitems.ItemXyzDevice;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.util.Utils;
@@ -60,6 +61,7 @@ public class ModItems {
 	public static Item stevepicturewall;
 	public static Item applepicturewall;
 	public static Item completeapplepicturewall;
+	public static Item xyzdevice;
 	
 	
 	//Tool Materials
@@ -89,6 +91,7 @@ public class ModItems {
 		xaxistool = new ItemXAxisTool("x_axis_tool");
 		yaxistool = new ItemYAxisTool("y_axis_tool");
 		zaxistool = new ItemZAxisTool("z_axis_tool");
+		xyzdevice = new ItemXyzDevice("xyz_device");
 		
 		tutorialItem = new ItemTutorial("tutorial_item");
 		
@@ -129,6 +132,7 @@ public class ModItems {
 		registerItem(zaxistool);
 		registerItem(stevepicturewall);
 		registerItem(applepicturewall);
+		registerItem(xyzdevice);
 		
 		//Debug Items
 		registerItem(reversepaintbrush);
@@ -157,6 +161,7 @@ public class ModItems {
 		registerRender(tutorialItem);
 		registerRender(stevepicturewall);
 		registerRender(applepicturewall);
+		registerRender(xyzdevice);
 		
 		//Food
 		registerRender(tomato);

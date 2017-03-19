@@ -17,6 +17,7 @@ public class ModSoundHandler {
 	public static SoundEvent MAWSOUND_OPEN;
 	public static SoundEvent MAWSOUND_COIN;
 	public static SoundEvent MAWSOUND_SQUELCH;
+	public static SoundEvent MAWSOUND_FLYBY;
 	
 	public static void init() {
 		size = SoundEvent.REGISTRY.getKeys().size();
@@ -28,6 +29,7 @@ public class ModSoundHandler {
 		MAWSOUND_OPEN = register("mawsound.open");
 		MAWSOUND_COIN = register("mawsound.coin");
 		MAWSOUND_SQUELCH = register("mawsound.squelch");
+		MAWSOUND_FLYBY = register("mawsound.flyby");
 	}
 	
 	public static SoundEvent register(String name) {
