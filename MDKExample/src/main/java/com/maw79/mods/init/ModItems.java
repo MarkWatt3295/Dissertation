@@ -20,6 +20,7 @@ import com.maw79.mods.items.ItemXAxisTool;
 import com.maw79.mods.items.ItemYAxisTool;
 import com.maw79.mods.items.ItemZAxisTool;
 import com.maw79.mods.items.mathsitems.ItemAppleWall;
+import com.maw79.mods.items.mathsitems.ItemCompleteAppleWall;
 import com.maw79.mods.items.mathsitems.ItemPictureWall;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
@@ -58,6 +59,7 @@ public class ModItems {
 	public static Item gameswitcher;
 	public static Item stevepicturewall;
 	public static Item applepicturewall;
+	public static Item completeapplepicturewall;
 	
 	
 	//Tool Materials
@@ -95,6 +97,7 @@ public class ModItems {
 		gameswitcher = new ItemGameSwitcher("game_switcher");
 		stevepicturewall = new ItemPictureWall("picture_wall");
 		applepicturewall = new ItemAppleWall("apple_wall");
+		completeapplepicturewall = new ItemCompleteAppleWall("complete_apple_wall");
 		
 		
 	}
@@ -130,6 +133,7 @@ public class ModItems {
 		//Debug Items
 		registerItem(reversepaintbrush);
 		registerItem(gameswitcher);
+		registerItem(completeapplepicturewall);
 		
 		
 		
@@ -166,6 +170,8 @@ public class ModItems {
 		reversepaintbrush.setCreativeTab(Maw79Mod.debug);
 		registerRender(gameswitcher);
 		gameswitcher.setCreativeTab(Maw79Mod.debug);
+		registerRender(completeapplepicturewall);
+		completeapplepicturewall.setCreativeTab(Maw79Mod.debug);
 		
 		//Meta Data
 		for(int i = 0; i < EnumHandler.ChipTypes.values().length; i++) {
