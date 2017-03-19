@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.minecraft.world.World;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.EnumHand;
@@ -11,6 +12,8 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
+
 import com.maw79.mods.init.ModBlocks;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
@@ -61,6 +64,21 @@ public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer entity
 	int m5 = Block.getIdFromBlock(ModBlocks.mathtextblockblue);
 	int m6 = Block.getIdFromBlock(ModBlocks.mathtextblockpeach);
 	//world.setBlockState(new BlockPos(l + 0, m + 2, n + 0), Block.getBlockById(q).getDefaultState());
+	
+	if (true) {
+		boolean place = true;
+
+		for (int y = 0; y < 22; y++)
+			for (int z = 0; z < 21; z++)
+				for (int x = 0; x < 1; x++)
+					if (world.getBlockState(new BlockPos(i + x, j + y + 1, k + z)).getBlock() != Blocks.AIR)
+						place = false;
+						
+					if(place == false){
+						if(!entity.world.isRemote) entity.sendMessage(new TextComponentString("§c"+"[Warning] "+ "§r" + "Not enough space to place wall"));
+					}
+
+		if (place) {
 	
 	world.setBlockState(new BlockPos(i + 0, j + 0, k + 0), Block.getBlockById(1).getStateFromMeta(0), 3);
 	world.setBlockState(new BlockPos(i + 0, j + 0, k + 1), Block.getBlockById(1).getStateFromMeta(0), 3);
@@ -526,10 +544,9 @@ public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer entity
 	world.setBlockState(new BlockPos(i + 0, j + 21, k + 20), Block.getBlockById(1).getStateFromMeta(0), 3);
 	
 	entity.inventory.getCurrentItem().damageItem(2, entity );
+		}
+	}
 		return ar;
 }
-
-
-
 
 }

@@ -30,7 +30,7 @@ public  ItemYAxisTool (String unlocalizedName) {
 @Override
 public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
 	super.addInformation(stack, playerIn, tooltip, advanced);
-	tooltip.add(TextFormatting.GREEN + Utils.getLang().localize("z_axis_tool.tooltip"));
+	tooltip.add(TextFormatting.GREEN + Utils.getLang().localize("y_axis_tool.tooltip"));
 }
 
 @Override
