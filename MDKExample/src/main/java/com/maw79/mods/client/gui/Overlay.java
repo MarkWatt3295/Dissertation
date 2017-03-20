@@ -19,10 +19,12 @@ import net.minecraft.client.Minecraft;
 
 import java.util.Random;
 
+import com.maw79.mods.main.Maw79Mod;
+
 
 
 public class Overlay {
-
+	
 	public static class GUIRenderEventClass {
 		@SubscribeEvent(priority = EventPriority.NORMAL)
 		public void eventHandler(RenderGameOverlayEvent event) {
@@ -43,7 +45,8 @@ public class Overlay {
 				World world = server.worlds[0];
 
 				if (true) {
-					String s = "shabba";
+					int s =0;
+					Maw79Mod.playerlevel = s;
 					Minecraft.getMinecraft().fontRendererObj.drawString("Player Level : "+s, posX + (110), posY + (-107), 0xffffff);
 					Minecraft.getMinecraft().fontRendererObj.drawString("Score : ", posX + (140), posY + (-86), 0xffffff);
 

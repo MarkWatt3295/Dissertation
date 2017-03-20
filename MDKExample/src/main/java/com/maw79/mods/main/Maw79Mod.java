@@ -21,6 +21,7 @@ import com.maw79.mods.init.ModCrafting;
 import com.maw79.mods.init.ModItems;
 import com.maw79.mods.init.ModNumberBlocks;
 import com.maw79.mods.init.ModTools;
+import com.maw79.mods.items.mathsitems.mcreator_paintGun;
 import com.maw79.mods.network.MathsMessage;
 import com.maw79.mods.network.NXmanagerMessage;
 import com.maw79.mods.network.NXmanagerPacketHandler;
@@ -71,11 +72,14 @@ public class Maw79Mod {
 	
 	public static Object instance2;
 	public static int GUIID = 4;
+	
+	public static int playerlevel = 1;
 
 	
 	
 	@Instance(Reference.MOD_ID)
 	public static Maw79Mod instance;
+	mcreator_paintGun mcreator_0 = new mcreator_paintGun();
 	
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
 	public static CommonProxy proxy;
@@ -108,7 +112,8 @@ public class Maw79Mod {
 		
 		proxy.registerRenders();
 		proxy.registerTileEntities();
-		
+		mcreator_0.instance = this.instance;
+		mcreator_0.preInit(event);
 		//ModEntities.registerEntities();
 		
 		 networkWrapper = NetworkRegistry.INSTANCE.newSimpleChannel("maw79");/* I recommend you to use your mod id, the channel name should be unique */
