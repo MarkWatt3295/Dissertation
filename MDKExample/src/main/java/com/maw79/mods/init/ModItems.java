@@ -25,6 +25,7 @@ import com.maw79.mods.items.mathsitems.ItemAppleWallBorder;
 import com.maw79.mods.items.mathsitems.ItemAppleWallWool;
 import com.maw79.mods.items.mathsitems.ItemCompleteAppleWall;
 import com.maw79.mods.items.mathsitems.ItemPictureWall;
+import com.maw79.mods.items.mathsitems.ItemPlayerLevel;
 import com.maw79.mods.items.mathsitems.ItemXyzDevice;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
@@ -68,6 +69,7 @@ public class ModItems {
 	public static Item xyzdevice;
 	public static Item applepicturewallborder;
 	public static Item applewallaxis;
+	public static Item playerlevel;
 	
 	
 	//Tool Materials
@@ -88,6 +90,7 @@ public class ModItems {
 		chip = new ItemChip("chip");
 		applepicturewall = new ItemAppleWall("apple_wall");
 		applewallaxis = new ItemAppleWallAxis("apple_wall_axis");
+		playerlevel = new ItemPlayerLevel("player_level");
 		
 		//Food
 		tomato = new ItemTomato();
@@ -128,6 +131,7 @@ public class ModItems {
 		registerItem(steelingot);
 		registerItem(chip);
 		registerItem(customfuel);
+		registerItem(playerlevel);
 		//Food
 		registerItem(tomato);
 		registerItem(mouldyapple);
@@ -176,7 +180,7 @@ public class ModItems {
 		registerRender(stevepicturewall);
 		registerRender(applepicturewall);
 		registerRender(applewallaxis);
-		
+		registerRender(playerlevel);
 		registerRender(xyzdevice);
 		
 		//Food

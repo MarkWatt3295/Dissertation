@@ -2,22 +2,13 @@ package com.maw79.mods.client.gui;
 
 import java.io.IOException;
 import com.maw79.mods.handlers.ModSoundHandler;
-import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
-import com.maw79.mods.network.NXmanagerMessage;
-import com.maw79.mods.network.NYmanagerMessage;
-import com.maw79.mods.network.NZmanagerMessage;
-import com.maw79.mods.network.XmanagerMessage;
-import com.maw79.mods.network.YmanagerMessage;
-import com.maw79.mods.network.ZmanagerMessage;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.GuiTextField;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.text.TextComponentString;
 
 public class GuiPlayerLevel extends GuiScreen {
 	
@@ -28,16 +19,15 @@ public class GuiPlayerLevel extends GuiScreen {
     int guiWidth = 175;
     int guiHeight = 210;
     
-    String title = "XYZ Device";
+    String title = "Player Level";
     
     String question = "Hello";
     String number ="";
     public static int answer = 0;
    
-    GuiTextField textBox;
-    GuiButton button1, button2, button3, button4, button5, button6, button7;
-    final int BUTTON1 = 1, BUTTON2 = 2, BUTTON3 = 3, BUTTON4 = 4, BUTTON5 = 5, 
-    		BUTTON6 = 6, BUTTON7 = 7, BUTTON8 = 8, BUTTON9 = 9, BUTTON10 = 10;
+   // GuiTextField textBox;
+    GuiButton button1, button2, button3, button4;
+    final int BUTTON1 = 1, BUTTON2 = 2, BUTTON3 = 3, BUTTON4 = 4;
     
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
@@ -71,10 +61,10 @@ public class GuiPlayerLevel extends GuiScreen {
         }
         GlStateManager.popMatrix();
         super.drawScreen(mouseX, mouseY, partialTicks);
-        button1.drawButton(mc, mouseX, mouseY);
+        //button1.drawButton(mc, mouseX, mouseY);
       
        
-        textBox.drawTextBox();
+       // textBox.drawTextBox();
        
       
       
@@ -109,16 +99,16 @@ public class GuiPlayerLevel extends GuiScreen {
 
 
     public  void updateTextBoxes() {
-        if (!textBox.getText().isEmpty()) {
-            if (!textBox.isFocused()) {
-            	number = textBox.getText();
-          	  try {
-              answer=Integer.parseInt(number);
-          	  } catch (NumberFormatException e) {
-              System.out.println(answer);
-          	  }
-            }
-        }
+        //if (!textBox.getText().isEmpty()) {
+          //  if (!textBox.isFocused()) {
+          //  	number = textBox.getText();
+          //	  try {
+           //   answer=Integer.parseInt(number);
+          	//  } catch (NumberFormatException e) {
+            //  System.out.println(answer);
+          	//  }
+          //  }
+     //   }
        updateButtons();
     }
    
@@ -126,64 +116,28 @@ public class GuiPlayerLevel extends GuiScreen {
  
     @Override
     protected void actionPerformed(GuiButton button) throws IOException {
-    	if(answer >= 20){
-    		answer = 20;
-    		mc.player.sendMessage(new TextComponentString("Cannot Go Higher than 20 Blocks"));
-    	}
+    	
     	updateTextBoxes();
         switch (button.id) {
             case BUTTON1:
        
-            	mc.player.sendMessage(new TextComponentString("X Pressed with Answer as: "+answer));
+            
             	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-            	Maw79Mod.networkWrapper3.sendToServer(new XmanagerMessage(mc.player));
-            	mc.player.setNoGravity(true);
             	mc.displayGuiScreen((GuiScreen)null);
             	break;
             	
             case BUTTON2:
-            	mc.player.sendMessage(new TextComponentString("-X Pressed with Answer as: "+answer));
+            	
             	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-            	Maw79Mod.networkWrapper4.sendToServer(new NXmanagerMessage(mc.player));
-            	mc.player.setNoGravity(true);
             	mc.displayGuiScreen((GuiScreen)null);
             	break;
             	
             case BUTTON3:
-            	mc.player.sendMessage(new TextComponentString("Y Pressed with Answer as: "+answer));
-            	Maw79Mod.networkWrapper5.sendToServer(new YmanagerMessage(mc.player));
-            	mc.player.setNoGravity(true);
+            	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
             	mc.displayGuiScreen((GuiScreen)null);
             	break;
             	
-            case BUTTON4:
-            	mc.player.sendMessage(new TextComponentString("-Y Pressed with Answer as: "+answer));
-            	Maw79Mod.networkWrapper6.sendToServer(new NYmanagerMessage(mc.player));
-            	mc.player.setNoGravity(true);
-            	mc.displayGuiScreen((GuiScreen)null);
-            	break;
-            	
-            case BUTTON5:
-            	mc.player.sendMessage(new TextComponentString("Z Pressed with Answer as: "+answer));
-            	Maw79Mod.networkWrapper7.sendToServer(new ZmanagerMessage(mc.player));
-            	mc.player.setNoGravity(true);
-            	mc.displayGuiScreen((GuiScreen)null);
-            	break;
-            	
-            case BUTTON6:
-            	mc.player.sendMessage(new TextComponentString("-Z Pressed with Answer as: "+answer));
-            	Maw79Mod.networkWrapper8.sendToServer(new NZmanagerMessage(mc.player));
-            	mc.player.setNoGravity(true);
-            	mc.displayGuiScreen((GuiScreen)null);
-            	
-            	break;
-            	
-            case BUTTON7:
-            	mc.player.sendMessage(new TextComponentString("DEBUG Pressed with Gravity as: "+answer));
-            	mc.player.setNoGravity(false);
-            	mc.displayGuiScreen((GuiScreen)null);
-            	break;
-     
+          
         }
         updateButtons();
         super.actionPerformed(button);
@@ -196,14 +150,14 @@ public class GuiPlayerLevel extends GuiScreen {
  
 	@Override
     protected void keyTyped(char typedChar, int keyCode) throws IOException {
-        textBox.textboxKeyTyped(typedChar, keyCode);
+       // textBox.textboxKeyTyped(typedChar, keyCode);
         updateTextBoxes();
         super.keyTyped(typedChar, keyCode);
     }
 
     @Override
     protected void mouseClicked(int mouseX, int mouseY, int mouseButton) throws IOException {
-        textBox.mouseClicked(mouseX, mouseY, mouseButton);
+       
         updateTextBoxes();
         super.mouseClicked(mouseX, mouseY, mouseButton);
     }
@@ -218,9 +172,6 @@ public class GuiPlayerLevel extends GuiScreen {
     	
          
     }
-    
-   
-    
     
 }
 	 
