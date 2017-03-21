@@ -9,6 +9,11 @@ public class Reference {
  public static final String CLIENT_PROXY_CLASS = "com.maw79.mods.proxy.ClientProxy";
  public static final String SERVER_PROXY_CLASS = "com.maw79.mods.proxy.ServerProxy";
  
+ /**
+	 * Where the gui factory if found
+	 */
+	public static final String GUI_FACTORY = "com.maw79.mods.config.Maw79ConfigGuiFactory";
+ 
  //##############################################################################################
  //ITEMS
  public static enum MawItems {

@@ -1,7 +1,8 @@
 package com.maw79.mods.main;
 
-import com.maw79.mods.client.gui.Overlay.GUIRenderEventClass;
+import com.maw79.mods.client.gui.Overlay;
 import com.maw79.mods.commands.FlamingPigs;
+import com.maw79.mods.config.Maw79Config;
 import com.maw79.mods.creativetabs.Maw79BlocksTab;
 import com.maw79.mods.creativetabs.Maw79DebugTab;
 import com.maw79.mods.creativetabs.Maw79ItemsTab;
@@ -56,7 +57,8 @@ import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 
-@Mod(modid = Reference.MOD_ID, name = Reference.NAME, version = Reference.VERSION, acceptedMinecraftVersions = Reference.ACCEPTED_VERSION)
+@Mod(modid = Reference.MOD_ID, name = Reference.NAME, version = Reference.VERSION, acceptedMinecraftVersions = Reference.ACCEPTED_VERSION, guiFactory = Reference.GUI_FACTORY)
+
 
 public class Maw79Mod {
 	
@@ -80,6 +82,13 @@ public class Maw79Mod {
 	@Instance(Reference.MOD_ID)
 	public static Maw79Mod instance;
 	mcreator_paintGun mcreator_0 = new mcreator_paintGun();
+	
+	
+	/**
+	 * Proxy so that we register the correct things on server and client side.
+	 * Client side handles the model bakery
+	 * Server side handles tile entities and world generation
+	 */
 	
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
 	public static CommonProxy proxy;
@@ -110,6 +119,7 @@ public class Maw79Mod {
 		ModTools.init();
 		ModTools.register();
 		
+		Maw79Config.preInit();
 		proxy.registerRenders();
 		proxy.registerTileEntities();
 		mcreator_0.instance = this.instance;
@@ -158,7 +168,7 @@ public class Maw79Mod {
 	public void postInit(FMLPostInitializationEvent event)
 	{
 		 MinecraftForge.EVENT_BUS.register(new ModEventHandler());
-		MinecraftForge.EVENT_BUS.register(new GUIRenderEventClass());
+		MinecraftForge.EVENT_BUS.register(new Overlay());
 		
 		
 	}

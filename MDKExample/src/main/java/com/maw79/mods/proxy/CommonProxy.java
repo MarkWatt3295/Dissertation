@@ -2,8 +2,6 @@ package com.maw79.mods.proxy;
 
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.tileentity.TileEntityBlockBreaker;
-import com.maw79.mods.worldgen.OreGen;
-
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class CommonProxy {
@@ -30,6 +28,11 @@ public class CommonProxy {
 	}
 	
 	public void registerModelBakeryStuff() {
+		
+	}
+
+	public void preInit() {
+		// TODO Auto-generated method stub
 		
 	}
 }

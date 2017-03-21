@@ -4,6 +4,7 @@ import com.maw79.mods.handlers.MaterialHandler;
 import com.maw79.mods.items.ItemModArmour;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
+import com.maw79.mods.util.Utils;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -63,8 +64,17 @@ public class ModArmour {
 		registerRender(rubyHelmet);
 	}
 	
+	/*
 	public static void registerRender(Item item){
 	
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
+	}*/
+	/**
+	 * Registers an item render and logs that is has been registered to the console
+	 * @param item The item to register the render for
+	 */
+	public static void registerRender(Item item) {
+		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, item.getUnlocalizedName().substring(5)), "inventory"));
+		Utils.getLogger().info("Registered render for " + item.getUnlocalizedName().substring(5));
 	}
 }

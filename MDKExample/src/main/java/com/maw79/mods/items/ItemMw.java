@@ -32,11 +32,15 @@ public class ItemMw extends Item {
 		int n = (int) entity.posZ;
 		world.setBlockState(new BlockPos(l + 0, m + 0, n + 0), Blocks.DIAMOND_BLOCK.getDefaultState());
 		int q = Block.getIdFromBlock(ModBlocks.mathblockblue);
-		world.setBlockState(new BlockPos(l + 0, m + 2, n + 0), Block.getBlockById(q).getDefaultState());
+		world.setBlockState(new BlockPos(l + 0, m + 0, n + 0), Block.getBlockById(q).getDefaultState());
 		world.setBlockState(new BlockPos(l + 1, m + 0, n + 0), Blocks.IRON_BLOCK.getDefaultState());
 		world.setBlockState(new BlockPos(l + 2, m + 0, n + 0), Blocks.DIRT.getDefaultState());
 		System.out.println("right clicked mw item" + q);
 		//setBlock(9, 64, 20, Blocks.DIRT);
+		int ten = 10;
+		Maw79Mod.playerlevel += ten;
+		int pl = Maw79Mod.playerlevel;
+		System.out.println("******************** "+ pl + "***********************");
 		return super.onItemRightClick(world, entity, hand);
 		//world.setBlockState(new BlockPos(i + 0, j + 0, k + 0), Block.getBlockById(4158).getStateFromMeta(0), 3);
 	}

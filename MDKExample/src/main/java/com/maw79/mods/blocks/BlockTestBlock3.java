@@ -2,6 +2,7 @@ package com.maw79.mods.blocks;
 
 import com.maw79.mods.client.gui.GuiFirstBook;
 import com.maw79.mods.client.gui.GuiSecondBook;
+import com.maw79.mods.client.gui.GuiTutorial;
 import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.init.ModBlocks;
 import com.maw79.mods.init.ModItems;
@@ -68,7 +69,7 @@ public class BlockTestBlock3 extends Block {
 		
 		//player.move(null, 2, 0, 0);
 		// if(pressed == false){
-		
+		 Minecraft.getMinecraft().displayGuiScreen(new GuiTutorial());
 		//Minecraft.getMinecraft().displayGuiScreen(new GuiMathsBlock());
 		//while(blockreturn == false){
 		//ClientCommandHandler.instance.executeCommand(Minecraft.getMinecraft().player, "sddf");

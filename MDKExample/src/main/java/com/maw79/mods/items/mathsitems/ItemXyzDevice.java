@@ -40,20 +40,6 @@ public class ItemXyzDevice extends Item {
 		
 }
 	
-	/*public EnumActionResult onItemUseFirst(ItemStack itemStack, EntityPlayer entity, World world, BlockPos pos, EnumFacing side, float hitX,
-			float hitY, float hitZ, EnumHand hand) {
-		float var4 = 1.0F;
-		int i = pos.getX();
-		int j = pos.getY();
-		int k = pos.getZ();
-
-		if (true) {
-			if (entity instanceof EntityPlayer)
-				((EntityPlayer) entity).openGui(Maw79Mod.instance, GuiHandler.GUI_DEVICE, world, i, j, k);
-		}
-
-		return EnumActionResult.PASS;
-	}
-*/
+	
 }
 

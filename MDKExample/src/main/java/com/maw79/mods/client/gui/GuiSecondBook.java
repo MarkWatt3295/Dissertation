@@ -17,13 +17,13 @@ import com.maw79.mods.util.Utilities;
 
 
 /**
- * @author mark watt
+ * @author Mark Watt
  *
  */
 public class GuiSecondBook extends GuiScreen
 {
-	private final int bookImageHeight = 192;
-	private final int bookImageWidth = 192;
+	private final int bookImageHeight = 500;
+	private final int bookImageWidth = 500;
 	private int currPage = 0;
 	private static final int bookTotalPages = 6;
 	private static ResourceLocation[] bookPageTextures = new ResourceLocation[bookTotalPages];
@@ -38,12 +38,12 @@ public class GuiSecondBook extends GuiScreen
 		System.out.println("GuiFirstBook() constructor");
 		// Don't need to do everything in constructor because the init() function is 
 		// also directly called.
-	    bookPageTextures[0] = new ResourceLocation(Reference.MOD_ID+":textures/gui/bigbook.png");
-	    bookPageTextures[1] = new ResourceLocation(Reference.MOD_ID+":textures/gui/large_book.png");
-	    bookPageTextures[2] = new ResourceLocation(Reference.MOD_ID+":textures/gui/book.png");
-	    bookPageTextures[3] = new ResourceLocation(Reference.MOD_ID+":textures/gui/book.png");
-	    bookPageTextures[4] = new ResourceLocation(Reference.MOD_ID+":textures/gui/booktest.png");
-	    bookPageTextures[5] = new ResourceLocation(Reference.MOD_ID+":textures/gui/booktest2.png");
+	    bookPageTextures[0] = new ResourceLocation(Reference.MOD_ID+":textures/gui/test1.png");
+	    bookPageTextures[1] = new ResourceLocation(Reference.MOD_ID+":textures/gui/test2.png");
+	    bookPageTextures[2] = new ResourceLocation(Reference.MOD_ID+":textures/gui/test3.png");
+	    bookPageTextures[3] = new ResourceLocation(Reference.MOD_ID+":textures/gui/test4.png");
+	    bookPageTextures[4] = new ResourceLocation(Reference.MOD_ID+":textures/gui/book2.png");
+	    bookPageTextures[5] = new ResourceLocation(Reference.MOD_ID+":textures/gui/book2.png");
 	    stringPageText[0] = "";
 	    stringPageText[1] = "THIS IS THE FIRST BOOK"+"This is your "+Utilities.stringToRainbow("Family Cow", true);
 	    stringPageText[2] = "another page";
@@ -65,10 +65,10 @@ public class GuiSecondBook extends GuiScreen
 
         buttonDone = new GuiButton(0, width / 2 + 2, 4 + bookImageHeight, 98, 20, I18n.format("gui.done", new Object[0]));
 		
-        buttonList.add(buttonDone);
+       // buttonList.add(buttonDone);
         int offsetFromScreenLeft = (width - bookImageWidth) / 2;
-        buttonList.add(buttonNextPage = new NextPageButton(1, offsetFromScreenLeft + 120, 156, true));
-        buttonList.add(buttonPreviousPage = new NextPageButton(2, offsetFromScreenLeft + 38, 156, false));
+       // buttonList.add(buttonNextPage = new NextPageButton(1, offsetFromScreenLeft + 120, 156, true));
+       // buttonList.add(buttonPreviousPage = new NextPageButton(2, offsetFromScreenLeft + 38, 156, false));
 
     }
 
@@ -78,9 +78,9 @@ public class GuiSecondBook extends GuiScreen
     @Override
 	public void updateScreen() 
     {
-    	buttonDone.visible = (currPage == bookTotalPages - 1);
-        buttonNextPage.visible = (currPage < bookTotalPages - 1);
-        buttonPreviousPage.visible = currPage > 0;
+    	//buttonDone.visible = (currPage == bookTotalPages - 1);
+       // buttonNextPage.visible = (currPage < bookTotalPages - 1);
+       // buttonPreviousPage.visible = currPage > 0;
     }
 	
     /**

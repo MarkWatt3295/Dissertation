@@ -1,6 +1,7 @@
 package com.maw79.mods.proxy;
 
 import com.maw79.mods.client.gui.GuiHandler;
+import com.maw79.mods.config.Maw79Config;
 import com.maw79.mods.init.ModArmour;
 import com.maw79.mods.init.ModBlocks;
 import com.maw79.mods.init.ModItems;
@@ -12,32 +13,34 @@ import com.maw79.mods.main.Reference;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 
 public class ClientProxy extends CommonProxy {
+	
+	/**
+	 * Everything that should be ran client side only in the pre initalization phase
+	 */
+	@Override
+	public void preInit() {
+		
+		Maw79Config.clientPreInit();
+	}
 
 	@Override
 	public void init() {
 		NetworkRegistry.INSTANCE.registerGuiHandler(Maw79Mod.instance, new GuiHandler());
+		
+	}
+	
+	
+	 @Override
+	public void registerRenders() {
 		ModItems.registerRenders();
 		ModBlocks.registerRenders();
 		ModNumberBlocks.registerRenders();
 		ModArmour.registerRenders();
 		ModTools.registerRenders();
 	}
-	
-	
-	/*
-	 * @Override
-	public void registerRenders() {
-		ModItems.registerRenders();
-		ModBlocks.registerRenders();
-		ModArmour.registerRenders();
-		ModTools.registerRenders();
-	}*/
 
 	
 		@Override

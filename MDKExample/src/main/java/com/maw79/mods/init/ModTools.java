@@ -9,17 +9,20 @@ import com.maw79.mods.items.ItemModSword;
 import com.maw79.mods.items.ItemPaintBrush;
 import com.maw79.mods.items.ItemSoulStealer;
 import com.maw79.mods.main.Maw79Mod;
+import com.maw79.mods.main.Reference;
 import com.maw79.mods.util.Utils;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemSword;
+import net.minecraft.util.ResourceLocation;
 
 public class ModTools {
 	
@@ -118,18 +121,25 @@ public class ModTools {
 		}
 		
 		
-		/**
-		 * Register the com.maw79.mods.items render
-		 * @param item The item
-		 */
 		
 		
+		/*
 		private static void registerRender(Item item){
 			
 			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
 				
 			Utils.getLogger().info("Registered render for Tools: " + item.getUnlocalizedName().substring(5));
-				}
+				}*/
+		
+		/**
+		 * Register the items render
+		 * @param item The item
+		 */
+		public static void registerRender(Item item) {
+			ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, item.getUnlocalizedName().substring(5)), "inventory"));
+			Utils.getLogger().info("Registered render for " + item.getUnlocalizedName().substring(5));
+		}
+
 
 	}	
 	

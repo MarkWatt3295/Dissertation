@@ -28,18 +28,11 @@ World world = DimensionManager.getWorld(message.dimension);
  else if(!world.isRemote) {
  if(ctx.getServerHandler().playerEntity.getEntityId() == message.entityID){
  EntityPlayerMP player = ctx.getServerHandler().playerEntity;
- 
-//if (randanswer == 1){
-	//player.connection.playerEntity.inventory.addItemStackToInventory(new ItemStack(ModTools.paintbrush, 1));
- //player.connection.playerEntity.move(null, xyzresponse, 0, 0);
+
  player.connection.setPlayerLocation(player.posX + xyzresponse, player.posY, player.posZ, player.rotationYaw, player.rotationPitch);
  System.out.println(xyzresponse + " Added to player X");
- player.connection.playerEntity.setNoGravity(true);
- player.sendMessage(new TextComponentString(xyzresponse + " Added to player X"));
- player.playSound(ModSoundHandler.MAWSOUND_FLYBY, 1.0f, 1.0f);
-	
-//}
 
+ player.sendMessage(new TextComponentString(xyzresponse + " Added to player X"));
  
  }
  }

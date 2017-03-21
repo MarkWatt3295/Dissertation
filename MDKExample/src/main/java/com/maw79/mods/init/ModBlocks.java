@@ -398,24 +398,39 @@ public class ModBlocks {
 	
 	
 	
-	
-	public static void registerRender(Block block){
+	/*
+public static void registerRender(Block block){
 Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
 Utils.getLogger().info("Registered render for " + block.getUnlocalizedName().substring(5));
 	}
 	
 	
-	
-	/*
-	public static void registerRender(Block block, int meta, String fileName) {
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), meta, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, fileName), "inventory"));
-		Utils.getLogger().info("Registered render for " + block.getUnlocalizedName().substring(5));
-	}*/
+
 	
 	
 	public static void registerRender(Block block, int meta, String fileName) {
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(block), meta, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, fileName), "inventory"));
 		Utils.getLogger().info("Registered render for MULTIBLOCK:" + block.getUnlocalizedName().substring(5));
+	}
+	*/
+	/**
+	 * Registers the blocks renders
+	 * @param block The block
+	 */
+	public static void registerRender(Block block) {
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, block.getUnlocalizedName().substring(5)), "inventory"));
+		Utils.getLogger().info("Registered render for " + block.getUnlocalizedName().substring(5));
+	}
+	
+	/**
+	 * Registers the blocks renders even if it has meta data
+	 * @param block The block
+	 * @param meta The blocks meta data
+	 * @param fileName The file name
+	 */
+	public static void registerRender(Block block, int meta, String fileName) {
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), meta, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, fileName), "inventory"));
+		Utils.getLogger().info("Registered render for " + block.getUnlocalizedName().substring(5));
 	}
 	
 }

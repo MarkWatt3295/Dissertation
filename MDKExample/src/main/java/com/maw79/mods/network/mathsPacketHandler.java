@@ -56,13 +56,3 @@ else if (randanswer == 3){
  }
 
 }
-/*
- *  //int max = 5; Previously used to give Random ammount of MAth Blocks
-// int min = 1;
- Random rand = new Random();
- int randomNum = rand.nextInt(( max - min)+1)+min;
- System.out.println("££££££££££ "+ randomNum + " £££££££££££");
- int randanswer  =  randomNum;
- System.out.println("££££££££££ "+ randanswer + " £££££££££££");
-  player.connection.playerEntity.inventory.addItemStackToInventory(new ItemStack(ModBlocks.mathblockwhite, randanswer));
- */

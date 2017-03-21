@@ -149,18 +149,18 @@ public class GuiXyzDevice extends GuiScreen {
             case BUTTON1:
        
             	mc.player.sendMessage(new TextComponentString("X Pressed with Answer as: "+answer));
-            	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
             	Maw79Mod.networkWrapper3.sendToServer(new XmanagerMessage(mc.player));
             	mc.player.setNoGravity(true);
             	mc.displayGuiScreen((GuiScreen)null);
+            	 mc.player.playSound(ModSoundHandler.MAWSOUND_FLYBY, 1.0f, 1.0f);
             	break;
             	
             case BUTTON2:
             	mc.player.sendMessage(new TextComponentString("-X Pressed with Answer as: "+answer));
-            	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
             	Maw79Mod.networkWrapper4.sendToServer(new NXmanagerMessage(mc.player));
             	mc.player.setNoGravity(true);
             	mc.displayGuiScreen((GuiScreen)null);
+            	 mc.player.playSound(ModSoundHandler.MAWSOUND_FLYBY, 2.0f, 2.0f);
             	break;
             	
             case BUTTON3:
@@ -168,6 +168,7 @@ public class GuiXyzDevice extends GuiScreen {
             	Maw79Mod.networkWrapper5.sendToServer(new YmanagerMessage(mc.player));
             	mc.player.setNoGravity(true);
             	mc.displayGuiScreen((GuiScreen)null);
+            	 mc.player.playSound(ModSoundHandler.MAWSOUND_FLYBY, 1.0f, 1.0f);
             	break;
             	
             case BUTTON4:
@@ -175,6 +176,7 @@ public class GuiXyzDevice extends GuiScreen {
             	Maw79Mod.networkWrapper6.sendToServer(new NYmanagerMessage(mc.player));
             	mc.player.setNoGravity(true);
             	mc.displayGuiScreen((GuiScreen)null);
+            	 mc.player.playSound(ModSoundHandler.MAWSOUND_FLYBY, 3.0f, 3.0f);
             	break;
             	
             case BUTTON5:
@@ -182,6 +184,7 @@ public class GuiXyzDevice extends GuiScreen {
             	Maw79Mod.networkWrapper7.sendToServer(new ZmanagerMessage(mc.player));
             	mc.player.setNoGravity(true);
             	mc.displayGuiScreen((GuiScreen)null);
+            	 mc.player.playSound(ModSoundHandler.MAWSOUND_FLYBY, 1.0f, 1.0f);
             	break;
             	
             case BUTTON6:
@@ -189,6 +192,7 @@ public class GuiXyzDevice extends GuiScreen {
             	Maw79Mod.networkWrapper8.sendToServer(new NZmanagerMessage(mc.player));
             	mc.player.setNoGravity(true);
             	mc.displayGuiScreen((GuiScreen)null);
+            	 mc.player.playSound(ModSoundHandler.MAWSOUND_FLYBY, 4.0f, 4.0f);
             	
             	break;
             	
@@ -196,6 +200,8 @@ public class GuiXyzDevice extends GuiScreen {
             	mc.player.sendMessage(new TextComponentString("DEBUG Pressed with Gravity as: "+answer));
             	mc.player.setNoGravity(false);
             	mc.displayGuiScreen((GuiScreen)null);
+            	 mc.player.playSound(ModSoundHandler.MAWSOUND_FLYBY, 5.0f, 5.0f);
+            	mc.player.setNoGravity(false);
             	break;
      
         }

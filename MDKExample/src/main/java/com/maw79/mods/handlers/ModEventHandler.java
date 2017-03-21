@@ -59,7 +59,11 @@ public class ModEventHandler {
     	EntityPlayer player = (EntityPlayer) event.getEntity();
     	if(!event.getEntity().getEntityWorld().isRemote) {
     		player.sendMessage(new TextComponentString("\u00A7a" + "Thank you, "+ player.getName() + ", for downloading my KS2 MOD!"));
-    		System.out.println("Player Joined Called"); 
+    		System.out.println("Player Joined Called");
+    		player.setNoGravity(false);
+    		if(player.hasNoGravity()== true){
+    			player.sendMessage(new TextComponentString("\u00A7a" + "Player is floating already"));
+    		}
     	}
     }
         

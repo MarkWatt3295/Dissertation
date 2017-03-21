@@ -17,6 +17,7 @@ item.chip.basic.name=Basic Chip
 item.chip.advanced.name=Advanced Chip
 item.custom fuel.name=Long lasting Fuel
 item.player_level.name=Player Level Selector
+item.maths_book.name=Maths Book
 
 //MATHS ITEMS
 item.first_book.name=Maw79 Mod Book
@@ -169,6 +170,7 @@ gui.block_breaker.enchanted_book.tooltip=Enchanted book goes here
 //TOOL TIPS
 maw79.heart.tooltip=Heals the player
 maw79.book.tooltip=A MOD Guide
+maw79.mathsbook.tooltip=A Book to Explain Maths World
 maw79.x_axis_tool.tooltip=A Tool To Help Navigate The X Axis
 maw79.y_axis_tool.tooltip=A Tool To Help Navigate The Y Axis
 maw79.z_axis_tool.tooltip=A Tool To Help Navigate The Z Axis
@@ -190,3 +192,13 @@ block.steel_fence_gate.close=Steel Fence Gate Closed
 block.steel_button.click_on=Steel Button Clicked
 block.steel_button.click_off=Steel Button Released
 block.maw.maw_sound=Maw Sound
+
+
+//GUI Config
+gui.config.main_title=Maw79 KS2 Mod Configuration
+gui.config.category.blocks=Block Breaker Blocks
+gui.config.category.blocks.tooltip=Block-Breaker block settings
+gui.config.blocks.machine_cooldown_basic.name=Basic Machine Cooldown
+gui.config.blocks.machine_cooldown_basic.comment=The cooldown for the basic tier of machine
+gui.config.blocks.machine_cooldown_advanced.name=Advanced Machine Cooldown
+gui.config.blocks.machine_cooldown_advanced.comment=The cooldown for the advanced tier of machine

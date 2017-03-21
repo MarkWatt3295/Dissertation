@@ -2,6 +2,7 @@ package com.maw79.mods.client.gui;
 
 import java.io.IOException;
 import com.maw79.mods.handlers.ModSoundHandler;
+import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
@@ -89,30 +90,21 @@ public class GuiPlayerLevel extends GuiScreen {
 
     public void updateButtons() {
     	
-      //  if (answer == randanswer)  {
+      
             onEvent();
          
-       // } else {
-           
-      //  }
+      
     }
 
 
     public  void updateTextBoxes() {
-        //if (!textBox.getText().isEmpty()) {
-          //  if (!textBox.isFocused()) {
-          //  	number = textBox.getText();
-          //	  try {
-           //   answer=Integer.parseInt(number);
-          	//  } catch (NumberFormatException e) {
-            //  System.out.println(answer);
-          	//  }
-          //  }
-     //   }
+       
+          
        updateButtons();
     }
    
    public boolean blockreturn = false;
+   
  
     @Override
     protected void actionPerformed(GuiButton button) throws IOException {
@@ -120,14 +112,14 @@ public class GuiPlayerLevel extends GuiScreen {
     	updateTextBoxes();
         switch (button.id) {
             case BUTTON1:
-       
-            
+       Maw79Mod.playerlevel = 2;
+           
             	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
             	mc.displayGuiScreen((GuiScreen)null);
             	break;
             	
             case BUTTON2:
-            	
+            	System.out.println(Maw79Mod.playerlevel);
             	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
             	mc.displayGuiScreen((GuiScreen)null);
             	break;

@@ -17,7 +17,7 @@ import com.maw79.mods.util.Utilities;
 
 
 /**
- * @author jabelar
+ * @author Mark Watt
  *
  */
 public class GuiFirstBook extends GuiScreen

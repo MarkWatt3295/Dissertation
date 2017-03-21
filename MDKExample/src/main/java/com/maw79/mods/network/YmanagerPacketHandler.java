@@ -32,11 +32,8 @@ World world = DimensionManager.getWorld(message.dimension);
 
  player.connection.setPlayerLocation(player.posX, player.posY + xyzresponse, player.posZ, player.rotationYaw, player.rotationPitch);
  System.out.println(xyzresponse + " Added to player Y");
- player.connection.playerEntity.setNoGravity(true);
  player.sendMessage(new TextComponentString(xyzresponse + " Added to player Y"));
- player.playSound(ModSoundHandler.MAWSOUND_FLYBY, 1.0f, 1.0f);
-	
-//}
+
 
  
  }

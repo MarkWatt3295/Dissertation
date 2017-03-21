@@ -1,38 +1,18 @@
 package com.maw79.mods.tileentity;
+
+
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.Map;
+import java.util.Random;
 
 import com.maw79.mods.blocks.BlockBreaker;
+import com.maw79.mods.config.Maw79Config;
 import com.maw79.mods.handlers.EnumHandler.ChipTypes;
 import com.maw79.mods.init.ModBlocks;
 import com.maw79.mods.util.Utils;
 import com.mojang.authlib.GameProfile;
-
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockDynamicLiquid;
-import net.minecraft.block.BlockStaticLiquid;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Enchantments;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.NetworkManager;
-import net.minecraft.network.play.server.SPacketUpdateTileEntity;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.ITickable;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.math.BlockPos;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.ICapabilityProvider;
-import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.items.ItemStackHandler;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDynamicLiquid;
@@ -92,14 +72,8 @@ public class TileEntityBlockBreaker extends TileEntity implements ITickable, ICa
 	@Override
 	public void readFromNBT(NBTTagCompound nbt) {
 		this.cooldown = nbt.getInteger("Cooldown");
-		this.handler.deserializeNBT(nbt.getCompoundTag("ItemStackHandler")); // Gets
-																				// the
-																				// ItemStackHandler
-																				// from
-																				// tag
-																				// within
-																				// a
-																				// tag
+		this.handler.deserializeNBT(nbt.getCompoundTag("ItemStackHandler")); 
+		// Gets the ItemStackHandler from tag within a tag
 
 		super.readFromNBT(nbt);
 	}
@@ -110,13 +84,7 @@ public class TileEntityBlockBreaker extends TileEntity implements ITickable, ICa
 	@Override
 	public NBTTagCompound writeToNBT(NBTTagCompound nbt) {
 		nbt.setInteger("Cooldown", this.cooldown);
-		nbt.setTag("ItemStackHandler", this.handler.serializeNBT()); // We write
-																		// our
-																		// ItemStackHandler
-																		// as a
-																		// tag
-																		// in a
-																		// tag
+		nbt.setTag("ItemStackHandler", this.handler.serializeNBT()); // We write our ItemStackHandler as a tag in a tag
 
 		return super.writeToNBT(nbt);
 	}
@@ -154,9 +122,9 @@ public class TileEntityBlockBreaker extends TileEntity implements ITickable, ICa
 	public void updateCooldownCap() {
 		int cap = this.cooldownCap;
 		if (this.world.getBlockState(pos).getValue(BlockBreaker.TYPE) == ChipTypes.BASIC)
-			cap = 100;
+			cap = Maw79Config.machineCooldownBasic;
 		else
-			cap = 50;
+			cap = Maw79Config.machineCooldownAdvanced;
 		if (this.handler.getStackInSlot(9).getItem() == Items.ENCHANTED_BOOK) {
 			Map<Enchantment, Integer> enchantments = EnchantmentHelper.getEnchantments(this.handler.getStackInSlot(9));
 			if (enchantments.containsKey(Enchantments.EFFICIENCY)) {

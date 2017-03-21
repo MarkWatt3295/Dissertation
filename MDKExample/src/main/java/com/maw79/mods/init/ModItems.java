@@ -7,6 +7,7 @@ import com.maw79.mods.items.ItemChip;
 import com.maw79.mods.items.ItemGameSwitcher;
 import com.maw79.mods.items.ItemHeart;
 import com.maw79.mods.items.ItemLightningSpawner;
+import com.maw79.mods.items.ItemMathsBook;
 import com.maw79.mods.items.ItemModFood;
 import com.maw79.mods.items.ItemMw;
 import com.maw79.mods.items.ItemObsidianSword;
@@ -39,6 +40,7 @@ import net.minecraft.item.ItemSword;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -70,6 +72,7 @@ public class ModItems {
 	public static Item applepicturewallborder;
 	public static Item applewallaxis;
 	public static Item playerlevel;
+	public static Item mathsbook;
 	
 	
 	//Tool Materials
@@ -91,6 +94,7 @@ public class ModItems {
 		applepicturewall = new ItemAppleWall("apple_wall");
 		applewallaxis = new ItemAppleWallAxis("apple_wall_axis");
 		playerlevel = new ItemPlayerLevel("player_level");
+		mathsbook = new ItemMathsBook("maths_book");
 		
 		//Food
 		tomato = new ItemTomato();
@@ -104,6 +108,7 @@ public class ModItems {
 		yaxistool = new ItemYAxisTool("y_axis_tool");
 		zaxistool = new ItemZAxisTool("z_axis_tool");
 		xyzdevice = new ItemXyzDevice("xyz_device");
+		
 		
 		tutorialItem = new ItemTutorial("tutorial_item");
 		
@@ -149,6 +154,7 @@ public class ModItems {
 		registerItem(applepicturewall);
 		registerItem(xyzdevice);
 		registerItem(applewallaxis);
+		registerItem(mathsbook);
 		
 		//Debug Items
 		registerItem(reversepaintbrush);
@@ -182,6 +188,7 @@ public class ModItems {
 		registerRender(applewallaxis);
 		registerRender(playerlevel);
 		registerRender(xyzdevice);
+		registerRender(mathsbook);
 		
 		//Food
 		registerRender(tomato);
@@ -218,7 +225,7 @@ public class ModItems {
 	}
 	
 	
-	
+	/*
 	private static void registerRender(Item item){
 		
 Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
@@ -232,7 +239,25 @@ Utils.getLogger().info("Registered render for " + item.getUnlocalizedName().subs
 Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, meta, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, fileName), "inventory"));
 		//ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, fileName), "inventory"));
 Utils.getLogger().info("Registered render for MULTIITEMS " + item.getUnlocalizedName().substring(5));
+	}*/
+	
+	/**
+	 * Registers the item render MUST BE CALLED IN THE PRE INIT METHOD IN YOUR MAIN CLASS
+	 * @param item The item
+	 */
+	public static void registerRender(Item item) {
+		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, item.getUnlocalizedName().substring(5)), "inventory"));
+		Utils.getLogger().info("Registered render for " + item.getUnlocalizedName().substring(5));
 	}
 	
-	
+	/**
+	 * Registers the item render for an item which has meta data
+	 * @param item The item
+	 * @param meta The meta data
+	 * @param fileName The file name
+	 */
+	public static void registerRender(Item item, int meta, String fileName) {
+		ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, fileName), "inventory"));
+		Utils.getLogger().info("Registered render for " + item.getUnlocalizedName().substring(5));
+	}
 }

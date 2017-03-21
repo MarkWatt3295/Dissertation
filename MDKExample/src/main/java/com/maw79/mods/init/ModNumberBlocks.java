@@ -11,6 +11,7 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 
@@ -142,11 +143,21 @@ public class ModNumberBlocks {
 	
 	
 	
-	
+	/*
 	public static void registerRender(Block block){
 Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
 Utils.getLogger().info("Registered render for " + block.getUnlocalizedName().substring(5));
+	}*/
+	
+	/**
+	 * Registers the blocks renders
+	 * @param block The block
+	 */
+	public static void registerRender(Block block) {
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, block.getUnlocalizedName().substring(5)), "inventory"));
+		Utils.getLogger().info("Registered render for " + block.getUnlocalizedName().substring(5));
 	}
+	
 	
 
 	
