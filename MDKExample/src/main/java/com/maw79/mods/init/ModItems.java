@@ -4,13 +4,12 @@ import com.maw79.mods.handlers.EnumHandler;
 import com.maw79.mods.items.ItemBookOne;
 import com.maw79.mods.items.ItemBurntLoaf;
 import com.maw79.mods.items.ItemChip;
+import com.maw79.mods.items.ItemCustomFuel;
 import com.maw79.mods.items.ItemGameSwitcher;
 import com.maw79.mods.items.ItemHeart;
 import com.maw79.mods.items.ItemLightningSpawner;
 import com.maw79.mods.items.ItemMathsBook;
-import com.maw79.mods.items.ItemModFood;
 import com.maw79.mods.items.ItemMw;
-import com.maw79.mods.items.ItemObsidianSword;
 import com.maw79.mods.items.ItemObsidianingot;
 import com.maw79.mods.items.ItemReversePaintBrush;
 import com.maw79.mods.items.ItemRuby;
@@ -32,13 +31,10 @@ import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.util.Utils;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemSword;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
@@ -84,10 +80,10 @@ public class ModItems {
 
 	public static void init(){
 		//Items
-		obsidianingot = new ItemObsidianingot();
+		obsidianingot = new ItemObsidianingot("itemobsidianingot");
 		steelingot = new ItemSteelIngot("steelingot");
-		ruby = new ItemRuby();
-		mw = new ItemMw();
+		ruby = new ItemRuby("itemruby");
+		mw = new ItemMw("itemmw");
 		heart = new ItemHeart("heart");
 		bolt = new ItemLightningSpawner("bolt");
 		chip = new ItemChip("chip");
@@ -97,12 +93,12 @@ public class ModItems {
 		mathsbook = new ItemMathsBook("maths_book");
 		
 		//Food
-		tomato = new ItemTomato();
+		tomato = new ItemTomato("itemtomato");
 		burntloaf = new ItemBurntLoaf("burntloaf");
-		mouldyapple = new ItemModFood("mouldyapple", 4, 4, false, new PotionEffect(Potion.getPotionById(3),10,2));
+		
 		//Tools
-		obsidian_sword= new ItemObsidianSword(obsidianMaterial);
-		customfuel = new Item().setUnlocalizedName("custom fuel").setRegistryName(new ResourceLocation(Reference.MOD_ID, "customfuel"));
+		//obsidian_sword= new ItemObsidianSword(obsidianMaterial);
+		customfuel = new ItemCustomFuel("customfuel");
 		firstbook = new ItemBookOne("first_book");
 		xaxistool = new ItemXAxisTool("x_axis_tool");
 		yaxistool = new ItemYAxisTool("y_axis_tool");
@@ -139,10 +135,10 @@ public class ModItems {
 		registerItem(playerlevel);
 		//Food
 		registerItem(tomato);
-		registerItem(mouldyapple);
+		//registerItem(mouldyapple);
 		registerItem(burntloaf);
 		//Tools
-		registerItem(obsidian_sword);
+		//registerItem(obsidian_sword);
 		registerItem(tutorialItem);
 		
 		//MATHS ITEMS
@@ -162,9 +158,6 @@ public class ModItems {
 		registerItem(completeapplepicturewall);
 		registerItem(applepicturewallwool);
 		registerItem(applepicturewallborder);
-		
-		
-		
 		
 	}
 	
@@ -192,10 +185,10 @@ public class ModItems {
 		
 		//Food
 		registerRender(tomato);
-		registerRender(mouldyapple);
+		//registerRender(mouldyapple);
 		registerRender(burntloaf);
 		//Tools
-		registerRender(obsidian_sword);
+		//registerRender(obsidian_sword);
 		
 		//Debug Items
 		registerRender(reversepaintbrush);

@@ -5,14 +5,15 @@ import com.maw79.mods.main.Reference;
 
 import net.minecraft.item.ItemSword;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.util.ResourceLocation;
 
 	public class ItemObsidianSword extends ItemSword {
 		
-		public ItemObsidianSword(ToolMaterial material) {
+		public ItemObsidianSword(String unlocalizedName, ToolMaterial material) {
 			super(material);
-		
-			setUnlocalizedName(Reference.MawItems.OBSIDIANSWORD.getUnlocalizedName());
-			setRegistryName(Reference.MawItems.OBSIDIANSWORD.getRegistryName());
+				this.setUnlocalizedName(unlocalizedName);
+				this.setRegistryName(new ResourceLocation(Reference.MOD_ID, unlocalizedName));
+			
 		
 		}
 

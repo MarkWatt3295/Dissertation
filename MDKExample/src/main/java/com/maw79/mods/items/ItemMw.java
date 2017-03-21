@@ -11,15 +11,15 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class ItemMw extends Item {
 
-	public ItemMw() {
-		setUnlocalizedName(Reference.MawItems.MW.getUnlocalizedName());
-		setRegistryName(Reference.MawItems.MW.getRegistryName());
-		
+	public ItemMw(String unlocalizedName) {
+		this.setUnlocalizedName(unlocalizedName);
+		this.setRegistryName(new ResourceLocation(Reference.MOD_ID, unlocalizedName));
 	}
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer entity, EnumHand hand) {

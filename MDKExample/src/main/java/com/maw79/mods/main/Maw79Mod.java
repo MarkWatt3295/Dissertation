@@ -1,6 +1,5 @@
 package com.maw79.mods.main;
 
-import com.maw79.mods.client.gui.Overlay;
 import com.maw79.mods.client.gui.RenderGuiHandler;
 import com.maw79.mods.commands.FlamingPigs;
 import com.maw79.mods.config.Maw79Config;
@@ -9,6 +8,7 @@ import com.maw79.mods.creativetabs.Maw79DebugTab;
 import com.maw79.mods.creativetabs.Maw79ItemsTab;
 import com.maw79.mods.creativetabs.Maw79MathsBlocksTab;
 import com.maw79.mods.creativetabs.Maw79ScratchBlocksTab;
+import com.maw79.mods.entity.passive.mcreator_human;
 import com.maw79.mods.events.SoulStealerEvents;
 import com.maw79.mods.handlers.AchievementHandler;
 import com.maw79.mods.handlers.DropHandler;
@@ -23,7 +23,6 @@ import com.maw79.mods.init.ModCrafting;
 import com.maw79.mods.init.ModItems;
 import com.maw79.mods.init.ModNumberBlocks;
 import com.maw79.mods.init.ModTools;
-import com.maw79.mods.items.mathsitems.mcreator_paintGun;
 import com.maw79.mods.network.MathsMessage;
 import com.maw79.mods.network.NXmanagerMessage;
 import com.maw79.mods.network.NXmanagerPacketHandler;
@@ -82,7 +81,8 @@ public class Maw79Mod {
 	
 	@Instance(Reference.MOD_ID)
 	public static Maw79Mod instance;
-	mcreator_paintGun mcreator_0 = new mcreator_paintGun();
+	//mcreator_paintGun mcreator_0 = new mcreator_paintGun();
+	mcreator_human mcreator_1 = new mcreator_human();
 	
 	
 	/**
@@ -123,8 +123,10 @@ public class Maw79Mod {
 		Maw79Config.preInit();
 		proxy.registerRenders();
 		proxy.registerTileEntities();
-		mcreator_0.instance = this.instance;
-		mcreator_0.preInit(event);
+		//mcreator_0.instance = this.instance;
+		//mcreator_0.preInit(event);
+		mcreator_1.instance = this.instance;
+		mcreator_1.preInit(event);
 		//ModEntities.registerEntities();
 		
 		 networkWrapper = NetworkRegistry.INSTANCE.newSimpleChannel("maw79");/* I recommend you to use your mod id, the channel name should be unique */

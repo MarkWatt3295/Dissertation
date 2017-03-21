@@ -126,8 +126,8 @@ public class ModBlocks {
 	
 
 	public static void init(){
-		rubyblock = new BlockRuby();
-		obsidianingotblock = new BlockObsidianIngot();
+		rubyblock = new BlockRuby("ruby_block");
+		obsidianingotblock = new BlockObsidianIngot("obsidian_ingot_block");
 		steelOre = new BlockSteelOre("steel_ore", "steel_ore");
 		steelBlock = new BlockSteel("steel_block");
 		breaker = new BlockBreaker("block_breaker");

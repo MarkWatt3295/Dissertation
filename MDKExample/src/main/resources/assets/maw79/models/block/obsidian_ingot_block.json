@@ -1,6 +1,6 @@
  { 
     "parent": "block/cube_all",
         "textures": {
-            "all": "maw79:blocks/obsidianingotblock"
+            "all": "maw79:blocks/obsidian_ingot_block"
       }
    }

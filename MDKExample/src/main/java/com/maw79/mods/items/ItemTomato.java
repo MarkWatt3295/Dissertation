@@ -1,17 +1,17 @@
 package com.maw79.mods.items;
 
-import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
 
 import net.minecraft.item.ItemFood;
+import net.minecraft.util.ResourceLocation;
 
 public class ItemTomato extends ItemFood {
 
-	public ItemTomato() {
+	public ItemTomato(String unlocalizedName) {
 		super(4, 0.8F, true);
-		setUnlocalizedName(Reference.MawItems.TOMATO.getUnlocalizedName());
-		setRegistryName(Reference.MawItems.TOMATO.getRegistryName());
-		
+		this.setUnlocalizedName(unlocalizedName);
+		this.setRegistryName(new ResourceLocation(Reference.MOD_ID, unlocalizedName));
+			
 	
 	}
 

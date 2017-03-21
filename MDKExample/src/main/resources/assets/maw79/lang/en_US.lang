@@ -49,8 +49,8 @@ item.burntloaf.name=Burnt Loaf
 
 
 //Blocks
-tile.rubyblock.name=Ruby Block
-tile.obsidianingotblock.name= Obsidian Ingot Block
+tile.ruby_block.name=Ruby Block
+tile.obsidian_ingot_block.name= Obsidian Ingot Block
 tile.steel_ore.name=Steel Ore
 tile.steel_ore.overworld.name=Steel Ore
 tile.steel_ore.end.name=End Steel Ore
