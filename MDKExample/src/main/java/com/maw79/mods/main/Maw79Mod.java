@@ -1,6 +1,7 @@
 package com.maw79.mods.main;
 
 import com.maw79.mods.client.gui.Overlay;
+import com.maw79.mods.client.gui.RenderGuiHandler;
 import com.maw79.mods.commands.FlamingPigs;
 import com.maw79.mods.config.Maw79Config;
 import com.maw79.mods.creativetabs.Maw79BlocksTab;
@@ -168,7 +169,9 @@ public class Maw79Mod {
 	public void postInit(FMLPostInitializationEvent event)
 	{
 		 MinecraftForge.EVENT_BUS.register(new ModEventHandler());
-		MinecraftForge.EVENT_BUS.register(new Overlay());
+		//MinecraftForge.EVENT_BUS.register(new Overlay());
+		MinecraftForge.EVENT_BUS.register(new RenderGuiHandler());
+
 		
 		
 	}

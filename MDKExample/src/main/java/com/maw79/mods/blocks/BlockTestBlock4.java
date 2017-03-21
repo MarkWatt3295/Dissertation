@@ -47,16 +47,7 @@ public class BlockTestBlock4 extends Block {
 		
 		worldIn.playSound(player, pos, ModSoundHandler.MAWSOUND_OPEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
        
-	//	player.sendMessage(new TextComponentString(Utilities.stringToRainbow("Test Block 2 Activated", true)));
-		//player.inventory.addItemStackToInventory(new ItemStack(ModItems.mw));
-		//player.setGameType(GameType.CREATIVE);
-		//player.setNoGravity(false);
-		//player.chasingPosZ= 40;
-		//player.eyeHeight=10; Sets eye position
-		//player.noClip = true; Nope
-		//player.motionY = 1; 
-		//player.motionX = -1; 
-		//player.posZ += 80; NS
+	
 		 if(!player.world.isRemote) player.sendMessage(new TextComponentString(Utilities.stringToRainbow("TestBlock 4 pressed", true)));
 	
 		
