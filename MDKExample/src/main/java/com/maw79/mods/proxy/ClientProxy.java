@@ -2,8 +2,8 @@ package com.maw79.mods.proxy;
 
 import com.maw79.mods.client.gui.GuiHandler;
 import com.maw79.mods.config.Maw79Config;
+import com.maw79.mods.entity.hostile.EntityUselessDave;
 import com.maw79.mods.entity.passive.EntitiesLivingHandler;
-import com.maw79.mods.entity.passive.EntityUselessDave;
 import com.maw79.mods.init.ModArmour;
 import com.maw79.mods.init.ModBlocks;
 import com.maw79.mods.init.ModItems;

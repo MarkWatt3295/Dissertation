@@ -144,6 +144,9 @@ achievement.obsidianman=Obsidian Man
 achievement.obsidianman.desc=Create and wear a full set of Obsidian
 achievement.painter=Painter
 achievement.painter.desc=Paint your first block with a brush
+achievement.niceto=Nice To Meet You
+achievement.niceto.desc=Met a new Mob
+
 
 //Tools
 item.obsidian_sword.name=Obsidian Sword

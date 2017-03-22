@@ -11,6 +11,7 @@ import com.maw79.mods.items.ItemPaintBrush;
 import com.maw79.mods.main.Reference;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
@@ -30,10 +31,11 @@ public class AchievementHandler {
 	 * List all Achievements to be added to the game
 	 */
 	public static Achievement achievementNewIngot = createAchievement("newingot", 0, 0, ModItems.obsidianingot); //Image for Achievment Icon
-	public static Achievement achievementNewSword = createAchievement2("newsword", 0, 0, ModItems.obsidian_sword);
-	public static Achievement achievementTest = createAchievement3("test", 0, 0, ModItems.mouldyapple);
+	public static Achievement achievementNewSword = createAchievement2("newsword", 0, 0, ModItems.steelingot);
+	public static Achievement achievementTest = createAchievement3("test", 0, 0, ModItems.burntloaf);
 	public static Achievement achievementObsidianMan = createAchievement4("obsidianman", 4, 4, ModBlocks.obsidianingotblock); //Image for Achievment Icon
 	public static Achievement achievementPainter = createAchievement("painter", 2, 2, ModItems.reversepaintbrush);
+	public static Achievement achievementNiceTo = createAchievement("niceto", 2, 4, Blocks.SOUL_SAND);
 
 	/**
 	 * Registers the achievements
@@ -112,5 +114,11 @@ public class AchievementHandler {
 				Achievement acheivement5 = new Achievement("achievement5." + name, name, column+=2, row+=1, reversepaintbtrush, (Achievement)null); //The null is for the parent this is if one achievement requires another to unlock it
 				achievements.add(acheivement5);
 				return acheivement5;
+			}
+			
+			private static Achievement createAchievement6(String name, int column, int row, Block soulsand) {
+				Achievement acheivement6 = new Achievement("achievement6." + name, name, column+=3, row+=2, soulsand, (Achievement)null); //The null is for the parent this is if one achievement requires another to unlock it
+				achievements.add(acheivement6);
+				return acheivement6;
 			}
 }

@@ -1,6 +1,6 @@
 package com.maw79.mods.render;
 
-import com.maw79.mods.entity.passive.ModelUselessDave;
+import com.maw79.mods.entity.models.ModelUselessDave;
 
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.entity.Render;

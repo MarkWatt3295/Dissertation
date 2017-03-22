@@ -1,5 +1,7 @@
 package com.maw79.mods.entity.passive;
 
+import com.maw79.mods.handlers.AchievementHandler;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -108,6 +110,9 @@ public  class Entityhuman extends EntityCreature {
 		if (true) {
 			System.out.println("Printing from human mob");
 		}
+		if(!entity.hasAchievement(AchievementHandler.achievementNiceTo)){
+         	entity.addStat(AchievementHandler.achievementNiceTo);
+         }
 
 		return true;
 	}

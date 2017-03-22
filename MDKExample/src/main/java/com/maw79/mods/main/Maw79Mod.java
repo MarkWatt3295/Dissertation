@@ -1,5 +1,7 @@
 package com.maw79.mods.main;
 
+import java.io.File;
+
 import com.maw79.mods.client.gui.RenderGuiHandler;
 import com.maw79.mods.commands.FlamingPigs;
 import com.maw79.mods.config.Maw79Config;
@@ -44,6 +46,7 @@ import com.maw79.mods.worldgen.OreGen;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -76,6 +79,7 @@ public class Maw79Mod {
 	public static int GUIID = 4;
 	
 	public static int playerlevel = 1;
+	public static Configuration config;
 
 	
 	
@@ -99,6 +103,7 @@ public class Maw79Mod {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
+		
 		//Initialise Items
 		ModItems.init();
 		ModItems.register();
@@ -165,6 +170,7 @@ public class Maw79Mod {
 		GameRegistry.registerFuelHandler(new FuelHandler());
 		ModSoundHandler.init();
 		//ModEntities.addSpawns();
+		
 	}
 
 	@EventHandler
@@ -173,6 +179,7 @@ public class Maw79Mod {
 		 MinecraftForge.EVENT_BUS.register(new ModEventHandler());
 		//MinecraftForge.EVENT_BUS.register(new Overlay());
 		MinecraftForge.EVENT_BUS.register(new RenderGuiHandler());
+		
 
 		
 		
