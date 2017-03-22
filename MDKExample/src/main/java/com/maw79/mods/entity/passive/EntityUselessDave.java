@@ -42,6 +42,8 @@ public class EntityUselessDave extends EntityMob {
 		this.tasks.addTask(8, new EntityAIWander(this, 1.0D));
         this.tasks.addTask(7, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         this.tasks.addTask(9, new EntityAILookIdle(this));
+    	setCustomNameTag("Dave");
+		setAlwaysRenderNameTag(true);
 
         
         this.applyEntityAI();

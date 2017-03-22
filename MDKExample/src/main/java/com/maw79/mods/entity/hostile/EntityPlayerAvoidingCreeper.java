@@ -6,7 +6,7 @@ import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
-/*
+
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -16,11 +16,8 @@ import com.maw79.mods.init.ModItems;
 
 /**
  * A creeper that avoids players holding an item in their off hand.
- * <p>
- * Test for this thread:
- * http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/modification-development/2782263-how-to-make-a-creeper-avoid-certain-players
- *
- * @author Choonster
+ */
+
  
 public class EntityPlayerAvoidingCreeper extends EntityCreeper {
 	public EntityPlayerAvoidingCreeper(World worldIn) {
@@ -49,6 +46,7 @@ public class EntityPlayerAvoidingCreeper extends EntityCreeper {
 	 *
 	 * @param player The player
 	 * @return True if the player has an item in their off hand
+	 */
 	 
 	private boolean shouldAvoidPlayer(@Nullable EntityPlayer player) {
 		return player != null && !player.getHeldItemOffhand().equals(ModItems.ruby);
@@ -57,6 +55,7 @@ public class EntityPlayerAvoidingCreeper extends EntityCreeper {
 	
 	/**
      * Called when a player interacts with a mob. e.g. gets milk from a cow, gets into the saddle on a pig.
+     */
      
     public boolean interact(EntityPlayer parPlayer)
     {
@@ -82,6 +81,6 @@ public class EntityPlayerAvoidingCreeper extends EntityCreeper {
     
     /**
      * Returns true if the mob is currently able to mate with the specified mob.
-     
+     */
 }
-} */
+} 

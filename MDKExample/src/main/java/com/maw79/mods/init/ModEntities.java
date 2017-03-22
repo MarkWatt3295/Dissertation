@@ -1,83 +1,91 @@
 package com.maw79.mods.init;
 
-import com.maw79.mods.main.Reference;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.model.ModelBiped;
-import net.minecraft.client.renderer.entity.RenderBiped;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.world.biome.Biome;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
-import net.minecraftforge.fml.common.registry.EntityRegistry;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-
-/*
- * /import com.maw79.mods.entity.hostile.EntityPlayerAvoidingCreeper;
-import com.maw79.mods.entity.passive.EntityCustomVillager;
+import com.maw79.mods.entity.hostile.EntityPlayerAvoidingCreeper;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
-import com.maw79.mods.util.Utils;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.monster.EntityGuardian;
-import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
-import net.minecraftforge.fml.common.registry.ForgeRegistries; */
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
-//public class ModEntities {
-	//public static int mobid = 0;
-	//public static  Object instance;
-	
-	/*public static void registerEntities() {
+public class ModEntities {
+	public static void registerEntities() {
 		
-		
-
-		
-		int entityID = MathHelper.getRandomUUID().hashCode();
-		mobid = entityID;
-		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, "chris"), Entitychris.class, "chris", entityID,
-				instance, 64, 1, true, (255 << 16) + (255 << 8) + 255, (255 << 16) + (255 << 8) + 255);
-		//EntityRegistry.addSpawn(Entitychris.class, 34, 10, 30, EnumCreatureType.AMBIENT);
-		
-		//registerEntity(EntityPlayerAvoidingCreeper.class, "player_avoiding_creeper", 80, 3, true, 0x0DA70B, 0x101010);
-		//registerEntity(EntityCustomVillager.class, "custom_villager", 80, 3, true, 0x0DA50B, 0x202020);
-		
+		registerEntity(EntityPlayerAvoidingCreeper.class, "player_avoiding_creeper", 80, 3, true, 0x0DA70B, 0x101010);
 	}
 
 	public static void addSpawns() {
-	//	EntityRegistry.addSpawn(Entitychris.class, 34, 10, 30, EnumCreatureType.AMBIENT);
-		//copySpawns(EntityPlayerAvoidingCreeper.class, EnumCreatureType.MONSTER, EntityCreeper.class, EnumCreatureType.MONSTER);
-		//copySpawns2(EntityCustomVillager.class, EnumCreatureType.AMBIENT, EntityVillager.class, EnumCreatureType.AMBIENT);
+		EntityRegistry.addSpawn(EntityGuardian.class, 100, 5, 20, EnumCreatureType.WATER_CREATURE, getBiomes(BiomeDictionary.Type.OCEAN));
+		copySpawns(EntityPlayerAvoidingCreeper.class, EnumCreatureType.MONSTER, EntityCreeper.class, EnumCreatureType.MONSTER);
 	}
-	
-	@SideOnly(Side.CLIENT)
-	public void registerRenderers() {
-		RenderBiped customRender = new RenderBiped(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 0) {
-			protected ResourceLocation getEntityTexture(Entity par1Entity) {
-				return new ResourceLocation("sparky3295.png");
-			}
-		};
-		customRender.addLayer(new net.minecraft.client.renderer.entity.layers.LayerHeldItem(customRender));
-		customRender.addLayer(new net.minecraft.client.renderer.entity.layers.LayerBipedArmor(customRender) {
-			protected void initArmor() {
-				this.modelLeggings = new ModelBiped();
-				this.modelArmor = new ModelBiped();
-			}
-		});
-		RenderingRegistry.registerEntityRenderingHandler(Entitychris.class, customRender);
 
+	/**
+	 * Get an array of {@link Biome}s with the specified {@link BiomeDictionary.Type}.
+	 *
+	 * @param type The Type
+	 * @return An array of Biomes
+	 */
+	private static Biome[] getBiomes(BiomeDictionary.Type type) {
+		return BiomeDictionary.getBiomes(type).stream().toArray(Biome[]::new);
 	}
-	
+
+
+	/**
+	 * Add a spawn list entry for {@code classToAdd} in each {@link Biome} with an entry for {@code classToCopy} using the same weight and group count.
+	 *
+	 * @param classToAdd         The class to add spawn entries for
+	 * @param creatureTypeToAdd  The EnumCreatureType to add spawn entries for
+	 * @param classToCopy        The class to copy spawn entries from
+	 * @param creatureTypeToCopy The EnumCreatureType to copy spawn entries from
+	 */
+	private static void copySpawns(Class<? extends EntityLiving> classToAdd, EnumCreatureType creatureTypeToAdd, Class<? extends EntityLiving> classToCopy, EnumCreatureType creatureTypeToCopy) {
+		for (final Biome biome : ForgeRegistries.BIOMES) {
+			biome.getSpawnableList(creatureTypeToCopy).stream()
+					.filter(entry -> entry.entityClass == classToCopy)
+					.findFirst()
+					.ifPresent(spawnListEntry ->
+							biome.getSpawnableList(creatureTypeToAdd).add(new Biome.SpawnListEntry(classToAdd, spawnListEntry.itemWeight, spawnListEntry.minGroupCount, spawnListEntry.maxGroupCount))
+					);
+		}
+	}
+
+	private static int entityID = 0;
+
+	/**
+	 * Register an entity with the specified tracking values.
+	 *
+	 * @param entityClass          The entity's class
+	 * @param entityName           The entity's unique name
+	 * @param trackingRange        The range at which MC will send tracking updates
+	 * @param updateFrequency      The frequency of tracking updates
+	 * @param sendsVelocityUpdates Whether to send velocity information packets as well
+	 */
+	private static void registerEntity(Class<? extends Entity> entityClass, String entityName, int trackingRange, int updateFrequency, boolean sendsVelocityUpdates) {
+		final ResourceLocation registryName = new ResourceLocation(Reference.MOD_ID, entityName);
+		EntityRegistry.registerModEntity(registryName, entityClass, registryName.toString(), entityID++, Maw79Mod.instance, trackingRange, updateFrequency, sendsVelocityUpdates);
+	}
+
+	/**
+	 * Register an entity with the specified tracking values and spawn egg colours.
+	 *
+	 * @param entityClass          The entity's class
+	 * @param entityName           The entity's unique name
+	 * @param trackingRange        The range at which MC will send tracking updates
+	 * @param updateFrequency      The frequency of tracking updates
+	 * @param sendsVelocityUpdates Whether to send velocity information packets as well
+	 * @param eggPrimary           The spawn egg's primary (background) colour
+	 * @param eggSecondary         The spawn egg's secondary (foreground) colour
+	 */
+	private static void registerEntity(Class<? extends Entity> entityClass, String entityName, int trackingRange, int updateFrequency, boolean sendsVelocityUpdates, int eggPrimary, int eggSecondary) {
+		final ResourceLocation registryName = new ResourceLocation(Reference.MOD_ID, entityName);
+		EntityRegistry.registerModEntity(registryName, entityClass, registryName.toString(), entityID++, Maw79Mod.instance, trackingRange, updateFrequency, sendsVelocityUpdates, eggPrimary, eggSecondary);
+	}
 }
-*/
-
