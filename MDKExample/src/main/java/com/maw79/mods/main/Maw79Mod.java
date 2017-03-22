@@ -8,6 +8,7 @@ import com.maw79.mods.creativetabs.Maw79DebugTab;
 import com.maw79.mods.creativetabs.Maw79ItemsTab;
 import com.maw79.mods.creativetabs.Maw79MathsBlocksTab;
 import com.maw79.mods.creativetabs.Maw79ScratchBlocksTab;
+import com.maw79.mods.entity.passive.Entityhuman;
 import com.maw79.mods.entity.passive.mcreator_human;
 import com.maw79.mods.events.SoulStealerEvents;
 import com.maw79.mods.handlers.AchievementHandler;
@@ -43,6 +44,8 @@ import com.maw79.mods.proxy.CommonProxy;
 import com.maw79.mods.worldgen.OreGen;
 
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EnumCreatureType;
+import net.minecraft.world.biome.Biome;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -54,6 +57,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 
@@ -82,7 +86,7 @@ public class Maw79Mod {
 	@Instance(Reference.MOD_ID)
 	public static Maw79Mod instance;
 	//mcreator_paintGun mcreator_0 = new mcreator_paintGun();
-	mcreator_human mcreator_1 = new mcreator_human();
+	//mcreator_human mcreator_1 = new mcreator_human();
 	
 	
 	/**
@@ -109,6 +113,7 @@ public class Maw79Mod {
 		ModNumberBlocks.init();
 		ModNumberBlocks.register();
 		
+		
 		//Initialise Achievements
 		AchievementHandler.registerAchievements();
 		
@@ -125,9 +130,10 @@ public class Maw79Mod {
 		proxy.registerTileEntities();
 		//mcreator_0.instance = this.instance;
 		//mcreator_0.preInit(event);
-		mcreator_1.instance = this.instance;
-		mcreator_1.preInit(event);
+		//mcreator_1.instance = this.instance;
+		//mcreator_1.preInit(event);
 		//ModEntities.registerEntities();
+		
 		
 		 networkWrapper = NetworkRegistry.INSTANCE.newSimpleChannel("maw79");/* I recommend you to use your mod id, the channel name should be unique */
 		 networkWrapper2 = NetworkRegistry.INSTANCE.newSimpleChannel("mathsMessage");
@@ -162,6 +168,8 @@ public class Maw79Mod {
 		GameRegistry.registerWorldGenerator(new OreGen(), 0);
 		GameRegistry.registerFuelHandler(new FuelHandler());
 		ModSoundHandler.init();
+		
+
 		
 		
 		//ModEntities.addSpawns();

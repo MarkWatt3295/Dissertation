@@ -1,6 +1,7 @@
 package com.maw79.mods.handlers;
 
 
+import com.maw79.mods.entity.passive.Entityhuman;
 import com.maw79.mods.init.ModBlocks;
 import com.maw79.mods.init.ModItems;
 import com.maw79.mods.main.Reference;
@@ -102,6 +103,7 @@ public class ModEventHandler {
             event.setExpToDrop(10);
             BlockPos pos = event.getPos();
             event.getWorld().spawnEntity(new EntityItem(event.getWorld(), pos.getX(), pos.getY(), pos.getZ(), new ItemStack(Items.DIAMOND)));
+      
         }
     }
     

@@ -2,6 +2,8 @@ package com.maw79.mods.proxy;
 
 import com.maw79.mods.client.gui.GuiHandler;
 import com.maw79.mods.config.Maw79Config;
+import com.maw79.mods.entity.passive.EntitiesLivingHandler;
+import com.maw79.mods.entity.passive.EntityUselessDave;
 import com.maw79.mods.init.ModArmour;
 import com.maw79.mods.init.ModBlocks;
 import com.maw79.mods.init.ModItems;
@@ -9,10 +11,12 @@ import com.maw79.mods.init.ModNumberBlocks;
 import com.maw79.mods.init.ModTools;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
+import com.maw79.mods.util.Utils;
 
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 
 public class ClientProxy extends CommonProxy {
@@ -29,6 +33,7 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void init() {
 		NetworkRegistry.INSTANCE.registerGuiHandler(Maw79Mod.instance, new GuiHandler());
+		EntitiesLivingHandler.registerEntity();
 		
 	}
 	
@@ -40,7 +45,13 @@ public class ClientProxy extends CommonProxy {
 		ModNumberBlocks.registerRenders();
 		ModArmour.registerRenders();
 		ModTools.registerRenders();
+		Utils.getLogger().info("ClientProxy: preInit");
+		EntitiesLivingHandler.registerAllModels();
+		
+		
 	}
+	 
+	 
 
 	
 		@Override

@@ -40,6 +40,7 @@ public class ItemMw extends Item {
 		int ten = 10;
 		Maw79Mod.playerlevel += ten;
 		int pl = Maw79Mod.playerlevel;
+		
 		System.out.println("******************** "+ pl + "***********************");
 		return super.onItemRightClick(world, entity, hand);
 		//world.setBlockState(new BlockPos(i + 0, j + 0, k + 0), Block.getBlockById(4158).getStateFromMeta(0), 3);

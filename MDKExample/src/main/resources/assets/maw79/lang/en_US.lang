@@ -193,6 +193,8 @@ block.steel_button.click_on=Steel Button Clicked
 block.steel_button.click_off=Steel Button Released
 block.maw.maw_sound=Maw Sound
 
+container.basic=Container Inventory
+
 
 //GUI Config
 gui.config.main_title=Maw79 KS2 Mod Configuration
