@@ -2,6 +2,7 @@ package com.maw79.mods.init;
 
 import com.maw79.mods.entity.arrows.EntityBlockDetectionArrow;
 import com.maw79.mods.entity.arrows.EntityModArrow;
+import com.maw79.mods.entity.arrows.EntityPaintArrow;
 import com.maw79.mods.handlers.EnumHandler;
 import com.maw79.mods.items.ItemBookOne;
 import com.maw79.mods.items.ItemBurntLoaf;
@@ -79,10 +80,13 @@ public class ModItems {
 	public static Item mathsbook;
 	public static Item fireelement;
 	
+	//Projectiles
 	public static final Item ARROW = new ItemModArrow("arrow", EntityModArrow::new);
 	public static final ItemModArrow BLOCK_DETECTION_ARROW = new ItemModArrow("block_detection_arrow", EntityBlockDetectionArrow::new);
+	public static final ItemModArrow PAINT_ARROW = new ItemModArrow("paint_arrow", EntityPaintArrow::new);
 	public static final ItemModBow BOW = new ItemModBow("bow");
 	public static ItemSnowballLauncher SNOW = new ItemSnowballLauncher("snow");
+	
 	
 	
 	//Tool Materials
@@ -145,6 +149,8 @@ public class ModItems {
 		registerItem(BOW);
 		registerItem(ARROW);
 		registerItem(BLOCK_DETECTION_ARROW);
+		registerItem(PAINT_ARROW);
+		
 		//Items
 		//GameRegistry.register(obsidianingot);
 		registerItem(obsidianingot);
@@ -211,6 +217,7 @@ public class ModItems {
 		registerRender(ARROW);
 		registerRender(BLOCK_DETECTION_ARROW);
 		registerRender(SNOW);
+		registerRender(PAINT_ARROW);
 		
 		//Food
 		registerRender(tomato);
@@ -250,21 +257,6 @@ public class ModItems {
 	}
 	
 	
-	/*
-	private static void registerRender(Item item){
-		
-Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
-		//ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, item.getUnlocalizedName().substring(5)), "inventory"));
-Utils.getLogger().info("Registered render for " + item.getUnlocalizedName().substring(5));
-	}
-	
-
-	private static void registerRender(Item item, int meta, String fileName){
-		
-Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, meta, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, fileName), "inventory"));
-		//ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, fileName), "inventory"));
-Utils.getLogger().info("Registered render for MULTIITEMS " + item.getUnlocalizedName().substring(5));
-	}*/
 	
 	/**
 	 * Registers the item render MUST BE CALLED IN THE PRE INIT METHOD IN YOUR MAIN CLASS

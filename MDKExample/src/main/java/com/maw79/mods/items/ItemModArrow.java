@@ -25,6 +25,7 @@ public class ItemModArrow extends ItemArrow {
 		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(Reference.MOD_ID, unlocalizedName));
 		this.entityFactory = entityFactory;
+		this.setMaxDamage(1);
 	}
 
 	@Override
@@ -36,6 +37,7 @@ public class ItemModArrow extends ItemArrow {
 
 	@Override
 	public boolean isInfinite(ItemStack stack, ItemStack bow, EntityPlayer player) {
-		return true;
+		//return true;
+		return false;
 	}
 }

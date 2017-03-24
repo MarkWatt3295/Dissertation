@@ -14,10 +14,6 @@ import net.minecraft.world.World;
 /**
  * An arrow entity that tells its shooter which block it hit.
  * <p>
- * Test for this thread:
- * http://www.minecraftforge.net/forum/index.php?topic=42677.0
- *
- * @author Choonster
  */
 public class EntityBlockDetectionArrow extends EntityModArrow {
 	public EntityBlockDetectionArrow(World worldIn) {
@@ -44,10 +40,11 @@ public class EntityBlockDetectionArrow extends EntityModArrow {
 		if (raytraceResultIn.typeOfHit == RayTraceResult.Type.BLOCK && shootingEntity != null) {
 			final BlockPos pos = raytraceResultIn.getBlockPos();
 			final IBlockState state = world.getBlockState(pos).getActualState(world, pos);
-			
+			//PAINTING
 			if (world.getBlockState(pos).getBlock() == ModBlocks.mathtextblockblue) {
 	            world.setBlockState(pos, ModBlocks.mathblockblue.getDefaultState());
-	            shootingEntity.sendMessage(new TextComponentTranslation("Hit Block"));
+	            
+	            //shootingEntity.sendMessage(new TextComponentTranslation("Hit Block"));
 			}
 			shootingEntity.sendMessage(new TextComponentTranslation("[%s] Block at %s,%s,%s: %s", world.isRemote ? "CLIENT" : "SERVER", pos.getX(), pos.getY(), pos.getZ(), state));
 		}

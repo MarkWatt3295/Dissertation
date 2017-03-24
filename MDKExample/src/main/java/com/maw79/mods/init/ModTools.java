@@ -1,6 +1,7 @@
 package com.maw79.mods.init;
 
 import com.maw79.mods.handlers.MaterialHandler;
+import com.maw79.mods.items.ItemGlassPickaxe;
 import com.maw79.mods.items.ItemModAxe;
 import com.maw79.mods.items.ItemModHoe;
 import com.maw79.mods.items.ItemModPickaxe;
@@ -12,10 +13,8 @@ import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.util.Utils;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
-import net.minecraft.item.Item.ToolMaterial;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraft.item.ItemHoe;
@@ -37,6 +36,7 @@ public class ModTools {
 		public static ItemHoe obsidianHoe;
 		public static ItemSpade obsidianShovel;
 		public static ItemSword obsidianSword2;
+		public static ItemPickaxe glassPickaxe;
 		
 		public static ItemSword steelSword;
 		
@@ -54,6 +54,7 @@ public class ModTools {
 		 */
 		public static void init() {
 			obsidianPickaxe = new ItemModPickaxe(MaterialHandler.obsidianToolMaterial, "obsidian_pickaxe");
+			glassPickaxe = new ItemGlassPickaxe(MaterialHandler.glassToolMaterial, "glass_pickaxe");//RENAME ME PLIZ
 			obsidianAxe = new ItemModAxe(MaterialHandler.obsidianToolMaterial, "obsidian_axe");
 			obsidianHoe = new ItemModHoe(MaterialHandler.obsidianToolMaterial, "obsidian_hoe");
 			obsidianShovel = new ItemModShovel(MaterialHandler.obsidianToolMaterial, "obsidian_shovel");
@@ -79,6 +80,7 @@ public class ModTools {
 		 */
 		public static void register() {
 			registerItem(obsidianPickaxe);
+			registerItem(glassPickaxe);
 			registerItem(obsidianAxe);
 			registerItem(obsidianHoe);
 			registerItem(obsidianShovel);
@@ -101,6 +103,7 @@ public class ModTools {
 		 */
 		public static void registerRenders() {
 			registerRender(obsidianPickaxe);
+			registerRender(glassPickaxe);
 			registerRender(obsidianAxe);
 			registerRender(obsidianHoe);
 			registerRender(obsidianShovel);

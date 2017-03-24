@@ -112,7 +112,7 @@ public class GuiPlayerLevel extends GuiScreen {
     	updateTextBoxes();
         switch (button.id) {
             case BUTTON1:
-       Maw79Mod.playerlevel = 2;
+       //Maw79Mod.playerlevel = 2;
            GuiNotif.playerlevel ="1";
             	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
             	mc.displayGuiScreen((GuiScreen)null);

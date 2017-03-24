@@ -1,56 +1,78 @@
 package com.maw79.mods.handlers;
 
 
-import com.maw79.mods.entity.passive.Entityhuman;
-import com.maw79.mods.init.ModBlocks;
-import com.maw79.mods.init.ModItems;
-import com.maw79.mods.main.Reference;
-import net.minecraft.init.Items;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.gameevent.PlayerEvent;
-import scala.swing.TextComponent;
-import net.minecraft.client.Minecraft;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.entity.item.EntityXPOrb;
-import net.minecraft.entity.monster.EntityMob;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+import com.maw79.mods.client.gui.GuiNotif;
+
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.player.EntityPlayer;
+
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
-import net.minecraft.util.text.TextFormatting;
-import net.minecraftforge.client.event.GuiOpenEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
-import net.minecraftforge.event.entity.living.LivingDropsEvent;
-import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.entity.player.PlayerPickupXpEvent;
 import net.minecraftforge.event.world.BlockEvent;
-import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 
 public class ModEventHandler {
 
-
-   /* @SubscribeEvent
-    public void entityJoinWorld(EntityJoinWorldEvent event) {
-        if (event.getEntity() instanceof EntityPlayer) {
-            EntityPlayer player = (EntityPlayer) event.getEntity();
+	boolean messageCall = false;
+	
+    @SubscribeEvent
+    public void onLivingUpdateEvent(LivingUpdateEvent event){
+    
+    	if (event.getEntity() instanceof EntityPlayer)
+    	{
+    	EntityPlayer player = (EntityPlayer) event.getEntity();
+    	
+    	if( GuiNotif.playerlevel == "1"){
+    		if(messageCall == false){
+    		player.sendMessage(new TextComponentString("Player level 1"));
+    		player.capabilities.allowFlying = true;
+        	
+    		messageCall = true;
+    		}
+    		
+    		if( GuiNotif.playerlevel == "2"){
+    			
+    		}
+    		
+    		if(GuiNotif.playerlevel == "3"){
+    			
+    		}
+    		
+    		
+    	}
+    	
+    	
+    	
+    	
+    
+    	}
+    	//if(!(event.getEntity() instanceof EntityPlayer)) {
+    	////	return;
+    	//}
+    	//if( GuiNotif.playerlevel == "2"){
+    		//event.sendMessage(new TextComponentString("Player level 2"));
+    	//}
+        //if (event.getEntity() instanceof EntityPlayer) {
+            //EntityPlayer player = (EntityPlayer) event.getEntity();
          //   player.sendMessage(new TextComponentString("HelloWorld New V2"));
-            System.out.println("Entity Joined Called V2");
+           // System.out.println("Entity Joined Called V2");
             //add shovel on start
             //player.inventory.addItemStackToInventory(new ItemStack(Items.IRON_SHOVEL));
             //System.out.println("Shovel Collected");    
-        }
-    }*/
+        //}
+    }
     
     @SubscribeEvent
     public void PlayerJoin(EntityJoinWorldEvent event) {
@@ -67,7 +89,8 @@ public class ModEventHandler {
     		}
     	}
     }
-        
+  
+
         
     
     @SubscribeEvent(priority = EventPriority.NORMAL) //Set a priority for the event
@@ -119,6 +142,17 @@ public class ModEventHandler {
 
 		//event.getEntity().motionY *= 5;
 	}
+    
+    public class GenericJumpEvent 
+    {
+        @SubscribeEvent
+        public void onLivingJumpEvent(LivingJumpEvent event)
+        {
+           // double addY = 1.38D; // change to the entity's Y motion.
+           // event.entity.motionY *= addY;
+           // event.entity.velocityChanged = true;
+        }
+    }
     
    
     

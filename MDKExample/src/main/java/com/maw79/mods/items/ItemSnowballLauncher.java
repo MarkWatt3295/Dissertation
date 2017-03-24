@@ -1,7 +1,9 @@
 package com.maw79.mods.items;
 
+import com.maw79.mods.init.ModBlocks;
 import com.maw79.mods.main.Reference;
 
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntitySnowball;
@@ -15,6 +17,8 @@ import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.items.IItemHandler;
 
@@ -89,6 +93,8 @@ public class ItemSnowballLauncher extends Item {
 				final EntitySnowball entitySnowball = new EntitySnowball(worldIn, playerIn);
 				entitySnowball.setHeadingFromThrower(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
 				worldIn.spawnEntity(entitySnowball);
+				
+				
 			}
 
 			if (hasAmmo && !ammoSlot.extractItem(0, 1, true).isEmpty()) {
@@ -97,8 +103,13 @@ public class ItemSnowballLauncher extends Item {
 			}
 
 			return new ActionResult<>(EnumActionResult.SUCCESS, heldItem);
+			
+			
 		}
 
 		return new ActionResult<>(EnumActionResult.FAIL, heldItem);
 	}
+	
+	
 }
+
