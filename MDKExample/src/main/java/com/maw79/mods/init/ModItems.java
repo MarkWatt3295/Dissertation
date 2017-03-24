@@ -1,5 +1,7 @@
 package com.maw79.mods.init;
 
+import com.maw79.mods.entity.arrows.EntityBlockDetectionArrow;
+import com.maw79.mods.entity.arrows.EntityModArrow;
 import com.maw79.mods.handlers.EnumHandler;
 import com.maw79.mods.items.ItemBookOne;
 import com.maw79.mods.items.ItemBurntLoaf;
@@ -9,10 +11,13 @@ import com.maw79.mods.items.ItemGameSwitcher;
 import com.maw79.mods.items.ItemHeart;
 import com.maw79.mods.items.ItemLightningSpawner;
 import com.maw79.mods.items.ItemMathsBook;
+import com.maw79.mods.items.ItemModArrow;
+import com.maw79.mods.items.ItemModBow;
 import com.maw79.mods.items.ItemMw;
 import com.maw79.mods.items.ItemObsidianingot;
 import com.maw79.mods.items.ItemReversePaintBrush;
 import com.maw79.mods.items.ItemRuby;
+import com.maw79.mods.items.ItemSnowballLauncher;
 import com.maw79.mods.items.ItemSteelIngot;
 import com.maw79.mods.items.ItemTomato;
 import com.maw79.mods.items.ItemTutorial;
@@ -27,10 +32,12 @@ import com.maw79.mods.items.mathsitems.ItemCompleteAppleWall;
 import com.maw79.mods.items.mathsitems.ItemPictureWall;
 import com.maw79.mods.items.mathsitems.ItemPlayerLevel;
 import com.maw79.mods.items.mathsitems.ItemXyzDevice;
+import com.maw79.mods.items.scienceitems.ItemElementFire;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.util.Utils;
 
+import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
@@ -41,6 +48,7 @@ import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ModItems {
+	
 	
 	public static Item obsidianingot;
 	public static Item ruby;
@@ -69,6 +77,12 @@ public class ModItems {
 	public static Item applewallaxis;
 	public static Item playerlevel;
 	public static Item mathsbook;
+	public static Item fireelement;
+	
+	public static final Item ARROW = new ItemModArrow("arrow", EntityModArrow::new);
+	public static final ItemModArrow BLOCK_DETECTION_ARROW = new ItemModArrow("block_detection_arrow", EntityBlockDetectionArrow::new);
+	public static final ItemModBow BOW = new ItemModBow("bow");
+	public static ItemSnowballLauncher SNOW = new ItemSnowballLauncher("snow");
 	
 	
 	//Tool Materials
@@ -117,11 +131,20 @@ public class ModItems {
 		applepicturewallborder = new ItemAppleWallBorder("apple_wall_border");
 		completeapplepicturewall = new ItemCompleteAppleWall("complete_apple_wall");
 		
+		//Science Items
+		fireelement = new ItemElementFire("fire_element");
+		
+	
+		
 		
 	}
 	
 	
 	public static void register(){
+		registerItem(SNOW);
+		registerItem(BOW);
+		registerItem(ARROW);
+		registerItem(BLOCK_DETECTION_ARROW);
 		//Items
 		//GameRegistry.register(obsidianingot);
 		registerItem(obsidianingot);
@@ -159,6 +182,8 @@ public class ModItems {
 		registerItem(applepicturewallwool);
 		registerItem(applepicturewallborder);
 		
+		//Science Items
+		registerItem(fireelement);
 	}
 	
 	
@@ -182,6 +207,10 @@ public class ModItems {
 		registerRender(playerlevel);
 		registerRender(xyzdevice);
 		registerRender(mathsbook);
+		registerRender(BOW);
+		registerRender(ARROW);
+		registerRender(BLOCK_DETECTION_ARROW);
+		registerRender(SNOW);
 		
 		//Food
 		registerRender(tomato);
@@ -203,6 +232,9 @@ public class ModItems {
 		applepicturewallwool.setCreativeTab(Maw79Mod.debug);
 		registerRender(applepicturewallborder);
 		applepicturewallborder.setCreativeTab(Maw79Mod.debug);
+		
+		//Science Items
+		registerRender(fireelement);
 		
 		
 		//Meta Data

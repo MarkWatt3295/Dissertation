@@ -1,6 +1,7 @@
 package com.maw79.mods.blocks;
 
 import com.maw79.mods.handlers.ModSoundHandler;
+import com.maw79.mods.init.ModBlocks;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.util.Utilities;
 
@@ -43,8 +44,14 @@ public class BlockTestBlock4 extends Block {
        
 	
 		 if(!player.world.isRemote) player.sendMessage(new TextComponentString(Utilities.stringToRainbow("TestBlock 4 pressed", true)));
-	
+		 
+		 final BlockPos playerPos = new BlockPos(player);
 		
+		 if ((worldIn.getBlockState(playerPos.down()).getBlock() == ModBlocks.testBlock4)){
+			 player.sendMessage(new TextComponentString("Stood on Testblock 4"));	 
+		 } else {
+			 player.sendMessage(new TextComponentString("Duz ne work"));
+		 }
 		
 		return true; 
 	}
