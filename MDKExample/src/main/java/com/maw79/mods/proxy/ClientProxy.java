@@ -56,6 +56,7 @@ public class ClientProxy extends CommonProxy {
 	
 		@Override
 		public void registerModelBakeryStuff() {
+			//ModelBakery.registerItemVariants(Item.getItemFromBlock(ModBlocks.testblockte), new ResourceLocation(Reference.MOD_ID, "test_block_te"));
 			ModelBakery.registerItemVariants(ModItems.chip, new ResourceLocation(Reference.MOD_ID, "chip_basic"), new ResourceLocation(Reference.MOD_ID, "chip_advanced"));
 			ModelBakery.registerItemVariants(Item.getItemFromBlock(ModBlocks.breaker), new ResourceLocation(Reference.MOD_ID, "block_breaker_basic"), new ResourceLocation(Reference.MOD_ID, "block_breaker_advanced"));
 			ModelBakery.registerItemVariants(Item.getItemFromBlock(ModBlocks.steelOre), new ResourceLocation(Reference.MOD_ID, "steel_ore_overworld"), new ResourceLocation(Reference.MOD_ID, "steel_ore_nether"), new ResourceLocation(Reference.MOD_ID, "steel_ore_end"));

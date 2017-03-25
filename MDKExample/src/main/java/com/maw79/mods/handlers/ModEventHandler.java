@@ -26,7 +26,7 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 public class ModEventHandler {
 
 	boolean messageCall = false;
-	
+	/*
     @SubscribeEvent
     public void onLivingUpdateEvent(LivingUpdateEvent event){
     
@@ -49,15 +49,16 @@ public class ModEventHandler {
     		if(GuiNotif.playerlevel == "3"){
     			
     		}
+    		}
     		
-    		
+    		}
     	}
-    	
+    	*/
     	
     	
     	
     
-    	}
+    	
     	//if(!(event.getEntity() instanceof EntityPlayer)) {
     	////	return;
     	//}
@@ -72,7 +73,7 @@ public class ModEventHandler {
             //player.inventory.addItemStackToInventory(new ItemStack(Items.IRON_SHOVEL));
             //System.out.println("Shovel Collected");    
         //}
-    }
+    
     
     @SubscribeEvent
     public void PlayerJoin(EntityJoinWorldEvent event) {

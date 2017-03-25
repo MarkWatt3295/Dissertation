@@ -34,6 +34,7 @@ import com.maw79.mods.items.mathsitems.ItemPictureWall;
 import com.maw79.mods.items.mathsitems.ItemPlayerLevel;
 import com.maw79.mods.items.mathsitems.ItemXyzDevice;
 import com.maw79.mods.items.scienceitems.ItemElementFire;
+import com.maw79.mods.items.scienceitems.ItemMagnet;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.util.Utils;
@@ -79,6 +80,7 @@ public class ModItems {
 	public static Item playerlevel;
 	public static Item mathsbook;
 	public static Item fireelement;
+	public static Item magnet;
 	
 	//Projectiles
 	public static final Item ARROW = new ItemModArrow("arrow", EntityModArrow::new);
@@ -137,6 +139,7 @@ public class ModItems {
 		
 		//Science Items
 		fireelement = new ItemElementFire("fire_element");
+		magnet = new ItemMagnet("magnet");
 		
 	
 		
@@ -190,6 +193,7 @@ public class ModItems {
 		
 		//Science Items
 		registerItem(fireelement);
+		registerItem(magnet);
 	}
 	
 	
@@ -218,6 +222,7 @@ public class ModItems {
 		registerRender(BLOCK_DETECTION_ARROW);
 		registerRender(SNOW);
 		registerRender(PAINT_ARROW);
+	
 		
 		//Food
 		registerRender(tomato);
@@ -242,6 +247,7 @@ public class ModItems {
 		
 		//Science Items
 		registerRender(fireelement);
+		registerRender(magnet);
 		
 		
 		//Meta Data

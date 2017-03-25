@@ -30,6 +30,7 @@ import com.maw79.mods.blocks.mathsblocks.BlockBasicBlock;
 import com.maw79.mods.blocks.mathsblocks.BlockMathsQuestionBlock;
 import com.maw79.mods.blocks.mathsblocks.BlockMathsQuizBlock;
 import com.maw79.mods.blocks.mathsblocks.mcreator_testBlock;
+import com.maw79.mods.blocks.tileentityattempt.BlockTestTE;
 import com.maw79.mods.handlers.EnumHandler;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
@@ -117,10 +118,8 @@ public class ModBlocks {
 	public static Block mathtextblockmarrowbrown;
 	public static Block mathtextblockgrey;
 	
-	//Number Face Blocks
-	public static Block number1;
-	public static Block number2;
-	public static Block number3;
+	//Science Blocks
+	public static Block testblockte;
 	
 	
 	
@@ -190,10 +189,8 @@ public class ModBlocks {
 		mathtextblockmarrowbrown= new BlockBasicBlock("mathtexts_marrowbrown_block");
 		mathtextblockgrey= new BlockBasicBlock("mathtexts_grey_block");
 		
-		//Number Face Blocks
-		//number1= new BlockBasicBlock("block_number1");
-		//number2= new BlockBasicBlock("block_number2");
-		//number3= new BlockBasicBlock("block_number3");
+		//Science Blocks
+		testblockte = new BlockTestTE("test_block_te");
 		
 	}
 	
@@ -293,10 +290,9 @@ public class ModBlocks {
 		registerBlock(mathtextblockgrey);
 		mathtextblockgrey.setCreativeTab(Maw79Mod.mathsscratchblocks); 
 		
-		//Number Face Blocks
-		//registerBlock(number1);
-		//registerBlock(number2);
-		//registerBlock(number3);
+		//Science Blocks
+		registerBlock(testblockte);
+		
 	}
 	
 	
@@ -378,10 +374,9 @@ public class ModBlocks {
 		registerRender(mathtextblockmarrowbrown);
 		registerRender(mathtextblockgrey);
 		
-		//Number Face Blocks
-		//registerRender(number1);
-		//registerRender(number2);
-		//registerRender(number3);
+		//Science Blocks
+		registerRender(testblockte);
+		
 		
 	
 		
@@ -398,21 +393,7 @@ public class ModBlocks {
 	
 	
 	
-	/*
-public static void registerRender(Block block){
-Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
-Utils.getLogger().info("Registered render for " + block.getUnlocalizedName().substring(5));
-	}
 	
-	
-
-	
-	
-	public static void registerRender(Block block, int meta, String fileName) {
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(block), meta, new ModelResourceLocation(new ResourceLocation(Reference.MOD_ID, fileName), "inventory"));
-		Utils.getLogger().info("Registered render for MULTIBLOCK:" + block.getUnlocalizedName().substring(5));
-	}
-	*/
 	/**
 	 * Registers the blocks renders
 	 * @param block The block

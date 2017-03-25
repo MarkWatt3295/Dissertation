@@ -65,11 +65,11 @@ public class BlockTestBlock3 extends Block {
 		//player.motionX = -1; 
 		//player.posZ += 80; NS
 		//player.playSound(ModSoundHandler.MAWSOUND_OPEN, 1.0f, 1.0f);
-		 if(!player.world.isRemote) player.sendMessage(new TextComponentString(Utilities.stringToRainbow("TestBlock 3 pressed", true)));
+		// if(!player.world.isRemote) player.sendMessage(new TextComponentString(Utilities.stringToRainbow("TestBlock 3 pressed", true)));
 		
 		//player.move(null, 2, 0, 0);
 		// if(pressed == false){
-		 Minecraft.getMinecraft().displayGuiScreen(new GuiTutorial());
+		
 		//Minecraft.getMinecraft().displayGuiScreen(new GuiMathsBlock());
 		//while(blockreturn == false){
 		//ClientCommandHandler.instance.executeCommand(Minecraft.getMinecraft().player, "sddf");
@@ -81,13 +81,18 @@ public class BlockTestBlock3 extends Block {
 		
 		
 		//gm.GuiLoaded();
-			//System.out.println("Im the while loop");
+			System.out.println("registered press");
 		//Minecraft.getMinecraft().currentScreen.onGuiClosed();
 			//player.inventory.addItemStackToInventory(new ItemStack(ModBlocks.mathblockblue));
         	//player.inventory.addItemStackToInventory(new ItemStack(ModBlocks.mathblockgreen, 1));
 		
 		 //Minecraft.getMinecraft().currentScreen.onGuiClosed();
 		//System.out.println("skipped me :(");
+		// Minecraft.getMinecraft().displayGuiScreen(new GuiTutorial());
+		 worldIn.getBlockState(pos);
+		 System.out.println("****: "+ pos + "*****");
+		 pos.add(0, 1, 0);
+		 System.out.println("****: "+ pos + "*****");
 		
 		
 		return true; 
@@ -99,19 +104,7 @@ public class BlockTestBlock3 extends Block {
 		return true;
 	}
 	
-	@Override
-	public boolean canProvidePower(IBlockState state) {
-		// TODO Auto-generated method stub
-		return super.canProvidePower(state);
-	}
-	
-	@Override
-	public IBlockState getStateForPlacement(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY,
-			float hitZ, int meta, EntityLivingBase placer) {
-		// TODO Auto-generated method stub
-		return super.getStateForPlacement(worldIn, pos, facing, hitX, hitY, hitZ, meta, placer);
-	}
-	
+
 	
 
 }

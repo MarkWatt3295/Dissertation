@@ -7,7 +7,6 @@ import net.minecraft.item.ItemStack;
 /**
  * Used for the block breaker. This is exactly the same as the {@link ItemBlockMeta} class
  * This is for if I want the {@link BlockBreaker} to have a tool tip
- * @author CJMinecraft
  *
  */
 public class ItemBlockBreaker extends ItemBlock {

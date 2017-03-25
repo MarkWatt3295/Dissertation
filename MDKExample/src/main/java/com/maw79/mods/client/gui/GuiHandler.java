@@ -1,5 +1,8 @@
 package com.maw79.mods.client.gui;
 
+import com.maw79.mods.blocks.tileentityattempt.ContainerBasic2;
+import com.maw79.mods.blocks.tileentityattempt.GuiBasic2;
+import com.maw79.mods.blocks.tileentityattempt.TileEntityCustom2;
 import com.maw79.mods.container.ContainerBasic;
 import com.maw79.mods.container.ContainerBlockBreaker;
 import com.maw79.mods.tileentity.TileEntityBlockBreaker;
@@ -19,6 +22,7 @@ public class GuiHandler implements IGuiHandler{
 	public static final int BLOCK_BREAKER = 0;
 	public static final int GUI_DEVICE = 1;
 	public static final int TEST = 2;
+	public static final int TEST2 = 3;
 	
 	/**
 	 * Should return the container for that gui. This is called server side because servers handle items in guis
@@ -36,6 +40,11 @@ public class GuiHandler implements IGuiHandler{
 			Entity test = world.getEntityByID(x);
 			
 			return new ContainerBasic(player.inventory,test);
+		}
+		if(ID==TEST2){
+			//Entity test2 = world.getEntityByID(x);
+			
+			return new ContainerBasic2(player.inventory, (TileEntityCustom2) world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		return null;
 	}
@@ -60,6 +69,10 @@ Utils.getLogger().info("GuiHandler: getClientGuiElement");
 		if(ID==TEST){
 			Entity test = world.getEntityByID(x);
 			return new GuiBasic(player.inventory, test);
+		}
+		if(ID==TEST2){
+			//Entity test2 = world.getEntityByID(x);
+			return new GuiBasic2(player.inventory, (TileEntityCustom2) world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		
 		return null;

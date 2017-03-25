@@ -1,5 +1,6 @@
 package com.maw79.mods.proxy;
 
+import com.maw79.mods.blocks.tileentityattempt.TileEntityCustom2;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.tileentity.TileEntityBlockBreaker;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -18,6 +19,7 @@ public class CommonProxy {
 	 */
 	public void registerTileEntities() {
 		GameRegistry.registerTileEntity(TileEntityBlockBreaker.class, Reference.MOD_ID + ":block_breaker");
+		GameRegistry.registerTileEntity(TileEntityCustom2.class, Reference.MOD_ID + ":custom2");
 	}
 	
 	/**
