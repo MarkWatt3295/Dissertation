@@ -4,10 +4,7 @@ package com.maw79.mods.blocks.tileentityattempt;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.maw79.mods.container.ContainerBlockBreaker;
 import com.maw79.mods.main.Reference;
-import com.maw79.mods.tileentity.TileEntityBlockBreaker;
-
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.resources.I18n;
@@ -51,7 +48,7 @@ public class GuiBasic2 extends GuiContainer {
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
 		GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F); //Grey background
-		this.mc.getTextureManager().bindTexture(new ResourceLocation(Reference.MOD_ID, "textures/gui/container/block_breaker.png")); //Binds the texture for rendering
+		this.mc.getTextureManager().bindTexture(new ResourceLocation(Reference.MOD_ID, "textures/gui/container/tileentityattempt.png")); //Binds the texture for rendering
 		this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize); //Draws our texture
 	}
 	
@@ -60,14 +57,15 @@ public class GuiBasic2 extends GuiContainer {
 	 */
 	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-		String s = I18n.format("container.block_breaker"); //Gets the formatted name for the block breaker from the language file
+		String s = ("Tile Entity"); //Gets the formatted name for the block breaker from the language file
 		this.mc.fontRendererObj.drawString(s, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s) / 2, 6, 4210752); //Draws the block breaker name in the center on the top of the gui
 		this.mc.fontRendererObj.drawString(this.playerInv.getDisplayName().getFormattedText(), 8, 72, 4210752); //The player's inventory name
 		int actualMouseX = mouseX - ((this.width - this.xSize) / 2);
 		int actualMouseY = mouseY - ((this.height - this.ySize) / 2);
 		if(actualMouseX >= 134 && actualMouseX <= 149 && actualMouseY >= 17 && actualMouseY <= 32 && te.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).getStackInSlot(9) == ItemStack.EMPTY) {
 			List<String> text = new ArrayList<String>();
-			text.add(TextFormatting.GRAY + I18n.format("gui.block_breaker.enchanted_book.tooltip"));
+			//text.add(TextFormatting.GRAY + I18n.format("gui.block_breaker.enchanted_book.tooltip"));
+			text.add(TextFormatting.BLUE + ("This is a Tooltip"));
 			this.drawHoveringText(text, actualMouseX, actualMouseY);
 		}
 	}

@@ -6,12 +6,15 @@ import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.handlers.EnumHandler.ChipTypes;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
+
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;

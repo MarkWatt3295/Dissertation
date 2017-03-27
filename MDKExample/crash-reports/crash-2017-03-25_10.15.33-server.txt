@@ -1,0 +1,91 @@
+---- Minecraft Crash Report ----
+// Everything's going to plan. No, really, that was supposed to happen.
+
+Time: 3/25/17 10:15 AM
+Description: Ticking player
+
+java.lang.ClassCastException: net.minecraft.entity.player.EntityPlayerMP cannot be cast to com.maw79.mods.entity.passive.Test
+	at com.maw79.mods.blocks.tileentityattempt.ContainerBasic2.canInteractWith(ContainerBasic2.java:48)
+	at net.minecraft.entity.player.EntityPlayerMP.onUpdate(EntityPlayerMP.java:320)
+	at net.minecraft.world.World.updateEntityWithOptionalForce(World.java:2108)
+	at net.minecraft.world.WorldServer.updateEntityWithOptionalForce(WorldServer.java:875)
+	at net.minecraft.world.World.updateEntity(World.java:2075)
+	at net.minecraft.world.WorldServer.tickPlayers(WorldServer.java:676)
+	at net.minecraft.world.World.updateEntities(World.java:1864)
+	at net.minecraft.world.WorldServer.updateEntities(WorldServer.java:647)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:794)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:698)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:156)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:547)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at com.maw79.mods.blocks.tileentityattempt.ContainerBasic2.canInteractWith(ContainerBasic2.java:48)
+	at net.minecraft.entity.player.EntityPlayerMP.onUpdate(EntityPlayerMP.java:320)
+	at net.minecraft.world.World.updateEntityWithOptionalForce(World.java:2108)
+	at net.minecraft.world.WorldServer.updateEntityWithOptionalForce(WorldServer.java:875)
+	at net.minecraft.world.World.updateEntity(World.java:2075)
+
+-- Player being ticked --
+Details:
+	Entity Type: null (net.minecraft.entity.player.EntityPlayerMP)
+	Entity ID: 134
+	Entity Name: Player585
+	Entity's Exact location: 153.38, 4.00, 536.67
+	Entity's Block location: World: (153,4,536), Chunk: (at 9,0,8 in 9,33; contains blocks 144,0,528 to 159,255,543), Region: (0,1; contains chunks 0,32 to 31,63, blocks 0,0,512 to 511,255,1023)
+	Entity's Momentum: 0.00, -0.08, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: ~~ERROR~~ NullPointerException: null
+Stacktrace:
+	at net.minecraft.world.WorldServer.tickPlayers(WorldServer.java:676)
+	at net.minecraft.world.World.updateEntities(World.java:1864)
+	at net.minecraft.world.WorldServer.updateEntities(WorldServer.java:647)
+
+-- Affected level --
+Details:
+	Level name: Test World
+	All players: 1 total; [EntityPlayerMP['Player585'/134, l='Test World', x=153.38, y=4.00, z=536.67]]
+	Chunk stats: ServerChunkCache: 841 Drop: 0
+	Level seed: 5993711998513980544
+	Level generator: ID 01 - flat, ver 0. Features enabled: true
+	Level generator options: 3;minecraft:bedrock,2*minecraft:dirt,minecraft:grass;1;village
+	Level spawn location: World: (174,4,573), Chunk: (at 14,0,13 in 10,35; contains blocks 160,0,560 to 175,255,575), Region: (0,1; contains chunks 0,32 to 31,63, blocks 0,0,512 to 511,255,1023)
+	Level time: 759560 game time, 253 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 28439 (now: false), thunder time: 67556 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: true
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:794)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:698)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:156)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:547)
+	at java.lang.Thread.run(Thread.java:745)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.11.2
+	Operating System: Mac OS X (x86_64) version 10.12.4
+	Java Version: 1.8.0_121, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 2987987872 bytes (2849 MB) / 4195352576 bytes (4001 MB) up to 4195352576 bytes (4001 MB)
+	JVM Flags: 2 total; -Xmx4G -Xms4G
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP 9.38 Powered by Forge 13.20.0.2228 5 mods loaded, 5 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAA	minecraft{1.11.2} [Minecraft] (minecraft.jar) 
+	UCHIJAAAA	mcp{9.19} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAA	FML{8.0.99.99} [Forge Mod Loader] (forgeSrc-1.11.2-13.20.0.2228.jar) 
+	UCHIJAAAA	forge{13.20.0.2228} [Minecraft Forge] (forgeSrc-1.11.2-13.20.0.2228.jar) 
+	UCHIJAAAA	maw79{0.40 mathsbuild - Alpha} [Teaching Keystage 2 Via Minecraft] (bin) 
+	Loaded coremods (and transformers): 
+	Profiler Position: N/A (disabled)
+	Player Count: 1 / 8; [EntityPlayerMP['Player585'/134, l='Test World', x=153.38, y=4.00, z=536.67]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'

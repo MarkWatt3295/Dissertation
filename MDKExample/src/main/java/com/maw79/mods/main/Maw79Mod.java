@@ -25,6 +25,8 @@ import com.maw79.mods.init.ModEntities;
 import com.maw79.mods.init.ModItems;
 import com.maw79.mods.init.ModNumberBlocks;
 import com.maw79.mods.init.ModTools;
+import com.maw79.mods.network.GuiInventoryMessage;
+import com.maw79.mods.network.GuiInventoryPacketHandler;
 import com.maw79.mods.network.MathsMessage;
 import com.maw79.mods.network.NXmanagerMessage;
 import com.maw79.mods.network.NXmanagerPacketHandler;
@@ -67,6 +69,8 @@ public class Maw79Mod {
 	
 	public static SimpleNetworkWrapper networkWrapper, networkWrapper2, networkWrapper3, networkWrapper4, networkWrapper5,
 	networkWrapper6, networkWrapper7, networkWrapper8;
+	
+	public static SimpleNetworkWrapper networkWrapperGuiInventory1;
 
 	
 	public static final CreativeTabs blocks = new Maw79BlocksTab();
@@ -153,6 +157,10 @@ public class Maw79Mod {
 		 networkWrapper6.registerMessage(NYmanagerPacketHandler.class, NYmanagerMessage.class, 0, Side.SERVER);
 		 networkWrapper7.registerMessage(ZmanagerPacketHandler.class, ZmanagerMessage.class, 0, Side.SERVER); 
 		 networkWrapper8.registerMessage(NZmanagerPacketHandler.class, NZmanagerMessage.class, 0, Side.SERVER);
+		 
+		 networkWrapperGuiInventory1 = NetworkRegistry.INSTANCE.newSimpleChannel("guiinventorymanagermessage");
+		 
+		 networkWrapperGuiInventory1.registerMessage(GuiInventoryPacketHandler.class, GuiInventoryMessage.class, 0, Side.SERVER);
 	
 		 
 	}

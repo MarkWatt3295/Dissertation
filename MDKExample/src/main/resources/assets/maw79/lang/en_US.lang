@@ -6,7 +6,7 @@ itemGroup.maw79 debug=Maw79 Debug Tools
 itemGroup.maw79 scratch blocks=Maw79 Scratch Blocks
 
 //Items
-item.obsidianingot.name=Obsidian Ingot
+item.obsidian_ingot.name=Obsidian Ingot
 item.ruby.name=Ruby
 item.mw.name=MW Symbol
 item.heart.name=Heart
@@ -18,6 +18,7 @@ item.chip.advanced.name=Advanced Chip
 item.custom fuel.name=Long lasting Fuel
 item.player_level.name=Player Level Selector
 item.maths_book.name=Maths Book
+item.magnet.name=Magnet
 
 //Science Items
 item.fire_element.name=Fire Element
@@ -112,6 +113,7 @@ tile.mathtexts_gold_block.name=Gold Maths Text Block
 tile.mathtexts_orange_block.name=Orange Maths Text Block
 tile.mathtexts_lightorange_block.name=Light Orange Maths Text Block
 tile.mathtexts_grey_block.name=Grey Maths Text Block
+tile.test_block_te.name=Test Block TE
 
 //Number Face Blocks
 tile.block_number1.name=Number 1 Block
@@ -155,6 +157,7 @@ achievement.niceto.desc=Met a new Mob
 item.obsidian_sword.name=Obsidian Sword
 item.obsidian_sword2.name=Obsidian Sword 2
 item.obsidian_pickaxe.name=Obsidian Pickaxe
+item.glass_pickaxe.name=Glass Pickaxe
 item.obsidian_axe.name=Obsidian Axe
 item.obsidian_shovel.name=Obsidian Shovel
 item.obsidian_hoe.name=Obsidian Hoe

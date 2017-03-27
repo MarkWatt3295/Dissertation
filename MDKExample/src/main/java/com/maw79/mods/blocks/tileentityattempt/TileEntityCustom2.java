@@ -160,6 +160,7 @@ public class TileEntityCustom2 extends TileEntity implements ITickable, ICapabil
 		IBlockState currentState = this.world.getBlockState(pos);
 		
 		}
+	
 		
 	}
 
