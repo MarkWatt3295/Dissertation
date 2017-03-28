@@ -1,0 +1,8 @@
+
+{
+    "parent": "maw79:block/mbe03_block_variants_model_shape",
+    "textures": {
+        "sign": "maw79:blocks/mbe03_block_variants_sign_green",
+        "particle": "blocks/wool_colored_green"
+    }
+}
