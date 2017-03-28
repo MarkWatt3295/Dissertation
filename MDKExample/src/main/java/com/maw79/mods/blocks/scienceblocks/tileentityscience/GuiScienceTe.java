@@ -7,7 +7,10 @@ import java.util.List;
 
 import com.maw79.mods.client.gui.GuiNotif;
 import com.maw79.mods.handlers.ModSoundHandler;
+import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
+import com.maw79.mods.network.GuiInventoryMessage;
+import com.maw79.mods.network.MathsMessage;
 
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
@@ -32,12 +35,13 @@ public class GuiScienceTe extends GuiContainer {
 	 */
 	private TileEntityScience te;
 	private IInventory playerInv;
-	GuiButton button1;
-	final int BUTTON1=1;
+	GuiButton button1, button2, button3;
+	final int BUTTON1=1, BUTTON2 = 2, BUTTON3 = 3;
 	
-	public boolean woodproperties1 = false;
+	public boolean buttonRelease = false;
 	public boolean woodproperties2 = false;
 	public boolean woodproperties3 = false;
+	
 	
 	/**
 	 * Typical {@link GuiContainer} constructor
@@ -88,35 +92,93 @@ public class GuiScienceTe extends GuiContainer {
     public void initGui() {
     	
         buttonList.clear();
-        buttonList.add(button1 = new GuiButton(BUTTON1, (width / 2) - 100 / 2, 95, 100, 20, "Submit Answers"));
-        updateButtons();
+        buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) - 100 / 2, 95, 100, 20, "Check Answers"));
+        buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) - 100 / 2, 115, 100, 20, "Submit Answers"));
+        //updateButtons();
         super.initGui();
+        button2.visible = false;
     }
+	  @Override
+	    public boolean doesGuiPauseGame() {
+	        return true;
+	    }
 	
 	 @Override
-	    protected void actionPerformed(GuiButton button) throws IOException {
+	    public void actionPerformed(GuiButton button) throws IOException {
 	    	
 	    	
 	        switch (button.id) {
 	            case BUTTON1:
-	            	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-	            	mc.displayGuiScreen((GuiScreen)null);
+	            	buttonRelease = true;
+	            	System.out.println("Skimmed button 1");
+	            	//mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
+	            	//System.out.println("Before GUI --> Correct Properties = "+ te.correctproperties);
+	            	//onEvent();
+	            	//mc.displayGuiScreen((GuiScreen)null);
+	            	//System.out.println("After GUI --> Correct Properties = "+ te.correctproperties);
 	            	break;
+	            	
+	            case BUTTON2:
+	            	
+	            	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
+	            	
+	            	onEvent2();
+	            	
+	            	break;
+	            	
+	            case BUTTON3:
+	            	buttonRelease = true;
+	            	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
+	            	//System.out.println("Before GUI --> Correct Properties = "+ te.correctproperties);
+	            	onEvent();
+	            	//mc.displayGuiScreen((GuiScreen)null);
+	            	//System.out.println("After GUI --> Correct Properties = "+ te.correctproperties);
+	            	break;
+	            	
 	        }
 	        updateButtons();
 	        super.actionPerformed(button);
 	      
 	    }
 	 
+	 public void onEvent2(){
+		 System.out.println("On event 2 called");
+		 button3.visible = true;
+ 		button2.visible =false;
+ 		te.setremove=true;
+ 		Maw79Mod.networkWrapperGuiInventory1.sendToServer(new GuiInventoryMessage(mc.player, te));
+	 }
+	 
 	 public void onEvent(){
-	    	System.out.println("Tile Entity With button Pressed");
+	    	System.out.println("On Event 1 called");
+	    	if(te.correctproperties = true){
+	    		//if(buttonRelease = true){
+        		mc.player.playSound(ModSoundHandler.MAWSOUND_SQUELCH, 1.0f, 3.0f);
+        		//te.handler.extractItem(3, 1, false);
+        		//te.handler.extractItem(4, 1, false);
+        		//te.handler.extractItem(5, 1, false);
+        		//te.removeItems();
+        		//button3.visible = false;
+        		button2.visible =true;
+        		button3.visible = false;
+        		//Maw79Mod.networkWrapperGuiInventory1.sendToServer(new GuiInventoryMessage(mc.player, te));
+        		//buttonRelease = true;
+        		te.correctproperties = false;
+        		buttonRelease = false;
+	    		//}
+        	}
 	    	  
 	    }
 	 
 	 public void updateButtons() {
-         onEvent(); 
+        // onEvent(); 
    
  }
+	 @Override
+	    protected void mouseClicked(int mouseX, int mouseY, int mouseButton) throws IOException {
+	      
+	        super.mouseClicked(mouseX, mouseY, mouseButton);
+	    }
 	 
 	 }
 

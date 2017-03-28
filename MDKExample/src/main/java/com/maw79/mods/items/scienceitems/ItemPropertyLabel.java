@@ -23,11 +23,13 @@ public class ItemPropertyLabel extends Item {
 	public ItemPropertyLabel(String unlocalizedName) {
 		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(Reference.MOD_ID, unlocalizedName));
+		this.setMaxStackSize(1);
+		
 	}
 	
 	@Override
 	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List list, boolean par4) {
-		list.add("String");
+		//list.add("String");
 	}
 	
 }
