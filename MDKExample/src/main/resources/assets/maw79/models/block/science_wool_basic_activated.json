@@ -1,0 +1,8 @@
+{
+    "parent": "maw79:block/machine",
+    "textures": {
+        "side": "maw79:blocks/block_breaker_side_basic",
+        "front": "maw79:blocks/block_breaker_front_basic_activated",
+        "alt": "maw79:blocks/machine_basic"
+    }
+}

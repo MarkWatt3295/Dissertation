@@ -1,4 +1,4 @@
-package com.maw79.mods.blocks.tileentityattempt;
+package com.maw79.mods.modattempts.enclosedblocks;
 
 
 
@@ -63,7 +63,7 @@ public class ContainerBasic2 extends Container {
 		int yPos = 84; //The y position of the top left player inventory slot on our texture
 
 		//Player slots
-		for (int y = 1; y < 3; ++y) { //y < 3, y = 0
+		for (int y = 0; y < 3; ++y) {
 			for (int x = 0; x < 9; ++x) {
 				this.addSlotToContainer(new Slot(playerInv, x + y * 9 + 9, xPos + x * 18, yPos + y * 18));
 			}

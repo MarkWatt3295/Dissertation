@@ -1,8 +1,14 @@
 package com.maw79.mods.proxy;
 
+import com.maw79.mods.blocks.scienceblocks.tileentityscience.TileEntityScience;
 import com.maw79.mods.blocks.tileentityattempt.TileEntityCustom2;
 import com.maw79.mods.main.Reference;
+import com.maw79.mods.modattempts.blockvariants.BlockVariants;
+import com.maw79.mods.modattempts.blockvariants.StartupCommon;
 import com.maw79.mods.tileentity.TileEntityBlockBreaker;
+
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class CommonProxy {
@@ -20,6 +26,7 @@ public class CommonProxy {
 	public void registerTileEntities() {
 		GameRegistry.registerTileEntity(TileEntityBlockBreaker.class, Reference.MOD_ID + ":block_breaker");
 		GameRegistry.registerTileEntity(TileEntityCustom2.class, Reference.MOD_ID + ":custom2");
+		GameRegistry.registerTileEntity(TileEntityScience.class, Reference.MOD_ID + ":science_te");
 	}
 	
 	/**
@@ -35,7 +42,6 @@ public class CommonProxy {
 
 	public void preInit() {
 		// TODO Auto-generated method stub
-		
 	}
 
 	

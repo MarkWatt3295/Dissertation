@@ -30,6 +30,10 @@ import com.maw79.mods.blocks.mathsblocks.BlockBasicBlock;
 import com.maw79.mods.blocks.mathsblocks.BlockMathsQuestionBlock;
 import com.maw79.mods.blocks.mathsblocks.BlockMathsQuizBlock;
 import com.maw79.mods.blocks.mathsblocks.mcreator_testBlock;
+import com.maw79.mods.blocks.scienceblocks.BlockScienceWool;
+import com.maw79.mods.blocks.scienceblocks.sciencewool.BlockScienceWoolP;
+import com.maw79.mods.blocks.scienceblocks.sciencewool.ItemScienceWool;
+import com.maw79.mods.blocks.scienceblocks.tileentityscience.BlockScienceTE;
 import com.maw79.mods.blocks.tileentityattempt.BlockTestTE;
 import com.maw79.mods.handlers.EnumHandler;
 import com.maw79.mods.main.Maw79Mod;
@@ -120,6 +124,10 @@ public class ModBlocks {
 	
 	//Science Blocks
 	public static Block testblockte;
+	public static Block sciencewoolblock;
+	public static Block sciencewool;
+	public static Block materialproperties;
+	public static Block woodproperties;
 	
 	
 	
@@ -191,6 +199,12 @@ public class ModBlocks {
 		
 		//Science Blocks
 		testblockte = new BlockTestTE("test_block_te");
+		materialproperties = new BlockScienceTE("science_te");
+		woodproperties = new BlockScienceTE("wood_properties_te");
+		
+		
+		sciencewoolblock = new BlockScienceWool("science_wool_block");
+		sciencewool = new BlockScienceWoolP("science_wool");
 		
 	}
 	
@@ -292,6 +306,10 @@ public class ModBlocks {
 		
 		//Science Blocks
 		registerBlock(testblockte);
+		registerBlock(materialproperties);
+		registerBlock(woodproperties);
+		registerBlock(sciencewoolblock);
+		registerBlock(sciencewool, new ItemScienceWool(sciencewool));
 		
 	}
 	
@@ -376,6 +394,11 @@ public class ModBlocks {
 		
 		//Science Blocks
 		registerRender(testblockte);
+		registerRender(materialproperties);
+		registerRender(woodproperties);
+		
+		registerRender(sciencewoolblock);
+		
 		
 		
 	
@@ -387,6 +410,7 @@ public class ModBlocks {
 		for(int i=0; i < EnumHandler.ChipTypes.values().length; i++){
 			registerRender(breaker, i, "block_breaker_" + EnumHandler.ChipTypes.values()[i].getName());
 			registerRender(machineFrame, i, "machine_frame_" + EnumHandler.ChipTypes.values()[i].getName());
+			registerRender(sciencewool, i, "science_wool_" + EnumHandler.ChipTypes.values()[i].getName());
 			
 		}
 	}

@@ -1,12 +1,12 @@
-package com.maw79.mods.blocks.tileentityattempt;
-
-
+package com.maw79.mods.blocks.scienceblocks.tileentityscience;
 
 import java.util.Random;
 
+import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.init.ModItems;
 
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.inventory.IInventory;
@@ -24,7 +24,7 @@ import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
-public class TileEntityCustom2 extends TileEntity implements ITickable, ICapabilityProvider {
+public class TileEntityScience extends TileEntity implements ITickable, ICapabilityProvider {
 
 	/**
 	 * New 1.9.4 onwards. Using forge capabilities instead of {@link IInventory}
@@ -37,7 +37,7 @@ public class TileEntityCustom2 extends TileEntity implements ITickable, ICapabil
 	/**
 	 * Initializes our variables. MUST NOT HAVE ANY PARAMETERS
 	 */
-	public TileEntityCustom2() {
+	public TileEntityScience() {
 		this.cooldown = 0;
 		this.handler = new ItemStackHandler(10);
 		this.random = new Random();
@@ -163,23 +163,25 @@ public class TileEntityCustom2 extends TileEntity implements ITickable, ICapabil
 	public void update() {
 		if (this.world != null) {
 		IBlockState currentState = this.world.getBlockState(pos);
+		EntityPlayer player = Minecraft.getMinecraft().player;
 		
-		if(handler.getStackInSlot(0).isItemEqual(new ItemStack(ModItems.obsidianingot)) 
-				&& (handler.getStackInSlot(2).isItemEqual(new ItemStack(ModItems.bolt))))
+		if(handler.getStackInSlot(3).isItemEqual(new ItemStack(ModItems.obsidianingot)) 
+				&& (handler.getStackInSlot(5).isItemEqual(new ItemStack(ModItems.bolt))))
 				//&& (handler.getStackInSlot(7).isItemEqual(ItemStack.EMPTY)))
 				{
 			if(true){
 				System.out.println("true test");
+				player.playSound(ModSoundHandler.MAWSOUND_COIN, 2, 4);
 				//System.out.println(max);
 				//if (!world.isRemote)
-				handler.extractItem(0, 1, false);
-				handler.extractItem(2, 1, false);
+				handler.extractItem(3, 1, false);
+				handler.extractItem(5, 1, false);
 					//handler.insertItem(2, ItemStack.EMPTY, false);
 				//handler.getStackInSlot(7).set;
 				
 			}
 			//if(max !=1){
-			handler.insertItem(7, new ItemStack(Blocks.GOLD_BLOCK), false);
+			handler.insertItem(4, new ItemStack(Blocks.GOLD_BLOCK), false);
 			
 		//	max++;
 			//}

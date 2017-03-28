@@ -1,34 +1,24 @@
-package com.maw79.mods.blocks.tileentityattempt;
+package com.maw79.mods.blocks.scienceblocks.tileentityscience;
 
 
-
-import com.maw79.mods.init.ModItems;
-import com.maw79.mods.tileentity.TileEntityBlockBreaker;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.world.World;
-import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class ContainerBasic2 extends Container {
+public class ContainerScience extends Container {
 
 	/**
 	 * This tile entity and the item handler (inventory)
 	 */
-	private TileEntityCustom2 te;
-	private TileEntityCustom2 basic;
+	private TileEntityScience te;
 	public IItemHandler handler;
 	public static IInventory PlayeInveni;
 
@@ -37,23 +27,23 @@ public class ContainerBasic2 extends Container {
 	 * @param playerInv The player's inventory
 	 * @param te The tile entity
 	 */
-	public ContainerBasic2(IInventory playerInv, TileEntityCustom2 te) {
+	public ContainerScience(IInventory playerInv, TileEntityScience te) {
 		this.te = te;
-		this.basic = basic;
+		
 		EntityPlayer entity = Minecraft.getMinecraft().player;
 		this.handler = te.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null); //Gets the inventory from our tile entity
 
-		test(basic);
+		
 		
 		//Our tile entity slots
 		//this.addSlotToContainer(new SlotItemHandler(handler, 0, 62, 17));
 		//this.addSlotToContainer(new SlotItemHandler(handler, 1, 80, 17));
-		this.addSlotToContainer(new SlotItemHandler(handler, 2, 98, 17));
-		//this.addSlotToContainer(new SlotItemHandler(handler, 3, 62, 35));
-		//this.addSlotToContainer(new SlotItemHandler(handler, 4, 80, 35));
-		//this.addSlotToContainer(new SlotItemHandler(handler, 5, 98, 35));
+		//this.addSlotToContainer(new SlotItemHandler(handler, 2, 98, 17));
+		this.addSlotToContainer(new SlotItemHandler(handler, 3, 62, 35));
+		this.addSlotToContainer(new SlotItemHandler(handler, 4, 80, 35));
+		this.addSlotToContainer(new SlotItemHandler(handler, 5, 98, 35));
 		//this.addSlotToContainer(new SlotItemHandler(handler, 6, 62, 53));
-		this.addSlotToContainer(new SlotItemHandler(handler, 7, 80, 53));
+		//this.addSlotToContainer(new SlotItemHandler(handler, 7, 80, 53));
 		//this.addSlotToContainer(new SlotItemHandler(handler, 8, 98, 53));
 	//	this.addSlotToContainer(new SlotEnchantedBook(handler, 9, 134, 17));
 
@@ -76,11 +66,11 @@ public class ContainerBasic2 extends Container {
 		
 		
 		
-		this.addSlotToContainer(new SlotItemHandler(handler, 0, 62, 17) {
-			public void onSlotChanged() {
-				super.onSlotChanged();
+		//this.addSlotToContainer(new SlotItemHandler(handler, 3, 62, 35) {
+			//public void onSlotChanged() {
+			//	super.onSlotChanged();
 				
-				if (getHasStack()) {
+				//if (getHasStack()) {
 				//	EntityPlayer entity = Minecraft.getMinecraft().player;
 				//	int i = (int) entity.posX;
 				//	int j = (int) entity.posY;
@@ -98,7 +88,7 @@ public class ContainerBasic2 extends Container {
 						
 						//}
 								
-					}
+					//}
 				
 				
 				
@@ -121,9 +111,9 @@ public class ContainerBasic2 extends Container {
 				
 				
 				
-			}
+			//}
 			
-		});
+		//});
 		
 		
 		
@@ -131,10 +121,6 @@ public class ContainerBasic2 extends Container {
 	}
 	
 
-	
-	public static void test(TileEntityCustom2 te){ //<---- this is the code i am working on
-		
-	}
 	
 
 	/**

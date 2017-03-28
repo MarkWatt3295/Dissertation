@@ -35,6 +35,7 @@ import com.maw79.mods.items.mathsitems.ItemPlayerLevel;
 import com.maw79.mods.items.mathsitems.ItemXyzDevice;
 import com.maw79.mods.items.scienceitems.ItemElementFire;
 import com.maw79.mods.items.scienceitems.ItemMagnet;
+import com.maw79.mods.items.scienceitems.ItemPropertyLabel;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.util.Utils;
@@ -82,12 +83,18 @@ public class ModItems {
 	public static Item fireelement;
 	public static Item magnet;
 	
+	
 	//Projectiles
 	public static final Item ARROW = new ItemModArrow("arrow", EntityModArrow::new);
 	public static final ItemModArrow BLOCK_DETECTION_ARROW = new ItemModArrow("block_detection_arrow", EntityBlockDetectionArrow::new);
 	public static final ItemModArrow PAINT_ARROW = new ItemModArrow("paint_arrow", EntityPaintArrow::new);
 	public static final ItemModBow BOW = new ItemModBow("bow");
 	public static ItemSnowballLauncher SNOW = new ItemSnowballLauncher("snow");
+	
+	//Science Labels
+	public static final Item LABELSTRONG = new ItemPropertyLabel("label_strong");
+	public static final Item LABELOPAQUE = new ItemPropertyLabel("label_opaque");
+	public static final Item LABELCHAIR = new ItemPropertyLabel("label_chair");
 	
 	
 	
@@ -153,6 +160,11 @@ public class ModItems {
 		registerItem(ARROW);
 		registerItem(BLOCK_DETECTION_ARROW);
 		registerItem(PAINT_ARROW);
+		
+		//SCIENCE LABELS
+		registerItem(LABELSTRONG);
+		registerItem(LABELOPAQUE);
+		registerItem(LABELCHAIR);
 		
 		//Items
 		//GameRegistry.register(obsidianingot);
@@ -222,6 +234,11 @@ public class ModItems {
 		registerRender(BLOCK_DETECTION_ARROW);
 		registerRender(SNOW);
 		registerRender(PAINT_ARROW);
+		
+		//SCIENCE LABELS
+		registerRender(LABELCHAIR);
+		registerRender(LABELOPAQUE);
+		registerRender(LABELSTRONG);
 	
 		
 		//Food

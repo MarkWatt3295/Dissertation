@@ -1,16 +1,10 @@
-package com.maw79.mods.blocks.tileentityattempt;
+package com.maw79.mods.modattempts.enclosedblocks;
 
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.maw79.mods.client.gui.GuiNotif;
-import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.main.Reference;
-
-import net.minecraft.client.gui.GuiButton;
-import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.resources.I18n;
@@ -32,17 +26,12 @@ public class GuiBasic2 extends GuiContainer {
 	 */
 	private TileEntityCustom2 te;
 	private IInventory playerInv;
-	GuiButton button1;
-	final int BUTTON1=1;
 	
 	/**
 	 * Typical {@link GuiContainer} constructor
 	 * @param playerInv The players inventory
 	 * @param te The tile entity
 	 */
-	
-	
-	 
 	public GuiBasic2(IInventory playerInv, TileEntityCustom2 te) {
 		super(new ContainerBasic2(playerInv, te));
 		
@@ -51,7 +40,6 @@ public class GuiBasic2 extends GuiContainer {
 		
 		this.te = te;
 		this.playerInv = playerInv;
-		 
 	}
 
 	/**
@@ -81,40 +69,5 @@ public class GuiBasic2 extends GuiContainer {
 			this.drawHoveringText(text, actualMouseX, actualMouseY);
 		}
 	}
-	@Override
-    public void initGui() {
-    	
-        buttonList.clear();
-        buttonList.add(button1 = new GuiButton(BUTTON1, (width / 2) - 100 / 2, 85, 100, 20, "§4"+"Level 1"));
-        updateButtons();
-        super.initGui();
-    }
-	
-	 @Override
-	    protected void actionPerformed(GuiButton button) throws IOException {
-	    	
-	    	
-	        switch (button.id) {
-	            case BUTTON1:
-	            	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-	            	mc.displayGuiScreen((GuiScreen)null);
-	            	break;
-	        }
-	        updateButtons();
-	        super.actionPerformed(button);
-	      
-	    }
-	 
-	 public void onEvent(){
-	    	System.out.println("Tile Entity With button Pressed");
-	    	  
-	    }
-	 
-	 public void updateButtons() {
-         onEvent(); 
-   
- }
-	 
-	 }
 
-
+}

@@ -1,4 +1,4 @@
-package com.maw79.mods.blocks.tileentityattempt;
+package com.maw79.mods.modattempts.enclosedblocks;
 
 
 

@@ -1,4 +1,4 @@
-package com.maw79.mods.blocks.tileentityattempt;
+package com.maw79.mods.blocks.scienceblocks.tileentityscience;
 
 
 import java.io.IOException;
@@ -25,15 +25,19 @@ import net.minecraftforge.items.CapabilityItemHandler;
  * @author Mark Watt
  *
  */
-public class GuiBasic2 extends GuiContainer {
+public class GuiScienceTe extends GuiContainer {
 
 	/**
 	 * The tile entity and player inventory
 	 */
-	private TileEntityCustom2 te;
+	private TileEntityScience te;
 	private IInventory playerInv;
 	GuiButton button1;
 	final int BUTTON1=1;
+	
+	public boolean woodproperties1 = false;
+	public boolean woodproperties2 = false;
+	public boolean woodproperties3 = false;
 	
 	/**
 	 * Typical {@link GuiContainer} constructor
@@ -43,12 +47,11 @@ public class GuiBasic2 extends GuiContainer {
 	
 	
 	 
-	public GuiBasic2(IInventory playerInv, TileEntityCustom2 te) {
-		super(new ContainerBasic2(playerInv, te));
+	public GuiScienceTe(IInventory playerInv, TileEntityScience te) {
+		super(new ContainerScience(playerInv, te));
 		
 		this.xSize = 176; //Texture xSize
 		this.ySize = 166; //Texture ySize
-		
 		this.te = te;
 		this.playerInv = playerInv;
 		 
@@ -60,7 +63,7 @@ public class GuiBasic2 extends GuiContainer {
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
 		GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F); //Grey background
-		this.mc.getTextureManager().bindTexture(new ResourceLocation(Reference.MOD_ID, "textures/gui/container/tileentityattempt.png")); //Binds the texture for rendering
+		this.mc.getTextureManager().bindTexture(new ResourceLocation(Reference.MOD_ID, "textures/gui/container/tileentityscience.png")); //Binds the texture for rendering
 		this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize); //Draws our texture
 	}
 	
@@ -69,9 +72,9 @@ public class GuiBasic2 extends GuiContainer {
 	 */
 	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-		String s = ("Tile Entity"); //Gets the formatted name for the block breaker from the language file
+		String s = ("Material Properties"); //Gets the formatted name for the block breaker from the language file
 		this.mc.fontRendererObj.drawString(s, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s) / 2, 6, 4210752); //Draws the block breaker name in the center on the top of the gui
-		this.mc.fontRendererObj.drawString(this.playerInv.getDisplayName().getFormattedText(), 8, 72, 4210752); //The player's inventory name
+		//this.mc.fontRendererObj.drawString(this.playerInv.getDisplayName().getFormattedText(), 8, 72, 4210752); //The player's inventory name
 		int actualMouseX = mouseX - ((this.width - this.xSize) / 2);
 		int actualMouseY = mouseY - ((this.height - this.ySize) / 2);
 		if(actualMouseX >= 134 && actualMouseX <= 149 && actualMouseY >= 17 && actualMouseY <= 32 && te.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).getStackInSlot(9) == ItemStack.EMPTY) {
@@ -85,7 +88,7 @@ public class GuiBasic2 extends GuiContainer {
     public void initGui() {
     	
         buttonList.clear();
-        buttonList.add(button1 = new GuiButton(BUTTON1, (width / 2) - 100 / 2, 85, 100, 20, "§4"+"Level 1"));
+        buttonList.add(button1 = new GuiButton(BUTTON1, (width / 2) - 100 / 2, 95, 100, 20, "Submit Answers"));
         updateButtons();
         super.initGui();
     }

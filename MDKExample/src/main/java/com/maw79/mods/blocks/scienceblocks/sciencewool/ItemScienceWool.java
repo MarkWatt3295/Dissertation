@@ -1,21 +1,21 @@
-package com.maw79.mods.blocks.item;
+package com.maw79.mods.blocks.scienceblocks.sciencewool;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
 /**
- * This should be used for any block that uses meta data.
- * Make sure to have your block implement IMetaBlockName
+ * Used for the block breaker. This is exactly the same as the {@link ItemBlockMeta} class
+ * This is for if I want the {@link BlockBreaker} to have a tool tip
  *
  */
-public class ItemBlockMeta extends ItemBlock {
-	
+public class ItemScienceWool extends ItemBlock {
+
 	/**
 	 * Default {@link ItemBlock} constructor
 	 * @param block The original block
 	 */
-	public ItemBlockMeta(Block block) {
+	public ItemScienceWool(Block block) {
 		super(block);
 		if(!(block instanceof IMetaBlockName)) { //Makes sure that the block implements IMetaBlockName
 			throw new IllegalArgumentException(String.format("The given Block %s is not an instance of IMetaBlockName!", block.getUnlocalizedName()));
@@ -39,5 +39,5 @@ public class ItemBlockMeta extends ItemBlock {
 	public int getMetadata(int damage) {
 		return damage;
 	}
-
+	
 }

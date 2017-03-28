@@ -4,9 +4,10 @@ itemGroup.maw79 items=Maw79 Items
 itemGroup.maw79 mathsblocks=Maw79 Maths Blocks
 itemGroup.maw79 debug=Maw79 Debug Tools
 itemGroup.maw79 scratch blocks=Maw79 Scratch Blocks
+itemGroup.maw79 science blocks=Maw79 Science Blocks
 
 //Items
-item.obsidian_ingot.name=Obsidian Ingot
+item.itemobsidianingot.name=Obsidian Ingot
 item.ruby.name=Ruby
 item.mw.name=MW Symbol
 item.heart.name=Heart
@@ -22,6 +23,10 @@ item.magnet.name=Magnet
 
 //Science Items
 item.fire_element.name=Fire Element
+item.label_strong.name=Strong
+item.label_opaque.name=Opaque
+item.label_chair.name=Chairs
+
 
 //MATHS ITEMS
 item.first_book.name=Maw79 Mod Book
@@ -137,6 +142,13 @@ tile.block_number18.name=Number 18 Block
 tile.block_number19.name=Number 19 Block
 tile.block_number20.name=Number 20 Block
 tile.block_number21.name=Number 21 Block
+
+//SCIENCE BLOCKS
+tile.science_wool_block.name=Science Wool
+tile.science_wool.basic.name=Science Wool (Basic)
+tile.science_wool.advanced.name=Science Wool (Advanced)
+tile.science_te.name=Science TE
+tile.wood_properties_te.name=Wood Properties Block
 
 //Achievements
 achievement.newingot=New Ingot

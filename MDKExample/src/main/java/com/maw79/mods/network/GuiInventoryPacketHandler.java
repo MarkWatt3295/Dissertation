@@ -35,10 +35,10 @@ World world = DimensionManager.getWorld(message.dimension);
  if(ctx.getServerHandler().playerEntity.getEntityId() == message.entityID){
  EntityPlayerMP player = ctx.getServerHandler().playerEntity;
 
- //ContainerBasic2.handler.insertItem(7, new ItemStack(Blocks.GOLD_BLOCK), false);
+// ContainerBasic2.handler.insertItem(7, new ItemStack(Blocks.GOLD_BLOCK), false);
 
 	//player.connection.playerEntity.inventory.addItemStackToInventory(new ItemStack(ModTools.paintbrush, 1));
-	 player.sendMessage(new TextComponentString("*Inventory Thingy*"));
+	// player.sendMessage(new TextComponentString("*Inventory Thingy*"));
 	
 }
 
