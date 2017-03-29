@@ -38,7 +38,7 @@ public class GuiScienceTe extends GuiContainer {
 	GuiButton button1, button2, button3;
 	final int BUTTON1=1, BUTTON2 = 2, BUTTON3 = 3;
 	
-	public boolean buttonRelease = false;
+	public static boolean buttonRelease = false;
 	public boolean woodproperties2 = false;
 	public boolean woodproperties3 = false;
 	
@@ -100,7 +100,7 @@ public class GuiScienceTe extends GuiContainer {
     }
 	  @Override
 	    public boolean doesGuiPauseGame() {
-	        return true;
+	        return false;
 	    }
 	
 	 @Override
@@ -109,7 +109,7 @@ public class GuiScienceTe extends GuiContainer {
 	    	
 	        switch (button.id) {
 	            case BUTTON1:
-	            	buttonRelease = true;
+	            	//buttonRelease = true;
 	            	System.out.println("Skimmed button 1");
 	            	//mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
 	            	//System.out.println("Before GUI --> Correct Properties = "+ te.correctproperties);
@@ -119,7 +119,7 @@ public class GuiScienceTe extends GuiContainer {
 	            	break;
 	            	
 	            case BUTTON2:
-	            	
+	            	buttonRelease = false;
 	            	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
 	            	
 	            	onEvent2();
@@ -145,8 +145,9 @@ public class GuiScienceTe extends GuiContainer {
 		 System.out.println("On event 2 called");
 		 button3.visible = true;
  		button2.visible =false;
- 		te.setremove=true;
- 		Maw79Mod.networkWrapperGuiInventory1.sendToServer(new GuiInventoryMessage(mc.player, te));
+ 		te.setremove = true;
+ 		//te.setremove=true;
+ 		//Maw79Mod.networkWrapperGuiInventory1.sendToServer(new GuiInventoryMessage(mc.player, te));
 	 }
 	 
 	 public void onEvent(){

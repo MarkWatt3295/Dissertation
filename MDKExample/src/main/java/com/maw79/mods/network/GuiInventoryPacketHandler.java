@@ -1,5 +1,6 @@
 package com.maw79.mods.network;
 
+import com.maw79.mods.blocks.scienceblocks.tileentityscience.ContainerScience;
 import com.maw79.mods.blocks.scienceblocks.tileentityscience.TileEntityScience;
 
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -29,10 +30,13 @@ World world = DimensionManager.getWorld(message.dimension);
  EntityPlayerMP player = ctx.getServerHandler().playerEntity;
 
 
-setrec = message.setremovemess;
- player.sendMessage(new TextComponentString("* Gui Remove Message*"));
+//setrec = message.setremovemess;
+ //player.sendMessage(new TextComponentString("* Gui Remove Message*"));
 
-	
+//ContainerScience.handler.extractItem(3, 1, false);
+//TileEntityScience.handler.extractItem(3, 1, false);
+//TileEntityScience.setremove = setrec;
+	//.
 // ContainerBasic2.handler.insertItem(7, new ItemStack(Blocks.GOLD_BLOCK), false);
 
 	//player.connection.playerEntity.inventory.addItemStackToInventory(new ItemStack(ModTools.paintbrush, 1));

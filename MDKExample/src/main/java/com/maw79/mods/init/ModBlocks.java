@@ -30,6 +30,7 @@ import com.maw79.mods.blocks.mathsblocks.BlockBasicBlock;
 import com.maw79.mods.blocks.mathsblocks.BlockMathsQuestionBlock;
 import com.maw79.mods.blocks.mathsblocks.BlockMathsQuizBlock;
 import com.maw79.mods.blocks.mathsblocks.mcreator_testBlock;
+import com.maw79.mods.blocks.scienceblocks.BlockLablerBlock;
 import com.maw79.mods.blocks.scienceblocks.BlockScienceWool;
 import com.maw79.mods.blocks.scienceblocks.sciencewool.BlockScienceWoolP;
 import com.maw79.mods.blocks.scienceblocks.sciencewool.ItemScienceWool;
@@ -128,6 +129,7 @@ public class ModBlocks {
 	public static Block sciencewool;
 	public static Block materialproperties;
 	public static Block woodproperties;
+	public static Block labler;
 	
 	
 	
@@ -201,6 +203,7 @@ public class ModBlocks {
 		testblockte = new BlockTestTE("test_block_te");
 		materialproperties = new BlockScienceTE("science_te");
 		woodproperties = new BlockScienceTE("wood_properties_te");
+		labler = new BlockLablerBlock("labler_block");
 		
 		
 		sciencewoolblock = new BlockScienceWool("science_wool_block");
@@ -310,6 +313,7 @@ public class ModBlocks {
 		registerBlock(woodproperties);
 		registerBlock(sciencewoolblock);
 		registerBlock(sciencewool, new ItemScienceWool(sciencewool));
+		registerBlock(labler);
 		
 	}
 	
@@ -396,7 +400,7 @@ public class ModBlocks {
 		registerRender(testblockte);
 		registerRender(materialproperties);
 		registerRender(woodproperties);
-		
+		registerRender(labler);
 		registerRender(sciencewoolblock);
 		
 		

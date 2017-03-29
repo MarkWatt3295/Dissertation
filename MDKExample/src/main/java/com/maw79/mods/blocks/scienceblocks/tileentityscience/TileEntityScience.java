@@ -6,6 +6,7 @@ import java.util.Random;
 import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.init.ModItems;
 import com.maw79.mods.network.GuiInventoryPacketHandler;
+import com.maw79.mods.util.Utils;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
@@ -32,7 +33,7 @@ public class TileEntityScience extends TileEntity implements ITickable, ICapabil
 	/**
 	 * New 1.9.4 onwards. Using forge capabilities instead of {@link IInventory}
 	 */
-	public ItemStackHandler handler;
+	public  ItemStackHandler handler;
 	private int cooldown;
 	private int cooldownCap = 100;
 	private Random random;
@@ -164,40 +165,21 @@ public class TileEntityScience extends TileEntity implements ITickable, ICapabil
 		return false;
 	}
 
-	GuiScienceTe gte;
-	public int max =0;
 	@Override
 	public void update() {
 		if (this.world != null) {
 		IBlockState currentState = this.world.getBlockState(pos);
 		EntityPlayer player = Minecraft.getMinecraft().player;
 		
-		/*if(handler.getStackInSlot(3).isItemEqual(new ItemStack(ModItems.obsidianingot)) 
-				&& (handler.getStackInSlot(5).isItemEqual(new ItemStack(ModItems.bolt))))
-				//&& (handler.getStackInSlot(7).isItemEqual(ItemStack.EMPTY)))
-				{
-			if(true){
-				System.out.println("true test");
-				player.playSound(ModSoundHandler.MAWSOUND_COIN, 2, 4);
-				//System.out.println(max);
-				//if (!world.isRemote)
-				handler.extractItem(3, 1, false);
-				handler.extractItem(5, 1, false);
-					//handler.insertItem(2, ItemStack.EMPTY, false);
-				//handler.getStackInSlot(7).set;
-				
-			}
-			//if(max !=1){
-			handler.insertItem(4, new ItemStack(Blocks.GOLD_BLOCK), false);
-			
-		//	max++;
-			//}
+		if(setremove == true){
+			Utils.getLogger().info("set is : "+ setremove);
+			setremove = false;
+			removeItems();
+		}
 		
-			//else if(false){
-			//	System.out.println("False Test / 7 isn't EMPTY");
-			//}
 		
-		}*/
+		
+		
 		ItemStack slot1 = handler.getStackInSlot(3);
 		ItemStack slot2 = handler.getStackInSlot(4);
 		ItemStack slot3 = handler.getStackInSlot(5);
@@ -226,10 +208,7 @@ public class TileEntityScience extends TileEntity implements ITickable, ICapabil
 		
 		
 		}
-		if (setremove = true){
-			removeItems();
-			setremove = false;
-		}
+		
 		}
 		
 	
@@ -237,13 +216,13 @@ public class TileEntityScience extends TileEntity implements ITickable, ICapabil
 	}
 	
 	
-	public void removeItems(){
-		//ContainerScience cs;
+	public  void removeItems(){
+		ContainerScience.removeItems();
 		//cs.removeItems();
 		handler.extractItem(3, 1, false);
 		handler.extractItem(4, 1, false);
 		handler.extractItem(5, 1, false);
-		setremove = false;
+		
 	}
 
 	

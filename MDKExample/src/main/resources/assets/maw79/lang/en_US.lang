@@ -149,6 +149,7 @@ tile.science_wool.basic.name=Science Wool (Basic)
 tile.science_wool.advanced.name=Science Wool (Advanced)
 tile.science_te.name=Science TE
 tile.wood_properties_te.name=Wood Properties Block
+tile.labler_block.name=Labler Block
 
 //Achievements
 achievement.newingot=New Ingot

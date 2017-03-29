@@ -19,7 +19,7 @@ public class ContainerScience extends Container {
 	 * This tile entity and the item handler (inventory)
 	 */
 	private TileEntityScience te;
-	public IItemHandler handler;
+	public static IItemHandler handler;
 	public static IInventory PlayeInveni;
 
 	/**
@@ -168,6 +168,10 @@ public class ContainerScience extends Container {
 	    }
 	    return previous;
 	}
-
+	public static void removeItems(){
+		handler.extractItem(3, 1, false);
+		handler.extractItem(4, 1, false);
+		handler.extractItem(5, 1, false);
+	}
 
 }
