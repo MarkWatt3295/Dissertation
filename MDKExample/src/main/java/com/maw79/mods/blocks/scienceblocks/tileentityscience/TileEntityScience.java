@@ -12,6 +12,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -27,6 +28,7 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
+import scala.sys.process.processInternal;
 
 public class TileEntityScience extends TileEntity implements ITickable, ICapabilityProvider {
 
@@ -40,7 +42,9 @@ public class TileEntityScience extends TileEntity implements ITickable, ICapabil
 	
 	public boolean correctproperties = false;
 	public boolean setremove = false;
+	public static boolean setClicker = false;
 
+	public ArrayList<ItemStack>itemsis = new ArrayList<ItemStack>();
 	/**
 	 * Initializes our variables. MUST NOT HAVE ANY PARAMETERS
 	 */
@@ -48,6 +52,12 @@ public class TileEntityScience extends TileEntity implements ITickable, ICapabil
 		this.cooldown = 0;
 		this.handler = new ItemStackHandler(10);
 		this.random = new Random();
+		this.setremove = false;
+		this.setClicker = false;
+		//this.correctproperties = false;
+		Utils.getLogger().info("TileEntityScience Called. Propertie is : "+ correctproperties);
+		Utils.getLogger().info("TE Initialize. Clicker is : "+ setClicker);
+		
 	}
 
 	/**
@@ -57,6 +67,8 @@ public class TileEntityScience extends TileEntity implements ITickable, ICapabil
 	public void readFromNBT(NBTTagCompound nbt) {
 		this.cooldown = nbt.getInteger("Cooldown");
 		this.handler.deserializeNBT(nbt.getCompoundTag("ItemStackHandler")); 
+		this.setremove = nbt.getBoolean("setremove");
+		this.correctproperties =false;
 		// Gets the ItemStackHandler from tag within a tag
 
 		super.readFromNBT(nbt);
@@ -68,6 +80,8 @@ public class TileEntityScience extends TileEntity implements ITickable, ICapabil
 	@Override
 	public NBTTagCompound writeToNBT(NBTTagCompound nbt) {
 		nbt.setInteger("Cooldown", this.cooldown);
+		nbt.setBoolean("setremove", this.setremove);
+		nbt.setBoolean("properties", this.correctproperties);
 		nbt.setTag("ItemStackHandler", this.handler.serializeNBT()); // We write our ItemStackHandler as a tag in a tag
 
 		return super.writeToNBT(nbt);
@@ -82,8 +96,10 @@ public class TileEntityScience extends TileEntity implements ITickable, ICapabil
 	public SPacketUpdateTileEntity getUpdatePacket() {
 		NBTTagCompound nbt = new NBTTagCompound();
 		this.writeToNBT(nbt);
+		nbt.getBoolean("properties");
 		int metadata = getBlockMetadata();
 		return new SPacketUpdateTileEntity(this.pos, metadata, nbt);
+		 
 	}
 
 	/**
@@ -100,7 +116,9 @@ public class TileEntityScience extends TileEntity implements ITickable, ICapabil
 	@Override
 	public NBTTagCompound getUpdateTag() {
 		NBTTagCompound nbt = new NBTTagCompound();
+		nbt.getBoolean("properties");
 		this.writeToNBT(nbt);
+		
 		return nbt;
 	}
 
@@ -167,54 +185,36 @@ public class TileEntityScience extends TileEntity implements ITickable, ICapabil
 
 	@Override
 	public void update() {
-		if (this.world != null) {
+		//Utils.getLogger().info("Below Update. Properties is : "+ correctproperties);
+		//if (this.world != null) {
+		if (!world.isRemote) {
 		IBlockState currentState = this.world.getBlockState(pos);
 		EntityPlayer player = Minecraft.getMinecraft().player;
 		
-		if(setremove == true){
-			Utils.getLogger().info("set is : "+ setremove);
-			setremove = false;
-			removeItems();
-		}
 		
 		
+		//Utils.getLogger().info("Under IS. Clicker is : "+ setClicker);
 		
-		
-		ItemStack slot1 = handler.getStackInSlot(3);
-		ItemStack slot2 = handler.getStackInSlot(4);
-		ItemStack slot3 = handler.getStackInSlot(5);
-		
-		ArrayList<ItemStack>itemsis = new ArrayList<ItemStack>();
 		itemsis.add(new ItemStack (ModItems.LABELOPAQUE));
 		itemsis.add(new ItemStack (ModItems.LABELCHAIR));
 		itemsis.add(new ItemStack (ModItems.LABELSTRONG));
 		
-		//System.out.println("Out of Stack Loop --> Correct Properties = "+ correctproperties);
-		for (int i = 0; i < itemsis.size(); i++) {
-		       // System.out.println(itemsis.get(i));
-			itemsis.get(i);
-		    
-		if(handler.getStackInSlot(3).isItemEqual(itemsis.get(i))||(handler.getStackInSlot(4).isItemEqual(itemsis.get(i))
-				||(handler.getStackInSlot(5).isItemEqual(itemsis.get(i))))){
-			//System.out.println("slot 1 is : " + slot1.getDisplayName());
-			//System.out.println("slot 2 is : " + slot2.getDisplayName());
-			//System.out.println("slot 3 is : " + slot3.getDisplayName());
-			correctproperties = true;
+		itemsInArray();
+		
 			
-			//System.out.println("In Stack Loop --> Correct Properties = "+ correctproperties);
-			//removeItems();
-		}
-		
 		
 		
 		}
-		
-		}
-		
+		//Utils.getLogger().info("Test Print: "+ correctproperties);
 	
 		
 	}
 	
+	public void resetSetRemove(){
+		setremove = false;
+		Utils.getLogger().info("resetSetRemove has been called. Set remove is now : "+ setremove);
+		
+	}
 	
 	public  void removeItems(){
 		ContainerScience.removeItems();
@@ -223,6 +223,40 @@ public class TileEntityScience extends TileEntity implements ITickable, ICapabil
 		handler.extractItem(4, 1, false);
 		handler.extractItem(5, 1, false);
 		
+	}
+	
+	public void itemsInArray(){
+		ItemStack slot1 = handler.getStackInSlot(3);
+		ItemStack slot2 = handler.getStackInSlot(4);
+		ItemStack slot3 = handler.getStackInSlot(5);
+		ItemStack slot4 = handler.getStackInSlot(6);
+		ItemStack slot5 = handler.getStackInSlot(7);
+		ItemStack slot6 = handler.getStackInSlot(8);
+		
+		for (int i = 0; i < itemsis.size(); i++) {
+		       // System.out.println(itemsis.get(i));
+			//itemsis.get(i);
+		   //correctproperties =false; 
+		if(handler.getStackInSlot(3).isItemEqual(itemsis.get(i))||(handler.getStackInSlot(4).isItemEqual(itemsis.get(i))
+				||(handler.getStackInSlot(5).isItemEqual(itemsis.get(i))||(handler.getStackInSlot(6).isItemEqual(itemsis.get(i))
+						||(handler.getStackInSlot(7).isItemEqual(itemsis.get(i))||(handler.getStackInSlot(8)
+								.isItemEqual(itemsis.get(i)))))))){
+			System.out.println("slot 1 is : " + slot1.getDisplayName());
+			//System.out.println("slot 2 is : " + slot2.getDisplayName());
+			//System.out.println("slot 3 is : " + slot3.getDisplayName());
+			//System.out.println("slot 4 is : " + slot4.getDisplayName());
+			//System.out.println("slot 5 is : " + slot5.getDisplayName());
+			//System.out.println("slot 6 is : " + slot6.getDisplayName());
+			//this.correctproperties = true;
+			//GuiScienceTe.properties2 =true;
+			handler.getSlots();
+			
+			//Utils.getLogger().info("Array underprint. CPis : "+ correctproperties);
+	}else{
+		this.correctproperties = false;
+		//Utils.getLogger().info("Array Else called. CPis : "+ correctproperties);
+	}
+		}
 	}
 
 	

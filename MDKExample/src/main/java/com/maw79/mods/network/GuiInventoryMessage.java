@@ -18,7 +18,7 @@ public class GuiInventoryMessage implements IMessage {
 	 this.dimension = player.dimension;
 	 this.entityID = player.getEntityId();
 	// te.setremove = true;
-	 this.setremovemess = true;
+	 //this.setremovemess = true;
 	 Utils.getLogger().info("GUI INV Message: te.setremove = "+ te.setremove);
 	
 	 

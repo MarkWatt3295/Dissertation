@@ -2,13 +2,23 @@ package com.maw79.mods.blocks.scienceblocks.tileentityscience;
 
 
 
+import com.maw79.mods.entity.passive.Test;
+import com.maw79.mods.init.ModItems;
+import com.maw79.mods.util.Utils;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
+import net.minecraft.inventory.IContainerListener;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
@@ -21,6 +31,8 @@ public class ContainerScience extends Container {
 	private TileEntityScience te;
 	public static IItemHandler handler;
 	public static IInventory PlayeInveni;
+	public static boolean containerclear = false;
+	
 
 	/**
 	 * Tells the container where the slots are
@@ -36,15 +48,16 @@ public class ContainerScience extends Container {
 		
 		
 		//Our tile entity slots
-		//this.addSlotToContainer(new SlotItemHandler(handler, 0, 62, 17));
+		this.addSlotToContainer(new SlotItemHandler(handler, 0, 62, 17));
 		//this.addSlotToContainer(new SlotItemHandler(handler, 1, 80, 17));
 		//this.addSlotToContainer(new SlotItemHandler(handler, 2, 98, 17));
 		this.addSlotToContainer(new SlotItemHandler(handler, 3, 62, 35));
 		this.addSlotToContainer(new SlotItemHandler(handler, 4, 80, 35));
 		this.addSlotToContainer(new SlotItemHandler(handler, 5, 98, 35));
-		//this.addSlotToContainer(new SlotItemHandler(handler, 6, 62, 53));
-		//this.addSlotToContainer(new SlotItemHandler(handler, 7, 80, 53));
-		//this.addSlotToContainer(new SlotItemHandler(handler, 8, 98, 53));
+		this.addSlotToContainer(new SlotItemHandler(handler, 6, 62, 53));
+		this.addSlotToContainer(new SlotItemHandler(handler, 7, 80, 53));
+		this.addSlotToContainer(new SlotItemHandler(handler, 8, 98, 53));
+		
 	//	this.addSlotToContainer(new SlotEnchantedBook(handler, 9, 134, 17));
 
 		
@@ -66,34 +79,42 @@ public class ContainerScience extends Container {
 		
 		
 		
-		//this.addSlotToContainer(new SlotItemHandler(handler, 3, 62, 35) {
-			//public void onSlotChanged() {
-			//	super.onSlotChanged();
+		this.addSlotToContainer(new SlotItemHandler(handler,  0, 62, 17) {
+			public void onSlotChanged() {
+				super.onSlotChanged();
 				
-				//if (getHasStack()) {
-				//	EntityPlayer entity = Minecraft.getMinecraft().player;
-				//	int i = (int) entity.posX;
-				//	int j = (int) entity.posY;
-				//	int k = (int) entity.posZ;
-				//	MinecraftServer server = FMLCommonHandler.instance().getMinecraftServerInstance();
-					//World world = server.worlds[0];
+				if (getHasStack()) {
+					EntityPlayer entity = Minecraft.getMinecraft().player;
+					int i = (int) entity.posX;
+					int j = (int) entity.posY;
+					int k = (int) entity.posZ;
+					MinecraftServer server = FMLCommonHandler.instance().getMinecraftServerInstance();
+					World world = server.worlds[0];
 
 					
-					//if (true) {
-						//world.playSound((EntityPlayer) null, (double) i + 0.5D, (double) j + 0.5D, (double) k + 0.5D,
-						//		(net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY.getObject(new ResourceLocation(
-							//			("entity.chicken.egg"))), SoundCategory.NEUTRAL, 1.0F, 1.0F);
-					//	System.out.println("Sound Pkayer");
+					if (true) {
+						world.playSound((EntityPlayer) null, (double) i + 0.5D, (double) j + 0.5D, (double) k + 0.5D,
+								(net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY.getObject(new ResourceLocation(
+										("entity.chicken.egg"))), SoundCategory.NEUTRAL, 1.0F, 1.0F);
+						System.out.println("Sound Pkayer");
 						
 						
-						//}
+						}
 								
-					//}
+					}
 				
 				
 				
-			/*	if(handler.getStackInSlot(0).isItemEqual(new ItemStack(ModItems.obsidianingot)) 
-						&& (handler.getStackInSlot(2).isItemEqual(new ItemStack(ModItems.bolt))))
+				if(handler.getStackInSlot(0).isItemEqual(new ItemStack(ModItems.obsidianingot))) {
+					Utils.getLogger().info("Item is Obsidian Ingot");
+				}
+				if(containerclear = true){
+					Utils.getLogger().info("Container Clear is true");
+					removeItems();
+				}
+			}
+		});
+					/*	&& (handler.getStackInSlot(2).isItemEqual(new ItemStack(ModItems.bolt))))
 						//&& (handler.getStackInSlot(7).isItemEqual(ItemStack.EMPTY)))
 						{
 					if(true){
@@ -117,7 +138,31 @@ public class ContainerScience extends Container {
 		
 		
 		
+			
+	}
+	public static void containerclear(){
+	containerclear =true;
+	Utils.getLogger().info("Container Clear : "+ containerclear);
+	}
+	
+	@Override
+	public void detectAndSendChanges() {
+		super.detectAndSendChanges();
+		//Utils.getLogger().info("ContainerBasic: detectAndSendChanges");
 		
+		IContainerListener icontainerlistener = this.listeners.get(0);
+		//if(this.stomach!=((Test) this.entity).getStomach()){
+		//if(te.correctproperties = true){
+		//	icontainerlistener.sendProgressBarUpdate(this, 0, ((Test) this.entity).getStomach());
+		//}
+		//this.stomach = ((Test) this.entity).getStomach();
+	}
+	
+	@Override
+	public void updateProgressBar(int id, int data) {
+		Utils.getLogger().info("ContainerBasic: updateProgressBar");
+		
+		//if(id==0) ((Test) this.entity).setStomach(data);
 	}
 	
 
@@ -169,6 +214,7 @@ public class ContainerScience extends Container {
 	    return previous;
 	}
 	public static void removeItems(){
+		handler.extractItem(0, 1, false);
 		handler.extractItem(3, 1, false);
 		handler.extractItem(4, 1, false);
 		handler.extractItem(5, 1, false);
