@@ -11,7 +11,7 @@ import net.minecraft.client.gui.GuiTextField;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
 
-public class GuiPlayerLevel extends GuiScreen {
+public class GuiCalculator extends GuiScreen {
 	
 	   
 	    
@@ -20,13 +20,11 @@ public class GuiPlayerLevel extends GuiScreen {
     int guiWidth = 175;
     int guiHeight = 210;
     
-    String title = "Player Level";
+    String title = "Calculator";
+    public static String calcquestion = "null";
     
-    String question = "Hello";
-    String number ="";
-    public static int answer = 0;
    
-   // GuiTextField textBox;
+    //GuiTextField textBox;
     GuiButton button1, button2, button3, button4;
     final int BUTTON1 = 1, BUTTON2 = 2, BUTTON3 = 3, BUTTON4 = 4;
     
@@ -48,9 +46,12 @@ public class GuiPlayerLevel extends GuiScreen {
         GlStateManager.popMatrix();
         GlStateManager.pushMatrix();
         {
-            GlStateManager.translate((width / 2) - fontRendererObj.getStringWidth(title), centerY + 10, 0);
+            GlStateManager.translate((width / 2) - fontRendererObj.getStringWidth(calcquestion), centerY + 10, 0);
             GlStateManager.scale(2, 2, 2);
-            fontRendererObj.drawString(title, 0, 0, 0x6028ff);
+            fontRendererObj.drawString(calcquestion, 0, 0, 0x6028ff);
+            //GlStateManager.translate((width / 2) - fontRendererObj.getStringWidth(calcquestion), centerY + 20, 0);
+            //GlStateManager.scale(2, 2, 2);
+           // fontRendererObj.drawString(calcquestion, 0, 0, 0x6028ff);
         }
             GlStateManager.popMatrix();
             GlStateManager.pushMatrix();{
@@ -62,11 +63,6 @@ public class GuiPlayerLevel extends GuiScreen {
         }
         GlStateManager.popMatrix();
         super.drawScreen(mouseX, mouseY, partialTicks);
-        //button1.drawButton(mc, mouseX, mouseY);
-      
-       
-       // textBox.drawTextBox();
-       
       
       
     }
@@ -79,9 +75,9 @@ public class GuiPlayerLevel extends GuiScreen {
         buttonList.clear();
         
         
-        buttonList.add(button1 = new GuiButton(BUTTON1, (width / 2) - 100 / 2, 85, 100, 20, "§4"+"Level 1"));
-        buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) - 100 / 2,  110, 100, 20, "§a"+"Level 2"));
-        buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) - 100 / 2, 135, 100, 20, "§9"+"Level 3"));
+     //   buttonList.add(button1 = new GuiButton(BUTTON1, (width / 2) - 100 / 2, 85, 100, 20, "§4"+"Level 1"));
+      //  buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) - 100 / 2,  110, 100, 20, "§a"+"Level 2"));
+      //  buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) - 100 / 2, 135, 100, 20, "§9"+"Level 3"));
         //buttonList.add(button4 = new GuiButton(BUTTON4, (width / 2) - 100 / 2, 155, 100, 20, "Level 4"));
         updateButtons();
         super.initGui();

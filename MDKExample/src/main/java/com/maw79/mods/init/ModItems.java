@@ -30,6 +30,7 @@ import com.maw79.mods.items.mathsitems.ItemAppleWall;
 import com.maw79.mods.items.mathsitems.ItemAppleWallAxis;
 import com.maw79.mods.items.mathsitems.ItemAppleWallBorder;
 import com.maw79.mods.items.mathsitems.ItemAppleWallWool;
+import com.maw79.mods.items.mathsitems.ItemCalculator;
 import com.maw79.mods.items.mathsitems.ItemCompleteAppleWall;
 import com.maw79.mods.items.mathsitems.ItemPictureWall;
 import com.maw79.mods.items.mathsitems.ItemPlayerLevel;
@@ -99,6 +100,7 @@ public class ModItems {
 	public static final Item LABELCHAIR = new ItemPropertyLabel("label_chair");
 	
 	public static ItemScoreDebug SCOREDEBUG = new ItemScoreDebug("scoredebug");
+	public static ItemCalculator CALCULATOR = new ItemCalculator("calculator");
 	
 	
 	
@@ -171,6 +173,7 @@ public class ModItems {
 		registerItem(LABELCHAIR);
 		
 		registerItem(SCOREDEBUG);
+		registerItem(CALCULATOR);
 		
 		//Items
 		//GameRegistry.register(obsidianingot);
@@ -248,6 +251,8 @@ public class ModItems {
 		
 		registerRender(SCOREDEBUG);
 		SCOREDEBUG.setCreativeTab(Maw79Mod.debug);
+		
+		registerRender(CALCULATOR);
 	
 		
 		//Food

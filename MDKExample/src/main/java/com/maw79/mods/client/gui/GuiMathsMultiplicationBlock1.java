@@ -51,7 +51,7 @@ public class GuiMathsMultiplicationBlock1 extends GuiScreen {
 	   
 	    
 	
-	final ResourceLocation texture = new ResourceLocation(Reference.MOD_ID, "textures/gui/book.png");
+	final ResourceLocation texture = new ResourceLocation(Reference.MOD_ID, "textures/gui/mathsquestion.png");
     int guiWidth = 175;
     int guiHeight = 228;
     
@@ -69,7 +69,6 @@ public class GuiMathsMultiplicationBlock1 extends GuiScreen {
     int answer = 0;
     GuiTextField textBox;
     GuiButton button1, button2, button3;
-    GuiButtonTutorial arrow;
     final int BUTTON1 = 0, ARROW = 1, BUTTON2 = 2, BUTTON3 = 3;
     
     @Override
@@ -105,7 +104,7 @@ public class GuiMathsMultiplicationBlock1 extends GuiScreen {
         GlStateManager.popMatrix();
         super.drawScreen(mouseX, mouseY, partialTicks);
         button1.drawButton(mc, mouseX, mouseY);
-        arrow.drawButton(mc, mouseX, mouseY);
+      //  arrow.drawButton(mc, mouseX, mouseY);
        
         textBox.drawTextBox();
        
@@ -124,7 +123,6 @@ public class GuiMathsMultiplicationBlock1 extends GuiScreen {
         buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) - 100 / 2, height - 40, 100, 20, ""));
         button1.visible = false;
         button1.enabled = false;
-        buttonList.add(arrow = new GuiButtonTutorial(ARROW, 100, 100));
         textBox = new GuiTextField(0, fontRendererObj, (width / 2) - 100 / 2,   80, 100, 20 );//0,0,0,box height
         updateButtons();
         super.initGui();

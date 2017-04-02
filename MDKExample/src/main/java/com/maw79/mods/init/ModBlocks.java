@@ -1,6 +1,7 @@
 package com.maw79.mods.init;
 
 import com.maw79.mods.blocks.BlockBreaker;
+import com.maw79.mods.blocks.BlockBridgeBlock;
 import com.maw79.mods.blocks.BlockCreativeBlock;
 import com.maw79.mods.blocks.BlockCustomModel;
 import com.maw79.mods.blocks.BlockGamemodeDetector;
@@ -130,11 +131,13 @@ public class ModBlocks {
 	public static Block materialproperties;
 	public static Block woodproperties;
 	public static Block labler;
+	public static Block bridge;
 	
 	
 	
 
 	public static void init(){
+		rubyblock = new BlockRuby("bridge_block");
 		rubyblock = new BlockRuby("ruby_block");
 		obsidianingotblock = new BlockObsidianIngot("obsidian_ingot_block");
 		steelOre = new BlockSteelOre("steel_ore", "steel_ore");
@@ -204,14 +207,16 @@ public class ModBlocks {
 		materialproperties = new BlockScienceTE("science_te");
 		woodproperties = new BlockScienceTE("wood_properties_te");
 		labler = new BlockLablerBlock("labler_block");
-		
-		
 		sciencewoolblock = new BlockScienceWool("science_wool_block");
 		sciencewool = new BlockScienceWoolP("science_wool");
+		
+		bridge = new BlockBridgeBlock("bridge_block");
+		
 		
 	}
 	
 	public static void register(){
+		registerBlock(bridge);
 		registerBlock(rubyblock);
 		registerBlock(obsidianingotblock);
 		registerBlock(steelOre, new ItemBlockMeta(steelOre)); //Says that the block uses the ItemBlockMeta as the item block
@@ -334,6 +339,7 @@ public class ModBlocks {
 	}
 	
 	public static void registerRenders(){
+		registerRender(bridge);
 		registerRender(rubyblock);
 		registerRender(obsidianingotblock);
 		//registerRender(steelOre);

@@ -40,7 +40,7 @@ public class BlockMathsQuestionBlock extends Block {
 		//if(this.blockanswered == false){		
 		worldIn.playSound(player, pos, ModSoundHandler.MAWSOUND_COIN, SoundCategory.BLOCKS, 1.0F, 1.0F);
 		if(!player.world.isRemote){
-			player.sendMessage(new TextComponentString(Utilities.stringToGolden("Maths Question", 5, true)));
+			player.sendMessage(new TextComponentString("Maths Question"));
 			Minecraft.getMinecraft().displayGuiScreen(new GuiMathsMultiplicationBlock1());
 			this.blockanswered = true;
 		}

@@ -29,10 +29,10 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 public class ModEventHandler {
 
 	boolean messageCall = false;
-	/*
+	
     @SubscribeEvent
     public void onLivingUpdateEvent(LivingUpdateEvent event){
-    
+    /*
     	if (event.getEntity() instanceof EntityPlayer)
     	{
     	EntityPlayer player = (EntityPlayer) event.getEntity();
@@ -54,9 +54,10 @@ public class ModEventHandler {
     		}
     		}
     		
-    		}
+    		}*/
+    	
     	}
-    	*/
+    	
     	
     	
     	

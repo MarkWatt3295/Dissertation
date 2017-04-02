@@ -1,19 +1,24 @@
 package com.maw79.mods.blocks;
 
+import com.maw79.mods.client.gui.GuiCalculator;
 import com.maw79.mods.client.gui.GuiFirstBook;
 import com.maw79.mods.client.gui.GuiSecondBook;
 import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.init.ModItems;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.util.Utilities;
+import com.maw79.mods.util.Utils;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
@@ -58,7 +63,7 @@ public class BlockTestBlock2 extends Block {
 		//player.motionX = -1; 
 		//player.posZ += 80; NS
 		 if(!player.world.isRemote) player.sendMessage(new TextComponentString(Utilities.stringToRainbow("TestBlock 2 pressed", true)));
-		Minecraft.getMinecraft().displayGuiScreen(new GuiSecondBook());
+		//Minecraft.getMinecraft().displayGuiScreen(new GuiSecondBook());
 		
 		
 		return true; 
@@ -83,6 +88,17 @@ public class BlockTestBlock2 extends Block {
 		return super.getStateForPlacement(worldIn, pos, facing, hitX, hitY, hitZ, meta, placer);
 	}
 	
+	@Override
+	public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
+		if (true) {
+		GuiCalculator.calcquestion = "Testing";
+		Utils.getLogger().info("Calculator Screen = Stood On Block");
+		super.onEntityWalk(worldIn, pos, entityIn);
+		}
+		
+		
+	
+	}
 	
 
 }

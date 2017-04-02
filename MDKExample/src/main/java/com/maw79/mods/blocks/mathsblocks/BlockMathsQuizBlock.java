@@ -29,7 +29,7 @@ public class BlockMathsQuizBlock extends BlockMathsQuestionBlock{
 		//if(this.blockanswered == false){		
 		worldIn.playSound(player, pos, ModSoundHandler.MAWSOUND_COIN, SoundCategory.BLOCKS, 5.0F, 5.0F);
 		if(!player.world.isRemote){
-			player.sendMessage(new TextComponentString(Utilities.stringToGolden("Maths Question", 1, true)));
+			player.sendMessage(new TextComponentString("Maths Question"));
 			Minecraft.getMinecraft().displayGuiScreen(new GuiMathsMultiplicationBlock1());
 			this.blockanswered = true;
 		}
