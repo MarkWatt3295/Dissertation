@@ -18,6 +18,7 @@ item.chip.basic.name=Basic Chip
 item.chip.advanced.name=Advanced Chip
 item.custom fuel.name=Long lasting Fuel
 item.player_level.name=Player Level Selector
+item.scoredebug.name= Player Score Debug
 item.maths_book.name=Maths Book
 item.magnet.name=Magnet
 

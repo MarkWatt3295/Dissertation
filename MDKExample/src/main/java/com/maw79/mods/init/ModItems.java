@@ -18,6 +18,7 @@ import com.maw79.mods.items.ItemMw;
 import com.maw79.mods.items.ItemObsidianingot;
 import com.maw79.mods.items.ItemReversePaintBrush;
 import com.maw79.mods.items.ItemRuby;
+import com.maw79.mods.items.ItemScoreDebug;
 import com.maw79.mods.items.ItemSnowballLauncher;
 import com.maw79.mods.items.ItemSteelIngot;
 import com.maw79.mods.items.ItemTomato;
@@ -84,6 +85,7 @@ public class ModItems {
 	public static Item magnet;
 	
 	
+	
 	//Projectiles
 	public static final Item ARROW = new ItemModArrow("arrow", EntityModArrow::new);
 	public static final ItemModArrow BLOCK_DETECTION_ARROW = new ItemModArrow("block_detection_arrow", EntityBlockDetectionArrow::new);
@@ -95,6 +97,8 @@ public class ModItems {
 	public static final Item LABELSTRONG = new ItemPropertyLabel("label_strong");
 	public static final Item LABELOPAQUE = new ItemPropertyLabel("label_opaque");
 	public static final Item LABELCHAIR = new ItemPropertyLabel("label_chair");
+	
+	public static ItemScoreDebug SCOREDEBUG = new ItemScoreDebug("scoredebug");
 	
 	
 	
@@ -165,6 +169,8 @@ public class ModItems {
 		registerItem(LABELSTRONG);
 		registerItem(LABELOPAQUE);
 		registerItem(LABELCHAIR);
+		
+		registerItem(SCOREDEBUG);
 		
 		//Items
 		//GameRegistry.register(obsidianingot);
@@ -239,6 +245,9 @@ public class ModItems {
 		registerRender(LABELCHAIR);
 		registerRender(LABELOPAQUE);
 		registerRender(LABELSTRONG);
+		
+		registerRender(SCOREDEBUG);
+		SCOREDEBUG.setCreativeTab(Maw79Mod.debug);
 	
 		
 		//Food
