@@ -27,6 +27,9 @@ item.fire_element.name=Fire Element
 item.label_strong.name=Strong
 item.label_opaque.name=Opaque
 item.label_chair.name=Chairs
+item.label_tough.name=Tough
+item.label_flexible.name=Flexible
+item.label_durable.name=Durable
 
 
 //MATHS ITEMS
@@ -42,6 +45,8 @@ item.picture_wall.name=Picture Wall 1
 item.apple_wall.name=Picture Wall 2
 item.apple_wall_wool.name=Apple Wall Wool
 item.apple_wall_axis.name=Picture Wall 2 (AXIS)
+item.bow.name=Modded Bow
+item.calculator.name=Calculator Screen
 
 //Debug Items
 item.reverse_paint_brush.name=Reverse Paint Brush
@@ -60,6 +65,7 @@ item.burntloaf.name=Burnt Loaf
 
 //Blocks
 tile.ruby_block.name=Ruby Block
+tile.bridge_block.name=Bridge Block
 tile.obsidian_ingot_block.name= Obsidian Ingot Block
 tile.steel_ore.name=Steel Ore
 tile.steel_ore.overworld.name=Steel Ore

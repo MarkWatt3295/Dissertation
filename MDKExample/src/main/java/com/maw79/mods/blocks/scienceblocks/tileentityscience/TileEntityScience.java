@@ -40,10 +40,15 @@ public class TileEntityScience extends TileEntity implements ITickable, ICapabil
 	private int cooldownCap = 100;
 	private Random random;
 	
-	public boolean correctproperties = false;
-	public boolean setremove = false;
-	public static boolean setClicker = false;
-
+	private boolean label1match = false;
+	private boolean label2match = false;
+	private boolean label3match = false;
+	private boolean label4match = false;
+	private boolean label5match = false;
+	private boolean label6match = false;
+	
+	
+	
 	public ArrayList<ItemStack>itemsis = new ArrayList<ItemStack>();
 	/**
 	 * Initializes our variables. MUST NOT HAVE ANY PARAMETERS
@@ -52,11 +57,7 @@ public class TileEntityScience extends TileEntity implements ITickable, ICapabil
 		this.cooldown = 0;
 		this.handler = new ItemStackHandler(10);
 		this.random = new Random();
-		this.setremove = false;
-		this.setClicker = false;
-		//this.correctproperties = false;
-		Utils.getLogger().info("TileEntityScience Called. Propertie is : "+ correctproperties);
-		Utils.getLogger().info("TE Initialize. Clicker is : "+ setClicker);
+		
 		
 	}
 
@@ -67,9 +68,7 @@ public class TileEntityScience extends TileEntity implements ITickable, ICapabil
 	public void readFromNBT(NBTTagCompound nbt) {
 		this.cooldown = nbt.getInteger("Cooldown");
 		this.handler.deserializeNBT(nbt.getCompoundTag("ItemStackHandler")); 
-		this.setremove = nbt.getBoolean("setremove");
-		this.correctproperties =false;
-		// Gets the ItemStackHandler from tag within a tag
+		
 
 		super.readFromNBT(nbt);
 	}
@@ -80,8 +79,7 @@ public class TileEntityScience extends TileEntity implements ITickable, ICapabil
 	@Override
 	public NBTTagCompound writeToNBT(NBTTagCompound nbt) {
 		nbt.setInteger("Cooldown", this.cooldown);
-		nbt.setBoolean("setremove", this.setremove);
-		nbt.setBoolean("properties", this.correctproperties);
+	
 		nbt.setTag("ItemStackHandler", this.handler.serializeNBT()); // We write our ItemStackHandler as a tag in a tag
 
 		return super.writeToNBT(nbt);
@@ -96,7 +94,7 @@ public class TileEntityScience extends TileEntity implements ITickable, ICapabil
 	public SPacketUpdateTileEntity getUpdatePacket() {
 		NBTTagCompound nbt = new NBTTagCompound();
 		this.writeToNBT(nbt);
-		nbt.getBoolean("properties");
+		
 		int metadata = getBlockMetadata();
 		return new SPacketUpdateTileEntity(this.pos, metadata, nbt);
 		 
@@ -116,7 +114,7 @@ public class TileEntityScience extends TileEntity implements ITickable, ICapabil
 	@Override
 	public NBTTagCompound getUpdateTag() {
 		NBTTagCompound nbt = new NBTTagCompound();
-		nbt.getBoolean("properties");
+	
 		this.writeToNBT(nbt);
 		
 		return nbt;
@@ -198,6 +196,9 @@ public class TileEntityScience extends TileEntity implements ITickable, ICapabil
 		itemsis.add(new ItemStack (ModItems.LABELOPAQUE));
 		itemsis.add(new ItemStack (ModItems.LABELCHAIR));
 		itemsis.add(new ItemStack (ModItems.LABELSTRONG));
+		itemsis.add(new ItemStack (ModItems.LABELDURABLE));
+		itemsis.add(new ItemStack (ModItems.LABELFLEXIBLE));
+		itemsis.add(new ItemStack (ModItems.LABELTOUGH));
 		
 		itemsInArray();
 		
@@ -210,11 +211,7 @@ public class TileEntityScience extends TileEntity implements ITickable, ICapabil
 		
 	}
 	
-	public void resetSetRemove(){
-		setremove = false;
-		Utils.getLogger().info("resetSetRemove has been called. Set remove is now : "+ setremove);
-		
-	}
+	
 	
 	public  void removeItems(){
 		ContainerScience.removeItems();
@@ -234,27 +231,72 @@ public class TileEntityScience extends TileEntity implements ITickable, ICapabil
 		ItemStack slot6 = handler.getStackInSlot(8);
 		
 		for (int i = 0; i < itemsis.size(); i++) {
-		       // System.out.println(itemsis.get(i));
-			//itemsis.get(i);
-		   //correctproperties =false; 
-		if(handler.getStackInSlot(3).isItemEqual(itemsis.get(i))||(handler.getStackInSlot(4).isItemEqual(itemsis.get(i))
-				||(handler.getStackInSlot(5).isItemEqual(itemsis.get(i))||(handler.getStackInSlot(6).isItemEqual(itemsis.get(i))
-						||(handler.getStackInSlot(7).isItemEqual(itemsis.get(i))||(handler.getStackInSlot(8)
-								.isItemEqual(itemsis.get(i)))))))){
-			System.out.println("slot 1 is : " + slot1.getDisplayName());
-			//System.out.println("slot 2 is : " + slot2.getDisplayName());
-			//System.out.println("slot 3 is : " + slot3.getDisplayName());
-			//System.out.println("slot 4 is : " + slot4.getDisplayName());
-			//System.out.println("slot 5 is : " + slot5.getDisplayName());
-			//System.out.println("slot 6 is : " + slot6.getDisplayName());
-			//this.correctproperties = true;
-			//GuiScienceTe.properties2 =true;
-			handler.getSlots();
+		      
+		if(slot1.isItemEqual(itemsis.get(0))||(slot2.isItemEqual(itemsis.get(0))
+				||(slot3.isItemEqual(itemsis.get(0))||(slot4.isItemEqual(itemsis.get(0))
+						||(slot5.isItemEqual(itemsis.get(0))||slot6.isItemEqual(itemsis.get(0))))))){
+			Utils.getLogger().info("Label 1 - Match Made " + slot1.getDisplayName());
+			label1match = true;
 			
-			//Utils.getLogger().info("Array underprint. CPis : "+ correctproperties);
-	}else{
-		this.correctproperties = false;
-		//Utils.getLogger().info("Array Else called. CPis : "+ correctproperties);
+	}
+		 if
+			(slot1.isItemEqual(itemsis.get(1))||
+		
+				(slot2.isItemEqual(itemsis.get(1))||
+						(slot3.isItemEqual(itemsis.get(1))||
+								(slot4.isItemEqual(itemsis.get(1))||
+										(slot5.isItemEqual(itemsis.get(1))||
+												slot6.isItemEqual(itemsis.get(1))))))){
+			Utils.getLogger().info("Label 2 - Match Made " + slot2.getDisplayName());
+			label2match = true;	
+			}
+	
+		 if(slot1.isItemEqual(itemsis.get(2))||
+				(slot2.isItemEqual(itemsis.get(2))||
+						(slot3.isItemEqual(itemsis.get(2))||
+								(slot4.isItemEqual(itemsis.get(2))||
+										(slot5.isItemEqual(itemsis.get(2))||
+												slot6.isItemEqual(itemsis.get(2))))))){
+			Utils.getLogger().info("Label 3 - Match Made " + slot3.getDisplayName());
+			label3match = true;		
+	}
+		 if(slot1.isItemEqual(itemsis.get(3))||
+					(slot2.isItemEqual(itemsis.get(3))||
+							(slot3.isItemEqual(itemsis.get(3))||
+									(slot4.isItemEqual(itemsis.get(3))||
+											(slot5.isItemEqual(itemsis.get(3))||
+													slot6.isItemEqual(itemsis.get(3))))))){
+				Utils.getLogger().info("Label 4 - Match Made " + slot4.getDisplayName());
+				label4match = true;		
+		}
+		 if(slot1.isItemEqual(itemsis.get(4))||
+					(slot2.isItemEqual(itemsis.get(4))||
+							(slot3.isItemEqual(itemsis.get(4))||
+									(slot4.isItemEqual(itemsis.get(4))||
+											(slot5.isItemEqual(itemsis.get(4))||
+													slot6.isItemEqual(itemsis.get(4))))))){
+				Utils.getLogger().info("Label 5 - Match Made " + slot5.getDisplayName());
+				label5match = true;		
+		}
+		 if(slot1.isItemEqual(itemsis.get(5))||
+					(slot2.isItemEqual(itemsis.get(5))||
+							(slot3.isItemEqual(itemsis.get(5))||
+									(slot4.isItemEqual(itemsis.get(5))||
+											(slot5.isItemEqual(itemsis.get(5))||
+													slot6.isItemEqual(itemsis.get(5))))))){
+				Utils.getLogger().info("Label 6 - Match Made " + slot6.getDisplayName());
+				label6match = true;		
+		}
+		 
+			
+	else {
+		Utils.getLogger().info("no match yet");
+		label1match =  false;
+		label2match = false;
+		label3match = false;
+		label4match = false;
+		label5match = false;
+		label6match = false;
 	}
 		}
 	}
@@ -262,4 +304,3 @@ public class TileEntityScience extends TileEntity implements ITickable, ICapabil
 	
 
 }
-

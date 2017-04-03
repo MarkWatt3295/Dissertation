@@ -98,7 +98,7 @@ public class GuiScienceTe extends GuiContainer {
         buttonList.clear();
         buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) - 100 / 2, 95, 100, 20, "Check Answers"));
         buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) - 100 / 2, 115, 100, 20, "Submit Answers"));
-        //updateButtons();
+      
         super.initGui();
         button3.visible = false;
     }
@@ -113,33 +113,20 @@ public class GuiScienceTe extends GuiContainer {
 	    	
 	        switch (button.id) {
 	            case BUTTON1:
-	            	//buttonRelease = true;
-	            	System.out.println("Skimmed button 1");
-	            	//mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-	            	//System.out.println("Before GUI --> Correct Properties = "+ te.correctproperties);
-	            	//onEvent();
-	            	//mc.displayGuiScreen((GuiScreen)null);
-	            	//System.out.println("After GUI --> Correct Properties = "+ te.correctproperties);
+	            	
 	            	break;
 	            	
 	            case BUTTON2:
 				
-	            	//buttonRelease = true;
-	            	//mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
 	            	mc.player.playSound(SoundEvent.REGISTRY.getObject(new ResourceLocation(("entity.chicken.egg"))), 1.0F, 1.0F);
 	            	
-	            	if(woodproperties3 = true){
-	            			onEvent2();
-	            	}
+	      
 	            	break;
 	            	
 	            case BUTTON3:
-	            	//buttonRelease = true;
+	            	
 	            	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-	            	//System.out.println("Before GUI --> Correct Properties = "+ te.correctproperties);
-	            	onEvent();
-	            	//mc.displayGuiScreen((GuiScreen)null);
-	            	//System.out.println("After GUI --> Correct Properties = "+ te.correctproperties);
+	            	
 	            	break;
 	            	
 	        }
@@ -147,72 +134,23 @@ public class GuiScienceTe extends GuiContainer {
 	        super.actionPerformed(button);
 	      
 	    }
-	 public boolean mrBool = true;
+	
 	 public void onEvent2(){
-		 ContainerScience.containerclear = true;
-		 Utils.getLogger().info("On Event 2 Called");
-		// Utils.getLogger().info("On Event2() Called. Values are Clicker: "+te.setClicker +" Properties:"+te.correctproperties);
-		// System.out.println("On event 2 called");
-		//te.handler.setStackInSlot(3, new ItemStack (Items.AIR));
-		 button3.visible = true;
- 		button2.visible =false;
- 		 Utils.getLogger().info("Event 2 PROPERTIES1: "+properties2);
- 		//if(properties2 = true){
- 			 Utils.getLogger().info("Event 2 PROPERTIES2: "+properties2);
- 			 Utils.getLogger().info("On Event 2 Called");
- 			 properties2 = false;
- 			 Utils.getLogger().info("Event 2 PROPERTIES3: "+properties2);
- 			 te.removeItems();
- 			 ContainerScience.removeItems();
+		
  		}
- 		///te.setremove = true;
- 		//te.setremove=true;
- 	//	if(te.correctproperties = mrBool){
-		// te.setClicker = true;
-		// Utils.getLogger().info("Apparently its true");
- 		//}
- 		// Utils.getLogger().info("AfterOn Event2(). Values are Clicker: "+te.setClicker +" Properties:"+te.correctproperties);
- 		//Maw79Mod.networkWrapperGuiInventory1.sendToServer(new GuiInventoryMessage(mc.player, te));
-	 
+ 		
 	 
 	 public void onEvent(){
-		// Utils.getLogger().info("On Event 1 Called");
-		 Utils.getLogger().info("On Event1() Called. Values are Clicker: "+te.setClicker +" Properties:"+te.correctproperties);
-	    	//System.out.println("On Event 1 called");
-	    	//if (te.setClicker = true){
-	    		Utils.getLogger().info("If Clicker true do button swap"+te.setClicker);
-	    		Utils.getLogger().info("On Event Checker. Answer is CProps/Clicker : "+ te.correctproperties + " "+ te.setClicker);
-	    		onEvent3();
-	    	//}
-	    	 Utils.getLogger().info("After On Event3() Called. Values are Clicker: "+te.setClicker +" Properties:"+te.correctproperties);
+		
 	 }
-	    		//if(buttonRelease = true){
-        		//mc.player.playSound(ModSoundHandler.MAWSOUND_SQUELCH, 1.0f, 3.0f);
-        	//	//te.handler.extractItem(3, 1, false);
-        		//te.handler.extractItem(4, 1, false);
-        		//te.handler.extractItem(5, 1, false);
-        		//te.removeItems();
-        		//button3.visible = false;
-        		//button2.visible =true;
-        		//button3.visible = false;
-        		//Maw79Mod.networkWrapperGuiInventory1.sendToServer(new GuiInventoryMessage(mc.player, te));
-        		//buttonRelease = true;
-        		//te.correctproperties = false;
-        		//buttonRelease = false;
-	    		//}
-        	//}
+	    	
 	    	  
 	   public void onEvent3(){
-		Utils.getLogger().info("On Event3() Called"+" Clicker:"+te.setClicker +" Properties:"+te.correctproperties);
-		//te.correctproperties = false;
-		//te.setClicker = false;
-   		button2.visible=true;
-   		button3.visible=false;
-   		Utils.getLogger().info("After On Event3() Reset"+" Clicker:"+te.setClicker +" Properties:"+te.correctproperties);
+		
 	   }
 	 
 	 public void updateButtons() {
-        // onEvent(); 
+       
    
  }
 	 @Override
@@ -223,5 +161,4 @@ public class GuiScienceTe extends GuiContainer {
 	 
 	
 	 }
-
 

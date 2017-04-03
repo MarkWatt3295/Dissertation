@@ -98,6 +98,9 @@ public class ModItems {
 	public static final Item LABELSTRONG = new ItemPropertyLabel("label_strong");
 	public static final Item LABELOPAQUE = new ItemPropertyLabel("label_opaque");
 	public static final Item LABELCHAIR = new ItemPropertyLabel("label_chair");
+	public static final Item LABELFLEXIBLE = new ItemPropertyLabel("label_flexible");
+	public static final Item LABELDURABLE = new ItemPropertyLabel("label_durable");
+	public static final Item LABELTOUGH = new ItemPropertyLabel("label_tough");
 	
 	public static ItemScoreDebug SCOREDEBUG = new ItemScoreDebug("scoredebug");
 	public static ItemCalculator CALCULATOR = new ItemCalculator("calculator");
@@ -171,6 +174,9 @@ public class ModItems {
 		registerItem(LABELSTRONG);
 		registerItem(LABELOPAQUE);
 		registerItem(LABELCHAIR);
+		registerItem(LABELFLEXIBLE);
+		registerItem(LABELDURABLE);
+		registerItem(LABELTOUGH);
 		
 		registerItem(SCOREDEBUG);
 		registerItem(CALCULATOR);
@@ -248,6 +254,9 @@ public class ModItems {
 		registerRender(LABELCHAIR);
 		registerRender(LABELOPAQUE);
 		registerRender(LABELSTRONG);
+		registerRender(LABELDURABLE);
+		registerRender(LABELFLEXIBLE);
+		registerRender(LABELTOUGH);
 		
 		registerRender(SCOREDEBUG);
 		SCOREDEBUG.setCreativeTab(Maw79Mod.debug);
@@ -257,10 +266,7 @@ public class ModItems {
 		
 		//Food
 		registerRender(tomato);
-		//registerRender(mouldyapple);
 		registerRender(burntloaf);
-		//Tools
-		//registerRender(obsidian_sword);
 		
 		//Debug Items
 		registerRender(reversepaintbrush);
