@@ -40,6 +40,8 @@ public class TileEntityScience extends TileEntity implements ITickable, ICapabil
 	private int cooldownCap = 100;
 	private Random random;
 	
+	public static boolean cangiveblocks = true;
+	
 	private boolean label1match = false;
 	private boolean label2match = false;
 	private boolean label3match = false;
@@ -232,72 +234,110 @@ public class TileEntityScience extends TileEntity implements ITickable, ICapabil
 		
 		for (int i = 0; i < itemsis.size(); i++) {
 		      
-		if(slot1.isItemEqual(itemsis.get(0))||(slot2.isItemEqual(itemsis.get(0))
-				||(slot3.isItemEqual(itemsis.get(0))||(slot4.isItemEqual(itemsis.get(0))
-						||(slot5.isItemEqual(itemsis.get(0))||slot6.isItemEqual(itemsis.get(0))))))){
-			Utils.getLogger().info("Label 1 - Match Made " + slot1.getDisplayName());
+		if(slot1.isItemEqual(itemsis.get(0))
+				||(slot1.isItemEqual(itemsis.get(1))
+				||(slot1.isItemEqual(itemsis.get(2))
+				||(slot1.isItemEqual(itemsis.get(3))
+				||(slot1.isItemEqual(itemsis.get(4))
+				||(slot1.isItemEqual(itemsis.get(5)))))))){
+			//Utils.getLogger().info("Label 1 - Match Made " + slot1.getDisplayName());
 			label1match = true;
-			
 	}
-		 if
-			(slot1.isItemEqual(itemsis.get(1))||
 		
-				(slot2.isItemEqual(itemsis.get(1))||
-						(slot3.isItemEqual(itemsis.get(1))||
-								(slot4.isItemEqual(itemsis.get(1))||
-										(slot5.isItemEqual(itemsis.get(1))||
-												slot6.isItemEqual(itemsis.get(1))))))){
-			Utils.getLogger().info("Label 2 - Match Made " + slot2.getDisplayName());
-			label2match = true;	
-			}
-	
-		 if(slot1.isItemEqual(itemsis.get(2))||
-				(slot2.isItemEqual(itemsis.get(2))||
-						(slot3.isItemEqual(itemsis.get(2))||
-								(slot4.isItemEqual(itemsis.get(2))||
-										(slot5.isItemEqual(itemsis.get(2))||
-												slot6.isItemEqual(itemsis.get(2))))))){
-			Utils.getLogger().info("Label 3 - Match Made " + slot3.getDisplayName());
-			label3match = true;		
+		if(slot2.isItemEqual(itemsis.get(0))
+				||(slot2.isItemEqual(itemsis.get(1))
+				||(slot2.isItemEqual(itemsis.get(2))
+				||(slot2.isItemEqual(itemsis.get(3))
+				||(slot2.isItemEqual(itemsis.get(4))
+				||(slot2.isItemEqual(itemsis.get(5)))))))){
+			//Utils.getLogger().info("Label 2 - Match Made " + slot2.getDisplayName());
+			label2match = true;
 	}
-		 if(slot1.isItemEqual(itemsis.get(3))||
-					(slot2.isItemEqual(itemsis.get(3))||
-							(slot3.isItemEqual(itemsis.get(3))||
-									(slot4.isItemEqual(itemsis.get(3))||
-											(slot5.isItemEqual(itemsis.get(3))||
-													slot6.isItemEqual(itemsis.get(3))))))){
-				Utils.getLogger().info("Label 4 - Match Made " + slot4.getDisplayName());
-				label4match = true;		
-		}
-		 if(slot1.isItemEqual(itemsis.get(4))||
-					(slot2.isItemEqual(itemsis.get(4))||
-							(slot3.isItemEqual(itemsis.get(4))||
-									(slot4.isItemEqual(itemsis.get(4))||
-											(slot5.isItemEqual(itemsis.get(4))||
-													slot6.isItemEqual(itemsis.get(4))))))){
-				Utils.getLogger().info("Label 5 - Match Made " + slot5.getDisplayName());
-				label5match = true;		
-		}
-		 if(slot1.isItemEqual(itemsis.get(5))||
-					(slot2.isItemEqual(itemsis.get(5))||
-							(slot3.isItemEqual(itemsis.get(5))||
-									(slot4.isItemEqual(itemsis.get(5))||
-											(slot5.isItemEqual(itemsis.get(5))||
-													slot6.isItemEqual(itemsis.get(5))))))){
-				Utils.getLogger().info("Label 6 - Match Made " + slot6.getDisplayName());
-				label6match = true;		
-		}
+		if(slot3.isItemEqual(itemsis.get(0))
+				||(slot3.isItemEqual(itemsis.get(1))
+				||(slot3.isItemEqual(itemsis.get(2))
+				||(slot3.isItemEqual(itemsis.get(3))
+				||(slot3.isItemEqual(itemsis.get(4))
+				||(slot3.isItemEqual(itemsis.get(5)))))))){
+			//Utils.getLogger().info("Label 3 - Match Made " + slot3.getDisplayName());
+			label3match = true;
+	}
+		if(slot4.isItemEqual(itemsis.get(0))
+				||(slot4.isItemEqual(itemsis.get(1))
+				||(slot4.isItemEqual(itemsis.get(2))
+				||(slot4.isItemEqual(itemsis.get(3))
+				||(slot4.isItemEqual(itemsis.get(4))
+				||(slot4.isItemEqual(itemsis.get(5)))))))){
+			//Utils.getLogger().info("Label 4 - Match Made " + slot4.getDisplayName());
+			label4match = true;
+	}
+		if(slot5.isItemEqual(itemsis.get(0))
+				||(slot5.isItemEqual(itemsis.get(1))
+				||(slot5.isItemEqual(itemsis.get(2))
+				||(slot5.isItemEqual(itemsis.get(3))
+				||(slot5.isItemEqual(itemsis.get(4))
+				||(slot5.isItemEqual(itemsis.get(5)))))))){
+			//Utils.getLogger().info("Label 5 - Match Made " + slot5.getDisplayName());
+			label5match = true;
+	}
+		if(slot6.isItemEqual(itemsis.get(0))
+				||(slot6.isItemEqual(itemsis.get(1))
+				||(slot6.isItemEqual(itemsis.get(2))
+				||(slot6.isItemEqual(itemsis.get(3))
+				||(slot6.isItemEqual(itemsis.get(4))
+				||(slot6.isItemEqual(itemsis.get(5)))))))){
+			//Utils.getLogger().info("Label 6 - Match Made " + slot6.getDisplayName());
+			label6match = true;
+			 
+	}
 		 
-			
-	else {
-		Utils.getLogger().info("no match yet");
-		label1match =  false;
+	
+	else  {
+		label1match = false;
 		label2match = false;
 		label3match = false;
 		label4match = false;
 		label5match = false;
 		label6match = false;
+		GuiScienceTe.correctlabels = false;
+		
+		//Utils.getLogger().info("Somethings not right");
+		if(label1match ==  false){
+			//Utils.getLogger().info("Label 1 is FALSE");
+			GuiScienceTe.correctlabels = false;
+		}
+		if(label2match ==  false){
+			//Utils.getLogger().info("Label 2 is FALSE");
+			GuiScienceTe.correctlabels = false;
+		}
+		if(label3match ==  false){
+			//Utils.getLogger().info("Label 3 is FALSE");
+			GuiScienceTe.correctlabels = false;
+		}
+		if(label4match ==  false){
+			//Utils.getLogger().info("Label 4 is FALSE");
+			GuiScienceTe.correctlabels = false;
+		}
+		if(label5match ==  false){
+			//Utils.getLogger().info("Label 5 is FALSE");
+			GuiScienceTe.correctlabels = false;
+		}
+		if(label6match ==  false){
+			//Utils.getLogger().info("Label 6 is FALSE");
+			GuiScienceTe.correctlabels = false;
+		}
+		
 	}
+		if(label1match && label2match && label3match && label4match && label5match && label6match == true){
+			//Utils.getLogger().info("All Labels Are TRUE ");
+			GuiScienceTe.correctlabels = true;
+		}
+		else{
+			GuiScienceTe.correctlabels = false;
+		}
+		
+		
+		
 		}
 	}
 

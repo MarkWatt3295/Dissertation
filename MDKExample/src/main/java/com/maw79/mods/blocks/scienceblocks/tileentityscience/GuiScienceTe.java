@@ -42,9 +42,8 @@ public class GuiScienceTe extends GuiContainer {
 	GuiButton button1, button2, button3;
 	final int BUTTON1=1, BUTTON2 = 2, BUTTON3 = 3;
 	
-	public static boolean buttonRelease = false;
-	public static boolean properties2 = false;
-	public static boolean woodproperties3 = false;
+	public static boolean correctlabels = false;
+	
 	
 	
 	/**
@@ -119,7 +118,7 @@ public class GuiScienceTe extends GuiContainer {
 	            case BUTTON2:
 				
 	            	mc.player.playSound(SoundEvent.REGISTRY.getObject(new ResourceLocation(("entity.chicken.egg"))), 1.0F, 1.0F);
-	            	
+	            	onEvent();
 	      
 	            	break;
 	            	
@@ -135,12 +134,19 @@ public class GuiScienceTe extends GuiContainer {
 	      
 	    }
 	
-	 public void onEvent2(){
-		
+	 public void onEvent(){
+		if (correctlabels == true){
+			Utils.getLogger().info("Button Pressed and Labels are true");
+		}
+		if (te.cangiveblocks == true){
+			Utils.getLogger().info("Give Blocks fjddslslsssl");
+			Maw79Mod.networkWrapper2.sendToServer(new MathsMessage(mc.player));
+			te.cangiveblocks = false;
+		}
  		}
  		
 	 
-	 public void onEvent(){
+	 public void onEvent2(){
 		
 	 }
 	    	

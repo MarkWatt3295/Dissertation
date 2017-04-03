@@ -31,7 +31,7 @@ public class ContainerScience extends Container {
 	private TileEntityScience te;
 	public static IItemHandler handler;
 	public static IInventory PlayeInveni;
-	public static boolean containerclear = false;
+	
 	
 
 	/**
@@ -108,10 +108,7 @@ public class ContainerScience extends Container {
 				if(handler.getStackInSlot(0).isItemEqual(new ItemStack(ModItems.obsidianingot))) {
 					Utils.getLogger().info("Item is Obsidian Ingot");
 				}
-				if(containerclear = true){
-					Utils.getLogger().info("Container Clear is true");
-					removeItems();
-				}
+				
 			}
 		});
 					/*	&& (handler.getStackInSlot(2).isItemEqual(new ItemStack(ModItems.bolt))))
@@ -140,30 +137,9 @@ public class ContainerScience extends Container {
 		
 			
 	}
-	public static void containerclear(){
-	containerclear =true;
-	Utils.getLogger().info("Container Clear : "+ containerclear);
-	}
 	
-	@Override
-	public void detectAndSendChanges() {
-		super.detectAndSendChanges();
-		//Utils.getLogger().info("ContainerBasic: detectAndSendChanges");
-		
-		IContainerListener icontainerlistener = this.listeners.get(0);
-		//if(this.stomach!=((Test) this.entity).getStomach()){
-		//if(te.correctproperties = true){
-		//	icontainerlistener.sendProgressBarUpdate(this, 0, ((Test) this.entity).getStomach());
-		//}
-		//this.stomach = ((Test) this.entity).getStomach();
-	}
 	
-	@Override
-	public void updateProgressBar(int id, int data) {
-		Utils.getLogger().info("ContainerBasic: updateProgressBar");
-		
-		//if(id==0) ((Test) this.entity).setStomach(data);
-	}
+	
 	
 
 	
@@ -198,7 +174,7 @@ public class ContainerScience extends Container {
 	        		if(!this.mergeItemStack(current, 9, handler.getSlots(), false))
 	        			return ItemStack.EMPTY;
 	        	}
-	            if (!this.mergeItemStack(current, 0, handler.getSlots(), false))
+	            if (!this.mergeItemStack(current, 3, handler.getSlots(), false))
 	                return ItemStack.EMPTY;
 	        }
 
@@ -214,7 +190,7 @@ public class ContainerScience extends Container {
 	    return previous;
 	}
 	public static void removeItems(){
-		handler.extractItem(0, 1, false);
+		//handler.extractItem(0, 1, false);
 		handler.extractItem(3, 1, false);
 		handler.extractItem(4, 1, false);
 		handler.extractItem(5, 1, false);
