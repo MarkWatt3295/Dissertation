@@ -48,7 +48,7 @@ public class ContainerScience extends Container {
 		
 		
 		//Our tile entity slots
-		this.addSlotToContainer(new SlotItemHandler(handler, 0, 62, 17));
+		//this.addSlotToContainer(new SlotItemHandler(handler, 0, 62, 17));
 		//this.addSlotToContainer(new SlotItemHandler(handler, 1, 80, 17));
 		//this.addSlotToContainer(new SlotItemHandler(handler, 2, 98, 17));
 		this.addSlotToContainer(new SlotItemHandler(handler, 3, 62, 35));
@@ -79,7 +79,7 @@ public class ContainerScience extends Container {
 		
 		
 		
-		this.addSlotToContainer(new SlotItemHandler(handler,  0, 62, 17) {
+		/*this.addSlotToContainer(new SlotItemHandler(handler,  0, 62, 17) {
 			public void onSlotChanged() {
 				super.onSlotChanged();
 				

@@ -198,6 +198,8 @@ maw79.entity.Dave.name=Dave
 container.block_breaker=Block Breaker
 gui.block_breaker.enchanted_book.tooltip=Enchanted book goes here
 
+gui.guisciencete.button3.tooltip=Maw79 KS2 Mod Configuration
+
 //TOOL TIPS
 maw79.heart.tooltip=Heals the player
 maw79.book.tooltip=A MOD Guide

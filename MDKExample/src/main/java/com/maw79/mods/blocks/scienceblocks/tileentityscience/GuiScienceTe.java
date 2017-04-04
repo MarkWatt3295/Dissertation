@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.lwjgl.opengl.GL11;
+
 import com.maw79.mods.client.gui.GuiNotif;
 import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.main.Maw79Mod;
@@ -43,6 +45,7 @@ public class GuiScienceTe extends GuiContainer {
 	final int BUTTON1=1, BUTTON2 = 2, BUTTON3 = 3;
 	
 	public static boolean correctlabels = false;
+	public boolean help = false;
 	
 	
 	
@@ -70,7 +73,12 @@ public class GuiScienceTe extends GuiContainer {
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
 		GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F); //Grey background
-		this.mc.getTextureManager().bindTexture(new ResourceLocation(Reference.MOD_ID, "textures/gui/container/tileentityscience.png")); //Binds the texture for rendering
+		if(help == true){
+			mc.getTextureManager().bindTexture(new ResourceLocation(Reference.MOD_ID, "textures/gui/container/tileentitysciencehelp.png"));
+		}
+		else{
+		this.mc.getTextureManager().bindTexture(new ResourceLocation(Reference.MOD_ID, "textures/gui/container/tileentityscience.png"));
+		}//Binds the texture for rendering
 		this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize); //Draws our texture
 	}
 	
@@ -79,7 +87,7 @@ public class GuiScienceTe extends GuiContainer {
 	 */
 	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-		String s = ("Wood Properties"); //Gets the formatted name for the block breaker from the language file
+		String s = ("Wood Properties"); 
 		String s1 = "";
 		if(te.cangiveblocks == true){
 			s1 = "1";
@@ -87,14 +95,27 @@ public class GuiScienceTe extends GuiContainer {
 			s1 = "0";
 		}
 		String s2 = ("Blocks Left to Give : "+ s1);
+		String s3 = "";
+		String s4 = "";
+		
+		 if(help == true){
+			 s = ("Wood Properties Help");
+			 s2 = ("Insert Wood Property Labels");
+			 s3 = ("Move Labels from  inventory");
+			 s4 = ("into the above material slots");
+		}
+	
+	
 		this.mc.fontRendererObj.drawString(s, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s) / 2, 6, 4210752); //Draws the block breaker name in the center on the top of the gui
 		this.mc.fontRendererObj.drawString(s2, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s2) / 2, 22, 4210752);
-		
+		this.mc.fontRendererObj.drawString(s3, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s2) / 2, 82, 4210752);
+		this.mc.fontRendererObj.drawString(s4, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s2) / 2, 92, 4210752);
+		 
 		int actualMouseX = mouseX - ((this.width - this.xSize) / 2);
 		int actualMouseY = mouseY - ((this.height - this.ySize) / 2);
 		if(actualMouseX >= 134 && actualMouseX <= 149 && actualMouseY >= 17 && actualMouseY <= 32 && te.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).getStackInSlot(9) == ItemStack.EMPTY) {
 			List<String> text = new ArrayList<String>();
-			text.add(TextFormatting.GRAY + I18n.format("gui.block_breaker.enchanted_book.tooltip"));
+			//text.add(TextFormatting.GRAY + I18n.format("gui.block_breaker.enchanted_book.tooltip"));
 			//text.add(TextFormatting.BLUE + ("Insert Property Labels %n that match Wood" ));
 		
 			//this.drawHoveringText(text, actualMouseX, actualMouseY);
@@ -103,39 +124,54 @@ public class GuiScienceTe extends GuiContainer {
 	@Override
     public void initGui() {
     	
-        buttonList.clear();
-        buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) + 80 / 2, (height/2) -80, 15, 20, "i"));
-        buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) - 100 / 2, (height/2) -5, 100, 20, "Submit Answers"));
+        buttonList.clear();												//+120 -100
+        buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) + 60 / 2, (height/2) -5, 27, 20, "Help"));
+        buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) - 150 / 2, (height/2) -5, 100, 20, "Submit Answers"));
+        buttonList.add(button1 = new GuiButton(BUTTON1, (width / 2) + 80 / 2, (height/2) -50, 27, 20, "Back"));
         //buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) - 100 / 2, 115, 100, 20, "Submit Answers"));
       
         super.initGui();
-        button3.visible = true;
+        button1.visible = false;
+        
     }
 	  @Override
 	    public boolean doesGuiPauseGame() {
 	        return false;
 	    }
+	  
+	 
 	
 	 @Override
 	    public void actionPerformed(GuiButton button) throws IOException {
 	    	
 	    	
 	        switch (button.id) {
-	            case BUTTON1:
+	            case BUTTON1: //back
+	            	help = false;
+	            	button1.visible = false;
+	            	drawGuiContainerBackgroundLayer(zLevel, BUTTON1, BUTTON1);
+	            	button3.visible = true;
+	            	button2.visible = true;
 	            	
 	            	break;
 	            	
-	            case BUTTON2:
+	            case BUTTON2: //submit
 				
 	            	mc.player.playSound(SoundEvent.REGISTRY.getObject(new ResourceLocation(("entity.chicken.egg"))), 1.0F, 1.0F);
 	            	onEvent();
 	      
 	            	break;
 	            	
-	            case BUTTON3:
+	            case BUTTON3: //help
 	            	
 	            	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-	            	mc.getTextureManager().bindTexture(new ResourceLocation(Reference.MOD_ID, "textures/gui/container/paint.png"));
+	            	
+	            	help = true;
+	            	button3.visible = false;
+	            	button2.visible = false;
+	            	drawGuiContainerBackgroundLayer(zLevel, BUTTON3, BUTTON3);
+	            	button1.visible = true;
+	            	
 	            	
 	            	break;
 	            	
@@ -145,7 +181,9 @@ public class GuiScienceTe extends GuiContainer {
 	      
 	    }
 	
-	 public void onEvent(){
+	 
+
+	public void onEvent(){
 		if (correctlabels == true){
 			Utils.getLogger().info("Button Pressed and Labels are true");
 		
@@ -178,5 +216,6 @@ public class GuiScienceTe extends GuiContainer {
 	    }
 	 
 	
-	 }
+	 
 
+}
