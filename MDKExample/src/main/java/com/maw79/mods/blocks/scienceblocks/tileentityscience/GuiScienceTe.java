@@ -79,27 +79,37 @@ public class GuiScienceTe extends GuiContainer {
 	 */
 	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-		String s = ("Material Properties"); //Gets the formatted name for the block breaker from the language file
+		String s = ("Wood Properties"); //Gets the formatted name for the block breaker from the language file
+		String s1 = "";
+		if(te.cangiveblocks == true){
+			s1 = "1";
+		} else {
+			s1 = "0";
+		}
+		String s2 = ("Blocks Left to Give : "+ s1);
 		this.mc.fontRendererObj.drawString(s, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s) / 2, 6, 4210752); //Draws the block breaker name in the center on the top of the gui
-		//this.mc.fontRendererObj.drawString(this.playerInv.getDisplayName().getFormattedText(), 8, 72, 4210752); //The player's inventory name
+		this.mc.fontRendererObj.drawString(s2, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s2) / 2, 22, 4210752);
+		
 		int actualMouseX = mouseX - ((this.width - this.xSize) / 2);
 		int actualMouseY = mouseY - ((this.height - this.ySize) / 2);
 		if(actualMouseX >= 134 && actualMouseX <= 149 && actualMouseY >= 17 && actualMouseY <= 32 && te.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).getStackInSlot(9) == ItemStack.EMPTY) {
 			List<String> text = new ArrayList<String>();
-			//text.add(TextFormatting.GRAY + I18n.format("gui.block_breaker.enchanted_book.tooltip"));
-			text.add(TextFormatting.BLUE + ("This is a Tooltip"));
-			this.drawHoveringText(text, actualMouseX, actualMouseY);
+			text.add(TextFormatting.GRAY + I18n.format("gui.block_breaker.enchanted_book.tooltip"));
+			//text.add(TextFormatting.BLUE + ("Insert Property Labels %n that match Wood" ));
+		
+			//this.drawHoveringText(text, actualMouseX, actualMouseY);
 		}
 	}
 	@Override
     public void initGui() {
     	
         buttonList.clear();
-        buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) - 100 / 2, 95, 100, 20, "Check Answers"));
-        buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) - 100 / 2, 115, 100, 20, "Submit Answers"));
+        buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) + 80 / 2, (height/2) -80, 15, 20, "i"));
+        buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) - 100 / 2, (height/2) -5, 100, 20, "Submit Answers"));
+        //buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) - 100 / 2, 115, 100, 20, "Submit Answers"));
       
         super.initGui();
-        button3.visible = false;
+        button3.visible = true;
     }
 	  @Override
 	    public boolean doesGuiPauseGame() {
@@ -125,6 +135,7 @@ public class GuiScienceTe extends GuiContainer {
 	            case BUTTON3:
 	            	
 	            	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
+	            	mc.getTextureManager().bindTexture(new ResourceLocation(Reference.MOD_ID, "textures/gui/container/paint.png"));
 	            	
 	            	break;
 	            	
@@ -137,11 +148,12 @@ public class GuiScienceTe extends GuiContainer {
 	 public void onEvent(){
 		if (correctlabels == true){
 			Utils.getLogger().info("Button Pressed and Labels are true");
-		}
+		
 		if (te.cangiveblocks == true){
-			Utils.getLogger().info("Give Blocks fjddslslsssl");
+			Utils.getLogger().info("Able to give blocks");
 			Maw79Mod.networkWrapper2.sendToServer(new MathsMessage(mc.player));
 			te.cangiveblocks = false;
+		}
 		}
  		}
  		
