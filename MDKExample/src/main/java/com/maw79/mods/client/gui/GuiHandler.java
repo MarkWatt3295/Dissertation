@@ -1,5 +1,8 @@
 package com.maw79.mods.client.gui;
 
+import com.maw79.mods.blocks.scienceblocks.insulatorblocks.ContainerInsulator;
+import com.maw79.mods.blocks.scienceblocks.insulatorblocks.GuiInsulatorTe;
+import com.maw79.mods.blocks.scienceblocks.insulatorblocks.TileEntityInsulator;
 import com.maw79.mods.blocks.scienceblocks.tileentityscience.ContainerScience;
 import com.maw79.mods.blocks.scienceblocks.tileentityscience.GuiScienceTe;
 import com.maw79.mods.blocks.scienceblocks.tileentityscience.TileEntityScience;
@@ -27,6 +30,7 @@ public class GuiHandler implements IGuiHandler{
 	public static final int TEST = 2;
 	public static final int TEST2 = 3;
 	public static final int SCIENCE_GUI = 4;
+	public static final int INSULATOR_GUI = 5;
 	
 	/**
 	 * Should return the container for that gui. This is called server side because servers handle items in guis
@@ -54,6 +58,11 @@ public class GuiHandler implements IGuiHandler{
 			
 			
 			return new ContainerScience(player.inventory, (TileEntityScience) world.getTileEntity(new BlockPos(x, y, z)));
+		}
+		if(ID==INSULATOR_GUI){
+			
+			
+			return new ContainerInsulator(player.inventory, (TileEntityInsulator) world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		return null;
 	}
@@ -87,6 +96,11 @@ Utils.getLogger().info("GuiHandler: getClientGuiElement");
 			//Entity test2 = world.getEntityByID(x);
 			Utils.getLogger().info("GuiHandler: client SCIENCE GUI called");
 			return new GuiScienceTe(player.inventory, (TileEntityScience) world.getTileEntity(new BlockPos(x, y, z)));
+		}
+		if(ID==INSULATOR_GUI){
+			
+			Utils.getLogger().info("GuiHandler: client Insulator GUI called");
+			return new GuiInsulatorTe(player.inventory, (TileEntityInsulator) world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		return null;
 	}

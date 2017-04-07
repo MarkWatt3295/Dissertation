@@ -1,5 +1,6 @@
 package com.maw79.mods.proxy;
 
+import com.maw79.mods.blocks.scienceblocks.insulatorblocks.TileEntityInsulator;
 import com.maw79.mods.blocks.scienceblocks.tileentityscience.TileEntityScience;
 import com.maw79.mods.blocks.tileentityattempt.TileEntityCustom2;
 import com.maw79.mods.main.Reference;
@@ -27,6 +28,7 @@ public class CommonProxy {
 		GameRegistry.registerTileEntity(TileEntityBlockBreaker.class, Reference.MOD_ID + ":block_breaker");
 		GameRegistry.registerTileEntity(TileEntityCustom2.class, Reference.MOD_ID + ":custom2");
 		GameRegistry.registerTileEntity(TileEntityScience.class, Reference.MOD_ID + ":science_te");
+		GameRegistry.registerTileEntity(TileEntityInsulator.class, Reference.MOD_ID + ":insulator_main");
 	}
 	
 	/**
