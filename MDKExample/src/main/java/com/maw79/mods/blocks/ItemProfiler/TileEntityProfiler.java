@@ -1,9 +1,12 @@
-package com.maw79.mods.blocks.scienceblocks.insulatorblocks;
+package com.maw79.mods.blocks.ItemProfiler;
 
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import com.maw79.mods.client.gui.GuiCalculator;
+import com.maw79.mods.client.gui.GuiPlayerLevel;
+import com.maw79.mods.client.gui.profilerpages.GuiProfilerObsidianIngot;
 import com.maw79.mods.init.ModBlocks;
 import com.maw79.mods.init.ModItems;
 import com.maw79.mods.util.Utils;
@@ -26,28 +29,20 @@ import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
-public class TileEntityInsulator extends TileEntity implements ITickable, ICapabilityProvider {
+public class TileEntityProfiler extends TileEntity implements ITickable, ICapabilityProvider {
 
 	/**
 	 * New 1.9.4 onwards. Using forge capabilities instead of {@link IInventory}
 	 */
 	public  ItemStackHandler handler;
-	
-	private int cooldownCap = 100;
-
-	public static int insulated;
-	public static int heatlevel = 0;
-	//= 1000;
-	public ArrayList<ItemStack>insulators = new ArrayList<ItemStack>();
-	
-	
-	
+	private TileEntityProfiler te;
+	private IInventory playerInv;
 	
 	/**
 	 * Initializes our variables. MUST NOT HAVE ANY PARAMETERS
 	 */
-	public TileEntityInsulator() {
-		this.insulated = 2000;
+	public TileEntityProfiler() {
+		
 		this.handler = new ItemStackHandler(10);
 		
 		
@@ -58,7 +53,7 @@ public class TileEntityInsulator extends TileEntity implements ITickable, ICapab
 	 */
 	@Override
 	public void readFromNBT(NBTTagCompound nbt) {
-		this.insulated = nbt.getInteger("Insulated");
+	
 		this.handler.deserializeNBT(nbt.getCompoundTag("ItemStackHandler")); 
 		super.readFromNBT(nbt);
 	}
@@ -68,7 +63,7 @@ public class TileEntityInsulator extends TileEntity implements ITickable, ICapab
 	 */
 	@Override
 	public NBTTagCompound writeToNBT(NBTTagCompound nbt2) {
-		nbt2.setInteger("Insulated", this.insulated);
+		
 		nbt2.setTag("ItemStackHandler", this.handler.serializeNBT()); // We write our ItemStackHandler as a tag in a tag
 
 		return super.writeToNBT(nbt2);
@@ -161,13 +156,12 @@ public class TileEntityInsulator extends TileEntity implements ITickable, ICapab
 
 	@Override
 	public void update() {
-		insulators.add(new ItemStack (ModItems.LABELOPAQUE));
+		
 		
 		if (!world.isRemote) {
 		IBlockState currentState = this.world.getBlockState(pos);
 		EntityPlayer player = Minecraft.getMinecraft().player;
-		heatEscaperLevel();
-		//ItemStack slot2 = handler.getStackInSlot(4);
+		ProfilerIndex();
 		
 		
 		}
@@ -176,52 +170,30 @@ public class TileEntityInsulator extends TileEntity implements ITickable, ICapab
 		
 	}
 	
-	public void event1(){
-		try {
-			TimeUnit.SECONDS.sleep(10);
-			Utils.getLogger().info("Waiting");
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			Utils.getLogger().info("Didnt Wait");
-			e.printStackTrace();
-		}
-		
-	}
 	
-	public void heatEscaperLevel(){
+		
+	
+	
+	public void ProfilerIndex(){
 		if(handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.obsidianingot))) {
+			Utils.getLogger().info("Item is : "+ handler.getStackInSlot(4).getDisplayName());
+			int i = 0;
+			if(i == 0){
+				handler.getStackInSlot(4).splitStack(1);
+				handler.insertItem(7, new ItemStack(ModItems.obsidianingot), false);
+				Minecraft.getMinecraft().displayGuiScreen(new GuiCalculator());
+			i = 1;
+			}
 			
-			Utils.getLogger().info("Minus Temp");
-			insulated -=100;
 		}
 	
 			if(handler.getStackInSlot(4).isItemEqual(new ItemStack(ModBlocks.plasticblock))) {
 				
 				Utils.getLogger().info("Minus Temp");
-				insulated -=0.000000001;
+				
 			}
 		
-		if(handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.customfuel))) {
-			
-			Utils.getLogger().info("Plus Temp");
-			event1();
-			insulated +=1;
-		}
 		
-		if(heatlevel == 0){
-			insulated -=10;
-		}
-		if(heatlevel == 1){
-			//Insulated Pause
-		}
-		if(heatlevel == 2){
-			insulated +=1;
-		}
-		if(heatlevel == 3){
-			insulated =1000;
-			heatlevel = 0;
-			
-		}
 		
 				
 	}

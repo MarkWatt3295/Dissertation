@@ -1,5 +1,8 @@
 package com.maw79.mods.client.gui;
 
+import com.maw79.mods.blocks.ItemProfiler.ContainerProfiler;
+import com.maw79.mods.blocks.ItemProfiler.GuiProfilerTe;
+import com.maw79.mods.blocks.ItemProfiler.TileEntityProfiler;
 import com.maw79.mods.blocks.scienceblocks.insulatorblocks.ContainerInsulator;
 import com.maw79.mods.blocks.scienceblocks.insulatorblocks.GuiInsulatorTe;
 import com.maw79.mods.blocks.scienceblocks.insulatorblocks.TileEntityInsulator;
@@ -11,6 +14,7 @@ import com.maw79.mods.blocks.tileentityattempt.GuiBasic2;
 import com.maw79.mods.blocks.tileentityattempt.TileEntityCustom2;
 import com.maw79.mods.container.ContainerBasic;
 import com.maw79.mods.container.ContainerBlockBreaker;
+
 import com.maw79.mods.tileentity.TileEntityBlockBreaker;
 import com.maw79.mods.util.Utils;
 
@@ -31,6 +35,7 @@ public class GuiHandler implements IGuiHandler{
 	public static final int TEST2 = 3;
 	public static final int SCIENCE_GUI = 4;
 	public static final int INSULATOR_GUI = 5;
+	public static final int PROFILER_GUI = 6;
 	
 	/**
 	 * Should return the container for that gui. This is called server side because servers handle items in guis
@@ -63,6 +68,11 @@ public class GuiHandler implements IGuiHandler{
 			
 			
 			return new ContainerInsulator(player.inventory, (TileEntityInsulator) world.getTileEntity(new BlockPos(x, y, z)));
+		}
+		if(ID==PROFILER_GUI){
+			
+			
+			return new ContainerProfiler(player.inventory, (TileEntityProfiler) world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		return null;
 	}
@@ -101,6 +111,11 @@ Utils.getLogger().info("GuiHandler: getClientGuiElement");
 			
 			Utils.getLogger().info("GuiHandler: client Insulator GUI called");
 			return new GuiInsulatorTe(player.inventory, (TileEntityInsulator) world.getTileEntity(new BlockPos(x, y, z)));
+		}
+		if(ID==PROFILER_GUI){
+			
+			Utils.getLogger().info("GuiHandler: client Insulator GUI called");
+			return new GuiProfilerTe(player.inventory, (TileEntityProfiler) world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		return null;
 	}

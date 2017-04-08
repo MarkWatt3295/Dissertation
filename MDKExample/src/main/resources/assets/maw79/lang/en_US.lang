@@ -93,6 +93,7 @@ tile.block_jar.name=Glass Jar
 tile.custom_model.name=Custom Model (UNUSED)
 tile.block_creative.name=Creative Mode Block
 tile.block_survival.name=Survival Mode Block
+tile.block_profiler.name=Profiler Block
 //MATHS BLOCKS
 tile.math_block_1.name=Maths Block 1
 tile.math_block_2.name=Maths Block 2
@@ -158,6 +159,7 @@ tile.science_te.name=Science TE
 tile.wood_properties_te.name=Wood Properties Block
 tile.labler_block.name=Labler Block
 tile.insulator_main.name=Insulator Main
+tile.plastic_block.name=Plastic Block
 
 //Achievements
 achievement.newingot=New Ingot

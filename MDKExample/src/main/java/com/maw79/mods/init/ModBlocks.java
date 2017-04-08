@@ -39,6 +39,7 @@ import com.maw79.mods.blocks.scienceblocks.sciencewool.ItemScienceWool;
 import com.maw79.mods.blocks.scienceblocks.tileentityscience.BlockScienceTE;
 import com.maw79.mods.blocks.tileentityattempt.BlockTestTE;
 import com.maw79.mods.handlers.EnumHandler;
+import com.maw79.mods.blocks.ItemProfiler.BlockProfilerTE;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.util.Utils;
@@ -87,6 +88,7 @@ public class ModBlocks {
 	public static Block customModel;
 	public static Block creative;
 	public static Block survival;
+	public static Block profiler;
 	
 	//MATHS BLOCKS
 	public static Block mathblock1;
@@ -134,6 +136,7 @@ public class ModBlocks {
 	public static Block labler;
 	public static Block bridge;
 	public static Block insulatormain;
+	public static Block plasticblock;
 	
 	
 	
@@ -164,6 +167,7 @@ public class ModBlocks {
 		customModel = new BlockCustomModel("custom_model");
 		creative = new BlockCreativeBlock("block_creative");
 		survival = new BlockSurvivalBlock("block_survival");
+		profiler = new BlockProfilerTE("block_profiler");
 		
 		//MATHS BLOCKS
 		mathblock1 = new BlockBasicBlock("math_block_1");
@@ -213,7 +217,7 @@ public class ModBlocks {
 		sciencewool = new BlockScienceWoolP("science_wool");
 		insulatormain = new BlockInsulatorMainTE("insulator_main");
 		bridge = new BlockBridgeBlock("bridge_block");
-		
+		plasticblock = new BlockBasicBlock("plastic_block");
 		
 	}
 	
@@ -244,6 +248,7 @@ public class ModBlocks {
 		registerBlock(customModel);
 		registerBlock(creative);
 		registerBlock(survival);
+		registerBlock(profiler);
 		
 		registerBlock(newtestblock);
 		
@@ -322,6 +327,7 @@ public class ModBlocks {
 		registerBlock(sciencewool, new ItemScienceWool(sciencewool));
 		registerBlock(labler);
 		registerBlock(insulatormain);
+		registerBlock(plasticblock);
 		
 	}
 	
@@ -365,6 +371,7 @@ public class ModBlocks {
 		registerRender(creative);
 		registerRender(survival);
 		registerRender(newtestblock);
+		registerRender(profiler);
 		
 		//MATHS BLOCKS
 		registerRender(mathblock1);
@@ -412,6 +419,7 @@ public class ModBlocks {
 		registerRender(labler);
 		registerRender(sciencewoolblock);
 		registerRender(insulatormain);
+		registerRender(plasticblock);
 		
 		
 		
