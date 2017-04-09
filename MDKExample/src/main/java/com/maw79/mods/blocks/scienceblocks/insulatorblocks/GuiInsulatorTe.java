@@ -112,7 +112,7 @@ public class GuiInsulatorTe extends GuiContainer {
        // buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) + 80 / 2, (height/2) -5, 30, 20, "Help"));
        // buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) - 170 / 2, (height/2) -5, 40, 20, "Reset"));
         buttonList.add(button1 = new GuiButton(BUTTON1, (width / 2) + 80 / 2, (height/2) -50, 30, 20, "Back"));
-        buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) -20 / 2, (height/2) -5, 40, 20, "Help"));
+        buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) -5 / 2, (height/2) -5, 40, 20, "Help"));
         buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) -95 / 2, (height/2) -5, 40, 20, "Reset"));
       
       
