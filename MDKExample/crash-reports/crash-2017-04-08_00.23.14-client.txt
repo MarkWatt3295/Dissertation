@@ -1,0 +1,129 @@
+---- Minecraft Crash Report ----
+// Sorry :(
+
+Time: 4/8/17 12:23 AM
+Description: Updating screen events
+
+java.lang.NullPointerException: Updating screen events
+	at com.maw79.mods.blocks.ItemProfiler.ContainerProfiler.<init>(ContainerProfiler.java:37)
+	at com.maw79.mods.blocks.ItemProfiler.GuiProfilerTe.<init>(GuiProfilerTe.java:55)
+	at com.maw79.mods.client.gui.GuiHandler.getClientGuiElement(GuiHandler.java:118)
+	at net.minecraftforge.fml.common.network.NetworkRegistry.getLocalGuiContainer(NetworkRegistry.java:277)
+	at net.minecraftforge.fml.common.network.internal.FMLNetworkHandler.openGui(FMLNetworkHandler.java:112)
+	at net.minecraft.entity.player.EntityPlayer.openGui(EntityPlayer.java:2734)
+	at com.maw79.mods.blocks.ItemProfiler.GuiProfilerTe.actionPerformed(GuiProfilerTe.java:180)
+	at net.minecraft.client.gui.GuiScreen.mouseClicked(GuiScreen.java:496)
+	at net.minecraft.client.gui.inventory.GuiContainer.mouseClicked(GuiContainer.java:360)
+	at com.maw79.mods.blocks.ItemProfiler.GuiProfilerTe.mouseClicked(GuiProfilerTe.java:213)
+	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:613)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:578)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1792)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1119)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:407)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97)
+	at GradleStart.main(GradleStart.java:26)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at com.maw79.mods.blocks.ItemProfiler.ContainerProfiler.<init>(ContainerProfiler.java:37)
+	at com.maw79.mods.blocks.ItemProfiler.GuiProfilerTe.<init>(GuiProfilerTe.java:55)
+	at com.maw79.mods.client.gui.GuiHandler.getClientGuiElement(GuiHandler.java:118)
+	at net.minecraftforge.fml.common.network.NetworkRegistry.getLocalGuiContainer(NetworkRegistry.java:277)
+	at net.minecraftforge.fml.common.network.internal.FMLNetworkHandler.openGui(FMLNetworkHandler.java:112)
+	at net.minecraft.entity.player.EntityPlayer.openGui(EntityPlayer.java:2734)
+	at com.maw79.mods.blocks.ItemProfiler.GuiProfilerTe.actionPerformed(GuiProfilerTe.java:180)
+	at net.minecraft.client.gui.GuiScreen.mouseClicked(GuiScreen.java:496)
+	at net.minecraft.client.gui.inventory.GuiContainer.mouseClicked(GuiContainer.java:360)
+	at com.maw79.mods.blocks.ItemProfiler.GuiProfilerTe.mouseClicked(GuiProfilerTe.java:213)
+	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:613)
+	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:578)
+
+-- Affected screen --
+Details:
+	Screen name: ~~ERROR~~ NullPointerException: null
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['Player369'/112, l='MpServer', x=194.04, y=4.00, z=573.20]]
+	Chunk stats: MultiplayerChunkCache: 841, 841
+	Level seed: 0
+	Level generator: ID 01 - flat, ver 0. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (174,4,573), Chunk: (at 14,0,13 in 10,35; contains blocks 160,0,560 to 175,255,575), Region: (0,1; contains chunks 0,32 to 31,63, blocks 0,0,512 to 511,255,1023)
+	Level time: 1185449 game time, 1 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 50 total; [EntityHorse['Horse'/19, l='MpServer', x=125.58, y=4.00, z=543.87], EntityChicken['Chicken'/22, l='MpServer', x=119.17, y=4.00, z=588.85], EntityChicken['Chicken'/24, l='MpServer', x=120.12, y=4.00, z=595.67], EntityItem['item.item.egg'/5272, l='MpServer', x=149.37, y=4.00, z=570.87], EntityChicken['Chicken'/26, l='MpServer', x=119.80, y=4.00, z=607.92], EntityChicken['Chicken'/28, l='MpServer', x=130.08, y=4.00, z=603.90], EntityChicken['Chicken'/29, l='MpServer', x=114.93, y=4.00, z=631.11], EntityPig['Pig'/30, l='MpServer', x=130.30, y=4.00, z=531.46], EntityPig['Pig'/31, l='MpServer', x=130.72, y=4.00, z=569.50], EntityCow['Cow'/32, l='MpServer', x=133.79, y=4.00, z=560.37], EntityChicken['Chicken'/33, l='MpServer', x=134.35, y=4.00, z=587.14], EntityItem['item.item.egg'/34, l='MpServer', x=130.73, y=4.00, z=580.31], EntityItem['item.item.egg'/35, l='MpServer', x=139.71, y=4.00, z=585.85], EntityPig['Pig'/39, l='MpServer', x=147.22, y=4.00, z=538.27], EntityChicken['Chicken'/40, l='MpServer', x=149.48, y=4.00, z=577.36], EntityChicken['Chicken'/41, l='MpServer', x=144.34, y=4.00, z=577.87], Test['entity.Test.name'/43, l='MpServer', x=166.27, y=4.00, z=539.00], Test['entity.Test.name'/44, l='MpServer', x=173.77, y=4.00, z=538.93], EntitySheep['Sheep'/45, l='MpServer', x=164.19, y=4.00, z=620.20], EntityCow['Cow'/49, l='MpServer', x=183.57, y=4.00, z=493.79], EntityChicken['Chicken'/50, l='MpServer', x=183.53, y=4.00, z=504.32], Test['entity.Test.name'/52, l='MpServer', x=180.69, y=4.00, z=571.79], Test['entity.Test.name'/53, l='MpServer', x=187.19, y=4.00, z=582.45], EntityChicken['Chicken'/54, l='MpServer', x=180.14, y=4.00, z=637.73], EntityChicken['Chicken'/55, l='MpServer', x=205.65, y=4.00, z=644.16], EntityChicken['Chicken'/60, l='MpServer', x=231.28, y=4.00, z=501.12], EntityPig['Pig'/61, l='MpServer', x=227.24, y=4.00, z=506.26], EntityCow['Cow'/62, l='MpServer', x=225.25, y=4.00, z=535.15], EntitySheep['Sheep'/63, l='MpServer', x=243.23, y=4.00, z=557.69], EntityVillager['Villager'/68, l='MpServer', x=248.35, y=4.00, z=540.27], EntityVillager['Villager'/69, l='MpServer', x=255.71, y=4.00, z=536.50], EntitySheep['Sheep'/70, l='MpServer', x=250.71, y=4.00, z=558.82], EntityVillager['Villager'/71, l='MpServer', x=250.71, y=4.00, z=551.77], EntityPig['Pig'/72, l='MpServer', x=242.24, y=4.00, z=620.76], EntityVillager['Villager'/75, l='MpServer', x=259.54, y=4.00, z=523.68], EntityVillager['Villager'/76, l='MpServer', x=264.50, y=4.00, z=543.55], EntityVillager['Villager'/77, l='MpServer', x=256.49, y=4.00, z=538.40], EntityVillager['Villager'/78, l='MpServer', x=265.48, y=4.00, z=552.65], EntityVillager['Villager'/79, l='MpServer', x=260.59, y=3.94, z=548.48], EntityVillager['Villager'/80, l='MpServer', x=259.50, y=4.09, z=574.84], EntityVillager['Villager'/81, l='MpServer', x=265.55, y=5.00, z=571.25], EntityVillager['Villager'/82, l='MpServer', x=257.23, y=5.00, z=575.33], EntityVillager['Villager'/83, l='MpServer', x=263.72, y=4.00, z=565.55], EntityVillager['Villager'/85, l='MpServer', x=265.30, y=3.94, z=578.74], EntityVillager['Villager'/86, l='MpServer', x=260.60, y=5.00, z=580.51], EntityVillager['Villager'/88, l='MpServer', x=262.29, y=4.94, z=582.74], EntityPig['Pig'/89, l='MpServer', x=261.42, y=4.00, z=605.26], EntityCow['Cow'/90, l='MpServer', x=268.84, y=4.00, z=592.35], EntityCow['Cow'/91, l='MpServer', x=257.72, y=4.00, z=622.84], EntityPlayerSP['Player369'/112, l='MpServer', x=194.04, y=4.00, z=573.20]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:456)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2774)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:428)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97)
+	at GradleStart.main(GradleStart.java:26)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.11.2
+	Operating System: Mac OS X (x86_64) version 10.12.5
+	Java Version: 1.8.0_121, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 3016899064 bytes (2877 MB) / 4160225280 bytes (3967 MB) up to 4160225280 bytes (3967 MB)
+	JVM Flags: 2 total; -Xmx4G -Xms4G
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP 9.38 Powered by Forge 13.20.0.2228 5 mods loaded, 5 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAA	minecraft{1.11.2} [Minecraft] (minecraft.jar) 
+	UCHIJAAAA	mcp{9.19} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAA	FML{8.0.99.99} [Forge Mod Loader] (forgeSrc-1.11.2-13.20.0.2228.jar) 
+	UCHIJAAAA	forge{13.20.0.2228} [Minecraft Forge] (forgeSrc-1.11.2-13.20.0.2228.jar) 
+	UCHIJAAAA	maw79{0.40 mathsbuild - Alpha} [Teaching Keystage 2 Via Minecraft] (bin) 
+	Loaded coremods (and transformers): 
+	Launched Version: 1.11.2
+	LWJGL: 2.9.2
+	OpenGL: Intel Iris OpenGL Engine GL version 2.1 INTEL-10.25.2, Intel Inc.
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because ARB_framebuffer_object is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	CPU: 4x Intel(R) Core(TM) i5-4258U CPU @ 2.40GHz

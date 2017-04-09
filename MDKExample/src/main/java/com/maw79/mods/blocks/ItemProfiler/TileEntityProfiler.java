@@ -181,7 +181,7 @@ public class TileEntityProfiler extends TileEntity implements ITickable, ICapabi
 			if(i == 0){
 				handler.getStackInSlot(4).splitStack(1);
 				handler.insertItem(7, new ItemStack(ModItems.obsidianingot), false);
-				Minecraft.getMinecraft().displayGuiScreen(new GuiCalculator());
+				Minecraft.getMinecraft().displayGuiScreen(new GuiProfilerObsidianIngot());
 			i = 1;
 			}
 			

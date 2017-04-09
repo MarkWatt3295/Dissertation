@@ -44,6 +44,7 @@ public class GuiCalculator extends GuiScreen {
             drawTexturedModalRect(centerX, centerY, 0, 0, guiWidth, guiHeight);
         }
         GlStateManager.popMatrix();
+        
         GlStateManager.pushMatrix();
         {
             GlStateManager.translate((width / 2) - fontRendererObj.getStringWidth(calcquestion), centerY + 10, 0);
@@ -54,13 +55,14 @@ public class GuiCalculator extends GuiScreen {
            // fontRendererObj.drawString(calcquestion, 0, 0, 0x6028ff);
         }
             GlStateManager.popMatrix();
-            GlStateManager.pushMatrix();{
+            
+            GlStateManager.pushMatrix();
            // GlStateManager.translate((width / 2) - fontRendererObj.getStringWidth(question), centerY + 10, 0);
           //  GlStateManager.scale(2, 2, 2);
            // fontRendererObj.drawString(question, 1, 15, 0x6028ff);
             
             
-        }
+        
         GlStateManager.popMatrix();
         super.drawScreen(mouseX, mouseY, partialTicks);
       

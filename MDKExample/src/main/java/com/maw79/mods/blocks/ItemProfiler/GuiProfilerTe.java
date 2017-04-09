@@ -113,12 +113,9 @@ public class GuiProfilerTe extends GuiContainer {
 	@Override
     public void initGui() {
     	
-        buttonList.clear();												//+120 -100
-        buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) + 80 / 2, (height/2) -5, 30, 20, "Help"));
-        buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) - 170 / 2, (height/2) -5, 40, 20, "Reset"));
+        buttonList.clear();												
         buttonList.add(button1 = new GuiButton(BUTTON1, (width / 2) + 80 / 2, (height/2) -50, 30, 20, "Back"));
-        buttonList.add(button4 = new GuiButton(BUTTON4, (width / 2) -20 / 2, (height/2) -5, 40, 20, "Pause"));
-        buttonList.add(button5 = new GuiButton(BUTTON5, (width / 2) -95 / 2, (height/2) -5, 40, 20, "Play"));
+        buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) -95 / 2, (height/2) -5, 40, 20, "Help"));
       
       
         super.initGui();
@@ -142,48 +139,22 @@ public class GuiProfilerTe extends GuiContainer {
 	            	button1.visible = false;
 	            	drawGuiContainerBackgroundLayer(zLevel, BUTTON1, BUTTON1);
 	            	button3.visible = true;
-	            	button2.visible = true;
-	            	button4.visible = true;
-	            	button5.visible = true;
+	            	
 	            	
 	            	break;
 	            	
-	            case BUTTON2: //reset
-				
-	            	mc.player.playSound(SoundEvent.REGISTRY.getObject(new ResourceLocation(("entity.chicken.egg"))), 1.0F, 1.0F);
-	            	
-	            	
-	      
-	            	break;
+	          
 	            	
 	            case BUTTON3: //help
 	            	
 	            	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
 	            	
 	            	help = true;
-	            	button5.visible = false;
-	            	button4.visible = false;
 	            	button3.visible = false;
-	            	button2.visible = false;
 	            	drawGuiContainerBackgroundLayer(zLevel, BUTTON3, BUTTON3);
 	            	button1.visible = true;
 	            	
 	            	break;
-	            	
-	            case BUTTON4: //pause
-	            	mc.player.playSound(SoundEvent.REGISTRY.getObject(new ResourceLocation(("entity.chicken.egg"))), 1.0F, 1.0F);
-	            	
-	            	
-	            	break;
-
-	            case BUTTON5: //play
-	            	mc.player.playSound(SoundEvent.REGISTRY.getObject(new ResourceLocation(("entity.chicken.egg"))), 1.0F, 1.0F);
-	            	mc.displayGuiScreen((GuiScreen)null);
-	            	
-	            		
-	            	
-	            	break;
-	            	
 	        }
 	        updateButtons();
 	        super.actionPerformed(button);
