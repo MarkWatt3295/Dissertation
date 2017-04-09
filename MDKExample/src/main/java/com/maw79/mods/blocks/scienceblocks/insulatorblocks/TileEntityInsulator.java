@@ -33,11 +33,11 @@ public class TileEntityInsulator extends TileEntity implements ITickable, ICapab
 	 */
 	public  ItemStackHandler handler;
 	
-	private int cooldownCap = 100;
-
-	public static int insulated;
+	public static int insulated = 10000;
+	public int insulatedmax = 10000;
+	public int insulatedmin = 0;
 	public static int heatlevel = 0;
-	//= 1000;
+	
 	public ArrayList<ItemStack>insulators = new ArrayList<ItemStack>();
 	
 	
@@ -47,7 +47,6 @@ public class TileEntityInsulator extends TileEntity implements ITickable, ICapab
 	 * Initializes our variables. MUST NOT HAVE ANY PARAMETERS
 	 */
 	public TileEntityInsulator() {
-		this.insulated = 2000;
 		this.handler = new ItemStackHandler(10);
 		
 		
@@ -169,10 +168,27 @@ public class TileEntityInsulator extends TileEntity implements ITickable, ICapab
 		heatEscaperLevel();
 		//ItemStack slot2 = handler.getStackInSlot(4);
 		
+		//OBSIDIAN INGOT
+		if(handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.obsidianingot))) {
+			heatlevel = 4;
+			
+		}
+		//PLASTIC BLOCK
+			if(handler.getStackInSlot(4).isItemEqual(new ItemStack(ModBlocks.plasticblock))) {
+				heatlevel = 5;	
+			}
+			
+			else {
+				heatlevel =0;
+			}
 		
+			if(insulated < 0){
+				Utils.getLogger().info("Less than 0 so set to 0");
+				insulated = 0;
+			}
 		}
 		
-	
+
 		
 	}
 	
@@ -188,46 +204,56 @@ public class TileEntityInsulator extends TileEntity implements ITickable, ICapab
 		
 	}
 	
-	public void heatEscaperLevel(){
-		if(handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.obsidianingot))) {
-			
-			Utils.getLogger().info("Minus Temp");
-			insulated -=100;
-		}
 	
-			if(handler.getStackInSlot(4).isItemEqual(new ItemStack(ModBlocks.plasticblock))) {
-				
-				Utils.getLogger().info("Minus Temp");
-				insulated -=0.000000001;
-			}
+	
+	public void heatEscaperLevel(){
 		
-		if(handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.customfuel))) {
-			
-			Utils.getLogger().info("Plus Temp");
-			event1();
-			insulated +=1;
-		}
-		
+	
+		//HEAT LEVELS - LEVEL 0
 		if(heatlevel == 0){
-			insulated -=10;
+			if(insulated > insulatedmin){
+				insulated -= 200;
+				Utils.getLogger().info("Insulated is level 0 and not min");
+			}
 		}
+		
+		//HEAT LEVELS - LEVEL 1
 		if(heatlevel == 1){
-			//Insulated Pause
+			//Insulated Do Nothing
 		}
+		
+		//HEAT LEVELS - LEVEL 2
 		if(heatlevel == 2){
 			insulated +=1;
 		}
+		
+		//HEAT LEVELS - LEVEL 3
 		if(heatlevel == 3){
-			insulated =1000;
-			heatlevel = 0;
+			insulated =10000;
+			//heatlevel = 0;
 			
+		}
+		
+		//HEAT LEVELS - LEVEL 4 (Obsidian Ingot)
+			if(heatlevel == 4){
+				insulated -=1000;
+				//heatlevel = 0;
+					
+		}
+			
+		//HEAT LEVELS - LEVEL 5 (Plastic Block)
+		if(heatlevel == 5){
+			insulated -=1;
+			//heatlevel = 0;
+	
+			}
+		
+		else{
+			heatlevel = 0;
 		}
 		
 				
 	}
-	
-	
-
 	
 	}
 

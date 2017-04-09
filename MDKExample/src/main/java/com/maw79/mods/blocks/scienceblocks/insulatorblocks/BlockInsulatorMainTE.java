@@ -54,16 +54,13 @@ public class BlockInsulatorMainTE extends BlockContainer implements ITileEntityP
 			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 	
 		
-		
 		world.playSound(player, pos, ModSoundHandler.STEEL_FENCE_GATE_OPEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
         
-		
 		
 		if (!world.isRemote)
 	        {
 	            player.openGui(Maw79Mod.instance, GuiHandler.INSULATOR_GUI,  world, pos.getX(), pos.getY(), pos.getZ());
 	        }
-		
 		
 		return true; 
 	}
