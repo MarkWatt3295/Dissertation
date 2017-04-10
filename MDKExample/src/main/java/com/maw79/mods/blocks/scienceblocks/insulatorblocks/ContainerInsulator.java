@@ -64,10 +64,6 @@ public class ContainerInsulator extends Container {
 		for (int x = 0; x < 9; ++x) {
 			this.addSlotToContainer(new Slot(playerInv, x, xPos + x * 18, yPos + 58));
 		}
-		
-		
-		
-		
 			
 	}
 	
@@ -81,8 +77,5 @@ public class ContainerInsulator extends Container {
 	public boolean canInteractWith(EntityPlayer player) {
 		return this.te.isUseableByPlayer(player);
 	}
-
-	
-	
 
 }

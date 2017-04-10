@@ -3,9 +3,15 @@ package com.maw79.mods.client.gui;
 import com.maw79.mods.blocks.ItemProfiler.ContainerProfiler;
 import com.maw79.mods.blocks.ItemProfiler.GuiProfilerTe;
 import com.maw79.mods.blocks.ItemProfiler.TileEntityProfiler;
+import com.maw79.mods.blocks.historyblocks.artifactupdater.ContainerArtifactResearcher;
+import com.maw79.mods.blocks.historyblocks.artifactupdater.GuiArtifactResearcherTe;
+import com.maw79.mods.blocks.historyblocks.artifactupdater.TileEntityArtifactResearcher;
 import com.maw79.mods.blocks.scienceblocks.insulatorblocks.ContainerInsulator;
 import com.maw79.mods.blocks.scienceblocks.insulatorblocks.GuiInsulatorTe;
 import com.maw79.mods.blocks.scienceblocks.insulatorblocks.TileEntityInsulator;
+import com.maw79.mods.blocks.scienceblocks.insulatorblockscalculator.ContainerInsulatorCalculator;
+import com.maw79.mods.blocks.scienceblocks.insulatorblockscalculator.GuiInsulatorCalculatorTe;
+import com.maw79.mods.blocks.scienceblocks.insulatorblockscalculator.TileEntityInsulatorCalculator;
 import com.maw79.mods.blocks.scienceblocks.tileentityscience.ContainerScience;
 import com.maw79.mods.blocks.scienceblocks.tileentityscience.GuiScienceTe;
 import com.maw79.mods.blocks.scienceblocks.tileentityscience.TileEntityScience;
@@ -36,6 +42,8 @@ public class GuiHandler implements IGuiHandler{
 	public static final int SCIENCE_GUI = 4;
 	public static final int INSULATOR_GUI = 5;
 	public static final int PROFILER_GUI = 6;
+	public static final int INSULATOR_CALCULATOR_GUI = 7;
+	public static final int ARTIFACT_RESEARCHER = 8;
 	
 	/**
 	 * Should return the container for that gui. This is called server side because servers handle items in guis
@@ -73,6 +81,16 @@ public class GuiHandler implements IGuiHandler{
 			
 			
 			return new ContainerProfiler(player.inventory, (TileEntityProfiler) world.getTileEntity(new BlockPos(x, y, z)));
+		}
+		if(ID==INSULATOR_CALCULATOR_GUI){
+			
+			
+			return new ContainerInsulatorCalculator(player.inventory, (TileEntityInsulatorCalculator) world.getTileEntity(new BlockPos(x, y, z)));
+		}
+		if(ID==ARTIFACT_RESEARCHER){
+			
+			
+			return new ContainerArtifactResearcher(player.inventory, (TileEntityArtifactResearcher) world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		return null;
 	}
@@ -114,8 +132,18 @@ Utils.getLogger().info("GuiHandler: getClientGuiElement");
 		}
 		if(ID==PROFILER_GUI){
 			
-			Utils.getLogger().info("GuiHandler: client Insulator GUI called");
+			Utils.getLogger().info("GuiHandler: client Profiler GUI called");
 			return new GuiProfilerTe(player.inventory, (TileEntityProfiler) world.getTileEntity(new BlockPos(x, y, z)));
+		}
+		if(ID==INSULATOR_CALCULATOR_GUI){
+			
+			Utils.getLogger().info("GuiHandler: client Insulator CalculatorGUI called");
+			return new GuiInsulatorCalculatorTe(player.inventory, (TileEntityInsulatorCalculator) world.getTileEntity(new BlockPos(x, y, z)));
+		}
+		if(ID==ARTIFACT_RESEARCHER){
+			
+			Utils.getLogger().info("GuiHandler: client Insulator CalculatorGUI called");
+			return new GuiArtifactResearcherTe(player.inventory, (TileEntityArtifactResearcher) world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		return null;
 	}

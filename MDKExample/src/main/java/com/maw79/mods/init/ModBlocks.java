@@ -34,12 +34,15 @@ import com.maw79.mods.blocks.mathsblocks.mcreator_testBlock;
 import com.maw79.mods.blocks.scienceblocks.BlockLablerBlock;
 import com.maw79.mods.blocks.scienceblocks.BlockScienceWool;
 import com.maw79.mods.blocks.scienceblocks.insulatorblocks.BlockInsulatorMainTE;
+import com.maw79.mods.blocks.scienceblocks.insulatorblockscalculator.BlockInsulatorCalculatorTE;
 import com.maw79.mods.blocks.scienceblocks.sciencewool.BlockScienceWoolP;
 import com.maw79.mods.blocks.scienceblocks.sciencewool.ItemScienceWool;
 import com.maw79.mods.blocks.scienceblocks.tileentityscience.BlockScienceTE;
 import com.maw79.mods.blocks.tileentityattempt.BlockTestTE;
 import com.maw79.mods.handlers.EnumHandler;
 import com.maw79.mods.blocks.ItemProfiler.BlockProfilerTE;
+import com.maw79.mods.blocks.historyblocks.BlockArtifactOre;
+import com.maw79.mods.blocks.historyblocks.artifactupdater.BlockArtifactResearcher;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.util.Utils;
@@ -67,6 +70,7 @@ public class ModBlocks {
 	public static Block rubyblock;
 	public static Block obsidianingotblock;
 	public static Block steelOre;
+	public static Block artifactOre;
 	public static Block steelBlock;
 	public static Block breaker;
 	public static Block gamemodeDetector;
@@ -130,13 +134,23 @@ public class ModBlocks {
 	//Science Blocks
 	public static Block testblockte;
 	public static Block sciencewoolblock;
-	public static Block sciencewool;
 	public static Block materialproperties;
 	public static Block woodproperties;
 	public static Block labler;
 	public static Block bridge;
 	public static Block insulatormain;
+	public static Block insulatorcalculator;
+	//Science Insulators
 	public static Block plasticblock;
+	public static Block polyurethanefoam;
+	public static Block woodfelt;
+	public static Block sciencewool;
+	public static Block corkboard;
+	public static Block copper;
+	public static Block insulationwool;
+
+	//HISTORY BLOCKS
+	public static Block artifactresearcher;
 	
 	
 	
@@ -146,6 +160,7 @@ public class ModBlocks {
 		rubyblock = new BlockRuby("ruby_block");
 		obsidianingotblock = new BlockObsidianIngot("obsidian_ingot_block");
 		steelOre = new BlockSteelOre("steel_ore", "steel_ore");
+		artifactOre = new BlockArtifactOre("artifact_ore", "artifact_ore");
 		steelBlock = new BlockSteel("steel_block");
 		breaker = new BlockBreaker("block_breaker");
 		gamemodeDetector = new BlockGamemodeDetector("gamemode_detector");
@@ -213,12 +228,22 @@ public class ModBlocks {
 		materialproperties = new BlockScienceTE("science_te");
 		woodproperties = new BlockScienceTE("wood_properties_te");
 		labler = new BlockLablerBlock("labler_block");
-		sciencewoolblock = new BlockScienceWool("science_wool_block");
+		
 		sciencewool = new BlockScienceWoolP("science_wool");
 		insulatormain = new BlockInsulatorMainTE("insulator_main");
+		insulatorcalculator = new BlockInsulatorCalculatorTE("insulator_calculator");
 		bridge = new BlockBridgeBlock("bridge_block");
+		//Science Insulators
 		plasticblock = new BlockBasicBlock("plastic_block");
+		sciencewoolblock = new BlockScienceWool("science_wool_block");
+		woodfelt = new BlockBasicBlock("woodfelt_block");
+		polyurethanefoam = new BlockBasicBlock("polyurethanefoam_block");
+		copper = new BlockBasicBlock("copper_block");
+		corkboard = new BlockBasicBlock("corkboard_block");
+		insulationwool = new BlockBasicBlock("insulationwool_block");
 		
+		//History Blocks
+		artifactresearcher = new BlockArtifactResearcher("artifactresearcher");
 	}
 	
 	public static void register(){
@@ -226,7 +251,7 @@ public class ModBlocks {
 		registerBlock(rubyblock);
 		registerBlock(obsidianingotblock);
 		registerBlock(steelOre, new ItemBlockMeta(steelOre)); //Says that the block uses the ItemBlockMeta as the item block
-		//registerBlock(steelOre);
+		registerBlock(artifactOre, new ItemBlockMeta(artifactOre));
 		registerBlock(steelBlock);
 		registerBlock(breaker, new ItemBlockBreaker(breaker));
 		registerBlock(gamemodeDetector);
@@ -323,12 +348,22 @@ public class ModBlocks {
 		registerBlock(testblockte);
 		registerBlock(materialproperties);
 		registerBlock(woodproperties);
-		registerBlock(sciencewoolblock);
 		registerBlock(sciencewool, new ItemScienceWool(sciencewool));
 		registerBlock(labler);
 		registerBlock(insulatormain);
+		registerBlock(insulatorcalculator);
+		//Science Insulators
 		registerBlock(plasticblock);
+		registerBlock(sciencewoolblock);
+		registerBlock(polyurethanefoam);
+		registerBlock(woodfelt);
+		registerBlock(corkboard);
+		registerBlock(copper);
+		registerBlock(insulationwool);
 		
+		//History Blocks
+		registerBlock(artifactresearcher);
+
 	}
 	
 	
@@ -417,16 +452,23 @@ public class ModBlocks {
 		registerRender(materialproperties);
 		registerRender(woodproperties);
 		registerRender(labler);
-		registerRender(sciencewoolblock);
 		registerRender(insulatormain);
+		registerRender(insulatorcalculator);
+		//Science Insulators
 		registerRender(plasticblock);
+		registerRender(polyurethanefoam);
+		registerRender(woodfelt);
+		registerRender(corkboard);
+		registerRender(copper);
+		registerRender(sciencewoolblock);
+		registerRender(insulationwool);
 		
-		
-		
-	
+		//History Blocks
+		registerRender(artifactresearcher);
 		
 		for(int i = 0; i < EnumHandler.OreType.values().length; i++) {
 			registerRender(steelOre, i, "steel_ore_" + EnumHandler.OreType.values()[i].getName());
+			registerRender(artifactOre, i, "artifact_ore_" + EnumHandler.OreType.values()[i].getName());
 		}
 		
 		for(int i=0; i < EnumHandler.ChipTypes.values().length; i++){

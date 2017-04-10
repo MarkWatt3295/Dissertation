@@ -68,23 +68,8 @@ public class ClientProxy extends CommonProxy {
 			ModelBakery.registerItemVariants(Item.getItemFromBlock(ModBlocks.breaker), new ResourceLocation(Reference.MOD_ID, "block_breaker_basic"), new ResourceLocation(Reference.MOD_ID, "block_breaker_advanced"));
 			ModelBakery.registerItemVariants(Item.getItemFromBlock(ModBlocks.steelOre), new ResourceLocation(Reference.MOD_ID, "steel_ore_overworld"), new ResourceLocation(Reference.MOD_ID, "steel_ore_nether"), new ResourceLocation(Reference.MOD_ID, "steel_ore_end"));
 			ModelBakery.registerItemVariants(Item.getItemFromBlock(ModBlocks.machineFrame), new ResourceLocation(Reference.MOD_ID, "machine_frame_basic"), new ResourceLocation(Reference.MOD_ID, "machine_frame_advanced"));
-			  
-			ModelResourceLocation itemModelResourceLocation = new ModelResourceLocation("maw79:mbe03_block_variants_blue", "inventory");
-			    ModelLoader.setCustomModelResourceLocation(StartupCommon.itemBlockVariants,
-			                                               BlockVariants.EnumColour.BLUE.getMetadata(), itemModelResourceLocation);
-
-			    itemModelResourceLocation = new ModelResourceLocation("maw79:mbe03_block_variants_green", "inventory");
-			    ModelLoader.setCustomModelResourceLocation(StartupCommon.itemBlockVariants,
-			                                               BlockVariants.EnumColour.GREEN.getMetadata(), itemModelResourceLocation);
-
-
-			    itemModelResourceLocation = new ModelResourceLocation("maw79:mbe03_block_variants_red", "inventory");
-			    ModelLoader.setCustomModelResourceLocation(StartupCommon.itemBlockVariants,
-			                                               BlockVariants.EnumColour.RED.getMetadata(), itemModelResourceLocation);
-
-			    itemModelResourceLocation = new ModelResourceLocation("maw79:mbe03_block_variants_yellow", "inventory");
-			    ModelLoader.setCustomModelResourceLocation(StartupCommon.itemBlockVariants,
-			                                               BlockVariants.EnumColour.YELLOW.getMetadata(), itemModelResourceLocation);
+			ModelBakery.registerItemVariants(Item.getItemFromBlock(ModBlocks.artifactOre), new ResourceLocation(Reference.MOD_ID, "artifact_ore_overworld"), new ResourceLocation(Reference.MOD_ID, "artifact_ore_nether"), new ResourceLocation(Reference.MOD_ID, "artifact_ore_end"));
+		
 	}
 	
 	

@@ -79,25 +79,72 @@ public class GuiInsulatorTe extends GuiContainer {
 	 */
 	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-		String s = ("Insulator"); 
+		String s = ("Insulator Tester"); 
 		String s1 = "";
 		
 		String s2 = ("Tempreature : "+ te.insulated);
 		String s3 = "";
 		String s4 = "";
+		String s5 = "";
+		
+		if (te.insulated == 1000000
+				){
+			s5 = ("[*] [*] [*] [*] [*] [*] [*] [*] [*] [*]");
+		}
+		if (te.insulated >= 900000){
+			s5 = ("[*] [*] [*] [*] [*] [*] [*] [*] [*] [*]");
+		}
+		else if (te.insulated >= 800000){
+			s5 = ("[*] [*] [*] [*] [*] [*] [*] [*] [*]");
+		}
+		else if (te.insulated > 700000){
+			s5 = ("[*] [*] [*] [*] [*] [*] [*] [*]");
+		}
+		else if (te.insulated > 600000){
+			s5 = ("[*] [*] [*] [*] [*] [*] [*]");
+		}
+		else if (te.insulated > 500000){
+			s5 = ("[*] [*] [*] [*] [*] [*]");
+		}
+		else if (te.insulated > 400000){
+			s5 = ("[*] [*] [*] [*] [*]");
+		}
+		else if (te.insulated > 300000){
+			s5 = ("[*] [*] [*] [*]");
+		}
+		else if (te.insulated > 200000){
+			s5 = ("[*] [*] [*]");
+		}
+		else if (te.insulated > 100000){
+			s5 = ("[*] [*]");
+		}
+		else if (te.insulated > 0){
+			s5 = ("[*]");
+		}
+		else if (te.insulated == 0){
+			s5 = ("0");
+		}
+		
+		String s6 = (s5);
+		String s7 = ("HEAT LEFT");
+		String s8 = ("");
 		
 		 if(help == true){
 			 s = ("Insulator Help");
-			 s2 = ("Insert Insulators");
+			 s2 = ("Insulator Input");
 			 s3 = ("Move Insulators");
-			 s4 = ("into the above material slots");
+			 s4 = ("to slow the heat loss");
+			 s8 = ("- "+te.insulatedval);
 		}
 	
-	
-		this.mc.fontRendererObj.drawString(s, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s) / 2, 6, 4210752); //Draws the block breaker name in the center on the top of the gui
+	//DECIMAL COLOUR VALUES
+		this.mc.fontRendererObj.drawString(s, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s) / 2, 6, 30000); //Draws the block breaker name in the center on the top of the gui
 		this.mc.fontRendererObj.drawString(s2, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s2) / 2, 22, 4210752);
 		this.mc.fontRendererObj.drawString(s3, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s3) / 2, 82, 4210752);
 		this.mc.fontRendererObj.drawString(s4, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s4) / 2, 92, 4210752);
+		this.mc.fontRendererObj.drawString(s6, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s6) / 2, 68, 4210752);
+		this.mc.fontRendererObj.drawString(s7, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s7) / 2, 57, 16716800);
+		this.mc.fontRendererObj.drawString(s8, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s8) / 2 - 45, 40, 30000);
 		 
 		int actualMouseX = mouseX - ((this.width - this.xSize) / 2);
 		int actualMouseY = mouseY - ((this.height - this.ySize) / 2);

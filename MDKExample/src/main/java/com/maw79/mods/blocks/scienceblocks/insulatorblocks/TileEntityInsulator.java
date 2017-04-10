@@ -36,9 +36,10 @@ public class TileEntityInsulator extends TileEntity implements ITickable, ICapab
 	 */
 	public  ItemStackHandler handler;
 	
-	public static int insulated = 100000;
+	public static int insulated = 1000000;
 	public int insulatedmax = 100000;
 	public int insulatedmin = 0;
+	public static int insulatedval = 0;
 	public static int heatlevel = 0;
 	
 	public ArrayList<ItemStack>insulators = new ArrayList<ItemStack>();
@@ -163,7 +164,7 @@ public class TileEntityInsulator extends TileEntity implements ITickable, ICapab
 
 	@Override
 	public void update() {
-		
+		//Utils.getLogger().info("[X] HEAT LEVEL = "+heatlevel);
 		
 		if (!world.isRemote) {
 		IBlockState currentState = this.world.getBlockState(pos);
@@ -175,38 +176,39 @@ public class TileEntityInsulator extends TileEntity implements ITickable, ICapab
 		}
 		
 		//OBSIDIAN INGOT
-		if(handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.obsidianingot))) {
+		else if(handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.obsidianingot))) {
 			heatlevel = 4;
 			
 		}
 		//PLASTIC BLOCK
-		if(handler.getStackInSlot(4).isItemEqual(new ItemStack(ModBlocks.plasticblock))) {
-				heatlevel = 5;
-				Utils.getLogger().info("Plastic Block");
+		else if(handler.getStackInSlot(4).isItemEqual(new ItemStack(ModBlocks.plasticblock))) {
+				
+			heatlevel = 5;
+			//	Utils.getLogger().info("Plastic Block");
 		}
 		
 		//Wool BLOCK
-		if(handler.getStackInSlot(4).isItemEqual(new ItemStack(ModBlocks.sciencewool))) {
+		else if(handler.getStackInSlot(4).isItemEqual(new ItemStack(ModBlocks.insulationwool))) {
 			heatlevel = 6;	
 		}
 		//POLYURETHANE FOAM BLOCK
-				if(handler.getStackInSlot(4).isItemEqual(new ItemStack(ModBlocks.polyurethanefoam))) {
+		else if(handler.getStackInSlot(4).isItemEqual(new ItemStack(ModBlocks.polyurethanefoam))) {
 						heatlevel = 7;	
-						Utils.getLogger().info("Polyurethane Foam Block");
+						//Utils.getLogger().info("Polyurethane Foam Block");
 				}
 				
 		//WOOD FELT BLOCK
-		if(handler.getStackInSlot(4).isItemEqual(new ItemStack(ModBlocks.woodfelt))) {
+		else if(handler.getStackInSlot(4).isItemEqual(new ItemStack(ModBlocks.woodfelt))) {
 						heatlevel = 8;	
 				}
 		
 		//CORKBOARD BLOCK
-		if(handler.getStackInSlot(4).isItemEqual(new ItemStack(ModBlocks.corkboard))) {
+		else if(handler.getStackInSlot(4).isItemEqual(new ItemStack(ModBlocks.corkboard))) {
 				heatlevel = 9;	
 		}
 		
 		//COPPER BLOCK
-		if(handler.getStackInSlot(4).isItemEqual(new ItemStack(ModBlocks.copper))) {
+		else if(handler.getStackInSlot(4).isItemEqual(new ItemStack(ModBlocks.copper))) {
 				heatlevel = 10;	
 		}
 			
@@ -221,6 +223,8 @@ public class TileEntityInsulator extends TileEntity implements ITickable, ICapab
 		
 	}
 	
+	
+
 	public void event1(){
 		try {
 			TimeUnit.SECONDS.sleep(10);
@@ -243,7 +247,8 @@ public class TileEntityInsulator extends TileEntity implements ITickable, ICapab
 		if(heatlevel == 0){
 			if(insulated > insulatedmin){
 				insulated -= 1000;
-				Utils.getLogger().info("Insulated is level 0 and not min");
+				insulatedval = 1000;
+				//Utils.getLogger().info("Insulated is level 0 and not min");
 			}
 		}
 		
@@ -259,53 +264,73 @@ public class TileEntityInsulator extends TileEntity implements ITickable, ICapab
 		
 		//HEAT LEVELS - LEVEL 3
 		else if(heatlevel == 3){
-			insulated =100000;
+			insulated =1000000;
 			//heatlevel = 0;
 		}
 		
 		//HEAT LEVELS - LEVEL 4 (Obsidian Ingot)
 		else if(heatlevel == 4){
-				insulated -=100;		
+				insulated -=100;
+				insulatedval = 100;
 		}
 			
 		//HEAT LEVELS - LEVEL 5 (Plastic Block)
 		else if(heatlevel == 5){
-			insulated -=100;
-			Utils.getLogger().info("Plastic Insulation");
+			if(insulated > insulatedmin){
+			insulated -=500;
+			insulatedval = 500;
+			//Utils.getLogger().info("Plastic Insulation");
+			}
 			}
 		
 		//HEAT LEVELS - LEVEL 6 (Wool Block)
 		else if(heatlevel == 6){
-			insulated -=100;
-			Utils.getLogger().info("Wool Insulation");
+			if(insulated > insulatedmin){
+			insulated -=700;
+			insulatedval = 700;
+			//Utils.getLogger().info("Wool Insulation");
+			}
 					}
 		
 		//HEAT LEVELS - LEVEL 7 (Polyurethane Foam Block)
 		else if(heatlevel == 7){
-					insulated -=100;
-					Utils.getLogger().info("Polyurethane Foam Insulation");
+			if(insulated > insulatedmin){
+					insulated -=1;
+					insulatedval = 1;
+					//Utils.getLogger().info("Polyurethane Foam Insulation");
+			}
 							}
 				
 		//HEAT LEVELS - LEVEL 8 (Wood Felt Block)
 		else if(heatlevel == 8){
-			insulated -=100;
-			Utils.getLogger().info("Wood Felt Insulation");
+			if(insulated > insulatedmin){
+			insulated -=200;
+			insulatedval = 200;
+			//Utils.getLogger().info("Wood Felt Insulation");
+			}
 						}
 		
 		//HEAT LEVELS - LEVEL 9 (Corkboard Block)
 		else if(heatlevel == 9){
+			if(insulated > insulatedmin){
 					insulated -=100;
-					Utils.getLogger().info("Corkboard Insulation");
+					insulatedval = 100;
+					//Utils.getLogger().info("Corkboard Insulation");
+			}
 							}
 				
 		//HEAT LEVELS - LEVEL 10 (Copper Block)
 		else if(heatlevel == 10){
-					insulated -=100;
-					Utils.getLogger().info("Copper Insulation");
+			if(insulated > insulatedmin){
+					insulated -=800;
+					insulatedval = 800;
+					//Utils.getLogger().info("Copper Insulation");
+			}
 							}
 				
 		else{
 			heatlevel = 0;
+			
 		}
 		
 				

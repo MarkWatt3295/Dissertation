@@ -26,6 +26,8 @@ import com.maw79.mods.items.ItemTutorial;
 import com.maw79.mods.items.ItemXAxisTool;
 import com.maw79.mods.items.ItemYAxisTool;
 import com.maw79.mods.items.ItemZAxisTool;
+import com.maw79.mods.items.historyitems.ItemArtifact;
+import com.maw79.mods.items.historyitems.ItemHistoryBook;
 import com.maw79.mods.items.mathsitems.ItemAppleWall;
 import com.maw79.mods.items.mathsitems.ItemAppleWallAxis;
 import com.maw79.mods.items.mathsitems.ItemAppleWallBorder;
@@ -85,8 +87,6 @@ public class ModItems {
 	public static Item fireelement;
 	public static Item magnet;
 	
-	
-	
 	//Projectiles
 	public static final Item ARROW = new ItemModArrow("arrow", EntityModArrow::new);
 	public static final ItemModArrow BLOCK_DETECTION_ARROW = new ItemModArrow("block_detection_arrow", EntityBlockDetectionArrow::new);
@@ -105,7 +105,10 @@ public class ModItems {
 	public static ItemScoreDebug SCOREDEBUG = new ItemScoreDebug("scoredebug");
 	public static ItemCalculator CALCULATOR = new ItemCalculator("calculator");
 	
-	
+	//HISTORY ITEMS
+	public static ItemArtifact ARTIFACT1 = new ItemArtifact("artifact1");
+	public static ItemArtifact ARTIFACT2 = new ItemArtifact("artifact2");
+	public static ItemHistoryBook HISTORYBOOK = new ItemHistoryBook("history_book");
 	
 	//Tool Materials
 	public static ToolMaterial obsidianMaterial = EnumHelper.addToolMaterial("obsidianingot", 2, 300, 5.0F, 2.0F, 12);
@@ -164,6 +167,13 @@ public class ModItems {
 	
 	
 	public static void register(){
+		
+		//HISTORY ITEMS
+		registerItem(ARTIFACT1);
+		registerItem(ARTIFACT2);
+		registerItem(HISTORYBOOK);
+		
+		//Others
 		registerItem(SNOW);
 		registerItem(BOW);
 		registerItem(ARROW);
@@ -263,6 +273,10 @@ public class ModItems {
 		
 		registerRender(CALCULATOR);
 	
+		//HISTORY ITEMS
+		registerRender(ARTIFACT1);
+		registerRender(ARTIFACT2);
+		registerRender(HISTORYBOOK);
 		
 		//Food
 		registerRender(tomato);

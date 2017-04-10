@@ -22,6 +22,11 @@ item.scoredebug.name= Player Score Debug
 item.maths_book.name=Maths Book
 item.magnet.name=Magnet
 
+//HISTORY ITEMS
+item.artifact1.name=Artifact 1
+item.artifact2.name=Artifact 2
+item.history_book.name=History Book
+
 //Science Items
 item.fire_element.name=Fire Element
 item.label_strong.name=Strong
@@ -159,7 +164,23 @@ tile.science_te.name=Science TE
 tile.wood_properties_te.name=Wood Properties Block
 tile.labler_block.name=Labler Block
 tile.insulator_main.name=Insulator Main
+tile.insulator_calculator.name=Insulator Calculator
+
+//Science Insulators
 tile.plastic_block.name=Plastic Block
+tile.copper_block.name=Copper Block
+tile.woodfelt_block.name=Wood Felt Block
+tile.corkboard_block.name=Cork Board Block
+tile.polyurethanefoam_block.name=Polyurethane Foam Block
+tile.insulationwool_block.name=Insulation Wool Block
+
+//HISTORY BLOCKS
+tile.artifact_ore.name=Artifact Ore
+tile.artifact_ore.overworld.name=Artifact Ore
+tile.artifact_ore.end.name=End Artifact Ore
+tile.artifact_ore.nether.name=Nether Artifact Ore
+tile.artifactresearcher.name= Artifact Researcher
+	
 
 //Achievements
 achievement.newingot=New Ingot
@@ -206,6 +227,7 @@ gui.guisciencete.button3.tooltip=Maw79 KS2 Mod Configuration
 //TOOL TIPS
 maw79.heart.tooltip=Heals the player
 maw79.book.tooltip=A MOD Guide
+maw79.historybook.tooltip=Use this book to do History Activitys
 maw79.mathsbook.tooltip=A Book to Explain Maths World
 maw79.x_axis_tool.tooltip=A Tool To Help Navigate The X Axis
 maw79.y_axis_tool.tooltip=A Tool To Help Navigate The Y Axis
