@@ -25,7 +25,7 @@ public class GuiFamilyCow extends GuiScreen
 	private final int bookImageHeight = 192;
 	private final int bookImageWidth = 192;
 	private int currPage = 0;
-	private static final int bookTotalPages = 3;
+	private static final int bookTotalPages = 5;
 	private static ResourceLocation[] bookPageTextures = new ResourceLocation[bookTotalPages];
 	private static String[] stringPageText = new String[bookTotalPages];
 	private GuiButton buttonDone;
@@ -38,13 +38,13 @@ public class GuiFamilyCow extends GuiScreen
 		System.out.println("GuiFamilyCow() constructor");
 		// Don't need to do everything in constructor because the init() function is 
 		// also directly called.
-	    bookPageTextures[0] = new ResourceLocation(Reference.MOD_ID+":textures/gui/book.png");
-	    bookPageTextures[1] = new ResourceLocation(Reference.MOD_ID+":textures/gui/book.png");
-	    bookPageTextures[2] = new ResourceLocation(Reference.MOD_ID+":textures/gui/book_jack.png");
-	    stringPageText[0] = "This is your Family Cow"
-	    		
-	    //+Utilities.stringToRainbow("Family Cow", true)
-	    		+". but she no longer produces any milk.\n\nSo you mother told you that you had to take the cow and find a villager to sell her to.\n\nShe handed you a lead and said 'Take the cow to town.  And make sure you get a good deal!'.";
+	    bookPageTextures[0] = new ResourceLocation(Reference.MOD_ID+":textures/gui/book1.png");
+	    bookPageTextures[1] = new ResourceLocation(Reference.MOD_ID+":textures/gui/book1.png");
+	    bookPageTextures[2] = new ResourceLocation(Reference.MOD_ID+":textures/gui/booktest2.png");
+	    bookPageTextures[3] = new ResourceLocation(Reference.MOD_ID+":textures/gui/book1.png");
+	    bookPageTextures[4] = new ResourceLocation(Reference.MOD_ID+":textures/gui/book1.png");
+	    stringPageText[0] = "This is your History Book"
+	    	+". but she no longer produces any milk.\n\nSo you mother told you that you had to take the cow and find a villager to sell her to.\n\nShe handed you a lead and said 'Take the cow to town.  And make sure you get a good deal!'.";
 	    stringPageText[1] = "This is your Family Cow";
 	    stringPageText[2] = "Like books do you";
 	}
@@ -98,6 +98,14 @@ public class GuiFamilyCow extends GuiScreen
         else if (currPage == 2)
         {
         	mc.getTextureManager().bindTexture(bookPageTextures[2]);
+        }
+        else if (currPage == 3)
+        {
+        	mc.getTextureManager().bindTexture(bookPageTextures[3]);
+        }
+        else if (currPage == 4)
+        {
+        	mc.getTextureManager().bindTexture(bookPageTextures[4]);
         }
         else
         {

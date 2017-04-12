@@ -179,7 +179,8 @@ tile.artifact_ore.name=Artifact Ore
 tile.artifact_ore.overworld.name=Artifact Ore
 tile.artifact_ore.end.name=End Artifact Ore
 tile.artifact_ore.nether.name=Nether Artifact Ore
-tile.artifactresearcher.name= Artifact Researcher
+tile.artifactresearcher.name=Artifact Researcher
+tile.bright_sandstone.name=Bright Sandstone
 	
 
 //Achievements

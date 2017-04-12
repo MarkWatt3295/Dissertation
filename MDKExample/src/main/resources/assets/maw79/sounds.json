@@ -38,5 +38,10 @@
         "category": "block",
         "subtitle": "mawsound.flyby",
         "sounds": [ { "name": "maw79:mawsound/flyby", "stream": true } ]
+    },
+      "mawsound.voice1": {
+        "category": "block",
+        "subtitle": "mawsound.voice1",
+        "sounds": [ { "name": "maw79:mawsound/voice1", "stream": true } ]
     }
 }

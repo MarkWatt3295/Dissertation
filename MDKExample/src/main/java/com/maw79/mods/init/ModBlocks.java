@@ -42,6 +42,7 @@ import com.maw79.mods.blocks.tileentityattempt.BlockTestTE;
 import com.maw79.mods.handlers.EnumHandler;
 import com.maw79.mods.blocks.ItemProfiler.BlockProfilerTE;
 import com.maw79.mods.blocks.historyblocks.BlockArtifactOre;
+import com.maw79.mods.blocks.historyblocks.BlockBrightBlock;
 import com.maw79.mods.blocks.historyblocks.artifactupdater.BlockArtifactResearcher;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
@@ -151,6 +152,7 @@ public class ModBlocks {
 
 	//HISTORY BLOCKS
 	public static Block artifactresearcher;
+	public static Block brightsandstone;
 	
 	
 	
@@ -244,6 +246,7 @@ public class ModBlocks {
 		
 		//History Blocks
 		artifactresearcher = new BlockArtifactResearcher("artifactresearcher");
+		brightsandstone = new BlockBrightBlock("bright_sandstone");
 	}
 	
 	public static void register(){
@@ -363,6 +366,7 @@ public class ModBlocks {
 		
 		//History Blocks
 		registerBlock(artifactresearcher);
+		registerBlock(brightsandstone);
 
 	}
 	
@@ -465,6 +469,8 @@ public class ModBlocks {
 		
 		//History Blocks
 		registerRender(artifactresearcher);
+		registerRender(brightsandstone);
+		//brightsandstone.setLightLevel(14.0f);
 		
 		for(int i = 0; i < EnumHandler.OreType.values().length; i++) {
 			registerRender(steelOre, i, "steel_ore_" + EnumHandler.OreType.values()[i].getName());

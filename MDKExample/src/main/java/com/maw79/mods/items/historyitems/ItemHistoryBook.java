@@ -2,8 +2,10 @@ package com.maw79.mods.items.historyitems;
 
 import java.util.List;
 
+import com.maw79.mods.client.gui.GuiFamilyCow;
 import com.maw79.mods.client.gui.GuiFirstBook;
 import com.maw79.mods.client.gui.GuiTutorial;
+import com.maw79.mods.client.gui.books.GuiHistoryBook;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.util.Utils;
 
@@ -32,7 +34,7 @@ public class ItemHistoryBook extends Item{
 	@Override
 	public  ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
 		
-		Minecraft.getMinecraft().displayGuiScreen(new GuiTutorial());
+		Minecraft.getMinecraft().displayGuiScreen(new GuiHistoryBook());
 		
 		return super.onItemRightClick(world, player, hand);
 	}

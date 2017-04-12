@@ -6,8 +6,10 @@ import com.maw79.mods.main.Reference;
 import com.maw79.mods.render.RenderBeetleFactory;
 import com.maw79.mods.render.RenderDaveFactory;
 import com.maw79.mods.render.RenderElkFactory;
+import com.maw79.mods.render.RenderEntityTourGuide;
 import com.maw79.mods.render.RenderHumanFactory;
 import com.maw79.mods.render.RenderTestFactory;
+import com.maw79.mods.render.RenderTourGuideFactory;
 import com.maw79.mods.util.Utils;
 
 import net.minecraft.entity.Entity;
@@ -21,14 +23,18 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 public class EntitiesLivingHandler {
 	
+	
+	
 	public static void registerEntity(){
 		Utils.getLogger().info("EntitiesLivingHandler: registerEntity");
 		
 		createEntity(Test.class, "Test", 0xa62323, 0xed1515, 1);
-		createHuman(Entityhuman.class, "Human", 789, 567, 3);
 		createDave(EntityUselessDave.class, "Dave", 0xa62323, 0xed1515, 2);
+		createHuman(Entityhuman.class, "Human", 789, 567, 3);
 		createElk(Elk.class, "Elk", 0x73388, 0x247480, 4);
 		createBeetle(EntityBeetle.class, "Beetle", 0x1111, 0x12830, 5);
+		createTourGuide(EntityTourGuide.class, "Tour Guide", 789, 567, 6);
+		createRomanGuide(EntityRomanGuide.class, "Roman Guide", 789, 567, 6);
 	}
 	
 	//public static void registerDave(){
@@ -60,6 +66,15 @@ public class EntitiesLivingHandler {
 		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, entityName, id, Maw79Mod.instance, 64, 1, true, solidColor, spotColor);
 	}
 	
+	private static void createTourGuide(Class entityClass, String entityName, int solidColor, int spotColor, int id){
+		Utils.getLogger().info("EntitiesLivingHandler: createTourGuide");
+		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, entityName, id, Maw79Mod.instance, 64, 1, true, solidColor, spotColor);
+	}
+	private static void createRomanGuide(Class entityClass, String entityName, int solidColor, int spotColor, int id){
+		Utils.getLogger().info("EntitiesLivingHandler: createTourGuide");
+		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, entityName, id, Maw79Mod.instance, 64, 1, true, solidColor, spotColor);
+	}
+	
 	public static void registerAllModels(){
 		Utils.getLogger().info("EntitiesLivingHandler: registerAllModels");
 		
@@ -74,6 +89,8 @@ public class EntitiesLivingHandler {
 		registerHuman(Entityhuman.class, RenderHumanFactory.INSTANCE);
 		registerElk(Elk.class, RenderElkFactory.INSTANCE);
 		registerBeetle(EntityBeetle.class, RenderBeetleFactory.INSTANCE);
+		registerTourGuide(EntityTourGuide.class, RenderTourGuideFactory.INSTANCE);
+		registerTourGuide(EntityRomanGuide.class, RenderTourGuideFactory.INSTANCE);
 	}
 	
 	
@@ -109,6 +126,19 @@ public class EntitiesLivingHandler {
 	private static <T extends EntityCreature> void registerBeetle(Class<T> entity, IRenderFactory<? super T> renderFactory3)
 	{
 		Utils.getLogger().info("EntitiesLivingHandler: registerBeetle");
+		
+		RenderingRegistry.registerEntityRenderingHandler(entity, renderFactory3);
+	}
+	
+	private static <T extends EntityCreature> void registerTourGuide(Class<T> entity, IRenderFactory<? super T> renderFactory3)
+	{
+		Utils.getLogger().info("EntitiesLivingHandler: registerTourGuide");
+		
+		RenderingRegistry.registerEntityRenderingHandler(entity, renderFactory3);
+	}
+	private static <T extends EntityCreature> void registerRomanGuide(Class<T> entity, IRenderFactory<? super T> renderFactory3)
+	{
+		Utils.getLogger().info("EntitiesLivingHandler: registerTourGuide");
 		
 		RenderingRegistry.registerEntityRenderingHandler(entity, renderFactory3);
 	}

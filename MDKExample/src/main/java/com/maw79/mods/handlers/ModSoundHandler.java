@@ -18,6 +18,7 @@ public class ModSoundHandler {
 	public static SoundEvent MAWSOUND_COIN;
 	public static SoundEvent MAWSOUND_SQUELCH;
 	public static SoundEvent MAWSOUND_FLYBY;
+	public static SoundEvent MAWSOUND_VOICE1;
 	
 	
 	public static void init() {
@@ -31,6 +32,7 @@ public class ModSoundHandler {
 		MAWSOUND_COIN = register("mawsound.coin");
 		MAWSOUND_SQUELCH = register("mawsound.squelch");
 		MAWSOUND_FLYBY = register("mawsound.flyby");
+		MAWSOUND_VOICE1 = register("mawsound.voice1");
 		
 	}
 	

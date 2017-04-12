@@ -1,6 +1,7 @@
 package com.maw79.mods.entity.passive;
 
 import com.maw79.mods.handlers.AchievementHandler;
+import com.maw79.mods.handlers.ModSoundHandler;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityCreature;
@@ -109,6 +110,7 @@ public  class Entityhuman extends EntityCreature {
 
 		if (true) {
 			System.out.println("Printing from human mob");
+			//entity.playSound(ModSoundHandler.MAWSOUND_VOICE1, 1.0F, 4.0F);
 		}
 		if(!entity.hasAchievement(AchievementHandler.achievementNiceTo)){
          	entity.addStat(AchievementHandler.achievementNiceTo);

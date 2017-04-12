@@ -1,0 +1,115 @@
+---- Minecraft Crash Report ----
+// I blame Dinnerbone.
+
+Time: 4/11/17 7:15 AM
+Description: Unexpected error
+
+java.lang.ArrayIndexOutOfBoundsException: 10
+	at com.maw79.mods.client.gui.books.GuiHistoryBook.<init>(GuiHistoryBook.java:42)
+	at com.maw79.mods.items.historyitems.ItemHistoryBook.onItemRightClick(ItemHistoryBook.java:37)
+	at net.minecraft.item.ItemStack.useItemRightClick(ItemStack.java:213)
+	at net.minecraft.client.multiplayer.PlayerControllerMP.processRightClick(PlayerControllerMP.java:529)
+	at net.minecraft.client.Minecraft.rightClickMouse(Minecraft.java:1624)
+	at net.minecraft.client.Minecraft.processKeyBinds(Minecraft.java:2276)
+	at net.minecraft.client.Minecraft.runTickKeyboard(Minecraft.java:2053)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1841)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1119)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:407)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97)
+	at GradleStart.main(GradleStart.java:26)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at com.maw79.mods.client.gui.books.GuiHistoryBook.<init>(GuiHistoryBook.java:42)
+	at com.maw79.mods.items.historyitems.ItemHistoryBook.onItemRightClick(ItemHistoryBook.java:37)
+	at net.minecraft.item.ItemStack.useItemRightClick(ItemStack.java:213)
+	at net.minecraft.client.multiplayer.PlayerControllerMP.processRightClick(PlayerControllerMP.java:529)
+	at net.minecraft.client.Minecraft.rightClickMouse(Minecraft.java:1624)
+	at net.minecraft.client.Minecraft.processKeyBinds(Minecraft.java:2276)
+	at net.minecraft.client.Minecraft.runTickKeyboard(Minecraft.java:2053)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['Player228'/136, l='MpServer', x=233.40, y=15.00, z=538.88]]
+	Chunk stats: MultiplayerChunkCache: 841, 841
+	Level seed: 0
+	Level generator: ID 01 - flat, ver 0. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (174,4,573), Chunk: (at 14,0,13 in 10,35; contains blocks 160,0,560 to 175,255,575), Region: (0,1; contains chunks 0,32 to 31,63, blocks 0,0,512 to 511,255,1023)
+	Level time: 1298958 game time, 1 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 50 total; [EntityChicken['Chicken'/41, l='MpServer', x=164.15, y=4.00, z=493.17], Test['entity.Test.name'/44, l='MpServer', x=173.46, y=4.00, z=539.24], EntityPig['Pig'/45, l='MpServer', x=173.27, y=4.00, z=536.37], EntitySheep['Sheep'/46, l='MpServer', x=172.77, y=4.00, z=533.60], EntityChicken['Chicken'/47, l='MpServer', x=174.88, y=4.00, z=601.45], EntityChicken['Chicken'/50, l='MpServer', x=182.41, y=4.00, z=510.80], Test['entity.Test.name'/51, l='MpServer', x=180.53, y=4.00, z=571.62], Test['entity.Test.name'/52, l='MpServer', x=187.50, y=4.00, z=579.38], EntityItem['item.item.egg'/53, l='MpServer', x=181.32, y=4.00, z=601.53], EntityItem['item.item.egg'/54, l='MpServer', x=192.85, y=4.00, z=489.43], EntitySheep['Sheep'/55, l='MpServer', x=205.91, y=4.00, z=512.23], EntityChicken['Chicken'/57, l='MpServer', x=220.16, y=4.00, z=478.12], EntityPig['Pig'/58, l='MpServer', x=222.09, y=4.00, z=480.65], EntityItem['item.item.egg'/61, l='MpServer', x=231.89, y=4.00, z=475.91], EntityChicken['Chicken'/62, l='MpServer', x=233.29, y=4.00, z=467.89], EntityHorse['Horse'/64, l='MpServer', x=227.34, y=4.00, z=488.69], EntityPig['Pig'/65, l='MpServer', x=238.26, y=4.00, z=499.46], EntityVillager['Villager'/66, l='MpServer', x=231.50, y=4.00, z=553.51], EntitySheep['Sheep'/67, l='MpServer', x=228.77, y=4.00, z=577.66], EntityCow['Cow'/68, l='MpServer', x=233.64, y=4.00, z=586.17], EntityVillager['Villager'/70, l='MpServer', x=247.37, y=4.00, z=540.49], EntityVillager['Villager'/71, l='MpServer', x=249.97, y=4.00, z=541.77], EntityVillager['Villager'/72, l='MpServer', x=250.61, y=4.00, z=531.63], EntityVillager['Villager'/74, l='MpServer', x=247.61, y=4.00, z=519.42], EntityVillager['Villager'/75, l='MpServer', x=266.35, y=4.00, z=526.50], EntityItem['item.item.carrots'/76, l='MpServer', x=269.25, y=4.00, z=524.83], EntityPlayerSP['Player228'/136, l='MpServer', x=233.40, y=15.00, z=538.88], EntityVillager['Villager'/77, l='MpServer', x=264.50, y=4.00, z=534.86], EntityVillager['Villager'/78, l='MpServer', x=257.66, y=6.00, z=542.43], EntityVillager['Villager'/79, l='MpServer', x=268.71, y=4.00, z=553.50], EntityVillager['Villager'/80, l='MpServer', x=259.06, y=5.00, z=551.51], EntityVillager['Villager'/81, l='MpServer', x=270.22, y=3.94, z=549.51], EntityVillager['Villager'/82, l='MpServer', x=271.39, y=4.00, z=550.97], EntityVillager['Villager'/83, l='MpServer', x=271.79, y=5.00, z=570.42], EntityVillager['Villager'/84, l='MpServer', x=270.60, y=3.94, z=578.92], EntityPig['Pig'/85, l='MpServer', x=261.71, y=4.00, z=608.48], EntityPig['Pig'/87, l='MpServer', x=272.73, y=4.00, z=508.52], EntityVillager['Villager'/88, l='MpServer', x=272.28, y=5.00, z=515.45], EntityVillager['Villager'/89, l='MpServer', x=277.52, y=3.94, z=555.70], EntityVillager['Villager'/90, l='MpServer', x=276.48, y=3.94, z=555.57], EntityItem['item.item.beetroot'/92, l='MpServer', x=283.13, y=4.94, z=566.42], EntityVillager['Villager'/93, l='MpServer', x=275.30, y=5.00, z=566.56], EntityVillager['Villager'/94, l='MpServer', x=283.64, y=4.94, z=572.57], EntityItem['item.item.potatoPoisonous'/95, l='MpServer', x=283.40, y=5.00, z=572.02], EntityPig['Pig'/96, l='MpServer', x=274.56, y=4.00, z=581.43], EntityItem['item.item.egg'/101, l='MpServer', x=292.80, y=4.00, z=493.83], EntityChicken['Chicken'/102, l='MpServer', x=292.73, y=4.00, z=498.15], EntityVillager['Villager'/103, l='MpServer', x=292.34, y=4.00, z=538.46], EntityVillager['Villager'/104, l='MpServer', x=292.49, y=4.00, z=569.34], EntityHorse['Horse'/105, l='MpServer', x=303.12, y=4.00, z=613.13]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:456)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2774)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:436)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97)
+	at GradleStart.main(GradleStart.java:26)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.11.2
+	Operating System: Mac OS X (x86_64) version 10.12.5
+	Java Version: 1.8.0_121, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 3322459232 bytes (3168 MB) / 4165992448 bytes (3973 MB) up to 4165992448 bytes (3973 MB)
+	JVM Flags: 2 total; -Xmx4G -Xms4G
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP 9.38 Powered by Forge 13.20.0.2228 5 mods loaded, 5 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAA	minecraft{1.11.2} [Minecraft] (minecraft.jar) 
+	UCHIJAAAA	mcp{9.19} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAA	FML{8.0.99.99} [Forge Mod Loader] (forgeSrc-1.11.2-13.20.0.2228.jar) 
+	UCHIJAAAA	forge{13.20.0.2228} [Minecraft Forge] (forgeSrc-1.11.2-13.20.0.2228.jar) 
+	UCHIJAAAA	maw79{0.40 mathsbuild - Alpha} [Teaching Keystage 2 Via Minecraft] (bin) 
+	Loaded coremods (and transformers): 
+	Launched Version: 1.11.2
+	LWJGL: 2.9.2
+	OpenGL: Intel Iris OpenGL Engine GL version 2.1 INTEL-10.25.2, Intel Inc.
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because ARB_framebuffer_object is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	CPU: 4x Intel(R) Core(TM) i5-4258U CPU @ 2.40GHz
