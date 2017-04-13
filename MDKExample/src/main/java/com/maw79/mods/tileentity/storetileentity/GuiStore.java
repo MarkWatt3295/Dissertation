@@ -2,11 +2,8 @@ package com.maw79.mods.tileentity.storetileentity;
 
 
 import com.maw79.mods.main.Reference;
-import com.maw79.mods.util.Utils;
-
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.util.ResourceLocation;
@@ -16,9 +13,8 @@ public class GuiStore extends GuiContainer{
 	private IInventory playerInv;
 	private Entity entity;
 
-	public GuiStore(IInventory playerInv, Entity entity) {
-		super(new ContainerStore(playerInv, entity));
-		Utils.getLogger().info("GuiStore: Constructor");
+	public GuiStore(IInventory playerInv, TileEntityStore te) {
+		super(new ContainerStore(playerInv, te));
 		
 		this.xSize=176;
 		this.ySize=166;		

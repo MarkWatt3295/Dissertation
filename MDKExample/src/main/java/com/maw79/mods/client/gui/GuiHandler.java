@@ -98,9 +98,7 @@ public class GuiHandler implements IGuiHandler{
 		}
 		if(ID==STORE_GUI){
 			
-			Entity tourguide = world.getEntityByID(x);
-			
-			return new ContainerStore(player.inventory,tourguide);
+			return new ContainerStore(player.inventory, (TileEntityStore) world.getTileEntity(new BlockPos(x, y, z)));
 			
 		}
 		return null;
@@ -158,8 +156,7 @@ Utils.getLogger().info("GuiHandler: getClientGuiElement");
 		}
 		if(ID==STORE_GUI){
 			
-			Entity tourguide = world.getEntityByID(x);
-			return new GuiStore(player.inventory, tourguide);
+			return new GuiStore(player.inventory, (TileEntityStore) world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		return null;
 	}

@@ -2,6 +2,7 @@ package com.maw79.mods.tileentity.storetileentity;
 
 
 
+import com.maw79.mods.blocks.historyblocks.artifactupdater.TileEntityArtifactResearcher;
 import com.maw79.mods.entity.passive.EntityTourGuide;
 import com.maw79.mods.entity.passive.Test;
 import com.maw79.mods.init.ModItems;
@@ -32,22 +33,19 @@ public class ContainerStore extends Container {
 	 * This tile entity and the item handler (inventory)
 	 */
 	
-	public IItemHandler handler;
-	private Entity entity;
+	private TileEntityStore te;
+	public static IItemHandler handler;
 	public static IInventory PlayeInveni;
-
 	/**
 	 * Tells the container where the slots are
 	 * @param playerInv The player's inventory
 	 * @param te The tile entity
 	 */
-	public ContainerStore(IInventory playerInv, Entity entity) {
-		 //Gets the inventory from our tile entity
-
-		this.entity = entity;
-		Utils.getLogger().info("ContainerStore: Constructor");
+	public ContainerStore(IInventory playerInv, TileEntityStore te) {
+		this.te = te;
 		
-		IItemHandler handler = entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null); 
+		EntityPlayer entity = Minecraft.getMinecraft().player;
+		this.handler = te.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
 		
 		//Our tile entity slots
 		this.addSlotToContainer(new SlotItemHandler(handler, 0, 20, 15));
