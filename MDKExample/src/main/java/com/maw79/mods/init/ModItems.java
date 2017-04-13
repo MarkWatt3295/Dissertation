@@ -18,6 +18,7 @@ import com.maw79.mods.items.ItemMw;
 import com.maw79.mods.items.ItemObsidianingot;
 import com.maw79.mods.items.ItemReversePaintBrush;
 import com.maw79.mods.items.ItemRuby;
+import com.maw79.mods.items.ItemScienceToken;
 import com.maw79.mods.items.ItemScoreDebug;
 import com.maw79.mods.items.ItemSnowballLauncher;
 import com.maw79.mods.items.ItemSteelIngot;
@@ -86,6 +87,8 @@ public class ModItems {
 	public static Item mathsbook;
 	public static Item fireelement;
 	public static Item magnet;
+	
+	public static final Item SCIENCE_TOKEN = new ItemScienceToken("science_token");
 	
 	//Projectiles
 	public static final Item ARROW = new ItemModArrow("arrow", EntityModArrow::new);
@@ -179,6 +182,7 @@ public class ModItems {
 		registerItem(ARROW);
 		registerItem(BLOCK_DETECTION_ARROW);
 		registerItem(PAINT_ARROW);
+		registerItem(SCIENCE_TOKEN);
 		
 		//SCIENCE LABELS
 		registerItem(LABELSTRONG);
@@ -259,6 +263,7 @@ public class ModItems {
 		registerRender(BLOCK_DETECTION_ARROW);
 		registerRender(SNOW);
 		registerRender(PAINT_ARROW);
+		registerRender(SCIENCE_TOKEN);
 		
 		//SCIENCE LABELS
 		registerRender(LABELCHAIR);
