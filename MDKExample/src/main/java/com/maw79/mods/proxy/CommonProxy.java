@@ -10,6 +10,7 @@ import com.maw79.mods.main.Reference;
 import com.maw79.mods.modattempts.blockvariants.BlockVariants;
 import com.maw79.mods.modattempts.blockvariants.StartupCommon;
 import com.maw79.mods.tileentity.TileEntityBlockBreaker;
+import com.maw79.mods.tileentity.storetileentity.TileEntityStore;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
@@ -35,6 +36,7 @@ public class CommonProxy {
 		GameRegistry.registerTileEntity(TileEntityProfiler.class, Reference.MOD_ID + ":block_profiler");
 		GameRegistry.registerTileEntity(TileEntityInsulatorCalculator.class, Reference.MOD_ID + ":insulator_calculator");
 		GameRegistry.registerTileEntity(TileEntityArtifactResearcher.class, Reference.MOD_ID + ":artifactresearcher");
+		GameRegistry.registerTileEntity(TileEntityStore.class, Reference.MOD_ID + ":store");
 	}
 	
 	/**

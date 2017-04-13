@@ -22,6 +22,9 @@ import com.maw79.mods.container.ContainerBasic;
 import com.maw79.mods.container.ContainerBlockBreaker;
 
 import com.maw79.mods.tileentity.TileEntityBlockBreaker;
+import com.maw79.mods.tileentity.storetileentity.ContainerStore;
+import com.maw79.mods.tileentity.storetileentity.GuiStore;
+import com.maw79.mods.tileentity.storetileentity.TileEntityStore;
 import com.maw79.mods.util.Utils;
 
 import net.minecraft.entity.Entity;
@@ -44,6 +47,7 @@ public class GuiHandler implements IGuiHandler{
 	public static final int PROFILER_GUI = 6;
 	public static final int INSULATOR_CALCULATOR_GUI = 7;
 	public static final int ARTIFACT_RESEARCHER = 8;
+	public static final int STORE_GUI = 9;
 	
 	/**
 	 * Should return the container for that gui. This is called server side because servers handle items in guis
@@ -91,6 +95,13 @@ public class GuiHandler implements IGuiHandler{
 			
 			
 			return new ContainerArtifactResearcher(player.inventory, (TileEntityArtifactResearcher) world.getTileEntity(new BlockPos(x, y, z)));
+		}
+		if(ID==STORE_GUI){
+			
+			Entity tourguide = world.getEntityByID(x);
+			
+			return new ContainerStore(player.inventory,tourguide);
+			
 		}
 		return null;
 	}
@@ -144,6 +155,11 @@ Utils.getLogger().info("GuiHandler: getClientGuiElement");
 			
 			Utils.getLogger().info("GuiHandler: client Insulator CalculatorGUI called");
 			return new GuiArtifactResearcherTe(player.inventory, (TileEntityArtifactResearcher) world.getTileEntity(new BlockPos(x, y, z)));
+		}
+		if(ID==STORE_GUI){
+			
+			Entity tourguide = world.getEntityByID(x);
+			return new GuiStore(player.inventory, tourguide);
 		}
 		return null;
 	}

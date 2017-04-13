@@ -18,7 +18,6 @@ import com.maw79.mods.items.ItemMw;
 import com.maw79.mods.items.ItemObsidianingot;
 import com.maw79.mods.items.ItemReversePaintBrush;
 import com.maw79.mods.items.ItemRuby;
-import com.maw79.mods.items.ItemScienceToken;
 import com.maw79.mods.items.ItemScoreDebug;
 import com.maw79.mods.items.ItemSnowballLauncher;
 import com.maw79.mods.items.ItemSteelIngot;
@@ -41,6 +40,12 @@ import com.maw79.mods.items.mathsitems.ItemXyzDevice;
 import com.maw79.mods.items.scienceitems.ItemElementFire;
 import com.maw79.mods.items.scienceitems.ItemMagnet;
 import com.maw79.mods.items.scienceitems.ItemPropertyLabel;
+import com.maw79.mods.items.teleporters.ItemEnglishToken;
+import com.maw79.mods.items.teleporters.ItemFreePlayToken;
+import com.maw79.mods.items.teleporters.ItemHistoryToken;
+import com.maw79.mods.items.teleporters.ItemHubToken;
+import com.maw79.mods.items.teleporters.ItemMathsToken;
+import com.maw79.mods.items.teleporters.ItemScienceToken;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.util.Utils;
@@ -89,6 +94,11 @@ public class ModItems {
 	public static Item magnet;
 	
 	public static final Item SCIENCE_TOKEN = new ItemScienceToken("science_token");
+	public static final Item ENGLISH_TOKEN = new ItemEnglishToken("english_token");
+	public static final Item MATHS_TOKEN = new ItemMathsToken("maths_token");
+	public static final Item HISTORY_TOKEN = new ItemHistoryToken("history_token");
+	public static final Item HUB_TOKEN = new ItemHubToken("hub_token");
+	public static final Item FREEPLAY_TOKEN = new ItemFreePlayToken("freeplay_token");
 	
 	//Projectiles
 	public static final Item ARROW = new ItemModArrow("arrow", EntityModArrow::new);
@@ -183,6 +193,11 @@ public class ModItems {
 		registerItem(BLOCK_DETECTION_ARROW);
 		registerItem(PAINT_ARROW);
 		registerItem(SCIENCE_TOKEN);
+		registerItem(MATHS_TOKEN);
+		registerItem(ENGLISH_TOKEN);
+		registerItem(HISTORY_TOKEN);
+		registerItem(HUB_TOKEN);
+		registerItem(FREEPLAY_TOKEN);
 		
 		//SCIENCE LABELS
 		registerItem(LABELSTRONG);
@@ -264,6 +279,11 @@ public class ModItems {
 		registerRender(SNOW);
 		registerRender(PAINT_ARROW);
 		registerRender(SCIENCE_TOKEN);
+		registerRender(MATHS_TOKEN);
+		registerRender(HISTORY_TOKEN);
+		registerRender(ENGLISH_TOKEN);
+		registerRender(FREEPLAY_TOKEN);
+		registerRender(HUB_TOKEN);
 		
 		//SCIENCE LABELS
 		registerRender(LABELCHAIR);

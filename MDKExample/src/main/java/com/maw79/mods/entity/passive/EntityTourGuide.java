@@ -1,7 +1,9 @@
 package com.maw79.mods.entity.passive;
 
+import com.maw79.mods.client.gui.GuiHandler;
 import com.maw79.mods.handlers.AchievementHandler;
 import com.maw79.mods.handlers.ModSoundHandler;
+import com.maw79.mods.main.Maw79Mod;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityCreature;
@@ -109,6 +111,11 @@ public  class EntityTourGuide extends EntityCreature {
 
 		if (true) {
 			System.out.println("Printing from Tour Guide mob");
+			 if (!this.world.isRemote)
+		        {
+		            int basicID = this.getEntityId();
+		            entity.openGui(Maw79Mod.instance, GuiHandler.STORE_GUI, this.world, basicID, 0, 0);
+		        }
 			//entity.playSound(ModSoundHandler.MAWSOUND_VOICE1, 1.0F, 4.0F);
 		}
 		if(!entity.hasAchievement(AchievementHandler.achievementNiceTo)){

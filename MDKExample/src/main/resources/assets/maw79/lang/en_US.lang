@@ -21,6 +21,12 @@ item.player_level.name=Player Level Selector
 item.scoredebug.name= Player Score Debug
 item.maths_book.name=Maths Book
 item.magnet.name=Magnet
+item.science_token.name=Science Teleporter
+item.english_token.name=English Teleporter
+item.maths_token.name=Maths Teleporter
+item.history_token.name=History Teleporter
+item.hub_token.name=Player Hub Teleporter
+item.freeplay_token.name=Free Play Teleporter
 
 //HISTORY ITEMS
 item.artifact1.name=Artifact 1
@@ -99,6 +105,7 @@ tile.custom_model.name=Custom Model (UNUSED)
 tile.block_creative.name=Creative Mode Block
 tile.block_survival.name=Survival Mode Block
 tile.block_profiler.name=Profiler Block
+tile.store_block.name=Store Block
 //MATHS BLOCKS
 tile.math_block_1.name=Maths Block 1
 tile.math_block_2.name=Maths Block 2
@@ -241,6 +248,12 @@ maw79.apple_wool_wall.tooltip=Spawn Complete Wool Wall (Debug)
 maw79.complete_apple_wall.tooltip=Spawns the filled in version
 maw79.apple_wall_axis.tooltip=Right Click to Spawn Picture wall (Requires 20x20 block space)
 maw79.apple_wool_border.tooltip=Spawn Wool Wall with border (Debug)
+maw79.science_token.tooltip=Use this item to teleport to the Science Island
+maw79.maths_token.tooltip=Use this item to teleport to the Maths Island
+maw79.english_token.tooltip=Use this item to teleport to the English Island
+maw79.history_token.tooltip=Use this item to teleport to the History Island
+maw79.hub_token.tooltip=Use this item to teleport to the Player Hub (Start Area)
+maw79.freeplay_token.tooltip=Use this item to teleport to the Free Play Area
 
 
 maw79.soul_stealer.tooltip=Takes Hearts From Entities
@@ -253,6 +266,7 @@ block.steel_button.click_off=Steel Button Released
 block.maw.maw_sound=Maw Sound
 
 container.basic=Container Inventory
+container.store=Store
 
 
 //GUI Config

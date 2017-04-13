@@ -46,6 +46,7 @@ import com.maw79.mods.blocks.historyblocks.BlockBrightBlock;
 import com.maw79.mods.blocks.historyblocks.artifactupdater.BlockArtifactResearcher;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
+import com.maw79.mods.tileentity.storetileentity.BlockStoreTE;
 import com.maw79.mods.util.Utils;
 
 import net.minecraft.block.Block;
@@ -94,6 +95,7 @@ public class ModBlocks {
 	public static Block creative;
 	public static Block survival;
 	public static Block profiler;
+	public static Block storeblock;
 	
 	//MATHS BLOCKS
 	public static Block mathblock1;
@@ -158,7 +160,7 @@ public class ModBlocks {
 	
 
 	public static void init(){
-		rubyblock = new BlockRuby("bridge_block");
+		
 		rubyblock = new BlockRuby("ruby_block");
 		obsidianingotblock = new BlockObsidianIngot("obsidian_ingot_block");
 		steelOre = new BlockSteelOre("steel_ore", "steel_ore");
@@ -185,6 +187,7 @@ public class ModBlocks {
 		creative = new BlockCreativeBlock("block_creative");
 		survival = new BlockSurvivalBlock("block_survival");
 		profiler = new BlockProfilerTE("block_profiler");
+		storeblock = new BlockStoreTE("store_block");
 		
 		//MATHS BLOCKS
 		mathblock1 = new BlockBasicBlock("math_block_1");
@@ -250,6 +253,7 @@ public class ModBlocks {
 	}
 	
 	public static void register(){
+		registerBlock(storeblock);
 		registerBlock(bridge);
 		registerBlock(rubyblock);
 		registerBlock(obsidianingotblock);
@@ -387,6 +391,7 @@ public class ModBlocks {
 	}
 	
 	public static void registerRenders(){
+		registerRender(storeblock);
 		registerRender(bridge);
 		registerRender(rubyblock);
 		registerRender(obsidianingotblock);
