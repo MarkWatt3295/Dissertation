@@ -1,11 +1,17 @@
 package com.maw79.mods.tileentity.storetileentity;
 
 
+import com.maw79.mods.init.ModItems;
 import com.maw79.mods.main.Reference;
+import com.maw79.mods.util.Utils;
+
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.Entity;
+import net.minecraft.init.Blocks;
 import net.minecraft.inventory.IInventory;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 public class GuiStore extends GuiContainer{
@@ -13,8 +19,9 @@ public class GuiStore extends GuiContainer{
 	private IInventory playerInv;
 	private Entity entity;
 
-	public GuiStore(IInventory playerInv, TileEntityStore te) {
-		super(new ContainerStore(playerInv, te));
+	public GuiStore(IInventory playerInv, Entity entity) {
+		super(new ContainerStore(playerInv, entity));
+		Utils.getLogger().info("GuiStore: Constructor");
 		
 		this.xSize=176;
 		this.ySize=166;		
@@ -29,7 +36,12 @@ public class GuiStore extends GuiContainer{
 		GlStateManager.color(1.0F, 1.0F, 1.0F,1.0F);
 		this.mc.getTextureManager().bindTexture(new ResourceLocation(Reference.MOD_ID, "textures/gui/container/store.png"));
 		this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize,this.ySize);
-		
+		 GlStateManager.popMatrix();
+		  ItemStack icon = new ItemStack(ModItems.obsidianingot);
+		GlStateManager.translate(width/2, height/2, 0);
+        GlStateManager.scale(1, 1, 1);
+        mc.getRenderItem().renderItemAndEffectIntoGUI(icon, 0, 0);
+		GlStateManager.pushMatrix();
 	}
 	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {

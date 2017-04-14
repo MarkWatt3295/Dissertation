@@ -1,10 +1,14 @@
 package com.maw79.mods.entity.passive;
 
 import com.maw79.mods.client.gui.GuiHandler;
+import com.maw79.mods.client.gui.GuiStoreDisplay;
 import com.maw79.mods.handlers.AchievementHandler;
 import com.maw79.mods.handlers.ModSoundHandler;
+import com.maw79.mods.init.ModItems;
 import com.maw79.mods.main.Maw79Mod;
+import com.maw79.mods.util.Utils;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -14,17 +18,25 @@ import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.items.ItemStackHandler;
 
 public  class EntityTourGuide extends EntityCreature {
-	World world = null;
+	
+	public final ItemStackHandler handler;
 
 	public EntityTourGuide(World var1) {
 		super(var1);
+		this.handler = new ItemStackHandler(9);
 		world = var1;
 		experienceValue = 5;
 		this.isImmuneToFire = false;
@@ -114,7 +126,8 @@ public  class EntityTourGuide extends EntityCreature {
 			 if (!this.world.isRemote)
 		        {
 		            int basicID = this.getEntityId();
-		            entity.openGui(Maw79Mod.instance, GuiHandler.STORE_GUI, this.world, basicID, 0, 0);
+		           // entity.openGui(Maw79Mod.instance, GuiHandler.STORE_GUI, this.world, basicID, 0, 0);
+		            Minecraft.getMinecraft().displayGuiScreen(new GuiStoreDisplay());
 		        }
 			//entity.playSound(ModSoundHandler.MAWSOUND_VOICE1, 1.0F, 4.0F);
 		}
@@ -124,11 +137,42 @@ public  class EntityTourGuide extends EntityCreature {
 
 		return true;
 	}
+	
+	 @Override
+	    public void onEntityUpdate() {
+	        //Utils.getLogger().info("Test: onEntityUpdate: "+targetX+" "+targetY+" "+targetZ);
+	        
+	        ItemStack foodStack = this.handler.getStackInSlot(0);
+	        if (this.world != null){
+	            if(!this.world.isRemote){
+	                if(foodStack.getItem() == Items.APPLE){
+	                    foodStack.splitStack(1);
+	                }
+	            }
+	        }
+	        handler.insertItem(1, new ItemStack(ModItems.BOW), false);
+	       
+	        super.onEntityUpdate();
+	    }
 
 	@Override
 	protected float getSoundVolume() {
 		return 1.0F;
 	}
 
+	 @Override
+	    public <T> T getCapability(Capability<T> capability, EnumFacing facing) {
+	       
+	        
+	        return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY ? (T) this.handler : super.getCapability(capability, facing);
+	    }
+	    
+	    @Override
+	    public boolean hasCapability(Capability<?> capability, EnumFacing facing) {
+	        
+	        
+	        return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY||super.hasCapability(capability, facing);
+	    }
+	    
 }
 
