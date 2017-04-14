@@ -66,4 +66,10 @@
         "subtitle": "mawsound.errornoise",
         "sounds": [ { "name": "maw79:mawsound/errornoise", "stream": true } ]
     }
+     ,
+      "mawsound.ouch": {
+        "category": "block",
+        "subtitle": "mawsound.ouch",
+        "sounds": [ { "name": "maw79:mawsound/ouch", "stream": true } ]
+    }
 }

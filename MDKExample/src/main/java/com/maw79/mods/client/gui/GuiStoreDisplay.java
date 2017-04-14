@@ -30,6 +30,7 @@ public class GuiStoreDisplay extends GuiScreen {
     int guiHeight = 210;
     
     String title = "Store";
+    
    public static int buttonvalue = 0;
     
     
@@ -40,7 +41,7 @@ public class GuiStoreDisplay extends GuiScreen {
     
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
-        drawDefaultBackground();
+        //drawDefaultBackground();
         Minecraft.getMinecraft().renderEngine.bindTexture(texture);
         int centerX = (width / 2) - guiWidth / 2;
         int centerY = (height / 2) - guiHeight / 2;
@@ -56,9 +57,19 @@ public class GuiStoreDisplay extends GuiScreen {
         GlStateManager.popMatrix();
         GlStateManager.pushMatrix();
         {
-            GlStateManager.translate((width / 2) - fontRendererObj.getStringWidth(title), centerY + 10, 0);
+            GlStateManager.translate((width / 2) -80, centerY + 10, 0);
             GlStateManager.scale(2, 2, 2);
             fontRendererObj.drawString(title, 0, 0, 0x6028ff);
+           
+        }
+        GlStateManager.popMatrix();
+        
+        GlStateManager.pushMatrix();
+        {
+            GlStateManager.translate((width / 2) , centerY + 15, 0);
+            GlStateManager.scale(1.2, 1.2, 1.2);
+            String heading = "Points : "+ GuiNotif.playerScore;
+            fontRendererObj.drawString(heading, 0, 0, 0xffffff);
            
         }
         GlStateManager.popMatrix();

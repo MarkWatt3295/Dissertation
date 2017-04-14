@@ -6,9 +6,11 @@ import com.maw79.mods.main.Reference;
 import com.maw79.mods.render.RenderBeetleFactory;
 import com.maw79.mods.render.RenderDaveFactory;
 import com.maw79.mods.render.RenderElkFactory;
+import com.maw79.mods.render.RenderEntityTokenShopkeeper;
 import com.maw79.mods.render.RenderEntityTourGuide;
 import com.maw79.mods.render.RenderHumanFactory;
 import com.maw79.mods.render.RenderTestFactory;
+import com.maw79.mods.render.RenderTokenShopkeeper;
 import com.maw79.mods.render.RenderTourGuideFactory;
 import com.maw79.mods.util.Utils;
 
@@ -35,11 +37,9 @@ public class EntitiesLivingHandler {
 		createBeetle(EntityBeetle.class, "Beetle", 0x1111, 0x12830, 5);
 		createTourGuide(EntityTourGuide.class, "Tour Guide", 789, 567, 6);
 		createRomanGuide(EntityRomanGuide.class, "Roman Guide", 789, 567, 6);
+		createShopkeeper(EntityTokenShopKeeper.class, "Shopkeeper", 439, 127, 7);
 	}
-	
-	//public static void registerDave(){
-		//createDave(EntityUselessDave.class, "Dave2", 0xa62323, 0xed1515, 3);
-	//}
+
 	
 	private static void createEntity(Class entityClass, String entityName, int solidColor, int spotColor, int id){
 		Utils.getLogger().info("EntitiesLivingHandler: createEntity");
@@ -74,6 +74,10 @@ public class EntitiesLivingHandler {
 		Utils.getLogger().info("EntitiesLivingHandler: createTourGuide");
 		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, entityName, id, Maw79Mod.instance, 64, 1, true, solidColor, spotColor);
 	}
+	private static void createShopkeeper(Class entityClass, String entityName, int solidColor, int spotColor, int id){
+		Utils.getLogger().info("EntitiesLivingHandler: createShopkeeper");
+		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, entityName, id, Maw79Mod.instance, 64, 1, true, solidColor, spotColor);
+	}
 	
 	public static void registerAllModels(){
 		Utils.getLogger().info("EntitiesLivingHandler: registerAllModels");
@@ -91,6 +95,7 @@ public class EntitiesLivingHandler {
 		registerBeetle(EntityBeetle.class, RenderBeetleFactory.INSTANCE);
 		registerTourGuide(EntityTourGuide.class, RenderTourGuideFactory.INSTANCE);
 		registerTourGuide(EntityRomanGuide.class, RenderTourGuideFactory.INSTANCE);
+		registerShopkeeper(EntityTokenShopKeeper.class, RenderTokenShopkeeper.INSTANCE);
 	}
 	
 	
@@ -139,6 +144,13 @@ public class EntitiesLivingHandler {
 	private static <T extends EntityCreature> void registerRomanGuide(Class<T> entity, IRenderFactory<? super T> renderFactory3)
 	{
 		Utils.getLogger().info("EntitiesLivingHandler: registerTourGuide");
+		
+		RenderingRegistry.registerEntityRenderingHandler(entity, renderFactory3);
+	}
+	
+	private static <T extends EntityCreature> void registerShopkeeper(Class<T> entity, IRenderFactory<? super T> renderFactory3)
+	{
+		Utils.getLogger().info("EntitiesLivingHandler: registerShopkeeper");
 		
 		RenderingRegistry.registerEntityRenderingHandler(entity, renderFactory3);
 	}
