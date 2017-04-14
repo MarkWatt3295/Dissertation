@@ -21,7 +21,7 @@ public class ItemFreePlayToken  extends Item{
 public  ItemFreePlayToken (String unlocalizedName) {
 	this.setUnlocalizedName(unlocalizedName);
 	this.setRegistryName(new ResourceLocation(Reference.MOD_ID, unlocalizedName));
-	
+	this.setMaxStackSize(1);
 }
 
 /**

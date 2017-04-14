@@ -45,6 +45,8 @@ import com.maw79.mods.network.YmanagerPacketHandler;
 import com.maw79.mods.network.ZmanagerMessage;
 import com.maw79.mods.network.ZmanagerPacketHandler;
 import com.maw79.mods.network.mathsPacketHandler;
+import com.maw79.mods.network.store.StoreItem1Message;
+import com.maw79.mods.network.store.StoreItem1PacketHandler;
 import com.maw79.mods.proxy.CommonProxy;
 import com.maw79.mods.worldgen.OreGen;
 
@@ -70,7 +72,7 @@ import net.minecraftforge.fml.relauncher.Side;
 public class Maw79Mod {
 	
 	public static SimpleNetworkWrapper networkWrapper, networkWrapper2, networkWrapper3, networkWrapper4, networkWrapper5,
-	networkWrapper6, networkWrapper7, networkWrapper8;
+	networkWrapper6, networkWrapper7, networkWrapper8, networkWrapper9;
 	
 	public static SimpleNetworkWrapper networkWrapperGuiInventory1;
 
@@ -141,7 +143,7 @@ public class Maw79Mod {
 		//ModEntities.registerEntities();
 		
 		
-		 networkWrapper = NetworkRegistry.INSTANCE.newSimpleChannel("maw79");/* I recommend you to use your mod id, the channel name should be unique */
+		 networkWrapper = NetworkRegistry.INSTANCE.newSimpleChannel("maw79");
 		 networkWrapper2 = NetworkRegistry.INSTANCE.newSimpleChannel("mathsMessage");
 		 networkWrapper3 = NetworkRegistry.INSTANCE.newSimpleChannel("xmanagerMessage");
 		 networkWrapper4 = NetworkRegistry.INSTANCE.newSimpleChannel("nxmanagerMessage");
@@ -149,6 +151,7 @@ public class Maw79Mod {
 		 networkWrapper6 = NetworkRegistry.INSTANCE.newSimpleChannel("nymanagerMessage");
 		 networkWrapper7 = NetworkRegistry.INSTANCE.newSimpleChannel("zmanagerMessage");
 		 networkWrapper8 = NetworkRegistry.INSTANCE.newSimpleChannel("nzmanagerMessage");
+		 networkWrapper9 = NetworkRegistry.INSTANCE.newSimpleChannel("storemessage");
 		 
 		 networkWrapper.registerMessage(PacketHandler.class, TeleportMessage.class, 0, Side.SERVER); 
 		 networkWrapper2.registerMessage(mathsPacketHandler.class, MathsMessage.class, 0, Side.SERVER); 
@@ -158,6 +161,7 @@ public class Maw79Mod {
 		 networkWrapper6.registerMessage(NYmanagerPacketHandler.class, NYmanagerMessage.class, 0, Side.SERVER);
 		 networkWrapper7.registerMessage(ZmanagerPacketHandler.class, ZmanagerMessage.class, 0, Side.SERVER); 
 		 networkWrapper8.registerMessage(NZmanagerPacketHandler.class, NZmanagerMessage.class, 0, Side.SERVER);
+		 networkWrapper9.registerMessage(StoreItem1PacketHandler.class, StoreItem1Message.class, 0, Side.SERVER);
 		 
 		 networkWrapperGuiInventory1 = NetworkRegistry.INSTANCE.newSimpleChannel("guiinventorymanagermessage");
 		 

@@ -9,6 +9,7 @@ import com.maw79.mods.init.ModItems;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.network.MathsMessage;
+import com.maw79.mods.network.store.StoreItem1Message;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
@@ -29,12 +30,13 @@ public class GuiStoreDisplay extends GuiScreen {
     int guiHeight = 210;
     
     String title = "Store";
-    public static String calcquestion = "null";
+   public static int buttonvalue = 0;
+    
     
    
     //GuiTextField textBox;
-    GuiButton button1, button2, button3, button4, button5;
-    final int BUTTON1 = 1, BUTTON2 = 2, BUTTON3 = 3, BUTTON4 = 4, BUTTON5 = 5;
+    GuiButton button1, button2, button3, button4, button5, buttonnextpage;
+    final int BUTTON1 = 1, BUTTON2 = 2, BUTTON3 = 3, BUTTON4 = 4, BUTTON5 = 5, BUTTON6 = 6;
     
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
@@ -82,6 +84,7 @@ public class GuiStoreDisplay extends GuiScreen {
         button3.drawButton(mc, mouseX, mouseY);
         button4.drawButton(mc, mouseX, mouseY);
         button5.drawButton(mc, mouseX, mouseY);
+        //buttonnextpage.drawButton(mc, mouseX, mouseY);
         ItemStack icon = new ItemStack(ModItems.MATHS_TOKEN);
         ItemStack icon2 = new ItemStack(ModItems.ENGLISH_TOKEN);
         ItemStack icon3 = new ItemStack(ModItems.SCIENCE_TOKEN);
@@ -175,10 +178,11 @@ public class GuiStoreDisplay extends GuiScreen {
         int centerY = (height / 2) - guiHeight / 2;
         
         buttonList.add(button1 = new GuiButton(BUTTON1, (width / 2) + 51, centerY + 33, 30, 20, "Buy"));
-        buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) + 51, centerY + 59, 30, 20, "Buy2"));
-        buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) + 51, centerY + 83, 30, 20, "Buy3"));
-        buttonList.add(button4 = new GuiButton(BUTTON4, (width / 2) + 51, centerY + 109, 30, 20, "Buy4"));
-        buttonList.add(button5 = new GuiButton(BUTTON5, (width / 2) + 51, centerY + 133, 30, 20, "Buy5"));
+        buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) + 51, centerY + 59, 30, 20, "Buy"));
+        buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) + 51, centerY + 83, 30, 20, "Buy"));
+        buttonList.add(button4 = new GuiButton(BUTTON4, (width / 2) + 51, centerY + 109, 30, 20, "Buy"));
+        buttonList.add(button5 = new GuiButton(BUTTON5, (width / 2) + 51, centerY + 133, 30, 20, "Buy"));
+       // buttonList.add(buttonnextpage = new GuiButton(BUTTON6, (width / 2) + 51, centerY + 10, 30, 20, "Next"));
      
        
        
@@ -195,31 +199,78 @@ public class GuiStoreDisplay extends GuiScreen {
     	
         switch (button.id) {
             case BUTTON1:
-       
-            	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
+            	
             	if(GuiNotif.playerScore >= 100){
-            		Maw79Mod.networkWrapper2.sendToServer(new MathsMessage(mc.player));
+            		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
+            		buttonvalue = 1;
+            		Maw79Mod.networkWrapper9.sendToServer(new StoreItem1Message(mc.player));
             		GuiNotif.playerScore -= 100;
             	}
             	else {
-            		System.out.println("Not Enough Points :( ");
+            		mc.player.playSound(ModSoundHandler.MAWSOUND_ERRORNOISE, 1.0f, 1.0f);
+            		System.out.println("Not Enough Points (for 1) :( ");
             	}
-            	//mc.displayGuiScreen((GuiScreen)null);
-
             	
             	break;
             	
             case BUTTON2:
-            	  GuiNotif.playerlevel ="2";
-            	System.out.println(Maw79Mod.playerlevel);
-            	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-            	mc.displayGuiScreen((GuiScreen)null);
+            	
+            	if(GuiNotif.playerScore >= 100){
+            		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
+            		buttonvalue = 2;
+            		Maw79Mod.networkWrapper9.sendToServer(new StoreItem1Message(mc.player));
+            		GuiNotif.playerScore -= 100;
+            	}
+            	else {
+            		mc.player.playSound(ModSoundHandler.MAWSOUND_ERRORNOISE, 1.0f, 1.0f);
+            		System.out.println("Not Enough Points (for 2) :( ");
+            	}
+            	
             	break;
             	
             case BUTTON3:
-            	GuiNotif.playerlevel ="3";
-            	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-            	mc.displayGuiScreen((GuiScreen)null);
+            	
+            	if(GuiNotif.playerScore >= 100){
+            		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
+            		buttonvalue = 3;
+            		Maw79Mod.networkWrapper9.sendToServer(new StoreItem1Message(mc.player));
+            		GuiNotif.playerScore -= 100;
+            	}
+            	else {
+            		mc.player.playSound(ModSoundHandler.MAWSOUND_ERRORNOISE, 1.0f, 1.0f);
+            		System.out.println("Not Enough Points (for 3) :( ");
+            	}
+            	
+            	break;
+            	
+            case BUTTON4:
+            
+            	if(GuiNotif.playerScore >= 100){
+            		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
+            		buttonvalue = 4;
+            		Maw79Mod.networkWrapper9.sendToServer(new StoreItem1Message(mc.player));
+            		GuiNotif.playerScore -= 100;
+            	}
+            	else {
+            		mc.player.playSound(ModSoundHandler.MAWSOUND_ERRORNOISE, 1.0f, 1.0f);
+            		System.out.println("Not Enough Points (for 4):( ");
+            	}
+            	
+            	break;
+            	
+            case BUTTON5:
+            	
+            	if(GuiNotif.playerScore >= 100){
+            		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
+            		buttonvalue = 5;
+            		Maw79Mod.networkWrapper9.sendToServer(new StoreItem1Message(mc.player));
+            		GuiNotif.playerScore -= 100;
+            	}
+            	else {
+            		mc.player.playSound(ModSoundHandler.MAWSOUND_ERRORNOISE, 1.0f, 1.0f);
+            		System.out.println("Not Enough Points (for 5) :( ");
+            	}
+            	
             	break;
             	
           

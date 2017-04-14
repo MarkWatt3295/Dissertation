@@ -21,7 +21,7 @@ public class ItemMathsToken  extends Item{
 public  ItemMathsToken (String unlocalizedName) {
 	this.setUnlocalizedName(unlocalizedName);
 	this.setRegistryName(new ResourceLocation(Reference.MOD_ID, unlocalizedName));
-	
+	this.setMaxStackSize(1);
 }
 
 /**

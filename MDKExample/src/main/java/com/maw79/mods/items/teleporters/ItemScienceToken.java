@@ -21,7 +21,7 @@ public class ItemScienceToken  extends Item{
 public  ItemScienceToken (String unlocalizedName) {
 	this.setUnlocalizedName(unlocalizedName);
 	this.setRegistryName(new ResourceLocation(Reference.MOD_ID, unlocalizedName));
-	
+	this.setMaxStackSize(1);
 }
 
 /**

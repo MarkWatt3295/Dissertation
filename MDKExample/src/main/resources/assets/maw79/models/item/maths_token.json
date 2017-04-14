@@ -1,7 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "maw79:items/x_axis_tool"
+        "layer0": "maw79:items/maths_token"
      },
       
     "display": {

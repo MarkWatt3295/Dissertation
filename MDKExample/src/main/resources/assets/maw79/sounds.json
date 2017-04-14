@@ -43,5 +43,27 @@
         "category": "block",
         "subtitle": "mawsound.voice1",
         "sounds": [ { "name": "maw79:mawsound/voice1", "stream": true } ]
+    },
+      "mawsound.chaching": {
+        "category": "block",
+        "subtitle": "mawsound.chaching",
+        "sounds": [ { "name": "maw79:mawsound/chaching", "stream": true } ]
+    },
+      "mawsound.coindrop": {
+        "category": "block",
+        "subtitle": "mawsound.coindrop",
+        "sounds": [ { "name": "maw79:mawsound/coindrop", "stream": true } ]
+    }
+    ,
+      "mawsound.errorsound": {
+        "category": "block",
+        "subtitle": "mawsound.errorsound",
+        "sounds": [ { "name": "maw79:mawsound/errorsound", "stream": true } ]
+    }
+    ,
+      "mawsound.errornoise": {
+        "category": "block",
+        "subtitle": "mawsound.errornoise",
+        "sounds": [ { "name": "maw79:mawsound/errornoise", "stream": true } ]
     }
 }

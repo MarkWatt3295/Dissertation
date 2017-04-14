@@ -19,6 +19,10 @@ public class ModSoundHandler {
 	public static SoundEvent MAWSOUND_SQUELCH;
 	public static SoundEvent MAWSOUND_FLYBY;
 	public static SoundEvent MAWSOUND_VOICE1;
+	public static SoundEvent MAWSOUND_CHACHING;
+	public static SoundEvent MAWSOUND_COINDROP;
+	public static SoundEvent MAWSOUND_ERRORNOISE;
+	public static SoundEvent MAWSOUND_ERRORSOUND;
 	
 	
 	public static void init() {
@@ -33,6 +37,11 @@ public class ModSoundHandler {
 		MAWSOUND_SQUELCH = register("mawsound.squelch");
 		MAWSOUND_FLYBY = register("mawsound.flyby");
 		MAWSOUND_VOICE1 = register("mawsound.voice1");
+		MAWSOUND_CHACHING = register("mawsound.chaching");
+		MAWSOUND_COINDROP= register("mawsound.coindrop");
+		MAWSOUND_ERRORNOISE= register("mawsound.errornoise");
+		MAWSOUND_ERRORSOUND= register("mawsound.errorsound");
+		
 		
 	}
 	

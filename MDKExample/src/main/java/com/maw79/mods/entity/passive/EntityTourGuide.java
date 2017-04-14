@@ -117,6 +117,7 @@ public  class EntityTourGuide extends EntityCreature {
 	@Override
 	public boolean processInteract(EntityPlayer entity, EnumHand hand) {
 		super.processInteract(entity, hand);
+		entity.playSound(ModSoundHandler.MAWSOUND_CHACHING, 3.0F, 1.0F);
 		int i = (int) this.posX;
 		int j = (int) this.posY;
 		int k = (int) this.posZ;
@@ -128,6 +129,8 @@ public  class EntityTourGuide extends EntityCreature {
 		            int basicID = this.getEntityId();
 		           // entity.openGui(Maw79Mod.instance, GuiHandler.STORE_GUI, this.world, basicID, 0, 0);
 		            Minecraft.getMinecraft().displayGuiScreen(new GuiStoreDisplay());
+		            
+		           
 		        }
 			//entity.playSound(ModSoundHandler.MAWSOUND_VOICE1, 1.0F, 4.0F);
 		}

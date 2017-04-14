@@ -21,7 +21,7 @@ public class ItemHubToken  extends Item{
 public  ItemHubToken (String unlocalizedName) {
 	this.setUnlocalizedName(unlocalizedName);
 	this.setRegistryName(new ResourceLocation(Reference.MOD_ID, unlocalizedName));
-	
+	this.setMaxStackSize(1);
 }
 
 /**
