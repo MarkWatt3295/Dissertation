@@ -29,7 +29,7 @@ public class GuiMathsDivisionBlock extends GuiScreen {
 	    double randomNum3 = rand.nextInt((int) (( divmax - divimin)+1))+divimin;
 	    double randanswer  = randomNum1 / randomNum2;
 	    double randanswer2  = randanswer + 1;
-	    double randanswer3  = randanswer - 1;
+	    double randanswer3  = randanswer + 2;
 	    String question = randomNum1 + " ÷ " + randomNum2;
 	    String number ="";
 	    int answer = 0;  
@@ -79,7 +79,7 @@ public class GuiMathsDivisionBlock extends GuiScreen {
         {
             GlStateManager.translate((width / 2), centerY + 10, 0);
             GlStateManager.scale(1.4, 1.4, 1.4);
-           
+            //fontRendererObj.drawString(title, -23, 10, 0x6028ff);
             fontRendererObj.drawString( String.format("%.0f", randomNum1) + " ÷ " + (String.format("%.0f", randomNum2)), (-23), (20), 0xffffff);
     		fontRendererObj.drawString( String.format("%.2f", randanswer), (-23), (40), 0xffffff);
     		fontRendererObj.drawString( String.format("%.2f", randanswer2), (-23), (56), 0xffffff);
@@ -105,7 +105,7 @@ public class GuiMathsDivisionBlock extends GuiScreen {
         drawTooltip2(s2, mouseX, mouseY, centerX +10, centerY + 58, 22, 22);
        
         
-        //super.drawScreen(mouseX, mouseY, partialTicks);
+        super.drawScreen(mouseX, mouseY, partialTicks);
     }
     
  

@@ -28,6 +28,7 @@ import com.maw79.mods.blocks.BlockTestBlock4;
 import com.maw79.mods.blocks.item.ItemBlockBreaker;
 import com.maw79.mods.blocks.item.ItemBlockMeta;
 import com.maw79.mods.blocks.mathsblocks.BlockBasicBlock;
+import com.maw79.mods.blocks.mathsblocks.BlockMathsDivisionBlock;
 import com.maw79.mods.blocks.mathsblocks.BlockMathsQuestionBlock;
 import com.maw79.mods.blocks.mathsblocks.BlockMathsQuizBlock;
 import com.maw79.mods.blocks.mathsblocks.mcreator_testBlock;
@@ -199,7 +200,7 @@ public class ModBlocks {
 		mathsquestionblock2 = new BlockMathsQuestionBlock("maths_question_block2");
 		mathsquizblock = new BlockMathsQuizBlock("maths_quiz1");
 		mathsquizblock.setCreativeTab(Maw79Mod.mathsblocks);
-		mathsdivisionblock = new BlockMathsQuestionBlock("maths_division_block");
+		mathsdivisionblock = new BlockMathsDivisionBlock("maths_division_block");
 		
 		//MATHS BLOCK COLOURS
 		mathblockbrown= new BlockBasicBlock("maths_brown_block");

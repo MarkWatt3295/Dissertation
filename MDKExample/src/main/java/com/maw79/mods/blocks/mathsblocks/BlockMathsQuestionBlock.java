@@ -42,7 +42,7 @@ public class BlockMathsQuestionBlock extends Block {
 		worldIn.playSound(player, pos, ModSoundHandler.MAWSOUND_COIN, SoundCategory.BLOCKS, 1.0F, 1.0F);
 		if(!player.world.isRemote){
 			
-			Minecraft.getMinecraft().displayGuiScreen(new GuiMathsDivisionBlock());
+			Minecraft.getMinecraft().displayGuiScreen(new GuiMathsMultiplicationBlock1());
 			
 		}
 		

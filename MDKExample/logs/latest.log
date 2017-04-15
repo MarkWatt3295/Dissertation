@@ -1,46 +1,226 @@
-[17:33:47] [Client thread/INFO]: Setting user: Player345
-[17:33:54] [Client thread/WARN]: Skipping bad option: lastServer:
-[17:33:54] [Client thread/INFO]: LWJGL Version: 2.9.2
-[17:33:58] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Teaching Keystage 2 Via Minecraft
-[17:34:02] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[17:34:02] [Thread-6/INFO]: Initializing LWJGL OpenAL
-[17:34:02] [Thread-6/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[17:34:03] [Thread-6/INFO]: OpenAL initialized.
-[17:34:03] [Sound Library Loader/INFO]: Sound engine started
-[17:34:06] [Client thread/INFO]: Created: 16x16 textures-atlas
-[17:34:07] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Teaching Keystage 2 Via Minecraft
-[17:34:08] [Client thread/INFO]: SoundSystem shutting down...
-[17:34:09] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
-[17:34:09] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[17:34:09] [Thread-8/INFO]: Initializing LWJGL OpenAL
-[17:34:09] [Thread-8/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[17:34:09] [Thread-8/INFO]: OpenAL initialized.
-[17:34:09] [Sound Library Loader/INFO]: Sound engine started
-[17:34:11] [Client thread/INFO]: Created: 1024x512 textures-atlas
-[17:34:13] [Client thread/WARN]: Skipping bad option: lastServer:
-[17:34:14] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
-[17:34:21] [Server thread/INFO]: Starting integrated minecraft server version 1.11.2
-[17:34:21] [Server thread/INFO]: Generating keypair
-[17:34:21] [Server thread/INFO]: Preparing start region for level 0
-[17:34:22] [Server thread/INFO]: Preparing spawn area: 6%
-[17:34:23] [Server thread/INFO]: Changing view distance to 14, from 10
-[17:34:39] [Client thread/WARN]: Couldn't look up profile properties for com.mojang.authlib.GameProfile@3d7fdc50[id=f8ecce46-2a8b-3dd7-b17c-715cc94801bb,name=Player345,properties={},legacy=false]
-com.mojang.authlib.exceptions.AuthenticationUnavailableException: Cannot contact authentication server
-	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.makeRequest(YggdrasilAuthenticationService.java:85) ~[YggdrasilAuthenticationService.class:?]
+[19:39:47] [Client thread/INFO]: Setting user: Player561
+[19:39:53] [Client thread/WARN]: Skipping bad option: lastServer:
+[19:39:53] [Client thread/INFO]: LWJGL Version: 2.9.2
+[19:39:57] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Teaching Keystage 2 Via Minecraft
+[19:40:01] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[19:40:01] [Thread-6/INFO]: Initializing LWJGL OpenAL
+[19:40:01] [Thread-6/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[19:40:02] [Thread-6/INFO]: OpenAL initialized.
+[19:40:02] [Sound Library Loader/INFO]: Sound engine started
+[19:40:06] [Client thread/INFO]: Created: 16x16 textures-atlas
+[19:40:07] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Teaching Keystage 2 Via Minecraft
+[19:40:09] [Client thread/INFO]: SoundSystem shutting down...
+[19:40:09] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[19:40:09] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[19:40:09] [Thread-8/INFO]: Initializing LWJGL OpenAL
+[19:40:09] [Thread-8/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[19:40:09] [Thread-8/INFO]: OpenAL initialized.
+[19:40:10] [Sound Library Loader/INFO]: Sound engine started
+[19:40:12] [Client thread/INFO]: Created: 1024x512 textures-atlas
+[19:40:14] [Client thread/WARN]: Skipping bad option: lastServer:
+[19:40:15] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
+[19:40:22] [Server thread/INFO]: Starting integrated minecraft server version 1.11.2
+[19:40:22] [Server thread/INFO]: Generating keypair
+[19:40:23] [Server thread/INFO]: Preparing start region for level 0
+[19:40:24] [Server thread/INFO]: Preparing spawn area: 12%
+[19:40:25] [Server thread/INFO]: Changing view distance to 14, from 10
+[19:40:26] [Server thread/INFO]: Player561[local:E:3e831113] logged in with entity id 39 at (-137.52676026297573, 63.0, -49.83988821617937)
+[19:40:26] [Server thread/INFO]: Player561 joined the game
+[19:40:26] [Server thread/INFO]: [STDOUT]: Player Joined Called
+[19:40:28] [Server thread/INFO]: Saving and pausing game...
+[19:40:28] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:28] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:28] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:28] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2416ms behind, skipping 48 tick(s)
+[19:40:28] [Client thread/INFO]: [CHAT] §aThank you, Player561, for downloading my KS2 MOD!
+[19:40:29] [pool-2-thread-1/WARN]: Couldn't look up profile properties for com.mojang.authlib.GameProfile@7a4cb62f[id=a87d2476-ff88-3799-a681-9605d7180f4f,name=Player561,properties={},legacy=false]
+com.mojang.authlib.exceptions.AuthenticationException: The client has sent too many requests within a certain amount of time
+	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.makeRequest(YggdrasilAuthenticationService.java:79) ~[YggdrasilAuthenticationService.class:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.fillGameProfile(YggdrasilMinecraftSessionService.java:180) [YggdrasilMinecraftSessionService.class:?]
-	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.fillProfileProperties(YggdrasilMinecraftSessionService.java:173) [YggdrasilMinecraftSessionService.class:?]
-	at net.minecraft.client.Minecraft.launchIntegratedServer(Minecraft.java:2445) [Minecraft.class:?]
-	at net.minecraftforge.fml.client.FMLClientHandler.tryLoadExistingWorld(FMLClientHandler.java:750) [FMLClientHandler.class:?]
-	at net.minecraft.client.gui.GuiListWorldSelectionEntry.loadWorld(GuiListWorldSelectionEntry.java:253) [GuiListWorldSelectionEntry.class:?]
-	at net.minecraft.client.gui.GuiListWorldSelectionEntry.joinWorld(GuiListWorldSelectionEntry.java:203) [GuiListWorldSelectionEntry.class:?]
-	at net.minecraft.client.gui.GuiListWorldSelectionEntry.mousePressed(GuiListWorldSelectionEntry.java:167) [GuiListWorldSelectionEntry.class:?]
-	at net.minecraft.client.gui.GuiListExtended.mouseClicked(GuiListExtended.java:57) [GuiListExtended.class:?]
-	at net.minecraft.client.gui.GuiWorldSelection.mouseClicked(GuiWorldSelection.java:134) [GuiWorldSelection.class:?]
-	at net.minecraft.client.gui.GuiScreen.handleMouseInput(GuiScreen.java:613) [GuiScreen.class:?]
-	at net.minecraft.client.gui.GuiWorldSelection.handleMouseInput(GuiWorldSelection.java:49) [GuiWorldSelection.class:?]
-	at net.minecraft.client.gui.GuiScreen.handleInput(GuiScreen.java:578) [GuiScreen.class:?]
-	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1792) [Minecraft.class:?]
-	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1119) [Minecraft.class:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService$1.load(YggdrasilMinecraftSessionService.java:60) [YggdrasilMinecraftSessionService$1.class:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService$1.load(YggdrasilMinecraftSessionService.java:57) [YggdrasilMinecraftSessionService$1.class:?]
+	at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3524) [guava-17.0.jar:?]
+	at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2317) [guava-17.0.jar:?]
+	at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2280) [guava-17.0.jar:?]
+	at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2195) [guava-17.0.jar:?]
+	at com.google.common.cache.LocalCache.get(LocalCache.java:3934) [guava-17.0.jar:?]
+	at com.google.common.cache.LocalCache.getOrLoad(LocalCache.java:3938) [guava-17.0.jar:?]
+	at com.google.common.cache.LocalCache$LocalLoadingCache.get(LocalCache.java:4821) [guava-17.0.jar:?]
+	at com.google.common.cache.LocalCache$LocalLoadingCache.getUnchecked(LocalCache.java:4827) [guava-17.0.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.fillProfileProperties(YggdrasilMinecraftSessionService.java:170) [YggdrasilMinecraftSessionService.class:?]
+	at net.minecraft.client.Minecraft.getProfileProperties(Minecraft.java:3056) [Minecraft.class:?]
+	at net.minecraft.client.resources.SkinManager$3.run(SkinManager.java:138) [SkinManager$3.class:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_121]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_121]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_121]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_121]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_121]
+[19:40:32] [Server thread/INFO]: Saving and pausing game...
+[19:40:32] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:32] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:32] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:33] [Server thread/INFO]: Saving and pausing game...
+[19:40:33] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:33] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:33] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:33] [Server thread/INFO]: Saving and pausing game...
+[19:40:33] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:33] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:33] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:34] [Server thread/INFO]: Saving and pausing game...
+[19:40:34] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:34] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:34] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:34] [Server thread/INFO]: Saving and pausing game...
+[19:40:34] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:34] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:34] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:34] [Server thread/INFO]: Saving and pausing game...
+[19:40:34] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:34] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:34] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:34] [Server thread/INFO]: Saving and pausing game...
+[19:40:34] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:34] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:34] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:35] [Server thread/INFO]: Saving and pausing game...
+[19:40:35] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:35] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:35] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:35] [Server thread/INFO]: Saving and pausing game...
+[19:40:35] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:35] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:35] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:35] [Server thread/INFO]: Saving and pausing game...
+[19:40:35] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:35] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:35] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:36] [Server thread/INFO]: Saving and pausing game...
+[19:40:36] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:36] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:36] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:36] [Server thread/INFO]: Saving and pausing game...
+[19:40:36] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:36] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:36] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:36] [Server thread/INFO]: Saving and pausing game...
+[19:40:36] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:36] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:36] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:37] [Server thread/INFO]: Saving and pausing game...
+[19:40:37] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:37] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:37] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:37] [Server thread/INFO]: Saving and pausing game...
+[19:40:37] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:37] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:37] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:37] [Server thread/INFO]: Saving and pausing game...
+[19:40:37] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:37] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:37] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:37] [Server thread/INFO]: Saving and pausing game...
+[19:40:37] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:37] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:37] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:38] [Server thread/INFO]: Saving and pausing game...
+[19:40:38] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:38] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:38] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:38] [Server thread/INFO]: Saving and pausing game...
+[19:40:38] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:38] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:38] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:38] [Server thread/INFO]: Saving and pausing game...
+[19:40:38] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:38] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:38] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:39] [Server thread/INFO]: Saving and pausing game...
+[19:40:39] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:39] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:39] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:39] [Server thread/INFO]: Saving and pausing game...
+[19:40:39] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:39] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:39] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:39] [Server thread/INFO]: Saving and pausing game...
+[19:40:39] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:39] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:39] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:40] [Server thread/INFO]: Saving and pausing game...
+[19:40:40] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:40] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:40] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:40] [Server thread/INFO]: Saving and pausing game...
+[19:40:40] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:40] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:40] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:40] [Server thread/INFO]: Saving and pausing game...
+[19:40:40] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:40] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:40] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:41] [Server thread/INFO]: Saving and pausing game...
+[19:40:41] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:41] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:41] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:41] [Server thread/INFO]: Saving and pausing game...
+[19:40:41] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:41] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:41] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:41] [Server thread/INFO]: Saving and pausing game...
+[19:40:41] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:41] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:41] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:41] [Server thread/INFO]: Saving and pausing game...
+[19:40:41] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:41] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:41] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:42] [Server thread/INFO]: Saving and pausing game...
+[19:40:42] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:42] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:42] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:43] [Server thread/INFO]: Saving and pausing game...
+[19:40:43] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:43] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:43] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:43] [Server thread/INFO]: Saving and pausing game...
+[19:40:43] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:43] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:43] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:43] [Server thread/INFO]: Saving and pausing game...
+[19:40:43] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:43] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:43] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:44] [Server thread/INFO]: Saving and pausing game...
+[19:40:44] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:44] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:44] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:44] [Server thread/INFO]: Saving and pausing game...
+[19:40:44] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:44] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:44] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:44] [Server thread/INFO]: Saving and pausing game...
+[19:40:44] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:44] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:44] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:45] [Server thread/INFO]: Saving and pausing game...
+[19:40:45] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:45] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:45] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:47] [Server thread/INFO]: Saving and pausing game...
+[19:40:47] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:47] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:47] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:48] [Server thread/INFO]: Stopping server
+[19:40:48] [Server thread/INFO]: Saving players
+[19:40:48] [Server thread/INFO]: Saving worlds
+[19:40:48] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[19:40:48] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[19:40:48] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[19:40:49] [Client thread/FATAL]: Reported exception thrown!
+net.minecraft.util.ReportedException: Rendering screen
+	at net.minecraft.client.renderer.EntityRenderer.updateCameraAndRender(EntityRenderer.java:1191) ~[EntityRenderer.class:?]
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1140) ~[Minecraft.class:?]
 	at net.minecraft.client.Minecraft.run(Minecraft.java:407) [Minecraft.class:?]
 	at net.minecraft.client.main.Main.main(Main.java:118) [Main.class:?]
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_121]
@@ -55,47 +235,8 @@ com.mojang.authlib.exceptions.AuthenticationUnavailableException: Cannot contact
 	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_121]
 	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97) [start/:?]
 	at GradleStart.main(GradleStart.java:26) [start/:?]
-Caused by: java.net.SocketTimeoutException: Read timed out
-	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_121]
-	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_121]
-	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_121]
-	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_121]
-	at sun.security.ssl.InputRecord.readFully(InputRecord.java:465) ~[?:1.8.0_121]
-	at sun.security.ssl.InputRecord.read(InputRecord.java:503) ~[?:1.8.0_121]
-	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:973) ~[?:1.8.0_121]
-	at sun.security.ssl.SSLSocketImpl.readDataRecord(SSLSocketImpl.java:930) ~[?:1.8.0_121]
-	at sun.security.ssl.AppInputStream.read(AppInputStream.java:105) ~[?:1.8.0_121]
-	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246) ~[?:1.8.0_121]
-	at java.io.BufferedInputStream.read1(BufferedInputStream.java:286) ~[?:1.8.0_121]
-	at java.io.BufferedInputStream.read(BufferedInputStream.java:345) ~[?:1.8.0_121]
-	at sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:704) ~[?:1.8.0_121]
-	at sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:647) ~[?:1.8.0_121]
-	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1569) ~[?:1.8.0_121]
-	at sun.net.www.protocol.http.HttpURLConnection.access$200(HttpURLConnection.java:91) ~[?:1.8.0_121]
-	at sun.net.www.protocol.http.HttpURLConnection$9.run(HttpURLConnection.java:1466) ~[?:1.8.0_121]
-	at sun.net.www.protocol.http.HttpURLConnection$9.run(HttpURLConnection.java:1464) ~[?:1.8.0_121]
-	at java.security.AccessController.doPrivileged(Native Method) ~[?:1.8.0_121]
-	at java.security.AccessController.doPrivilegedWithCombiner(AccessController.java:782) ~[?:1.8.0_121]
-	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1463) ~[?:1.8.0_121]
-	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:254) ~[?:1.8.0_121]
-	at com.mojang.authlib.HttpAuthenticationService.performGetRequest(HttpAuthenticationService.java:130) ~[HttpAuthenticationService.class:?]
-	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.makeRequest(YggdrasilAuthenticationService.java:66) ~[YggdrasilAuthenticationService.class:?]
-	... 28 more
-[17:34:40] [Server thread/INFO]: Player345[local:E:5e273b56] logged in with entity id 39 at (-136.62669271556376, 63.0, -54.188466364820975)
-[17:34:40] [Server thread/INFO]: Player345 joined the game
-[17:34:40] [Server thread/INFO]: [STDOUT]: Player Joined Called
-[17:34:42] [Server thread/INFO]: Saving and pausing game...
-[17:34:43] [Client thread/INFO]: [CHAT] §aThank you, Player345, for downloading my KS2 MOD!
-[17:34:43] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
-[17:34:43] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
-[17:34:43] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
-[17:34:43] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2952ms behind, skipping 59 tick(s)
-[17:34:44] [Client thread/INFO]: Stopping!
-[17:34:44] [Server thread/INFO]: Stopping server
-[17:34:44] [Server thread/INFO]: Saving players
-[17:34:44] [Server thread/INFO]: Saving worlds
-[17:34:44] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
-[17:34:44] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
-[17:34:44] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
-[17:34:44] [Client thread/INFO]: SoundSystem shutting down...
-[17:34:45] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+Caused by: java.lang.NullPointerException
+	at com.maw79.mods.client.gui.mathsgui.GuiMathsTest.drawScreen(GuiMathsTest.java:24) ~[GuiMathsTest.class:?]
+	at net.minecraftforge.client.ForgeHooksClient.drawScreen(ForgeHooksClient.java:382) ~[ForgeHooksClient.class:?]
+	at net.minecraft.client.renderer.EntityRenderer.updateCameraAndRender(EntityRenderer.java:1164) ~[EntityRenderer.class:?]
+	... 15 more

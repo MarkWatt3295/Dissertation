@@ -21,8 +21,10 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent.Tick;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.relauncher.Side;
 
 public class ClientProxy extends CommonProxy {
 	
@@ -40,6 +42,7 @@ public class ClientProxy extends CommonProxy {
 	public void init() {
 		NetworkRegistry.INSTANCE.registerGuiHandler(Maw79Mod.instance, new GuiHandler());
 		EntitiesLivingHandler.registerEntity();
+
 
 		
 	}
