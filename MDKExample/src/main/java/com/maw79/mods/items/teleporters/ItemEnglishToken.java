@@ -31,7 +31,7 @@ public  ItemEnglishToken (String unlocalizedName) {
 @Override
 public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
 	super.addInformation(stack, playerIn, tooltip, advanced);
-	tooltip.add(TextFormatting.YELLOW + Utils.getLang().localize("science_token.tooltip"));
+	tooltip.add(TextFormatting.YELLOW + Utils.getLang().localize("english_token.tooltip"));
 }
 
 @Override

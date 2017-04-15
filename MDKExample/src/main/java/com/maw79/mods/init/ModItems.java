@@ -3,6 +3,7 @@ package com.maw79.mods.init;
 import com.maw79.mods.entity.arrows.EntityBlockDetectionArrow;
 import com.maw79.mods.entity.arrows.EntityModArrow;
 import com.maw79.mods.entity.arrows.EntityPaintArrow;
+import com.maw79.mods.entity.arrows.EntityPaintRemoverArrow;
 import com.maw79.mods.handlers.EnumHandler;
 import com.maw79.mods.items.ItemBookOne;
 import com.maw79.mods.items.ItemBurntLoaf;
@@ -104,6 +105,7 @@ public class ModItems {
 	public static final Item ARROW = new ItemModArrow("arrow", EntityModArrow::new);
 	public static final ItemModArrow BLOCK_DETECTION_ARROW = new ItemModArrow("block_detection_arrow", EntityBlockDetectionArrow::new);
 	public static final ItemModArrow PAINT_ARROW = new ItemModArrow("paint_arrow", EntityPaintArrow::new);
+	public static final ItemModArrow PAINTREMOVER_ARROW = new ItemModArrow("paintremover_arrow", EntityPaintRemoverArrow::new);
 	public static final ItemModBow BOW = new ItemModBow("bow");
 	public static ItemSnowballLauncher SNOW = new ItemSnowballLauncher("snow");
 	
@@ -192,6 +194,7 @@ public class ModItems {
 		registerItem(ARROW);
 		registerItem(BLOCK_DETECTION_ARROW);
 		registerItem(PAINT_ARROW);
+		registerItem(PAINTREMOVER_ARROW);
 		registerItem(SCIENCE_TOKEN);
 		registerItem(MATHS_TOKEN);
 		registerItem(ENGLISH_TOKEN);
@@ -278,6 +281,7 @@ public class ModItems {
 		registerRender(BLOCK_DETECTION_ARROW);
 		registerRender(SNOW);
 		registerRender(PAINT_ARROW);
+		registerRender(PAINTREMOVER_ARROW);
 		registerRender(SCIENCE_TOKEN);
 		registerRender(MATHS_TOKEN);
 		registerRender(HISTORY_TOKEN);

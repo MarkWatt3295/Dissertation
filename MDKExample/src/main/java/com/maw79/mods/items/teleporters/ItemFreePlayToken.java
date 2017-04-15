@@ -36,15 +36,15 @@ public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> 
 @Override
 public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
 	
-	if (!player.isSneaking()){
-		 player.attemptTeleport(98.989,103.0,531.503);
-	 }
 	
-
-
+		 player.attemptTeleport(535, 74, -177);
+		 
+	
 	
 	return super.onItemRightClick(world, player, hand);
 }
+
+
 
 
 

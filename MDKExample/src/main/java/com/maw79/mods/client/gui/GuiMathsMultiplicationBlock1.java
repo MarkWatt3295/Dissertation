@@ -55,25 +55,28 @@ public class GuiMathsMultiplicationBlock1 extends GuiScreen {
     int guiWidth = 175;
     int guiHeight = 228;
     
-   public String returns = "hello creator"; 
+ 
     
-    String title = "Multiplication 1";
-    int max = 5; 
-    int min = 1;
+    String title = "Multiplication";
+    
+    int multimax = GuiNotif.multimax; 
+    int multimin = GuiNotif.multimin;
     Random rand = new Random();
-    int randomNum1 = rand.nextInt(( max - min)+1)+min;
-    int randomNum2 = rand.nextInt(( max - min)+1)+min;
+    int randomNum1 = rand.nextInt(( multimax - multimin)+1)+multimin;
+    int randomNum2 = rand.nextInt(( multimax - multimin)+1)+multimin;
     int randanswer  = randomNum1 * randomNum2;
     String question = randomNum1 + " X " + randomNum2;
     String number ="";
     int answer = 0;
     GuiTextField textBox;
     GuiButton button1, button2, button3;
-    final int BUTTON1 = 0, ARROW = 1, BUTTON2 = 2, BUTTON3 = 3;
+    final int BUTTON1 = 0, BUTTON2 = 2, BUTTON3 = 3;
     
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
-        drawDefaultBackground();
+
+    	
+        //drawDefaultBackground();
         Minecraft.getMinecraft().renderEngine.bindTexture(texture);
         int centerX = (width / 2) - guiWidth / 2;
         int centerY = (height / 2) - guiHeight / 2;
@@ -94,6 +97,7 @@ public class GuiMathsMultiplicationBlock1 extends GuiScreen {
             fontRendererObj.drawString(title, 0, 0, 0x6028ff);
         }
             GlStateManager.popMatrix();
+            
             GlStateManager.pushMatrix();{
             GlStateManager.translate((width / 2) - fontRendererObj.getStringWidth(question), centerY + 10, 0);
             GlStateManager.scale(2, 2, 2);
@@ -104,12 +108,8 @@ public class GuiMathsMultiplicationBlock1 extends GuiScreen {
         GlStateManager.popMatrix();
         super.drawScreen(mouseX, mouseY, partialTicks);
         button1.drawButton(mc, mouseX, mouseY);
-      //  arrow.drawButton(mc, mouseX, mouseY);
-       
         textBox.drawTextBox();
-       
-        List<String> text = new ArrayList<String>();
-       // GlStateManager.pushMatrix();
+   
     }
 
 
@@ -130,17 +130,16 @@ public class GuiMathsMultiplicationBlock1 extends GuiScreen {
     
 
     public void updateButtons() {
-    	//int mouseX = Mouse.getX();
-    	//int mouseY = Mouse.getY();
-    	//System.out.println("***************** [Random Number 1: "+ randomNum1+" ]" + " *****************");
-    	//System.out.println("***************** [Random Number 2: "+ randomNum2+" ]"  + " *****************");
+    	
     	System.out.println("***************** [Random Answer: "+ randanswer+" ]"  + " *****************");
     	System.out.println("***************** [Player Answer: "+ answer+" ]"  + " *****************");
+    	System.out.println("***************** [Multimax is: "+ multimax+" ]"  + " *****************");
+    	System.out.println("***************** [Multimin is: "+ multimin+" ]"  + " *****************");
         if (answer == randanswer)  {
             onEvent();
          
         } else {
-            //button1.enabled = false;
+           
         	System.out.println("***************** [No Answer or Incorrect] *****************");
         }
     }
@@ -149,7 +148,7 @@ public class GuiMathsMultiplicationBlock1 extends GuiScreen {
     public  void updateTextBoxes() {
         if (!textBox.getText().isEmpty()) {
             if (!textBox.isFocused()) {
-               // title = textBox.getText();
+              
             	number = textBox.getText();
             	  try {
                 answer=Integer.parseInt(number);
@@ -169,7 +168,8 @@ public class GuiMathsMultiplicationBlock1 extends GuiScreen {
         switch (button.id) {
             case BUTTON1:
        
-            	mc.player.sendMessage(new TextComponentString("Correct Answer! Heres your block"));
+            	mc.player.sendMessage(new TextComponentString("Correct Answer! Heres your reward"));
+            	GuiNotif.playerScore += 10;
             	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
             	Maw79Mod.networkWrapper2.sendToServer(new MathsMessage(mc.player));
             	
@@ -177,9 +177,6 @@ public class GuiMathsMultiplicationBlock1 extends GuiScreen {
             	
             	break;
      
-            case ARROW:
-            	mc.displayGuiScreen((GuiScreen)null);
-                break;
         }
         updateButtons();
         super.actionPerformed(button);

@@ -57,6 +57,8 @@ item.apple_wall.name=Picture Wall 2
 item.apple_wall_wool.name=Apple Wall Wool
 item.apple_wall_axis.name=Picture Wall 2 (AXIS)
 item.bow.name=Modded Bow
+item.paint_arrow.name=Paint Arrow
+item.paintremover_arrow.name=Paint Remover Arrow
 item.calculator.name=Calculator Screen
 
 //Debug Items
@@ -226,6 +228,7 @@ item.ruby_helmet.name=Ruby Helmet
 maw79.entity.custom_villager.name=Custom Villager
 maw79.entity.Human.name=Human
 maw79.entity.Dave.name=Dave
+entity.maw79.shopkeeper.name=ShopKeeper
 
 container.block_breaker=Block Breaker
 gui.block_breaker.enchanted_book.tooltip=Enchanted book goes here
