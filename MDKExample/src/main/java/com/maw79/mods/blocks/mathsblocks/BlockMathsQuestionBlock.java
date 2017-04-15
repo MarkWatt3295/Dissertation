@@ -1,6 +1,7 @@
 package com.maw79.mods.blocks.mathsblocks;
 
 import com.maw79.mods.client.gui.GuiMathsMultiplicationBlock1;
+import com.maw79.mods.client.gui.mathsgui.GuiMathsDivisionBlock;
 import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.util.Utilities;
@@ -21,7 +22,7 @@ import net.minecraft.world.World;
 
 public class BlockMathsQuestionBlock extends Block {
 	
-	public boolean blockanswered;
+
 	
 	public BlockMathsQuestionBlock(String unlocalizedName) {
 		super(Material.CLOTH);
@@ -40,9 +41,9 @@ public class BlockMathsQuestionBlock extends Block {
 			
 		worldIn.playSound(player, pos, ModSoundHandler.MAWSOUND_COIN, SoundCategory.BLOCKS, 1.0F, 1.0F);
 		if(!player.world.isRemote){
-			//player.sendMessage(new TextComponentString("Maths Question"));
-			Minecraft.getMinecraft().displayGuiScreen(new GuiMathsMultiplicationBlock1());
-			this.blockanswered = true;
+			
+			Minecraft.getMinecraft().displayGuiScreen(new GuiMathsDivisionBlock());
+			
 		}
 		
 		

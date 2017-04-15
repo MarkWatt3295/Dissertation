@@ -26,17 +26,14 @@ public class BlockMathsQuizBlock extends BlockMathsQuestionBlock{
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer player,
 			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-		//if(this.blockanswered == false){		
+			
 		worldIn.playSound(player, pos, ModSoundHandler.MAWSOUND_COIN, SoundCategory.BLOCKS, 5.0F, 5.0F);
 		if(!player.world.isRemote){
 			player.sendMessage(new TextComponentString("Maths Question"));
 			Minecraft.getMinecraft().displayGuiScreen(new GuiMathsMultiplicationBlock1());
-			this.blockanswered = true;
+			
 		}
-		//}
-		//else if(this.blockanswered == true){
-		//	player.sendMessage(new TextComponentString(Utilities.stringToGolden("This Block Has been attempted", 5, true)));
-		//}
+		
 		
 		return true;
 

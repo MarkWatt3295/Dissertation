@@ -115,6 +115,7 @@ tile.maths_question_block.name=Maths Question Block
 tile.maths_question_block2.name=Maths Question Block 2
 tile.maths_quiz1.name=Maths Quiz Block 1
 tile.newtestblock.name=New Test Block
+tile.maths_division_block.name= Maths Division Block
 
 tile.maths_brown_block.name=Brown Maths Block
 tile.maths_aqua_block.name=Aqua Maths Block

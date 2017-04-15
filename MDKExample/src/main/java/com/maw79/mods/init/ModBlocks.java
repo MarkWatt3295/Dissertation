@@ -104,6 +104,7 @@ public class ModBlocks {
 	public static Block mathsquestionblock2;
 	public static Block mathsquizblock;
 	public static Block newtestblock;
+	public static Block mathsdivisionblock;
 	//MATH BLOCK COLOURS
 	public static Block mathblockbrown;
 	public static Block mathblockgreen;
@@ -143,6 +144,7 @@ public class ModBlocks {
 	public static Block bridge;
 	public static Block insulatormain;
 	public static Block insulatorcalculator;
+	
 	//Science Insulators
 	public static Block plasticblock;
 	public static Block polyurethanefoam;
@@ -197,6 +199,7 @@ public class ModBlocks {
 		mathsquestionblock2 = new BlockMathsQuestionBlock("maths_question_block2");
 		mathsquizblock = new BlockMathsQuizBlock("maths_quiz1");
 		mathsquizblock.setCreativeTab(Maw79Mod.mathsblocks);
+		mathsdivisionblock = new BlockMathsQuestionBlock("maths_division_block");
 		
 		//MATHS BLOCK COLOURS
 		mathblockbrown= new BlockBasicBlock("maths_brown_block");
@@ -285,6 +288,8 @@ public class ModBlocks {
 		registerBlock(newtestblock);
 		
 		//MATHS BLOCKS
+		registerBlock(mathsdivisionblock);
+		mathsdivisionblock.setCreativeTab(Maw79Mod.mathsblocks);
 		registerBlock(mathblock1);
 		mathblock1.setCreativeTab(Maw79Mod.mathsblocks);
 		registerBlock(mathblock2);
@@ -424,6 +429,7 @@ public class ModBlocks {
 		registerRender(mathsquestionblock2);
 		registerRender(mathsquestionblock2);
 		registerRender(mathsquizblock);
+		registerRender(mathsdivisionblock);
 		
 		//MATHS BLOCK Colours
 		registerRender(mathblockbrown);

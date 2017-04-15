@@ -173,12 +173,7 @@ public class GuiStoreDisplay extends GuiScreen {
             drawCreativeTabHoveringText(line, mouseX, mouseY);
         }
     }
-    public void drawTooltip3(String line, int mouseX, int mouseY, int posX, int posY, int width, int height) {
-        if (mouseX >= posX && mouseX <= posX + width && mouseY >= posY && mouseY <= posY + height) {
-            drawCreativeTabHoveringText(line, mouseX, mouseY);
-        }
-    }
-
+   
     
 
     
