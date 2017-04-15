@@ -40,12 +40,11 @@ public  class EntityTokenShopKeeper extends EntityCreature {
 		world = var1;
 		experienceValue = 5;
 		this.isImmuneToFire = false;
-		addRandomArmor();
+		this.enablePersistence();
 		setNoAI(!true);
 		this.tasks.addTask(0, new EntityAISwimming(this));
 		this.tasks.addTask(1, new EntityAIWatchClosest(this, EntityPlayer.class, 10.0F));
 		this.tasks.addTask(2, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
-		
 		setCustomNameTag("Shopkeeper");
 		setAlwaysRenderNameTag(true);
 

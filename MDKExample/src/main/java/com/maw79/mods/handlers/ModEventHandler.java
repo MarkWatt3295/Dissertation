@@ -4,19 +4,26 @@ package com.maw79.mods.handlers;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import scala.collection.parallel.ParIterableLike.Min;
 
 import com.maw79.mods.blocks.scienceblocks.BlockScienceWool;
 import com.maw79.mods.client.gui.GuiNotif;
 import com.maw79.mods.init.ModBlocks;
 import com.maw79.mods.init.ModItems;
+import com.maw79.mods.util.Utils;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.world.World;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
@@ -58,7 +65,16 @@ public class ModEventHandler {
     	
     	}
     	
+    @SubscribeEvent
+    public void onDeath(LivingDeathEvent event){
+    	if (event.getEntity() instanceof EntityPlayer)
+    	{
+    	Utils.getLogger().info("OnDeath Event Called");
+    	EntityPlayer player = (EntityPlayer) event.getEntity();
     	
+    	
+    	}
+    }
     	
     	
     
@@ -86,13 +102,19 @@ public class ModEventHandler {
     	}
     	EntityPlayer player = (EntityPlayer) event.getEntity();
     	if(!event.getEntity().getEntityWorld().isRemote) {
+    		
     		player.sendMessage(new TextComponentString("\u00A7a" + "Thank you, "+ player.getName() + ", for downloading my KS2 MOD!"));
     		System.out.println("Player Joined Called");
+    		
     		player.setNoGravity(false);
     		if(player.hasNoGravity()== true){
     			player.sendMessage(new TextComponentString("\u00A7a" + "Player is floating already"));
     		}
     	}
+    	event.getEntity().getEntityWorld().getGameRules().setOrCreateGameRule("keepInventory", "true");
+    	//Minecraft.getMinecraft().world.getGameRules().setOrCreateGameRule("keepInventory", "true");
+		Utils.getLogger().info("Keep Inventory is True");
+
     }
   
 
