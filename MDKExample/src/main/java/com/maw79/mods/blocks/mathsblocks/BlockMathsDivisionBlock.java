@@ -1,9 +1,8 @@
 package com.maw79.mods.blocks.mathsblocks;
 
 import com.maw79.mods.client.gui.GuiMathsMultiplicationBlock1;
-import com.maw79.mods.client.gui.mathsgui.GuiMathsDivisionBlock;
-import com.maw79.mods.client.gui.mathsgui.GuiMathsTest;
-import com.maw79.mods.client.gui.mathsgui.GuiWindow;
+import com.maw79.mods.client.gui.mathsgui.GuiAdditionBlock;
+import com.maw79.mods.client.gui.mathsgui.GuiSubtractionBlock;
 import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.util.Utilities;
@@ -44,7 +43,7 @@ public class BlockMathsDivisionBlock extends Block {
 		worldIn.playSound(player, pos, ModSoundHandler.MAWSOUND_COIN, SoundCategory.BLOCKS, 1.0F, 1.0F);
 		if(!player.world.isRemote){
 			
-			Minecraft.getMinecraft().displayGuiScreen(new GuiWindow(worldIn, lightOpacity, lightOpacity, lightOpacity, player));
+			Minecraft.getMinecraft().displayGuiScreen(new GuiSubtractionBlock());
 			this.blockanswered = true;
 		}
 		

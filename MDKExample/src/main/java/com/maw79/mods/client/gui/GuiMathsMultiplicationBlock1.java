@@ -51,7 +51,7 @@ public class GuiMathsMultiplicationBlock1 extends GuiScreen {
 	   
 	    
 	
-	final ResourceLocation texture = new ResourceLocation(Reference.MOD_ID, "textures/gui/playerlevel.png");
+	final ResourceLocation texture = new ResourceLocation(Reference.MOD_ID, "textures/gui/mathsblocks.png");
     int guiWidth = 175;
     int guiHeight = 228;
     
@@ -110,17 +110,27 @@ public class GuiMathsMultiplicationBlock1 extends GuiScreen {
         button1.drawButton(mc, mouseX, mouseY);
         textBox.drawTextBox();
    
+        List<String> text = new ArrayList<String>();
+        text.add("§9"+"What is : "+ question +"§f"+ "\nInput your anwer in the text box then press the submit button. "
+        		+ "If your Answer is correct you shall recieve a reward"); 
+     
+        drawTooltip(text, mouseX, mouseY, centerX +155, centerY +5, 15, 15);
     }
 
+    public void drawTooltip(List<String> lines, int mouseX, int mouseY, int posX, int posY, int width, int height) {
+        if (mouseX >= posX && mouseX <= posX + width && mouseY >= posY && mouseY <= posY + height) {
+            drawHoveringText(lines, mouseX, mouseY);
+        }
+    }
 
     
     @Override
     public void initGui() {
     	
         buttonList.clear();
-        buttonList.add(button1 = new GuiButton(BUTTON1, (width / 2) - 100 / 2, height - 100, 100, 20, "§a"+"CORRECT"));
-        buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) - 100 / 2, height - 120, 100, 20, "Submit"));
-        buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) - 100 / 2, height - 100, 100, 20, ""));
+        buttonList.add(button1 = new GuiButton(BUTTON1, (width / 2) - 100 / 2, height - 110, 100, 20, "§a"+"CORRECT"));
+        buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) - 100 / 2, height - 130, 100, 20, "Submit"));
+        buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) - 100 / 2, height - 110, 100, 20, ""));
         button1.visible = false;
         button1.enabled = false;
         textBox = new GuiTextField(0, fontRendererObj, (width / 2) - 100 / 2,   80, 100, 20 );//0,0,0,box height
@@ -168,7 +178,7 @@ public class GuiMathsMultiplicationBlock1 extends GuiScreen {
         switch (button.id) {
             case BUTTON1:
        
-            	mc.player.sendMessage(new TextComponentString("Correct Answer! Heres your reward"));
+            	Utils.getLogger().info("Correct Answer! Heres your reward");
             	GuiNotif.playerScore += 10;
             	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
             	Maw79Mod.networkWrapper2.sendToServer(new MathsMessage(mc.player));

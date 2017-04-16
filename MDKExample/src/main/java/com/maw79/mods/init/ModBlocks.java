@@ -28,9 +28,11 @@ import com.maw79.mods.blocks.BlockTestBlock4;
 import com.maw79.mods.blocks.item.ItemBlockBreaker;
 import com.maw79.mods.blocks.item.ItemBlockMeta;
 import com.maw79.mods.blocks.mathsblocks.BlockBasicBlock;
+import com.maw79.mods.blocks.mathsblocks.BlockMathsAdditionBlock;
 import com.maw79.mods.blocks.mathsblocks.BlockMathsDivisionBlock;
 import com.maw79.mods.blocks.mathsblocks.BlockMathsQuestionBlock;
 import com.maw79.mods.blocks.mathsblocks.BlockMathsQuizBlock;
+import com.maw79.mods.blocks.mathsblocks.BlockMathsSubtractionBlock;
 import com.maw79.mods.blocks.mathsblocks.mcreator_testBlock;
 import com.maw79.mods.blocks.scienceblocks.BlockLablerBlock;
 import com.maw79.mods.blocks.scienceblocks.BlockScienceWool;
@@ -106,6 +108,9 @@ public class ModBlocks {
 	public static Block mathsquizblock;
 	public static Block newtestblock;
 	public static Block mathsdivisionblock;
+	public static Block mathsadditionblock;
+	public static Block mathssubtractionblock;
+	
 	//MATH BLOCK COLOURS
 	public static Block mathblockbrown;
 	public static Block mathblockgreen;
@@ -201,6 +206,8 @@ public class ModBlocks {
 		mathsquizblock = new BlockMathsQuizBlock("maths_quiz1");
 		mathsquizblock.setCreativeTab(Maw79Mod.mathsblocks);
 		mathsdivisionblock = new BlockMathsDivisionBlock("maths_division_block");
+		mathssubtractionblock = new BlockMathsSubtractionBlock("maths_subtraction_block");
+		mathsadditionblock = new BlockMathsAdditionBlock("maths_addition_block");
 		
 		//MATHS BLOCK COLOURS
 		mathblockbrown= new BlockBasicBlock("maths_brown_block");
@@ -291,6 +298,10 @@ public class ModBlocks {
 		//MATHS BLOCKS
 		registerBlock(mathsdivisionblock);
 		mathsdivisionblock.setCreativeTab(Maw79Mod.mathsblocks);
+		registerBlock(mathsadditionblock);
+		mathsadditionblock.setCreativeTab(Maw79Mod.mathsblocks);
+		registerBlock(mathssubtractionblock);
+		mathssubtractionblock.setCreativeTab(Maw79Mod.mathsblocks);
 		registerBlock(mathblock1);
 		mathblock1.setCreativeTab(Maw79Mod.mathsblocks);
 		registerBlock(mathblock2);
@@ -431,6 +442,8 @@ public class ModBlocks {
 		registerRender(mathsquestionblock2);
 		registerRender(mathsquizblock);
 		registerRender(mathsdivisionblock);
+		registerRender(mathsadditionblock);
+		registerRender(mathssubtractionblock);
 		
 		//MATHS BLOCK Colours
 		registerRender(mathblockbrown);

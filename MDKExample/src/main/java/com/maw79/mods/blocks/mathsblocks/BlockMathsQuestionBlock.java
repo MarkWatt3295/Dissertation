@@ -1,7 +1,7 @@
 package com.maw79.mods.blocks.mathsblocks;
 
 import com.maw79.mods.client.gui.GuiMathsMultiplicationBlock1;
-import com.maw79.mods.client.gui.mathsgui.GuiMathsDivisionBlock;
+
 import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.util.Utilities;

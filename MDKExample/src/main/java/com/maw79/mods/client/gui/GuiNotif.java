@@ -10,8 +10,8 @@ public class GuiNotif extends Gui
 	public static int playerScore = 0;
 	public static int multimax = 5;
 	public static int multimin = 1;
-	public static int divimax = 5;
-	public static int divimin = 1;
+	public static int addmax = 20;
+	public static int addmin = 10;
     
     
  
@@ -31,22 +31,22 @@ public class GuiNotif extends Gui
 	 drawString(mc.fontRendererObj, "Player Level: "+ playerlevel, width / 2 + (110), (height / 2) + (-107), Integer.parseInt("FC000B", 16));
 	multimax = 5;
 	multimin = 1;
-	divimax= 10;
-	divimin = 1;
+	addmax= 100;
+	addmin = 10;
  }
  else if(playerlevel == "2"){
 	 drawString(mc.fontRendererObj, "Player Level: "+ playerlevel, width / 2 + (110), (height / 2) + (-107), Integer.parseInt("32FC00", 16));
 	 multimax = 10;
 	 multimin = 2;
-	 divimax = 20;
-	 divimin = 2;
+	 addmax = 500;
+	 addmin = 60;
  }
  else if(playerlevel == "3"){
 	 drawString(mc.fontRendererObj, "Player Level: "+ playerlevel, width / 2 + (110), (height / 2) + (-107), Integer.parseInt("0049FC", 16));
 	 multimax = 12;
 	 multimin = 5;
-	 divimax = 50;
-	 divimin = 5;
+	 addmax = 1000;
+	 addmin = 210;
  }
  else    drawCenteredString(mc.fontRendererObj, "Player Level: "+ playerlevel, width / 2 + (110), (height / 2) + (-107), Integer.parseInt("FFFFFF", 16));
     }
