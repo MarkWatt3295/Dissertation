@@ -93,8 +93,7 @@ public class Maw79Mod {
 	
 	@Instance(Reference.MOD_ID)
 	public static Maw79Mod instance;
-	//mcreator_paintGun mcreator_0 = new mcreator_paintGun();
-	//mcreator_human mcreator_1 = new mcreator_human();
+	
 	
 	
 	/**
