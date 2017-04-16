@@ -6,6 +6,7 @@ import com.maw79.mods.entity.arrows.EntityPaintArrow;
 import com.maw79.mods.entity.arrows.EntityPaintRemoverArrow;
 import com.maw79.mods.handlers.EnumHandler;
 import com.maw79.mods.items.ItemBookOne;
+import com.maw79.mods.items.ItemBooster;
 import com.maw79.mods.items.ItemBurntLoaf;
 import com.maw79.mods.items.ItemChip;
 import com.maw79.mods.items.ItemCustomFuel;
@@ -22,6 +23,7 @@ import com.maw79.mods.items.ItemRuby;
 import com.maw79.mods.items.ItemScoreDebug;
 import com.maw79.mods.items.ItemSnowballLauncher;
 import com.maw79.mods.items.ItemSteelIngot;
+
 import com.maw79.mods.items.ItemTomato;
 import com.maw79.mods.items.ItemTutorial;
 import com.maw79.mods.items.ItemXAxisTool;
@@ -94,6 +96,10 @@ public class ModItems {
 	public static Item fireelement;
 	public static Item magnet;
 	
+	public static final Item BOOSTER = new ItemBooster("booster");
+	
+	
+	//TP Tokens
 	public static final Item SCIENCE_TOKEN = new ItemScienceToken("science_token");
 	public static final Item ENGLISH_TOKEN = new ItemEnglishToken("english_token");
 	public static final Item MATHS_TOKEN = new ItemMathsToken("maths_token");
@@ -201,6 +207,8 @@ public class ModItems {
 		registerItem(HISTORY_TOKEN);
 		registerItem(HUB_TOKEN);
 		registerItem(FREEPLAY_TOKEN);
+		registerItem(BOOSTER);
+	
 		
 		//SCIENCE LABELS
 		registerItem(LABELSTRONG);
@@ -288,6 +296,8 @@ public class ModItems {
 		registerRender(ENGLISH_TOKEN);
 		registerRender(FREEPLAY_TOKEN);
 		registerRender(HUB_TOKEN);
+		registerRender(BOOSTER);
+		
 		
 		//SCIENCE LABELS
 		registerRender(LABELCHAIR);

@@ -7,6 +7,7 @@ itemGroup.maw79 scratch blocks=Maw79 Scratch Blocks
 itemGroup.maw79 science blocks=Maw79 Science Blocks
 
 //Items
+item.booster.name=Booster
 item.itemobsidianingot.name=Obsidian Ingot
 item.ruby.name=Ruby
 item.mw.name=MW Symbol
@@ -237,6 +238,7 @@ gui.block_breaker.enchanted_book.tooltip=Enchanted book goes here
 gui.guisciencete.button3.tooltip=Maw79 KS2 Mod Configuration
 
 //TOOL TIPS
+maw79.booster.tooltip=Boost the player ???
 maw79.heart.tooltip=Heals the player
 maw79.book.tooltip=A MOD Guide
 maw79.historybook.tooltip=Use this book to do History Activitys

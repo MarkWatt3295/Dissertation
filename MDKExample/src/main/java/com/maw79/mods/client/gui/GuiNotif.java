@@ -9,7 +9,7 @@ public class GuiNotif extends Gui
 	public static String playerlevel = "Select A Level";
 	public static int playerScore = 0;
 	public static int multimax = 5;
-	public static int multimin = 0;
+	public static int multimin = 1;
 	public static int divimax = 5;
 	public static int divimin = 1;
     
@@ -30,7 +30,7 @@ public class GuiNotif extends Gui
  if(playerlevel == "1"){
 	 drawString(mc.fontRendererObj, "Player Level: "+ playerlevel, width / 2 + (110), (height / 2) + (-107), Integer.parseInt("FC000B", 16));
 	multimax = 5;
-	multimin = 0;
+	multimin = 1;
 	divimax= 10;
 	divimin = 1;
  }

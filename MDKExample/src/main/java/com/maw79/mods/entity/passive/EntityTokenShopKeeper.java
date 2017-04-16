@@ -19,12 +19,14 @@ import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.items.CapabilityItemHandler;
@@ -53,7 +55,7 @@ public  class EntityTokenShopKeeper extends EntityCreature {
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(10D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(50D);
 		if (this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE) != null)
 			this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3D);
 	}
@@ -66,16 +68,24 @@ public  class EntityTokenShopKeeper extends EntityCreature {
 	protected Item getDropItem() {
 		return null;
 	}
+	
+	@Override
+	protected SoundEvent getHurtSound()
+    {
+        return ModSoundHandler.MAWSOUND_OUCH;
+    }
+	
+	
 
 	@Override
 	protected net.minecraft.util.SoundEvent getAmbientSound() {
 		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.chicken.say"));
 	}
 
-	@Override
-	protected net.minecraft.util.SoundEvent getHurtSound() {
-		return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.player.hurt"));
-	}
+	//@Override
+	//protected net.minecraft.util.SoundEvent getHurtSound() {
+	///	return (net.minecraft.util.SoundEvent) net.minecraft.util.SoundEvent.REGISTRY.getObject(new ResourceLocation("entity.player.hurt"));
+	//}
 
 	@Override
 	protected net.minecraft.util.SoundEvent getDeathSound() {
