@@ -1,0 +1,107 @@
+---- Minecraft Crash Report ----
+// I bet Cylons wouldn't have this problem.
+
+Time: 4/17/17 5:12 PM
+Description: Ticking screen
+
+java.lang.NullPointerException: Ticking screen
+	at com.maw79.mods.client.gui.GuiFirstBook.updateScreen(GuiFirstBook.java:81)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1812)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1119)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:407)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97)
+	at GradleStart.main(GradleStart.java:26)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at com.maw79.mods.client.gui.GuiFirstBook.updateScreen(GuiFirstBook.java:81)
+
+-- Affected screen --
+Details:
+	Screen name: com.maw79.mods.client.gui.GuiFirstBook
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['Player782'/88, l='MpServer', x=4.54, y=4.00, z=488.49]]
+	Chunk stats: MultiplayerChunkCache: 755, 755
+	Level seed: 0
+	Level generator: ID 01 - flat, ver 0. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (16,4,497), Chunk: (at 0,0,1 in 1,31; contains blocks 16,0,496 to 31,255,511), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 44178 game time, 10227 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 41 total; [EntityHorse['Horse'/64, l='MpServer', x=68.60, y=4.00, z=516.74], EntityHorse['Horse'/65, l='MpServer', x=78.47, y=4.00, z=515.94], EntitySheep['Sheep'/66, l='MpServer', x=67.09, y=4.00, z=530.14], EntitySlime['Slime'/101451, l='MpServer', x=64.44, y=5.17, z=424.07], EntitySlime['Slime'/253263, l='MpServer', x=-3.75, y=4.00, z=563.54], EntitySlime['Slime'/19, l='MpServer', x=-33.85, y=4.00, z=528.55], EntityPlayerSP['Player782'/88, l='MpServer', x=4.54, y=4.00, z=488.49], EntityChicken['Chicken'/23, l='MpServer', x=-6.29, y=4.00, z=446.90], EntitySheep['Sheep'/24, l='MpServer', x=-5.64, y=4.00, z=433.21], EntityItem['item.item.egg'/25, l='MpServer', x=-5.83, y=4.00, z=447.14], EntityCow['Cow'/26, l='MpServer', x=-12.83, y=4.00, z=454.65], EntitySlime['Slime'/104795, l='MpServer', x=49.96, y=4.00, z=456.31], EntitySheep['Sheep'/27, l='MpServer', x=-12.18, y=4.00, z=456.16], EntitySlime['Slime'/75354, l='MpServer', x=-7.32, y=4.52, z=546.38], EntitySlime['Slime'/31, l='MpServer', x=-1.65, y=4.00, z=554.02], EntitySlime['Slime'/32, l='MpServer', x=-25.49, y=4.00, z=562.90], EntitySheep['Sheep'/35, l='MpServer', x=0.31, y=4.00, z=445.18], EntityChicken['Chicken'/36, l='MpServer', x=4.40, y=4.00, z=445.87], EntityChicken['Chicken'/37, l='MpServer', x=3.84, y=4.00, z=450.71], EntityItemFrame['entity.ItemFrame.name'/38, l='MpServer', x=1.50, y=5.50, z=492.97], EntityTokenShopKeeper['Shopkeeper'/39, l='MpServer', x=12.46, y=4.00, z=488.81], EntitySlime['Slime'/40, l='MpServer', x=15.56, y=4.12, z=510.19], EntitySlime['Slime'/42, l='MpServer', x=44.23, y=4.00, z=462.14], EntitySlime['Slime'/237993, l='MpServer', x=-13.81, y=4.00, z=565.72], EntityDonkey['Donkey'/44, l='MpServer', x=36.04, y=4.00, z=523.80], EntitySlime['Slime'/164079, l='MpServer', x=-2.24, y=4.00, z=564.47], EntitySlime['Slime'/131821, l='MpServer', x=5.18, y=4.00, z=539.71], EntitySlime['Slime'/281131, l='MpServer', x=-3.05, y=5.18, z=566.70], EntitySlime['Slime'/49, l='MpServer', x=73.33, y=4.00, z=443.97], EntitySlime['Slime'/187696, l='MpServer', x=66.42, y=4.00, z=430.03], EntityPig['Pig'/51, l='MpServer', x=61.88, y=4.00, z=495.85], EntityDonkey['Donkey'/52, l='MpServer', x=56.15, y=4.00, z=497.04], EntitySheep['Sheep'/53, l='MpServer', x=53.22, y=4.00, z=511.08], EntitySheep['Sheep'/54, l='MpServer', x=61.24, y=4.00, z=517.74], EntitySlime['Slime'/130167, l='MpServer', x=38.93, y=4.00, z=507.61], EntitySlime['Slime'/178426, l='MpServer', x=-15.55, y=4.00, z=538.87], EntitySheep['Sheep'/57, l='MpServer', x=59.08, y=4.00, z=533.92], EntitySlime['Slime'/232313, l='MpServer', x=-21.43, y=4.00, z=533.39], EntitySheep['Sheep'/62, l='MpServer', x=74.19, y=4.00, z=480.73], EntityCow['Cow'/63, l='MpServer', x=78.19, y=4.00, z=506.85], EntitySlime['Slime'/111998, l='MpServer', x=71.46, y=4.14, z=523.22]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:456)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2774)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:428)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97)
+	at GradleStart.main(GradleStart.java:26)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.11.2
+	Operating System: Mac OS X (x86_64) version 10.12.5
+	Java Version: 1.8.0_121, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 3233718384 bytes (3083 MB) / 4191682560 bytes (3997 MB) up to 4191682560 bytes (3997 MB)
+	JVM Flags: 2 total; -Xmx4G -Xms4G
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP 9.38 Powered by Forge 13.20.0.2228 5 mods loaded, 5 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAA	minecraft{1.11.2} [Minecraft] (minecraft.jar) 
+	UCHIJAAAA	mcp{9.19} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAA	FML{8.0.99.99} [Forge Mod Loader] (forgeSrc-1.11.2-13.20.0.2228.jar) 
+	UCHIJAAAA	forge{13.20.0.2228} [Minecraft Forge] (forgeSrc-1.11.2-13.20.0.2228.jar) 
+	UCHIJAAAA	maw79{0.40 mathsbuild - Alpha} [Teaching Keystage 2 Via Minecraft] (bin) 
+	Loaded coremods (and transformers): 
+	Launched Version: 1.11.2
+	LWJGL: 2.9.2
+	OpenGL: Intel Iris OpenGL Engine GL version 2.1 INTEL-10.25.2, Intel Inc.
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because ARB_framebuffer_object is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	CPU: 4x Intel(R) Core(TM) i5-4258U CPU @ 2.40GHz

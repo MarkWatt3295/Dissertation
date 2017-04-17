@@ -4,7 +4,7 @@ itemGroup.maw79 items=Maw79 Items
 itemGroup.maw79 mathsblocks=Maw79 Maths Blocks
 itemGroup.maw79 debug=Maw79 Debug Tools
 itemGroup.maw79 scratch blocks=Maw79 Scratch Blocks
-itemGroup.maw79 science blocks=Maw79 Science Blocks
+itemGroup.maw79 unused=Unused
 
 //Items
 item.booster.name=Booster
@@ -31,6 +31,7 @@ item.maths_token.name=Maths Teleporter
 item.history_token.name=History Teleporter
 item.hub_token.name=Player Hub Teleporter
 item.freeplay_token.name=Free Play Teleporter
+item.block_detection_arrow.name=Detection Arrow
 
 //HISTORY ITEMS
 item.artifact1.name=Artifact 1
@@ -115,7 +116,7 @@ tile.store_block.name=Store Block
 //MATHS BLOCKS
 tile.math_block_1.name=Maths Block 1
 tile.math_block_2.name=Maths Block 2
-tile.maths_question_block.name=Maths Question Block
+tile.maths_question_block.name=Maths Multiplication Block
 tile.maths_question_block2.name=Maths Question Block 2
 tile.maths_quiz1.name=Maths Quiz Block 1
 tile.newtestblock.name=New Test Block

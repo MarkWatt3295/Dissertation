@@ -60,7 +60,7 @@ public class GuiHistoryBook extends GuiScreen
     @Override
 	public void initGui() 
     {
-        buttonList.clear();
+        //buttonList.clear();
        // Keyboard.enableRepeatEvents(true);
         buttonDone = new GuiButton(0, width / 2 -40, bookImageHeight - 58, 80, 20, "Done");
 		button1 = new GuiButton(1, width / 2 - 50 , bookImageHeight - 70, 90, 20, "View Screenshot");

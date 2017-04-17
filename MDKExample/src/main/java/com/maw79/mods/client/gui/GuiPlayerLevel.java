@@ -13,8 +13,6 @@ import net.minecraft.util.ResourceLocation;
 
 public class GuiPlayerLevel extends GuiScreen {
 	
-	   
-	    
 	
 	final ResourceLocation texture = new ResourceLocation(Reference.MOD_ID, "textures/gui/playerlevel.png");
     int guiWidth = 175;

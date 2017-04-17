@@ -10,6 +10,7 @@ import com.maw79.mods.creativetabs.Maw79DebugTab;
 import com.maw79.mods.creativetabs.Maw79ItemsTab;
 import com.maw79.mods.creativetabs.Maw79MathsBlocksTab;
 import com.maw79.mods.creativetabs.Maw79ScratchBlocksTab;
+import com.maw79.mods.creativetabs.Maw79UnusedTab;
 import com.maw79.mods.events.SoulStealerEvents;
 import com.maw79.mods.handlers.AchievementHandler;
 import com.maw79.mods.handlers.DropHandler;
@@ -71,10 +72,7 @@ import net.minecraftforge.fml.relauncher.Side;
 
 public class Maw79Mod {
 	
-	public static SimpleNetworkWrapper networkWrapper, networkWrapper2, networkWrapper3, networkWrapper4, networkWrapper5,
-	networkWrapper6, networkWrapper7, networkWrapper8, networkWrapper9;
-	
-	public static SimpleNetworkWrapper networkWrapperGuiInventory1;
+	public static SimpleNetworkWrapper NETWORK;
 
 	
 	public static final CreativeTabs blocks = new Maw79BlocksTab();
@@ -82,6 +80,7 @@ public class Maw79Mod {
 	public static final CreativeTabs items = new Maw79ItemsTab();
 	public static final CreativeTabs mathsblocks = new Maw79MathsBlocksTab();
 	public static final CreativeTabs mathsscratchblocks = new Maw79ScratchBlocksTab();
+	public static final CreativeTabs unused = new Maw79UnusedTab();
 	
 	public static Object instance2;
 	public static int GUIID = 4;
@@ -102,7 +101,7 @@ public class Maw79Mod {
 	 * Server side handles tile entities and world generation
 	 */
 	
-	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
+	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.COMMON_PROXY_CLASS)
 	public static CommonProxy proxy;
 	
 	//EVENT HANDLERS
@@ -142,29 +141,18 @@ public class Maw79Mod {
 		//ModEntities.registerEntities();
 		
 		
-		 networkWrapper = NetworkRegistry.INSTANCE.newSimpleChannel("maw79");
-		 networkWrapper2 = NetworkRegistry.INSTANCE.newSimpleChannel("mathsMessage");
-		 networkWrapper3 = NetworkRegistry.INSTANCE.newSimpleChannel("xmanagerMessage");
-		 networkWrapper4 = NetworkRegistry.INSTANCE.newSimpleChannel("nxmanagerMessage");
-		 networkWrapper5 = NetworkRegistry.INSTANCE.newSimpleChannel("yanagerMessage");
-		 networkWrapper6 = NetworkRegistry.INSTANCE.newSimpleChannel("nymanagerMessage");
-		 networkWrapper7 = NetworkRegistry.INSTANCE.newSimpleChannel("zmanagerMessage");
-		 networkWrapper8 = NetworkRegistry.INSTANCE.newSimpleChannel("nzmanagerMessage");
-		 networkWrapper9 = NetworkRegistry.INSTANCE.newSimpleChannel("storemessage");
+		 NETWORK = NetworkRegistry.INSTANCE.newSimpleChannel("maw79");
 		 
-		 networkWrapper.registerMessage(PacketHandler.class, TeleportMessage.class, 0, Side.SERVER); 
-		 networkWrapper2.registerMessage(mathsPacketHandler.class, MathsMessage.class, 0, Side.SERVER); 
-		 networkWrapper3.registerMessage(XmanagerPacketHandler.class, XmanagerMessage.class, 0, Side.SERVER); 
-		 networkWrapper4.registerMessage(NXmanagerPacketHandler.class, NXmanagerMessage.class, 0, Side.SERVER); 
-		 networkWrapper5.registerMessage(YmanagerPacketHandler.class, YmanagerMessage.class, 0, Side.SERVER); 
-		 networkWrapper6.registerMessage(NYmanagerPacketHandler.class, NYmanagerMessage.class, 0, Side.SERVER);
-		 networkWrapper7.registerMessage(ZmanagerPacketHandler.class, ZmanagerMessage.class, 0, Side.SERVER); 
-		 networkWrapper8.registerMessage(NZmanagerPacketHandler.class, NZmanagerMessage.class, 0, Side.SERVER);
-		 networkWrapper9.registerMessage(StoreItem1PacketHandler.class, StoreItem1Message.class, 0, Side.SERVER);
-		 
-		 networkWrapperGuiInventory1 = NetworkRegistry.INSTANCE.newSimpleChannel("guiinventorymanagermessage");
-		 
-		 networkWrapperGuiInventory1.registerMessage(GuiInventoryPacketHandler.class, GuiInventoryMessage.class, 0, Side.SERVER);
+		 NETWORK.registerMessage(PacketHandler.class, TeleportMessage.class, 0, Side.SERVER); 
+		 NETWORK.registerMessage(mathsPacketHandler.class, MathsMessage.class, 1, Side.SERVER); 
+		 NETWORK.registerMessage(XmanagerPacketHandler.class, XmanagerMessage.class, 2, Side.SERVER); 
+		 NETWORK.registerMessage(NXmanagerPacketHandler.class, NXmanagerMessage.class, 3, Side.SERVER); 
+		 NETWORK.registerMessage(YmanagerPacketHandler.class, YmanagerMessage.class, 4, Side.SERVER); 
+		 NETWORK.registerMessage(NYmanagerPacketHandler.class, NYmanagerMessage.class, 5, Side.SERVER);
+		 NETWORK.registerMessage(ZmanagerPacketHandler.class, ZmanagerMessage.class, 6, Side.SERVER); 
+		 NETWORK.registerMessage(NZmanagerPacketHandler.class, NZmanagerMessage.class, 7, Side.SERVER);
+		 NETWORK.registerMessage(StoreItem1PacketHandler.class, StoreItem1Message.class, 8, Side.SERVER);
+		 NETWORK.registerMessage(GuiInventoryPacketHandler.class, GuiInventoryMessage.class, 9, Side.SERVER);
 	
 		 
 	}

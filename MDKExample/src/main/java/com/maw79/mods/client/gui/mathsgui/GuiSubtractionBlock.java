@@ -65,16 +65,15 @@ public class GuiSubtractionBlock extends GuiScreen {
     int randanswer  = randomNum1 - randomNum2;
     String question = randomNum1 + " - " + randomNum2;
     String number ="";
-    int answer;
+    int answer=1000;
     GuiTextField textBox;
     GuiButton button1, button2, button3;
     final int BUTTON1 = 0, BUTTON2 = 2, BUTTON3 = 3;
     
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
-
     	
-        //drawDefaultBackground();
+        drawDefaultBackground();
         Minecraft.getMinecraft().renderEngine.bindTexture(texture);
         int centerX = (width / 2) - guiWidth / 2;
         int centerY = (height / 2) - guiHeight / 2;
@@ -144,10 +143,12 @@ public class GuiSubtractionBlock extends GuiScreen {
     
 
     public void updateButtons() {
+    
     	Utils.getLogger().info("Random Answer = "+ randanswer);
     	Utils.getLogger().info("Player Answer = "+ answer);
     	Utils.getLogger().info("Addmax is: "+ addmax);
     	Utils.getLogger().info("Addmin is: "+ addmin);
+    	
     	
         if (answer == randanswer)  {
             onEvent();
@@ -184,7 +185,7 @@ public class GuiSubtractionBlock extends GuiScreen {
             	Utils.getLogger().info("Correct Answer! Heres your reward");
             	GuiNotif.playerScore += 10;
             	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-            	Maw79Mod.networkWrapper2.sendToServer(new MathsMessage(mc.player));
+            	Maw79Mod.NETWORK.sendToServer(new MathsMessage(mc.player));
             	mc.displayGuiScreen((GuiScreen)null);
             	
             	break;

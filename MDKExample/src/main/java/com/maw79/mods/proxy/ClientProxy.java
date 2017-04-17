@@ -38,14 +38,6 @@ public class ClientProxy extends CommonProxy {
 
 	}
 
-	@Override
-	public void init() {
-		NetworkRegistry.INSTANCE.registerGuiHandler(Maw79Mod.instance, new GuiHandler());
-		EntitiesLivingHandler.registerEntity();
-
-
-		
-	}
 	
 	
 	 @Override

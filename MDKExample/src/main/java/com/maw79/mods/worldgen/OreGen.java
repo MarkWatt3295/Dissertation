@@ -5,7 +5,7 @@ import java.util.Random;
 import com.maw79.mods.blocks.BlockSteelOre;
 import com.maw79.mods.handlers.EnumHandler.OreType;
 import com.maw79.mods.init.ModBlocks;
-import com.maw79.mods.main.Maw79Mod;
+
 
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;

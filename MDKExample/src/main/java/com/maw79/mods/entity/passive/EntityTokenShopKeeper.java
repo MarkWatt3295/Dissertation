@@ -133,7 +133,7 @@ public  class EntityTokenShopKeeper extends EntityCreature {
 
 		if (true) {
 			System.out.println("Printing from Shopkeeper mob");
-			 if (!this.world.isRemote)
+			 if (this.world.isRemote)
 		        {
 		            int basicID = this.getEntityId();
 		           // entity.openGui(Maw79Mod.instance, GuiHandler.STORE_GUI, this.world, basicID, 0, 0);

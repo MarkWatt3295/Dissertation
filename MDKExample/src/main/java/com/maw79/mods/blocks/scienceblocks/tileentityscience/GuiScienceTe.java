@@ -189,7 +189,7 @@ public class GuiScienceTe extends GuiContainer {
 		
 		if (te.cangiveblocks == true){
 			Utils.getLogger().info("Able to give blocks");
-			Maw79Mod.networkWrapper2.sendToServer(new MathsMessage(mc.player));
+			Maw79Mod.NETWORK.sendToServer(new MathsMessage(mc.player));
 			GuiNotif.playerScore +=100;
 			te.cangiveblocks = false;
 		}

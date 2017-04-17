@@ -40,7 +40,7 @@ public class BlockMathsQuestionBlock extends Block {
 			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 			
 		worldIn.playSound(player, pos, ModSoundHandler.MAWSOUND_COIN, SoundCategory.BLOCKS, 1.0F, 1.0F);
-		if(!player.world.isRemote){
+		if(player.world.isRemote){
 			
 			Minecraft.getMinecraft().displayGuiScreen(new GuiMathsMultiplicationBlock1());
 			

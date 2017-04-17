@@ -46,7 +46,7 @@ public class GuiAdditionBlock extends GuiScreen {
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
 
-        //drawDefaultBackground();
+        drawDefaultBackground();
         Utils.getLogger().info("Title1 is: " + title);
     	Utils.getLogger().info("FRO1 is: " + fontRendererObj); //I think FRO becoming null is my issue
     	
@@ -168,7 +168,7 @@ public class GuiAdditionBlock extends GuiScreen {
             	Utils.getLogger().info("Correct Answer! Heres your reward");
             	GuiNotif.playerScore += 10;
             	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-            	Maw79Mod.networkWrapper2.sendToServer(new MathsMessage(mc.player));
+            	Maw79Mod.NETWORK.sendToServer(new MathsMessage(mc.player));
             	//mc.displayGuiScreen((GuiScreen)null);
             	mc.player.closeScreen();
             	

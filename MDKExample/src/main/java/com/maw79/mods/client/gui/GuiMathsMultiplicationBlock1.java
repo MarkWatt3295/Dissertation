@@ -76,7 +76,7 @@ public class GuiMathsMultiplicationBlock1 extends GuiScreen {
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
 
     	
-        //drawDefaultBackground();
+        drawDefaultBackground();
         Minecraft.getMinecraft().renderEngine.bindTexture(texture);
         int centerX = (width / 2) - guiWidth / 2;
         int centerY = (height / 2) - guiHeight / 2;
@@ -181,7 +181,7 @@ public class GuiMathsMultiplicationBlock1 extends GuiScreen {
             	Utils.getLogger().info("Correct Answer! Heres your reward");
             	GuiNotif.playerScore += 10;
             	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-            	Maw79Mod.networkWrapper2.sendToServer(new MathsMessage(mc.player));
+            	Maw79Mod.NETWORK.sendToServer(new MathsMessage(mc.player));
             	
             	mc.displayGuiScreen((GuiScreen)null);
             	

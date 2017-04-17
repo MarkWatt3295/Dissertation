@@ -30,9 +30,9 @@ public class ItemBookOne extends Item{
 	 */
 	@Override
 	public  ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
-		
+		if(player.world.isRemote){
 		Minecraft.getMinecraft().displayGuiScreen(new GuiFirstBook());
-		
+		}
 		return super.onItemRightClick(world, player, hand);
 	}
 	

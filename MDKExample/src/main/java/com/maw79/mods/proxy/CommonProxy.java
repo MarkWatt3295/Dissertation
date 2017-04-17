@@ -4,8 +4,11 @@ import com.maw79.mods.blocks.scienceblocks.insulatorblocks.TileEntityInsulator;
 import com.maw79.mods.blocks.scienceblocks.insulatorblockscalculator.TileEntityInsulatorCalculator;
 import com.maw79.mods.blocks.scienceblocks.tileentityscience.TileEntityScience;
 import com.maw79.mods.blocks.tileentityattempt.TileEntityCustom2;
+import com.maw79.mods.client.gui.GuiHandler;
+import com.maw79.mods.entity.passive.EntitiesLivingHandler;
 import com.maw79.mods.blocks.ItemProfiler.TileEntityProfiler;
 import com.maw79.mods.blocks.historyblocks.artifactupdater.TileEntityArtifactResearcher;
+import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.modattempts.blockvariants.BlockVariants;
 import com.maw79.mods.modattempts.blockvariants.StartupCommon;
@@ -14,6 +17,7 @@ import com.maw79.mods.tileentity.storetileentity.TileEntityStore;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class CommonProxy {
@@ -22,8 +26,11 @@ public class CommonProxy {
 	 * Called on the initialization phase of the game loading
 	 */
 	public void init() {
+		NetworkRegistry.INSTANCE.registerGuiHandler(Maw79Mod.instance, new GuiHandler());
+		EntitiesLivingHandler.registerEntity();
 		//MOVED THESE TO MAIN CLASS - FIX FOR MC 1.11.2
 	}
+	
 	
 	/**
 	 * Registers our tile entities

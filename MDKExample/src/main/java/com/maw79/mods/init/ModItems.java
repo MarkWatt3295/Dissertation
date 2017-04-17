@@ -204,6 +204,7 @@ public class ModItems {
 		
 		//Others
 		registerItem(SNOW);
+		SNOW.setCreativeTab(Maw79Mod.unused);
 		registerItem(BOW);
 		registerItem(ARROW);
 		registerItem(BLOCK_DETECTION_ARROW);
@@ -232,9 +233,9 @@ public class ModItems {
 		
 		registerItem(SCOREDEBUG);
 		registerItem(CALCULATOR);
+		CALCULATOR.setCreativeTab(Maw79Mod.unused);
 		
 		//Items
-		//GameRegistry.register(obsidianingot);
 		registerItem(obsidianingot);
 		registerItem(ruby);
 		registerItem(mw);
@@ -242,15 +243,14 @@ public class ModItems {
 		registerItem(bolt);
 		registerItem(steelingot);
 		registerItem(chip);
+		chip.setCreativeTab(Maw79Mod.unused);
 		registerItem(customfuel);
 		registerItem(playerlevel);
 		//Food
 		registerItem(tomato);
-		//registerItem(mouldyapple);
 		registerItem(burntloaf);
-		//Tools
-		//registerItem(obsidian_sword);
 		registerItem(tutorialItem);
+		tutorialItem.setCreativeTab(Maw79Mod.unused);
 		
 		//MATHS ITEMS
 		registerItem(firstbook);
@@ -260,6 +260,7 @@ public class ModItems {
 		registerItem(stevepicturewall);
 		registerItem(applepicturewall);
 		registerItem(xyzdevice);
+		xyzdevice.setCreativeTab(Maw79Mod.unused);
 		registerItem(applewallaxis);
 		registerItem(mathsbook);
 		
@@ -272,6 +273,7 @@ public class ModItems {
 		
 		//Science Items
 		registerItem(fireelement);
+		fireelement.setCreativeTab(Maw79Mod.unused);
 		registerItem(magnet);
 	}
 	

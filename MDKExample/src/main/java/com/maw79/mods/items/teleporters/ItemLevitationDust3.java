@@ -45,6 +45,8 @@ public class ItemLevitationDust3 extends Item {
             stack.damageItem(1, playerIn);
            playerIn.getCooldownTracker().setCooldown(this, 300);
            playerIn.addPotionEffect(new PotionEffect(MobEffects.LEVITATION, 310, 0));
+           playerIn.addVelocity(4.0D, 1.5D, 4.0D);
+           playerIn.velocityChanged = true;
            
            
         }

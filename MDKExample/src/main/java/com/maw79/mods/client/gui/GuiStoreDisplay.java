@@ -209,7 +209,7 @@ public class GuiStoreDisplay extends GuiScreen {
             	if(GuiNotif.playerScore >= 100){
             		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
             		buttonvalue = 1;
-            		Maw79Mod.networkWrapper9.sendToServer(new StoreItem1Message(mc.player));
+            		Maw79Mod.NETWORK.sendToServer(new StoreItem1Message(mc.player));
             		GuiNotif.playerScore -= 100;
             	}
             	else {
@@ -224,7 +224,7 @@ public class GuiStoreDisplay extends GuiScreen {
             	if(GuiNotif.playerScore >= 100){
             		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
             		buttonvalue = 2;
-            		Maw79Mod.networkWrapper9.sendToServer(new StoreItem1Message(mc.player));
+            		Maw79Mod.NETWORK.sendToServer(new StoreItem1Message(mc.player));
             		GuiNotif.playerScore -= 100;
             	}
             	else {
@@ -239,7 +239,7 @@ public class GuiStoreDisplay extends GuiScreen {
             	if(GuiNotif.playerScore >= 100){
             		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
             		buttonvalue = 3;
-            		Maw79Mod.networkWrapper9.sendToServer(new StoreItem1Message(mc.player));
+            		Maw79Mod.NETWORK.sendToServer(new StoreItem1Message(mc.player));
             		GuiNotif.playerScore -= 100;
             	}
             	else {
@@ -254,7 +254,7 @@ public class GuiStoreDisplay extends GuiScreen {
             	if(GuiNotif.playerScore >= 100){
             		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
             		buttonvalue = 4;
-            		Maw79Mod.networkWrapper9.sendToServer(new StoreItem1Message(mc.player));
+            		Maw79Mod.NETWORK.sendToServer(new StoreItem1Message(mc.player));
             		GuiNotif.playerScore -= 100;
             	}
             	else {
@@ -269,7 +269,7 @@ public class GuiStoreDisplay extends GuiScreen {
             	if(GuiNotif.playerScore >= 100){
             		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
             		buttonvalue = 5;
-            		Maw79Mod.networkWrapper9.sendToServer(new StoreItem1Message(mc.player));
+            		Maw79Mod.NETWORK.sendToServer(new StoreItem1Message(mc.player));
             		GuiNotif.playerScore -= 100;
             	}
             	else {

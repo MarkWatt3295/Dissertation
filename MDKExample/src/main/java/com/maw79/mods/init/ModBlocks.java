@@ -265,6 +265,7 @@ public class ModBlocks {
 	
 	public static void register(){
 		registerBlock(storeblock);
+		storeblock.setCreativeTab(Maw79Mod.unused);
 		registerBlock(bridge);
 		registerBlock(rubyblock);
 		registerBlock(obsidianingotblock);
@@ -272,8 +273,11 @@ public class ModBlocks {
 		registerBlock(artifactOre, new ItemBlockMeta(artifactOre));
 		registerBlock(steelBlock);
 		registerBlock(breaker, new ItemBlockBreaker(breaker));
+		breaker.setCreativeTab(Maw79Mod.unused);
 		registerBlock(gamemodeDetector);
+		gamemodeDetector.setCreativeTab(Maw79Mod.unused);
 		registerBlock(machineFrame, new ItemBlockMeta(machineFrame));
+		machineFrame.setCreativeTab(Maw79Mod.unused);
 		registerBlock(steelSlabHalf, new ItemSlab(steelSlabHalf, steelSlabHalf, steelSlabDouble));
 		GameRegistry.register(steelSlabDouble); //Doesn't need an item
 		registerBlock(steelStairs);
@@ -289,15 +293,15 @@ public class ModBlocks {
 		registerBlock(gravityNeg);
 		registerBlock(jar);
 		registerBlock(customModel);
+		customModel.setCreativeTab(Maw79Mod.unused);
 		registerBlock(creative);
 		registerBlock(survival);
 		registerBlock(profiler);
-		
 		registerBlock(newtestblock);
 		
 		//MATHS BLOCKS
 		registerBlock(mathsdivisionblock);
-		mathsdivisionblock.setCreativeTab(Maw79Mod.mathsblocks);
+		mathsdivisionblock.setCreativeTab(Maw79Mod.unused);
 		registerBlock(mathsadditionblock);
 		mathsadditionblock.setCreativeTab(Maw79Mod.mathsblocks);
 		registerBlock(mathssubtractionblock);
@@ -309,9 +313,9 @@ public class ModBlocks {
 		registerBlock(mathsquestionblock);
 		mathsquestionblock.setCreativeTab(Maw79Mod.mathsblocks);
 		registerBlock(mathsquestionblock2);
-		mathsquestionblock2.setCreativeTab(Maw79Mod.mathsblocks);
+		mathsquestionblock2.setCreativeTab(Maw79Mod.unused);
 		registerBlock(mathsquizblock);
-		mathsquestionblock2.setCreativeTab(Maw79Mod.mathsblocks);
+		mathsquizblock.setCreativeTab(Maw79Mod.unused);
 		
 		//MATHS BLOCK Colours
 		registerBlock(mathblockbrown);
@@ -373,6 +377,7 @@ public class ModBlocks {
 		registerBlock(materialproperties);
 		registerBlock(woodproperties);
 		registerBlock(sciencewool, new ItemScienceWool(sciencewool));
+		sciencewool.setCreativeTab(Maw79Mod.unused);
 		registerBlock(labler);
 		registerBlock(insulatormain);
 		registerBlock(insulatorcalculator);

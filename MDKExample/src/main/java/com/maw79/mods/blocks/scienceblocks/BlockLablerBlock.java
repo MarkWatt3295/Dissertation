@@ -38,7 +38,7 @@ public class BlockLablerBlock extends Block {
 			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 	
 		worldIn.playSound(player, pos, ModSoundHandler.MAWSOUND_OPEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
-		 if(!player.world.isRemote)Maw79Mod.networkWrapper2.sendToServer(new MathsMessage(player));
+		 if(!player.world.isRemote)Maw79Mod.NETWORK.sendToServer(new MathsMessage(player));
   
 		
 		return true; 

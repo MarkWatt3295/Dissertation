@@ -30,8 +30,9 @@ public class ItemCalculator extends Item {
 	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
 		 if(!player.world.isRemote) player.sendMessage(new TextComponentString("Calculator Activated"));
 		
+		 if(player.world.isRemote){
 		 Minecraft.getMinecraft().displayGuiScreen(new GuiCalculator());
-	
+		 }
 		 
 		 return super.onItemRightClick(world, player, hand);
 		

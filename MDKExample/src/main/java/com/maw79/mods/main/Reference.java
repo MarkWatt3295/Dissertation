@@ -8,6 +8,7 @@ public class Reference {
  
  public static final String CLIENT_PROXY_CLASS = "com.maw79.mods.proxy.ClientProxy";
  public static final String SERVER_PROXY_CLASS = "com.maw79.mods.proxy.ServerProxy";
+ public static final String COMMON_PROXY_CLASS = "com.maw79.mods.proxy.CommonProxy";
  
  /**
 	 * Where the gui factory if found

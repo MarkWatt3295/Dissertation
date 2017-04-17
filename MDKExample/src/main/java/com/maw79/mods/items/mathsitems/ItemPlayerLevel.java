@@ -27,10 +27,10 @@ public class ItemPlayerLevel extends Item {
 
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
-		 if(!player.world.isRemote) player.sendMessage(new TextComponentString("Player Level Activated"));
-		
+		// if(!player.world.isRemote) player.sendMessage(new TextComponentString("Player Level Activated"));
+		if(player.world.isRemote){
 		 Minecraft.getMinecraft().displayGuiScreen(new GuiPlayerLevel());
-	
+		}
 		 
 		 return super.onItemRightClick(world, player, hand);
 		

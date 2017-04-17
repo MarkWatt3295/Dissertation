@@ -28,8 +28,8 @@ public class BlockMathsQuizBlock extends BlockMathsQuestionBlock{
 			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 			
 		worldIn.playSound(player, pos, ModSoundHandler.MAWSOUND_COIN, SoundCategory.BLOCKS, 5.0F, 5.0F);
-		if(!player.world.isRemote){
-			player.sendMessage(new TextComponentString("Maths Question"));
+		if(player.world.isRemote){
+			//player.sendMessage(new TextComponentString("Maths Question"));
 			Minecraft.getMinecraft().displayGuiScreen(new GuiMathsMultiplicationBlock1());
 			
 		}
