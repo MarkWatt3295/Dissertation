@@ -1,8 +1,8 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0": "maw79:items/booster"
-     },
+        "layer0": "maw79:items/levitationdust"
+      },
       
     "display": {
         "thirdperson": {

@@ -46,44 +46,65 @@ public class GuiAdditionBlock extends GuiScreen {
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
 
-    	Utils.getLogger().info("Title1 is: " + title);
-    	Utils.getLogger().info("FRO1 is: " + fontRendererObj);
-    	Utils.getLogger().info("FRO-TS1 is: " + fontRendererObj.toString());
-    	
         //drawDefaultBackground();
+        Utils.getLogger().info("Title1 is: " + title);
+    	Utils.getLogger().info("FRO1 is: " + fontRendererObj); //I think FRO becoming null is my issue
+    	
         Minecraft.getMinecraft().renderEngine.bindTexture(texture);
         int centerX = (width / 2) - guiWidth / 2;
         int centerY = (height / 2) - guiHeight / 2;
-        
-        List<String> text = new ArrayList<String>();
-        text.add("§9"+"What is : "+ question +"§f"+ "\nInput your anwer in the text box then press the submit button. "
-        		+ "If your Answer is correct you shall recieve a reward"); 
-     
-        drawTooltip(text, mouseX, mouseY, centerX +155, centerY +5, 15, 15);
+        drawtext();
        
-        GlStateManager.pushMatrix();
-        {
-            GlStateManager.enableAlpha();
-            GlStateManager.enableBlend();
-            GlStateManager.color(1, 1, 1, 1);
-            Minecraft.getMinecraft().renderEngine.bindTexture(texture);
-            drawTexturedModalRect(centerX, centerY, 0, 0, guiWidth, guiHeight);
-        }  
-      
+            
+        textBox.drawTextBox();
         
-            textBox.drawTextBox();
       
         super.drawScreen(mouseX, mouseY, partialTicks);
        
         
-       
-      
     	Utils.getLogger().info("Title4 is: " + title);
     	Utils.getLogger().info("FRO is4: " + fontRendererObj);
-    	Utils.getLogger().info("FRO-TS4 is: " + fontRendererObj.toString());
+    	
+    	 List<String> text = new ArrayList<String>();
+         text.add("§9"+"What is : "+ question +"§f"+ "\nInput your anwer in the text box then press the submit button. "
+         		+ "If your Answer is correct you shall recieve a reward"); 
+      
+         drawTooltip(text, mouseX, mouseY, centerX +155, centerY +5, 15, 15);
+      
+    	
     }
    
-    public void drawTooltip(List<String> lines, int mouseX, int mouseY, int posX, int posY, int width, int height) {
+    private void drawtext() {
+    	 int centerX = (width / 2) - guiWidth / 2;
+         int centerY = (height / 2) - guiHeight / 2;
+    	 GlStateManager.pushMatrix();
+         {
+             GlStateManager.enableAlpha();
+             GlStateManager.enableBlend();
+             GlStateManager.color(1, 1, 1, 1);
+             Minecraft.getMinecraft().renderEngine.bindTexture(texture);
+             drawTexturedModalRect(centerX, centerY, 0, 0, guiWidth, guiHeight);
+         }  
+       
+         
+             GlStateManager.scale(2, 2, 2);
+         	Utils.getLogger().info("Title2 is: " + title);
+         	Utils.getLogger().info("FRO2 is: " + fontRendererObj);
+         
+         	
+            mc.fontRendererObj.drawString(title, centerX - 40, centerY, 0x6028ff);
+         	Utils.getLogger().info("Title3 is: " + title);
+         	Utils.getLogger().info("FRO3 is: " + fontRendererObj);
+         	
+         
+             mc.fontRendererObj.drawString(question, centerX - 40, centerY + 20, 0x6028ff);
+             GlStateManager.popMatrix();
+             
+	}
+    
+    
+
+	public void drawTooltip(List<String> lines, int mouseX, int mouseY, int posX, int posY, int width, int height) {
         if (mouseX >= posX && mouseX <= posX + width && mouseY >= posY && mouseY <= posY + height) {
             drawHoveringText(lines, mouseX, mouseY);
         }
@@ -99,7 +120,7 @@ public class GuiAdditionBlock extends GuiScreen {
         buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) - 100 / 2, height - 110, 100, 20, ""));
         button1.visible = false;
         button1.enabled = false;
-        textBox = new GuiTextField(0, fontRendererObj, (width / 2) - 100 / 2,   80, 100, 20 );
+        textBox = new GuiTextField(0, fontRendererObj, (width / 2) - 100 / 2,   height - 150, 100, 20 );
         
         updateButtons();
         super.initGui();

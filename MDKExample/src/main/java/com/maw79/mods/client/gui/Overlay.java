@@ -34,18 +34,10 @@ public class Overlay {
 				int posX = (event.getResolution().getScaledWidth()) / 2;
 				int posY = (event.getResolution().getScaledHeight()) / 2;
 
-				//EntityPlayer entity = Minecraft.getMinecraft().player;
-				//int i = (int) entity.posX;
-				///int j = (int) entity.posY;
-				//int k = (int) entity.posZ;
-				//int x = i;
-				//int y = j;
-				//int z = k;
-				//MinecraftServer server = FMLCommonHandler.instance().getMinecraftServerInstance();
-				//World world = server.worlds[0];
+				
 
 				if (true) {
-					int s =0;
+					//int s =0;
 					
 					Minecraft.getMinecraft().fontRendererObj.drawString("Player Level : "+playerlevel, posX + (110), posY + (-107), 0xffffff);
 					Minecraft.getMinecraft().fontRendererObj.drawString("Score : ", posX + (140), posY + (-86), 0xffffff);

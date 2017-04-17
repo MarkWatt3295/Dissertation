@@ -20,8 +20,7 @@ public class GuiNotif extends Gui
         ScaledResolution scaled = new ScaledResolution(mc);
         int width = scaled.getScaledWidth() ;
         int height = scaled.getScaledHeight();
-    	//Minecraft.getMinecraft().fontRendererObj.drawString("Score : ", width + (140), height + (-86), 0xffffff);
-    	//drawRect(width / 2 + (110), 40, width / 2 + (110), (height / 2) + (-107), Integer.parseInt("FC000B", 16));
+    	
         drawString(mc.fontRendererObj, "Score: "+ playerScore, width / 2 + (110), (height / 2) + (-87), Integer.parseInt("FFFFFF", 16));
         
           

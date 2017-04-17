@@ -20,30 +20,31 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
-public class ItemLevitationDust extends Item {
+public class ItemLevitationDust3 extends Item {
 
-    public ItemLevitationDust(String unlocalizedName) {
+    public ItemLevitationDust3(String unlocalizedName) {
     	 this.setMaxStackSize(1);
          this.setMaxDamage(2);
 		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(Reference.MOD_ID, unlocalizedName));
 	}
-       
+    
     /**
      * Tool tip
      */
     @Override
     public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
     	super.addInformation(stack, playerIn, tooltip, advanced);
-    	tooltip.add(TextFormatting.RED + Utils.getLang().localize("levitationdust.tooltip"));
+    	tooltip.add(TextFormatting.RED + Utils.getLang().localize("levitationdust3.tooltip"));
     }
+       
     
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
         ItemStack stack = playerIn.getHeldItem(handIn);
         if(!worldIn.isRemote) {
             stack.damageItem(1, playerIn);
-           playerIn.getCooldownTracker().setCooldown(this, 100);
-           playerIn.addPotionEffect(new PotionEffect(MobEffects.LEVITATION, 100, 0));
+           playerIn.getCooldownTracker().setCooldown(this, 300);
+           playerIn.addPotionEffect(new PotionEffect(MobEffects.LEVITATION, 310, 0));
            
            
         }

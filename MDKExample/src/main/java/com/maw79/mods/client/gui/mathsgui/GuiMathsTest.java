@@ -25,7 +25,7 @@ int guiY = (height - guiHeight)/2;
 GL11.glColor4f(1, 1, 1, 1);
 mc.renderEngine.bindTexture(new ResourceLocation(Reference.MOD_ID, "textures/gui/division.png"));
 drawTexturedModalRect(guiX, guiY, 0, 0, guiWidth, guiHeight);
-this.fontRendererObj.drawString("100 Points", (-23), (20), 0xffffff);
+//fontRendererObj.drawString("Gui Testing", 40, 20, 0xffffff);
 super.drawScreen(x, y, ticks);
 }
 

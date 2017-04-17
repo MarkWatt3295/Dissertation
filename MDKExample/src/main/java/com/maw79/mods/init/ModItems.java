@@ -47,6 +47,9 @@ import com.maw79.mods.items.teleporters.ItemEnglishToken;
 import com.maw79.mods.items.teleporters.ItemFreePlayToken;
 import com.maw79.mods.items.teleporters.ItemHistoryToken;
 import com.maw79.mods.items.teleporters.ItemHubToken;
+import com.maw79.mods.items.teleporters.ItemLevitationDust;
+import com.maw79.mods.items.teleporters.ItemLevitationDust2;
+import com.maw79.mods.items.teleporters.ItemLevitationDust3;
 import com.maw79.mods.items.teleporters.ItemMathsToken;
 import com.maw79.mods.items.teleporters.ItemScienceToken;
 import com.maw79.mods.main.Maw79Mod;
@@ -96,7 +99,12 @@ public class ModItems {
 	public static Item fireelement;
 	public static Item magnet;
 	
+	//OTHER
 	public static final Item BOOSTER = new ItemBooster("booster");
+	public static final Item LEVITATION_DUST = new ItemLevitationDust("levitationdust");
+	public static final Item LEVITATION_DUST2 = new ItemLevitationDust2("levitationdust2");
+	public static final Item LEVITATION_DUST3 = new ItemLevitationDust3("levitationdust3");
+
 	
 	
 	//TP Tokens
@@ -208,6 +216,10 @@ public class ModItems {
 		registerItem(HUB_TOKEN);
 		registerItem(FREEPLAY_TOKEN);
 		registerItem(BOOSTER);
+		registerItem(LEVITATION_DUST);
+		registerItem(LEVITATION_DUST2);
+		registerItem(LEVITATION_DUST3);
+		
 	
 		
 		//SCIENCE LABELS
@@ -297,6 +309,9 @@ public class ModItems {
 		registerRender(FREEPLAY_TOKEN);
 		registerRender(HUB_TOKEN);
 		registerRender(BOOSTER);
+		registerRender(LEVITATION_DUST);
+		registerRender(LEVITATION_DUST2);
+		registerRender(LEVITATION_DUST3);
 		
 		
 		//SCIENCE LABELS
