@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.maw79.mods.blocks.mathsblocks.questblock.TileEntityMathsQuest;
 import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.init.ModItems;
 import com.maw79.mods.main.Maw79Mod;
@@ -24,7 +25,7 @@ public class GuiMathsQuestGive extends GuiScreen {
 	
 	public static int questnumber = 0;
 	
-     
+	
 	    
 	
 	final ResourceLocation texture = new ResourceLocation(Reference.MOD_ID, "textures/gui/store2.png");
@@ -36,8 +37,10 @@ public class GuiMathsQuestGive extends GuiScreen {
    public static int buttonvalue = 0;
     
    
-    GuiButton button1, button2, button3, button4, button5, buttonnextpage;
-    final int BUTTON1 = 1, BUTTON2 = 2, BUTTON3 = 3, BUTTON4 = 4, BUTTON5 = 5, BUTTON6 = 6;
+    GuiButton button1, button2, button3, button4, button5, button2alt, button3alt,
+    button4alt, button5alt;
+    final int BUTTON1 = 1, BUTTON2 = 2, BUTTON3 = 3, BUTTON4 = 4, BUTTON5 = 5, BUTTON6 = 6,
+    		BUTTON2alt = 22, BUTTON3alt = 33, BUTTON4alt = 44, BUTTON5alt = 55;
     
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
@@ -69,12 +72,12 @@ public class GuiMathsQuestGive extends GuiScreen {
         {
             GlStateManager.translate((width / 2), centerY + 10, 0);
             GlStateManager.scale(1.4, 1.4, 1.4);
-           
+          
             fontRendererObj.drawString("Active Quests : "+questnumber, (-40), (20), 0xffffff);
-    		fontRendererObj.drawString("Prime Numbers", (-50), (40), 0xffffff);
-    		fontRendererObj.drawString("Even Numbers", (-50), (56), 0xffffff);
-    		fontRendererObj.drawString("Odd Numbers", (-50), (74), 0xffffff);
-    		fontRendererObj.drawString("Sequence", (-50), (90), 0xffffff);
+    		fontRendererObj.drawString(TileEntityMathsQuest.questPrimeNumbers, (-50), (40), 0xffffff);
+    		fontRendererObj.drawString(TileEntityMathsQuest.questEvenNumbers, (-50), (56), 0xffffff);
+    		fontRendererObj.drawString(TileEntityMathsQuest.questOddNumbers, (-50), (74), 0xffffff);
+    		fontRendererObj.drawString(TileEntityMathsQuest.questNumberSequence, (-50), (90), 0xffffff);
     		
         }
         
@@ -101,11 +104,36 @@ public class GuiMathsQuestGive extends GuiScreen {
         int centerY = (height / 2) - guiHeight / 2;
         
        // buttonList.add(button1 = new GuiButton(BUTTON1, (width / 2) + 51, centerY + 33, 30, 20, "Buy"));
+        if(TileEntityMathsQuest.primecomplete == false){
         buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) + 51, centerY + 59, 30, 20, "Set"));
+        }
+        buttonList.add(button2alt = new GuiButton(BUTTON2alt, (width / 2) , centerY + 59, 80, 20, "Claim Reward"));
         buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) + 51, centerY + 83, 30, 20, "Set"));
         buttonList.add(button4 = new GuiButton(BUTTON4, (width / 2) + 51, centerY + 109, 30, 20, "Set"));
+        if(TileEntityMathsQuest.sequencecomplete == false){
         buttonList.add(button5 = new GuiButton(BUTTON5, (width / 2) + 51, centerY + 133, 30, 20, "Set"));
-      
+        }
+        buttonList.add(button5alt = new GuiButton(BUTTON5alt, (width / 2), centerY + 133, 80, 20, "Claim Reward"));
+        button2alt.visible=false;
+        button5alt.visible=false;
+        
+        //Sequence
+        if(TileEntityMathsQuest.sequenceclaimed == false){
+      if(TileEntityMathsQuest.sequencecomplete == true){
+    	  //button5.visible=false;
+    	  button5alt.visible=true;
+    	  
+      }
+        }
+        
+        
+       //Prime 
+        if(TileEntityMathsQuest.primeclaimed == false){
+      if(TileEntityMathsQuest.primecomplete == true){
+    	 // button2.visible=false;
+    	  button2alt.visible=true;
+      }
+        }
      
        
         super.initGui();
@@ -123,6 +151,15 @@ public class GuiMathsQuestGive extends GuiScreen {
             	
             	break;
             	
+            case BUTTON2alt:
+            	// Prime NUMBER 
+        		mc.player.playSound(ModSoundHandler.MAWSOUND_FLYBY, 1.0f, 1.0f);
+        		GuiNotif.playerScore +=50;
+        		button2alt.visible=false;
+        		questnumber = 0;
+        		TileEntityMathsQuest.primeclaimed = true;
+            	break;
+            	
             case BUTTON3://EVEN NUMBERS
             	
             	questnumber = 2;
@@ -136,10 +173,18 @@ public class GuiMathsQuestGive extends GuiScreen {
             	break;
             	
             case BUTTON5:
-            	
             	questnumber = 4; // NUMBER SEQUENCE
         		mc.player.playSound(ModSoundHandler.MAWSOUND_FLYBY, 1.0f, 1.0f);
+            	break;
             	
+            case BUTTON5alt:
+            	// NUMBER SEQUENCE
+        		mc.player.playSound(ModSoundHandler.MAWSOUND_FLYBY, 1.0f, 1.0f);
+        		GuiNotif.playerScore +=50;
+        		button5alt.visible=false;
+        		TileEntityMathsQuest.sequenceclaimed = true;
+        		questnumber = 0;
+        		
             	break;
             	
             	

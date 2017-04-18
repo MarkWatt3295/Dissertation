@@ -78,7 +78,7 @@ public class GuiMathsQuestTe extends GuiContainer {
 		else if(GuiMathsQuestGive.questnumber == 3){
 			activequest = "Odd Numbers";
 		}
-		else if(GuiMathsQuestGive.questnumber == 3){
+		else if(GuiMathsQuestGive.questnumber == 4){
 			activequest ="Number Sequence";
 		}
 		else{
