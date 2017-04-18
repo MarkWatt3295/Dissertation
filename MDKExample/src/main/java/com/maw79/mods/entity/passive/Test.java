@@ -83,7 +83,7 @@ public class Test extends EntityTameable{
     {
         Utils.getLogger().info("Test: processInteract");
         
-        if (!this.world.isRemote)
+        if (this.world.isRemote)
         {
             int basicID = this.getEntityId();
             player.openGui(Maw79Mod.instance, GuiHandler.TEST, this.world, basicID,0, 0);

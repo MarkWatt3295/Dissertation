@@ -24,6 +24,7 @@ public class ModSoundHandler {
 	public static SoundEvent MAWSOUND_ERRORNOISE;
 	public static SoundEvent MAWSOUND_ERRORSOUND;
 	public static SoundEvent MAWSOUND_OUCH;
+	public static SoundEvent MAWSOUND_SMRT;
 	
 	
 	public static void init() {
@@ -43,6 +44,7 @@ public class ModSoundHandler {
 		MAWSOUND_ERRORNOISE= register("mawsound.errornoise");
 		MAWSOUND_ERRORSOUND= register("mawsound.errorsound");
 		MAWSOUND_OUCH= register("mawsound.ouch");
+		MAWSOUND_SMRT= register("mawsound.smrt");
 		
 		
 	}

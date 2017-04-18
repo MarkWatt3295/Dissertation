@@ -12,7 +12,7 @@ import net.minecraft.item.ItemStack;
 		 * Just says the unlocalized name of our creative tab
 		 */
 		public Maw79UnusedTab() {
-			super("maw79 unsed");
+			super("maw79 unused");
 		}
 
 		/**
@@ -20,7 +20,7 @@ import net.minecraft.item.ItemStack;
 		 */
 		@Override
 		public ItemStack getTabIconItem() {
-			return new ItemStack(Items.SKULL);
+			return new ItemStack(Items.DRAGON_BREATH);
 		}
 
 	}

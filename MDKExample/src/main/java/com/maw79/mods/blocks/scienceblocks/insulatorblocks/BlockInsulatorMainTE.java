@@ -33,7 +33,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 
-public class BlockInsulatorMainTE extends BlockContainer implements ITileEntityProvider {
+public class BlockInsulatorMainTE extends BlockContainer {
 	
 	
 	 
@@ -45,7 +45,7 @@ public class BlockInsulatorMainTE extends BlockContainer implements ITileEntityP
 		this.setResistance(20);
 		this.setLightLevel(10F);
 		this.setDefaultState(this.blockState.getBaseState());
-		this.isBlockContainer = true;
+		
 		
 	}
 	
@@ -118,6 +118,7 @@ public class BlockInsulatorMainTE extends BlockContainer implements ITileEntityP
 			}
 
 	}
+	
 	
 
 }

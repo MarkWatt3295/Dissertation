@@ -58,6 +58,19 @@ else if (randanswer == 5){
 	player.connection.playerEntity.inventory.addItemStackToInventory(new ItemStack(ModItems.PAINT_ARROW, 3));
 	 player.sendMessage(new TextComponentString("Player Given 3 Paint Arrows"));
 }
+else if (randanswer == 6){
+	player.connection.playerEntity.inventory.addItemStackToInventory(new ItemStack(ModItems.LEVITATION_DUST, 1));
+	 player.sendMessage(new TextComponentString("Player Given Weak Levitation Dust"));
+}
+else if (randanswer == 7){
+	player.connection.playerEntity.inventory.addItemStackToInventory(new ItemStack(ModItems.LEVITATION_DUST2, 1));
+	 player.sendMessage(new TextComponentString("Player Given Levitation Dust"));
+}
+else if (randanswer == 8){
+	player.connection.playerEntity.inventory.addItemStackToInventory(new ItemStack(ModItems.LEVITATION_DUST3, 1));
+	 player.sendMessage(new TextComponentString("Player Given Strong Levitation Dust"));
+}
+
  
  }
  }

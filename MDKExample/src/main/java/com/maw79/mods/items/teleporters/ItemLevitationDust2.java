@@ -27,6 +27,7 @@ public class ItemLevitationDust2 extends Item {
          this.setMaxDamage(2);
 		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(Reference.MOD_ID, unlocalizedName));
+		this.hasEffect(getDefaultInstance());
 	}
     
     /**
@@ -35,7 +36,7 @@ public class ItemLevitationDust2 extends Item {
     @Override
     public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
     	super.addInformation(stack, playerIn, tooltip, advanced);
-    	tooltip.add(TextFormatting.RED + Utils.getLang().localize("levitationdust2.tooltip"));
+    	tooltip.add(TextFormatting.DARK_GREEN + Utils.getLang().localize("levitationdust2.tooltip"));
     }
     
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {

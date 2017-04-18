@@ -35,7 +35,7 @@ public class ItemLevitationDust extends Item {
     @Override
     public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
     	super.addInformation(stack, playerIn, tooltip, advanced);
-    	tooltip.add(TextFormatting.RED + Utils.getLang().localize("levitationdust.tooltip"));
+    	tooltip.add(TextFormatting.DARK_RED + Utils.getLang().localize("levitationdust.tooltip"));
     }
     
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {

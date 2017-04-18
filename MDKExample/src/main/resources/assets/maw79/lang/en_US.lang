@@ -3,8 +3,8 @@ itemGroup.maw79 blocks=Maw79 Blocks
 itemGroup.maw79 items=Maw79 Items
 itemGroup.maw79 mathsblocks=Maw79 Maths Blocks
 itemGroup.maw79 debug=Maw79 Debug Tools
+itemGroup.maw79 unused=Maw79 Unused
 itemGroup.maw79 scratch blocks=Maw79 Scratch Blocks
-itemGroup.maw79 unused=Unused
 
 //Items
 item.booster.name=Booster
@@ -123,6 +123,7 @@ tile.newtestblock.name=New Test Block
 tile.maths_division_block.name= Maths Division Block
 tile.maths_addition_block.name= Maths Addition Block
 tile.maths_subtraction_block.name= Maths Subtraction Block
+tile.maths_quest.name= Maths Quest Block
 
 tile.maths_brown_block.name=Brown Maths Block
 tile.maths_aqua_block.name=Aqua Maths Block

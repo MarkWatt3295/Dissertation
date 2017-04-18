@@ -1,7 +1,7 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0": "maw79:items/levitationdust"
+        "layer0": "maw79:items/levitationdust3"
       },
       
     "display": {

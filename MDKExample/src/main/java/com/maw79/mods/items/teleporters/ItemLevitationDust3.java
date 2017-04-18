@@ -35,7 +35,7 @@ public class ItemLevitationDust3 extends Item {
     @Override
     public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
     	super.addInformation(stack, playerIn, tooltip, advanced);
-    	tooltip.add(TextFormatting.RED + Utils.getLang().localize("levitationdust3.tooltip"));
+    	tooltip.add(TextFormatting.LIGHT_PURPLE + Utils.getLang().localize("levitationdust3.tooltip"));
     }
        
     
@@ -44,8 +44,8 @@ public class ItemLevitationDust3 extends Item {
         if(!worldIn.isRemote) {
             stack.damageItem(1, playerIn);
            playerIn.getCooldownTracker().setCooldown(this, 300);
-           playerIn.addPotionEffect(new PotionEffect(MobEffects.LEVITATION, 310, 0));
-           playerIn.addVelocity(4.0D, 1.5D, 4.0D);
+           playerIn.addPotionEffect(new PotionEffect(MobEffects.LEVITATION, 300, 0));
+           playerIn.addVelocity(0, 1.5D, 0);
            playerIn.velocityChanged = true;
            
            

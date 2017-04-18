@@ -6,6 +6,9 @@ import com.maw79.mods.blocks.ItemProfiler.TileEntityProfiler;
 import com.maw79.mods.blocks.historyblocks.artifactupdater.ContainerArtifactResearcher;
 import com.maw79.mods.blocks.historyblocks.artifactupdater.GuiArtifactResearcherTe;
 import com.maw79.mods.blocks.historyblocks.artifactupdater.TileEntityArtifactResearcher;
+import com.maw79.mods.blocks.mathsblocks.questblock.ContainerMathsQuest;
+import com.maw79.mods.blocks.mathsblocks.questblock.GuiMathsQuestTe;
+import com.maw79.mods.blocks.mathsblocks.questblock.TileEntityMathsQuest;
 import com.maw79.mods.blocks.scienceblocks.insulatorblocks.ContainerInsulator;
 import com.maw79.mods.blocks.scienceblocks.insulatorblocks.GuiInsulatorTe;
 import com.maw79.mods.blocks.scienceblocks.insulatorblocks.TileEntityInsulator;
@@ -18,14 +21,11 @@ import com.maw79.mods.blocks.scienceblocks.tileentityscience.TileEntityScience;
 import com.maw79.mods.blocks.tileentityattempt.ContainerBasic2;
 import com.maw79.mods.blocks.tileentityattempt.GuiBasic2;
 import com.maw79.mods.blocks.tileentityattempt.TileEntityCustom2;
-import com.maw79.mods.client.gui.mathsgui.GuiAdditionBlock;
 import com.maw79.mods.container.ContainerBasic;
 import com.maw79.mods.container.ContainerBlockBreaker;
-
 import com.maw79.mods.tileentity.TileEntityBlockBreaker;
 import com.maw79.mods.tileentity.storetileentity.ContainerStore;
 import com.maw79.mods.tileentity.storetileentity.GuiStore;
-import com.maw79.mods.tileentity.storetileentity.TileEntityStore;
 import com.maw79.mods.util.Utils;
 
 import net.minecraft.entity.Entity;
@@ -49,7 +49,8 @@ public class GuiHandler implements IGuiHandler{
 	public static final int INSULATOR_CALCULATOR_GUI = 7;
 	public static final int ARTIFACT_RESEARCHER = 8;
 	public static final int STORE_GUI = 9;
-	public static final int ADDITION_BLOCK = 10;
+	public static final int STORED_DISPLAY_2 = 10;
+	public static final int MATHS_QUEST = 11;
 	
 	/**
 	 * Should return the container for that gui. This is called server side because servers handle items in guis
@@ -103,9 +104,13 @@ public class GuiHandler implements IGuiHandler{
 			Entity tourguide = world.getEntityByID(x);
 			
 			return new ContainerStore(player.inventory,tourguide);
-			
 		}
-	
+		if(ID==MATHS_QUEST){
+			
+			
+			return new ContainerMathsQuest(player.inventory, (TileEntityMathsQuest) world.getTileEntity(new BlockPos(x, y, z)));
+		}
+		
 		
 		return null;
 	}
@@ -165,6 +170,15 @@ Utils.getLogger().info("GuiHandler: getClientGuiElement");
 			Entity tourguide = world.getEntityByID(x);
 			return new GuiStore(player.inventory, tourguide);
 		}
+		if(ID==STORED_DISPLAY_2){
+			
+			return new GuiStoreDisplay();
+		}
+		if(ID==MATHS_QUEST){
+			
+			return new GuiMathsQuestTe(player.inventory, (TileEntityMathsQuest) world.getTileEntity(new BlockPos(x, y, z)));
+		}
+		
 		
 		return null;
 	}

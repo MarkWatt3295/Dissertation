@@ -11,7 +11,7 @@ public class Reference {
  public static final String COMMON_PROXY_CLASS = "com.maw79.mods.proxy.CommonProxy";
  
  /**
-	 * Where the gui factory if found
+	 * Where the gui factory is found
 	 */
 	public static final String GUI_FACTORY = "com.maw79.mods.config.Maw79ConfigGuiFactory";
  

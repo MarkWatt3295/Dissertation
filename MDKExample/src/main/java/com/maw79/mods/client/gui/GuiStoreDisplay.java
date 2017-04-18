@@ -29,13 +29,11 @@ public class GuiStoreDisplay extends GuiScreen {
     int guiWidth = 175;
     int guiHeight = 210;
     
-    String title = "Store";
+    String title = "Maths Quest";
     
    public static int buttonvalue = 0;
     
-    
    
-    //GuiTextField textBox;
     GuiButton button1, button2, button3, button4, button5, buttonnextpage;
     final int BUTTON1 = 1, BUTTON2 = 2, BUTTON3 = 3, BUTTON4 = 4, BUTTON5 = 5, BUTTON6 = 6;
     
@@ -64,38 +62,41 @@ public class GuiStoreDisplay extends GuiScreen {
         }
         GlStateManager.popMatrix();
         
-        GlStateManager.pushMatrix();
+       /* GlStateManager.pushMatrix();
         {
             GlStateManager.translate((width / 2) , centerY + 15, 0);
             GlStateManager.scale(1.2, 1.2, 1.2);
             String heading = "Points : "+ GuiNotif.playerScore;
-            fontRendererObj.drawString(heading, 0, 0, 0xffffff);
+           // fontRendererObj.drawString(heading, 0, 0, 0xffffff);
            
         }
-        GlStateManager.popMatrix();
+        GlStateManager.popMatrix();*/
         
         GlStateManager.pushMatrix();
         {
             GlStateManager.translate((width / 2), centerY + 10, 0);
             GlStateManager.scale(1.4, 1.4, 1.4);
            
-            fontRendererObj.drawString("100 Points", (-23), (20), 0xffffff);
-    		fontRendererObj.drawString("100 Points", (-23), (40), 0xffffff);
-    		fontRendererObj.drawString("100 Points", (-23), (56), 0xffffff);
-    		fontRendererObj.drawString("100 Points", (-23), (74), 0xffffff);
-    		fontRendererObj.drawString("500 Points", (-23), (90), 0xffffff);
+            fontRendererObj.drawString("Active Quests : 1", (-63), (20), 0xffffff);
+    		fontRendererObj.drawString("Even Numbers", (-63), (40), 0xffffff);
+    		fontRendererObj.drawString("Odd Numbers", (-63), (56), 0xffffff);
+    		fontRendererObj.drawString("Prime Numbers", (-63), (74), 0xffffff);
+    		fontRendererObj.drawString("Number Sequence", (-63), (90), 0xffffff);
     		
         }
+        
+        
         GlStateManager.popMatrix();
         
         
-        
-        button1.drawButton(mc, mouseX, mouseY);
-        button2.drawButton(mc, mouseX, mouseY);
-        button3.drawButton(mc, mouseX, mouseY);
-        button4.drawButton(mc, mouseX, mouseY);
-        button5.drawButton(mc, mouseX, mouseY);
+        /*
+       // button1.drawButton(mc, mouseX, mouseY);
+       // button2.drawButton(mc, mouseX, mouseY);
+        //button3.drawButton(mc, mouseX, mouseY);
+        //button4.drawButton(mc, mouseX, mouseY);
+        //button5.drawButton(mc, mouseX, mouseY);
         //buttonnextpage.drawButton(mc, mouseX, mouseY);
+       
         ItemStack icon = new ItemStack(ModItems.MATHS_TOKEN);
         ItemStack icon2 = new ItemStack(ModItems.ENGLISH_TOKEN);
         ItemStack icon3 = new ItemStack(ModItems.SCIENCE_TOKEN);
@@ -149,25 +150,22 @@ public class GuiStoreDisplay extends GuiScreen {
         
         List<String> text = new ArrayList<String>();
         
-        text.add(icon.getDisplayName()); //MATHS
+        String s1 =icon.getDisplayName(); //MATHS
         String s2 = icon2.getDisplayName();//ENGLISH
         String s3 = icon3.getDisplayName(); //SCIENCE
         String s4 = icon4.getDisplayName(); //HISTORY
         String s5 = icon5.getDisplayName(); //FREEPLAY
-        drawTooltip(text, mouseX, mouseY, centerX +10, centerY + 33, 22, 22);
+       
+        drawTooltip2(s1, mouseX, mouseY, centerX +10, centerY + 33, 22, 22);
         drawTooltip2(s2, mouseX, mouseY, centerX +10, centerY + 58, 22, 22);
         drawTooltip2(s3, mouseX, mouseY, centerX +10, centerY + 83, 22, 22);
         drawTooltip2(s4, mouseX, mouseY, centerX +10, centerY + 108, 22, 22);
         drawTooltip2(s5, mouseX, mouseY, centerX +10, centerY + 133, 22, 22);
-        
-      
+         */
+        super.drawScreen(mouseX, mouseY, partialTicks);
     }
     
-    public void drawTooltip(List<String> lines, int mouseX, int mouseY, int posX, int posY, int width, int height) {
-        if (mouseX >= posX && mouseX <= posX + width && mouseY >= posY && mouseY <= posY + height) {
-            drawHoveringText(lines, mouseX, mouseY);
-        }
-    }
+  
     public void drawTooltip2(String line, int mouseX, int mouseY, int posX, int posY, int width, int height) {
         if (mouseX >= posX && mouseX <= posX + width && mouseY >= posY && mouseY <= posY + height) {
             drawCreativeTabHoveringText(line, mouseX, mouseY);

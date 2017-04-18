@@ -2,6 +2,7 @@ package com.maw79.mods.blocks;
 
 import com.maw79.mods.client.gui.GuiFirstBook;
 import com.maw79.mods.client.gui.GuiSecondBook;
+import com.maw79.mods.client.gui.GuiStoreDisplay2;
 import com.maw79.mods.client.gui.GuiTutorial;
 import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.init.ModBlocks;
@@ -13,8 +14,10 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.inventory.GuiCrafting;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -53,7 +56,10 @@ public class BlockTestBlock3 extends Block {
 		
 		
 		worldIn.playSound(player, pos, ModSoundHandler.MAWSOUND_OPEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
-       
+		 if(player.world.isRemote){
+			 InventoryPlayer playerInv = player.inventory;
+			 Minecraft.getMinecraft().displayGuiScreen(new GuiStoreDisplay2());
+		 }
 	//	player.sendMessage(new TextComponentString(Utilities.stringToRainbow("Test Block 2 Activated", true)));
 		//player.inventory.addItemStackToInventory(new ItemStack(ModItems.mw));
 		//player.setGameType(GameType.CREATIVE);
@@ -89,10 +95,10 @@ public class BlockTestBlock3 extends Block {
 		 //Minecraft.getMinecraft().currentScreen.onGuiClosed();
 		//System.out.println("skipped me :(");
 		// Minecraft.getMinecraft().displayGuiScreen(new GuiTutorial());
-		 worldIn.getBlockState(pos);
-		 System.out.println("****: "+ pos + "*****");
-		 pos.add(0, 1, 0);
-		 System.out.println("****: "+ pos + "*****");
+		// worldIn.getBlockState(pos);
+		// System.out.println("****: "+ pos + "*****");
+		// pos.add(0, 1, 0);
+		 //System.out.println("****: "+ pos + "*****");
 		
 		
 		return true; 

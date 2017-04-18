@@ -72,4 +72,10 @@
         "subtitle": "mawsound.ouch",
         "sounds": [ { "name": "maw79:mawsound/ouch", "stream": true } ]
     }
+     ,
+      "mawsound.smrt": {
+        "category": "block",
+        "subtitle": "mawsound.smrt",
+        "sounds": [ { "name": "maw79:mawsound/smrt", "stream": true } ]
+    }
 }
