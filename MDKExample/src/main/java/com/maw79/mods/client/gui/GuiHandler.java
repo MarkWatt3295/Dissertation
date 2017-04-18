@@ -179,7 +179,6 @@ Utils.getLogger().info("GuiHandler: getClientGuiElement");
 			return new GuiMathsQuestTe(player.inventory, (TileEntityMathsQuest) world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		
-		
 		return null;
 	}
 	

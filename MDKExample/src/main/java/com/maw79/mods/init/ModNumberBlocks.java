@@ -188,7 +188,6 @@ public class ModNumberBlocks {
 		registerRender(number33);
 	}
 	
-		
 	
 	/**
 	 * Registers the blocks renders

@@ -54,9 +54,6 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 	public static boolean primecomplete = false;
 	public static boolean primeclaimed = false;
 
-	/**
-	 * New 1.9.4 onwards. Using forge capabilities instead of {@link IInventory}
-	 */
 	public ItemStackHandler handler;
 	public static String questPrimeNumbers = "Prime Numbers";
 	public static String questEvenNumbers = "Even Numbers";

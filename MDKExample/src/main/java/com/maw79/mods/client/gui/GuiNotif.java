@@ -14,8 +14,6 @@ public class GuiNotif extends Gui
 	public static int addmin = 10;
 	
 	
-    
- 
     public GuiNotif(Minecraft mc)
     {
         ScaledResolution scaled = new ScaledResolution(mc);

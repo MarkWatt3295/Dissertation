@@ -179,8 +179,6 @@ public class GuiMathsQuestTe extends GuiContainer {
 	    }
 	
 	 
-
-	
 	 private void onEvent() {
 		
 	}

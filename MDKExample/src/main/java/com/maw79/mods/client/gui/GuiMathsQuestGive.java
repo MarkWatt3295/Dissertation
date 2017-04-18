@@ -120,17 +120,14 @@ public class GuiMathsQuestGive extends GuiScreen {
         //Sequence
         if(TileEntityMathsQuest.sequenceclaimed == false){
       if(TileEntityMathsQuest.sequencecomplete == true){
-    	  //button5.visible=false;
     	  button5alt.visible=true;
     	  
       }
         }
         
-        
        //Prime 
         if(TileEntityMathsQuest.primeclaimed == false){
       if(TileEntityMathsQuest.primecomplete == true){
-    	 // button2.visible=false;
     	  button2alt.visible=true;
       }
         }
