@@ -39,9 +39,10 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 	private boolean sequence33 = false;
 	private boolean sequence4 = false;
 	private boolean sequence19 = false;
+	public static int sequencenumstofind = 3;
 	public static boolean sequencecomplete = false;
 	public static boolean sequenceclaimed = false;
-	
+
 	// Prime Checks
 	private boolean prime2 = false;
 	private boolean prime3 = false;
@@ -52,8 +53,9 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 	private boolean prime17 = false;
 	private boolean prime19 = false;
 	public static boolean primecomplete = false;
+	public static int primenumstofind = 8;
 	public static boolean primeclaimed = false;
-	
+
 	//Even Checks
 	private boolean even2 = false;
 	private boolean even4 = false;
@@ -65,8 +67,24 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 	private boolean even16 = false;
 	private boolean even18 = false;
 	private boolean even20 = false;
+	public static int evennumstofind = 10;
 	public static boolean evencomplete = false;
 	public static boolean evenclaimed = false;
+
+	//Odd Checks
+	private boolean odd1 = false;
+	private boolean odd3 = false;
+	private boolean odd5 = false;
+	private boolean odd7 = false;
+	private boolean odd9 = false;
+	private boolean odd11 = false;
+	private boolean odd13 = false;
+	private boolean odd15 = false;
+	private boolean odd17 = false;
+	private boolean odd19 = false;
+	public static int oddnumstofind = 10;
+	public static boolean oddcomplete = false;
+	public static boolean oddclaimed = false;
 
 	public ItemStackHandler handler;
 	public static String questPrimeNumbers = "Prime Numbers";
@@ -125,9 +143,9 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 		if (!world.isRemote) {
 			IBlockState currentState = this.world.getBlockState(pos);
 			EntityPlayer player = Minecraft.getMinecraft().player;
-			
-//##########################################################################################################
-//##########################################################################################################
+
+			//##########################################################################################################
+			//##########################################################################################################
 			// Sequence Numbers
 			if (sequencecomplete == false) {
 				if (GuiMathsQuestGive.questnumber == 4) {
@@ -138,6 +156,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
 							GuiNotif.playerScore += 10;
 							sequence33 = true;
+							sequencenumstofind -=1;
 						}
 					}
 					if (sequence4 == false) {
@@ -147,6 +166,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
 							GuiNotif.playerScore += 10;
 							sequence4 = true;
+							sequencenumstofind -=1;
 						}
 					}
 					if (sequence19 == false) {
@@ -156,230 +176,377 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
 							GuiNotif.playerScore += 10;
 							sequence19 = true;
+							sequencenumstofind -=1;
 						}
 					}
 
 					if (sequence19 == true && sequence33 == true && sequence4 == true) {
 						questNumberSequence = questcomplete;
 						sequencecomplete = true;
+						player.playSound(ModSoundHandler.MAWSOUND_TADA, 1.0F, 1.0F);
 					}
 				}
 
 			}
-//##########################################################################################################
-//##########################################################################################################
-			
-			
-//##########################################################################################################
-//##########################################################################################################
-						// Prime Numbers
-						if (primecomplete == false) {
-							if (GuiMathsQuestGive.questnumber == 1) {
-								if (prime2 == false) {
-									if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number2))) {
-										Utils.getLogger().info("Prime: Block 2 Placed");
-										handler.extractItem(4, 1, false);
-										player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-										GuiNotif.playerScore += 10;
-										prime2 = true;
-									}
-								}
-								
-								if (prime3 == false) {
-									if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number3))) {
-										Utils.getLogger().info("Prime: Block 3 Placed");
-										handler.extractItem(4, 1, false);
-										player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-										GuiNotif.playerScore += 10;
-										prime3 = true;
-									}
-								}
-								if (prime5 == false) {
-									if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number5))) {
-										Utils.getLogger().info("Prime: Block 5 Placed");
-										handler.extractItem(4, 1, false);
-										player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-										GuiNotif.playerScore += 10;
-										prime5 = true;
-									}
-								}
-								if (prime7 == false) {
-									if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number7))) {
-										Utils.getLogger().info("Prime: Block 7 Placed");
-										handler.extractItem(4, 1, false);
-										player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-										GuiNotif.playerScore += 10;
-										prime7 = true;
-									}
-								}
-								if (prime11 == false) {
-									if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number11))) {
-										Utils.getLogger().info("Prime: Block 11 Placed");
-										handler.extractItem(4, 1, false);
-										player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-										GuiNotif.playerScore += 10;
-										prime11 = true;
-									}
-								}
-								if (prime13 == false) {
-									if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number13))) {
-										Utils.getLogger().info("Prime: Block 13 Placed");
-										handler.extractItem(4, 1, false);
-										player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-										GuiNotif.playerScore += 10;
-										prime13 = true;
-									}
-								}
-								if (prime17 == false) {
-									if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number17))) {
-										Utils.getLogger().info("Prime: Block 17 Placed");
-										handler.extractItem(4, 1, false);
-										player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-										GuiNotif.playerScore += 10;
-										prime17 = true;
-									}
-								}
-								if (prime19 == false) {
-									if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number19))) {
-										Utils.getLogger().info("Prime: Block 19 Placed");
-										handler.extractItem(4, 1, false);
-										player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-										GuiNotif.playerScore += 10;
-										prime19 = true;
-									}
-								}
-								
-								if (prime2 = true && prime3 == true && prime5 == true && prime7 == true
-										&& prime11 == true && prime13 == true && prime17 == true
-										&& prime19 == true) {
-									questPrimeNumbers = questcomplete;
-									primecomplete = true;
-								}
+			//##########################################################################################################
+			//##########################################################################################################
 
-								
-							}
 
+			//##########################################################################################################
+			//##########################################################################################################
+			// Prime Numbers
+			if (primecomplete == false) {
+				if (GuiMathsQuestGive.questnumber == 1) {
+					
+					
+					if (prime2 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number2))) {
+							Utils.getLogger().info("Prime: Block 2 Placed ");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							prime2 = true;
+							primenumstofind -=1;
 						}
-//##########################################################################################################
-//##########################################################################################################
-						
-//##########################################################################################################
-//##########################################################################################################
-									// Even Numbers
-									if (evencomplete == false) {
-										if (GuiMathsQuestGive.questnumber == 4) {
-											if (even2 == false) {
-												if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number2))) {
-													Utils.getLogger().info("Even :Block 2 Placed");
-													handler.extractItem(4, 1, false);
-													player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-													GuiNotif.playerScore += 10;
-													even2 = true;
-												}
-											}
-											if (even4 == false) {
-												if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number4))) {
-													Utils.getLogger().info("Even :Block 4 Placed");
-													handler.extractItem(4, 1, false);
-													player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-													GuiNotif.playerScore += 10;
-													even4 = true;
-												}
-											}
-											if (even6 == false) {
-												if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number6))) {
-													Utils.getLogger().info("Even :Block 6 Placed");
-													handler.extractItem(4, 1, false);
-													player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-													GuiNotif.playerScore += 10;
-													even6 = true;
-												}
-											}
-											if (even8 == false) {
-												if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number8))) {
-													Utils.getLogger().info("Even :Block 8 Placed");
-													handler.extractItem(4, 1, false);
-													player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-													GuiNotif.playerScore += 10;
-													even8 = true;
-												}
-											}
-											if (even10 == false) {
-												if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number10))) {
-													Utils.getLogger().info("Even :Block 10 Placed");
-													handler.extractItem(4, 1, false);
-													player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-													GuiNotif.playerScore += 10;
-													even10 = true;
-												}
-											}
-											if (even12 == false) {
-												if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number12))) {
-													Utils.getLogger().info("Even :Block 12 Placed");
-													handler.extractItem(4, 1, false);
-													player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-													GuiNotif.playerScore += 10;
-													even12 = true;
-												}
-											}
-											if (even14 == false) {
-												if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number14))) {
-													Utils.getLogger().info("Even :Block 14 Placed");
-													handler.extractItem(4, 1, false);
-													player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-													GuiNotif.playerScore += 10;
-													even14 = true;
-												}
-											}
-											if (even14 == false) {
-												if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number14))) {
-													Utils.getLogger().info("Even :Block 14 Placed");
-													handler.extractItem(4, 1, false);
-													player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-													GuiNotif.playerScore += 10;
-													even14 = true;
-												}
-											}
-											if (even16 == false) {
-												if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number16))) {
-													Utils.getLogger().info("Even :Block 16 Placed");
-													handler.extractItem(4, 1, false);
-													player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-													GuiNotif.playerScore += 10;
-													even16 = true;
-												}
-											}
-											if (even18 == false) {
-												if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number18))) {
-													Utils.getLogger().info("Even :Block 18 Placed");
-													handler.extractItem(4, 1, false);
-													player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-													GuiNotif.playerScore += 10;
-													even18 = true;
-												}
-											}
-											if (even20 == false) {
-												if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number20))) {
-													Utils.getLogger().info("Even :Block 20 Placed");
-													handler.extractItem(4, 1, false);
-													player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-													GuiNotif.playerScore += 10;
-													even20 = true;
-												}
-											}
-											
+					}
+					if (prime3 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number3))) {
+							Utils.getLogger().info("Prime: Block 3 Placed");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							prime3 = true;
+							primenumstofind -=1;
+						}
+					}
+					if (prime5 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number5))) {
+							Utils.getLogger().info("Prime: Block 5 Placed");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							prime5 = true;
+							primenumstofind -=1;
+						}
+					}
+					if (prime7 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number7))) {
+							Utils.getLogger().info("Prime: Block 7 Placed");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							prime7 = true;
+							primenumstofind -=1;
+						}
+					}
+					if (prime11 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number11))) {
+							Utils.getLogger().info("Prime: Block 11 Placed");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							prime11 = true;
+							primenumstofind -=1;
+						}
+					}
+					if (prime13 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number13))) {
+							Utils.getLogger().info("Prime: Block 13 Placed");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							prime13 = true;
+							primenumstofind -=1;
+						}
+					}
+					if (prime17 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number17))) {
+							Utils.getLogger().info("Prime: Block 17 Placed");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							prime17 = true;
+							primenumstofind -=1;
+						}
+					}
+					if (prime19 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number19))) {
+							Utils.getLogger().info("Prime: Block 19 Placed");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							prime19 = true;
+							primenumstofind -=1;
+						}
+					}
 
-											if (even2 == true && even4 == true && even6 == true && even8 == true &&
-													even10 == true && even12 == true && even14 == true && even16 == true &&
-													even18 == true && even20 == true) {
-												questEvenNumbers = questcomplete;
-												evencomplete = true;
-											}
-										}
+					if (prime2 == true && prime3 == true && prime5 == true && prime7 == true
+							&& prime11 == true && prime13 == true && prime17 == true
+							&& prime19 == true) {
+						questPrimeNumbers = questcomplete;
+						primecomplete = true;
+						primenumstofind = 0;
+						player.playSound(ModSoundHandler.MAWSOUND_TADA, 1.0F, 1.0F);
+					}
 
-									}
-						//##########################################################################################################
-						//##########################################################################################################
+
+				}
+
+			}
+			//##########################################################################################################
+			//##########################################################################################################
+
+			//##########################################################################################################
+			//##########################################################################################################
+			// Even Numbers
+			if (evencomplete == false) {
+				if (GuiMathsQuestGive.questnumber == 2) {
+					if (even2 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number2))) {
+							Utils.getLogger().info("Even :Block 2 Placed");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							even2 = true;
+							evennumstofind -=1;
+						}
+					}
+					if (even4 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number4))) {
+							Utils.getLogger().info("Even :Block 4 Placed");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							even4 = true;
+							evennumstofind -=1;
+						}
+					}
+					if (even6 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number6))) {
+							Utils.getLogger().info("Even :Block 6 Placed");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							even6 = true;
+							evennumstofind -=1;
+						}
+					}
+					if (even8 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number8))) {
+							Utils.getLogger().info("Even :Block 8 Placed");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							even8 = true;
+							evennumstofind -=1;
+						}
+					}
+					if (even10 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number10))) {
+							Utils.getLogger().info("Even :Block 10 Placed");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							even10 = true;
+							evennumstofind -=1;
+						}
+					}
+					if (even12 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number12))) {
+							Utils.getLogger().info("Even :Block 12 Placed");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							even12 = true;
+							evennumstofind -=1;
+						}
+					}
+					if (even14 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number14))) {
+							Utils.getLogger().info("Even :Block 14 Placed");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							even14 = true;
+							evennumstofind -=1;
+						}
+					}
+					if (even14 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number14))) {
+							Utils.getLogger().info("Even :Block 14 Placed");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							even14 = true;
+							evennumstofind -=1;
+						}
+					}
+					if (even16 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number16))) {
+							Utils.getLogger().info("Even :Block 16 Placed");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							even16 = true;
+							evennumstofind -=1;
+						}
+					}
+					if (even18 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number18))) {
+							Utils.getLogger().info("Even :Block 18 Placed");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							even18 = true;
+							evennumstofind -=1;
+						}
+					}
+					if (even20 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number20))) {
+							Utils.getLogger().info("Even :Block 20 Placed");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							even20 = true;
+							evennumstofind -=1;
+						}
+					}
+
+
+					if (even2 == true && even4 == true && even6 == true && even8 == true &&
+							even10 == true && even12 == true && even14 == true && even16 == true &&
+							even18 == true && even20 == true) {
+						player.playSound(ModSoundHandler.MAWSOUND_TADA, 1.0F, 1.0F);
+						questEvenNumbers = questcomplete;
+						evencomplete = true;
+						evennumstofind =0;
+
+					}
+				}
+
+			}
+			//##########################################################################################################
+			//##########################################################################################################
+
+			//##########################################################################################################
+			//##########################################################################################################
+			// Odd Numbers
+			if (oddcomplete == false) {
+				if (GuiMathsQuestGive.questnumber == 3) {
+					if (odd1 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number1))) {
+							Utils.getLogger().info("Odd : Block 1 Placed");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							odd1 = true;
+							oddnumstofind -=1;
+						}
+					}
+					
+					if (odd3 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number3))) {
+							Utils.getLogger().info("Odd : Block 3 Placed");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							odd3 = true;
+							oddnumstofind -=1;
+						}
+					}
+					if (odd5 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number5))) {
+							Utils.getLogger().info("Odd : Block 5 Placed");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							odd5 = true;
+							oddnumstofind -=1;
+						}
+					}
+					if (odd7 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number7))) {
+							Utils.getLogger().info("Odd : Block 7 Placed");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							odd7 = true;
+							oddnumstofind -=1;
+						}
+					}
+					if (odd9 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number9))) {
+							Utils.getLogger().info("Odd : Block 9 Placed");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							odd9 = true;
+							oddnumstofind -=1;
+						}
+					}
+					if (odd11 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number11))) {
+							Utils.getLogger().info("Odd : Block 11 Placed");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							odd11 = true;
+							oddnumstofind -=1;
+						}
+					}
+					if (odd13 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number13))) {
+							Utils.getLogger().info("Odd : Block 13 Placed");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							odd13 = true;
+							oddnumstofind -=1;
+						}
+					}
+					if (odd15 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number15))) {
+							Utils.getLogger().info("Odd : Block 15 Placed");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							odd15 = true;
+							oddnumstofind -=1;
+						}
+					}
+					if (odd17 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number17))) {
+							Utils.getLogger().info("Odd : Block 17 Placed");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							odd17 = true;
+							oddnumstofind -=1;
+						}
+					}
+					if (odd19 == false) {
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number19))) {
+							Utils.getLogger().info("Odd : Block 19 Placed");
+							handler.extractItem(4, 1, false);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+							GuiNotif.playerScore += 10;
+							odd19 = true;
+							oddnumstofind -=1;
+						}
+					}
+					if (odd1 == true && odd3 == true && odd5 == true && odd7 == true && odd9 == true &&
+							odd11 == true && odd13 == true && odd15 == true && odd17 == true && odd9 == true) {
+						questOddNumbers = questcomplete;
+						oddcomplete = true;
+						oddnumstofind =0;
+						player.playSound(ModSoundHandler.MAWSOUND_TADA, 1.0F, 1.0F);
+					}
+				}
+
+			}
+			//##########################################################################################################
+			//##########################################################################################################
+
 		}
 
 	}

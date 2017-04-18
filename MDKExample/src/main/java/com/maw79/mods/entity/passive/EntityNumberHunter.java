@@ -31,10 +31,10 @@ public  class EntityNumberHunter extends EntityCreature {
 		world = var1;
 		experienceValue = 5;
 		this.isImmuneToFire = false;
-		setNoAI(!true);
-		this.tasks.addTask(0, new EntityAISwimming(this));
-		this.tasks.addTask(1, new EntityAIWatchClosest(this, EntityPlayer.class, 10.0F));
-		this.tasks.addTask(2, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
+		setNoAI(false);
+		this.tasks.addTask(0, new EntityAIWatchClosest(this, EntityPlayer.class, 10.0F));
+		this.tasks.addTask(1, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
+		this.tasks.addTask(2, new EntityAISwimming(this));
 		this.enablePersistence();
 		setCustomNameTag("Mr. Numbers");
 		setAlwaysRenderNameTag(true);
@@ -44,7 +44,7 @@ public  class EntityNumberHunter extends EntityCreature {
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(100D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(1000D);
 		if (this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE) != null)
 			this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3D);
 	}

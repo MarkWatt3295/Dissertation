@@ -28,7 +28,7 @@ public class GuiMathsQuestGive extends GuiScreen {
 	
 	    
 	
-	final ResourceLocation texture = new ResourceLocation(Reference.MOD_ID, "textures/gui/store2.png");
+	final ResourceLocation texture = new ResourceLocation(Reference.MOD_ID, "textures/gui/quest.png");
     int guiWidth = 175;
     int guiHeight = 210;
     
@@ -85,12 +85,21 @@ public class GuiMathsQuestGive extends GuiScreen {
         GlStateManager.popMatrix();
         
         super.drawScreen(mouseX, mouseY, partialTicks);
+        
+        List<String> text = new ArrayList<String>();
+        text.add("§9"+"QUEST INFORMATION" +"§f"+ "\nSelect a Quest below. Explore and dig in the mines below and try to find Number"
+        		+ " Blocks that match the Quest criteria. Bring any blocks you find to the Maths Quest Block."
+        		+ " Upon completion of a quest you will recieve a reward.\n\n"
+        		+ "All Quests Numbers range from "+"§9"+ "1 - 20"+"§f"+ " with the exception of the Number Sequence Quest."
+        				+ "\n\nMore help on quests can be found at the Quest block."); 
+     
+        drawTooltip(text, mouseX, mouseY, centerX +155, centerY +5, 15, 15);
     }
     
   
-    public void drawTooltip2(String line, int mouseX, int mouseY, int posX, int posY, int width, int height) {
+    public void drawTooltip(List<String> lines, int mouseX, int mouseY, int posX, int posY, int width, int height) {
         if (mouseX >= posX && mouseX <= posX + width && mouseY >= posY && mouseY <= posY + height) {
-            drawCreativeTabHoveringText(line, mouseX, mouseY);
+            drawHoveringText(lines, mouseX, mouseY);
         }
     }
    
@@ -104,21 +113,32 @@ public class GuiMathsQuestGive extends GuiScreen {
         int centerY = (height / 2) - guiHeight / 2;
         
 		if (TileEntityMathsQuest.primecomplete == false) {
-			buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) + 51, centerY + 59, 30, 20, "Set"));
+			buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) + 40, centerY + 59, 36, 20, "Select"));
 		}
 		buttonList.add(button2alt = new GuiButton(BUTTON2alt, (width / 2), centerY + 59, 80, 20, "Claim Reward"));
+		
+		
 		if (TileEntityMathsQuest.evencomplete == false) {
-			buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) + 51, centerY + 83, 30, 20, "Set"));
+			buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) + 40, centerY + 83, 36, 20, "Select"));
 		}
 		buttonList.add(button3alt = new GuiButton(BUTTON3alt, (width / 2), centerY + 83, 80, 20, "Claim Reward"));
 
-		buttonList.add(button4 = new GuiButton(BUTTON4, (width / 2) + 51, centerY + 109, 30, 20, "Set"));
+		
+		if (TileEntityMathsQuest.oddcomplete == false) {
+		buttonList.add(button4 = new GuiButton(BUTTON4, (width / 2) + 40, centerY + 109, 36, 20, "Select"));
+		}
+		buttonList.add(button4alt = new GuiButton(BUTTON4alt, (width / 2), centerY + 109, 80, 20, "Claim Reward"));
+		
+		
 		if (TileEntityMathsQuest.sequencecomplete == false) {
-			buttonList.add(button5 = new GuiButton(BUTTON5, (width / 2) + 51, centerY + 133, 30, 20, "Set"));
+			buttonList.add(button5 = new GuiButton(BUTTON5, (width / 2) + 40, centerY + 133, 36, 20, "Select"));
 		}
 		buttonList.add(button5alt = new GuiButton(BUTTON5alt, (width / 2), centerY + 133, 80, 20, "Claim Reward"));
+		
+		
 		button2alt.visible = false;
 		button3alt.visible = false;
+		button4alt.visible = false;
 		button5alt.visible = false;
         
         //Sequence
@@ -140,6 +160,13 @@ public class GuiMathsQuestGive extends GuiScreen {
         if(TileEntityMathsQuest.evenclaimed == false){
       if(TileEntityMathsQuest.evencomplete == true){
     	  button3alt.visible=true;
+      }
+        }
+        
+        //Odd 
+        if(TileEntityMathsQuest.oddclaimed == false){
+      if(TileEntityMathsQuest.oddcomplete == true){
+    	  button4alt.visible=true;
       }
         }
      
@@ -168,6 +195,9 @@ public class GuiMathsQuestGive extends GuiScreen {
         		TileEntityMathsQuest.primeclaimed = true;
             	break;
             	
+            	
+            	
+            	
             case BUTTON3://EVEN NUMBERS
             	questnumber = 2;
         		mc.player.playSound(ModSoundHandler.MAWSOUND_FLYBY, 1.0f, 1.0f);
@@ -182,10 +212,25 @@ public class GuiMathsQuestGive extends GuiScreen {
         		TileEntityMathsQuest.evenclaimed = true;
             	break;
             	
+            	
+            	
+            	
             case BUTTON4: //ODD Numbers
             	questnumber = 3;
         		mc.player.playSound(ModSoundHandler.MAWSOUND_FLYBY, 1.0f, 1.0f);
             	break;
+            	
+            case BUTTON4alt:
+            	// Odd NUMBER 
+        		mc.player.playSound(ModSoundHandler.MAWSOUND_FLYBY, 1.0f, 1.0f);
+        		GuiNotif.playerScore +=50;
+        		button4alt.visible=false;
+        		questnumber = 0;
+        		TileEntityMathsQuest.oddclaimed = true;
+            	break;
+            	
+            	
+           
             	
             case BUTTON5:
             	questnumber = 4; // NUMBER SEQUENCE

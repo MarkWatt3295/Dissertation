@@ -84,4 +84,10 @@
         "subtitle": "mawsound.popcork",
         "sounds": [ { "name": "maw79:mawsound/popcork", "stream": true } ]
     }
+      ,
+      "mawsound.tada": {
+        "category": "block",
+        "subtitle": "mawsound.tada",
+        "sounds": [ { "name": "maw79:mawsound/tada", "stream": true } ]
+    }
 }
