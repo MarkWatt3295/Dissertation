@@ -78,4 +78,10 @@
         "subtitle": "mawsound.smrt",
         "sounds": [ { "name": "maw79:mawsound/smrt", "stream": true } ]
     }
+    ,
+      "mawsound.popcork": {
+        "category": "block",
+        "subtitle": "mawsound.popcork",
+        "sounds": [ { "name": "maw79:mawsound/popcork", "stream": true } ]
+    }
 }

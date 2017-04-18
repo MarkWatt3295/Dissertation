@@ -103,19 +103,23 @@ public class GuiMathsQuestGive extends GuiScreen {
         buttonList.clear();
         int centerY = (height / 2) - guiHeight / 2;
         
-       // buttonList.add(button1 = new GuiButton(BUTTON1, (width / 2) + 51, centerY + 33, 30, 20, "Buy"));
-        if(TileEntityMathsQuest.primecomplete == false){
-        buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) + 51, centerY + 59, 30, 20, "Set"));
-        }
-        buttonList.add(button2alt = new GuiButton(BUTTON2alt, (width / 2) , centerY + 59, 80, 20, "Claim Reward"));
-        buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) + 51, centerY + 83, 30, 20, "Set"));
-        buttonList.add(button4 = new GuiButton(BUTTON4, (width / 2) + 51, centerY + 109, 30, 20, "Set"));
-        if(TileEntityMathsQuest.sequencecomplete == false){
-        buttonList.add(button5 = new GuiButton(BUTTON5, (width / 2) + 51, centerY + 133, 30, 20, "Set"));
-        }
-        buttonList.add(button5alt = new GuiButton(BUTTON5alt, (width / 2), centerY + 133, 80, 20, "Claim Reward"));
-        button2alt.visible=false;
-        button5alt.visible=false;
+		if (TileEntityMathsQuest.primecomplete == false) {
+			buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) + 51, centerY + 59, 30, 20, "Set"));
+		}
+		buttonList.add(button2alt = new GuiButton(BUTTON2alt, (width / 2), centerY + 59, 80, 20, "Claim Reward"));
+		if (TileEntityMathsQuest.evencomplete == false) {
+			buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) + 51, centerY + 83, 30, 20, "Set"));
+		}
+		buttonList.add(button3alt = new GuiButton(BUTTON3alt, (width / 2), centerY + 83, 80, 20, "Claim Reward"));
+
+		buttonList.add(button4 = new GuiButton(BUTTON4, (width / 2) + 51, centerY + 109, 30, 20, "Set"));
+		if (TileEntityMathsQuest.sequencecomplete == false) {
+			buttonList.add(button5 = new GuiButton(BUTTON5, (width / 2) + 51, centerY + 133, 30, 20, "Set"));
+		}
+		buttonList.add(button5alt = new GuiButton(BUTTON5alt, (width / 2), centerY + 133, 80, 20, "Claim Reward"));
+		button2alt.visible = false;
+		button3alt.visible = false;
+		button5alt.visible = false;
         
         //Sequence
         if(TileEntityMathsQuest.sequenceclaimed == false){
@@ -129,6 +133,13 @@ public class GuiMathsQuestGive extends GuiScreen {
         if(TileEntityMathsQuest.primeclaimed == false){
       if(TileEntityMathsQuest.primecomplete == true){
     	  button2alt.visible=true;
+      }
+        }
+        
+        //Even 
+        if(TileEntityMathsQuest.evenclaimed == false){
+      if(TileEntityMathsQuest.evencomplete == true){
+    	  button3alt.visible=true;
       }
         }
      
@@ -158,10 +169,17 @@ public class GuiMathsQuestGive extends GuiScreen {
             	break;
             	
             case BUTTON3://EVEN NUMBERS
-            	
             	questnumber = 2;
         		mc.player.playSound(ModSoundHandler.MAWSOUND_FLYBY, 1.0f, 1.0f);
+            	break;
             	
+            case BUTTON3alt:
+            	// Even NUMBER 
+        		mc.player.playSound(ModSoundHandler.MAWSOUND_FLYBY, 1.0f, 1.0f);
+        		GuiNotif.playerScore +=50;
+        		button3alt.visible=false;
+        		questnumber = 0;
+        		TileEntityMathsQuest.evenclaimed = true;
             	break;
             	
             case BUTTON4: //ODD Numbers

@@ -53,6 +53,20 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 	private boolean prime19 = false;
 	public static boolean primecomplete = false;
 	public static boolean primeclaimed = false;
+	
+	//Even Checks
+	private boolean even2 = false;
+	private boolean even4 = false;
+	private boolean even6 = false;
+	private boolean even8 = false;
+	private boolean even10 = false;
+	private boolean even12 = false;
+	private boolean even14 = false;
+	private boolean even16 = false;
+	private boolean even18 = false;
+	private boolean even20 = false;
+	public static boolean evencomplete = false;
+	public static boolean evenclaimed = false;
 
 	public ItemStackHandler handler;
 	public static String questPrimeNumbers = "Prime Numbers";
@@ -121,7 +135,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number33))) {
 							Utils.getLogger().info("Block 33 Placed");
 							handler.extractItem(4, 1, false);
-							player.playSound(ModSoundHandler.MAWSOUND_SMRT, 1.0F, 1.0F);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
 							GuiNotif.playerScore += 10;
 							sequence33 = true;
 						}
@@ -130,7 +144,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number4))) {
 							Utils.getLogger().info("Block 4 Placed");
 							handler.extractItem(4, 1, false);
-							player.playSound(ModSoundHandler.MAWSOUND_SMRT, 1.0F, 1.0F);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
 							GuiNotif.playerScore += 10;
 							sequence4 = true;
 						}
@@ -139,7 +153,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number19))) {
 							Utils.getLogger().info("Block 19 Placed");
 							handler.extractItem(4, 1, false);
-							player.playSound(ModSoundHandler.MAWSOUND_SMRT, 1.0F, 1.0F);
+							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
 							GuiNotif.playerScore += 10;
 							sequence19 = true;
 						}
@@ -165,7 +179,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 									if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number2))) {
 										Utils.getLogger().info("Prime: Block 2 Placed");
 										handler.extractItem(4, 1, false);
-										player.playSound(ModSoundHandler.MAWSOUND_SMRT, 1.0F, 1.0F);
+										player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
 										GuiNotif.playerScore += 10;
 										prime2 = true;
 									}
@@ -175,7 +189,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 									if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number3))) {
 										Utils.getLogger().info("Prime: Block 3 Placed");
 										handler.extractItem(4, 1, false);
-										player.playSound(ModSoundHandler.MAWSOUND_SMRT, 1.0F, 1.0F);
+										player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
 										GuiNotif.playerScore += 10;
 										prime3 = true;
 									}
@@ -184,7 +198,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 									if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number5))) {
 										Utils.getLogger().info("Prime: Block 5 Placed");
 										handler.extractItem(4, 1, false);
-										player.playSound(ModSoundHandler.MAWSOUND_SMRT, 1.0F, 1.0F);
+										player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
 										GuiNotif.playerScore += 10;
 										prime5 = true;
 									}
@@ -193,7 +207,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 									if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number7))) {
 										Utils.getLogger().info("Prime: Block 7 Placed");
 										handler.extractItem(4, 1, false);
-										player.playSound(ModSoundHandler.MAWSOUND_SMRT, 1.0F, 1.0F);
+										player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
 										GuiNotif.playerScore += 10;
 										prime7 = true;
 									}
@@ -202,7 +216,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 									if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number11))) {
 										Utils.getLogger().info("Prime: Block 11 Placed");
 										handler.extractItem(4, 1, false);
-										player.playSound(ModSoundHandler.MAWSOUND_SMRT, 1.0F, 1.0F);
+										player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
 										GuiNotif.playerScore += 10;
 										prime11 = true;
 									}
@@ -211,7 +225,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 									if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number13))) {
 										Utils.getLogger().info("Prime: Block 13 Placed");
 										handler.extractItem(4, 1, false);
-										player.playSound(ModSoundHandler.MAWSOUND_SMRT, 1.0F, 1.0F);
+										player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
 										GuiNotif.playerScore += 10;
 										prime13 = true;
 									}
@@ -220,7 +234,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 									if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number17))) {
 										Utils.getLogger().info("Prime: Block 17 Placed");
 										handler.extractItem(4, 1, false);
-										player.playSound(ModSoundHandler.MAWSOUND_SMRT, 1.0F, 1.0F);
+										player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
 										GuiNotif.playerScore += 10;
 										prime17 = true;
 									}
@@ -229,7 +243,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 									if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number19))) {
 										Utils.getLogger().info("Prime: Block 19 Placed");
 										handler.extractItem(4, 1, false);
-										player.playSound(ModSoundHandler.MAWSOUND_SMRT, 1.0F, 1.0F);
+										player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
 										GuiNotif.playerScore += 10;
 										prime19 = true;
 									}
@@ -248,6 +262,124 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 						}
 //##########################################################################################################
 //##########################################################################################################
+						
+//##########################################################################################################
+//##########################################################################################################
+									// Even Numbers
+									if (evencomplete == false) {
+										if (GuiMathsQuestGive.questnumber == 4) {
+											if (even2 == false) {
+												if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number2))) {
+													Utils.getLogger().info("Even :Block 2 Placed");
+													handler.extractItem(4, 1, false);
+													player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+													GuiNotif.playerScore += 10;
+													even2 = true;
+												}
+											}
+											if (even4 == false) {
+												if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number4))) {
+													Utils.getLogger().info("Even :Block 4 Placed");
+													handler.extractItem(4, 1, false);
+													player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+													GuiNotif.playerScore += 10;
+													even4 = true;
+												}
+											}
+											if (even6 == false) {
+												if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number6))) {
+													Utils.getLogger().info("Even :Block 6 Placed");
+													handler.extractItem(4, 1, false);
+													player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+													GuiNotif.playerScore += 10;
+													even6 = true;
+												}
+											}
+											if (even8 == false) {
+												if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number8))) {
+													Utils.getLogger().info("Even :Block 8 Placed");
+													handler.extractItem(4, 1, false);
+													player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+													GuiNotif.playerScore += 10;
+													even8 = true;
+												}
+											}
+											if (even10 == false) {
+												if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number10))) {
+													Utils.getLogger().info("Even :Block 10 Placed");
+													handler.extractItem(4, 1, false);
+													player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+													GuiNotif.playerScore += 10;
+													even10 = true;
+												}
+											}
+											if (even12 == false) {
+												if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number12))) {
+													Utils.getLogger().info("Even :Block 12 Placed");
+													handler.extractItem(4, 1, false);
+													player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+													GuiNotif.playerScore += 10;
+													even12 = true;
+												}
+											}
+											if (even14 == false) {
+												if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number14))) {
+													Utils.getLogger().info("Even :Block 14 Placed");
+													handler.extractItem(4, 1, false);
+													player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+													GuiNotif.playerScore += 10;
+													even14 = true;
+												}
+											}
+											if (even14 == false) {
+												if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number14))) {
+													Utils.getLogger().info("Even :Block 14 Placed");
+													handler.extractItem(4, 1, false);
+													player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+													GuiNotif.playerScore += 10;
+													even14 = true;
+												}
+											}
+											if (even16 == false) {
+												if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number16))) {
+													Utils.getLogger().info("Even :Block 16 Placed");
+													handler.extractItem(4, 1, false);
+													player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+													GuiNotif.playerScore += 10;
+													even16 = true;
+												}
+											}
+											if (even18 == false) {
+												if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number18))) {
+													Utils.getLogger().info("Even :Block 18 Placed");
+													handler.extractItem(4, 1, false);
+													player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+													GuiNotif.playerScore += 10;
+													even18 = true;
+												}
+											}
+											if (even20 == false) {
+												if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number20))) {
+													Utils.getLogger().info("Even :Block 20 Placed");
+													handler.extractItem(4, 1, false);
+													player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
+													GuiNotif.playerScore += 10;
+													even20 = true;
+												}
+											}
+											
+
+											if (even2 == true && even4 == true && even6 == true && even8 == true &&
+													even10 == true && even12 == true && even14 == true && even16 == true &&
+													even18 == true && even20 == true) {
+												questEvenNumbers = questcomplete;
+												evencomplete = true;
+											}
+										}
+
+									}
+						//##########################################################################################################
+						//##########################################################################################################
 		}
 
 	}
