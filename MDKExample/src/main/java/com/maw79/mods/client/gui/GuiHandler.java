@@ -172,7 +172,7 @@ Utils.getLogger().info("GuiHandler: getClientGuiElement");
 		}
 		if(ID==STORED_DISPLAY_2){
 			
-			return new GuiStoreDisplay();
+			return new GuiMathsQuestGive();
 		}
 		if(ID==MATHS_QUEST){
 			

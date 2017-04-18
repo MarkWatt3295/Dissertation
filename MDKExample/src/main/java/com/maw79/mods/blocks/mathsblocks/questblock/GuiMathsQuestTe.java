@@ -2,6 +2,8 @@ package com.maw79.mods.blocks.mathsblocks.questblock;
 
 
 import java.io.IOException;
+
+import com.maw79.mods.client.gui.GuiMathsQuestGive;
 import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.main.Reference;
 import net.minecraft.client.gui.GuiButton;
@@ -27,10 +29,15 @@ public class GuiMathsQuestTe extends GuiContainer {
 	private IInventory playerInv;
 	GuiButton button1, button2, button3, button4, button5;
 	final int BUTTON1= 1, BUTTON2 = 2, BUTTON3 = 3, BUTTON4 = 4, BUTTON5 = 5;
+	
 
 	public boolean help = false;
 	
-	
+	public  String activequest = "";
+	public static String questPrimeNumbers= "Prime Numbers";
+	public static String questEvenNumbers= "Even Numbers";
+	public static String questOddNumbers= "Odd Numbers";
+	public static String questNumberSequence= "Number Sequence";
 	
 	public GuiMathsQuestTe(IInventory playerInv, TileEntityMathsQuest te) {
 		super(new ContainerMathsQuest(playerInv, te));
@@ -62,10 +69,27 @@ public class GuiMathsQuestTe extends GuiContainer {
 	 */
 	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
+		if(GuiMathsQuestGive.questnumber == 1){
+			activequest = "Prime Numbers";
+		}
+		else if(GuiMathsQuestGive.questnumber == 2){
+			activequest = "Even Numbers";
+		}
+		else if(GuiMathsQuestGive.questnumber == 3){
+			activequest = "Odd Numbers";
+		}
+		else if(GuiMathsQuestGive.questnumber == 3){
+			activequest ="Number Sequence";
+		}
+		else{
+			activequest = "No set Quest";
+		}
+    	
+		
 		String s = ("Maths Quest"); 
 		String s1 = "";
 		
-		String s2 = ("Current Quest : Prime Numbers");
+		String s2 = ("Current Quest : "+activequest);
 		String s3 = "";
 		String s4 = "";
 		

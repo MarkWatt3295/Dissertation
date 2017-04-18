@@ -8,6 +8,7 @@ import com.maw79.mods.client.gui.GuiHandler;
 import com.maw79.mods.entity.passive.EntitiesLivingHandler;
 import com.maw79.mods.blocks.ItemProfiler.TileEntityProfiler;
 import com.maw79.mods.blocks.historyblocks.artifactupdater.TileEntityArtifactResearcher;
+import com.maw79.mods.blocks.mathsblocks.questblock.TileEntityMathsQuest;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.modattempts.blockvariants.BlockVariants;
@@ -44,6 +45,7 @@ public class CommonProxy {
 		GameRegistry.registerTileEntity(TileEntityInsulatorCalculator.class, Reference.MOD_ID + ":insulator_calculator");
 		GameRegistry.registerTileEntity(TileEntityArtifactResearcher.class, Reference.MOD_ID + ":artifactresearcher");
 		GameRegistry.registerTileEntity(TileEntityStore.class, Reference.MOD_ID + ":store");
+		GameRegistry.registerTileEntity(TileEntityMathsQuest.class, Reference.MOD_ID + ":maths_quest");
 	}
 	
 	/**

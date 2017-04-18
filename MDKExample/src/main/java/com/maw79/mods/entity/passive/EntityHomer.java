@@ -1,20 +1,12 @@
 package com.maw79.mods.entity.passive;
 
-import com.maw79.mods.client.gui.GuiHandler;
-import com.maw79.mods.client.gui.GuiStoreDisplay;
 import com.maw79.mods.handlers.AchievementHandler;
 import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.init.ModItems;
-import com.maw79.mods.main.Maw79Mod;
-import com.maw79.mods.util.Utils;
-
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAISwimming;
-import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.player.EntityPlayer;

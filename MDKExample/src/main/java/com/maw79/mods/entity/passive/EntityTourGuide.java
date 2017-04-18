@@ -1,7 +1,7 @@
 package com.maw79.mods.entity.passive;
 
 import com.maw79.mods.client.gui.GuiHandler;
-import com.maw79.mods.client.gui.GuiStoreDisplay;
+import com.maw79.mods.client.gui.GuiStoreDisplay2;
 import com.maw79.mods.handlers.AchievementHandler;
 import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.init.ModItems;
@@ -128,7 +128,7 @@ public  class EntityTourGuide extends EntityCreature {
 		        {
 		            int basicID = this.getEntityId();
 		           // entity.openGui(Maw79Mod.instance, GuiHandler.STORE_GUI, this.world, basicID, 0, 0);
-		            Minecraft.getMinecraft().displayGuiScreen(new GuiStoreDisplay());
+		            Minecraft.getMinecraft().displayGuiScreen(new GuiStoreDisplay2());
 		            
 		           
 		        }
