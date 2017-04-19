@@ -36,6 +36,7 @@ public class AchievementHandler {
 	public static Achievement achievementObsidianMan = createAchievement4("obsidianman", 4, 4, ModBlocks.obsidianingotblock); //Image for Achievment Icon
 	public static Achievement achievementPainter = createAchievement("painter", 2, 2, ModItems.reversepaintbrush);
 	public static Achievement achievementNiceTo = createAchievement("niceto", 2, 4, Blocks.SOUL_SAND);
+	public static Achievement achievementMathsQuest = createAchievement("mathsquest", 3, 0, ModBlocks.Mathsquestblock);
 
 	/**
 	 * Registers the achievements
@@ -120,5 +121,10 @@ public class AchievementHandler {
 				Achievement acheivement6 = new Achievement("achievement6." + name, name, column+=3, row+=2, soulsand, (Achievement)null); //The null is for the parent this is if one achievement requires another to unlock it
 				achievements.add(acheivement6);
 				return acheivement6;
+			}
+			private static Achievement createAchievement7(String name, int column, int row, Block mathsquiz) {
+				Achievement acheivement7 = new Achievement("achievement7." + name, name, column, row, mathsquiz, (Achievement)null); //The null is for the parent this is if one achievement requires another to unlock it
+				achievements.add(acheivement7);
+				return acheivement7;
 			}
 }

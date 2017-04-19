@@ -37,8 +37,12 @@ import com.maw79.mods.items.mathsitems.ItemAppleWallBorder;
 import com.maw79.mods.items.mathsitems.ItemAppleWallWool;
 import com.maw79.mods.items.mathsitems.ItemCalculator;
 import com.maw79.mods.items.mathsitems.ItemCompleteAppleWall;
+import com.maw79.mods.items.mathsitems.ItemEvenBook;
+import com.maw79.mods.items.mathsitems.ItemNumberSequenceBook;
+import com.maw79.mods.items.mathsitems.ItemOddBook;
 import com.maw79.mods.items.mathsitems.ItemPictureWall;
 import com.maw79.mods.items.mathsitems.ItemPlayerLevel;
+import com.maw79.mods.items.mathsitems.ItemPrimeBook;
 import com.maw79.mods.items.mathsitems.ItemXyzDevice;
 import com.maw79.mods.items.scienceitems.ItemElementFire;
 import com.maw79.mods.items.scienceitems.ItemMagnet;
@@ -104,6 +108,10 @@ public class ModItems {
 	public static final Item LEVITATION_DUST = new ItemLevitationDust("levitationdust");
 	public static final Item LEVITATION_DUST2 = new ItemLevitationDust2("levitationdust2");
 	public static final Item LEVITATION_DUST3 = new ItemLevitationDust3("levitationdust3");
+	public static final Item NUMBER_SEQUENCE_BOOK = new ItemNumberSequenceBook("number_sequence_book");
+	public static final Item PRIME_BOOK = new ItemPrimeBook("prime_book");
+	public static final Item ODD_BOOK = new ItemOddBook("odd_book");
+	public static final Item EVEN_BOOK = new ItemEvenBook("even_book");
 
 	
 	
@@ -263,6 +271,10 @@ public class ModItems {
 		xyzdevice.setCreativeTab(Maw79Mod.unused);
 		registerItem(applewallaxis);
 		registerItem(mathsbook);
+		registerItem(NUMBER_SEQUENCE_BOOK);
+		registerItem(EVEN_BOOK);
+		registerItem(ODD_BOOK);
+		registerItem(PRIME_BOOK);
 		
 		//Debug Items
 		registerItem(reversepaintbrush);
@@ -314,6 +326,10 @@ public class ModItems {
 		registerRender(LEVITATION_DUST);
 		registerRender(LEVITATION_DUST2);
 		registerRender(LEVITATION_DUST3);
+		registerRender(NUMBER_SEQUENCE_BOOK);
+		registerRender(EVEN_BOOK);
+		registerRender(ODD_BOOK);
+		registerRender(PRIME_BOOK);
 		
 		
 		//SCIENCE LABELS

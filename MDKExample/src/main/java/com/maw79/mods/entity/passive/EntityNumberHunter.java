@@ -104,7 +104,7 @@ public  class EntityNumberHunter extends EntityCreature {
 	@Override
 	public boolean processInteract(EntityPlayer entity, EnumHand hand) {
 		super.processInteract(entity, hand);
-		entity.playSound(ModSoundHandler.MAWSOUND_CHACHING, 3.0F, 1.0F);
+		entity.playSound(ModSoundHandler.MAWSOUND_PAGETURN, 3.0F, 1.0F);
 		int i = (int) this.posX;
 		int j = (int) this.posY;
 		int k = (int) this.posZ;
@@ -116,8 +116,8 @@ public  class EntityNumberHunter extends EntityCreature {
 	        }
 			
 		
-		if(!entity.hasAchievement(AchievementHandler.achievementNiceTo)){
-         	entity.addStat(AchievementHandler.achievementNiceTo);
+		if(!entity.hasAchievement(AchievementHandler.achievementMathsQuest)){
+         	entity.addStat(AchievementHandler.achievementMathsQuest);
          }
 
 		return true;

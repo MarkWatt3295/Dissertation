@@ -182,13 +182,13 @@ public class GuiMathsQuestGive extends GuiScreen {
             
             case BUTTON2: //PRIME NUMBERS
             		questnumber = 1;
-            		mc.player.playSound(ModSoundHandler.MAWSOUND_FLYBY, 1.0f, 1.0f);
+            		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
             	
             	break;
             	
             case BUTTON2alt:
             	// Prime NUMBER 
-        		mc.player.playSound(ModSoundHandler.MAWSOUND_FLYBY, 1.0f, 1.0f);
+        		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
         		GuiNotif.playerScore +=50;
         		button2alt.visible=false;
         		questnumber = 0;
@@ -200,12 +200,12 @@ public class GuiMathsQuestGive extends GuiScreen {
             	
             case BUTTON3://EVEN NUMBERS
             	questnumber = 2;
-        		mc.player.playSound(ModSoundHandler.MAWSOUND_FLYBY, 1.0f, 1.0f);
+        		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
             	break;
             	
             case BUTTON3alt:
             	// Even NUMBER 
-        		mc.player.playSound(ModSoundHandler.MAWSOUND_FLYBY, 1.0f, 1.0f);
+        		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
         		GuiNotif.playerScore +=50;
         		button3alt.visible=false;
         		questnumber = 0;
@@ -217,12 +217,12 @@ public class GuiMathsQuestGive extends GuiScreen {
             	
             case BUTTON4: //ODD Numbers
             	questnumber = 3;
-        		mc.player.playSound(ModSoundHandler.MAWSOUND_FLYBY, 1.0f, 1.0f);
+        		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
             	break;
             	
             case BUTTON4alt:
             	// Odd NUMBER 
-        		mc.player.playSound(ModSoundHandler.MAWSOUND_FLYBY, 1.0f, 1.0f);
+        		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
         		GuiNotif.playerScore +=50;
         		button4alt.visible=false;
         		questnumber = 0;
@@ -234,12 +234,12 @@ public class GuiMathsQuestGive extends GuiScreen {
             	
             case BUTTON5:
             	questnumber = 4; // NUMBER SEQUENCE
-        		mc.player.playSound(ModSoundHandler.MAWSOUND_FLYBY, 1.0f, 1.0f);
+        		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
             	break;
             	
             case BUTTON5alt:
             	// NUMBER SEQUENCE
-        		mc.player.playSound(ModSoundHandler.MAWSOUND_FLYBY, 1.0f, 1.0f);
+        		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
         		GuiNotif.playerScore +=50;
         		button5alt.visible=false;
         		TileEntityMathsQuest.sequenceclaimed = true;

@@ -1,0 +1,119 @@
+---- Minecraft Crash Report ----
+// I just don't know what went wrong :(
+
+Time: 4/19/17 7:48 AM
+Description: Unexpected error
+
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:653)
+	at java.util.ArrayList.get(ArrayList.java:429)
+	at com.maw79.mods.client.gui.books.GuiNumberSequence.<init>(GuiNumberSequence.java:41)
+	at com.maw79.mods.items.mathsitems.ItemNumberSequenceBook.onItemRightClick(ItemNumberSequenceBook.java:35)
+	at net.minecraft.item.ItemStack.useItemRightClick(ItemStack.java:213)
+	at net.minecraft.client.multiplayer.PlayerControllerMP.processRightClick(PlayerControllerMP.java:529)
+	at net.minecraft.client.Minecraft.rightClickMouse(Minecraft.java:1624)
+	at net.minecraft.client.Minecraft.processKeyBinds(Minecraft.java:2276)
+	at net.minecraft.client.Minecraft.runTickKeyboard(Minecraft.java:2053)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1841)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1119)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:407)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97)
+	at GradleStart.main(GradleStart.java:26)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at java.util.ArrayList.rangeCheck(ArrayList.java:653)
+	at java.util.ArrayList.get(ArrayList.java:429)
+	at com.maw79.mods.client.gui.books.GuiNumberSequence.<init>(GuiNumberSequence.java:41)
+	at com.maw79.mods.items.mathsitems.ItemNumberSequenceBook.onItemRightClick(ItemNumberSequenceBook.java:35)
+	at net.minecraft.item.ItemStack.useItemRightClick(ItemStack.java:213)
+	at net.minecraft.client.multiplayer.PlayerControllerMP.processRightClick(PlayerControllerMP.java:529)
+	at net.minecraft.client.Minecraft.rightClickMouse(Minecraft.java:1624)
+	at net.minecraft.client.Minecraft.processKeyBinds(Minecraft.java:2276)
+	at net.minecraft.client.Minecraft.runTickKeyboard(Minecraft.java:2053)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['Player618'/47, l='MpServer', x=-136.23, y=63.00, z=-94.03]]
+	Chunk stats: MultiplayerChunkCache: 841, 841
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (26,67,-57), Chunk: (at 10,4,7 in 1,-4; contains blocks 16,0,-64 to 31,255,-49), Region: (0,-1; contains chunks 0,-32 to 31,-1, blocks 0,0,-512 to 511,255,-1)
+	Level time: 959712 game time, 40551 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 32 total; [EntityBat['Bat'/0, l='MpServer', x=-153.55, y=32.71, z=-114.13], EntityTokenShopKeeper['Shopkeeper'/1, l='MpServer', x=-140.28, y=63.00, z=-97.63], EntityNumberHunter['Mr. Numbers'/2, l='MpServer', x=-135.53, y=63.00, z=-96.06], EntityBat['Bat'/3, l='MpServer', x=-139.25, y=41.10, z=-91.69], EntityBat['Bat'/4, l='MpServer', x=-138.25, y=40.10, z=-91.25], Test['entity.Test.name'/5, l='MpServer', x=-131.17, y=63.00, z=-86.59], EntityBat['Bat'/6, l='MpServer', x=-138.25, y=34.10, z=-73.48], EntityBat['Bat'/7, l='MpServer', x=-128.98, y=55.10, z=-66.89], EntityItemFrame['entity.ItemFrame.name'/8, l='MpServer', x=-138.97, y=64.50, z=-53.50], EntityItemFrame['entity.ItemFrame.name'/9, l='MpServer', x=-138.97, y=64.50, z=-54.50], EntityItemFrame['entity.ItemFrame.name'/10, l='MpServer', x=-138.97, y=64.50, z=-55.50], EntityTokenShopKeeper['Shopkeeper'/11, l='MpServer', x=-138.30, y=63.00, z=-35.30], EntityBat['Bat'/12, l='MpServer', x=-134.91, y=52.20, z=-31.30], EntityBat['Bat'/13, l='MpServer', x=-112.27, y=38.14, z=-55.49], EntityBat['Bat'/14, l='MpServer', x=-125.58, y=55.10, z=-62.24], EntityBat['Bat'/15, l='MpServer', x=-125.49, y=53.90, z=-60.27], EntityBat['Bat'/16, l='MpServer', x=-126.57, y=50.66, z=-62.79], EntityBat['Bat'/17, l='MpServer', x=-115.04, y=38.83, z=-31.25], EntityChicken['Chicken'/18, l='MpServer', x=-122.15, y=63.00, z=-33.48], EntityItem['item.item.egg'/19, l='MpServer', x=-125.50, y=63.00, z=-32.13], EntityBat['Bat'/20, l='MpServer', x=-122.84, y=56.11, z=-32.29], EntityBat['Bat'/21, l='MpServer', x=-99.53, y=27.29, z=-51.54], EntityRabbit['Rabbit'/22, l='MpServer', x=-94.31, y=63.00, z=-87.51], EntityChicken['Chicken'/23, l='MpServer', x=-85.65, y=63.00, z=-80.88], EntityItem['item.item.egg'/24, l='MpServer', x=-88.79, y=63.00, z=-88.23], EntityBat['Bat'/25, l='MpServer', x=-85.25, y=51.10, z=-84.25], EntityChicken['Chicken'/26, l='MpServer', x=-82.18, y=63.00, z=-57.55], EntityBat['Bat'/27, l='MpServer', x=-82.25, y=58.10, z=-46.41], EntityBat['Bat'/28, l='MpServer', x=-90.94, y=17.52, z=-16.13], EntityBat['Bat'/29, l='MpServer', x=-86.44, y=17.82, z=-72.51], EntityItem['item.item.egg'/30, l='MpServer', x=-78.13, y=63.00, z=-56.95], EntityPlayerSP['Player618'/47, l='MpServer', x=-136.23, y=63.00, z=-94.03]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:456)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2774)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:436)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97)
+	at GradleStart.main(GradleStart.java:26)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.11.2
+	Operating System: Mac OS X (x86_64) version 10.12.5
+	Java Version: 1.8.0_121, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 3322902712 bytes (3168 MB) / 4159700992 bytes (3967 MB) up to 4159700992 bytes (3967 MB)
+	JVM Flags: 2 total; -Xmx4G -Xms4G
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
+	FML: MCP 9.38 Powered by Forge 13.20.0.2228 5 mods loaded, 5 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAA	minecraft{1.11.2} [Minecraft] (minecraft.jar) 
+	UCHIJAAAA	mcp{9.19} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAA	FML{8.0.99.99} [Forge Mod Loader] (forgeSrc-1.11.2-13.20.0.2228.jar) 
+	UCHIJAAAA	forge{13.20.0.2228} [Minecraft Forge] (forgeSrc-1.11.2-13.20.0.2228.jar) 
+	UCHIJAAAA	maw79{0.40 mathsbuild - Alpha} [Teaching Keystage 2 Via Minecraft] (bin) 
+	Loaded coremods (and transformers): 
+	Launched Version: 1.11.2
+	LWJGL: 2.9.2
+	OpenGL: Intel Iris OpenGL Engine GL version 2.1 INTEL-10.25.2, Intel Inc.
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because ARB_framebuffer_object is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	CPU: 4x Intel(R) Core(TM) i5-4258U CPU @ 2.40GHz

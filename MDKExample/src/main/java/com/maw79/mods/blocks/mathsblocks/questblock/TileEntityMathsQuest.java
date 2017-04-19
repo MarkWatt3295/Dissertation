@@ -1,28 +1,15 @@
 package com.maw79.mods.blocks.mathsblocks.questblock;
 
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
-
 import com.maw79.mods.client.gui.GuiMathsQuestGive;
 import com.maw79.mods.client.gui.GuiNotif;
 import com.maw79.mods.handlers.ModSoundHandler;
-import com.maw79.mods.init.ModBlocks;
-import com.maw79.mods.init.ModItems;
 import com.maw79.mods.init.ModNumberBlocks;
 import com.maw79.mods.util.Utils;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.NetworkManager;
-import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
@@ -42,6 +29,8 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 	public static int sequencenumstofind = 3;
 	public static boolean sequencecomplete = false;
 	public static boolean sequenceclaimed = false;
+	public static String[] seqarray = new String[3];
+	
 
 	// Prime Checks
 	private boolean prime2 = false;
@@ -93,14 +82,16 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 	public static String questNumberSequence = "Sequence";
 	public static String questcomplete = "§a" + "Completed";
 
-	public ArrayList<ItemStack> insulators = new ArrayList<ItemStack>();
-
+	
 	/**
 	 * Initializes our variables. MUST NOT HAVE ANY PARAMETERS
 	 */
 	public TileEntityMathsQuest() {
 		this.handler = new ItemStackHandler(10);
-
+		seqarray[0]= "";
+		seqarray[1]= "";
+		seqarray[2]= "";
+		
 	}
 
 	/**
@@ -157,6 +148,8 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							GuiNotif.playerScore += 10;
 							sequence33 = true;
 							sequencenumstofind -=1;
+							seqarray[0] =" 33 ,";
+							
 						}
 					}
 					if (sequence4 == false) {
@@ -167,6 +160,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							GuiNotif.playerScore += 10;
 							sequence4 = true;
 							sequencenumstofind -=1;
+							seqarray[1] =" 4 ,";
 						}
 					}
 					if (sequence19 == false) {
@@ -177,6 +171,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							GuiNotif.playerScore += 10;
 							sequence19 = true;
 							sequencenumstofind -=1;
+							seqarray[2] =" 19";
 						}
 					}
 

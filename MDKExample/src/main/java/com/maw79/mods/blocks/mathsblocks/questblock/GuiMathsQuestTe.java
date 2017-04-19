@@ -268,9 +268,7 @@ public class GuiMathsQuestTe extends GuiContainer {
 	          
 	            	
 	            case BUTTON3: //help
-	            	
-	            	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-	            	
+
 	            	help = true;
 	            	button3.visible = false;
 	            	drawGuiContainerBackgroundLayer(zLevel, BUTTON3, BUTTON3);
@@ -279,9 +277,7 @@ public class GuiMathsQuestTe extends GuiContainer {
 	            	break;
 	            	
 	            case REWARD: //help
-	            	
-	            	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-	            	
+	            
 	            	reward.visible = false;
 	            	mc.player.closeScreen();
 	            	

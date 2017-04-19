@@ -65,6 +65,10 @@ item.bow.name=Modded Bow
 item.paint_arrow.name=Paint Arrow
 item.paintremover_arrow.name=Paint Remover Arrow
 item.calculator.name=Calculator Screen
+item.number_sequence_book.name=Sequence Quest Manual
+item.prime_book.name=Prime Quest Manual
+item.odd_book.name=Odd Quest Manual
+item.even_book.name=Even Quest Manual
 
 //Debug Items
 item.reverse_paint_brush.name=Reverse Paint Brush
@@ -173,6 +177,7 @@ tile.block_number18.name=Number 18 Block
 tile.block_number19.name=Number 19 Block
 tile.block_number20.name=Number 20 Block
 tile.block_number21.name=Number 21 Block
+tile.block_number33.name=Number 33 Block
 
 //SCIENCE BLOCKS
 tile.science_wool_block.name=Science Wool
@@ -214,6 +219,8 @@ achievement.painter=Painter
 achievement.painter.desc=Paint your first block with a brush
 achievement.niceto=Nice To Meet You
 achievement.niceto.desc=Met a new Mob
+achievement.mathsquest=Mr. Numbers I Presume
+achievement.mathsquest.desc=Check out Mr. Numbers Maths Quests
 
 
 //Tools
@@ -245,6 +252,7 @@ gui.block_breaker.enchanted_book.tooltip=Enchanted book goes here
 gui.guisciencete.button3.tooltip=Maw79 KS2 Mod Configuration
 
 //TOOL TIPS
+maw79.numbersequence.tooltip=Right click with this item to view the Number Sequence Quest.
 maw79.levitationdust.tooltip=Use this to temporarily Levitate
 maw79.levitationdust2.tooltip=Use this to temporarily Levitate
 maw79.levitationdust3.tooltip=Use this to temporarily Levitate

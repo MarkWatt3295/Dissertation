@@ -41,17 +41,6 @@ public class ModNumberBlocks {
 	public static Block number19;
 	public static Block number20;
 	public static Block number21;
-	public static Block number22;
-	public static Block number23;
-	public static Block number24;
-	public static Block number25;
-	public static Block number26;
-	public static Block number27;
-	public static Block number28;
-	public static Block number29;
-	public static Block number30;
-	public static Block number31;
-	public static Block number32;
 	public static Block number33;
 	
 
@@ -79,17 +68,6 @@ public class ModNumberBlocks {
 		number19 = new BlockBasicBlock("block_number19");
 		number20 = new BlockBasicBlock("block_number20");
 		number21 = new BlockBasicBlock("block_number21");
-		number22 = new BlockBasicBlock("block_number22");
-		number23 = new BlockBasicBlock("block_number23");
-		number24 = new BlockBasicBlock("block_number24");
-		number25 = new BlockBasicBlock("block_number25");
-		number26 = new BlockBasicBlock("block_number26");
-		number27 = new BlockBasicBlock("block_number27");
-		number28 = new BlockBasicBlock("block_number28");
-		number29 = new BlockBasicBlock("block_number29");
-		number30 = new BlockBasicBlock("block_number30");
-		number31 = new BlockBasicBlock("block_number31");
-		number32 = new BlockBasicBlock("block_number32");
 		number33 = new BlockBasicBlock("block_number33");
 		
 	}
@@ -118,17 +96,6 @@ public class ModNumberBlocks {
 		registerBlock(number19);
 		registerBlock(number20);
 		registerBlock(number21);
-		registerBlock(number22);
-		registerBlock(number23);
-		registerBlock(number24);
-		registerBlock(number25);
-		registerBlock(number26);
-		registerBlock(number27);
-		registerBlock(number28);
-		registerBlock(number29);
-		registerBlock(number30);
-		registerBlock(number31);
-		registerBlock(number32);
 		registerBlock(number33);
 		
 	}
@@ -174,17 +141,6 @@ public class ModNumberBlocks {
 		registerRender(number19);
 		registerRender(number20);
 		registerRender(number21);
-		registerRender(number22);
-		registerRender(number23);
-		registerRender(number24);
-		registerRender(number25);
-		registerRender(number26);
-		registerRender(number27);
-		registerRender(number28);
-		registerRender(number29);
-		registerRender(number30);
-		registerRender(number31);
-		registerRender(number32);
 		registerRender(number33);
 	}
 	

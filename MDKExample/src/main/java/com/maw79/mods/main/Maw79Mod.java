@@ -26,8 +26,6 @@ import com.maw79.mods.init.ModEntities;
 import com.maw79.mods.init.ModItems;
 import com.maw79.mods.init.ModNumberBlocks;
 import com.maw79.mods.init.ModTools;
-import com.maw79.mods.modattempts.blockvariants.StartupClientOnly;
-import com.maw79.mods.modattempts.blockvariants.StartupCommon;
 import com.maw79.mods.network.GuiInventoryMessage;
 import com.maw79.mods.network.GuiInventoryPacketHandler;
 import com.maw79.mods.network.MathsMessage;
@@ -135,8 +133,6 @@ public class Maw79Mod {
 		Maw79Config.preInit();
 		proxy.registerRenders();
 		proxy.registerTileEntities();
-		StartupCommon.preInitCommon();
-		//StartupClientOnly.preInitClientOnly();
 		proxy.preInit();
 		//ModEntities.registerEntities();
 		

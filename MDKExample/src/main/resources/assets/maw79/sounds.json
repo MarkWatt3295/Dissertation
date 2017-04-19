@@ -90,4 +90,10 @@
         "subtitle": "mawsound.tada",
         "sounds": [ { "name": "maw79:mawsound/tada", "stream": true } ]
     }
+     ,
+      "mawsound.pageturn": {
+        "category": "block",
+        "subtitle": "mawsound.pageturn",
+        "sounds": [ { "name": "maw79:mawsound/pageturn", "stream": true } ]
+    }
 }

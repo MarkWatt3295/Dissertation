@@ -11,13 +11,9 @@ import com.maw79.mods.blocks.historyblocks.artifactupdater.TileEntityArtifactRes
 import com.maw79.mods.blocks.mathsblocks.questblock.TileEntityMathsQuest;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
-import com.maw79.mods.modattempts.blockvariants.BlockVariants;
-import com.maw79.mods.modattempts.blockvariants.StartupCommon;
 import com.maw79.mods.tileentity.TileEntityBlockBreaker;
 import com.maw79.mods.tileentity.storetileentity.TileEntityStore;
 
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 

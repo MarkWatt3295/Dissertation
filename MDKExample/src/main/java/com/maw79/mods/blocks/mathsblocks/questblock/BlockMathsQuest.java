@@ -44,7 +44,7 @@ public class BlockMathsQuest extends BlockContainer {
 			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 	
 		
-		world.playSound(player, pos, ModSoundHandler.STEEL_FENCE_GATE_OPEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
+		world.playSound(player, pos, ModSoundHandler.MAWSOUND_PAGETURN, SoundCategory.BLOCKS, 1.0F, 1.0F);
         
 		
 		if (!world.isRemote)
