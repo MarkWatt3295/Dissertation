@@ -3,6 +3,7 @@ package com.maw79.mods.items.mathsitems;
 import java.util.List;
 
 import com.maw79.mods.client.gui.GuiFirstBook;
+import com.maw79.mods.client.gui.books.GuiEvenManual;
 import com.maw79.mods.client.gui.books.GuiNumberSequence;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.util.Utils;
@@ -32,7 +33,7 @@ public class ItemEvenBook extends Item{
 	@Override
 	public  ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
 		if(player.world.isRemote){
-		Minecraft.getMinecraft().displayGuiScreen(new GuiNumberSequence());
+		Minecraft.getMinecraft().displayGuiScreen(new GuiEvenManual());
 		}
 		return super.onItemRightClick(world, player, hand);
 	}
@@ -43,6 +44,6 @@ public class ItemEvenBook extends Item{
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
 		super.addInformation(stack, playerIn, tooltip, advanced);
-		tooltip.add(TextFormatting.GOLD + Utils.getLang().localize("evenbook.tooltip"));
+		tooltip.add(TextFormatting.LIGHT_PURPLE + Utils.getLang().localize("evenbook.tooltip"));
 	}
 }

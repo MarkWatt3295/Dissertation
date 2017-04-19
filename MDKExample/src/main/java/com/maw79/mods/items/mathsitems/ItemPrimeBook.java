@@ -43,6 +43,6 @@ public class ItemPrimeBook extends Item{
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
 		super.addInformation(stack, playerIn, tooltip, advanced);
-		tooltip.add(TextFormatting.GOLD + Utils.getLang().localize("primebook.tooltip"));
+		tooltip.add(TextFormatting.RED + Utils.getLang().localize("primebook.tooltip"));
 	}
 }

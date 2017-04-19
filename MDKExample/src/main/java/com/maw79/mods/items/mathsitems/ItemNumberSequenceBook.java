@@ -43,6 +43,6 @@ public class ItemNumberSequenceBook extends Item{
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
 		super.addInformation(stack, playerIn, tooltip, advanced);
-		tooltip.add(TextFormatting.GOLD + Utils.getLang().localize("numbersequence.tooltip"));
+		tooltip.add(TextFormatting.GREEN + Utils.getLang().localize("numbersequence.tooltip"));
 	}
 }
