@@ -22,8 +22,8 @@ public class GuiScoreDebug extends GuiScreen {
     
     String title = "Score Debug";
     
-    GuiButton button1, button2, button3, button4;
-    final int BUTTON1 = 1, BUTTON2 = 2, BUTTON3 = 3, BUTTON4 = 4;
+    GuiButton button1, button2, button3, button4, button5;
+    final int BUTTON1 = 1, BUTTON2 = 2, BUTTON3 = 3, BUTTON4 = 4, BUTTON5 =5;
     
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
@@ -66,11 +66,11 @@ public class GuiScoreDebug extends GuiScreen {
     public void initGui() {
     	
         buttonList.clear();
-        
-        
-        buttonList.add(button1 = new GuiButton(BUTTON1, (width / 2) - 100 / 2, 85, 100, 20, "Score + 10"));
-        buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) - 100 / 2,  110, 100, 20, "Score + 100"));
-        buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) - 100 / 2, 135, 100, 20, "Score = 0"));
+        buttonList.add(button5 = new GuiButton(BUTTON5, (width / 2) - 100 / 2, 45, 100, 20, "Score + 5"));
+        buttonList.add(button4 = new GuiButton(BUTTON4, (width / 2) - 100 / 2,  70, 100, 20, "Score + 1000"));
+        buttonList.add(button1 = new GuiButton(BUTTON1, (width / 2) - 100 / 2, 95, 100, 20, "Score + 10"));
+        buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) - 100 / 2,  120, 100, 20, "Score + 100"));
+        buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) - 100 / 2, 145, 100, 20, "Score = 0"));
        
         super.initGui();
     }
@@ -86,10 +86,8 @@ public class GuiScoreDebug extends GuiScreen {
     	
         switch (button.id) {
             case BUTTON1:
-     
            GuiNotif.playerScore += 10;
             	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-            	
             	break;
             	
             case BUTTON2:
@@ -102,8 +100,17 @@ public class GuiScoreDebug extends GuiScreen {
             case BUTTON3:
             	GuiNotif.playerScore =0;
             	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-            
             	break;
+            	
+            case BUTTON4:
+                GuiNotif.playerScore += 1000;
+                 	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
+                 	break;
+                 	
+            case BUTTON5:
+                GuiNotif.playerScore += 5;
+                 	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
+                 	break;
             	
           
         }
