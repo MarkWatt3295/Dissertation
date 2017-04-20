@@ -96,4 +96,10 @@
         "subtitle": "mawsound.pageturn",
         "sounds": [ { "name": "maw79:mawsound/pageturn", "stream": true } ]
     }
+     ,
+      "mawsound.correct": {
+        "category": "block",
+        "subtitle": "mawsound.correct",
+        "sounds": [ { "name": "maw79:mawsound/correct", "stream": true } ]
+    }
 }

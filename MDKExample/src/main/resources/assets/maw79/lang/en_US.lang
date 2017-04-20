@@ -120,6 +120,7 @@ tile.block_creative.name=Creative Mode Block
 tile.block_survival.name=Survival Mode Block
 tile.block_profiler.name=Profiler Block
 tile.store_block.name=Store Block
+tile.correctblock.name=Correct Block
 //MATHS BLOCKS
 tile.math_block_1.name=Maths Block 1
 tile.math_block_2.name=Maths Block 2
@@ -139,6 +140,13 @@ tile.fractions_fifty_100.name= Fractions Fifty Over 100
 tile.fractions_quarter.name= Fractions One Quarter
 tile.fractions_quarter_decimal.name=Fractions One Quarter Decimal
 tile.fractions_fifty_200.name= Fractions Fifty Over 200
+tile.fractions_third.name= Fractions One Third
+tile.fractions_two_sixths.name= Fractions Two Sixths
+tile.fractions_two_eights.name= Fractions Two Over Eight
+tile.fractions_three_twelves.name= Fractions Three Over Twelve
+tile.fractions_forty_120.name= Fractions Forty Over 120
+tile.fractions_seventy_210.name= Fractions Seventy Over 210
+
 
 tile.maths_brown_block.name=Brown Maths Block
 tile.maths_aqua_block.name=Aqua Maths Block

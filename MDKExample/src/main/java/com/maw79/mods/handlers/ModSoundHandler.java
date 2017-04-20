@@ -28,6 +28,7 @@ public class ModSoundHandler {
 	public static SoundEvent MAWSOUND_POPCORK;
 	public static SoundEvent MAWSOUND_TADA;
 	public static SoundEvent MAWSOUND_PAGETURN;
+	public static SoundEvent MAWSOUND_CORRECT;
 	
 	
 	
@@ -52,6 +53,7 @@ public class ModSoundHandler {
 		MAWSOUND_POPCORK = register("mawsound.popcork");
 		MAWSOUND_TADA = register("mawsound.tada");
 		MAWSOUND_PAGETURN = register("mawsound.pageturn");
+		MAWSOUND_CORRECT = register("mawsound.correct");
 		
 		
 	}

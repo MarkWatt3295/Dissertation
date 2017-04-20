@@ -1,6 +1,6 @@
  { 
     "parent": "block/cube_all",
         "textures": {
-            "all": "maw79:blocks/fractions_two_fourths"
+           "all": "maw79:blocks/fractions"
       }
    }

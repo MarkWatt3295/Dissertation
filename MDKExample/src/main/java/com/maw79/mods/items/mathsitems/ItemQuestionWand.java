@@ -41,11 +41,11 @@ import net.minecraftforge.common.util.EnumHelper;
 import java.util.List;
 import java.util.Set;
 
-public class ItemFractionStamp extends ItemTool {
+public class ItemQuestionWand extends ItemTool {
 	
 	private static final Set<Block> EFFECTIVE_BLOCKS = Sets.newHashSet(new Block[] { });
 
-    public ItemFractionStamp(ToolMaterial material, String unlocalizedName) {
+    public ItemQuestionWand(ToolMaterial material, String unlocalizedName) {
     	super(material, EFFECTIVE_BLOCKS);
 		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(Reference.MOD_ID, unlocalizedName));

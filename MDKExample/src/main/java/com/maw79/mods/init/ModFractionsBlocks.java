@@ -30,7 +30,7 @@ public class ModFractionsBlocks {
 	
 	public static final BlockFractionsBlock QUARTER = new BlockFractionsBlock("fractions_quarter");
 	public static final BlockFractionsBlock QUARTERDECIMAL = new BlockFractionsBlock("fractions_quarter_decimal");
-	public static final BlockFractionsBlock TWOEIGHTS = new BlockFractionsBlock("fractions_two_sixths");
+	public static final BlockFractionsBlock TWOEIGHTS = new BlockFractionsBlock("fractions_two_eights");
 	public static final BlockFractionsBlock TWENTYFIVE100 = new BlockFractionsBlock("fractions_twentyfive_100");
 	public static final BlockFractionsBlock FIFTY200 = new BlockFractionsBlock("fractions_fifty_200");
 	
@@ -39,6 +39,8 @@ public class ModFractionsBlocks {
 	public static final BlockFractionsBlock THREETWELVES = new BlockFractionsBlock("fractions_three_twelves");
 	public static final BlockFractionsBlock FORTY120 = new BlockFractionsBlock("fractions_forty_120");
 	public static final BlockFractionsBlock SEVENTY210 = new BlockFractionsBlock("fractions_seventy_210");
+	
+	public static final BlockFractionsBlock CORRECT = new BlockFractionsBlock("correctblock");
 	
 	
 	
@@ -65,6 +67,8 @@ public class ModFractionsBlocks {
 		registerBlock(THREETWELVES);
 		registerBlock(FORTY120);
 		registerBlock(SEVENTY210);
+		
+		registerBlock(CORRECT);
 		
 		
 	}
@@ -106,6 +110,8 @@ public class ModFractionsBlocks {
 		registerRender(THREETWELVES);
 		registerRender(FORTY120);
 		registerRender(SEVENTY210);
+		
+		registerRender(CORRECT);
 	}
 	
 	
