@@ -136,6 +136,9 @@ tile.fractions_two_fourths.name= Fractions Two Fourths
 tile.fractions_three_sixths.name= Fractions Three Sixths
 tile.fractions_half_decimal.name= Fractions Half Decimal
 tile.fractions_fifty_100.name= Fractions Fifty Over 100
+tile.fractions_quarter.name= Fractions One Quarter
+tile.fractions_quarter_decimal.name=Fractions One Quarter Decimal
+tile.fractions_fifty_200.name= Fractions Fifty Over 200
 
 tile.maths_brown_block.name=Brown Maths Block
 tile.maths_aqua_block.name=Aqua Maths Block

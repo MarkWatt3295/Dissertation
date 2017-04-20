@@ -30,7 +30,7 @@ public class ModFractionsBlocks {
 	
 	public static final BlockFractionsBlock QUARTER = new BlockFractionsBlock("fractions_quarter");
 	public static final BlockFractionsBlock QUARTERDECIMAL = new BlockFractionsBlock("fractions_quarter_decimal");
-	public static final BlockFractionsBlock TWOEIGHTS = new BlockFractionsBlock("fractions_twosixths");
+	public static final BlockFractionsBlock TWOEIGHTS = new BlockFractionsBlock("fractions_two_sixths");
 	public static final BlockFractionsBlock TWENTYFIVE100 = new BlockFractionsBlock("fractions_twentyfive_100");
 	public static final BlockFractionsBlock FIFTY200 = new BlockFractionsBlock("fractions_fifty_200");
 	
