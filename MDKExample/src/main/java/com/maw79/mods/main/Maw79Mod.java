@@ -5,6 +5,7 @@ import java.io.File;
 import com.maw79.mods.client.gui.RenderGuiHandler;
 import com.maw79.mods.commands.FlamingPigs;
 import com.maw79.mods.commands.MawAdmin;
+import com.maw79.mods.commands.MawStandard;
 import com.maw79.mods.config.Maw79Config;
 import com.maw79.mods.creativetabs.Maw79BlocksTab;
 import com.maw79.mods.creativetabs.Maw79DebugTab;
@@ -180,8 +181,7 @@ public class Maw79Mod {
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event)
 	{
-		 MinecraftForge.EVENT_BUS.register(new ModEventHandler());
-		//MinecraftForge.EVENT_BUS.register(new Overlay());
+		MinecraftForge.EVENT_BUS.register(new ModEventHandler());
 		MinecraftForge.EVENT_BUS.register(new RenderGuiHandler());
 		
 
@@ -205,6 +205,7 @@ public class Maw79Mod {
 	public void registerCommands(FMLServerStartingEvent event) {
 		event.registerServerCommand(new FlamingPigs());
 		event.registerServerCommand(new MawAdmin());
+		event.registerServerCommand(new MawStandard());
 		
 	}
 	

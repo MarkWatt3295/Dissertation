@@ -26,7 +26,7 @@ import scala.swing.TextComponent;
 public class MawAdmin implements ICommand {
 
 	private final List aliases;
-	private int numberOfPigs = 0;
+	
 
 	public MawAdmin() {
 		aliases = new ArrayList();

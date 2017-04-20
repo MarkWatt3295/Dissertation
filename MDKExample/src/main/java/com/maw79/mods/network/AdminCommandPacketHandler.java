@@ -24,8 +24,9 @@ World world = DimensionManager.getWorld(message.dimension);
  if(ctx.getServerHandler().playerEntity.getEntityId() == message.entityID){
  EntityPlayerMP player = ctx.getServerHandler().playerEntity;
  
-
+ 	player.connection.playerEntity.inventory.clear();
 	player.connection.playerEntity.inventory.addItemStackToInventory(new ItemStack(ModItems.GAMETYPE, 1));
+	player.connection.playerEntity.inventory.addItemStackToInventory(new ItemStack(ModItems.SCOREDEBUG, 1));
 	 player.sendMessage(new TextComponentString("Admin Mode Enabled"));
 
 	
