@@ -3,6 +3,7 @@ package com.maw79.mods.items;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
 
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -39,5 +40,9 @@ public class ItemLightningSpawner extends Item {
 	
 	
 	}
+	
+	
+	
+		
 	
 }

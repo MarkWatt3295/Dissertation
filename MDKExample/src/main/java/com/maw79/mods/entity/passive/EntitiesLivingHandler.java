@@ -10,6 +10,7 @@ import com.maw79.mods.render.RenderEntityTokenShopkeeper;
 import com.maw79.mods.render.RenderEntityTourGuide;
 import com.maw79.mods.render.RenderHomerFactory;
 import com.maw79.mods.render.RenderHumanFactory;
+import com.maw79.mods.render.RenderMathsShopkeeperFactory;
 import com.maw79.mods.render.RenderNumberHunterFactory;
 import com.maw79.mods.render.RenderTestFactory;
 import com.maw79.mods.render.RenderTokenShopkeeper;
@@ -42,6 +43,7 @@ public class EntitiesLivingHandler {
 		createShopkeeper(EntityTokenShopKeeper.class, "Shopkeeper", 439, 127, 7);
 		createHomer(EntityHomer.class, "Homer", 439, 127, 8);
 		createNumberHunter(EntityNumberHunter.class, "Number Hunter", 222, 555, 9);
+		createMathsShopkeeper(EntityMathsShopKeeper.class, "Maths Shopkeeper", 888, 5559, 10);
 	}
 
 	private static void createHomer(Class entityClass, String entityName, int solidColor, int spotColor, int id){
@@ -90,6 +92,10 @@ public class EntitiesLivingHandler {
 		Utils.getLogger().info("EntitiesLivingHandler: createNumberHunter");
 		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, entityName, id, Maw79Mod.instance, 64, 1, true, solidColor, spotColor);
 	}
+	private static void createMathsShopkeeper(Class entityClass, String entityName, int solidColor, int spotColor, int id){
+		Utils.getLogger().info("EntitiesLivingHandler: createMathsShopkeeper");
+		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, entityName, id, Maw79Mod.instance, 64, 1, true, solidColor, spotColor);
+	}
 	
 	public static void registerAllModels(){
 		Utils.getLogger().info("EntitiesLivingHandler: registerAllModels");
@@ -110,6 +116,7 @@ public class EntitiesLivingHandler {
 		registerShopkeeper(EntityTokenShopKeeper.class, RenderTokenShopkeeper.INSTANCE);
 		registerHomer(EntityHomer.class, RenderHomerFactory.INSTANCE);
 		registerNumberHunter(EntityNumberHunter.class, RenderNumberHunterFactory.INSTANCE);
+		registerMathsShopkeeper(EntityMathsShopKeeper.class, RenderMathsShopkeeperFactory.INSTANCE);
 	}
 	
 	
@@ -179,6 +186,12 @@ public class EntitiesLivingHandler {
 	private static <T extends EntityCreature> void registerNumberHunter(Class<T> entity, IRenderFactory<? super T> renderFactory3)
 	{
 		Utils.getLogger().info("EntitiesLivingHandler: registerNumberHunter");
+		
+		RenderingRegistry.registerEntityRenderingHandler(entity, renderFactory3);
+	}
+	private static <T extends EntityCreature> void registerMathsShopkeeper(Class<T> entity, IRenderFactory<? super T> renderFactory3)
+	{
+		Utils.getLogger().info("EntitiesLivingHandler: registerMathsShopkeeper");
 		
 		RenderingRegistry.registerEntityRenderingHandler(entity, renderFactory3);
 	}

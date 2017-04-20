@@ -6,6 +6,7 @@ import java.util.List;
 import com.maw79.mods.init.ModArmour;
 import com.maw79.mods.init.ModBlocks;
 import com.maw79.mods.init.ModItems;
+import com.maw79.mods.init.ModNumberBlocks;
 import com.maw79.mods.init.ModTools;
 import com.maw79.mods.items.ItemPaintBrush;
 import com.maw79.mods.main.Reference;
@@ -37,6 +38,7 @@ public class AchievementHandler {
 	public static Achievement achievementPainter = createAchievement("painter", 2, 2, ModItems.reversepaintbrush);
 	public static Achievement achievementNiceTo = createAchievement("niceto", 2, 4, Blocks.SOUL_SAND);
 	public static Achievement achievementMathsQuest = createAchievement("mathsquest", 3, 0, ModBlocks.Mathsquestblock);
+	public static Achievement achievementCompletedMathsQuests = createAchievement("allmathsquests", 3, 1, ModNumberBlocks.number1);
 
 	/**
 	 * Registers the achievements

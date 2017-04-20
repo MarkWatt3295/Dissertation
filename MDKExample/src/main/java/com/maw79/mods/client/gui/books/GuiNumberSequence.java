@@ -44,7 +44,7 @@ public class GuiNumberSequence extends GuiScreen
 	    String s2 = TileEntityMathsQuest.seqarray[1];
 	    String s3 = TileEntityMathsQuest.seqarray[2];
 	    String s4 = "Numbers Left to Find : "+"§9"+TileEntityMathsQuest.sequencenumstofind +"\n"+"§0";
-	    String s5 = "§9"+s1+ s2+s3;
+	    String s5 = "§a"+s1+ s2+s3;
 	    String s6 = "";
 	    
 	    
@@ -52,10 +52,10 @@ public class GuiNumberSequence extends GuiScreen
 	    if(TileEntityMathsQuest.sequencecomplete == true){
 	    	s6 = "This Quest is Complete";
 	    }
-	    stringPageText[0] = "§9"+"Number Sequence Quest"+"§0"+"\n\n\nCan you find the next numbers in sequence on the following page? \n\n" +"§9"+"Example Sequence\n"+"§0"+"1, 2, "+"§k"+"1 \n"+ "1 "+ "§0"+" = 3";
-	    stringPageText[1] = "§9"+"Number Sequence 1"+"§0"+"\n \n9, 15, 21, 27, "+"§k"+"11"+ "§0"+"\n\n"+ "§9"+"Number Sequence 2"+"§0"+"\n\n18, 13, 9, 6, "+"§k"+"11"+"§0"+"\n\n"+ "§9"+"Number Sequence 3"+"§0"+"\n\n5, 7, 10, 14, "+"§k"+"11";
-	    stringPageText[2] = "§9"+"How To Play"+"§0"+"\n\n\nSearch underground for number blocks that fit into the sequence. There are "+"§9"+"3 "+"§0"+"number blocks to find. Bring the blocks to the Maths Quest Block to submit them."; 
-	    stringPageText[3] = "§9"+"Number Finder"+"§0"+"\n\n"+ s4+ "\nYou have found:\n"+ s5 + "\n\n"+ "§2"+ s6 ;
+	    stringPageText[0] = "§a"+"Number Sequence Quest"+"§0"+"\n\n\nCan you find the next numbers in sequence on the following page? \n\n" +"§a"+"Example Sequence\n"+"§0"+"1, 2, "+"§k"+"1 \n"+ "1 "+ "§0"+" = 3";
+	    stringPageText[1] = "§a"+"Number Sequence 1"+"§0"+"\n \n9, 15, 21, 27, "+"§k"+"11"+ "§0"+"\n\n"+ "§a"+"Number Sequence 2"+"§0"+"\n\n18, 13, 9, 6, "+"§k"+"11"+"§0"+"\n\n"+ "§a"+"Number Sequence 3"+"§0"+"\n\n5, 7, 10, 14, "+"§k"+"11";
+	    stringPageText[2] = "§a"+"How To Play"+"§0"+"\n\n\nSearch underground for number blocks that fit into the sequence. There are "+"§a"+"3 "+"§0"+"number blocks to find. Bring the blocks to the Maths Quest Block to submit them."; 
+	    stringPageText[3] = "§a"+"Number Finder"+"§0"+"\n\n"+ s4+ "\nYou have found:\n"+ s5 + "\n\n"+ "§2"+ s6 ;
 	}
 
     /**

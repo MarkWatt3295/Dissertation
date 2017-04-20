@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.maw79.mods.client.gui.GuiFirstBook;
 import com.maw79.mods.client.gui.books.GuiNumberSequence;
+import com.maw79.mods.client.gui.books.GuiOddManual;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.util.Utils;
 
@@ -32,7 +33,7 @@ public class ItemOddBook extends Item{
 	@Override
 	public  ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
 		if(player.world.isRemote){
-		Minecraft.getMinecraft().displayGuiScreen(new GuiNumberSequence());
+		Minecraft.getMinecraft().displayGuiScreen(new GuiOddManual());
 		}
 		return super.onItemRightClick(world, player, hand);
 	}

@@ -10,8 +10,11 @@ import com.maw79.mods.blocks.scienceblocks.BlockScienceWool;
 import com.maw79.mods.client.gui.GuiNotif;
 import com.maw79.mods.init.ModBlocks;
 import com.maw79.mods.init.ModItems;
+import com.maw79.mods.init.ModTools;
 import com.maw79.mods.util.Utils;
 
+import ibxm.Player;
+import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
@@ -19,8 +22,10 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.gui.PlayerListComponent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.world.GameType;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
@@ -35,35 +40,51 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 
 public class ModEventHandler {
 
-	boolean messageCall = false;
+public static boolean adminmode = false;
 	
     @SubscribeEvent
     public void onLivingUpdateEvent(LivingUpdateEvent event){
-    /*
+    
     	if (event.getEntity() instanceof EntityPlayer)
     	{
     	EntityPlayer player = (EntityPlayer) event.getEntity();
     	
-    	if( GuiNotif.playerlevel == "1"){
-    		if(messageCall == false){
-    		player.sendMessage(new TextComponentString("Player level 1"));
-    		player.capabilities.allowFlying = true;
-        	
-    		messageCall = true;
-    		}
-    		
-    		if( GuiNotif.playerlevel == "2"){
-    			
-    		}
-    		
-    		if(GuiNotif.playerlevel == "3"){
-    			
-    		}
-    		}
-    		
-    		}*/
+    	ItemStack hand = player.inventory.getCurrentItem();
+    	Item blocky = Item.getItemFromBlock(Blocks.SANDSTONE);
     	
+    	if(adminmode == false){
+    	if(hand != null)
+    	{
+    		if(hand.getItem() == ModTools.glassPickaxe ){
+    			//Utils.getLogger().info("Player holding Glass Pick : " + adminmode);
+    			player.setGameType(GameType.SURVIVAL);
+    		}
+    		
+    		
+    		else if(hand.getItem() == blocky ){
+    			//Utils.getLogger().info("Player holding block : " + adminmode);
+    			player.setGameType(GameType.SURVIVAL);
+    		}
+    		
+    			
+    		
+    		else{
+    			//Utils.getLogger().info("Im the else : " + adminmode);
+    			player.setGameType(GameType.ADVENTURE);
+    		}
     	}
+    	if(hand == null){
+    		//Utils.getLogger().info("Not Holding Anything :" + adminmode);
+    		player.setGameType(GameType.ADVENTURE);
+    	}
+    	}
+    	if(adminmode == true){
+    		//Utils.getLogger().info("In ADMIN MODE :" + adminmode);
+    		player.setGameType(GameType.CREATIVE);
+    	}
+    	}
+    	}
+    	
     	
     @SubscribeEvent
     public void onDeath(LivingDeathEvent event){
@@ -134,7 +155,7 @@ public class ModEventHandler {
       //  player.setFire(2);
        // player.inventory.clear(); if(item.isEntityEqual(ModItems.mw))
         if(!player.hasAchievement(AchievementHandler.achievementNewIngot)){
-        	player.addStat(AchievementHandler.achievementNewIngot);
+        	//player.addStat(AchievementHandler.achievementNewIngot);
         }
 
     }
@@ -145,7 +166,7 @@ public class ModEventHandler {
         if (event.getState().getBlock() == Blocks.DIRT) {
             event.setExpToDrop(10);
             BlockPos pos = event.getPos();
-            event.getWorld().spawnEntity(new EntityItem(event.getWorld(), pos.getX(), pos.getY(), pos.getZ(), new ItemStack(Items.DIAMOND)));
+           // event.getWorld().spawnEntity(new EntityItem(event.getWorld(), pos.getX(), pos.getY(), pos.getZ(), new ItemStack(Items.DIAMOND)));
       
         }
     }

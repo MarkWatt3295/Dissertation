@@ -30,6 +30,7 @@ public class GuiMathsQuestTe extends GuiContainer {
 	GuiButton button1, button3, button4, button5, reward;
 	final int BUTTON1= 1, BUTTON3 = 3, BUTTON4 = 4, BUTTON5 = 5, REWARD = 6;
 	
+	
 
 	public boolean help = false;
 	

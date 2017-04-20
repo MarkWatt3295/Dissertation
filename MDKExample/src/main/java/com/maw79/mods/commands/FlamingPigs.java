@@ -3,6 +3,8 @@ package com.maw79.mods.commands;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.maw79.mods.handlers.ModEventHandler;
+
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
@@ -66,6 +68,7 @@ public class FlamingPigs implements ICommand {
 			return;
 		}
 		EntityPlayer player = (EntityPlayer) sender;
+		//ModEventHandler.adminmode = true;
 		for (int i = 0; i < numberOfPigs; i++) {
 			EntityPig pig = new EntityPig(player.world);
 			pig.setLocationAndAngles(player.posX, player.posY, player.posZ, 0,

@@ -4,6 +4,7 @@ import java.io.File;
 
 import com.maw79.mods.client.gui.RenderGuiHandler;
 import com.maw79.mods.commands.FlamingPigs;
+import com.maw79.mods.commands.MawAdmin;
 import com.maw79.mods.config.Maw79Config;
 import com.maw79.mods.creativetabs.Maw79BlocksTab;
 import com.maw79.mods.creativetabs.Maw79DebugTab;
@@ -26,9 +27,13 @@ import com.maw79.mods.init.ModEntities;
 import com.maw79.mods.init.ModItems;
 import com.maw79.mods.init.ModNumberBlocks;
 import com.maw79.mods.init.ModTools;
+import com.maw79.mods.network.AdminCommandMessage;
+import com.maw79.mods.network.AdminCommandPacketHandler;
 import com.maw79.mods.network.GuiInventoryMessage;
 import com.maw79.mods.network.GuiInventoryPacketHandler;
 import com.maw79.mods.network.MathsMessage;
+import com.maw79.mods.network.MathsQuestManualMessage;
+import com.maw79.mods.network.MathsQuestManualPacketHandler;
 import com.maw79.mods.network.NXmanagerMessage;
 import com.maw79.mods.network.NXmanagerPacketHandler;
 import com.maw79.mods.network.NYmanagerMessage;
@@ -44,6 +49,8 @@ import com.maw79.mods.network.YmanagerPacketHandler;
 import com.maw79.mods.network.ZmanagerMessage;
 import com.maw79.mods.network.ZmanagerPacketHandler;
 import com.maw79.mods.network.mathsPacketHandler;
+import com.maw79.mods.network.store.MathsStore1Message;
+import com.maw79.mods.network.store.MathsStore1PacketHandler;
 import com.maw79.mods.network.store.StoreItem1Message;
 import com.maw79.mods.network.store.StoreItem1PacketHandler;
 import com.maw79.mods.proxy.CommonProxy;
@@ -149,6 +156,9 @@ public class Maw79Mod {
 		 NETWORK.registerMessage(NZmanagerPacketHandler.class, NZmanagerMessage.class, 7, Side.SERVER);
 		 NETWORK.registerMessage(StoreItem1PacketHandler.class, StoreItem1Message.class, 8, Side.SERVER);
 		 NETWORK.registerMessage(GuiInventoryPacketHandler.class, GuiInventoryMessage.class, 9, Side.SERVER);
+		 NETWORK.registerMessage(MathsQuestManualPacketHandler.class, MathsQuestManualMessage.class, 10, Side.SERVER);
+		 NETWORK.registerMessage(AdminCommandPacketHandler.class, AdminCommandMessage.class, 11, Side.SERVER);
+		 NETWORK.registerMessage(MathsStore1PacketHandler.class, MathsStore1Message.class, 12, Side.SERVER);
 	
 		 
 	}
@@ -165,9 +175,6 @@ public class Maw79Mod {
 		GameRegistry.registerWorldGenerator(new OreGen(), 0);
 		GameRegistry.registerFuelHandler(new FuelHandler());
 		ModSoundHandler.init();
-		
-		//ModEntities.addSpawns();
-		
 	}
 
 	@EventHandler
@@ -197,6 +204,7 @@ public class Maw79Mod {
 	@EventHandler
 	public void registerCommands(FMLServerStartingEvent event) {
 		event.registerServerCommand(new FlamingPigs());
+		event.registerServerCommand(new MawAdmin());
 		
 	}
 	

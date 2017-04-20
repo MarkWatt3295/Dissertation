@@ -7,6 +7,8 @@ itemGroup.maw79 unused=Maw79 Unused
 itemGroup.maw79 scratch blocks=Maw79 Scratch Blocks
 
 //Items
+item.gamesetter.name=Game Setter
+item.cheat_book.name=Maths Cheat Book
 item.booster.name=Booster
 item.levitationdust.name=Weak Levitation Dust
 item.levitationdust2.name=Levitation Dust
@@ -252,6 +254,7 @@ gui.block_breaker.enchanted_book.tooltip=Enchanted book goes here
 gui.guisciencete.button3.tooltip=Maw79 KS2 Mod Configuration
 
 //TOOL TIPS
+maw79.cheatbook.tooltip=A book with "borrowed" Answers
 maw79.primebook.tooltip=Right click with this item to view the Prime Quest.
 maw79.oddbook.tooltip=Right click with this item to view the Odd Quest.
 maw79.evenbook.tooltip=Right click with this item to view the Even Quest.

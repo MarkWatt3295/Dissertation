@@ -61,6 +61,11 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 	public static boolean evencomplete = false;
 	public static boolean evenclaimed = false;
 	public static String[] evenarray = new String[10];
+	
+	public static boolean primeBookGive = false;
+	public static boolean evenBookGive = false;
+	public static boolean oddBookGive = false;
+	public static boolean seqBookGive = false;
 
 	//Odd Checks
 	private boolean odd1 = false;
@@ -99,6 +104,13 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
         for (int i=0; i<size; i++){
         	evenarray[i]= "";        }
         
+        int size2 = primearray.length;
+        for (int i=0; i<size2; i++){
+        	primearray[i]= "";        }
+        
+        int size3 = oddarray.length;
+        for (int i=0; i<size3; i++){
+        	oddarray[i]= "";        }
 	}
 	/**
 	 * New 1.9.4 onwards. Capability system
@@ -219,7 +231,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							GuiNotif.playerScore += 10;
 							prime3 = true;
 							primenumstofind -=1;
-							primearray[1] ="3 ,";
+							primearray[1] =" 3 ,";
 						}
 					}
 					if (prime5 == false) {
@@ -230,7 +242,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							GuiNotif.playerScore += 10;
 							prime5 = true;
 							primenumstofind -=1;
-							primearray[2] ="5 ,";
+							primearray[2] =" 5 ,";
 						}
 					}
 					if (prime7 == false) {
@@ -241,7 +253,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							GuiNotif.playerScore += 10;
 							prime7 = true;
 							primenumstofind -=1;
-							primearray[3] ="7 ,";
+							primearray[3] =" 7";
 						}
 					}
 					if (prime11 == false) {
@@ -263,7 +275,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							GuiNotif.playerScore += 10;
 							prime13 = true;
 							primenumstofind -=1;
-							primearray[5] ="13 ,";
+							primearray[5] =" 13 ,";
 						}
 					}
 					if (prime17 == false) {
@@ -274,7 +286,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							GuiNotif.playerScore += 10;
 							prime17 = true;
 							primenumstofind -=1;
-							primearray[6] ="17 ,";
+							primearray[6] =" 17 ,";
 						}
 					}
 					if (prime19 == false) {
@@ -285,7 +297,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							GuiNotif.playerScore += 10;
 							prime19 = true;
 							primenumstofind -=1;
-							primearray[7] ="19 ,";
+							primearray[7] =" 19";
 						}
 					}
 
@@ -451,6 +463,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							GuiNotif.playerScore += 10;
 							odd1 = true;
 							oddnumstofind -=1;
+							oddarray[0] =" 1 ,";
 						}
 					}
 					
@@ -462,6 +475,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							GuiNotif.playerScore += 10;
 							odd3 = true;
 							oddnumstofind -=1;
+							oddarray[1] =" 3 ,";
 						}
 					}
 					if (odd5 == false) {
@@ -472,6 +486,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							GuiNotif.playerScore += 10;
 							odd5 = true;
 							oddnumstofind -=1;
+							oddarray[2] =" 5 ,";
 						}
 					}
 					if (odd7 == false) {
@@ -482,6 +497,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							GuiNotif.playerScore += 10;
 							odd7 = true;
 							oddnumstofind -=1;
+							oddarray[3] =" 7 ,";
 						}
 					}
 					if (odd9 == false) {
@@ -492,6 +508,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							GuiNotif.playerScore += 10;
 							odd9 = true;
 							oddnumstofind -=1;
+							oddarray[4] =" 9 ";
 						}
 					}
 					if (odd11 == false) {
@@ -502,6 +519,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							GuiNotif.playerScore += 10;
 							odd11 = true;
 							oddnumstofind -=1;
+							oddarray[5] =" 11 ,";
 						}
 					}
 					if (odd13 == false) {
@@ -512,6 +530,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							GuiNotif.playerScore += 10;
 							odd13 = true;
 							oddnumstofind -=1;
+							oddarray[6] =" 13 ,";
 						}
 					}
 					if (odd15 == false) {
@@ -522,6 +541,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							GuiNotif.playerScore += 10;
 							odd15 = true;
 							oddnumstofind -=1;
+							oddarray[7] =" 15 ,";
 						}
 					}
 					if (odd17 == false) {
@@ -532,6 +552,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							GuiNotif.playerScore += 10;
 							odd17 = true;
 							oddnumstofind -=1;
+							oddarray[8] =" 17 ,";
 						}
 					}
 					if (odd19 == false) {
@@ -542,6 +563,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							GuiNotif.playerScore += 10;
 							odd19 = true;
 							oddnumstofind -=1;
+							oddarray[9] =" 19 ";
 						}
 					}
 					if (odd1 == true && odd3 == true && odd5 == true && odd7 == true && odd9 == true &&

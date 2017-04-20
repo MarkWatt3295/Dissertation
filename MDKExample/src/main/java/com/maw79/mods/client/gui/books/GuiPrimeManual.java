@@ -39,28 +39,27 @@ public class GuiPrimeManual extends GuiScreen
 	    bookPageTextures[2] = new ResourceLocation(Reference.MOD_ID+":textures/gui/book1.png");
 	    
 	   
-	    String s0 = TileEntityMathsQuest.evenarray[0];
-	    String s1 = TileEntityMathsQuest.evenarray[1];
-	    String s2 = TileEntityMathsQuest.evenarray[2];
-	    String s3 = TileEntityMathsQuest.evenarray[3];
-	    String s4 = TileEntityMathsQuest.evenarray[4];
-	    String s5 = TileEntityMathsQuest.evenarray[5];
-	    String s6 = TileEntityMathsQuest.evenarray[6];
-	    String s7 = TileEntityMathsQuest.evenarray[7];
-	    String s8 = TileEntityMathsQuest.evenarray[8];
-	    String s9 = TileEntityMathsQuest.evenarray[9];
+	    String s0 = TileEntityMathsQuest.primearray[0];
+	    String s1 = TileEntityMathsQuest.primearray[1];
+	    String s2 = TileEntityMathsQuest.primearray[2];
+	    String s3 = TileEntityMathsQuest.primearray[3];
+	    String s4 = TileEntityMathsQuest.primearray[4];
+	    String s5 = TileEntityMathsQuest.primearray[5];
+	    String s6 = TileEntityMathsQuest.primearray[6];
+	    String s7 = TileEntityMathsQuest.primearray[7];
 	   
-	    String sline1 = "Numbers Left to Find : "+"§9"+TileEntityMathsQuest.evennumstofind +"\n"+"§0";
-	    String sline2 = "§d"+s0+s1+ s2+s3+s4 +"\n"+s5+s6+s7+s8+s9;
+	   
+	    String sline1 = "Numbers Left to Find : "+"§9"+TileEntityMathsQuest.primenumstofind +"\n"+"§0";
+	    String sline2 = "§c"+s0+s1+ s2+s3+"\n"+s4 +s5+s6+s7;
 	    String sline3 = "";
 	    
 	    
-	    if(TileEntityMathsQuest.evencomplete == true){
+	    if(TileEntityMathsQuest.primecomplete == true){
 	    	sline3 = "This Quest is Complete";
 	    }
-	    stringPageText[0] = "§d"+"Even Number Quest"+"§0"+"\n\nCan you find all of the Even numbers between "+"§d"+ "1 "+"§0"+ "and "+"§d"+ "20 "+"§0"+"?"+ "\n\n"+"§d"+"Even Numbers \n"+"§0"+ "An Even number can be divided equally by 2 \n" +"§d"+"Even Number Example \n"+"§0"+"2, 4, 6, "+"§k"+"1"+ "§0";
-	    stringPageText[1] = "§d"+"How To Play"+"§0"+"\n\n\nSearch underground for Even Number blocks.  There are "+"§d"+"10 "+"§0"+"Even Number blocks to find. Bring the blocks to the Maths Quest Block and submit them."; 
-	    stringPageText[2] = "§d"+"Number Finder"+"§0"+"\n\n"+ sline1+ "\nYou have found:\n"+ sline2 + "\n\n"+ "§2"+ sline3 ;
+	    stringPageText[0] = "§c"+"Prime Numbers Quest \n\n"+"§0"+ "Prime numbers are special numbers that can only be divided by themselves and 1. \n\n" +"§c"+"Prime Number Example \n\n"+"§0"+"19 is a prime number. It can only be divided by "+"§c"+ "1"+"§0"+ " and " +"§c"+ "19"+"§0";
+	    stringPageText[1] = "§c"+"How To Play"+"§0"+"\n\nSearch underground for Prime Number blocks.  There are "+"§c"+"8 "+"§0"+"Prime Number blocks to find. Bring the blocks to the Maths Quest Block and submit them."; 
+	    stringPageText[2] = "§c"+"Number Finder"+"§0"+"\n\n"+ sline1+ "\nYou have found:\n"+ sline2 + "\n\n"+ "§2"+ sline3 ;
 	}
 
     /**

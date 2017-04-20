@@ -36,8 +36,10 @@ import com.maw79.mods.items.mathsitems.ItemAppleWallAxis;
 import com.maw79.mods.items.mathsitems.ItemAppleWallBorder;
 import com.maw79.mods.items.mathsitems.ItemAppleWallWool;
 import com.maw79.mods.items.mathsitems.ItemCalculator;
+import com.maw79.mods.items.mathsitems.ItemCheatBook;
 import com.maw79.mods.items.mathsitems.ItemCompleteAppleWall;
 import com.maw79.mods.items.mathsitems.ItemEvenBook;
+import com.maw79.mods.items.mathsitems.ItemGameTypeSetter;
 import com.maw79.mods.items.mathsitems.ItemNumberSequenceBook;
 import com.maw79.mods.items.mathsitems.ItemOddBook;
 import com.maw79.mods.items.mathsitems.ItemPictureWall;
@@ -112,6 +114,7 @@ public class ModItems {
 	public static final Item PRIME_BOOK = new ItemPrimeBook("prime_book");
 	public static final Item ODD_BOOK = new ItemOddBook("odd_book");
 	public static final Item EVEN_BOOK = new ItemEvenBook("even_book");
+	public static final Item CHEAT_BOOK = new ItemCheatBook("cheat_book");
 
 	
 	
@@ -141,6 +144,7 @@ public class ModItems {
 	
 	public static ItemScoreDebug SCOREDEBUG = new ItemScoreDebug("scoredebug");
 	public static ItemCalculator CALCULATOR = new ItemCalculator("calculator");
+	public static ItemGameTypeSetter GAMETYPE = new ItemGameTypeSetter("gamesetter");
 	
 	//HISTORY ITEMS
 	public static ItemArtifact ARTIFACT1 = new ItemArtifact("artifact1");
@@ -228,6 +232,9 @@ public class ModItems {
 		registerItem(LEVITATION_DUST);
 		registerItem(LEVITATION_DUST2);
 		registerItem(LEVITATION_DUST3);
+		registerItem(CHEAT_BOOK);
+		registerItem(GAMETYPE);
+		GAMETYPE.setCreativeTab(Maw79Mod.debug);
 		
 	
 		
@@ -330,6 +337,8 @@ public class ModItems {
 		registerRender(EVEN_BOOK);
 		registerRender(ODD_BOOK);
 		registerRender(PRIME_BOOK);
+		registerRender(CHEAT_BOOK);
+		registerRender(GAMETYPE);
 		
 		
 		//SCIENCE LABELS

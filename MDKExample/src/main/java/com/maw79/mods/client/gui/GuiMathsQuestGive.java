@@ -10,6 +10,7 @@ import com.maw79.mods.init.ModItems;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.network.MathsMessage;
+import com.maw79.mods.network.MathsQuestManualMessage;
 import com.maw79.mods.network.store.StoreItem1Message;
 
 import net.minecraft.client.Minecraft;
@@ -73,11 +74,11 @@ public class GuiMathsQuestGive extends GuiScreen {
             GlStateManager.translate((width / 2), centerY + 10, 0);
             GlStateManager.scale(1.4, 1.4, 1.4);
           
-            fontRendererObj.drawString("Active Quests : "+questnumber, (-40), (20), 0xffffff);
-    		fontRendererObj.drawString(TileEntityMathsQuest.questPrimeNumbers, (-50), (40), 0xffffff);
-    		fontRendererObj.drawString(TileEntityMathsQuest.questEvenNumbers, (-50), (56), 0xffffff);
-    		fontRendererObj.drawString(TileEntityMathsQuest.questOddNumbers, (-50), (74), 0xffffff);
-    		fontRendererObj.drawString(TileEntityMathsQuest.questNumberSequence, (-50), (90), 0xffffff);
+            fontRendererObj.drawString("Active Quest : "+questnumber, (-40), (20), 0xffffff);
+    		fontRendererObj.drawString("§c"+TileEntityMathsQuest.questPrimeNumbers, (-50), (40), 0xffffff);
+    		fontRendererObj.drawString("§d"+TileEntityMathsQuest.questEvenNumbers, (-50), (56), 0xffffff);
+    		fontRendererObj.drawString("§6"+TileEntityMathsQuest.questOddNumbers, (-50), (74), 0xffffff);
+    		fontRendererObj.drawString("§2"+TileEntityMathsQuest.questNumberSequence, (-50), (90), 0xffffff);
     		
         }
         
@@ -183,7 +184,10 @@ public class GuiMathsQuestGive extends GuiScreen {
             case BUTTON2: //PRIME NUMBERS
             		questnumber = 1;
             		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-            	
+            	if(TileEntityMathsQuest.primeBookGive == false){
+            		Maw79Mod.NETWORK.sendToServer(new MathsQuestManualMessage(mc.player));
+            		TileEntityMathsQuest.primeBookGive = true;
+            	}
             	break;
             	
             case BUTTON2alt:
@@ -201,6 +205,10 @@ public class GuiMathsQuestGive extends GuiScreen {
             case BUTTON3://EVEN NUMBERS
             	questnumber = 2;
         		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
+        		if(TileEntityMathsQuest.evenBookGive == false){
+        			Maw79Mod.NETWORK.sendToServer(new MathsQuestManualMessage(mc.player));
+            		TileEntityMathsQuest.evenBookGive = true;
+            	}
             	break;
             	
             case BUTTON3alt:
@@ -218,6 +226,10 @@ public class GuiMathsQuestGive extends GuiScreen {
             case BUTTON4: //ODD Numbers
             	questnumber = 3;
         		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
+        		if(TileEntityMathsQuest.oddBookGive == false){
+        			Maw79Mod.NETWORK.sendToServer(new MathsQuestManualMessage(mc.player));
+            		TileEntityMathsQuest.oddBookGive = true;
+            	}
             	break;
             	
             case BUTTON4alt:
@@ -235,6 +247,10 @@ public class GuiMathsQuestGive extends GuiScreen {
             case BUTTON5:
             	questnumber = 4; // NUMBER SEQUENCE
         		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
+        		if(TileEntityMathsQuest.seqBookGive == false){
+        			Maw79Mod.NETWORK.sendToServer(new MathsQuestManualMessage(mc.player));
+            		TileEntityMathsQuest.seqBookGive = true;
+            	}
             	break;
             	
             case BUTTON5alt:

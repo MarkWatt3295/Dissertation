@@ -19,6 +19,7 @@ public class ItemGlassPickaxe extends ItemPickaxe {
 		this.setCreativeTab(Maw79Mod.debug);
 		this.setMaxDamage(2);
 		
+		
 	}
 
 	@Override

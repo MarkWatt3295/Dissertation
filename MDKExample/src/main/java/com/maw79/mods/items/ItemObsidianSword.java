@@ -4,7 +4,10 @@ import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
 
 import net.minecraft.item.ItemSword;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 	public class ItemObsidianSword extends ItemSword {
@@ -16,7 +19,10 @@ import net.minecraft.util.ResourceLocation;
 			
 		
 		}
-
+		
 	}
+
+
+	
 
 
