@@ -45,23 +45,17 @@ public class GuiScoreDebug extends GuiScreen {
         {
             GlStateManager.translate((width / 2) - fontRendererObj.getStringWidth(title), centerY + 10, 0);
             GlStateManager.scale(2, 2, 2);
-            fontRendererObj.drawString(title, 0, 0, 0x6028ff);
+            fontRendererObj.drawString("§9"+title, 0, 0, 0x6028ff);
         }
             GlStateManager.popMatrix();
             GlStateManager.pushMatrix();{
-           // GlStateManager.translate((width / 2) - fontRendererObj.getStringWidth(question), centerY + 10, 0);
-          //  GlStateManager.scale(2, 2, 2);
-           // fontRendererObj.drawString(question, 1, 15, 0x6028ff);
+          
             
             
         }
         GlStateManager.popMatrix();
         super.drawScreen(mouseX, mouseY, partialTicks);
-        //button1.drawButton(mc, mouseX, mouseY);
-      
-       
-       // textBox.drawTextBox();
-       
+        
       
       
     }
@@ -77,26 +71,11 @@ public class GuiScoreDebug extends GuiScreen {
         buttonList.add(button1 = new GuiButton(BUTTON1, (width / 2) - 100 / 2, 85, 100, 20, "Score + 10"));
         buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) - 100 / 2,  110, 100, 20, "Score + 100"));
         buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) - 100 / 2, 135, 100, 20, "Score = 0"));
-        //buttonList.add(button4 = new GuiButton(BUTTON4, (width / 2) - 100 / 2, 155, 100, 20, "Level 4"));
-        updateButtons();
+       
         super.initGui();
     }
     
 
-    public void updateButtons() {
-    	
-      
-            onEvent();
-         
-      
-    }
-
-
-    public  void updateTextBoxes() {
-       
-          
-       updateButtons();
-    }
    
    public boolean blockreturn = false;
    
@@ -104,50 +83,45 @@ public class GuiScoreDebug extends GuiScreen {
     @Override
     protected void actionPerformed(GuiButton button) throws IOException {
     	
-    	updateTextBoxes();
+    	
         switch (button.id) {
             case BUTTON1:
-       //Maw79Mod.playerlevel = 2;
+     
            GuiNotif.playerScore += 10;
             	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-            	//mc.displayGuiScreen((GuiScreen)null);
+            	
             	break;
             	
             case BUTTON2:
             	  GuiNotif.playerScore += 100;
             	System.out.println(Maw79Mod.playerlevel);
             	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-            	//mc.displayGuiScreen((GuiScreen)null);
+            
             	break;
             	
             case BUTTON3:
             	GuiNotif.playerScore =0;
             	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-            	//mc.displayGuiScreen((GuiScreen)null);
+            
             	break;
             	
           
         }
-        updateButtons();
+   
         super.actionPerformed(button);
       
     }
     
    
-
-    
- 
 	@Override
     protected void keyTyped(char typedChar, int keyCode) throws IOException {
-       // textBox.textboxKeyTyped(typedChar, keyCode);
-        updateTextBoxes();
+       
         super.keyTyped(typedChar, keyCode);
     }
 
     @Override
     protected void mouseClicked(int mouseX, int mouseY, int mouseButton) throws IOException {
        
-        updateTextBoxes();
         super.mouseClicked(mouseX, mouseY, mouseButton);
     }
 
@@ -156,11 +130,7 @@ public class GuiScoreDebug extends GuiScreen {
         return false;
     }
     
-    public void onEvent(){
-    	System.out.println("ON EVENT HAS BEEN CALLED!");
-    	
-         
-    }
+  
     
 }
 	 
