@@ -22,23 +22,23 @@ public class ModFractionsBlocks {
 
 	
 	//Fractions Block Creation
-	public static final BlockFractionsBlock HALF = new BlockFractionsBlock("fractions_half");
-	public static final BlockFractionsBlock TWOFOURTHS = new BlockFractionsBlock("fractions_two_fourths");
-	public static final BlockFractionsBlock THREESIXTHS = new BlockFractionsBlock("fractions_three_sixths");
-	public static final BlockFractionsBlock HALFDECIMAL = new BlockFractionsBlock("fractions_half_decimal");
-	public static final BlockFractionsBlock FIFTY100 = new BlockFractionsBlock("fractions_fifty_100");
+	public static final BlockFractionsBlock HALF_1 = new BlockFractionsBlock("fractions_half_1");
+	public static final BlockFractionsBlock HALF_2 = new BlockFractionsBlock("fractions_half_2");
+	public static final BlockFractionsBlock HALF_3 = new BlockFractionsBlock("fractions_half_3");
+	public static final BlockFractionsBlock HALF_4 = new BlockFractionsBlock("fractions_half_4");
+	public static final BlockFractionsBlock HALF_5 = new BlockFractionsBlock("fractions_half_5");
 	
-	public static final BlockFractionsBlock QUARTER = new BlockFractionsBlock("fractions_quarter");
-	public static final BlockFractionsBlock QUARTERDECIMAL = new BlockFractionsBlock("fractions_quarter_decimal");
-	public static final BlockFractionsBlock TWOEIGHTS = new BlockFractionsBlock("fractions_two_eights");
-	public static final BlockFractionsBlock TWENTYFIVE100 = new BlockFractionsBlock("fractions_twentyfive_100");
-	public static final BlockFractionsBlock FIFTY200 = new BlockFractionsBlock("fractions_fifty_200");
+	public static final BlockFractionsBlock QUARTER_1 = new BlockFractionsBlock("fractions_quarter_1");
+	public static final BlockFractionsBlock QUARTER_2 = new BlockFractionsBlock("fractions_quarter_2");
+	public static final BlockFractionsBlock QUARTER_3 = new BlockFractionsBlock("fractions_quarter_3");
+	public static final BlockFractionsBlock QUARTER_4 = new BlockFractionsBlock("fractions_quarter_4");
+	public static final BlockFractionsBlock QUARTER_5 = new BlockFractionsBlock("fractions_quarter_5");
 	
-	public static final BlockFractionsBlock THIRD = new BlockFractionsBlock("fractions_third");
-	public static final BlockFractionsBlock TWOSIXTHS = new BlockFractionsBlock("fractions_two_sixths");
-	public static final BlockFractionsBlock THREETWELVES = new BlockFractionsBlock("fractions_three_twelves");
-	public static final BlockFractionsBlock FORTY120 = new BlockFractionsBlock("fractions_forty_120");
-	public static final BlockFractionsBlock SEVENTY210 = new BlockFractionsBlock("fractions_seventy_210");
+	public static final BlockFractionsBlock THIRD_1 = new BlockFractionsBlock("fractions_third_1");
+	public static final BlockFractionsBlock THIRD_2 = new BlockFractionsBlock("fractions_third_2");
+	public static final BlockFractionsBlock THIRD_3 = new BlockFractionsBlock("fractions_third_3");
+	public static final BlockFractionsBlock THIRD_4 = new BlockFractionsBlock("fractions_third_4");
+	public static final BlockFractionsBlock THIRD_5 = new BlockFractionsBlock("fractions_third_5");
 	
 	public static final BlockFractionsBlock CORRECT = new BlockFractionsBlock("correctblock");
 	
@@ -50,23 +50,23 @@ public class ModFractionsBlocks {
 	public static void register(){
 		
 		//Fraction Block Renders
-		registerBlock(HALF);
-		registerBlock(TWOFOURTHS);
-		registerBlock(THREESIXTHS);
-		registerBlock(HALFDECIMAL);
-		registerBlock(FIFTY100);
+		registerBlock(HALF_1);
+		registerBlock(HALF_2);
+		registerBlock(HALF_3);
+		registerBlock(HALF_4);
+		registerBlock(HALF_5);
 		
-		registerBlock(QUARTER);
-		registerBlock(QUARTERDECIMAL);
-		registerBlock(TWOEIGHTS);
-		registerBlock(TWENTYFIVE100);
-		registerBlock(FIFTY200);
+		registerBlock(QUARTER_1);
+		registerBlock(QUARTER_2);
+		registerBlock(QUARTER_3);
+		registerBlock(QUARTER_4);
+		registerBlock(QUARTER_5);
 		
-		registerBlock(THIRD);
-		registerBlock(TWOSIXTHS);
-		registerBlock(THREETWELVES);
-		registerBlock(FORTY120);
-		registerBlock(SEVENTY210);
+		registerBlock(THIRD_1);
+		registerBlock(THIRD_2);
+		registerBlock(THIRD_3);
+		registerBlock(THIRD_4);
+		registerBlock(THIRD_5);
 		
 		registerBlock(CORRECT);
 		
@@ -93,23 +93,23 @@ public class ModFractionsBlocks {
 	
 		
 		//Number Face Blocks
-		registerRender(HALF);
-		registerRender(TWOFOURTHS);
-		registerRender(THREESIXTHS);
-		registerRender(HALFDECIMAL);
-		registerRender(FIFTY100);
+		registerRender(HALF_1);
+		registerRender(HALF_2);
+		registerRender(HALF_3);
+		registerRender(HALF_4);
+		registerRender(HALF_5);
 		
-		registerRender(QUARTER);
-		registerRender(QUARTERDECIMAL);
-		registerRender(TWOEIGHTS);
-		registerRender(TWENTYFIVE100);
-		registerRender(FIFTY200);
+		registerRender(QUARTER_1);
+		registerRender(QUARTER_2);
+		registerRender(QUARTER_3);
+		registerRender(QUARTER_4);
+		registerRender(QUARTER_5);
 		
-		registerRender(THIRD);
-		registerRender(TWOSIXTHS);
-		registerRender(THREETWELVES);
-		registerRender(FORTY120);
-		registerRender(SEVENTY210);
+		registerRender(THIRD_1);
+		registerRender(THIRD_2);
+		registerRender(THIRD_3);
+		registerRender(THIRD_4);
+		registerRender(THIRD_5);
 		
 		registerRender(CORRECT);
 	}

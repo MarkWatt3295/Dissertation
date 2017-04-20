@@ -56,93 +56,30 @@ public class ItemQuestionWand extends ItemTool {
     
     @Override
     public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
-        tooltip.add(I18n.format("tooltip.fractionshalf"));
+        tooltip.add(I18n.format("tooltip.questionwand"));
     }
-
-    /*
-    @Override
-	public void onUpdate(ItemStack itemstack, World world, Entity entity, int par4, boolean par5) {
-		int i = (int) entity.posX;
-		int j = (int) entity.posY;
-		int k = (int) entity.posZ;
-
-		if (true) {
-			if (entity instanceof EntityLivingBase)
-				((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.SPEED, 2, 1));
-		}
-
-	}
-   /* @Override
-	public void onUsingTick(ItemStack itemstack, EntityLivingBase entity, int count) {
-		World world = entity.world;
-		int i = (int) entity.posX;
-		int j = (int) entity.posY;
-		int k = (int) entity.posZ;
-
-		if (true) {
-			if (entity instanceof EntityLivingBase)
-				((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.JUMP_BOOST, 2, 2));
-		}
-
-	}*/
-
-    /*
-    @Override
-    public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
-    	if(!player.isSneaking()){
-    	//	BlockPos pos = world.getblo;
-    	
-           // player.sendMessage(new TextComponentString("Right clicked PB"));
-        	//player.inventory.getCurrentItem().damageItem(1, player );
-    	
-        }
-     
-
-        return super.onItemRightClick(world, player, hand);
-    }*/
-    
-   
-    @Override
-    public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity){
-    	player.sendMessage(new TextComponentString("I am Just a left click "));
-    World world = Minecraft.getMinecraft().world;
-    //BlockPos pos = Blockpos ;
-   BlockPos pos = entity.getPosition();
-    
-    	if(world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF){
-			player.sendMessage(new TextComponentString("I am : "+ ModFractionsBlocks.HALF.getLocalizedName()));
-		}
-    	return true;
-    }
-    
 
    
     @Override
     public EnumActionResult onItemUse(EntityPlayer playerIn, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-    	// if(!playerIn.hasAchievement(AchievementHandler.achievementPainter)){
-        // 	playerIn.addStat(AchievementHandler.achievementPainter);
-        // }
-    	Block block;
-    	if(playerIn.isSneaking()){
+    	
     	if (!world.isRemote) {
-    		//block = world.getBlockState(pos).getBlock();
-    		//	playerIn.sendMessage(new TextComponentString("I am : "+ block.getLocalizedName()));
     		
     		
-    	 if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF){
+    	 if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF_1){
     		 playerIn.sendMessage(new TextComponentString("A Huge Pizza is cut into 24 slices. You eat "+"§a"+ "12 "+"§r"+"slices. \n\nWhat fraction of the Pizza did you eat?"));
     	}
     	 
-    	 else if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.TWOFOURTHS){
+    	 else if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF_2){
     		 playerIn.sendMessage(new TextComponentString("Farmer Joe had 4 Chickens. He sold "+"§a"+ "2 "+"§r"+"leaving him with "+"§a"+ "2"+"§r"+  ".\n\nWhat fraction of Chickens were sold?"));
     	}
-    	 else if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.THREESIXTHS){
+    	 else if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF_3){
     		 playerIn.sendMessage(new TextComponentString("Farmer Joe has "+"§a"+ "6 "+"§r"+"Cows. He only has enough Cow feed for\n"+"§a"+ "3"+"§r"+ " of them.\n\nWhat fraction of the cows can he feed?"));
     	}
-    	 else if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALFDECIMAL){
+    	 else if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF_4){
     		 playerIn.sendMessage(new TextComponentString("Farmer Joe has "+"§a"+ "9 Points."+"§r"+ " He kindly shares the points with you. \nHe gives you "+"§a"+ "4.5 Points"+"§r"+ "\n\nWhat fraction of the points did he share with you?"));
     	}
-    	 if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.FIFTY100){
+    	 if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF_5){
     		 playerIn.sendMessage(new TextComponentString("You score "+"§a"+ "500 "+"§r"+ "Out of a possible "+"§a"+ "1000 Points. "+"§r"+"\nWhat Fraction of the points did you earn?"));
     	}
     	 else {
@@ -151,56 +88,10 @@ public class ItemQuestionWand extends ItemTool {
     	 }
  		
     	}
-    	}
-    			
-    	if(!playerIn.isSneaking()){		
-    	  if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF) {
-    		playerIn.playSound(ModSoundHandler.MAWSOUND_CORRECT, 3.0F, 1.0F);
-    		 world.setBlockState(pos, ModFractionsBlocks.CORRECT.getDefaultState());
-        	//world.newExplosion(playerIn, pos.getX(), pos.getY(), pos.getZ(), 0.5F, false, true);
-           // playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
-            return EnumActionResult.SUCCESS;
-        }
-    	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.TWOFOURTHS) {
-    		playerIn.playSound(ModSoundHandler.MAWSOUND_CORRECT, 3.0F, 1.0F);
-    		 world.setBlockState(pos, ModFractionsBlocks.CORRECT.getDefaultState());
-        	//world.newExplosion(playerIn, pos.getX(), pos.getY(), pos.getZ(), 0.5F, false, true);
-           // playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
-            return EnumActionResult.SUCCESS;
-        }
-    	  
-    	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.THREESIXTHS) {
-    		playerIn.playSound(ModSoundHandler.MAWSOUND_CORRECT, 3.0F, 1.0F);
-    		 world.setBlockState(pos, ModFractionsBlocks.CORRECT.getDefaultState());
-        	//world.newExplosion(playerIn, pos.getX(), pos.getY(), pos.getZ(), 0.5F, false, true);
-           // playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
-            return EnumActionResult.SUCCESS;
-        }
-    	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALFDECIMAL) {
-    		playerIn.playSound(ModSoundHandler.MAWSOUND_CORRECT, 3.0F, 1.0F);
-    		 world.setBlockState(pos, ModFractionsBlocks.CORRECT.getDefaultState());
-        	//world.newExplosion(playerIn, pos.getX(), pos.getY(), pos.getZ(), 0.5F, false, true);
-           // playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
-            return EnumActionResult.SUCCESS;
-        }
-    	  
-    	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.FIFTY100) {
-    		playerIn.playSound(ModSoundHandler.MAWSOUND_CORRECT, 3.0F, 1.0F);
-    		 world.setBlockState(pos, ModFractionsBlocks.CORRECT.getDefaultState());
-        	
+    	
             return EnumActionResult.SUCCESS;
         }
     	
 
-    	}
-        
-        return EnumActionResult.PASS;
-    }
-    	
-
-  
-   
-
-   
  
 }
