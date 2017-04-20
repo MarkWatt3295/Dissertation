@@ -9,6 +9,7 @@ import com.maw79.mods.items.ItemModShovel;
 import com.maw79.mods.items.ItemModSword;
 import com.maw79.mods.items.ItemPaintBrush;
 import com.maw79.mods.items.ItemSoulStealer;
+import com.maw79.mods.items.mathsitems.ItemFractionStamp;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.util.Utils;
@@ -45,6 +46,7 @@ public class ModTools {
 		public static ItemPaintBrush rustypaintbrush;
 		public static ItemPaintBrush mediumpaintbrush;
 		public static ItemPaintBrush infinitepaintbrush;
+		public static ItemFractionStamp fractionstamphalf;
 		
 		
 	
@@ -69,7 +71,7 @@ public class ModTools {
 			mediumpaintbrush = new ItemPaintBrush(MaterialHandler.mediumPaintBrushToolMaterial,"medium_paint_brush");
 			infinitepaintbrush = new ItemPaintBrush(MaterialHandler.infinitePaintBrushToolMaterial,"infinite_paint_brush");
 			
-			
+			fractionstamphalf = new ItemFractionStamp(MaterialHandler.rustyPaintBrushToolMaterial,"fractions_half_stamp");
 			
 			steelSword = new ItemModSword(MaterialHandler.steelToolMaterial, "steel_sword");
 			
@@ -90,6 +92,8 @@ public class ModTools {
 			registerItem(paintbrush);
 			registerItem(rustypaintbrush);
 			registerItem(mediumpaintbrush);
+			
+			registerItem(fractionstamphalf);
 			
 			registerItem(infinitepaintbrush);
 			infinitepaintbrush.setCreativeTab(Maw79Mod.debug);
@@ -114,6 +118,7 @@ public class ModTools {
 			registerRender(infinitepaintbrush);
 			registerRender(soulStealer);
 			registerRender(steelSword);
+			registerRender(fractionstamphalf);
 			
 		}
 		
@@ -124,15 +129,7 @@ public class ModTools {
 		}
 		
 		
-		
-		
-		/*
-		private static void registerRender(Item item){
-			
-			Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
-				
-			Utils.getLogger().info("Registered render for Tools: " + item.getUnlocalizedName().substring(5));
-				}*/
+	
 		
 		/**
 		 * Register the items render
