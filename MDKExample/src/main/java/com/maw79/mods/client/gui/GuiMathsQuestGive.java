@@ -289,7 +289,7 @@ public class GuiMathsQuestGive extends GuiScreen {
 
     @Override
     public boolean doesGuiPauseGame() {
-        return true;
+        return false;
     }
     
     public void onEvent(){
