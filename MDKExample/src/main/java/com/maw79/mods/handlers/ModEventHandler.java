@@ -49,6 +49,9 @@ public static boolean adminmode = false;
     	{
     	EntityPlayer player = (EntityPlayer) event.getEntity();
     	
+    	player.fallDistance = 0.0F;
+    	
+    	
     	ItemStack hand = player.inventory.getCurrentItem();
     	Item blocky = Item.getItemFromBlock(Blocks.SANDSTONE);
     	
