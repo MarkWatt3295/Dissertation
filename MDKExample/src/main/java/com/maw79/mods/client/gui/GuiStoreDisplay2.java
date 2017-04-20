@@ -30,9 +30,7 @@ public class GuiStoreDisplay2 extends GuiScreen {
     
    public static int buttonvalue = 0;
     
-    
    
-    //GuiTextField textBox;
     GuiButton button1, button2, button3, button4, button5, buttonnextpage;
     final int BUTTON1 = 1, BUTTON2 = 2, BUTTON3 = 3, BUTTON4 = 4, BUTTON5 = 5, BUTTON6 = 6;
     
@@ -92,7 +90,6 @@ public class GuiStoreDisplay2 extends GuiScreen {
         button3.drawButton(mc, mouseX, mouseY);
         button4.drawButton(mc, mouseX, mouseY);
         button5.drawButton(mc, mouseX, mouseY);
-        //buttonnextpage.drawButton(mc, mouseX, mouseY);
         ItemStack icon = new ItemStack(ModItems.MATHS_TOKEN);
         ItemStack icon2 = new ItemStack(ModItems.ENGLISH_TOKEN);
         ItemStack icon3 = new ItemStack(ModItems.SCIENCE_TOKEN);
@@ -185,18 +182,11 @@ public class GuiStoreDisplay2 extends GuiScreen {
         buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) + 51, centerY + 83, 30, 20, "Buy"));
         buttonList.add(button4 = new GuiButton(BUTTON4, (width / 2) + 51, centerY + 109, 30, 20, "Buy"));
         buttonList.add(button5 = new GuiButton(BUTTON5, (width / 2) + 51, centerY + 133, 30, 20, "Buy"));
-       // buttonList.add(buttonnextpage = new GuiButton(BUTTON6, (width / 2) + 51, centerY + 10, 30, 20, "Next"));
-     
-       
-       
+      
         super.initGui();
     }
     
 
-   
-   public boolean blockreturn = false;
-   
- 
     @Override
     protected void actionPerformed(GuiButton button) throws IOException {
     	
@@ -263,7 +253,7 @@ public class GuiStoreDisplay2 extends GuiScreen {
             	
             case BUTTON5:
             	
-            	if(GuiNotif.playerScore >= 100){
+            	if(GuiNotif.playerScore >= 500){
             		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
             		buttonvalue = 5;
             		Maw79Mod.NETWORK.sendToServer(new StoreItem1Message(mc.player));
@@ -302,7 +292,7 @@ public class GuiStoreDisplay2 extends GuiScreen {
 
     @Override
     public boolean doesGuiPauseGame() {
-        return true;
+        return false;
     }
     
     public void onEvent(){
