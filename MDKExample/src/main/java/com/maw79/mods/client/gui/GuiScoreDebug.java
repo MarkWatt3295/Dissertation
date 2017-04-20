@@ -61,7 +61,6 @@ public class GuiScoreDebug extends GuiScreen {
     }
 
 
-    
     @Override
     public void initGui() {
     	
