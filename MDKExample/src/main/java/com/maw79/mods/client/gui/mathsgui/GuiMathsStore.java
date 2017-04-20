@@ -197,7 +197,7 @@ public class GuiMathsStore extends GuiScreen {
             		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
             		buttonvalue = 1;
             		Maw79Mod.NETWORK.sendToServer(new MathsStore1Message(mc.player));
-            		GuiNotif.playerScore -= 100;
+            		GuiNotif.playerScore -= 40;
             	}
             	else {
             		mc.player.playSound(ModSoundHandler.MAWSOUND_ERRORNOISE, 1.0f, 1.0f);
@@ -227,7 +227,7 @@ public class GuiMathsStore extends GuiScreen {
             		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
             		buttonvalue = 3;
             		Maw79Mod.NETWORK.sendToServer(new MathsStore1Message(mc.player));
-            		GuiNotif.playerScore -= 100;
+            		GuiNotif.playerScore -= 50;
             	}
             	else {
             		mc.player.playSound(ModSoundHandler.MAWSOUND_ERRORNOISE, 1.0f, 1.0f);
@@ -242,7 +242,7 @@ public class GuiMathsStore extends GuiScreen {
             		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
             		buttonvalue = 4;
             		Maw79Mod.NETWORK.sendToServer(new MathsStore1Message(mc.player));
-            		GuiNotif.playerScore -= 100;
+            		GuiNotif.playerScore -= 20;
             	}
             	else {
             		mc.player.playSound(ModSoundHandler.MAWSOUND_ERRORNOISE, 1.0f, 1.0f);
@@ -257,7 +257,7 @@ public class GuiMathsStore extends GuiScreen {
             		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
             		buttonvalue = 5;
             		Maw79Mod.NETWORK.sendToServer(new MathsStore1Message(mc.player));
-            		GuiNotif.playerScore -= 100;
+            		GuiNotif.playerScore -= 300;
             	}
             	else {
             		mc.player.playSound(ModSoundHandler.MAWSOUND_ERRORNOISE, 1.0f, 1.0f);
