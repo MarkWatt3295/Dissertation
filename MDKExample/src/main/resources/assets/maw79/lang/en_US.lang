@@ -71,6 +71,7 @@ item.number_sequence_book.name=Sequence Quest Manual
 item.prime_book.name=Prime Quest Manual
 item.odd_book.name=Odd Quest Manual
 item.even_book.name=Even Quest Manual
+item.fractions_half_stamp.name=Fractions Half Stamp
 
 //Debug Items
 item.reverse_paint_brush.name=Reverse Paint Brush
@@ -130,6 +131,11 @@ tile.maths_division_block.name= Maths Division Block
 tile.maths_addition_block.name= Maths Addition Block
 tile.maths_subtraction_block.name= Maths Subtraction Block
 tile.maths_quest.name= Maths Quest Block
+tile.fractions_half.name= Fractions Half
+tile.fractions_two_fourths.name= Fractions Two Fourths
+tile.fractions_three_sixths.name= Fractions Three Sixths
+tile.fractions_half_decimal.name= Fractions Half Decimal
+tile.fractions_fifty_100.name= Fractions Fifty Over 100
 
 tile.maths_brown_block.name=Brown Maths Block
 tile.maths_aqua_block.name=Aqua Maths Block
@@ -254,6 +260,7 @@ gui.block_breaker.enchanted_book.tooltip=Enchanted book goes here
 gui.guisciencete.button3.tooltip=Maw79 KS2 Mod Configuration
 
 //TOOL TIPS
+maw79.fractionshalf.tooltip=Use this item to identify Equivalent Fractions
 maw79.cheatbook.tooltip=A book with "borrowed" Answers
 maw79.primebook.tooltip=Right click with this item to view the Prime Quest.
 maw79.oddbook.tooltip=Right click with this item to view the Odd Quest.

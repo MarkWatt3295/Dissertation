@@ -25,6 +25,7 @@ import com.maw79.mods.init.ModArmour;
 import com.maw79.mods.init.ModBlocks;
 import com.maw79.mods.init.ModCrafting;
 import com.maw79.mods.init.ModEntities;
+import com.maw79.mods.init.ModFractionsBlocks;
 import com.maw79.mods.init.ModItems;
 import com.maw79.mods.init.ModNumberBlocks;
 import com.maw79.mods.init.ModTools;
@@ -127,6 +128,7 @@ public class Maw79Mod {
 		ModBlocks.register();
 		ModNumberBlocks.init();
 		ModNumberBlocks.register();
+		ModFractionsBlocks.register();
 		
 		
 		//Initialise Achievements

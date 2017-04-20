@@ -257,7 +257,7 @@ public class GuiStoreDisplay2 extends GuiScreen {
             		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
             		buttonvalue = 5;
             		Maw79Mod.NETWORK.sendToServer(new StoreItem1Message(mc.player));
-            		GuiNotif.playerScore -= 100;
+            		GuiNotif.playerScore -= 500;
             	}
             	else {
             		mc.player.playSound(ModSoundHandler.MAWSOUND_ERRORNOISE, 1.0f, 1.0f);

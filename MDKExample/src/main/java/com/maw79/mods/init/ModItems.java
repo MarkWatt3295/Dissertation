@@ -39,6 +39,7 @@ import com.maw79.mods.items.mathsitems.ItemCalculator;
 import com.maw79.mods.items.mathsitems.ItemCheatBook;
 import com.maw79.mods.items.mathsitems.ItemCompleteAppleWall;
 import com.maw79.mods.items.mathsitems.ItemEvenBook;
+import com.maw79.mods.items.mathsitems.ItemFractionStamp;
 import com.maw79.mods.items.mathsitems.ItemGameTypeSetter;
 import com.maw79.mods.items.mathsitems.ItemNumberSequenceBook;
 import com.maw79.mods.items.mathsitems.ItemOddBook;
@@ -115,8 +116,6 @@ public class ModItems {
 	public static final Item ODD_BOOK = new ItemOddBook("odd_book");
 	public static final Item EVEN_BOOK = new ItemEvenBook("even_book");
 	public static final Item CHEAT_BOOK = new ItemCheatBook("cheat_book");
-
-	
 	
 	//TP Tokens
 	public static final Item SCIENCE_TOKEN = new ItemScienceToken("science_token");
@@ -236,6 +235,7 @@ public class ModItems {
 		registerItem(GAMETYPE);
 		GAMETYPE.setCreativeTab(Maw79Mod.debug);
 		
+		
 	
 		
 		//SCIENCE LABELS
@@ -339,6 +339,7 @@ public class ModItems {
 		registerRender(PRIME_BOOK);
 		registerRender(CHEAT_BOOK);
 		registerRender(GAMETYPE);
+		
 		
 		
 		//SCIENCE LABELS

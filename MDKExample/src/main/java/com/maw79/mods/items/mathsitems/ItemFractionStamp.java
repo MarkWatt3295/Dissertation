@@ -5,10 +5,12 @@ import com.maw79.mods.client.gui.GuiTutorial;
 import com.maw79.mods.handlers.AchievementHandler;
 import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.init.ModBlocks;
+import com.maw79.mods.init.ModFractionsBlocks;
 import com.maw79.mods.init.ModItems;
 import com.maw79.mods.init.ModTools;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
+import com.maw79.mods.util.Utils;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -71,27 +73,27 @@ public class ItemFractionStamp extends ItemTool {
     	 if(!playerIn.hasAchievement(AchievementHandler.achievementPainter)){
          	playerIn.addStat(AchievementHandler.achievementPainter);
          }
-    	if (world.getBlockState(pos).getBlock() == ModBlocks.fractionshalf) {
-            world.setBlockState(pos, ModBlocks.mathblockblue.getDefaultState());
+    	if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF) {
+    		world.newExplosion(playerIn, pos.getX(), pos.getY(), pos.getZ(), 1, false, true);
             playerIn.playSound(ModSoundHandler.MAWSOUND_SQUELCH, 1.0F, 1.0F);
            // playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
             return EnumActionResult.SUCCESS;
         }else   if (world.getBlockState(pos).getBlock() == ModBlocks.mathblockblue) {
-            world.setBlockState(pos, ModBlocks.fractionshalf.getDefaultState());
+            world.setBlockState(pos, ModFractionsBlocks.HALF.getDefaultState());
             playerIn.playSound(ModSoundHandler.MAWSOUND_SQUELCH, 1.0F, 1.0F);
             //playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
             return EnumActionResult.SUCCESS;
         }
         else   if (world.getBlockState(pos).getBlock() == ModBlocks.mathtextblockaqua) {
-        	world.newExplosion(playerIn, pos.getX(), pos.getY(), pos.getZ(), 2, true, true);
-            world.setBlockState(pos, ModBlocks.mathblockaqua.getDefaultState());
+        	Utils.getLogger().info("Block detected");
+        	world.newExplosion(playerIn, pos.getX(), pos.getY(), pos.getZ(), 5, true, true);
+            //world.setBlockState(pos, ModBlocks.mathblockaqua.getDefaultState());
             playerIn.playSound(ModSoundHandler.MAWSOUND_SQUELCH, 1.0F, 1.0F);
            // playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
             return EnumActionResult.SUCCESS;
         }
         else   if (world.getBlockState(pos).getBlock() == ModBlocks.mathtextblockgreen) {
-            world.setBlockState(pos, ModBlocks.mathblockgreen.getDefaultState());
-            playerIn.playSound(ModSoundHandler.MAWSOUND_SQUELCH, 1.0F, 1.0F);
+        	world.newExplosion(playerIn, pos.getX(), pos.getY(), pos.getZ(), 0.5F, false, true);
             playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
             return EnumActionResult.SUCCESS;
         }

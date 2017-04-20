@@ -28,6 +28,7 @@ import com.maw79.mods.blocks.BlockTestBlock4;
 import com.maw79.mods.blocks.item.ItemBlockBreaker;
 import com.maw79.mods.blocks.item.ItemBlockMeta;
 import com.maw79.mods.blocks.mathsblocks.BlockBasicBlock;
+import com.maw79.mods.blocks.mathsblocks.BlockFractionsBlock;
 import com.maw79.mods.blocks.mathsblocks.BlockMathsAdditionBlock;
 import com.maw79.mods.blocks.mathsblocks.BlockMathsDivisionBlock;
 import com.maw79.mods.blocks.mathsblocks.BlockMathsQuestionBlock;
@@ -143,6 +144,8 @@ public class ModBlocks {
 	public static Block mathtextblockmarrowbrown;
 	public static Block mathtextblockgrey;
 	
+	
+	
 	//Science Blocks
 	public static Block testblockte;
 	public static Block sciencewoolblock;
@@ -242,6 +245,8 @@ public class ModBlocks {
 		mathtextblockmarrowbrown= new BlockBasicBlock("mathtexts_marrowbrown_block");
 		mathtextblockgrey= new BlockBasicBlock("mathtexts_grey_block");
 		
+		
+		
 		//Science Blocks
 		testblockte = new BlockTestTE("test_block_te");
 		materialproperties = new BlockScienceTE("science_te");
@@ -303,6 +308,7 @@ public class ModBlocks {
 		registerBlock(newtestblock);
 		
 		//MATHS BLOCKS
+		
 		registerBlock(mathsdivisionblock);
 		mathsdivisionblock.setCreativeTab(Maw79Mod.unused);
 		registerBlock(mathsadditionblock);
@@ -470,8 +476,7 @@ public class ModBlocks {
 		registerRender(mathblocklightorange);
 		registerRender(mathblockmarrowbrown);
 		registerRender(mathblockgrey);
-		
-		
+
 		//MATHS BLOCK Text
 		registerRender(mathtextblockbrown);
 		registerRender(mathtextblockgreen);
@@ -479,7 +484,6 @@ public class ModBlocks {
 		registerRender(mathtextblockblue);
 		registerRender(mathtextblockpeach);
 		registerRender(mathtextblockwhite);
-		
 		registerRender(mathtextblockblack);
 		registerRender(mathtextblockgold);
 		registerRender(mathtextblockorange);

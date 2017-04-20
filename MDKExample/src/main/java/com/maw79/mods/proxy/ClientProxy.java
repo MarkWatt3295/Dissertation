@@ -4,6 +4,7 @@ import com.maw79.mods.config.Maw79Config;
 import com.maw79.mods.entity.passive.EntitiesLivingHandler;
 import com.maw79.mods.init.ModArmour;
 import com.maw79.mods.init.ModBlocks;
+import com.maw79.mods.init.ModFractionsBlocks;
 import com.maw79.mods.init.ModItems;
 import com.maw79.mods.init.ModNumberBlocks;
 import com.maw79.mods.init.ModTools;
@@ -33,6 +34,7 @@ public class ClientProxy extends CommonProxy {
 		ModItems.registerRenders();
 		ModBlocks.registerRenders();
 		ModNumberBlocks.registerRenders();
+		ModFractionsBlocks.registerRenders();
 		ModArmour.registerRenders();
 		ModTools.registerRenders();
 		Utils.getLogger().info("ClientProxy: preInit");
