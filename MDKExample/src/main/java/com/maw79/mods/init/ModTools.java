@@ -10,6 +10,9 @@ import com.maw79.mods.items.ItemModSword;
 import com.maw79.mods.items.ItemPaintBrush;
 import com.maw79.mods.items.ItemSoulStealer;
 import com.maw79.mods.items.mathsitems.ItemFractionStamp;
+import com.maw79.mods.items.mathsitems.ItemFractionStampQuarter;
+import com.maw79.mods.items.mathsitems.ItemFractionStampThird;
+import com.maw79.mods.items.mathsitems.ItemQuestionWand;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.util.Utils;
@@ -47,6 +50,10 @@ public class ModTools {
 		public static ItemPaintBrush mediumpaintbrush;
 		public static ItemPaintBrush infinitepaintbrush;
 		public static ItemFractionStamp fractionstamphalf;
+		public static ItemFractionStampThird fractionstampthird;
+		public static ItemFractionStampQuarter fractionstampquarter;
+		public static ItemQuestionWand questionwand;
+		
 		
 		
 	
@@ -66,15 +73,17 @@ public class ModTools {
 			paintbrush = new ItemPaintBrush(MaterialHandler.paintBrushToolMaterial,"paint_brush");
 			
 			rustypaintbrush = new ItemPaintBrush(MaterialHandler.rustyPaintBrushToolMaterial,"rusty_paint_brush");
-			//String tm = rustypaintbrush.getToolMaterialName();
-			//System.out.println("***********************"+tm+"*************************");
+			
 			mediumpaintbrush = new ItemPaintBrush(MaterialHandler.mediumPaintBrushToolMaterial,"medium_paint_brush");
 			infinitepaintbrush = new ItemPaintBrush(MaterialHandler.infinitePaintBrushToolMaterial,"infinite_paint_brush");
 			
-			fractionstamphalf = new ItemFractionStamp(MaterialHandler.rustyPaintBrushToolMaterial,"fractions_half_stamp");
+			fractionstamphalf = new ItemFractionStamp(MaterialHandler.halfStampMaterial,"fractions_half_stamp");
+			fractionstampthird = new ItemFractionStampThird(MaterialHandler.halfStampMaterial,"fractions_third_stamp");
+			fractionstampquarter = new ItemFractionStampQuarter(MaterialHandler.halfStampMaterial,"fractions_quarter_stamp");
 			
 			steelSword = new ItemModSword(MaterialHandler.steelToolMaterial, "steel_sword");
 			
+			questionwand = new ItemQuestionWand(MaterialHandler.wandToolMaterial, "question_wand");
 		}
 		
 		/**
@@ -94,6 +103,9 @@ public class ModTools {
 			registerItem(mediumpaintbrush);
 			
 			registerItem(fractionstamphalf);
+			registerItem(fractionstampthird);
+			registerItem(fractionstampquarter);
+			registerItem(questionwand);
 			
 			registerItem(infinitepaintbrush);
 			infinitepaintbrush.setCreativeTab(Maw79Mod.debug);
@@ -119,6 +131,9 @@ public class ModTools {
 			registerRender(soulStealer);
 			registerRender(steelSword);
 			registerRender(fractionstamphalf);
+			registerRender(fractionstampthird);
+			registerRender(fractionstampquarter);
+			registerRender(questionwand);
 			
 		}
 		

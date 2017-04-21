@@ -7,6 +7,7 @@ itemGroup.maw79 unused=Maw79 Unused
 itemGroup.maw79 scratch blocks=Maw79 Scratch Blocks
 
 //Items
+item.question_wand.name=Question Wand
 item.gamesetter.name=Game Setter
 item.cheat_book.name=Maths Cheat Book
 item.booster.name=Booster
@@ -71,7 +72,9 @@ item.number_sequence_book.name=Sequence Quest Manual
 item.prime_book.name=Prime Quest Manual
 item.odd_book.name=Odd Quest Manual
 item.even_book.name=Even Quest Manual
-item.fractions_half_stamp.name=Fractions Half Stamp
+item.fractions_half_stamp.name=1 Half
+item.fractions_third_stamp.name=1 Third 
+item.fractions_quarter_stamp.name=1 Quarter
 
 //Debug Items
 item.reverse_paint_brush.name=Reverse Paint Brush
@@ -272,7 +275,10 @@ gui.block_breaker.enchanted_book.tooltip=Enchanted book goes here
 gui.guisciencete.button3.tooltip=Maw79 KS2 Mod Configuration
 
 //TOOL TIPS
-maw79.fractionshalf.tooltip=Use this item to identify Equivalent Fractions
+maw79.questionwand.tooltip=Use this item to show Block Questions.
+maw79.fractionhalfstamp.tooltip=Use this item to identify Equivalent Fractions (HALF)
+maw79.fractionthirdstamp.tooltip=Use this item to identify Equivalent Fractions (THIRD)
+maw79.fractionquarterstamp.tooltip=Use this item to identify Equivalent Fractions (QUARTER)
 maw79.cheatbook.tooltip=A book with "borrowed" Answers
 maw79.primebook.tooltip=Right click with this item to view the Prime Quest.
 maw79.oddbook.tooltip=Right click with this item to view the Odd Quest.

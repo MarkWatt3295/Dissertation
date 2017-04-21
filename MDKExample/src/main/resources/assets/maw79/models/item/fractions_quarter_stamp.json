@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "maw79:items/fractions_half_stamp"
+        "layer0": "maw79:items/fractions_quarter_stamp"
     }
 }

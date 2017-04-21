@@ -20,6 +20,9 @@ public class MaterialHandler {
 	public static final ToolMaterial infinitePaintBrushToolMaterial = EnumHelper.addToolMaterial(Reference.MOD_ID + ":infinite_paint_brush", 0, 0, 0, 10, 2);
 
 	public static final ToolMaterial glassToolMaterial = EnumHelper.addToolMaterial(Reference.MOD_ID + ":glass", 2, 1, 5.0F, 2.0F, 12);
+	public static final ToolMaterial wandToolMaterial = EnumHelper.addToolMaterial(Reference.MOD_ID + ":wand", 2, 0, 3.0F, 1.0F, 12);
+	
+	public static final ToolMaterial halfStampMaterial = EnumHelper.addToolMaterial(Reference.MOD_ID + ":half_stamp", 2, 4, 3.0F, 1.0F, 12);
 
 
 }

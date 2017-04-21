@@ -43,6 +43,8 @@ import com.maw79.mods.network.NYmanagerPacketHandler;
 import com.maw79.mods.network.NZmanagerMessage;
 import com.maw79.mods.network.NZmanagerPacketHandler;
 import com.maw79.mods.network.PacketHandler;
+import com.maw79.mods.network.PlayerPointsPlus20Message;
+import com.maw79.mods.network.PlayerPointsPlus20PacketHandler;
 import com.maw79.mods.network.StandardCommandMessage;
 import com.maw79.mods.network.StandardCommandPacketHandler;
 import com.maw79.mods.network.TeleportMessage;
@@ -165,6 +167,7 @@ public class Maw79Mod {
 		 NETWORK.registerMessage(AdminCommandPacketHandler.class, AdminCommandMessage.class, 11, Side.SERVER);
 		 NETWORK.registerMessage(MathsStore1PacketHandler.class, MathsStore1Message.class, 12, Side.SERVER);
 		 NETWORK.registerMessage(StandardCommandPacketHandler.class, StandardCommandMessage.class, 13, Side.SERVER);
+		 NETWORK.registerMessage(PlayerPointsPlus20PacketHandler.class, PlayerPointsPlus20Message.class, 14, Side.SERVER);
 	
 		 
 	}

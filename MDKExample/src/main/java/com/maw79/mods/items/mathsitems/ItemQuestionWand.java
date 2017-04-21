@@ -35,6 +35,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.EnumHelper;
 
@@ -54,9 +55,13 @@ public class ItemQuestionWand extends ItemTool {
 		
     }
     
+    /**
+     * Tool tip
+     */
     @Override
     public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
-        tooltip.add(I18n.format("tooltip.questionwand"));
+    	super.addInformation(stack, playerIn, tooltip, advanced);
+    	tooltip.add(TextFormatting.GREEN + Utils.getLang().localize("questionwand.tooltip"));
     }
 
    
@@ -67,24 +72,60 @@ public class ItemQuestionWand extends ItemTool {
     		
     		
     	 if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF_1){
-    		 playerIn.sendMessage(new TextComponentString("A Huge Pizza is cut into 24 slices. You eat "+"§a"+ "12 "+"§r"+"slices. \n\nWhat fraction of the Pizza did you eat?"));
+    		 playerIn.sendMessage(new TextComponentString("A Pizza is cut into "+"§a"+ "20 "+"§r"+"slices. You eat "+"§a"+ "10 slices"+"§r"+".\n\nWhat fraction of the Pizza did you eat?"));
     	}
     	 
     	 else if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF_2){
-    		 playerIn.sendMessage(new TextComponentString("Farmer Joe had 4 Chickens. He sold "+"§a"+ "2 "+"§r"+"leaving him with "+"§a"+ "2"+"§r"+  ".\n\nWhat fraction of Chickens were sold?"));
+    		 playerIn.sendMessage(new TextComponentString("Farmer Joe had "+"§a"+"48"+"§r"+" Chickens. He sold "+"§a"+ "24 "+"§r"+",\nLeaving him with only "+"§a"+ "24"+"§r"+  ".\n\nWhat fraction of Chickens were sold?"));
     	}
     	 else if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF_3){
     		 playerIn.sendMessage(new TextComponentString("Farmer Joe has "+"§a"+ "6 "+"§r"+"Cows. He only has enough Cow feed for\n"+"§a"+ "3"+"§r"+ " of them.\n\nWhat fraction of the cows can he feed?"));
     	}
     	 else if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF_4){
-    		 playerIn.sendMessage(new TextComponentString("Farmer Joe has "+"§a"+ "9 Points."+"§r"+ " He kindly shares the points with you. \nHe gives you "+"§a"+ "4.5 Points"+"§r"+ "\n\nWhat fraction of the points did he share with you?"));
+    		 playerIn.sendMessage(new TextComponentString("Farmer Joe has "+"§a"+ "9 Points"+"§r"+ ". He kindly shares the points with you.\nHe gives you "+"§a"+ "4.5 Points"+"§r"+ "\n\nWhat fraction of the points did he share with you?"));
     	}
-    	 if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF_5){
-    		 playerIn.sendMessage(new TextComponentString("You score "+"§a"+ "500 "+"§r"+ "Out of a possible "+"§a"+ "1000 Points. "+"§r"+"\nWhat Fraction of the points did you earn?"));
+    	 else if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF_5){
+    		 playerIn.sendMessage(new TextComponentString("You score "+"§a"+ "5 "+"§r"+ "Out of a possible "+"§a"+ "10 Points"+"§r"+".\nWhat Fraction of the points did you earn?"));
     	}
+    	 
+    	 //Quarter
+    	 else if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.QUARTER_1){
+    		 playerIn.sendMessage(new TextComponentString("A Pizza is cut into "+"§a"+ "4 "+"§r"+ "slices. You eat "+"§a"+ "1 Slice. "+"§r"+"\nWhat Fraction of the Pizza did you eat?"));
+    	}
+    	 else if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.QUARTER_2){
+    		 playerIn.sendMessage(new TextComponentString("You have "+"§a"+ "8 "+"§r"+ "Coloured Wool Blocks. "+"§a"+ "2 "+"§r"+ "are Red and "+"§a"+"4 "+"§r"+ "are White.\nWhat Fraction of the blocks are Red?"));
+    	}
+    	 else if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.QUARTER_3){
+    		 playerIn.sendMessage(new TextComponentString("Farmer Joe gives you "+"§a"+ "5 "+"§r"+ "Of his "+"§a"+ "20 "+"§r"+"Iron Ingots.\nWhat Fraction of the Ingots did you get?"));
+    	}
+    	 else if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.QUARTER_4){
+    		 playerIn.sendMessage(new TextComponentString("You Mine "+"§a"+ "100 "+"§r"+ "Cobblestone Blocks.\nYou only have enough space to hold "+"§a"+ "25 Cobblestone Blocks. "+"§r"+"\n\nWhat Fraction of your " +"§a"+"100"+"§r"+" Cobblestone can you hold??"));
+    	}
+    	 else if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.QUARTER_5){
+    		 playerIn.sendMessage(new TextComponentString("Farmer Joes Chicken Farm makes "+"§a"+ "60 Eggs "+"§r"+ "Per day.\nOf the 60, "+"§a"+ "15 Eggs "+"§r"+"produce little Chicks.\n\nWhat Fraction of the daily ammount become Chicks?"));
+    	}
+    	 
+    	 //THIRD
+    	 else if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.THIRD_1){
+    		 playerIn.sendMessage(new TextComponentString("You hit "+"§a"+ "1 "+"§r"+ "Out of a possible "+"§a"+ "3 "+"§r"+"blocks with your Paint Arrows.\n\nWhat Fraction of the blocks did your arrows hit?"));
+    	}
+    	 else if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.THIRD_2){
+    		 playerIn.sendMessage(new TextComponentString("You find "+"§a"+ "1 Iron"+"§r"+", "+"§a"+ "1 Gold"+"§r"+" and "+"§a"+ "1 Diamond"+"§r"+".\nWhat Fraction of the "+"§a"+"3"+"§r"+" Ores are Iron?"));
+    	}
+    	 else if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.THIRD_3){
+    		 playerIn.sendMessage(new TextComponentString("Farmer Joe makes "+"§a"+ "6 "+"§r"+ "cookies. He eats "+"§a"+ "4 "+"§r"+"and gives you "+"§a"+ "2"+"§r"+".\nWhat Fraction of the cookies did he give you?"));
+    	}
+    	 else if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.THIRD_4){
+    		 playerIn.sendMessage(new TextComponentString("§a"+ "5 "+"§r"+ "out of "+"§a"+ "15"+"§r"+"\nIs equivalent to \""+ "§k"+ "1third"+"§r"+"\""));
+    	}
+    	 else if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.THIRD_5){
+    		 playerIn.sendMessage(new TextComponentString("§a"+ "20 "+"§r"+ "out of "+"§a"+ "60 "+"§r"+"\nIs equivalent to \""+"§k"+"1half"+"§r"+"\""));
+    	}
+    	 
     	 else {
-    		 //block = world.getBlockState(pos).getBlock();
-    		 //playerIn.sendMessage(new TextComponentString("I am : "+ block.getLocalizedName()));
+    		 Block block;
+    		 block = world.getBlockState(pos).getBlock();
+    		 playerIn.sendMessage(new TextComponentString("This isn't a fractions Block.\n\nIts a : "+"§a"+ block.getLocalizedName()+"§r" + " (BLOCK)."));
     	 }
  		
     	}

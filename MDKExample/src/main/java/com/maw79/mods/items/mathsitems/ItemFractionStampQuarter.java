@@ -47,13 +47,13 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.List;
 import java.util.Set;
 
-public class ItemFractionStamp extends ItemTool {
+public class ItemFractionStampQuarter extends ItemTool {
 	
 	private int maxminus = 100;
 	
 	private static final Set<Block> EFFECTIVE_BLOCKS = Sets.newHashSet(new Block[] { });
 
-    public ItemFractionStamp(ToolMaterial material, String unlocalizedName) {
+    public ItemFractionStampQuarter(ToolMaterial material, String unlocalizedName) {
     	super(material, EFFECTIVE_BLOCKS);
 		this.setUnlocalizedName(unlocalizedName);
 		this.setRegistryName(new ResourceLocation(Reference.MOD_ID, unlocalizedName));
@@ -68,52 +68,10 @@ public class ItemFractionStamp extends ItemTool {
     @Override
     public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
     	super.addInformation(stack, playerIn, tooltip, advanced);
-    	tooltip.add(TextFormatting.WHITE + Utils.getLang().localize("fractionhalfstamp.tooltip"));
+    	tooltip.add(TextFormatting.LIGHT_PURPLE + Utils.getLang().localize("fractionquarterstamp.tooltip"));
     }
 
-    /*
-    @Override
-	public void onUpdate(ItemStack itemstack, World world, Entity entity, int par4, boolean par5) {
-		int i = (int) entity.posX;
-		int j = (int) entity.posY;
-		int k = (int) entity.posZ;
-
-		if (true) {
-			if (entity instanceof EntityLivingBase)
-				((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.SPEED, 2, 1));
-		}
-
-	}
-   /* @Override
-	public void onUsingTick(ItemStack itemstack, EntityLivingBase entity, int count) {
-		World world = entity.world;
-		int i = (int) entity.posX;
-		int j = (int) entity.posY;
-		int k = (int) entity.posZ;
-
-		if (true) {
-			if (entity instanceof EntityLivingBase)
-				((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.JUMP_BOOST, 2, 2));
-		}
-
-	}*/
-
-    /*
-    @Override
-    public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
-    	if(!player.isSneaking()){
-    	//	BlockPos pos = world.getblo;
-    	
-           // player.sendMessage(new TextComponentString("Right clicked PB"));
-        	//player.inventory.getCurrentItem().damageItem(1, player );
-    	
-        }
-     
-
-        return super.onItemRightClick(world, player, hand);
-    }*/
-    
-
+   
     public void pointAddition(){
     	EntityPlayer player = Minecraft.getMinecraft().player;
     	GuiNotif.playerScore +=10;
@@ -145,15 +103,14 @@ public class ItemFractionStamp extends ItemTool {
    
     		
     	if(!playerIn.isSneaking()){		
-    	  if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF_1) {
+    	  if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.QUARTER_1) {
     		playerIn.playSound(ModSoundHandler.MAWSOUND_CORRECT, 3.0F, 1.0F);
     		 world.setBlockState(pos, ModFractionsBlocks.CORRECT.getDefaultState());
-        	//world.newExplosion(playerIn, pos.getX(), pos.getY(), pos.getZ(), 0.5F, false, true);
     		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
     		pointAddition();
             return EnumActionResult.SUCCESS;
         }
-    	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF_2) {
+    	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.QUARTER_2) {
     		playerIn.playSound(ModSoundHandler.MAWSOUND_CORRECT, 3.0F, 1.0F);
     		 world.setBlockState(pos, ModFractionsBlocks.CORRECT.getDefaultState());
     		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
@@ -161,14 +118,14 @@ public class ItemFractionStamp extends ItemTool {
             return EnumActionResult.SUCCESS;
         }
     	  
-    	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF_3) {
+    	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.QUARTER_3) {
     		playerIn.playSound(ModSoundHandler.MAWSOUND_CORRECT, 3.0F, 1.0F);
     		 world.setBlockState(pos, ModFractionsBlocks.CORRECT.getDefaultState());
     		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
     		 pointAddition();
             return EnumActionResult.SUCCESS;
         }
-    	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF_4) {
+    	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.QUARTER_4) {
     		playerIn.playSound(ModSoundHandler.MAWSOUND_CORRECT, 3.0F, 1.0F);
     		 world.setBlockState(pos, ModFractionsBlocks.CORRECT.getDefaultState());
     		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
@@ -176,7 +133,7 @@ public class ItemFractionStamp extends ItemTool {
             return EnumActionResult.SUCCESS;
         }
     	  
-    	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF_5) {
+    	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.QUARTER_5) {
     		playerIn.playSound(ModSoundHandler.MAWSOUND_CORRECT, 3.0F, 1.0F);
     		 world.setBlockState(pos, ModFractionsBlocks.CORRECT.getDefaultState());
     		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
@@ -184,13 +141,46 @@ public class ItemFractionStamp extends ItemTool {
             return EnumActionResult.SUCCESS;
         }
     
-    	  //THIRDS
-    	  if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.THIRD_1) {
+    	  //HALFS
+    	  if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF_1) {
     		playerIn.playSound(ModSoundHandler.MAWSOUND_INCORRECT, 3.0F, 1.0F);
     		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
     		 pointSubtraction();
             return EnumActionResult.SUCCESS;
         }
+    	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF_2) {
+    		playerIn.playSound(ModSoundHandler.MAWSOUND_INCORRECT, 3.0F, 1.0F);
+    		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
+    		 pointSubtraction();
+            return EnumActionResult.SUCCESS;
+        }
+    	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF_3) {
+    		playerIn.playSound(ModSoundHandler.MAWSOUND_INCORRECT, 3.0F, 1.0F);
+    		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
+    		 pointSubtraction();
+            return EnumActionResult.SUCCESS;
+        }
+    	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF_4) {
+    		playerIn.playSound(ModSoundHandler.MAWSOUND_INCORRECT, 3.0F, 1.0F);
+    		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
+    		 pointSubtraction();
+            return EnumActionResult.SUCCESS;
+        }
+    	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF_5) {
+    		playerIn.playSound(ModSoundHandler.MAWSOUND_INCORRECT, 3.0F, 1.0F);
+    		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
+    		 pointSubtraction();
+            return EnumActionResult.SUCCESS;
+        }
+    	  
+    	 //THIRD
+    	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.THIRD_1) {
+    		playerIn.playSound(ModSoundHandler.MAWSOUND_INCORRECT, 3.0F, 1.0F);
+    		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
+    		 pointSubtraction();
+            return EnumActionResult.SUCCESS;
+        }
+    	 
     	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.THIRD_2) {
     		playerIn.playSound(ModSoundHandler.MAWSOUND_INCORRECT, 3.0F, 1.0F);
     		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
@@ -210,39 +200,6 @@ public class ItemFractionStamp extends ItemTool {
             return EnumActionResult.SUCCESS;
         }
     	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.THIRD_5) {
-    		playerIn.playSound(ModSoundHandler.MAWSOUND_INCORRECT, 3.0F, 1.0F);
-    		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
-    		 pointSubtraction();
-            return EnumActionResult.SUCCESS;
-        }
-    	  
-    	 //QUARTER
-    	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.QUARTER_1) {
-    		playerIn.playSound(ModSoundHandler.MAWSOUND_INCORRECT, 3.0F, 1.0F);
-    		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
-    		 pointSubtraction();
-            return EnumActionResult.SUCCESS;
-        }
-    	 
-    	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.QUARTER_2) {
-    		playerIn.playSound(ModSoundHandler.MAWSOUND_INCORRECT, 3.0F, 1.0F);
-    		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
-    		 pointSubtraction();
-            return EnumActionResult.SUCCESS;
-        }
-    	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.QUARTER_3) {
-    		playerIn.playSound(ModSoundHandler.MAWSOUND_INCORRECT, 3.0F, 1.0F);
-    		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
-    		 pointSubtraction();
-            return EnumActionResult.SUCCESS;
-        }
-    	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.QUARTER_4) {
-    		playerIn.playSound(ModSoundHandler.MAWSOUND_INCORRECT, 3.0F, 1.0F);
-    		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
-    		 pointSubtraction();
-            return EnumActionResult.SUCCESS;
-        }
-    	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.QUARTER_5) {
     		playerIn.playSound(ModSoundHandler.MAWSOUND_INCORRECT, 3.0F, 1.0F);
     		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
     		 pointSubtraction();

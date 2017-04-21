@@ -102,4 +102,10 @@
         "subtitle": "mawsound.correct",
         "sounds": [ { "name": "maw79:mawsound/correct", "stream": true } ]
     }
+     ,
+      "mawsound.incorrect": {
+        "category": "block",
+        "subtitle": "mawsound.incorrect",
+        "sounds": [ { "name": "maw79:mawsound/incorrect", "stream": true } ]
+    }
 }
