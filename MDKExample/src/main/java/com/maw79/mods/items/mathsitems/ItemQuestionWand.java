@@ -76,7 +76,7 @@ public class ItemQuestionWand extends ItemTool {
     	}
     	 
     	 else if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF_2){
-    		 playerIn.sendMessage(new TextComponentString("Farmer Joe had "+"§a"+"48"+"§r"+" Chickens. He sold "+"§a"+ "24 "+"§r"+",\nLeaving him with only "+"§a"+ "24"+"§r"+  ".\n\nWhat fraction of Chickens were sold?"));
+    		 playerIn.sendMessage(new TextComponentString("Farmer Joe had "+"§a"+"48"+"§r"+" Chickens. He sold "+"§a"+ "24"+"§r"+",\nLeaving him with only "+"§a"+ "24"+"§r"+  ".\n\nWhat fraction of Chickens were sold?"));
     	}
     	 else if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF_3){
     		 playerIn.sendMessage(new TextComponentString("Farmer Joe has "+"§a"+ "6 "+"§r"+"Cows. He only has enough Cow feed for\n"+"§a"+ "3"+"§r"+ " of them.\n\nWhat fraction of the cows can he feed?"));
@@ -102,7 +102,7 @@ public class ItemQuestionWand extends ItemTool {
     		 playerIn.sendMessage(new TextComponentString("You Mine "+"§a"+ "100 "+"§r"+ "Cobblestone Blocks.\nYou only have enough space to hold "+"§a"+ "25 Cobblestone Blocks. "+"§r"+"\n\nWhat Fraction of your " +"§a"+"100"+"§r"+" Cobblestone can you hold??"));
     	}
     	 else if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.QUARTER_5){
-    		 playerIn.sendMessage(new TextComponentString("Farmer Joes Chicken Farm makes "+"§a"+ "60 Eggs "+"§r"+ "Per day.\nOf the 60, "+"§a"+ "15 Eggs "+"§r"+"produce little Chicks.\n\nWhat Fraction of the daily ammount become Chicks?"));
+    		 playerIn.sendMessage(new TextComponentString("Farmer Joes Chicken Farm makes "+"§a"+ "60 Eggs "+"§r"+ "per day.\nOf the 60, "+"§a"+ "15 Eggs "+"§r"+"produce little Chicks.\n\nWhat Fraction of the daily ammount become Chicks?"));
     	}
     	 
     	 //THIRD

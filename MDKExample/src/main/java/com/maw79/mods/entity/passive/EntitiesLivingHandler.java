@@ -8,10 +8,12 @@ import com.maw79.mods.render.RenderDaveFactory;
 import com.maw79.mods.render.RenderElkFactory;
 import com.maw79.mods.render.RenderEntityTokenShopkeeper;
 import com.maw79.mods.render.RenderEntityTourGuide;
+import com.maw79.mods.render.RenderFarmerJoeFactory;
 import com.maw79.mods.render.RenderHomerFactory;
 import com.maw79.mods.render.RenderHumanFactory;
 import com.maw79.mods.render.RenderMathsShopkeeperFactory;
 import com.maw79.mods.render.RenderNumberHunterFactory;
+import com.maw79.mods.render.RenderScarecrowFactory;
 import com.maw79.mods.render.RenderTestFactory;
 import com.maw79.mods.render.RenderTokenShopkeeper;
 import com.maw79.mods.render.RenderTourGuideFactory;
@@ -44,8 +46,18 @@ public class EntitiesLivingHandler {
 		createHomer(EntityHomer.class, "Homer", 439, 127, 8);
 		createNumberHunter(EntityNumberHunter.class, "Number Hunter", 222, 555, 9);
 		createMathsShopkeeper(EntityMathsShopKeeper.class, "Maths Shopkeeper", 888, 5559, 10);
+		createFarmerJoe(EntityFarmerJoe.class, "Farmer Joe", 3288, 1689, 11);
+		createScarecrow(EntityScarecrow.class, "Scarecrow", 555, 999, 12);
 	}
 
+	private static void createScarecrow(Class entityClass, String entityName, int solidColor, int spotColor, int id){
+		Utils.getLogger().info("EntitiesLivingHandler: createFarmerJoe");
+		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, entityName, id, Maw79Mod.instance, 64, 1, true, solidColor, spotColor);
+	}
+	private static void createFarmerJoe(Class entityClass, String entityName, int solidColor, int spotColor, int id){
+		Utils.getLogger().info("EntitiesLivingHandler: createFarmerJoe");
+		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, entityName, id, Maw79Mod.instance, 64, 1, true, solidColor, spotColor);
+	}
 	private static void createHomer(Class entityClass, String entityName, int solidColor, int spotColor, int id){
 		Utils.getLogger().info("EntitiesLivingHandler: createHomer");
 		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, entityName, id, Maw79Mod.instance, 64, 1, true, solidColor, spotColor);
@@ -117,6 +129,8 @@ public class EntitiesLivingHandler {
 		registerHomer(EntityHomer.class, RenderHomerFactory.INSTANCE);
 		registerNumberHunter(EntityNumberHunter.class, RenderNumberHunterFactory.INSTANCE);
 		registerMathsShopkeeper(EntityMathsShopKeeper.class, RenderMathsShopkeeperFactory.INSTANCE);
+		registerFarmerJoe(EntityFarmerJoe.class, RenderFarmerJoeFactory.INSTANCE);
+		registerScarecrow(EntityScarecrow.class, RenderScarecrowFactory.INSTANCE);
 	}
 	
 	
@@ -192,6 +206,18 @@ public class EntitiesLivingHandler {
 	private static <T extends EntityCreature> void registerMathsShopkeeper(Class<T> entity, IRenderFactory<? super T> renderFactory3)
 	{
 		Utils.getLogger().info("EntitiesLivingHandler: registerMathsShopkeeper");
+		
+		RenderingRegistry.registerEntityRenderingHandler(entity, renderFactory3);
+	}
+	private static <T extends EntityCreature> void registerFarmerJoe(Class<T> entity, IRenderFactory<? super T> renderFactory3)
+	{
+		Utils.getLogger().info("EntitiesLivingHandler: registerFarmerJoe");
+		
+		RenderingRegistry.registerEntityRenderingHandler(entity, renderFactory3);
+	}
+	private static <T extends EntityCreature> void registerScarecrow(Class<T> entity, IRenderFactory<? super T> renderFactory3)
+	{
+		Utils.getLogger().info("EntitiesLivingHandler: registerScarecrow");
 		
 		RenderingRegistry.registerEntityRenderingHandler(entity, renderFactory3);
 	}

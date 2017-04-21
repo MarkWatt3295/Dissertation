@@ -57,6 +57,8 @@ import com.maw79.mods.network.ZmanagerPacketHandler;
 import com.maw79.mods.network.mathsPacketHandler;
 import com.maw79.mods.network.store.MathsStore1Message;
 import com.maw79.mods.network.store.MathsStore1PacketHandler;
+import com.maw79.mods.network.store.ScarecrowSalesMessage;
+import com.maw79.mods.network.store.ScarecrowSalesPacketHandler;
 import com.maw79.mods.network.store.StoreItem1Message;
 import com.maw79.mods.network.store.StoreItem1PacketHandler;
 import com.maw79.mods.proxy.CommonProxy;
@@ -168,6 +170,7 @@ public class Maw79Mod {
 		 NETWORK.registerMessage(MathsStore1PacketHandler.class, MathsStore1Message.class, 12, Side.SERVER);
 		 NETWORK.registerMessage(StandardCommandPacketHandler.class, StandardCommandMessage.class, 13, Side.SERVER);
 		 NETWORK.registerMessage(PlayerPointsPlus20PacketHandler.class, PlayerPointsPlus20Message.class, 14, Side.SERVER);
+		 NETWORK.registerMessage(ScarecrowSalesPacketHandler.class, ScarecrowSalesMessage.class, 15, Side.SERVER);
 	
 		 
 	}

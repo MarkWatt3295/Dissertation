@@ -2,6 +2,7 @@ package com.maw79.mods.init;
 
 import com.maw79.mods.handlers.MaterialHandler;
 import com.maw79.mods.items.ItemGlassPickaxe;
+import com.maw79.mods.items.ItemGlassShovel;
 import com.maw79.mods.items.ItemModAxe;
 import com.maw79.mods.items.ItemModHoe;
 import com.maw79.mods.items.ItemModPickaxe;
@@ -41,6 +42,7 @@ public class ModTools {
 		public static ItemSpade obsidianShovel;
 		public static ItemSword obsidianSword2;
 		public static ItemPickaxe glassPickaxe;
+		public static ItemSpade glassSpade;
 		
 		public static ItemSword steelSword;
 		
@@ -63,7 +65,8 @@ public class ModTools {
 		 */
 		public static void init() {
 			obsidianPickaxe = new ItemModPickaxe(MaterialHandler.obsidianToolMaterial, "obsidian_pickaxe");
-			glassPickaxe = new ItemGlassPickaxe(MaterialHandler.glassToolMaterial, "glass_pickaxe");//RENAME ME PLIZ
+			glassPickaxe = new ItemGlassPickaxe(MaterialHandler.glassToolMaterial, "glass_pickaxe");
+			glassSpade = new ItemGlassShovel(MaterialHandler.glassToolMaterial, "glass_spade");
 			obsidianAxe = new ItemModAxe(MaterialHandler.obsidianToolMaterial, "obsidian_axe");
 			obsidianHoe = new ItemModHoe(MaterialHandler.obsidianToolMaterial, "obsidian_hoe");
 			obsidianShovel = new ItemModShovel(MaterialHandler.obsidianToolMaterial, "obsidian_shovel");
@@ -96,7 +99,7 @@ public class ModTools {
 			registerItem(obsidianHoe);
 			registerItem(obsidianShovel);
 			registerItem(obsidianSword2);
-			
+			registerItem(glassSpade);
 			registerItem(soulStealer);
 			registerItem(paintbrush);
 			registerItem(rustypaintbrush);
@@ -120,6 +123,7 @@ public class ModTools {
 		public static void registerRenders() {
 			registerRender(obsidianPickaxe);
 			registerRender(glassPickaxe);
+			registerRender(glassSpade);
 			registerRender(obsidianAxe);
 			registerRender(obsidianHoe);
 			registerRender(obsidianShovel);

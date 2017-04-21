@@ -38,16 +38,17 @@ public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player
 	 
 	if(player.isSneaking()){
 			System.out.println("Think your sneaking?");
-			int playerMX = (int) player.posX;
 			player.move(null, -1, 0, 0); 
+			int playerMX = (int) player.posX;
 			if(!player.world.isRemote) player.sendMessage(new TextComponentString("Moving Along " + "§c"+ "-X "+ "§r"+"Axis ("+ "§c" + playerMX+"§r"+")"));
 		}
 	
 	else if (!player.isSneaking()){
 		System.out.println("Not sneaking?");
+		 player.move(null, 1, 0, 0);
 		int playerX = (int) player.posX;
 		 if(!player.world.isRemote) player.sendMessage(new TextComponentString("Moving Along " + "§c"+ "+X "+ "§r"+"Axis ("+ "§c" + playerX+"§r"+")"));
-		 player.move(null, 1, 0, 0);
+		
 	 }
 	
 

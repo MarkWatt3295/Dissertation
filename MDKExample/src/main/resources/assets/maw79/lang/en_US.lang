@@ -7,6 +7,7 @@ itemGroup.maw79 unused=Maw79 Unused
 itemGroup.maw79 scratch blocks=Maw79 Scratch Blocks
 
 //Items
+item.glass_spade.name=Glass Spade
 item.question_wand.name=Question Wand
 item.gamesetter.name=Game Setter
 item.cheat_book.name=Maths Cheat Book
