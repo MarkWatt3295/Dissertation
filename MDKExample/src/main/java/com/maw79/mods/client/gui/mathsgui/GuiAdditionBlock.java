@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import com.maw79.mods.blocks.pointsblocks.TileEntityPointsBlock;
 import com.maw79.mods.client.gui.GuiNotif;
 import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.main.Maw79Mod;
@@ -166,7 +168,7 @@ public class GuiAdditionBlock extends GuiScreen {
         switch (button.id) {
             case BUTTON1:
             	Utils.getLogger().info("Correct Answer! Heres your reward");
-            	GuiNotif.playerScore += 10;
+            	TileEntityPointsBlock.playerScore += 10;
             	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
             	Maw79Mod.NETWORK.sendToServer(new MathsMessage(mc.player));
             	//mc.displayGuiScreen((GuiScreen)null);

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.maw79.mods.blocks.mathsblocks.questblock.TileEntityMathsQuest;
+import com.maw79.mods.blocks.pointsblocks.TileEntityPointsBlock;
 import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.init.ModItems;
 import com.maw79.mods.main.Maw79Mod;
@@ -193,7 +194,7 @@ public class GuiMathsQuestGive extends GuiScreen {
             case BUTTON2alt:
             	// Prime NUMBER 
         		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-        		GuiNotif.playerScore +=50;
+        		TileEntityPointsBlock.playerScore +=50;
         		button2alt.visible=false;
         		questnumber = 0;
         		TileEntityMathsQuest.primeclaimed = true;
@@ -214,7 +215,7 @@ public class GuiMathsQuestGive extends GuiScreen {
             case BUTTON3alt:
             	// Even NUMBER 
         		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-        		GuiNotif.playerScore +=50;
+        		TileEntityPointsBlock.playerScore +=50;
         		button3alt.visible=false;
         		questnumber = 0;
         		TileEntityMathsQuest.evenclaimed = true;
@@ -235,7 +236,7 @@ public class GuiMathsQuestGive extends GuiScreen {
             case BUTTON4alt:
             	// Odd NUMBER 
         		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-        		GuiNotif.playerScore +=50;
+        		TileEntityPointsBlock.playerScore +=50;
         		button4alt.visible=false;
         		questnumber = 0;
         		TileEntityMathsQuest.oddclaimed = true;
@@ -256,7 +257,7 @@ public class GuiMathsQuestGive extends GuiScreen {
             case BUTTON5alt:
             	// NUMBER SEQUENCE
         		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-        		GuiNotif.playerScore +=50;
+        		TileEntityPointsBlock.playerScore +=50;
         		button5alt.visible=false;
         		TileEntityMathsQuest.sequenceclaimed = true;
         		questnumber = 0;

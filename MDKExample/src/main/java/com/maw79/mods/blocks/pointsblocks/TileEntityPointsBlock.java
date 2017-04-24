@@ -17,7 +17,7 @@ public class TileEntityPointsBlock extends TileEntity implements ITickable, ICap
 
 	//Recycler also used as a variable store as TileEntitys save both client and server side
 	public static int halfscorrect = 5;
-	
+	public static int playerScore = 0;
 	
 	
 

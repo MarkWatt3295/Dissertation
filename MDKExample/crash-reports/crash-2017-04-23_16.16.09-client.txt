@@ -1,0 +1,121 @@
+---- Minecraft Crash Report ----
+// Daisy, daisy...
+
+Time: 4/23/17 4:16 PM
+Description: Rendering screen
+
+java.lang.NullPointerException: Rendering screen
+	at net.minecraft.client.gui.FontRenderer.sizeStringToWidth(FontRenderer.java:897)
+	at net.minecraft.client.gui.FontRenderer.wrapFormattedStringToWidth(FontRenderer.java:876)
+	at net.minecraft.client.gui.FontRenderer.listFormattedStringToWidth(FontRenderer.java:868)
+	at net.minecraft.client.gui.FontRenderer.renderSplitString(FontRenderer.java:821)
+	at net.minecraft.client.gui.FontRenderer.drawSplitString(FontRenderer.java:812)
+	at com.maw79.mods.client.gui.books.GuiFractionsBook.drawScreen(GuiFractionsBook.java:183)
+	at net.minecraftforge.client.ForgeHooksClient.drawScreen(ForgeHooksClient.java:382)
+	at net.minecraft.client.renderer.EntityRenderer.updateCameraAndRender(EntityRenderer.java:1164)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1140)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:407)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97)
+	at GradleStart.main(GradleStart.java:26)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at net.minecraft.client.gui.FontRenderer.sizeStringToWidth(FontRenderer.java:897)
+	at net.minecraft.client.gui.FontRenderer.wrapFormattedStringToWidth(FontRenderer.java:876)
+	at net.minecraft.client.gui.FontRenderer.listFormattedStringToWidth(FontRenderer.java:868)
+	at net.minecraft.client.gui.FontRenderer.renderSplitString(FontRenderer.java:821)
+	at net.minecraft.client.gui.FontRenderer.drawSplitString(FontRenderer.java:812)
+	at com.maw79.mods.client.gui.books.GuiFractionsBook.drawScreen(GuiFractionsBook.java:183)
+	at net.minecraftforge.client.ForgeHooksClient.drawScreen(ForgeHooksClient.java:382)
+
+-- Screen render details --
+Details:
+	Screen name: com.maw79.mods.client.gui.books.GuiFractionsBook
+	Mouse location: Scaled: (247, 160). Absolute: (495, 158)
+	Screen size: Scaled: (427, 240). Absolute: (854, 480). Scale factor of 2
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityPlayerSP['Player632'/46, l='MpServer', x=-92.19, y=63.00, z=-88.72]]
+	Chunk stats: MultiplayerChunkCache: 841, 841
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (26,67,-57), Chunk: (at 10,4,7 in 1,-4; contains blocks 16,0,-64 to 31,255,-49), Region: (0,-1; contains chunks 0,-32 to 31,-1, blocks 0,0,-512 to 511,255,-1)
+	Level time: 802039 game time, 33129 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: adventure (ID 2). Hardcore: false. Cheats: false
+	Forced entities: 29 total; [EntityRabbit['Rabbit'/0, l='MpServer', x=-151.31, y=63.00, z=-81.90], EntityNumberHunter['Mr. Numbers'/1, l='MpServer', x=-138.51, y=63.00, z=-95.95], EntityRabbit['Rabbit'/2, l='MpServer', x=-128.55, y=63.07, z=-83.00], EntityRabbit['Rabbit'/3, l='MpServer', x=-142.62, y=63.12, z=-58.67], EntityMathsShopKeeper['Shopkeeper'/4, l='MpServer', x=-118.53, y=63.00, z=-98.73], EntityTokenShopKeeper['Shopkeeper'/5, l='MpServer', x=-125.73, y=63.00, z=-91.58], EntityBat['Bat'/6, l='MpServer', x=-113.83, y=27.10, z=-25.39], EntityBat['Bat'/7, l='MpServer', x=-116.75, y=39.10, z=-31.25], EntityBat['Bat'/8, l='MpServer', x=-120.23, y=35.27, z=-29.34], EntityPlayerSP['Player632'/46, l='MpServer', x=-92.19, y=63.00, z=-88.72], EntityBat['Bat'/10, l='MpServer', x=-105.38, y=36.87, z=-37.92], EntityBat['Bat'/11, l='MpServer', x=-83.47, y=50.10, z=-85.25], EntityBat['Bat'/12, l='MpServer', x=-80.25, y=49.10, z=-92.75], EntityBat['Bat'/13, l='MpServer', x=-83.63, y=49.10, z=-89.43], EntityBat['Bat'/14, l='MpServer', x=-84.53, y=50.10, z=-84.25], EntityBat['Bat'/15, l='MpServer', x=-85.51, y=51.10, z=-86.11], EntityBat['Bat'/16, l='MpServer', x=-84.25, y=50.10, z=-84.25], EntityBat['Bat'/17, l='MpServer', x=-84.25, y=50.10, z=-84.25], EntityBat['Bat'/18, l='MpServer', x=-84.30, y=50.10, z=-84.29], EntityFarmerJoe['Farmer Joe'/19, l='MpServer', x=-95.18, y=63.00, z=-91.15], EntityScarecrow['Scarecrow'/20, l='MpServer', x=-90.46, y=63.00, z=-87.53], EntityChicken['Chicken'/21, l='MpServer', x=-95.54, y=63.00, z=-92.77], EntityBat['Bat'/22, l='MpServer', x=-91.53, y=29.08, z=-55.99], EntityChicken['Chicken'/23, l='MpServer', x=-84.84, y=63.00, z=-52.35], EntityRabbit['Rabbit'/24, l='MpServer', x=-87.26, y=63.00, z=-53.05], EntityChicken['Chicken'/25, l='MpServer', x=-86.65, y=63.00, z=-48.40], EntityItem['item.item.egg'/26, l='MpServer', x=-85.46, y=63.00, z=-53.05], EntityBat['Bat'/27, l='MpServer', x=-94.25, y=45.10, z=-40.25], EntityBat['Bat'/28, l='MpServer', x=-96.75, y=43.64, z=-41.73]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:456)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2774)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:428)
+	at net.minecraft.client.main.Main.main(Main.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97)
+	at GradleStart.main(GradleStart.java:26)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.11.2
+	Operating System: Mac OS X (x86_64) version 10.12.5
+	Java Version: 1.8.0_121, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 2917954520 bytes (2782 MB) / 4158128128 bytes (3965 MB) up to 4158128128 bytes (3965 MB)
+	JVM Flags: 2 total; -Xmx4G -Xms4G
+	IntCache: cache: 0, tcache: 0, allocated: 13, tallocated: 95
+	FML: MCP 9.38 Powered by Forge 13.20.0.2228 5 mods loaded, 5 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAA	minecraft{1.11.2} [Minecraft] (minecraft.jar) 
+	UCHIJAAAA	mcp{9.19} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAA	FML{8.0.99.99} [Forge Mod Loader] (forgeSrc-1.11.2-13.20.0.2228.jar) 
+	UCHIJAAAA	forge{13.20.0.2228} [Minecraft Forge] (forgeSrc-1.11.2-13.20.0.2228.jar) 
+	UCHIJAAAA	maw79{0.40 mathsbuild - Alpha} [Teaching Keystage 2 Via Minecraft] (bin) 
+	Loaded coremods (and transformers): 
+	Launched Version: 1.11.2
+	LWJGL: 2.9.2
+	OpenGL: Intel Iris OpenGL Engine GL version 2.1 INTEL-10.25.2, Intel Inc.
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because ARB_framebuffer_object is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	CPU: 4x Intel(R) Core(TM) i5-4258U CPU @ 2.40GHz

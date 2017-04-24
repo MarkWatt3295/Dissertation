@@ -62,7 +62,7 @@ public class GuiPointsBlock extends GuiContainer {
 	 */
 	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-		String s = ("Block Recycler"); 
+		String s = ("Points Block"); 
 		String s1 = "";
 		
 		

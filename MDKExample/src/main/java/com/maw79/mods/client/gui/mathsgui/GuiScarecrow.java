@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.maw79.mods.blocks.pointsblocks.TileEntityPointsBlock;
 import com.maw79.mods.client.gui.GuiNotif;
 import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.init.ModItems;
@@ -68,7 +69,7 @@ public class GuiScarecrow extends GuiScreen {
         {
             GlStateManager.translate((width / 2) , centerY + 15, 0);
             GlStateManager.scale(1.2, 1.2, 1.2);
-            String heading = "Points : "+ GuiNotif.playerScore;
+            String heading = "Points : "+ TileEntityPointsBlock.playerScore;
             fontRendererObj.drawString(heading, 0, 0, 0xffffff);
            
         }
@@ -194,11 +195,11 @@ public class GuiScarecrow extends GuiScreen {
         switch (button.id) {
             case BUTTON1:
             	
-            	if(GuiNotif.playerScore >= 20){
+            	if(TileEntityPointsBlock.playerScore >= 20){
             		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
             		buttonvalue = 1;
             		Maw79Mod.NETWORK.sendToServer(new ScarecrowSalesMessage(mc.player));
-            		GuiNotif.playerScore -= 20;
+            		TileEntityPointsBlock.playerScore -= 20;
             	}
             	else {
             		mc.player.playSound(ModSoundHandler.MAWSOUND_ERRORNOISE, 1.0f, 1.0f);
@@ -209,11 +210,11 @@ public class GuiScarecrow extends GuiScreen {
             	
             case BUTTON2:
             	
-            	if(GuiNotif.playerScore >= 20){
+            	if(TileEntityPointsBlock.playerScore >= 20){
             		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
             		buttonvalue = 2;
             		Maw79Mod.NETWORK.sendToServer(new ScarecrowSalesMessage(mc.player));
-            		GuiNotif.playerScore -= 20;
+            		TileEntityPointsBlock.playerScore -= 20;
             	}
             	else {
             		mc.player.playSound(ModSoundHandler.MAWSOUND_ERRORNOISE, 1.0f, 1.0f);
@@ -224,11 +225,11 @@ public class GuiScarecrow extends GuiScreen {
             	
             case BUTTON3:
             	
-            	if(GuiNotif.playerScore >= 20){
+            	if(TileEntityPointsBlock.playerScore >= 20){
             		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
             		buttonvalue = 3;
             		Maw79Mod.NETWORK.sendToServer(new ScarecrowSalesMessage(mc.player));
-            		GuiNotif.playerScore -= 20;
+            		TileEntityPointsBlock.playerScore -= 20;
             	}
             	else {
             		mc.player.playSound(ModSoundHandler.MAWSOUND_ERRORNOISE, 1.0f, 1.0f);
@@ -239,11 +240,11 @@ public class GuiScarecrow extends GuiScreen {
             	
             case BUTTON4:
             
-            	if(GuiNotif.playerScore >= 50){
+            	if(TileEntityPointsBlock.playerScore >= 50){
             		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
             		buttonvalue = 4;
             		Maw79Mod.NETWORK.sendToServer(new ScarecrowSalesMessage(mc.player));
-            		GuiNotif.playerScore -= 50;
+            		TileEntityPointsBlock.playerScore -= 50;
             	}
             	else {
             		mc.player.playSound(ModSoundHandler.MAWSOUND_ERRORNOISE, 1.0f, 1.0f);
@@ -254,11 +255,11 @@ public class GuiScarecrow extends GuiScreen {
             	
             case BUTTON5:
             	
-            	if(GuiNotif.playerScore >= 30){
+            	if(TileEntityPointsBlock.playerScore >= 30){
             		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
             		buttonvalue = 5;
             		Maw79Mod.NETWORK.sendToServer(new ScarecrowSalesMessage(mc.player));
-            		GuiNotif.playerScore -= 30;
+            		TileEntityPointsBlock.playerScore -= 30;
             	}
             	else {
             		mc.player.playSound(ModSoundHandler.MAWSOUND_ERRORNOISE, 1.0f, 1.0f);

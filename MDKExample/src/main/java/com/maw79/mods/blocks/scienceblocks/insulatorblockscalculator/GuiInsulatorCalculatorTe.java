@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.lwjgl.opengl.GL11;
 
+import com.maw79.mods.blocks.pointsblocks.TileEntityPointsBlock;
 import com.maw79.mods.client.gui.GuiNotif;
 import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.main.Maw79Mod;
@@ -182,7 +183,7 @@ public class GuiInsulatorCalculatorTe extends GuiContainer {
 			 Utils.getLogger().info("Pressed and True");
 			 if(te.recieved == false){
 			 Utils.getLogger().info("Give Something Here");
-			 GuiNotif.playerScore +=100;
+			 TileEntityPointsBlock.playerScore +=100;
 			 Utils.getLogger().info("Give Achievment Here");
 			 te.recieved = true;
 			 }

@@ -1,5 +1,6 @@
 package com.maw79.mods.blocks.mathsblocks.questblock;
 
+import com.maw79.mods.blocks.pointsblocks.TileEntityPointsBlock;
 import com.maw79.mods.client.gui.GuiMathsQuestGive;
 import com.maw79.mods.client.gui.GuiNotif;
 import com.maw79.mods.handlers.ModSoundHandler;
@@ -163,7 +164,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Block 33 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							sequence33 = true;
 							sequencenumstofind -=1;
 							seqarray[0] =" 33 ,";
@@ -175,7 +176,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Block 4 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							sequence4 = true;
 							sequencenumstofind -=1;
 							seqarray[1] =" 4 ,";
@@ -186,7 +187,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Block 19 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							sequence19 = true;
 							sequencenumstofind -=1;
 							seqarray[2] =" 19";
@@ -217,7 +218,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Prime: Block 2 Placed ");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							prime2 = true;
 							primenumstofind -=1;
 							primearray[0] ="2 ,";
@@ -228,7 +229,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Prime: Block 3 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							prime3 = true;
 							primenumstofind -=1;
 							primearray[1] =" 3 ,";
@@ -239,7 +240,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Prime: Block 5 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							prime5 = true;
 							primenumstofind -=1;
 							primearray[2] =" 5 ,";
@@ -250,7 +251,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Prime: Block 7 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							prime7 = true;
 							primenumstofind -=1;
 							primearray[3] =" 7";
@@ -261,7 +262,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Prime: Block 11 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							prime11 = true;
 							primenumstofind -=1;
 							primearray[4] ="11 ,";
@@ -272,7 +273,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Prime: Block 13 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							prime13 = true;
 							primenumstofind -=1;
 							primearray[5] =" 13 ,";
@@ -283,7 +284,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Prime: Block 17 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							prime17 = true;
 							primenumstofind -=1;
 							primearray[6] =" 17 ,";
@@ -294,7 +295,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Prime: Block 19 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							prime19 = true;
 							primenumstofind -=1;
 							primearray[7] =" 19";
@@ -327,7 +328,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Even :Block 2 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							even2 = true;
 							evennumstofind -=1;
 							evenarray[0] =" 2 ,";
@@ -338,7 +339,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Even :Block 4 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							even4 = true;
 							evennumstofind -=1;
 							evenarray[1] =" 4 ,";
@@ -349,7 +350,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Even :Block 6 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							even6 = true;
 							evennumstofind -=1;
 							evenarray[2] =" 6 ,";
@@ -360,7 +361,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Even :Block 8 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							even8 = true;
 							evennumstofind -=1;
 							evenarray[3] =" 8 ,";
@@ -371,7 +372,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Even :Block 10 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							even10 = true;
 							evennumstofind -=1;
 							evenarray[4] =" 10";
@@ -382,7 +383,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Even :Block 12 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							even12 = true;
 							evennumstofind -=1;
 							evenarray[5] =" 12 ,";
@@ -393,7 +394,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Even :Block 14 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							even14 = true;
 							evennumstofind -=1;
 							evenarray[6] =" 14 ,";
@@ -405,7 +406,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Even :Block 16 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							even16 = true;
 							evennumstofind -=1;
 							evenarray[7] =" 16 ,";
@@ -416,7 +417,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Even :Block 18 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							even18 = true;
 							evennumstofind -=1;
 							evenarray[8] =" 18 ,";
@@ -427,7 +428,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Even :Block 20 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							even20 = true;
 							evennumstofind -=1;
 							evenarray[9] =" 20";
@@ -460,7 +461,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Odd : Block 1 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							odd1 = true;
 							oddnumstofind -=1;
 							oddarray[0] =" 1 ,";
@@ -472,7 +473,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Odd : Block 3 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							odd3 = true;
 							oddnumstofind -=1;
 							oddarray[1] =" 3 ,";
@@ -483,7 +484,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Odd : Block 5 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							odd5 = true;
 							oddnumstofind -=1;
 							oddarray[2] =" 5 ,";
@@ -494,7 +495,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Odd : Block 7 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							odd7 = true;
 							oddnumstofind -=1;
 							oddarray[3] =" 7 ,";
@@ -505,7 +506,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Odd : Block 9 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							odd9 = true;
 							oddnumstofind -=1;
 							oddarray[4] =" 9 ";
@@ -516,7 +517,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Odd : Block 11 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							odd11 = true;
 							oddnumstofind -=1;
 							oddarray[5] =" 11 ,";
@@ -527,7 +528,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Odd : Block 13 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							odd13 = true;
 							oddnumstofind -=1;
 							oddarray[6] =" 13 ,";
@@ -538,7 +539,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Odd : Block 15 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							odd15 = true;
 							oddnumstofind -=1;
 							oddarray[7] =" 15 ,";
@@ -549,7 +550,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Odd : Block 17 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							odd17 = true;
 							oddnumstofind -=1;
 							oddarray[8] =" 17 ,";
@@ -560,7 +561,7 @@ public class TileEntityMathsQuest extends TileEntity implements ITickable, ICapa
 							Utils.getLogger().info("Odd : Block 19 Placed");
 							handler.extractItem(4, 1, false);
 							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							TileEntityPointsBlock.playerScore += 10;
 							odd19 = true;
 							oddnumstofind -=1;
 							oddarray[9] =" 19 ";

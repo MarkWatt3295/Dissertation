@@ -1,5 +1,6 @@
 package com.maw79.mods.network;
 
+import com.maw79.mods.blocks.pointsblocks.TileEntityPointsBlock;
 import com.maw79.mods.client.gui.GuiNotif;
 import com.maw79.mods.init.ModItems;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -26,7 +27,7 @@ World world = DimensionManager.getWorld(message.dimension);
  EntityPlayerMP player = ctx.getServerHandler().playerEntity;
  
  
-GuiNotif.playerScore +=20;
+TileEntityPointsBlock.playerScore +=20;
 	
  }
  }

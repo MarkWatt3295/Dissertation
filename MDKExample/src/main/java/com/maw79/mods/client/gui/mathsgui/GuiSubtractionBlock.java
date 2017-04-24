@@ -8,6 +8,7 @@ import java.util.Random;
 import org.lwjgl.input.Mouse;
 
 import com.maw79.mods.blocks.BlockTestBlock3;
+import com.maw79.mods.blocks.pointsblocks.TileEntityPointsBlock;
 import com.maw79.mods.client.gui.GuiNotif;
 import com.maw79.mods.handlers.AchievementHandler;
 import com.maw79.mods.handlers.DropHandler;
@@ -183,7 +184,7 @@ public class GuiSubtractionBlock extends GuiScreen {
         switch (button.id) {
             case BUTTON1:
             	Utils.getLogger().info("Correct Answer! Heres your reward");
-            	GuiNotif.playerScore += 10;
+            	TileEntityPointsBlock.playerScore += 10;
             	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
             	Maw79Mod.NETWORK.sendToServer(new MathsMessage(mc.player));
             	mc.displayGuiScreen((GuiScreen)null);

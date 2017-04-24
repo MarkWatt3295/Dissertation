@@ -1,6 +1,8 @@
 package com.maw79.mods.client.gui;
 
 import java.io.IOException;
+
+import com.maw79.mods.blocks.pointsblocks.TileEntityPointsBlock;
 import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
@@ -85,29 +87,29 @@ public class GuiScoreDebug extends GuiScreen {
     	
         switch (button.id) {
             case BUTTON1:
-           GuiNotif.playerScore += 10;
+           TileEntityPointsBlock.playerScore += 10;
             	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
             	break;
             	
             case BUTTON2:
-            	  GuiNotif.playerScore += 100;
+            	TileEntityPointsBlock.playerScore += 100;
             	System.out.println(Maw79Mod.playerlevel);
             	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
             
             	break;
             	
             case BUTTON3:
-            	GuiNotif.playerScore =0;
+            	TileEntityPointsBlock.playerScore =0;
             	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
             	break;
             	
             case BUTTON4:
-                GuiNotif.playerScore += 1000;
+            	TileEntityPointsBlock.playerScore += 1000;
                  	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
                  	break;
                  	
             case BUTTON5:
-                GuiNotif.playerScore += 5;
+            	TileEntityPointsBlock.playerScore += 5;
                  	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
                  	break;
             	

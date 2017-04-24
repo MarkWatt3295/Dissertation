@@ -1,5 +1,7 @@
 package com.maw79.mods.client.gui;
 
+import com.maw79.mods.blocks.pointsblocks.TileEntityPointsBlock;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.ScaledResolution;
@@ -7,7 +9,7 @@ import net.minecraft.client.gui.ScaledResolution;
 public class GuiNotif extends Gui
 {
 	public static String playerlevel = "Select A Level";
-	public static int playerScore = 0;
+	
 	public static int multimax = 5;
 	public static int multimin = 1;
 	public static int addmax = 20;
@@ -20,7 +22,7 @@ public class GuiNotif extends Gui
         int width = scaled.getScaledWidth() ;
         int height = scaled.getScaledHeight();
     	
-        drawString(mc.fontRendererObj, "Score: "+ playerScore, width / 2 + (110), (height / 2) + (-87), Integer.parseInt("FFFFFF", 16));
+        drawString(mc.fontRendererObj, "Score: "+ TileEntityPointsBlock.playerScore, width / 2 + (110), (height / 2) + (-87), Integer.parseInt("FFFFFF", 16));
         
           
  if(playerlevel == "1"){

@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.lwjgl.opengl.GL11;
 
+import com.maw79.mods.blocks.pointsblocks.TileEntityPointsBlock;
 import com.maw79.mods.client.gui.GuiNotif;
 import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.main.Maw79Mod;
@@ -190,7 +191,7 @@ public class GuiScienceTe extends GuiContainer {
 		if (te.cangiveblocks == true){
 			Utils.getLogger().info("Able to give blocks");
 			Maw79Mod.NETWORK.sendToServer(new MathsMessage(mc.player));
-			GuiNotif.playerScore +=100;
+			TileEntityPointsBlock.playerScore +=100;
 			te.cangiveblocks = false;
 		}
 		}

@@ -2,6 +2,7 @@ package com.maw79.mods.items.mathsitems;
 
 import com.google.common.collect.Sets;
 import com.maw79.mods.blocks.mathsblocks.recycler.TileEntityRecycler;
+import com.maw79.mods.blocks.pointsblocks.TileEntityPointsBlock;
 import com.maw79.mods.client.gui.GuiNotif;
 import com.maw79.mods.client.gui.GuiTutorial;
 import com.maw79.mods.handlers.AchievementHandler;
@@ -117,7 +118,7 @@ public class ItemFractionStamp extends ItemTool {
 
     public void pointAddition(){
     	EntityPlayer player = Minecraft.getMinecraft().player;
-    	GuiNotif.playerScore +=10;
+    	TileEntityPointsBlock.playerScore +=10;
     	
     	if(maxminus < 100){
 			 maxminus += 10;
@@ -130,7 +131,7 @@ public class ItemFractionStamp extends ItemTool {
     EntityPlayer player = Minecraft.getMinecraft().player;
     	
     	if(maxminus >= 10){
-    		 GuiNotif.playerScore -=10;
+    		TileEntityPointsBlock.playerScore -=10;
 			 maxminus -= 10;
 			 Utils.getLogger().info("(Minus)Maxminus is: "+maxminus);
 		 }
