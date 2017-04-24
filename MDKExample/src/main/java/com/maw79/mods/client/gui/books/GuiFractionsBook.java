@@ -19,6 +19,7 @@ import org.lwjgl.opengl.GL11;
 
 import com.maw79.mods.blocks.mathsblocks.questblock.TileEntityMathsQuest;
 import com.maw79.mods.blocks.mathsblocks.recycler.TileEntityRecycler;
+import com.maw79.mods.blocks.pointsblocks.TileEntityPointsBlock;
 import com.maw79.mods.init.ModFractionsBlocks;
 import com.maw79.mods.init.ModTools;
 import com.maw79.mods.items.mathsitems.ItemFractionStamp;
@@ -31,10 +32,10 @@ public class GuiFractionsBook extends GuiScreen
 	private final int bookImageHeight = 192;
 	private final int bookImageWidth = 192;
 	private int currPage = 0;
-	private static final int bookTotalPages = 8;
+	private static final int bookTotalPages = 9;
 	private static ResourceLocation[] bookPageTextures = new ResourceLocation[bookTotalPages];
 	private static String[] stringPageText = new String[bookTotalPages];
-	private GuiButton buttonDone, halfsbutton, thirdsbutton, quartersbutton;
+	private GuiButton buttonDone, halfsbutton, thirdsbutton, quartersbutton, questbutton;
     private NextPageButton buttonNextPage;
     private NextPageButton buttonPreviousPage;
     
@@ -49,28 +50,39 @@ public class GuiFractionsBook extends GuiScreen
 	    bookPageTextures[5] = new ResourceLocation(Reference.MOD_ID+":textures/gui/book1.png");
 	    bookPageTextures[6] = new ResourceLocation(Reference.MOD_ID+":textures/gui/book1.png");
 	    bookPageTextures[7] = new ResourceLocation(Reference.MOD_ID+":textures/gui/book1.png");
+	    bookPageTextures[8] = new ResourceLocation(Reference.MOD_ID+":textures/gui/book1.png");
 	    
-	    String hc = "Half Fraction Blocks Left to Answer : "+ "§3"+TileEntityRecycler.halfscorrect;
+	    String hc = "Half Fraction Blocks Left to Answer : "+ "§3"+TileEntityPointsBlock.halfscorrect;
+	    String hq = "Quarter Fraction Blocks\nLeft to Answer : "+ "§3"+TileEntityPointsBlock.quarterscorrect;
+	    String ht = "Thirds Fraction Blocks Left to Answer : "+ "§3"+TileEntityPointsBlock.thirdscorrect;
 	    String sline1 = "";
 	  
 	    String sline3 = "";
 	    
 	    
-	    if(TileEntityMathsQuest.evencomplete == true){
-	    	sline3 = "This Quest is Complete";
-	    }
+	 
 	    
-	    if(TileEntityRecycler.halfscorrect == 0){
-			   hc = "Quest Complete";
+	    if(TileEntityPointsBlock.halfscorrect == 0){
+			   hc = "§a"+"Quest Completed";
+			   TileEntityPointsBlock.halfcomplete = true;
 		   }
-	    stringPageText[0] = "§3"+"Fractions Book"+"§0"+"\n\nThis Book contains information on all "+"§3"+ "3 "+"§0"+ "of the Fraction Quests. You can use the buttons below for quick page navigation";
-	    stringPageText[1] = "§3"+"How To Play"+"§0"+"\nUsing the provided tools you need to match Fraction Stamps with the Equivalent Fraction Block. Correct answers will give the blocks green ticks and give the player points. Incorrect answers will play error sounds and decrease player points."; 
-	    stringPageText[2] = "§3"+"Stamps"+"§0"+"\n\nYou are given "+"§3"+ "1 Half"+"§0"+ " Stamp, "+"§3"+ "1 Third"+"§0"+ " Stamp "+"§0"+"and "+"§3"+ "1 Quarter"+"§0"+ " Stamp. Each Stamp has a durability of " +"§3"+ "5"+"§0"+". On each use the durability will decrease by "+"§3"+ "1"+"§0"+". More Stamps can be purchased via the "+"§3"+ "Scarecrow"+"§0"+"." ;
-	    stringPageText[3] = "§3"+"Question Wand"+"§0"+"\n\nThe Wand is used to reveal Fraction Block Questions. Simply right click a Fraction Block to see the question. To answer the question click the block with the stamp that correctly answers the question.";
-	    stringPageText[4] = "§3"+"Halfs"+"§0"+"\n\n\nRead the Block Questions Revealed by the Wand. If you think the answer is equal to 1 Half then select the block using the 1 Half Stamp. If Correct you will recieve Points to spend in stores."; 
-	    stringPageText[5] = "§3"+"Thirds"+"§0"+"\n\n\nRead the Block Questions Revealed by the Wand. If you think the answer is equal to 1 Third then select the block using the 1 Third Stamp. If Correct you will recieve Points to spend in stores."; 
-	    stringPageText[6] = "§3"+"Quarters"+"§0"+"\n\n\nRead the Block Questions Revealed by the Wand. If you think the answer is equal to 1 Quarter then select the block using the 1 Quarter Stamp. If Correct you will recieve Points to spend in stores."; 
-	    stringPageText[7] = "§3"+"Halfs Quest:\n"+"§0"+hc+"\n\n"+"Thirds Quest:\n"+"§0"+hc+"\n\n"+"Quarters Quest:\n"+"§0"+hc+"\n\n";
+	    if(TileEntityPointsBlock.quarterscorrect == 0){
+			   hq = "§a"+"Quest Completed";
+			   TileEntityPointsBlock.quarterscomplete = true;
+		   }
+	    if(TileEntityPointsBlock.thirdscorrect == 0){
+			   ht = "§a"+"Quest Completed";
+			   TileEntityPointsBlock.thirdscomplete = true;
+		   }
+	    stringPageText[0] = "§3"+"Fractions Book"+"§0"+"\n\nThis Book contains information on all "+"§3"+ "3 "+"§0"+ "of the Fraction Quests.\nThe next page has buttons that will let you jump to key bits of information.";
+	    stringPageText[1] = "§3"+"Quick Links"+"§0"+"\nLinks to the main info sections."; 
+	    stringPageText[2] = "§3"+"How To Play"+"§0"+"\nUsing the provided tools you need to match Fraction Stamps with the Equivalent Fraction Block. Correct answers will give the blocks green ticks and give the player points. Incorrect answers will play error sounds and decrease player points."; 
+	    stringPageText[3] = "§3"+"Stamps"+"§0"+"\n\nYou are given "+"§3"+ "1 Half"+"§0"+ " Stamp, "+"§3"+ "1 Third"+"§0"+ " Stamp "+"§0"+"and "+"§3"+ "1 Quarter"+"§0"+ " Stamp. Each Stamp has a durability of " +"§3"+ "5"+"§0"+". On each use the durability will decrease by "+"§3"+ "1"+"§0"+". More Stamps can be purchased via the "+"§3"+ "Scarecrow"+"§0"+"." ;
+	    stringPageText[4] = "§3"+"Question Wand"+"§0"+"\n\nThe Wand is used to reveal Fraction Block Questions. Simply right click a Fraction Block to see the question. To answer the question click the block with the stamp that correctly answers the question.";
+	    stringPageText[5] = "§3"+"Halfs"+"§0"+"\n\n\nRead the Block Questions Revealed by the Wand. If you think the answer is equal to 1 Half then select the block using the 1 Half Stamp. If Correct you will recieve Points to spend in stores."; 
+	    stringPageText[6] = "§3"+"Thirds"+"§0"+"\n\n\nRead the Block Questions Revealed by the Wand. If you think the answer is equal to 1 Third then select the block using the 1 Third Stamp. If Correct you will recieve Points to spend in stores."; 
+	    stringPageText[7] = "§3"+"Quarters"+"§0"+"\n\n\nRead the Block Questions Revealed by the Wand. If you think the answer is equal to 1 Quarter then select the block using the 1 Quarter Stamp. If Correct you will recieve Points to spend in stores."; 
+	    stringPageText[8] = "§3"+"Halfs Quest:\n"+"§0"+hc+"\n\n"+"§3"+"Thirds Quest:\n"+"§0"+ht+"\n\n"+"§3"+"Quarters Quest:\n"+"§0"+hq+"\n\n";
 	    
 	}
 
@@ -83,15 +95,17 @@ public class GuiFractionsBook extends GuiScreen
         //buttonList.clear();
        Keyboard.enableRepeatEvents(true);
         buttonDone = new GuiButton(0, width / 2 -30, bookImageHeight - 42, 60, 20, "Done");
-        halfsbutton = new GuiButton(2, width / 2 -60, bookImageHeight - 80, 60, 20, "Halfs");
-        thirdsbutton = new GuiButton(3, width / 2 -60, bookImageHeight - 60, 60, 20, "Thirds");
-        quartersbutton = new GuiButton(4, width / 2 -60, bookImageHeight - 40, 60, 20, "Quarters");
+        halfsbutton = new GuiButton(2, width / 2 -60, bookImageHeight - 120, 60, 20, "Halfs");
+        thirdsbutton = new GuiButton(3, width / 2 -60, bookImageHeight - 100, 60, 20, "Thirds");
+        quartersbutton = new GuiButton(4, width / 2 -60, bookImageHeight - 80, 60, 20, "Quarters");
+        questbutton = new GuiButton(4, width / 2 -60, bookImageHeight - 60, 60, 20, "Quests");
        
 		//BUTTON LIST		
 		buttonList.add(buttonDone);
 		buttonList.add(halfsbutton);
 		buttonList.add(thirdsbutton);
 		buttonList.add(quartersbutton);
+		buttonList.add(questbutton);
         int offsetFromScreenLeft = (width - bookImageWidth) / 2;
         buttonList.add(buttonNextPage = new NextPageButton(1, offsetFromScreenLeft + 120, 156, true));
         buttonList.add(buttonPreviousPage = new NextPageButton(2, offsetFromScreenLeft + 38, 156, false));
@@ -100,6 +114,7 @@ public class GuiFractionsBook extends GuiScreen
         halfsbutton.visible = false;
         thirdsbutton.visible = false;
         quartersbutton.visible = false;
+        questbutton.visible = false;
        
     }
 
@@ -110,15 +125,17 @@ public class GuiFractionsBook extends GuiScreen
 	public void updateScreen() 
     {
     	
-    	if(currPage == 0){
+    	if(currPage == 1){
     		halfsbutton.visible = true;
     		thirdsbutton.visible = true;
     		quartersbutton.visible = true;
+    		questbutton.visible = true;
     	}
     	else{
     		halfsbutton.visible = false;
     		thirdsbutton.visible = false;
     		quartersbutton.visible = false;
+    		questbutton.visible = false;
     	}
     	
     	if(currPage < bookTotalPages -1){
@@ -190,23 +207,29 @@ public class GuiFractionsBook extends GuiScreen
     {
     	if (parButton == halfsbutton)
     	{
-    		currPage =4;
+    		currPage =5;
     		// DEBUG
     		System.out.println("actionPerformed() HalfsButton");
     		
     	}
     	else if (parButton == thirdsbutton)
     	{
-    		currPage =5;
+    		currPage =6;
     		// DEBUG
     		System.out.println("actionPerformed() ThirdsButton");
     		
     	}
     	else if (parButton == quartersbutton)
     	{
-    		currPage =6;
+    		currPage =7;
     		// DEBUG
     		System.out.println("actionPerformed() QuartersButton");
+    	}
+    	else if (parButton == questbutton)
+    	{
+    		currPage =8;
+    		// DEBUG
+    		System.out.println("actionPerformed() Quest Button");
     	}
     	
     else if (parButton == buttonDone)

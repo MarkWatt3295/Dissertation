@@ -108,4 +108,10 @@
         "subtitle": "mawsound.incorrect",
         "sounds": [ { "name": "maw79:mawsound/incorrect", "stream": true } ]
     }
+    ,
+      "mawsound.rustle": {
+        "category": "block",
+        "subtitle": "mawsound.rustle",
+        "sounds": [ { "name": "maw79:mawsound/rustle", "stream": true } ]
+    }
 }

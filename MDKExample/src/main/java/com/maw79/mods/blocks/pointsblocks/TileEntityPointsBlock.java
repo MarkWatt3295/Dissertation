@@ -1,5 +1,7 @@
 package com.maw79.mods.blocks.pointsblocks;
 
+import com.maw79.mods.handlers.ModSoundHandler;
+
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
@@ -15,12 +17,37 @@ import net.minecraftforge.items.ItemStackHandler;
 
 public class TileEntityPointsBlock extends TileEntity implements ITickable, ICapabilityProvider {
 
-	//Recycler also used as a variable store as TileEntitys save both client and server side
-	public static int halfscorrect = 5;
+	
 	public static int playerScore = 0;
 	
 	
-
+	public static int halfscorrect = 5;
+	public static int thirdscorrect = 5;
+	public static int quarterscorrect = 5;
+	
+	public static boolean halfcomplete = false;
+	public static boolean thirdscomplete = false;
+	public static boolean quarterscomplete = false;
+	
+	public static boolean halfclaimed = false;
+	public static boolean thirdsclaimed = false;
+	public static boolean quartersclaimed = false;
+	public static boolean xyzclaimed = false;
+	
+	
+	public static String halfstitle = "Halfs";
+	public static String thirdsstitle ="Thirds";
+	public static String quarterstitle = "Quarter";
+	public static String xyztitle = "Coordinates";
+	public static String questcomplete = "§a" + "Completed";
+	
+	public static boolean fractionmanualgive = false;
+	
+	private boolean soundcheck1 = false;
+	private boolean soundcheck2 = false;
+	private boolean soundcheck3 = false;
+	
+	
 	public ItemStackHandler handler;
 	
 
@@ -73,25 +100,33 @@ public class TileEntityPointsBlock extends TileEntity implements ITickable, ICap
 			IBlockState currentState = this.world.getBlockState(pos);
 			EntityPlayer player = Minecraft.getMinecraft().player;
 
-			//##########################################################################################################
-			//##########################################################################################################
-			// Sequence Numbers
-		/*	if (sequencecomplete == false) {
-				if (GuiMathsQuestGive.questnumber == 4) {
-					if (sequence33 == false) {
-						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number33))) {
-							Utils.getLogger().info("Block 33 Placed");
-							handler.extractItem(4, 1, false);
-							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
-							
-							
-						}
-					}
-					
-
+	if(halfscorrect == 0){
+		if(soundcheck1 == false){
+		player.playSound(ModSoundHandler.MAWSOUND_TADA, 2.0F, 1.0F);
+		soundcheck1 = true;
+		}
+		halfcomplete=true;
+		halfstitle = questcomplete;
 	}
-*/
+	if(thirdscorrect == 0){
+		if(soundcheck2 == false){
+		player.playSound(ModSoundHandler.MAWSOUND_TADA, 2.0F, 1.0F);
+		soundcheck2 = true;
+		}
+		thirdscomplete=true;
+		thirdsstitle = questcomplete;
+	}
+	if(quarterscorrect == 0){
+		if(soundcheck3 == false){
+		player.playSound(ModSoundHandler.MAWSOUND_TADA, 2.0F, 1.0F);
+		soundcheck3 = true;
+		}
+		quarterscomplete=true;
+		quarterstitle = questcomplete;
+	}
+	
+	
+
 }
 		}
 	}

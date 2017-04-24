@@ -44,7 +44,7 @@ public class BlockRecycler extends BlockContainer {
 			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 	
 		
-		world.playSound(player, pos, ModSoundHandler.MAWSOUND_PAGETURN, SoundCategory.BLOCKS, 1.0F, 1.0F);
+		world.playSound(player, pos, ModSoundHandler.MAWSOUND_RUSTLE, SoundCategory.BLOCKS, 1.0F, 1.0F);
         
 		
 		if (!world.isRemote)

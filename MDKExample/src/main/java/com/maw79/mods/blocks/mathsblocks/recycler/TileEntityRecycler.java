@@ -1,8 +1,14 @@
 package com.maw79.mods.blocks.mathsblocks.recycler;
 
+import com.maw79.mods.blocks.pointsblocks.TileEntityPointsBlock;
+import com.maw79.mods.handlers.ModSoundHandler;
+import com.maw79.mods.init.ModTools;
+import com.maw79.mods.util.Utils;
+
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
@@ -15,12 +21,7 @@ import net.minecraftforge.items.ItemStackHandler;
 
 public class TileEntityRecycler extends TileEntity implements ITickable, ICapabilityProvider {
 
-	//Recycler also used as a variable store as TileEntitys save both client and server side
-	public static int halfscorrect = 5;
 	
-	
-	
-
 	public ItemStackHandler handler;
 	
 
@@ -76,22 +77,19 @@ public class TileEntityRecycler extends TileEntity implements ITickable, ICapabi
 			//##########################################################################################################
 			//##########################################################################################################
 			// Sequence Numbers
-		/*	if (sequencecomplete == false) {
-				if (GuiMathsQuestGive.questnumber == 4) {
-					if (sequence33 == false) {
-						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModNumberBlocks.number33))) {
-							Utils.getLogger().info("Block 33 Placed");
+		
+						if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModTools.fractionstamphalf))) {
+							Utils.getLogger().info("Fraction Half Stamp");
 							handler.extractItem(4, 1, false);
-							player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-							GuiNotif.playerScore += 10;
+							player.playSound(ModSoundHandler.MAWSOUND_RUSTLE, 1.0F, 1.0F);
+							TileEntityPointsBlock.playerScore += 10;
 							
-							
-						}
+				
 					}
-					
+	
 
 	}
-*/
+
 }
-		}
-	}
+}
+

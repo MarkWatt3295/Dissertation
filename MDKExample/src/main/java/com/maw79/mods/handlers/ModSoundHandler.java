@@ -30,6 +30,7 @@ public class ModSoundHandler {
 	public static SoundEvent MAWSOUND_PAGETURN;
 	public static SoundEvent MAWSOUND_CORRECT;
 	public static SoundEvent MAWSOUND_INCORRECT;
+	public static SoundEvent MAWSOUND_RUSTLE;
 	
 	
 	
@@ -56,6 +57,7 @@ public class ModSoundHandler {
 		MAWSOUND_PAGETURN = register("mawsound.pageturn");
 		MAWSOUND_CORRECT = register("mawsound.correct");
 		MAWSOUND_INCORRECT = register("mawsound.incorrect");
+		MAWSOUND_RUSTLE = register("mawsound.rustle");
 		
 		
 	}

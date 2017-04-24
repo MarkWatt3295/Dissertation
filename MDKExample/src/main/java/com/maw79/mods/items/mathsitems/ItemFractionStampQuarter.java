@@ -109,6 +109,9 @@ public class ItemFractionStampQuarter extends ItemTool {
     		 world.setBlockState(pos, ModFractionsBlocks.CORRECT.getDefaultState());
     		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
     		pointAddition();
+    		if(!playerIn.world.isRemote){
+				TileEntityPointsBlock.quarterscorrect-=1;
+	    		}
             return EnumActionResult.SUCCESS;
         }
     	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.QUARTER_2) {
@@ -116,6 +119,9 @@ public class ItemFractionStampQuarter extends ItemTool {
     		 world.setBlockState(pos, ModFractionsBlocks.CORRECT.getDefaultState());
     		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
     		 pointAddition();
+    		 if(!playerIn.world.isRemote){
+ 				TileEntityPointsBlock.quarterscorrect-=1;
+ 	    		}
             return EnumActionResult.SUCCESS;
         }
     	  
@@ -124,6 +130,9 @@ public class ItemFractionStampQuarter extends ItemTool {
     		 world.setBlockState(pos, ModFractionsBlocks.CORRECT.getDefaultState());
     		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
     		 pointAddition();
+    		 if(!playerIn.world.isRemote){
+ 				TileEntityPointsBlock.quarterscorrect-=1;
+ 	    		}
             return EnumActionResult.SUCCESS;
         }
     	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.QUARTER_4) {
@@ -131,6 +140,9 @@ public class ItemFractionStampQuarter extends ItemTool {
     		 world.setBlockState(pos, ModFractionsBlocks.CORRECT.getDefaultState());
     		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
     		 pointAddition();
+    		 if(!playerIn.world.isRemote){
+ 				TileEntityPointsBlock.quarterscorrect-=1;
+ 	    		}
             return EnumActionResult.SUCCESS;
         }
     	  
@@ -139,8 +151,12 @@ public class ItemFractionStampQuarter extends ItemTool {
     		 world.setBlockState(pos, ModFractionsBlocks.CORRECT.getDefaultState());
     		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
     		 pointAddition();
+    		 if(!playerIn.world.isRemote){
+ 				TileEntityPointsBlock.quarterscorrect-=1;
+ 	    		}
             return EnumActionResult.SUCCESS;
         }
+    	 
     
     	  //HALFS
     	  if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF_1) {

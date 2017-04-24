@@ -31,6 +31,8 @@ import com.maw79.mods.init.ModNumberBlocks;
 import com.maw79.mods.init.ModTools;
 import com.maw79.mods.network.AdminCommandMessage;
 import com.maw79.mods.network.AdminCommandPacketHandler;
+import com.maw79.mods.network.FractionsManualMessage;
+import com.maw79.mods.network.FractionsManualPacketHandler;
 import com.maw79.mods.network.GuiInventoryMessage;
 import com.maw79.mods.network.GuiInventoryPacketHandler;
 import com.maw79.mods.network.MathsMessage;
@@ -171,6 +173,7 @@ public class Maw79Mod {
 		 NETWORK.registerMessage(StandardCommandPacketHandler.class, StandardCommandMessage.class, 13, Side.SERVER);
 		 NETWORK.registerMessage(PlayerPointsPlus20PacketHandler.class, PlayerPointsPlus20Message.class, 14, Side.SERVER);
 		 NETWORK.registerMessage(ScarecrowSalesPacketHandler.class, ScarecrowSalesMessage.class, 15, Side.SERVER);
+		 NETWORK.registerMessage(FractionsManualPacketHandler.class, FractionsManualMessage.class, 16, Side.SERVER);
 	
 		 
 	}

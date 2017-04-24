@@ -137,8 +137,6 @@ public class ItemFractionStamp extends ItemTool {
 		 }
     }
     
-
-   
     @Override
     public EnumActionResult onItemUse(EntityPlayer playerIn, World world, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
     	// if(!playerIn.hasAchievement(AchievementHandler.achievementPainter)){
@@ -154,7 +152,7 @@ public class ItemFractionStamp extends ItemTool {
     		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
     		pointAddition();
     		if(!playerIn.world.isRemote){
-    		 TileEntityRecycler.halfscorrect-=1;
+    		 TileEntityPointsBlock.halfscorrect-=1;
     		}
             return EnumActionResult.SUCCESS;
         }
@@ -164,7 +162,7 @@ public class ItemFractionStamp extends ItemTool {
     		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
     		 pointAddition();
     			if(!playerIn.world.isRemote){
-    	    		 TileEntityRecycler.halfscorrect-=1;
+    				TileEntityPointsBlock.halfscorrect-=1;
     	    		}
             return EnumActionResult.SUCCESS;
         }
@@ -175,7 +173,7 @@ public class ItemFractionStamp extends ItemTool {
     		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
     		 pointAddition();
     			if(!playerIn.world.isRemote){
-    	    		 TileEntityRecycler.halfscorrect-=1;
+    				TileEntityPointsBlock.halfscorrect-=1;
     	    		}
             return EnumActionResult.SUCCESS;
         }
@@ -185,7 +183,8 @@ public class ItemFractionStamp extends ItemTool {
     		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
     		 pointAddition();
     			if(!playerIn.world.isRemote){
-    	    		 TileEntityRecycler.halfscorrect-=1;
+    				TileEntityPointsBlock.halfscorrect-=1;
+
     	    		}
             return EnumActionResult.SUCCESS;
         }
@@ -196,10 +195,11 @@ public class ItemFractionStamp extends ItemTool {
     		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
     		 pointAddition();
     			if(!playerIn.world.isRemote){
-    	    		 TileEntityRecycler.halfscorrect-=1;
+    				TileEntityPointsBlock.halfscorrect-=1;
     	    		}
             return EnumActionResult.SUCCESS;
         }
+    	  
     
     	  //THIRDS
     	  if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.THIRD_1) {

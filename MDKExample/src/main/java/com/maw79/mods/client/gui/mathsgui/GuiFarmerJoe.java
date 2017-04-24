@@ -11,6 +11,7 @@ import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.init.ModItems;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
+import com.maw79.mods.network.FractionsManualMessage;
 import com.maw79.mods.network.MathsMessage;
 import com.maw79.mods.network.MathsQuestManualMessage;
 import com.maw79.mods.network.store.StoreItem1Message;
@@ -77,10 +78,12 @@ public class GuiFarmerJoe extends GuiScreen {
             GlStateManager.scale(1.4, 1.4, 1.4);
           
             fontRendererObj.drawString("Active Quest : "+questnumber, (-40), (20), 0xffffff);
-    		fontRendererObj.drawString("§c"+"Halfs", (-50), (40), 0xffffff);
-    		fontRendererObj.drawString("§d"+"Thirds", (-50), (56), 0xffffff);
-    		fontRendererObj.drawString("§6"+"Quarter", (-50), (74), 0xffffff);
-    		fontRendererObj.drawString("§2"+"Coordinates", (-50), (90), 0xffffff);
+    		fontRendererObj.drawString("§c"+TileEntityPointsBlock.halfstitle, (-50), (40), 0xffffff);
+    		fontRendererObj.drawString("§d"+TileEntityPointsBlock.thirdsstitle, (-50), (56), 0xffffff);
+    		fontRendererObj.drawString("§6"+TileEntityPointsBlock.quarterstitle, (-50), (74), 0xffffff);
+    		fontRendererObj.drawString("§2"+TileEntityPointsBlock.xyztitle, (-50), (90), 0xffffff);
+    		
+    		
     		
         }
         
@@ -115,19 +118,19 @@ public class GuiFarmerJoe extends GuiScreen {
         buttonList.clear();
         int centerY = (height / 2) - guiHeight / 2;
         
-		if (TileEntityMathsQuest.primecomplete == false) {
+		if (TileEntityPointsBlock.halfcomplete == false) {
 			buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) + 40, centerY + 59, 36, 20, "Select"));
 		}
 		buttonList.add(button2alt = new GuiButton(BUTTON2alt, (width / 2), centerY + 59, 80, 20, "Claim Reward"));
 		
 		
-		if (TileEntityMathsQuest.evencomplete == false) {
+		if (TileEntityPointsBlock.thirdscomplete == false) {
 			buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) + 40, centerY + 83, 36, 20, "Select"));
 		}
 		buttonList.add(button3alt = new GuiButton(BUTTON3alt, (width / 2), centerY + 83, 80, 20, "Claim Reward"));
 
 		
-		if (TileEntityMathsQuest.oddcomplete == false) {
+		if (TileEntityPointsBlock.quarterscomplete == false) {
 		buttonList.add(button4 = new GuiButton(BUTTON4, (width / 2) + 40, centerY + 109, 36, 20, "Select"));
 		}
 		buttonList.add(button4alt = new GuiButton(BUTTON4alt, (width / 2), centerY + 109, 80, 20, "Claim Reward"));
@@ -152,23 +155,23 @@ public class GuiFarmerJoe extends GuiScreen {
       }
         }
         
-       //Prime 
-        if(TileEntityMathsQuest.primeclaimed == false){
-      if(TileEntityMathsQuest.primecomplete == true){
+       //Half 
+        if(TileEntityPointsBlock.halfclaimed == false){
+      if(TileEntityPointsBlock.halfcomplete == true){
     	  button2alt.visible=true;
       }
         }
         
-        //Even 
-        if(TileEntityMathsQuest.evenclaimed == false){
-      if(TileEntityMathsQuest.evencomplete == true){
+        //Third 
+        if(TileEntityPointsBlock.thirdsclaimed == false){
+      if(TileEntityPointsBlock.thirdscomplete == true){
     	  button3alt.visible=true;
       }
         }
         
-        //Odd 
-        if(TileEntityMathsQuest.oddclaimed == false){
-      if(TileEntityMathsQuest.oddcomplete == true){
+        //Quarter 
+        if(TileEntityPointsBlock.quartersclaimed == false){
+      if(TileEntityPointsBlock.quarterscomplete == true){
     	  button4alt.visible=true;
       }
         }
@@ -183,84 +186,84 @@ public class GuiFarmerJoe extends GuiScreen {
     	
         switch (button.id) {
             
-            case BUTTON2: //PRIME NUMBERS
+            case BUTTON2: //Halfs
             		questnumber = 1;
             		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-            	if(TileEntityMathsQuest.primeBookGive == false){
-            		Maw79Mod.NETWORK.sendToServer(new MathsQuestManualMessage(mc.player));
-            		TileEntityMathsQuest.primeBookGive = true;
+            	if(TileEntityPointsBlock.fractionmanualgive == false){
+            		Maw79Mod.NETWORK.sendToServer(new FractionsManualMessage(mc.player));
+            		TileEntityPointsBlock.fractionmanualgive = true;
             	}
             	break;
             	
             case BUTTON2alt:
-            	// Prime NUMBER 
+            	// Halfs 
         		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
         		TileEntityPointsBlock.playerScore +=50;
         		button2alt.visible=false;
         		questnumber = 0;
-        		TileEntityMathsQuest.primeclaimed = true;
+        		TileEntityPointsBlock.halfclaimed = true;
             	break;
             	
             	
             	
             	
-            case BUTTON3://EVEN NUMBERS
+            case BUTTON3://Thirds
             	questnumber = 2;
         		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-        		if(TileEntityMathsQuest.evenBookGive == false){
-        			Maw79Mod.NETWORK.sendToServer(new MathsQuestManualMessage(mc.player));
-            		TileEntityMathsQuest.evenBookGive = true;
+        		if(TileEntityPointsBlock.fractionmanualgive == false){
+            		Maw79Mod.NETWORK.sendToServer(new FractionsManualMessage(mc.player));
+            		TileEntityPointsBlock.fractionmanualgive = true;
             	}
             	break;
             	
             case BUTTON3alt:
-            	// Even NUMBER 
+            	// Thirds
         		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
         		TileEntityPointsBlock.playerScore +=50;
         		button3alt.visible=false;
         		questnumber = 0;
-        		TileEntityMathsQuest.evenclaimed = true;
+        		TileEntityPointsBlock.thirdsclaimed = true;
             	break;
             	
             	
             	
             	
-            case BUTTON4: //ODD Numbers
+            case BUTTON4: //Quarters 
             	questnumber = 3;
         		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-        		if(TileEntityMathsQuest.oddBookGive == false){
-        			Maw79Mod.NETWORK.sendToServer(new MathsQuestManualMessage(mc.player));
-            		TileEntityMathsQuest.oddBookGive = true;
+        		if(TileEntityPointsBlock.fractionmanualgive == false){
+            		Maw79Mod.NETWORK.sendToServer(new FractionsManualMessage(mc.player));
+            		TileEntityPointsBlock.fractionmanualgive = true;
             	}
             	break;
             	
             case BUTTON4alt:
-            	// Odd NUMBER 
+            	// Quarters  
         		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
         		TileEntityPointsBlock.playerScore +=50;
         		button4alt.visible=false;
         		questnumber = 0;
-        		TileEntityMathsQuest.oddclaimed = true;
+        		TileEntityPointsBlock.quartersclaimed = true;
             	break;
             	
             	
            
             	
             case BUTTON5:
-            	questnumber = 4; // NUMBER SEQUENCE
+            	questnumber = 4; // XYZ 
         		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-        		if(TileEntityMathsQuest.seqBookGive == false){
-        			Maw79Mod.NETWORK.sendToServer(new MathsQuestManualMessage(mc.player));
-            		TileEntityMathsQuest.seqBookGive = true;
+        		if(TileEntityPointsBlock.fractionmanualgive == false){
+            		Maw79Mod.NETWORK.sendToServer(new FractionsManualMessage(mc.player));
+            		TileEntityPointsBlock.fractionmanualgive = true;
             	}
             	break;
             	
             case BUTTON5alt:
-            	// NUMBER SEQUENCE
+            	//XYZ
         		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
         		TileEntityPointsBlock.playerScore +=50;
         		button5alt.visible=false;
-        		TileEntityMathsQuest.sequenceclaimed = true;
+        		TileEntityPointsBlock.xyzclaimed = true;
         		questnumber = 0;
         		
             	break;
