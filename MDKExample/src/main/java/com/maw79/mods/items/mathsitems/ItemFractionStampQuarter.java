@@ -222,6 +222,13 @@ public class ItemFractionStampQuarter extends ItemTool {
     		 pointSubtraction();
             return EnumActionResult.SUCCESS;
         }
+    	  
+    	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.FAKE) {
+    		world.newExplosion(playerIn, pos.getX(), pos.getY(), pos.getZ(), 0.5F, false, true);
+    		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
+            return EnumActionResult.SUCCESS;
+        }
+    	 
     	 
     	}
     	

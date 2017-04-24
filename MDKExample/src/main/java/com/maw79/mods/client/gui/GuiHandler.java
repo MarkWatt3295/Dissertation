@@ -6,6 +6,9 @@ import com.maw79.mods.blocks.ItemProfiler.TileEntityProfiler;
 import com.maw79.mods.blocks.historyblocks.artifactupdater.ContainerArtifactResearcher;
 import com.maw79.mods.blocks.historyblocks.artifactupdater.GuiArtifactResearcherTe;
 import com.maw79.mods.blocks.historyblocks.artifactupdater.TileEntityArtifactResearcher;
+import com.maw79.mods.blocks.mathsblocks.coordinatesquest.ContainerCoordinatesQuest;
+import com.maw79.mods.blocks.mathsblocks.coordinatesquest.GuiCoordinatesQuest;
+import com.maw79.mods.blocks.mathsblocks.coordinatesquest.TileEntityCoordinatesQuest;
 import com.maw79.mods.blocks.mathsblocks.questblock.ContainerMathsQuest;
 import com.maw79.mods.blocks.mathsblocks.questblock.GuiMathsQuestTe;
 import com.maw79.mods.blocks.mathsblocks.questblock.TileEntityMathsQuest;
@@ -59,6 +62,7 @@ public class GuiHandler implements IGuiHandler{
 	public static final int MATHS_QUEST = 11;
 	public static final int RECYCLER_BLOCK = 12;
 	public static final int POINTS_BLOCK = 13;
+	public static final int COORDINATES_QUEST = 14;
 	
 	/**
 	 * Should return the container for that gui. This is called server side because servers handle items in guis
@@ -127,6 +131,11 @@ public class GuiHandler implements IGuiHandler{
 			
 			
 			return new ContainerPointsBlock(player.inventory, (TileEntityPointsBlock) world.getTileEntity(new BlockPos(x, y, z)));
+		}
+		if(ID==COORDINATES_QUEST){
+			
+			
+			return new ContainerCoordinatesQuest(player.inventory, (TileEntityCoordinatesQuest) world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		
 		
@@ -203,6 +212,10 @@ Utils.getLogger().info("GuiHandler: getClientGuiElement");
 		if(ID==POINTS_BLOCK){
 			
 			return new GuiPointsBlock(player.inventory, (TileEntityPointsBlock) world.getTileEntity(new BlockPos(x, y, z)));
+		}
+		if(ID==COORDINATES_QUEST){
+			
+			return new GuiCoordinatesQuest(player.inventory, (TileEntityCoordinatesQuest) world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		
 		return null;

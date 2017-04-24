@@ -100,7 +100,7 @@ public class GuiScarecrow extends GuiScreen {
         ItemStack icon2 = new ItemStack(ModTools.fractionstampthird);
         ItemStack icon3 = new ItemStack(ModTools.fractionstampquarter);
         ItemStack icon4 = new ItemStack(ModTools.glassSpade);
-        ItemStack icon5 = new ItemStack(Blocks.GLOWSTONE);
+        ItemStack icon5 = new ItemStack(ModTools.questionwand);
         
         GlStateManager.pushMatrix();
         {
@@ -153,7 +153,7 @@ public class GuiScarecrow extends GuiScreen {
         String s2 = icon2.getDisplayName();//Quarters
         String s3 = icon3.getDisplayName(); //Thirds
         String s4 = icon4.getDisplayName(); //Glass Spade
-        String s5 = icon5.getDisplayName(); //Glowstone
+        String s5 = icon5.getDisplayName(); //Wand
         drawTooltip(s1, mouseX, mouseY, centerX +10, centerY + 33, 22, 22);
         drawTooltip(s2, mouseX, mouseY, centerX +10, centerY + 58, 22, 22);
         drawTooltip(s3, mouseX, mouseY, centerX +10, centerY + 83, 22, 22);
@@ -263,7 +263,7 @@ public class GuiScarecrow extends GuiScreen {
             	}
             	else {
             		mc.player.playSound(ModSoundHandler.MAWSOUND_ERRORNOISE, 1.0f, 1.0f);
-            		System.out.println("Not Enough Points (for 5 - Glowstone 30) :( ");
+            		System.out.println("Not Enough Points (for 5 - Wand 30) :( ");
             	}
             	
             	break;

@@ -94,6 +94,8 @@ item.burntloaf.name=Burnt Loaf
 
 
 //Blocks
+tile.fakefractionsblock.name=Fake Fractions Block
+tile.coordinates_quest.name=Coordinates Quest Block
 tile.points_block.name=Points Block
 tile.recycler_block.name=Recycler Block
 tile.ruby_block.name=Ruby Block

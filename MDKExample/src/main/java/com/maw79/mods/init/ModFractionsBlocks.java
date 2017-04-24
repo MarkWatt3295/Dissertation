@@ -41,7 +41,7 @@ public class ModFractionsBlocks {
 	public static final BlockFractionsBlock THIRD_5 = new BlockFractionsBlock("fractions_third_5");
 	
 	public static final BlockFractionsBlock CORRECT = new BlockFractionsBlock("correctblock");
-	
+	public static final BlockFractionsBlock FAKE = new BlockFractionsBlock("fakefractionsblock");	
 	
 	
 	
@@ -69,6 +69,7 @@ public class ModFractionsBlocks {
 		registerBlock(THIRD_5);
 		
 		registerBlock(CORRECT);
+		registerBlock(FAKE);
 		
 		
 	}
@@ -112,6 +113,7 @@ public class ModFractionsBlocks {
 		registerRender(THIRD_5);
 		
 		registerRender(CORRECT);
+		registerRender(FAKE);
 	}
 	
 	

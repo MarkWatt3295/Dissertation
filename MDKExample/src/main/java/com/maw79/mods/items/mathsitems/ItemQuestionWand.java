@@ -122,11 +122,19 @@ public class ItemQuestionWand extends ItemTool {
     		 playerIn.sendMessage(new TextComponentString("§a"+ "20 "+"§r"+ "out of "+"§a"+ "60 "+"§r"+"\nIs equivalent to \""+"§k"+"1half"+"§r"+"\""));
     	}
     	 
+    	 else if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.FAKE) {
+     		world.newExplosion(playerIn, pos.getX(), pos.getY(), pos.getZ(), 0.5F, false, true);
+     		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
+             return EnumActionResult.SUCCESS;
+         }
+     	 
+    	 
     	 else {
     		 Block block;
     		 block = world.getBlockState(pos).getBlock();
     		 playerIn.sendMessage(new TextComponentString("This isn't a fractions Block.\n\nIts a : "+"§a"+ block.getLocalizedName()+"§r" + " (BLOCK)."));
     	 }
+    	 
  		
     	}
     	

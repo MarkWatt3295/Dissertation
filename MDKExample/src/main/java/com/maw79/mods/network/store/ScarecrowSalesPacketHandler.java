@@ -48,7 +48,7 @@ World world = DimensionManager.getWorld(message.dimension);
 	 player.connection.playerEntity.inventory.addItemStackToInventory(new ItemStack(ModTools.glassSpade, 1));	
 }
  else if (GuiScarecrow.buttonvalue == 5){
-	 player.connection.playerEntity.inventory.addItemStackToInventory(new ItemStack(Blocks.GLOWSTONE, 1));	
+	 player.connection.playerEntity.inventory.addItemStackToInventory(new ItemStack(ModTools.questionwand, 1));	
 }
  }
 

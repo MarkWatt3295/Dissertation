@@ -35,6 +35,7 @@ import com.maw79.mods.blocks.mathsblocks.BlockMathsQuestionBlock;
 import com.maw79.mods.blocks.mathsblocks.BlockMathsQuizBlock;
 import com.maw79.mods.blocks.mathsblocks.BlockMathsSubtractionBlock;
 import com.maw79.mods.blocks.mathsblocks.mcreator_testBlock;
+import com.maw79.mods.blocks.mathsblocks.coordinatesquest.BlockCoordinatesQuest;
 import com.maw79.mods.blocks.mathsblocks.questblock.BlockMathsQuest;
 import com.maw79.mods.blocks.mathsblocks.recycler.BlockRecycler;
 import com.maw79.mods.blocks.pointsblocks.BlockPointsBlock;
@@ -105,6 +106,7 @@ public class ModBlocks {
 	public static Block storeblock;
 	public static Block recycler;
 	public static Block pointsblock;
+	public static Block coordinatesquest;
 	
 	//MATHS BLOCKS
 	public static Block mathblock1;
@@ -207,6 +209,7 @@ public class ModBlocks {
 		storeblock = new BlockStoreTE("store_block");
 		recycler = new BlockRecycler("recycler_block");
 		pointsblock = new BlockPointsBlock("points_block");
+		coordinatesquest = new BlockCoordinatesQuest("coordinates_quest");
 		
 		//MATHS BLOCKS
 		mathblock1 = new BlockBasicBlock("math_block_1");
@@ -278,6 +281,7 @@ public class ModBlocks {
 	}
 	
 	public static void register(){
+		registerBlock(coordinatesquest);
 		registerBlock(pointsblock);
 		pointsblock.setCreativeTab(Maw79Mod.debug);
 		registerBlock(recycler);
@@ -433,6 +437,7 @@ public class ModBlocks {
 	}
 	
 	public static void registerRenders(){
+		registerRender(coordinatesquest);
 		registerRender(pointsblock);
 		registerRender(recycler);
 		registerRender(storeblock);
