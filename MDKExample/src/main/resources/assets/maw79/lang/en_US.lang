@@ -53,6 +53,7 @@ item.label_durable.name=Durable
 
 
 //MATHS ITEMS
+item.fractions_book.name=Fractions Book
 item.first_book.name=Maw79 Mod Book
 item.xyz_device.name=XYZ Device
 item.x_axis_tool.name=X Axis Tool
@@ -93,6 +94,8 @@ item.burntloaf.name=Burnt Loaf
 
 
 //Blocks
+tile.points_block.name=Points Block
+tile.recycler_block.name=Recycler Block
 tile.ruby_block.name=Ruby Block
 tile.bridge_block.name=Bridge Block
 tile.obsidian_ingot_block.name= Obsidian Ingot Block
@@ -276,6 +279,7 @@ gui.block_breaker.enchanted_book.tooltip=Enchanted book goes here
 gui.guisciencete.button3.tooltip=Maw79 KS2 Mod Configuration
 
 //TOOL TIPS
+maw79.fractionsbook.tooltip=Use this item to read about the Fractions Quests.
 maw79.questionwand.tooltip=Use this item to show Block Questions.
 maw79.fractionhalfstamp.tooltip=Use this item to identify Equivalent Fractions (HALF)
 maw79.fractionthirdstamp.tooltip=Use this item to identify Equivalent Fractions (THIRD)

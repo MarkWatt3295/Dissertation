@@ -12,7 +12,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
 public class StoreItem1PacketHandler implements IMessageHandler<StoreItem1Message, IMessage> {
 
-public boolean setrec;
+
 @Override
  public IMessage onMessage(StoreItem1Message message, MessageContext ctx) { 
  System.out.println("GUI Inventory message recieved");
@@ -36,6 +36,7 @@ World world = DimensionManager.getWorld(message.dimension);
 }
  else if (GuiStoreDisplay2.buttonvalue == 3){
 	 player.connection.playerEntity.inventory.addItemStackToInventory(new ItemStack(ModItems.SCIENCE_TOKEN, 1));	
+	 
 }
  else if (GuiStoreDisplay2.buttonvalue == 4){
 	 player.connection.playerEntity.inventory.addItemStackToInventory(new ItemStack(ModItems.HISTORY_TOKEN, 1));	

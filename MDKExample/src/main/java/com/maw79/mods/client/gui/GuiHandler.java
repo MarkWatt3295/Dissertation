@@ -9,6 +9,12 @@ import com.maw79.mods.blocks.historyblocks.artifactupdater.TileEntityArtifactRes
 import com.maw79.mods.blocks.mathsblocks.questblock.ContainerMathsQuest;
 import com.maw79.mods.blocks.mathsblocks.questblock.GuiMathsQuestTe;
 import com.maw79.mods.blocks.mathsblocks.questblock.TileEntityMathsQuest;
+import com.maw79.mods.blocks.mathsblocks.recycler.ContainerRecycler;
+import com.maw79.mods.blocks.mathsblocks.recycler.GuiRecycler;
+import com.maw79.mods.blocks.mathsblocks.recycler.TileEntityRecycler;
+import com.maw79.mods.blocks.pointsblocks.ContainerPointsBlock;
+import com.maw79.mods.blocks.pointsblocks.GuiPointsBlock;
+import com.maw79.mods.blocks.pointsblocks.TileEntityPointsBlock;
 import com.maw79.mods.blocks.scienceblocks.insulatorblocks.ContainerInsulator;
 import com.maw79.mods.blocks.scienceblocks.insulatorblocks.GuiInsulatorTe;
 import com.maw79.mods.blocks.scienceblocks.insulatorblocks.TileEntityInsulator;
@@ -51,6 +57,8 @@ public class GuiHandler implements IGuiHandler{
 	public static final int STORE_GUI = 9;
 	public static final int STORED_DISPLAY_2 = 10;
 	public static final int MATHS_QUEST = 11;
+	public static final int RECYCLER_BLOCK = 12;
+	public static final int POINTS_BLOCK = 13;
 	
 	/**
 	 * Should return the container for that gui. This is called server side because servers handle items in guis
@@ -109,6 +117,16 @@ public class GuiHandler implements IGuiHandler{
 			
 			
 			return new ContainerMathsQuest(player.inventory, (TileEntityMathsQuest) world.getTileEntity(new BlockPos(x, y, z)));
+		}
+		if(ID==RECYCLER_BLOCK){
+			
+			
+			return new ContainerRecycler(player.inventory, (TileEntityRecycler) world.getTileEntity(new BlockPos(x, y, z)));
+		}
+		if(ID==POINTS_BLOCK){
+			
+			
+			return new ContainerPointsBlock(player.inventory, (TileEntityPointsBlock) world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		
 		
@@ -177,6 +195,14 @@ Utils.getLogger().info("GuiHandler: getClientGuiElement");
 		if(ID==MATHS_QUEST){
 			
 			return new GuiMathsQuestTe(player.inventory, (TileEntityMathsQuest) world.getTileEntity(new BlockPos(x, y, z)));
+		}
+		if(ID==RECYCLER_BLOCK){
+			
+			return new GuiRecycler(player.inventory, (TileEntityRecycler) world.getTileEntity(new BlockPos(x, y, z)));
+		}
+		if(ID==POINTS_BLOCK){
+			
+			return new GuiPointsBlock(player.inventory, (TileEntityPointsBlock) world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		
 		return null;

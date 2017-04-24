@@ -36,6 +36,8 @@ import com.maw79.mods.blocks.mathsblocks.BlockMathsQuizBlock;
 import com.maw79.mods.blocks.mathsblocks.BlockMathsSubtractionBlock;
 import com.maw79.mods.blocks.mathsblocks.mcreator_testBlock;
 import com.maw79.mods.blocks.mathsblocks.questblock.BlockMathsQuest;
+import com.maw79.mods.blocks.mathsblocks.recycler.BlockRecycler;
+import com.maw79.mods.blocks.pointsblocks.BlockPointsBlock;
 import com.maw79.mods.blocks.scienceblocks.BlockLablerBlock;
 import com.maw79.mods.blocks.scienceblocks.BlockScienceWool;
 import com.maw79.mods.blocks.scienceblocks.insulatorblocks.BlockInsulatorMainTE;
@@ -101,6 +103,8 @@ public class ModBlocks {
 	public static Block survival;
 	public static Block profiler;
 	public static Block storeblock;
+	public static Block recycler;
+	public static Block pointsblock;
 	
 	//MATHS BLOCKS
 	public static Block mathblock1;
@@ -201,6 +205,8 @@ public class ModBlocks {
 		survival = new BlockSurvivalBlock("block_survival");
 		profiler = new BlockProfilerTE("block_profiler");
 		storeblock = new BlockStoreTE("store_block");
+		recycler = new BlockRecycler("recycler_block");
+		pointsblock = new BlockPointsBlock("points_block");
 		
 		//MATHS BLOCKS
 		mathblock1 = new BlockBasicBlock("math_block_1");
@@ -272,6 +278,9 @@ public class ModBlocks {
 	}
 	
 	public static void register(){
+		registerBlock(pointsblock);
+		pointsblock.setCreativeTab(Maw79Mod.debug);
+		registerBlock(recycler);
 		registerBlock(storeblock);
 		storeblock.setCreativeTab(Maw79Mod.unused);
 		registerBlock(bridge);
@@ -424,6 +433,8 @@ public class ModBlocks {
 	}
 	
 	public static void registerRenders(){
+		registerRender(pointsblock);
+		registerRender(recycler);
 		registerRender(storeblock);
 		registerRender(bridge);
 		registerRender(rubyblock);

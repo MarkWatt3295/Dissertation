@@ -1,6 +1,7 @@
 package com.maw79.mods.network.store;
 
 import com.maw79.mods.client.gui.mathsgui.GuiMathsStore;
+import com.maw79.mods.client.gui.mathsgui.GuiScarecrow;
 import com.maw79.mods.init.ModBlocks;
 import com.maw79.mods.init.ModItems;
 import com.maw79.mods.init.ModTools;
@@ -33,19 +34,20 @@ World world = DimensionManager.getWorld(message.dimension);
  if(ctx.getServerHandler().playerEntity.getEntityId() == message.entityID){
  EntityPlayerMP player = ctx.getServerHandler().playerEntity;
 
- if (GuiMathsStore.buttonvalue == 1){
+ if (GuiScarecrow.buttonvalue == 1){
  player.connection.playerEntity.inventory.addItemStackToInventory(new ItemStack(ModTools.fractionstamphalf, 1));
  }
- else if (GuiMathsStore.buttonvalue == 2){
+ else if (GuiScarecrow.buttonvalue == 2){
 	 player.connection.playerEntity.inventory.addItemStackToInventory(new ItemStack(ModTools.fractionstampthird, 1));	
 }
- else if (GuiMathsStore.buttonvalue == 3){
+ else if (GuiScarecrow.buttonvalue == 3){
 	 player.connection.playerEntity.inventory.addItemStackToInventory(new ItemStack(ModTools.fractionstampquarter, 1));	
+	 
 }
- else if (GuiMathsStore.buttonvalue == 4){
+ else if (GuiScarecrow.buttonvalue == 4){
 	 player.connection.playerEntity.inventory.addItemStackToInventory(new ItemStack(ModTools.glassSpade, 1));	
 }
- else if (GuiMathsStore.buttonvalue == 5){
+ else if (GuiScarecrow.buttonvalue == 5){
 	 player.connection.playerEntity.inventory.addItemStackToInventory(new ItemStack(Blocks.GLOWSTONE, 1));	
 }
  }

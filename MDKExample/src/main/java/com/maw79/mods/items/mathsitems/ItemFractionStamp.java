@@ -1,6 +1,7 @@
 package com.maw79.mods.items.mathsitems;
 
 import com.google.common.collect.Sets;
+import com.maw79.mods.blocks.mathsblocks.recycler.TileEntityRecycler;
 import com.maw79.mods.client.gui.GuiNotif;
 import com.maw79.mods.client.gui.GuiTutorial;
 import com.maw79.mods.handlers.AchievementHandler;
@@ -151,6 +152,9 @@ public class ItemFractionStamp extends ItemTool {
         	//world.newExplosion(playerIn, pos.getX(), pos.getY(), pos.getZ(), 0.5F, false, true);
     		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
     		pointAddition();
+    		if(!playerIn.world.isRemote){
+    		 TileEntityRecycler.halfscorrect-=1;
+    		}
             return EnumActionResult.SUCCESS;
         }
     	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF_2) {
@@ -158,6 +162,9 @@ public class ItemFractionStamp extends ItemTool {
     		 world.setBlockState(pos, ModFractionsBlocks.CORRECT.getDefaultState());
     		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
     		 pointAddition();
+    			if(!playerIn.world.isRemote){
+    	    		 TileEntityRecycler.halfscorrect-=1;
+    	    		}
             return EnumActionResult.SUCCESS;
         }
     	  
@@ -166,6 +173,9 @@ public class ItemFractionStamp extends ItemTool {
     		 world.setBlockState(pos, ModFractionsBlocks.CORRECT.getDefaultState());
     		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
     		 pointAddition();
+    			if(!playerIn.world.isRemote){
+    	    		 TileEntityRecycler.halfscorrect-=1;
+    	    		}
             return EnumActionResult.SUCCESS;
         }
     	else   if (world.getBlockState(pos).getBlock() == ModFractionsBlocks.HALF_4) {
@@ -173,6 +183,9 @@ public class ItemFractionStamp extends ItemTool {
     		 world.setBlockState(pos, ModFractionsBlocks.CORRECT.getDefaultState());
     		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
     		 pointAddition();
+    			if(!playerIn.world.isRemote){
+    	    		 TileEntityRecycler.halfscorrect-=1;
+    	    		}
             return EnumActionResult.SUCCESS;
         }
     	  
@@ -181,6 +194,9 @@ public class ItemFractionStamp extends ItemTool {
     		 world.setBlockState(pos, ModFractionsBlocks.CORRECT.getDefaultState());
     		 playerIn.inventory.getCurrentItem().damageItem(1, playerIn );
     		 pointAddition();
+    			if(!playerIn.world.isRemote){
+    	    		 TileEntityRecycler.halfscorrect-=1;
+    	    		}
             return EnumActionResult.SUCCESS;
         }
     

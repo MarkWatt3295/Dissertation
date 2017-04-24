@@ -96,8 +96,8 @@ public class GuiScarecrow extends GuiScreen {
         button4.drawButton(mc, mouseX, mouseY);
         button5.drawButton(mc, mouseX, mouseY);
         ItemStack icon = new ItemStack(ModTools.fractionstamphalf);
-        ItemStack icon2 = new ItemStack(ModTools.fractionstampquarter);
-        ItemStack icon3 = new ItemStack(ModTools.fractionstampthird);
+        ItemStack icon2 = new ItemStack(ModTools.fractionstampthird);
+        ItemStack icon3 = new ItemStack(ModTools.fractionstampquarter);
         ItemStack icon4 = new ItemStack(ModTools.glassSpade);
         ItemStack icon5 = new ItemStack(Blocks.GLOWSTONE);
         
@@ -217,7 +217,7 @@ public class GuiScarecrow extends GuiScreen {
             	}
             	else {
             		mc.player.playSound(ModSoundHandler.MAWSOUND_ERRORNOISE, 1.0f, 1.0f);
-            		System.out.println("Not Enough Points (for 2 - Thirds 20) :( ");
+            		System.out.println("Not Enough Points (for 2 - Quarter 20) :( ");
             	}
             	
             	break;
@@ -232,7 +232,7 @@ public class GuiScarecrow extends GuiScreen {
             	}
             	else {
             		mc.player.playSound(ModSoundHandler.MAWSOUND_ERRORNOISE, 1.0f, 1.0f);
-            		System.out.println("Not Enough Points (for 3 - Quarter 20) :( ");
+            		System.out.println("Not Enough Points (for 3 - Thirds 20) :( ");
             	}
             	
             	break;
@@ -273,9 +273,6 @@ public class GuiScarecrow extends GuiScreen {
         super.actionPerformed(button);
       
     }
-    
-   
-
     
  
 	@Override
