@@ -57,6 +57,8 @@ import com.maw79.mods.network.YmanagerPacketHandler;
 import com.maw79.mods.network.ZmanagerMessage;
 import com.maw79.mods.network.ZmanagerPacketHandler;
 import com.maw79.mods.network.mathsPacketHandler;
+import com.maw79.mods.network.store.FarmerCoinsMessage;
+import com.maw79.mods.network.store.FarmerCoinsPacketHandler;
 import com.maw79.mods.network.store.MathsStore1Message;
 import com.maw79.mods.network.store.MathsStore1PacketHandler;
 import com.maw79.mods.network.store.ScarecrowSalesMessage;
@@ -174,6 +176,7 @@ public class Maw79Mod {
 		 NETWORK.registerMessage(PlayerPointsPlus20PacketHandler.class, PlayerPointsPlus20Message.class, 14, Side.SERVER);
 		 NETWORK.registerMessage(ScarecrowSalesPacketHandler.class, ScarecrowSalesMessage.class, 15, Side.SERVER);
 		 NETWORK.registerMessage(FractionsManualPacketHandler.class, FractionsManualMessage.class, 16, Side.SERVER);
+		 NETWORK.registerMessage(FarmerCoinsPacketHandler.class, FarmerCoinsMessage.class, 17, Side.SERVER);
 	
 		 
 	}

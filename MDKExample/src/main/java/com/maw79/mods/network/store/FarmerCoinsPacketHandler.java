@@ -15,11 +15,11 @@ import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
-public class FarmerCoinsPacketHandler implements IMessageHandler<MathsStore1Message, IMessage> {
+public class FarmerCoinsPacketHandler implements IMessageHandler<FarmerCoinsMessage, IMessage> {
 
 public boolean setrec;
 @Override
- public IMessage onMessage(MathsStore1Message message, MessageContext ctx) { 
+ public IMessage onMessage(FarmerCoinsMessage message, MessageContext ctx) { 
 Utils.getLogger().info("Farmer Coins message recieved");
  
  

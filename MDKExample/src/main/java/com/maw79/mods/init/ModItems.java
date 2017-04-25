@@ -35,9 +35,11 @@ import com.maw79.mods.items.mathsitems.ItemAppleWall;
 import com.maw79.mods.items.mathsitems.ItemAppleWallAxis;
 import com.maw79.mods.items.mathsitems.ItemAppleWallBorder;
 import com.maw79.mods.items.mathsitems.ItemAppleWallWool;
+import com.maw79.mods.items.mathsitems.ItemBasic;
 import com.maw79.mods.items.mathsitems.ItemCalculator;
 import com.maw79.mods.items.mathsitems.ItemCheatBook;
 import com.maw79.mods.items.mathsitems.ItemCompleteAppleWall;
+import com.maw79.mods.items.mathsitems.ItemCoordinatesManual;
 import com.maw79.mods.items.mathsitems.ItemEvenBook;
 import com.maw79.mods.items.mathsitems.ItemFractionStamp;
 import com.maw79.mods.items.mathsitems.ItemFractionsBook;
@@ -118,6 +120,16 @@ public class ModItems {
 	public static final Item EVEN_BOOK = new ItemEvenBook("even_book");
 	public static final Item CHEAT_BOOK = new ItemCheatBook("cheat_book");
 	public static final Item FRACTIONS_BOOK = new ItemFractionsBook("fractions_book");
+	public static final Item COORDINATES_MANUAL = new ItemCoordinatesManual("coordinates_quest_manual");
+	
+	public static final Item COORDINATES_QUEST_ITEM_1 = new ItemBasic("coordinates_quest_item_1");
+	public static final Item COORDINATES_QUEST_ITEM_2 = new ItemBasic("coordinates_quest_item_2");
+	public static final Item COORDINATES_QUEST_ITEM_3 = new ItemBasic("coordinates_quest_item_3");
+	public static final Item COORDINATES_QUEST_ITEM_4 = new ItemBasic("coordinates_quest_item_4");
+	public static final Item COORDINATES_QUEST_ITEM_5 = new ItemBasic("coordinates_quest_item_5");
+	public static final Item COORDINATES_QUEST_ITEM_6 = new ItemBasic("coordinates_quest_item_6");
+	public static final Item COORDINATES_QUEST_ITEM_7 = new ItemBasic("coordinates_quest_item_7");
+	public static final Item COORDINATES_QUEST_ITEM_8 = new ItemBasic("coordinates_quest_item_8");
 	
 	//TP Tokens
 	public static final Item SCIENCE_TOKEN = new ItemScienceToken("science_token");
@@ -237,8 +249,15 @@ public class ModItems {
 		registerItem(GAMETYPE);
 		GAMETYPE.setCreativeTab(Maw79Mod.debug);
 		registerItem(FRACTIONS_BOOK);
-		
-	
+		registerItem(COORDINATES_QUEST_ITEM_1);
+		registerItem(COORDINATES_QUEST_ITEM_2);
+		registerItem(COORDINATES_QUEST_ITEM_3);
+		registerItem(COORDINATES_QUEST_ITEM_4);
+		registerItem(COORDINATES_QUEST_ITEM_5);
+		registerItem(COORDINATES_QUEST_ITEM_6);
+		registerItem(COORDINATES_QUEST_ITEM_7);
+		registerItem(COORDINATES_QUEST_ITEM_8);
+		registerItem(COORDINATES_MANUAL);
 		
 		//SCIENCE LABELS
 		registerItem(LABELSTRONG);
@@ -342,6 +361,17 @@ public class ModItems {
 		registerRender(CHEAT_BOOK);
 		registerRender(GAMETYPE);
 		registerRender(FRACTIONS_BOOK);
+		registerRender(COORDINATES_MANUAL);
+		
+		registerRender(COORDINATES_QUEST_ITEM_1);
+		registerRender(COORDINATES_QUEST_ITEM_2);
+		registerRender(COORDINATES_QUEST_ITEM_3);
+		registerRender(COORDINATES_QUEST_ITEM_4);
+		registerRender(COORDINATES_QUEST_ITEM_5);
+		registerRender(COORDINATES_QUEST_ITEM_6);
+		registerRender(COORDINATES_QUEST_ITEM_7);
+		registerRender(COORDINATES_QUEST_ITEM_8);
+		
 		
 		//SCIENCE LABELS
 		registerRender(LABELCHAIR);

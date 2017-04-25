@@ -36,6 +36,15 @@ item.history_token.name=History Teleporter
 item.hub_token.name=Player Hub Teleporter
 item.freeplay_token.name=Free Play Teleporter
 item.block_detection_arrow.name=Detection Arrow
+item.coordinates_quest_item_1.name=Coordinates Quest Item 1
+item.coordinates_quest_item_2.name=Coordinates Quest Item 2
+item.coordinates_quest_item_3.name=Coordinates Quest Item 3
+item.coordinates_quest_item_4.name=Coordinates Quest Item 4
+item.coordinates_quest_item_5.name=Coordinates Quest Item 5
+item.coordinates_quest_item_6.name=Coordinates Quest Item 6
+item.coordinates_quest_item_7.name=Coordinates Quest Item 7
+item.coordinates_quest_item_8.name=Coordinates Quest Item 8
+item.coordinates_quest_manual.name=Coordinates Quest Manual
 
 //HISTORY ITEMS
 item.artifact1.name=Artifact 1
@@ -281,6 +290,8 @@ gui.block_breaker.enchanted_book.tooltip=Enchanted book goes here
 gui.guisciencete.button3.tooltip=Maw79 KS2 Mod Configuration
 
 //TOOL TIPS
+maw79.coordinatesmanual.tooltip=This book contains all the information about the Coordinates Quest.
+maw79.basicitem.tooltip=This is a Coordinates Quest Item. Return it to the Coordinates Quest Block for a reward.
 maw79.fractionsbook.tooltip=Use this item to read about the Fractions Quests.
 maw79.questionwand.tooltip=Use this item to show Block Questions.
 maw79.fractionhalfstamp.tooltip=Use this item to identify Equivalent Fractions (HALF)
