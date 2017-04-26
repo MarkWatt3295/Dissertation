@@ -14,6 +14,7 @@ public class GuiNotif extends Gui
 	public static int multimin = 1;
 	public static int addmax = 20;
 	public static int addmin = 10;
+	public static String xyztrack ="";
 	
 	
     public GuiNotif(Minecraft mc)
@@ -23,7 +24,7 @@ public class GuiNotif extends Gui
         int height = scaled.getScaledHeight();
     	
         drawString(mc.fontRendererObj, "Score: "+ TileEntityPointsBlock.playerScore, width / 2 + (110), (height / 2) + (-87), Integer.parseInt("FFFFFF", 16));
-        
+        drawString(mc.fontRendererObj, xyztrack, width / 2 + (80), (height / 2) + (-67), Integer.parseInt("FFFFFF", 16));
           
  if(playerlevel == "1"){
 	 drawString(mc.fontRendererObj, "Player Level: "+ playerlevel, width / 2 + (110), (height / 2) + (-107), Integer.parseInt("FC000B", 16));

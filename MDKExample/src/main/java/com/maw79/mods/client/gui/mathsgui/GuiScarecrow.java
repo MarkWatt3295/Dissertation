@@ -83,7 +83,7 @@ public class GuiScarecrow extends GuiScreen {
             fontRendererObj.drawString("20 Points", (-23), (20), 0xffffff);
     		fontRendererObj.drawString("20 Points", (-23), (40), 0xffffff);
     		fontRendererObj.drawString("20 Points", (-23), (56), 0xffffff);
-    		fontRendererObj.drawString("50 Points", (-23), (74), 0xffffff);
+    		fontRendererObj.drawString("20 Points", (-23), (74), 0xffffff);
     		fontRendererObj.drawString("30 Points", (-23), (90), 0xffffff);
     		
         }
@@ -240,15 +240,15 @@ public class GuiScarecrow extends GuiScreen {
             	
             case BUTTON4:
             
-            	if(TileEntityPointsBlock.playerScore >= 50){
+            	if(TileEntityPointsBlock.playerScore >= 20){
             		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
             		buttonvalue = 4;
             		Maw79Mod.NETWORK.sendToServer(new ScarecrowSalesMessage(mc.player));
-            		TileEntityPointsBlock.playerScore -= 50;
+            		TileEntityPointsBlock.playerScore -= 20;
             	}
             	else {
             		mc.player.playSound(ModSoundHandler.MAWSOUND_ERRORNOISE, 1.0f, 1.0f);
-            		System.out.println("Not Enough Points (for 4 - Glass Spade 50):( ");
+            		System.out.println("Not Enough Points (for 4 - Glass Spade 20):( ");
             	}
             	
             	break;

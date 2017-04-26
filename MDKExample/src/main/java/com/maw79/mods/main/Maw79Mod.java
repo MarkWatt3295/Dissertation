@@ -65,6 +65,8 @@ import com.maw79.mods.network.store.ScarecrowSalesMessage;
 import com.maw79.mods.network.store.ScarecrowSalesPacketHandler;
 import com.maw79.mods.network.store.StoreItem1Message;
 import com.maw79.mods.network.store.StoreItem1PacketHandler;
+import com.maw79.mods.network.store.XYZMessage;
+import com.maw79.mods.network.store.XYZPacketHandler;
 import com.maw79.mods.proxy.CommonProxy;
 import com.maw79.mods.worldgen.OreGen;
 
@@ -177,6 +179,7 @@ public class Maw79Mod {
 		 NETWORK.registerMessage(ScarecrowSalesPacketHandler.class, ScarecrowSalesMessage.class, 15, Side.SERVER);
 		 NETWORK.registerMessage(FractionsManualPacketHandler.class, FractionsManualMessage.class, 16, Side.SERVER);
 		 NETWORK.registerMessage(FarmerCoinsPacketHandler.class, FarmerCoinsMessage.class, 17, Side.SERVER);
+		 NETWORK.registerMessage(XYZPacketHandler.class, XYZMessage.class, 18, Side.SERVER);
 	
 		 
 	}

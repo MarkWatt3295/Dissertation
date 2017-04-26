@@ -16,7 +16,6 @@ import net.minecraft.util.SoundEvent;
 import net.minecraftforge.items.CapabilityItemHandler;
 
 /**
- * The {@link BlockBreaker}'s gui
  * @author Mark Watt
  *
  */
@@ -28,7 +27,7 @@ public class GuiCoordinatesQuest extends GuiContainer {
 	private TileEntityCoordinatesQuest te;
 	private IInventory playerInv;
 	GuiButton button1, button3, button4, button5, reward;
-	final int BUTTON1= 1, BUTTON3 = 3, BUTTON4 = 4, BUTTON5 = 5, REWARD = 6;
+	final int BUTTON1= 1, BUTTON3 = 3, BUTTON4 = 4, BUTTON5 = 5;
 	
 	
 
@@ -73,16 +72,19 @@ public class GuiCoordinatesQuest extends GuiContainer {
 		String s4 = "";
 		String s5 = "";
 		String s6 = "";
-		String findnums = "Visit Mr. Numbers For A Quest";
+		String findnums = "Items Left To find : "+"§a"+TileEntityCoordinatesQuest.itemsleft;
 		
-		
+		if(TileEntityCoordinatesQuest.itemsleft == 0){
+			findnums = "§a"+"All Items Found";
+		}
 		
 		if(help == true){
-			 s = ("Helpy helpy help");
-			 s2 = ("");
-			 s3 = ("");
-			 s4 = ("Visit Mr. Numbers");
-			 s5 = ("To Start a Quest");
+			 s = ("Coordinates Quest Help");
+			 findnums ="";
+			 s2 = ("Head to a coordinates location");
+			 s3 = ("You will need to dig to reach them");
+			 s4 = ("Read the Coordinates Manual");
+			 s5 = ("For more help with this Quest");
 			 s6 = ("");
 			
 		}
@@ -109,11 +111,11 @@ public class GuiCoordinatesQuest extends GuiContainer {
     
         buttonList.add(button1 = new GuiButton(BUTTON1, (width / 2) + 80 / 2, (height/2) -50, 30, 20, "Back"));
         buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) - 20 , (height/2) -5, 40, 20, "Help"));
-        buttonList.add(reward = new GuiButton(REWARD, (width / 2)-70 , (height/2) -5, 140, 20, "Now Return to Mr. Numbers"));
+      
       
         super.initGui();
         button1.visible = false;
-        reward.visible = false;
+       
         
     }
 	  @Override
@@ -146,13 +148,7 @@ public class GuiCoordinatesQuest extends GuiContainer {
 	            	button1.visible = true;
 	            	
 	            	break;
-	            	
-	            case REWARD: //help
-	            
-	            	reward.visible = false;
-	            	mc.player.closeScreen();
-	            	
-	            	break;
+	          
 	            	
 	        }
 	      

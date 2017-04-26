@@ -24,74 +24,29 @@ import net.minecraftforge.items.ItemStackHandler;
 
 public class TileEntityCoordinatesQuest extends TileEntity implements ITickable, ICapabilityProvider {
 
-	// Sequence Checks
-	private boolean sequence33 = false;
-	private boolean sequence4 = false;
-	private boolean sequence19 = false;
-	public static int sequencenumstofind = 3;
-	public static boolean sequencecomplete = false;
-	public static boolean sequenceclaimed = false;
-	public static String[] seqarray = new String[3];
-
-
-	// Prime Checks
-	private boolean prime2 = false;
-	private boolean prime3 = false;
-	private boolean prime5 = false;
-	private boolean prime7 = false;
-	private boolean prime11 = false;
-	private boolean prime13 = false;
-	private boolean prime17 = false;
-	private boolean prime19 = false;
-	public static boolean primecomplete = false;
-	public static int primenumstofind = 8;
-	public static boolean primeclaimed = false;
-	public static String[] primearray = new String[8];
-
-	//Even Checks
-	private boolean even2 = false;
-	private boolean even4 = false;
-	private boolean even6 = false;
-	private boolean even8 = false;
-	private boolean even10 = false;
-	private boolean even12 = false;
-	private boolean even14 = false;
-	private boolean even16 = false;
-	private boolean even18 = false;
-	private boolean even20 = false;
-	public static int evennumstofind = 10;
-	public static boolean evencomplete = false;
-	public static boolean evenclaimed = false;
-	public static String[] evenarray = new String[10];
-
-	public static boolean primeBookGive = false;
-	public static boolean evenBookGive = false;
-	public static boolean oddBookGive = false;
-	public static boolean seqBookGive = false;
-
-	//Odd Checks
-	private boolean odd1 = false;
-	private boolean odd3 = false;
-	private boolean odd5 = false;
-	private boolean odd7 = false;
-	private boolean odd9 = false;
-	private boolean odd11 = false;
-	private boolean odd13 = false;
-	private boolean odd15 = false;
-	private boolean odd17 = false;
-	private boolean odd19 = false;
-	public static int oddnumstofind = 10;
-	public static boolean oddcomplete = false;
-	public static boolean oddclaimed = false;
-	public static String[] oddarray = new String[10];
-
+	public static String itemnotfound1 = "Item Not Yet Found";
+	public static String itemnotfound2 = "Item Not Yet Found";
+	public static String itemnotfound3 = "Item Not Yet Found";
+	public static String itemnotfound4 = "Item Not Yet Found";
+	public static String itemnotfound5 = "Item Not Yet Found";
+	public static String itemnotfound6 = "Item Not Yet Found";
+	public static String itemnotfound7 = "Item Not Yet Found";
+	public static String itemnotfound8 = "Item Not Yet Found";
+	public static String itemfound = "§a"+"Item Found";
 	public ItemStackHandler handler;
-	public static String questPrimeNumbers = "Prime Numbers";
-	public static String questEvenNumbers = "Even Numbers";
-	public static String questOddNumbers = "Odd Numbers";
-	public static String questNumberSequence = "Sequence";
-	public static String questcomplete = "§a" + "Completed";
-
+	public static int itemsleft = 8;
+	private  boolean founditem1 = false;
+	private  boolean founditem2 = false;
+	private  boolean founditem3 = false;
+	private  boolean founditem4 = false;
+	private  boolean founditem5 = false;
+	private  boolean founditem6 = false;
+	private  boolean founditem7 = false;
+	private  boolean founditem8 = false;
+	public static  boolean allfound = false;
+	public static boolean xyzmanualgive = false;
+	private boolean foundsound = false;
+	
 
 	/**
 	 * Initializes our variables. MUST NOT HAVE ANY PARAMETERS
@@ -144,50 +99,87 @@ public class TileEntityCoordinatesQuest extends TileEntity implements ITickable,
 			if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.COORDINATES_QUEST_ITEM_1))) {
 				Utils.getLogger().info("Quest item 1 detected");
 				handler.extractItem(4, 1, false);
-				player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-				TileEntityPointsBlock.playerScore += 10;
+				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
+				TileEntityPointsBlock.playerScore += 50;
+				itemnotfound1 = itemfound;
+				founditem1 = true;
+				itemsleft -=1;
 			}
 			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.COORDINATES_QUEST_ITEM_2))) {
 				Utils.getLogger().info("Quest item 2 detected");
 				handler.extractItem(4, 1, false);
-				player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-				TileEntityPointsBlock.playerScore += 10;
+				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
+				TileEntityPointsBlock.playerScore += 50;
+				itemnotfound2 = itemfound;
+				founditem2 = true;
+				itemsleft -=1;
 			}
 			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.COORDINATES_QUEST_ITEM_3))) {
 				Utils.getLogger().info("Quest item 3 detected");
 				handler.extractItem(4, 1, false);
-				player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-				TileEntityPointsBlock.playerScore += 10;
+				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
+				TileEntityPointsBlock.playerScore += 50;
+				itemnotfound3 = itemfound;
+				founditem3 = true;
+				itemsleft -=1;
 			}
 			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.COORDINATES_QUEST_ITEM_4))) {
 				Utils.getLogger().info("Quest item 4 detected");
 				handler.extractItem(4, 1, false);
-				player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-				TileEntityPointsBlock.playerScore += 10;
+				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
+				TileEntityPointsBlock.playerScore += 50;
+				itemnotfound4 = itemfound;
+				founditem4 = true;
+				itemsleft -=1;
 			}
 			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.COORDINATES_QUEST_ITEM_5))) {
 				Utils.getLogger().info("Quest item 5 detected");
 				handler.extractItem(4, 1, false);
-				player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-				TileEntityPointsBlock.playerScore += 10;
+				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
+				TileEntityPointsBlock.playerScore += 50;
+				itemnotfound5 = itemfound;
+				founditem5 = true;
+				itemsleft -=1;
 			}
 			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.COORDINATES_QUEST_ITEM_6))) {
 				Utils.getLogger().info("Quest item 6 detected");
 				handler.extractItem(4, 1, false);
-				player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-				TileEntityPointsBlock.playerScore += 10;
+				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
+				TileEntityPointsBlock.playerScore += 50;
+				itemnotfound6 = itemfound;
+				founditem6 = true;
+				itemsleft -=1;
 			}
 			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.COORDINATES_QUEST_ITEM_7))) {
 				Utils.getLogger().info("Quest item 7 detected");
 				handler.extractItem(4, 1, false);
-				player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-				TileEntityPointsBlock.playerScore += 10;
+				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
+				TileEntityPointsBlock.playerScore += 50;
+				itemnotfound7 = itemfound;
+				founditem7 = true;
+				itemsleft -=1;
 			}
 			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.COORDINATES_QUEST_ITEM_8))) {
 				Utils.getLogger().info("Quest item 8 detected");
 				handler.extractItem(4, 1, false);
-				player.playSound(ModSoundHandler.MAWSOUND_POPCORK, 1.0F, 1.0F);
-				TileEntityPointsBlock.playerScore += 10;
+				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
+				TileEntityPointsBlock.playerScore += 50;
+				itemnotfound8 = itemfound;
+				founditem8 = true;
+				itemsleft -=1;
+			}
+			
+			if(founditem1 == true && founditem2 == true && founditem3 == true && founditem4 == true
+					&& founditem5 == true && founditem6 == true && founditem7 == true && founditem8 == true){
+				allfound = true;
+			}
+			
+			if(allfound == true){
+				if(foundsound==false){
+				player.playSound(ModSoundHandler.MAWSOUND_TADA, 3.0F, 1.0F);
+				foundsound=true;
+				TileEntityPointsBlock.xyztitle = TileEntityPointsBlock.questcomplete;
+				}
 			}
 		}
 	}

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.maw79.mods.blocks.mathsblocks.coordinatesquest.TileEntityCoordinatesQuest;
 import com.maw79.mods.blocks.mathsblocks.questblock.TileEntityMathsQuest;
 import com.maw79.mods.blocks.pointsblocks.TileEntityPointsBlock;
 import com.maw79.mods.client.gui.GuiNotif;
@@ -15,6 +16,7 @@ import com.maw79.mods.network.FractionsManualMessage;
 import com.maw79.mods.network.MathsMessage;
 import com.maw79.mods.network.MathsQuestManualMessage;
 import com.maw79.mods.network.store.StoreItem1Message;
+import com.maw79.mods.network.store.XYZMessage;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
@@ -136,7 +138,7 @@ public class GuiFarmerJoe extends GuiScreen {
 		buttonList.add(button4alt = new GuiButton(BUTTON4alt, (width / 2), centerY + 109, 80, 20, "Claim Reward"));
 		
 		
-		if (TileEntityMathsQuest.sequencecomplete == false) {
+		if (TileEntityCoordinatesQuest.allfound == false) {
 			buttonList.add(button5 = new GuiButton(BUTTON5, (width / 2) + 40, centerY + 133, 36, 20, "Select"));
 		}
 		buttonList.add(button5alt = new GuiButton(BUTTON5alt, (width / 2), centerY + 133, 80, 20, "Claim Reward"));
@@ -175,6 +177,12 @@ public class GuiFarmerJoe extends GuiScreen {
     	  button4alt.visible=true;
       }
         }
+        
+        if(TileEntityPointsBlock.xyzclaimed == false){
+            if(TileEntityCoordinatesQuest.allfound == true){
+          	  button5alt.visible=true;
+            }
+              }
      
        
         super.initGui();
@@ -252,16 +260,16 @@ public class GuiFarmerJoe extends GuiScreen {
             case BUTTON5:
             	questnumber = 4; // XYZ 
         		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-        		if(TileEntityPointsBlock.fractionmanualgive == false){
-            		Maw79Mod.NETWORK.sendToServer(new FractionsManualMessage(mc.player));
-            		TileEntityPointsBlock.fractionmanualgive = true;
+        		if(TileEntityCoordinatesQuest.xyzmanualgive == false){
+            		Maw79Mod.NETWORK.sendToServer(new XYZMessage(mc.player));
+            		TileEntityCoordinatesQuest.xyzmanualgive = true;
             	}
             	break;
             	
             case BUTTON5alt:
             	//XYZ
         		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-        		TileEntityPointsBlock.playerScore +=50;
+        		TileEntityPointsBlock.playerScore +=100;
         		button5alt.visible=false;
         		TileEntityPointsBlock.xyzclaimed = true;
         		questnumber = 0;

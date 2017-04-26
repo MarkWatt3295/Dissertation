@@ -21,6 +21,7 @@ public class ItemXAxisTool  extends Item{
 public  ItemXAxisTool (String unlocalizedName) {
 	this.setUnlocalizedName(unlocalizedName);
 	this.setRegistryName(new ResourceLocation(Reference.MOD_ID, unlocalizedName));
+	this.setMaxStackSize(1);
 	
 }
 

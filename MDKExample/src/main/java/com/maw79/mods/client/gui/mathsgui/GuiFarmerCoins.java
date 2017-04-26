@@ -81,7 +81,7 @@ public class GuiFarmerCoins extends GuiScreen {
             GlStateManager.scale(1.4, 1.4, 1.4);
            
             fontRendererObj.drawString("40 Points", (-23), (20), 0xffffff); //Ladder
-    		fontRendererObj.drawString("50 Points", (-23), (40), 0xffffff); //Spade
+    		fontRendererObj.drawString("20 Points", (-23), (40), 0xffffff); //Spade
     		fontRendererObj.drawString("30 Points", (-23), (56), 0xffffff);//Glowstone
     		fontRendererObj.drawString("40 Points", (-23), (74), 0xffffff);//Torch
     		fontRendererObj.drawString("30 Points", (-23), (90), 0xffffff);//book
@@ -210,15 +210,15 @@ public class GuiFarmerCoins extends GuiScreen {
             	
             case BUTTON2:
             	
-            	if(TileEntityPointsBlock.playerScore >= 50){
+            	if(TileEntityPointsBlock.playerScore >= 20){
             		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
             		buttonvalue = 2;
             		Maw79Mod.NETWORK.sendToServer(new FarmerCoinsMessage(mc.player));
-            		TileEntityPointsBlock.playerScore -= 50;
+            		TileEntityPointsBlock.playerScore -= 20;
             	}
             	else {
             		mc.player.playSound(ModSoundHandler.MAWSOUND_ERRORNOISE, 1.0f, 1.0f);
-            		System.out.println("Not Enough Points (for 2 - Spade 50) :( ");
+            		System.out.println("Not Enough Points (for 2 - Spade 20) :( ");
             	}
             	
             	break;

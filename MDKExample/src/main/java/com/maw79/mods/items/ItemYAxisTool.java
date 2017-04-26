@@ -21,7 +21,7 @@ public class ItemYAxisTool  extends Item{
 public  ItemYAxisTool (String unlocalizedName) {
 	this.setUnlocalizedName(unlocalizedName);
 	this.setRegistryName(new ResourceLocation(Reference.MOD_ID, unlocalizedName));
-	
+	this.setMaxStackSize(1);
 }
 
 /**
