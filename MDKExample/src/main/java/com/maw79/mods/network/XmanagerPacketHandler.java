@@ -13,30 +13,30 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
 public class XmanagerPacketHandler implements IMessageHandler<XmanagerMessage, IMessage> {
 
-@Override
- public IMessage onMessage(XmanagerMessage message, MessageContext ctx) { 
- System.out.println("Maths message recieved");
- 
- int xyzresponse = GuiXyzDevice.answer;
+	@Override
+	public IMessage onMessage(XmanagerMessage message, MessageContext ctx) { 
+		System.out.println("Maths message recieved");
+
+		int xyzresponse = GuiXyzDevice.answer;
 
 
-System.out.println("******************  "+ xyzresponse + "  ******************");
+		System.out.println("******************  "+ xyzresponse + "  ******************");
 
 
-World world = DimensionManager.getWorld(message.dimension);
- if(world == null) return null;
- else if(!world.isRemote) {
- if(ctx.getServerHandler().playerEntity.getEntityId() == message.entityID){
- EntityPlayerMP player = ctx.getServerHandler().playerEntity;
+		World world = DimensionManager.getWorld(message.dimension);
+		if(world == null) return null;
+		else if(!world.isRemote) {
+			if(ctx.getServerHandler().playerEntity.getEntityId() == message.entityID){
+				EntityPlayerMP player = ctx.getServerHandler().playerEntity;
 
- player.connection.setPlayerLocation(player.posX + xyzresponse, player.posY, player.posZ, player.rotationYaw, player.rotationPitch);
- System.out.println(xyzresponse + " Added to player X");
+				player.connection.setPlayerLocation(player.posX + xyzresponse, player.posY, player.posZ, player.rotationYaw, player.rotationPitch);
+				System.out.println(xyzresponse + " Added to player X");
 
- player.sendMessage(new TextComponentString(xyzresponse + " Added to player X"));
- 
- }
- }
- return null;
- }
+				player.sendMessage(new TextComponentString(xyzresponse + " Added to player X"));
+
+			}
+		}
+		return null;
+	}
 
 }

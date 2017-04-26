@@ -15,31 +15,31 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
 public class AdminCommandPacketHandler implements IMessageHandler<AdminCommandMessage, IMessage> {
 
-@Override
- public IMessage onMessage(AdminCommandMessage message, MessageContext ctx) { 
- System.out.println("Admin Command Recieved");
- 
+	@Override
+	public IMessage onMessage(AdminCommandMessage message, MessageContext ctx) { 
+		System.out.println("Admin Command Recieved");
 
 
-World world = DimensionManager.getWorld(message.dimension);
- if(world == null) return null;
- else if(!world.isRemote) {
- if(ctx.getServerHandler().playerEntity.getEntityId() == message.entityID){
- EntityPlayerMP player = ctx.getServerHandler().playerEntity;
- double x = player.posX;
- double y = player.posY;
- double z = player.posZ;
- 	player.connection.playerEntity.inventory.clear();
- 	 EntityItem item1 = new EntityItem(world, x, y, z, new ItemStack(ModTools.glassSpade));
-	 world.spawnEntity(item1);
-	//player.connection.playerEntity.inventory.addItemStackToInventory(new ItemStack(ModItems.GAMETYPE, 1));
-	//player.connection.playerEntity.inventory.addItemStackToInventory(new ItemStack(ModItems.SCOREDEBUG, 1));
-	player.sendMessage(new TextComponentString("§c"+"Admin Mode Enabled"));
 
-	
- }
- }
- return null;
- }
+		World world = DimensionManager.getWorld(message.dimension);
+		if(world == null) return null;
+		else if(!world.isRemote) {
+			if(ctx.getServerHandler().playerEntity.getEntityId() == message.entityID){
+				EntityPlayerMP player = ctx.getServerHandler().playerEntity;
+				double x = player.posX;
+				double y = player.posY;
+				double z = player.posZ;
+				player.connection.playerEntity.inventory.clear();
+				EntityItem item1 = new EntityItem(world, x, y, z, new ItemStack(ModItems.GAMETYPE));
+				EntityItem item2 = new EntityItem(world, x, y, z, new ItemStack(ModItems.SCOREDEBUG));
+				world.spawnEntity(item1);
+				world.spawnEntity(item2);
+				player.sendMessage(new TextComponentString("§c"+"Admin Mode Enabled"));
+
+
+			}
+		}
+		return null;
+	}
 
 }

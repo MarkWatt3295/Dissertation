@@ -1,10 +1,6 @@
 package com.maw79.mods.network;
 
-import com.maw79.mods.blocks.scienceblocks.tileentityscience.ContainerScience;
-import com.maw79.mods.blocks.scienceblocks.tileentityscience.TileEntityScience;
-
 import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;

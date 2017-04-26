@@ -13,33 +13,33 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
 public class NXmanagerPacketHandler implements IMessageHandler<NXmanagerMessage, IMessage> {
 
-@Override
- public IMessage onMessage(NXmanagerMessage message, MessageContext ctx) { 
- System.out.println("Maths message recieved");
- 
- int xyzresponse = GuiXyzDevice.answer;
+	@Override
+	public IMessage onMessage(NXmanagerMessage message, MessageContext ctx) { 
+		System.out.println("Maths message recieved");
+
+		int xyzresponse = GuiXyzDevice.answer;
 
 
-System.out.println("******************  "+ xyzresponse + "  ******************");
+		System.out.println("******************  "+ xyzresponse + "  ******************");
 
 
-World world = DimensionManager.getWorld(message.dimension);
- if(world == null) return null;
- else if(!world.isRemote) {
- if(ctx.getServerHandler().playerEntity.getEntityId() == message.entityID){
- EntityPlayerMP player = ctx.getServerHandler().playerEntity;
- 
+		World world = DimensionManager.getWorld(message.dimension);
+		if(world == null) return null;
+		else if(!world.isRemote) {
+			if(ctx.getServerHandler().playerEntity.getEntityId() == message.entityID){
+				EntityPlayerMP player = ctx.getServerHandler().playerEntity;
 
- player.connection.setPlayerLocation(player.posX - xyzresponse, player.posY, player.posZ, player.rotationYaw, player.rotationPitch);
- System.out.println(xyzresponse + " Added to player -X");
-	 player.sendMessage(new TextComponentString(xyzresponse + " Added to player -X"));
-	 player.playSound(ModSoundHandler.MAWSOUND_FLYBY, 1.0f, 1.0f);
-	
 
- 
- }
- }
- return null;
- }
+				player.connection.setPlayerLocation(player.posX - xyzresponse, player.posY, player.posZ, player.rotationYaw, player.rotationPitch);
+				System.out.println(xyzresponse + " Added to player -X");
+				player.sendMessage(new TextComponentString(xyzresponse + " Added to player -X"));
+				player.playSound(ModSoundHandler.MAWSOUND_FLYBY, 1.0f, 1.0f);
+
+
+
+			}
+		}
+		return null;
+	}
 
 }
