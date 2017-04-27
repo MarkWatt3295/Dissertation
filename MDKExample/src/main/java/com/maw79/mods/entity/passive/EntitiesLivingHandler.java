@@ -14,6 +14,7 @@ import com.maw79.mods.render.RenderHomerFactory;
 import com.maw79.mods.render.RenderHumanFactory;
 import com.maw79.mods.render.RenderMathsShopkeeperFactory;
 import com.maw79.mods.render.RenderNumberHunterFactory;
+import com.maw79.mods.render.RenderRomanSteveFactory;
 import com.maw79.mods.render.RenderScarecrowFactory;
 import com.maw79.mods.render.RenderTestFactory;
 import com.maw79.mods.render.RenderTokenShopkeeper;
@@ -50,8 +51,12 @@ public class EntitiesLivingHandler {
 		createFarmerJoe(EntityFarmerJoe.class, "Farmer Joe", 3288, 1689, 11);
 		createScarecrow(EntityScarecrow.class, "Scarecrow", 555, 999, 12);
 		createFarmerCoins(EntityFarmerCoins.class, "Farmer Coins", 0xa444, 0xed8215, 13);
+		createRomanSteve(EntityRomanSteve.class, "Roman Steve", 0xff3245, 0xed2215, 14);
 	}
-
+	private static void createRomanSteve(Class entityClass, String entityName, int solidColor, int spotColor, int id){
+		Utils.getLogger().info("EntitiesLivingHandler: createRomanSteve");
+		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, entityName, id, Maw79Mod.instance, 64, 1, true, solidColor, spotColor);
+	}
 	private static void createFarmerCoins(Class entityClass, String entityName, int solidColor, int spotColor, int id){
 		Utils.getLogger().info("EntitiesLivingHandler: createFarmerCoins");
 		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, entityName, id, Maw79Mod.instance, 64, 1, true, solidColor, spotColor);
@@ -138,6 +143,7 @@ public class EntitiesLivingHandler {
 		registerFarmerJoe(EntityFarmerJoe.class, RenderFarmerJoeFactory.INSTANCE);
 		registerScarecrow(EntityScarecrow.class, RenderScarecrowFactory.INSTANCE);
 		registerFarmerCoins(EntityFarmerCoins.class, RenderFarmerCoinsFactory.INSTANCE);
+		registerRomanSteve(EntityRomanSteve.class, RenderRomanSteveFactory.INSTANCE);
 	}
 	
 	
@@ -231,6 +237,12 @@ public class EntitiesLivingHandler {
 	private static <T extends EntityCreature> void registerFarmerCoins(Class<T> entity, IRenderFactory<? super T> renderFactory3)
 	{
 		Utils.getLogger().info("EntitiesLivingHandler: registerFarmerCoins");
+		
+		RenderingRegistry.registerEntityRenderingHandler(entity, renderFactory3);
+	}
+	private static <T extends EntityCreature> void registerRomanSteve(Class<T> entity, IRenderFactory<? super T> renderFactory3)
+	{
+		Utils.getLogger().info("EntitiesLivingHandler: registerRomanSteve");
 		
 		RenderingRegistry.registerEntityRenderingHandler(entity, renderFactory3);
 	}

@@ -21,6 +21,7 @@ import com.maw79.mods.handlers.ModEventHandler;
 import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.handlers.OreDictionaryHandler;
 import com.maw79.mods.handlers.RecipeHandler;
+import com.maw79.mods.handlers.TickHandler;
 import com.maw79.mods.init.ModArmour;
 import com.maw79.mods.init.ModBlocks;
 import com.maw79.mods.init.ModCrafting;
@@ -47,6 +48,8 @@ import com.maw79.mods.network.NZmanagerPacketHandler;
 import com.maw79.mods.network.PacketHandler;
 import com.maw79.mods.network.PlayerPointsPlus20Message;
 import com.maw79.mods.network.PlayerPointsPlus20PacketHandler;
+import com.maw79.mods.network.RomanQuestMessage;
+import com.maw79.mods.network.RomanQuestPacketHandler;
 import com.maw79.mods.network.StandardCommandMessage;
 import com.maw79.mods.network.StandardCommandPacketHandler;
 import com.maw79.mods.network.TeleportMessage;
@@ -180,6 +183,7 @@ public class Maw79Mod {
 		 NETWORK.registerMessage(FractionsManualPacketHandler.class, FractionsManualMessage.class, 16, Side.SERVER);
 		 NETWORK.registerMessage(FarmerCoinsPacketHandler.class, FarmerCoinsMessage.class, 17, Side.SERVER);
 		 NETWORK.registerMessage(XYZPacketHandler.class, XYZMessage.class, 18, Side.SERVER);
+		 NETWORK.registerMessage(RomanQuestPacketHandler.class, RomanQuestMessage.class, 19, Side.SERVER);
 	
 		 
 	}
@@ -203,6 +207,7 @@ public class Maw79Mod {
 	{
 		MinecraftForge.EVENT_BUS.register(new ModEventHandler());
 		MinecraftForge.EVENT_BUS.register(new RenderGuiHandler());
+		MinecraftForge.EVENT_BUS.register(new TickHandler());
 		
 
 		

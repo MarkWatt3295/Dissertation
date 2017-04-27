@@ -42,7 +42,6 @@ public class BlockGravityBlockPos extends Block {
 		
 		player.setNoGravity(true);
 		
-		
 		return true; 
 	}
 	

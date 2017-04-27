@@ -4,8 +4,15 @@ package com.maw79.mods.handlers;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent.WorldTickEvent;
 import scala.collection.parallel.ParIterableLike.Min;
 
+import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.TimeUnit;
+
+import com.google.common.base.Stopwatch;
 import com.maw79.mods.blocks.scienceblocks.BlockScienceWool;
 import com.maw79.mods.client.gui.GuiNotif;
 import com.maw79.mods.init.ModBlocks;
@@ -40,7 +47,12 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 
 public class ModEventHandler {
 
+private static final TimeUnit MILLISECONDS = null;
+private static int ticker = 0;
 public static boolean adminmode = false;
+public static boolean romandomus = false;
+
+
 	
     @SubscribeEvent
     public void onLivingUpdateEvent(LivingUpdateEvent event){
@@ -54,7 +66,7 @@ public static boolean adminmode = false;
     	
     	ItemStack hand = player.inventory.getCurrentItem();
     	Item blocky = Item.getItemFromBlock(Blocks.SANDSTONE);
-    	
+    	if(romandomus==false){
     	if(adminmode == false){
     	if(hand != null)
     	{
@@ -80,11 +92,21 @@ public static boolean adminmode = false;
     		//Utils.getLogger().info("Not Holding Anything :" + adminmode);
     		player.setGameType(GameType.ADVENTURE);
     	}
-    	}
+    	}}
     	if(adminmode == true){
     		//Utils.getLogger().info("In ADMIN MODE :" + adminmode);
     		player.setGameType(GameType.CREATIVE);
     	}
+    	
+    	
+    	if(romandomus == true){
+    		player.setGameType(GameType.SURVIVAL);
+    		
+    		}
+    		
+    		
+
+    	
     	}
     	}
     	
@@ -129,6 +151,8 @@ public static boolean adminmode = false;
     		
     		player.sendMessage(new TextComponentString("\u00A7a" + "Thank you, "+ player.getName() + ", for downloading my KS2 MOD!"));
     		System.out.println("Player Joined Called");
+    		Utils.getLogger().info("Set Ticker to 0");
+    		TickHandler.ticker=0;
     		
     		player.setNoGravity(false);
     		if(player.hasNoGravity()== true){

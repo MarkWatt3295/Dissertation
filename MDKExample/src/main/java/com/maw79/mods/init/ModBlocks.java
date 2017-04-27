@@ -11,6 +11,7 @@ import com.maw79.mods.blocks.BlockJar;
 import com.maw79.mods.blocks.BlockMachineFrame;
 import com.maw79.mods.blocks.BlockObsidianIngot;
 import com.maw79.mods.blocks.BlockRuby;
+import com.maw79.mods.blocks.BlockSpawnSetter;
 import com.maw79.mods.blocks.BlockSteel;
 import com.maw79.mods.blocks.BlockSteelButton;
 import com.maw79.mods.blocks.BlockSteelFence;
@@ -52,6 +53,8 @@ import com.maw79.mods.blocks.ItemProfiler.BlockProfilerTE;
 import com.maw79.mods.blocks.historyblocks.BlockArtifactOre;
 import com.maw79.mods.blocks.historyblocks.BlockBrightBlock;
 import com.maw79.mods.blocks.historyblocks.artifactupdater.BlockArtifactResearcher;
+import com.maw79.mods.blocks.historyblocks.romanquests.BlockDomusScorer;
+import com.maw79.mods.blocks.historyblocks.romanquests.BlockRomanQuest;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.tileentity.storetileentity.BlockStoreTE;
@@ -107,6 +110,8 @@ public class ModBlocks {
 	public static Block recycler;
 	public static Block pointsblock;
 	public static Block coordinatesquest;
+	public static Block spawnsetter;
+	public static Block romanquest;
 	
 	//MATHS BLOCKS
 	public static Block mathblock1;
@@ -174,6 +179,7 @@ public class ModBlocks {
 	//HISTORY BLOCKS
 	public static Block artifactresearcher;
 	public static Block brightsandstone;
+	public static Block domusscorer;
 	
 	
 	
@@ -210,6 +216,9 @@ public class ModBlocks {
 		recycler = new BlockRecycler("recycler_block");
 		pointsblock = new BlockPointsBlock("points_block");
 		coordinatesquest = new BlockCoordinatesQuest("coordinates_quest");
+		spawnsetter = new BlockSpawnSetter("spawn_setter");
+		romanquest = new BlockRomanQuest("roman_quest");
+		domusscorer = new BlockDomusScorer("domus_scorer");
 		
 		//MATHS BLOCKS
 		mathblock1 = new BlockBasicBlock("math_block_1");
@@ -254,8 +263,6 @@ public class ModBlocks {
 		mathtextblockmarrowbrown= new BlockBasicBlock("mathtexts_marrowbrown_block");
 		mathtextblockgrey= new BlockBasicBlock("mathtexts_grey_block");
 		
-		
-		
 		//Science Blocks
 		testblockte = new BlockTestTE("test_block_te");
 		materialproperties = new BlockScienceTE("science_te");
@@ -281,6 +288,8 @@ public class ModBlocks {
 	}
 	
 	public static void register(){
+		registerBlock(domusscorer);
+		registerBlock(spawnsetter);
 		registerBlock(coordinatesquest);
 		registerBlock(pointsblock);
 		pointsblock.setCreativeTab(Maw79Mod.debug);
@@ -319,7 +328,7 @@ public class ModBlocks {
 		registerBlock(survival);
 		registerBlock(profiler);
 		registerBlock(newtestblock);
-		
+		registerBlock(romanquest);
 		//MATHS BLOCKS
 		
 		registerBlock(mathsdivisionblock);
@@ -437,6 +446,8 @@ public class ModBlocks {
 	}
 	
 	public static void registerRenders(){
+		registerRender(domusscorer);
+		registerRender(spawnsetter);
 		registerRender(coordinatesquest);
 		registerRender(pointsblock);
 		registerRender(recycler);
@@ -477,6 +488,7 @@ public class ModBlocks {
 		registerRender(mathsadditionblock);
 		registerRender(mathssubtractionblock);
 		registerRender(Mathsquestblock);
+		registerRender(romanquest);
 		
 		//MATHS BLOCK Colours
 		registerRender(mathblockbrown);

@@ -30,6 +30,8 @@ import com.maw79.mods.items.ItemXAxisTool;
 import com.maw79.mods.items.ItemYAxisTool;
 import com.maw79.mods.items.ItemZAxisTool;
 import com.maw79.mods.items.historyitems.ItemArtifact;
+import com.maw79.mods.items.historyitems.ItemBuilderCoin;
+import com.maw79.mods.items.historyitems.ItemBuilderCoinDebug;
 import com.maw79.mods.items.historyitems.ItemHistoryBook;
 import com.maw79.mods.items.mathsitems.ItemAppleWall;
 import com.maw79.mods.items.mathsitems.ItemAppleWallAxis;
@@ -40,6 +42,7 @@ import com.maw79.mods.items.mathsitems.ItemCalculator;
 import com.maw79.mods.items.mathsitems.ItemCheatBook;
 import com.maw79.mods.items.mathsitems.ItemCompleteAppleWall;
 import com.maw79.mods.items.mathsitems.ItemCoordinatesManual;
+import com.maw79.mods.items.mathsitems.ItemDomusBuilderBook;
 import com.maw79.mods.items.mathsitems.ItemEvenBook;
 import com.maw79.mods.items.mathsitems.ItemFractionStamp;
 import com.maw79.mods.items.mathsitems.ItemFractionsBook;
@@ -51,7 +54,9 @@ import com.maw79.mods.items.mathsitems.ItemPlayerLevel;
 import com.maw79.mods.items.mathsitems.ItemPrimeBook;
 import com.maw79.mods.items.mathsitems.ItemXyzDevice;
 import com.maw79.mods.items.scienceitems.ItemElementFire;
+import com.maw79.mods.items.scienceitems.ItemGravityBooster;
 import com.maw79.mods.items.scienceitems.ItemMagnet;
+import com.maw79.mods.items.scienceitems.ItemNegativeMagnet;
 import com.maw79.mods.items.scienceitems.ItemPropertyLabel;
 import com.maw79.mods.items.teleporters.ItemEnglishToken;
 import com.maw79.mods.items.teleporters.ItemFreePlayToken;
@@ -111,6 +116,7 @@ public class ModItems {
 	
 	//OTHER
 	public static final Item BOOSTER = new ItemBooster("booster");
+	public static final Item GRAVITYBOOSTER = new ItemGravityBooster("gravity_booster");
 	public static final Item LEVITATION_DUST = new ItemLevitationDust("levitationdust");
 	public static final Item LEVITATION_DUST2 = new ItemLevitationDust2("levitationdust2");
 	public static final Item LEVITATION_DUST3 = new ItemLevitationDust3("levitationdust3");
@@ -121,6 +127,7 @@ public class ModItems {
 	public static final Item CHEAT_BOOK = new ItemCheatBook("cheat_book");
 	public static final Item FRACTIONS_BOOK = new ItemFractionsBook("fractions_book");
 	public static final Item COORDINATES_MANUAL = new ItemCoordinatesManual("coordinates_quest_manual");
+	public static final Item NEGATIVE_MAGNET = new ItemNegativeMagnet("negative_magnet");
 	
 	public static final Item COORDINATES_QUEST_ITEM_1 = new ItemBasic("coordinates_quest_item_1");
 	public static final Item COORDINATES_QUEST_ITEM_2 = new ItemBasic("coordinates_quest_item_2");
@@ -163,6 +170,9 @@ public class ModItems {
 	public static ItemArtifact ARTIFACT1 = new ItemArtifact("artifact1");
 	public static ItemArtifact ARTIFACT2 = new ItemArtifact("artifact2");
 	public static ItemHistoryBook HISTORYBOOK = new ItemHistoryBook("history_book");
+	public static ItemBuilderCoin BUILDER_COIN = new ItemBuilderCoin("builders_coin");
+	public static ItemBuilderCoinDebug BUILDER_COIN_DEBUG = new ItemBuilderCoinDebug("builders_coin_debug");
+	public static ItemDomusBuilderBook DOMUS_BUILDER = new ItemDomusBuilderBook("domus_builder");
 	
 	//Tool Materials
 	public static ToolMaterial obsidianMaterial = EnumHelper.addToolMaterial("obsidianingot", 2, 300, 5.0F, 2.0F, 12);
@@ -226,6 +236,9 @@ public class ModItems {
 		registerItem(ARTIFACT1);
 		registerItem(ARTIFACT2);
 		registerItem(HISTORYBOOK);
+		registerItem(BUILDER_COIN);
+		registerItem(BUILDER_COIN_DEBUG);
+		registerItem(DOMUS_BUILDER);
 		
 		//Others
 		registerItem(SNOW);
@@ -242,6 +255,7 @@ public class ModItems {
 		registerItem(HUB_TOKEN);
 		registerItem(FREEPLAY_TOKEN);
 		registerItem(BOOSTER);
+		registerItem(GRAVITYBOOSTER);
 		registerItem(LEVITATION_DUST);
 		registerItem(LEVITATION_DUST2);
 		registerItem(LEVITATION_DUST3);
@@ -258,6 +272,7 @@ public class ModItems {
 		registerItem(COORDINATES_QUEST_ITEM_7);
 		registerItem(COORDINATES_QUEST_ITEM_8);
 		registerItem(COORDINATES_MANUAL);
+		registerItem(NEGATIVE_MAGNET);
 		
 		//SCIENCE LABELS
 		registerItem(LABELSTRONG);
@@ -362,6 +377,12 @@ public class ModItems {
 		registerRender(GAMETYPE);
 		registerRender(FRACTIONS_BOOK);
 		registerRender(COORDINATES_MANUAL);
+		registerRender(NEGATIVE_MAGNET);
+		registerRender(GRAVITYBOOSTER);
+		registerRender(BUILDER_COIN);
+		registerRender(BUILDER_COIN_DEBUG);
+		BUILDER_COIN_DEBUG.setCreativeTab(Maw79Mod.debug);
+		registerRender(DOMUS_BUILDER);
 		
 		registerRender(COORDINATES_QUEST_ITEM_1);
 		registerRender(COORDINATES_QUEST_ITEM_2);

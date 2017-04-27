@@ -9,6 +9,7 @@ import com.maw79.mods.client.gui.GuiHandler;
 import com.maw79.mods.entity.passive.EntitiesLivingHandler;
 import com.maw79.mods.blocks.ItemProfiler.TileEntityProfiler;
 import com.maw79.mods.blocks.historyblocks.artifactupdater.TileEntityArtifactResearcher;
+import com.maw79.mods.blocks.historyblocks.romanquests.TileEntityRomanQuest;
 import com.maw79.mods.blocks.mathsblocks.coordinatesquest.TileEntityCoordinatesQuest;
 import com.maw79.mods.blocks.mathsblocks.questblock.TileEntityMathsQuest;
 import com.maw79.mods.blocks.mathsblocks.recycler.TileEntityRecycler;
@@ -49,6 +50,7 @@ public class CommonProxy {
 		GameRegistry.registerTileEntity(TileEntityRecycler.class, Reference.MOD_ID + ":maths_recycler");
 		GameRegistry.registerTileEntity(TileEntityPointsBlock.class, Reference.MOD_ID + ":points_block");
 		GameRegistry.registerTileEntity(TileEntityCoordinatesQuest.class, Reference.MOD_ID + ":coordinates_quest");
+		GameRegistry.registerTileEntity(TileEntityRomanQuest.class, Reference.MOD_ID + ":roman_quest");
 	}
 	
 	/**

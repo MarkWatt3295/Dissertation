@@ -1,8 +1,7 @@
-package com.maw79.mods.items;
+package com.maw79.mods.items.scienceitems;
 
 import java.util.List;
 
-import com.maw79.mods.handlers.ModEventHandler;
 import com.maw79.mods.main.Reference;
 
 import net.minecraft.client.resources.I18n;
@@ -16,9 +15,9 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-public class ItemBooster extends Item {
+public class ItemGravityBooster extends Item {
 
-    public ItemBooster(String unlocalizedName) {
+    public ItemGravityBooster(String unlocalizedName) {
     	 this.setMaxStackSize(1);
          this.setMaxDamage(100);
 		this.setUnlocalizedName(unlocalizedName);
@@ -31,8 +30,8 @@ public class ItemBooster extends Item {
         if(!worldIn.isRemote) {
             stack.damageItem(1, playerIn);
             Vec3d lookVec = playerIn.getLookVec();
-            playerIn.addVelocity(lookVec.xCoord * 4.0D, lookVec.yCoord *1.5D, lookVec.zCoord * 4.0D);
-           // playerIn.getCooldownTracker().setCooldown(this, 100);
+            playerIn.addVelocity(lookVec.xCoord * 5.0D, lookVec.yCoord *1.5D, lookVec.zCoord * 5.0D);
+           playerIn.getCooldownTracker().setCooldown(this, 1000);
             playerIn.velocityChanged = true;
             if(itemRand.nextInt(20) == 0 && !playerIn.capabilities.isCreativeMode) stack = ItemStack.EMPTY;
         }
@@ -41,8 +40,7 @@ public class ItemBooster extends Item {
     
     @Override
     public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
-        tooltip.add(I18n.format("tooltip.booster"));
-       
+        tooltip.add(I18n.format("tooltip.gravitybooster"));
     }
 
 }
