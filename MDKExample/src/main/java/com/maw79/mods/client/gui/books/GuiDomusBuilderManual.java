@@ -40,7 +40,7 @@ public class GuiDomusBuilderManual extends GuiScreen
 	    bookPageTextures[3] = new ResourceLocation(Reference.MOD_ID+":textures/gui/book1.png");
 	    
 	    stringPageText[0] = "§d"+"Domus Builder Quest"+"§0"+"\n\nIn Ancient Rome the wealthy Romans lived in houses known as "+"§d"+ "Domus's"+"§0"+ ".\n\n"+"§d"+"Example Domus\n"+"§0"+ "To your left there is a premade Domus. Why not take a look around for some inspiration.";
-	    stringPageText[1] = "§d"+"How To Play"+"§0"+"\nYou are given a Builder Coin. Equip this item and right click to activate build mode. In this mode you will have 5 minutes to build your own Roman Domus using materials supplied in the Chests. When your 5 minutes is up your partner will judge your domus using the Domus Scorer."; 
+	    stringPageText[1] = "§d"+"How To Play"+"§0"+"\nYou are given a Builder Coin. Equip the Coin and right click to activate build mode. In this mode you will have 5 minutes to build your own Roman Domus using materials supplied in the Chests. When your 5 minutes is up your partner will judge your domus using the Domus Scorer."; 
 	    stringPageText[2] = "§d"+"Domus Scorer"+"§0"+"\n\nThe Domus Scorer is the block used to score the player made buildings. Points can be rewarded for having matching Domus Features.\n\nThe Domus Scorer only becomes active after a Build modes time expires.";
 	    stringPageText[3] = "§d"+"Hints"+"§0"+"\n\nEquip all of the materials you want to use before activating the Build Coin.\n\nIf you have enough points you can purchase addition Build Coins for more building time.";
 	}

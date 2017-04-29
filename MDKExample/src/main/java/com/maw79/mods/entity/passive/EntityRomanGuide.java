@@ -1,8 +1,11 @@
 package com.maw79.mods.entity.passive;
 
+import com.maw79.mods.client.gui.GuiStoreDisplay2;
+import com.maw79.mods.client.gui.historygui.GuiRomanStore;
 import com.maw79.mods.handlers.AchievementHandler;
 import com.maw79.mods.handlers.ModSoundHandler;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -28,11 +31,12 @@ public  class EntityRomanGuide extends EntityCreature {
 		this.isImmuneToFire = false;
 		addRandomArmor();
 		setNoAI(!true);
+		this.enablePersistence();
 		this.tasks.addTask(0, new EntityAISwimming(this));
 		this.tasks.addTask(1, new EntityAIWatchClosest(this, EntityPlayer.class, 10.0F));
 		this.tasks.addTask(2, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
 		
-		setCustomNameTag("Roman Guide");
+		setCustomNameTag("Roman Shopkeeper");
 		setAlwaysRenderNameTag(true);
 
 	}
@@ -40,7 +44,7 @@ public  class EntityRomanGuide extends EntityCreature {
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
 		this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
-		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(10D);
+		this.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(10000D);
 		if (this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE) != null)
 			this.getEntityAttribute(SharedMonsterAttributes.ATTACK_DAMAGE).setBaseValue(3D);
 	}
@@ -108,8 +112,15 @@ public  class EntityRomanGuide extends EntityCreature {
 		int k = (int) this.posZ;
 
 		if (true) {
-			System.out.println("Printing from Tour Guide mob");
-			//entity.playSound(ModSoundHandler.MAWSOUND_VOICE1, 1.0F, 4.0F);
+			System.out.println("Printing from Roman Shopkeeper");
+			 if (this.world.isRemote)
+		        {
+		            int basicID = this.getEntityId();
+		           // entity.openGui(Maw79Mod.instance, GuiHandler.STORE_GUI, this.world, basicID, 0, 0);
+		            Minecraft.getMinecraft().displayGuiScreen(new GuiRomanStore());
+		            
+		           
+		        }
 		}
 		if(!entity.hasAchievement(AchievementHandler.achievementNiceTo)){
          	entity.addStat(AchievementHandler.achievementNiceTo);

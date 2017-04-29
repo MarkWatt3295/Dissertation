@@ -12,6 +12,7 @@ import com.maw79.mods.items.ItemChip;
 import com.maw79.mods.items.ItemCustomFuel;
 import com.maw79.mods.items.ItemGameSwitcher;
 import com.maw79.mods.items.ItemHeart;
+import com.maw79.mods.items.ItemJumpBooster;
 import com.maw79.mods.items.ItemLightningSpawner;
 import com.maw79.mods.items.ItemMathsBook;
 import com.maw79.mods.items.ItemModArrow;
@@ -33,6 +34,7 @@ import com.maw79.mods.items.historyitems.ItemArtifact;
 import com.maw79.mods.items.historyitems.ItemBuilderCoin;
 import com.maw79.mods.items.historyitems.ItemBuilderCoinDebug;
 import com.maw79.mods.items.historyitems.ItemHistoryBook;
+import com.maw79.mods.items.historyitems.ItemRomanArtifactsManual;
 import com.maw79.mods.items.mathsitems.ItemAppleWall;
 import com.maw79.mods.items.mathsitems.ItemAppleWallAxis;
 import com.maw79.mods.items.mathsitems.ItemAppleWallBorder;
@@ -173,6 +175,19 @@ public class ModItems {
 	public static ItemBuilderCoin BUILDER_COIN = new ItemBuilderCoin("builders_coin");
 	public static ItemBuilderCoinDebug BUILDER_COIN_DEBUG = new ItemBuilderCoinDebug("builders_coin_debug");
 	public static ItemDomusBuilderBook DOMUS_BUILDER = new ItemDomusBuilderBook("domus_builder");
+	public static ItemArtifact ROMAN_ARTIFACT1 = new ItemArtifact("roman_artifact1");
+	public static ItemArtifact ROMAN_ARTIFACT2 = new ItemArtifact("roman_artifact2");
+	public static ItemArtifact ROMAN_ARTIFACT3 = new ItemArtifact("roman_artifact3");
+	public static ItemArtifact ROMAN_ARTIFACT4 = new ItemArtifact("roman_artifact4");
+	public static ItemArtifact ROMAN_ARTIFACT5 = new ItemArtifact("roman_artifact5");
+	public static ItemArtifact ROMAN_ARTIFACT6 = new ItemArtifact("roman_artifact6");
+	public static ItemArtifact ROMAN_ARTIFACT7 = new ItemArtifact("roman_artifact7");
+	public static ItemArtifact ROMAN_ARTIFACT8 = new ItemArtifact("roman_artifact8");
+	public static ItemArtifact ROMAN_ARTIFACT9 = new ItemArtifact("roman_artifact9");
+	public static ItemArtifact ROMAN_ARTIFACT10 = new ItemArtifact("roman_artifact10");
+	public static ItemArtifact ROMAN_ARTIFACT_DEBUG = new ItemArtifact("roman_artifact_debug");
+	public static ItemJumpBooster JUMP_BOOSTER = new ItemJumpBooster("jump_booster");
+	public static ItemRomanArtifactsManual ROMAN_ARTIFACTS_MANUAL = new ItemRomanArtifactsManual("roman_artifacts_manual");
 	
 	//Tool Materials
 	public static ToolMaterial obsidianMaterial = EnumHelper.addToolMaterial("obsidianingot", 2, 300, 5.0F, 2.0F, 12);
@@ -239,6 +254,18 @@ public class ModItems {
 		registerItem(BUILDER_COIN);
 		registerItem(BUILDER_COIN_DEBUG);
 		registerItem(DOMUS_BUILDER);
+		registerItem(ROMAN_ARTIFACT1);
+		registerItem(ROMAN_ARTIFACT2);
+		registerItem(ROMAN_ARTIFACT3);
+		registerItem(ROMAN_ARTIFACT4);
+		registerItem(ROMAN_ARTIFACT5);
+		registerItem(ROMAN_ARTIFACT6);
+		registerItem(ROMAN_ARTIFACT7);
+		registerItem(ROMAN_ARTIFACT8);
+		registerItem(ROMAN_ARTIFACT9);
+		registerItem(ROMAN_ARTIFACT10);
+		registerItem(ROMAN_ARTIFACT_DEBUG);
+		registerItem(JUMP_BOOSTER);
 		
 		//Others
 		registerItem(SNOW);
@@ -273,6 +300,7 @@ public class ModItems {
 		registerItem(COORDINATES_QUEST_ITEM_8);
 		registerItem(COORDINATES_MANUAL);
 		registerItem(NEGATIVE_MAGNET);
+		registerItem(ROMAN_ARTIFACTS_MANUAL);
 		
 		//SCIENCE LABELS
 		registerItem(LABELSTRONG);
@@ -383,6 +411,8 @@ public class ModItems {
 		registerRender(BUILDER_COIN_DEBUG);
 		BUILDER_COIN_DEBUG.setCreativeTab(Maw79Mod.debug);
 		registerRender(DOMUS_BUILDER);
+		registerRender(ROMAN_ARTIFACTS_MANUAL);
+		registerRender(JUMP_BOOSTER);
 		
 		registerRender(COORDINATES_QUEST_ITEM_1);
 		registerRender(COORDINATES_QUEST_ITEM_2);
@@ -411,6 +441,18 @@ public class ModItems {
 		registerRender(ARTIFACT1);
 		registerRender(ARTIFACT2);
 		registerRender(HISTORYBOOK);
+		registerRender(ROMAN_ARTIFACT1);
+		registerRender(ROMAN_ARTIFACT2);
+		registerRender(ROMAN_ARTIFACT3);
+		registerRender(ROMAN_ARTIFACT4);
+		registerRender(ROMAN_ARTIFACT5);
+		registerRender(ROMAN_ARTIFACT6);
+		registerRender(ROMAN_ARTIFACT7);
+		registerRender(ROMAN_ARTIFACT8);
+		registerRender(ROMAN_ARTIFACT9);
+		registerRender(ROMAN_ARTIFACT10);
+		registerRender(ROMAN_ARTIFACT_DEBUG);
+		ROMAN_ARTIFACT_DEBUG.setCreativeTab(Maw79Mod.debug);
 		
 		//Food
 		registerRender(tomato);

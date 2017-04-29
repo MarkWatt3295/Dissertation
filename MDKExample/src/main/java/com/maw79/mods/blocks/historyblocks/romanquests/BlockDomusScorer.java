@@ -1,10 +1,8 @@
 package com.maw79.mods.blocks.historyblocks.romanquests;
 
 
-import com.maw79.mods.client.gui.GuiHandler;
 import com.maw79.mods.client.gui.books.GuiDomusScorer;
 import com.maw79.mods.handlers.ModSoundHandler;
-import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;

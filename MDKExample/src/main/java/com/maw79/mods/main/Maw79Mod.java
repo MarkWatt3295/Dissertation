@@ -64,6 +64,8 @@ import com.maw79.mods.network.store.FarmerCoinsMessage;
 import com.maw79.mods.network.store.FarmerCoinsPacketHandler;
 import com.maw79.mods.network.store.MathsStore1Message;
 import com.maw79.mods.network.store.MathsStore1PacketHandler;
+import com.maw79.mods.network.store.RomanStoreMessage;
+import com.maw79.mods.network.store.RomanStorePacketHandler;
 import com.maw79.mods.network.store.ScarecrowSalesMessage;
 import com.maw79.mods.network.store.ScarecrowSalesPacketHandler;
 import com.maw79.mods.network.store.StoreItem1Message;
@@ -184,6 +186,7 @@ public class Maw79Mod {
 		 NETWORK.registerMessage(FarmerCoinsPacketHandler.class, FarmerCoinsMessage.class, 17, Side.SERVER);
 		 NETWORK.registerMessage(XYZPacketHandler.class, XYZMessage.class, 18, Side.SERVER);
 		 NETWORK.registerMessage(RomanQuestPacketHandler.class, RomanQuestMessage.class, 19, Side.SERVER);
+		 NETWORK.registerMessage(RomanStorePacketHandler.class, RomanStoreMessage.class, 20, Side.SERVER);
 	
 		 
 	}

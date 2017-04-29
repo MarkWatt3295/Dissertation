@@ -54,8 +54,21 @@ item.coordinates_quest_manual.name=Coordinates Quest Manual
 //HISTORY ITEMS
 item.artifact1.name=Artifact 1
 item.artifact2.name=Artifact 2
+item.roman_artifact1.name=Roman Artifact 1 (Hunt Cup)
+item.roman_artifact2.name=Roman Artifact 2 (Tombstone)
+item.roman_artifact3.name=Roman Artifact 3 (Actors Mask)
+item.roman_artifact4.name=Roman Artifact 4 (Roman Coin)
+item.roman_artifact5.name=Roman Artifact 5 (Drain Pipe)
+item.roman_artifact6.name=Roman Artifact 6 (Cooking Pot)
+item.roman_artifact7.name=Roman Artifact 7 (Statues)
+item.roman_artifact8.name=Roman Artifact 8 (Terracotta Tiles)
+item.roman_artifact9.name=Roman Artifact 9 (Amethyst Intaglio)
+item.roman_artifact10.name=Roman Artifact 10 (Burrial Urn)
+item.roman_artifact_debug.name=Roman Artifact Debug
+item.roman_artifacts_manual.name=Roman Artifact Manual
 item.history_book.name=History Book
 item.builders_coin.name=Builders Coin
+item.jump_booster.name=Jump Booster
 
 //Science Items
 item.fire_element.name=Fire Element
@@ -109,6 +122,7 @@ item.burntloaf.name=Burnt Loaf
 
 
 //Blocks
+tile.domus_scorer.name=Domus Score Block
 tile.spawn_setter.name=Spawn Setter
 tile.fakefractionsblock.name=Fake Fractions Block
 tile.coordinates_quest.name=Coordinates Quest Block
@@ -298,6 +312,8 @@ gui.block_breaker.enchanted_book.tooltip=Enchanted book goes here
 gui.guisciencete.button3.tooltip=Maw79 KS2 Mod Configuration
 
 //TOOL TIPS
+maw79.jumpbooster.tooltip=This Item increases player Jump Height.
+maw79.romanartifactsmanual.tooltip=This Book tracks the Roman Artifacts you need to find.
 maw79.domusbuilderbook.tooltip=This book gives information on the Building Quest.
 maw79.buildercoin.tooltip=Use this cool to Enable Build Mode
 maw79.spawnsetter.tooltip= Walk on this block to set spawn point.

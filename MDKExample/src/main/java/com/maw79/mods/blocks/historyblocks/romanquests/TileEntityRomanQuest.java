@@ -24,15 +24,17 @@ import net.minecraftforge.items.ItemStackHandler;
 
 public class TileEntityRomanQuest extends TileEntity implements ITickable, ICapabilityProvider {
 
-	
+	public static int scorecard = 0;
 	public static String buildertitle = "Domus Builder";
-	public static String relichunttitle ="Relic Hunt";
+	public static String relichunttitle ="Artifact Hunt";
 	public static String romanquiztitle = "Quiz";
 	public static String questcomplete = "§a" + "Completed";
 	public static boolean buildmodedone = false;
 	public static boolean buildquestdone = false;
 	public static boolean buildquestbookqive = false;
 	public static boolean buildrewardclaimed = false;
+	public static boolean relicquestbookgive = false;
+	public static boolean relicrewardclaimed = false;
 	
 	public static boolean windowsbutton = false;
 	public static boolean Paintings  = false;
@@ -59,9 +61,12 @@ public class TileEntityRomanQuest extends TileEntity implements ITickable, ICapa
 	public static String itemnotfound6 = "Item Not Yet Found";
 	public static String itemnotfound7 = "Item Not Yet Found";
 	public static String itemnotfound8 = "Item Not Yet Found";
+	public static String itemnotfound9 = "Item Not Yet Found";
+	public static String itemnotfound10 = "Item Not Yet Found";
 	public static String itemfound = "§a"+"Item Found";
 	public ItemStackHandler handler;
-	public static int itemsleft = 8;
+	
+	public static int itemsleft = 10;
 	private  boolean founditem1 = false;
 	private  boolean founditem2 = false;
 	private  boolean founditem3 = false;
@@ -70,9 +75,12 @@ public class TileEntityRomanQuest extends TileEntity implements ITickable, ICapa
 	private  boolean founditem6 = false;
 	private  boolean founditem7 = false;
 	private  boolean founditem8 = false;
+	private  boolean founditem9 = false;
+	private  boolean founditem10 = false;
 	public static  boolean allfound = false;
-	public static boolean xyzmanualgive = false;
+	public static boolean RomanArtifactManualgive = false;
 	private boolean foundsound = false;
+	private boolean questrunning = false;
 	
 
 	/**
@@ -127,8 +135,9 @@ public class TileEntityRomanQuest extends TileEntity implements ITickable, ICapa
 			IBlockState currentState = this.world.getBlockState(pos);
 			EntityPlayer player = Minecraft.getMinecraft().player;
 
-			if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.COORDINATES_QUEST_ITEM_1))) {
-				Utils.getLogger().info("Quest item 1 detected");
+			if(questrunning == false){
+			if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.ROMAN_ARTIFACT1))) {
+				Utils.getLogger().info("Roman Artifact 1 detected");
 				handler.extractItem(4, 1, false);
 				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
 				TileEntityPointsBlock.playerScore += 50;
@@ -136,8 +145,8 @@ public class TileEntityRomanQuest extends TileEntity implements ITickable, ICapa
 				founditem1 = true;
 				itemsleft -=1;
 			}
-			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.COORDINATES_QUEST_ITEM_2))) {
-				Utils.getLogger().info("Quest item 2 detected");
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.ROMAN_ARTIFACT2))) {
+				Utils.getLogger().info("Roman Artifact 2 detected");
 				handler.extractItem(4, 1, false);
 				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
 				TileEntityPointsBlock.playerScore += 50;
@@ -145,8 +154,8 @@ public class TileEntityRomanQuest extends TileEntity implements ITickable, ICapa
 				founditem2 = true;
 				itemsleft -=1;
 			}
-			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.COORDINATES_QUEST_ITEM_3))) {
-				Utils.getLogger().info("Quest item 3 detected");
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.ROMAN_ARTIFACT3))) {
+				Utils.getLogger().info("Roman Artifact 3 detected");
 				handler.extractItem(4, 1, false);
 				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
 				TileEntityPointsBlock.playerScore += 50;
@@ -154,8 +163,8 @@ public class TileEntityRomanQuest extends TileEntity implements ITickable, ICapa
 				founditem3 = true;
 				itemsleft -=1;
 			}
-			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.COORDINATES_QUEST_ITEM_4))) {
-				Utils.getLogger().info("Quest item 4 detected");
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.ROMAN_ARTIFACT4))) {
+				Utils.getLogger().info("Roman Artifact 4 detected");
 				handler.extractItem(4, 1, false);
 				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
 				TileEntityPointsBlock.playerScore += 50;
@@ -163,8 +172,8 @@ public class TileEntityRomanQuest extends TileEntity implements ITickable, ICapa
 				founditem4 = true;
 				itemsleft -=1;
 			}
-			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.COORDINATES_QUEST_ITEM_5))) {
-				Utils.getLogger().info("Quest item 5 detected");
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.ROMAN_ARTIFACT5))) {
+				Utils.getLogger().info("Roman Artifact 5 detected");
 				handler.extractItem(4, 1, false);
 				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
 				TileEntityPointsBlock.playerScore += 50;
@@ -172,8 +181,8 @@ public class TileEntityRomanQuest extends TileEntity implements ITickable, ICapa
 				founditem5 = true;
 				itemsleft -=1;
 			}
-			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.COORDINATES_QUEST_ITEM_6))) {
-				Utils.getLogger().info("Quest item 6 detected");
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.ROMAN_ARTIFACT6))) {
+				Utils.getLogger().info("Roman Artifact 6 detected");
 				handler.extractItem(4, 1, false);
 				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
 				TileEntityPointsBlock.playerScore += 50;
@@ -181,8 +190,8 @@ public class TileEntityRomanQuest extends TileEntity implements ITickable, ICapa
 				founditem6 = true;
 				itemsleft -=1;
 			}
-			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.COORDINATES_QUEST_ITEM_7))) {
-				Utils.getLogger().info("Quest item 7 detected");
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.ROMAN_ARTIFACT7))) {
+				Utils.getLogger().info("Roman Artifact 7 detected");
 				handler.extractItem(4, 1, false);
 				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
 				TileEntityPointsBlock.playerScore += 50;
@@ -190,8 +199,8 @@ public class TileEntityRomanQuest extends TileEntity implements ITickable, ICapa
 				founditem7 = true;
 				itemsleft -=1;
 			}
-			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.COORDINATES_QUEST_ITEM_8))) {
-				Utils.getLogger().info("Quest item 8 detected");
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.ROMAN_ARTIFACT8))) {
+				Utils.getLogger().info("Roman Artifact 8 detected");
 				handler.extractItem(4, 1, false);
 				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
 				TileEntityPointsBlock.playerScore += 50;
@@ -199,21 +208,63 @@ public class TileEntityRomanQuest extends TileEntity implements ITickable, ICapa
 				founditem8 = true;
 				itemsleft -=1;
 			}
-			
-			if(founditem1 == true && founditem2 == true && founditem3 == true && founditem4 == true
-					&& founditem5 == true && founditem6 == true && founditem7 == true && founditem8 == true){
-				allfound = true;
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.ROMAN_ARTIFACT9))) {
+				Utils.getLogger().info("Roman Artifact 9 detected");
+				handler.extractItem(4, 1, false);
+				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
+				TileEntityPointsBlock.playerScore += 50;
+				itemnotfound9 = itemfound;
+				founditem9 = true;
+				itemsleft -=1;
+			}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.ROMAN_ARTIFACT10))) {
+				Utils.getLogger().info("Roman Artifact 10 detected");
+				handler.extractItem(4, 1, false);
+				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
+				TileEntityPointsBlock.playerScore += 50;
+				itemnotfound10 = itemfound;
+				founditem10 = true;
+				itemsleft -=1;
+			}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.ROMAN_ARTIFACT_DEBUG))) {
+				Utils.getLogger().info("Roman Artifact Debug Detected");
+				handler.extractItem(4, 1, false);
+				itemnotfound10 = itemfound;
+				founditem10 = true;
+				itemnotfound9 = itemfound;
+				founditem9 = true;
+				itemnotfound8 = itemfound;
+				founditem8 = true;
+				itemnotfound7 = itemfound;
+				founditem7 = true;
+				itemnotfound6 = itemfound;
+				founditem6 = true;
+				itemnotfound5 = itemfound;
+				founditem5 = true;
+				itemnotfound4 = itemfound;
+				founditem4 = true;
+				itemnotfound3 = itemfound;
+				founditem3 = true;
+				itemnotfound2 = itemfound;
+				founditem2 = true;
+				itemnotfound1 = itemfound;
+				founditem1 = true;
+				itemsleft -=10;
 			}
 			
-			if(allfound == true){
-				if(foundsound==false){
+			else if(founditem1 == true && founditem2 == true && founditem3 == true && founditem4 == true
+					&& founditem5 == true && founditem6 == true && founditem7 == true && founditem8 == true
+					&& founditem9 == true && founditem10 == true){
 				player.playSound(ModSoundHandler.MAWSOUND_TADA, 3.0F, 1.0F);
-				foundsound=true;
-				TileEntityPointsBlock.xyztitle = TileEntityPointsBlock.questcomplete;
-				}
+				Utils.getLogger().info("TileEntityRoman : allfound - TaDa");
+				allfound = true;
+				questrunning=true;
+				TileEntityRomanQuest.relichunttitle = TileEntityPointsBlock.questcomplete;
 			}
+			
+			
+			}
+		}
 		}
 	}
 
-
-}

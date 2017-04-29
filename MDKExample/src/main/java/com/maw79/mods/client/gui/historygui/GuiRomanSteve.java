@@ -33,9 +33,6 @@ public class GuiRomanSteve extends GuiScreen {
 	
 	public static int questnumber = 0;
 	
-	
-	    
-	
 	final ResourceLocation texture = new ResourceLocation(Reference.MOD_ID, "textures/gui/roman_quest.png");
     int guiWidth = 175;
     int guiHeight = 210;
@@ -85,10 +82,7 @@ public class GuiRomanSteve extends GuiScreen {
     		fontRendererObj.drawString("§c"+TileEntityRomanQuest.buildertitle, (-50), (40), 0xffffff);
     		fontRendererObj.drawString("§d"+TileEntityRomanQuest.relichunttitle, (-50), (56), 0xffffff);
     		fontRendererObj.drawString("§6"+TileEntityRomanQuest.romanquiztitle, (-50), (74), 0xffffff);
-    	//	fontRendererObj.drawString("§2"+TileEntityPointsBlock.xyztitle, (-50), (90), 0xffffff);
-    		
-    		
-    		
+    
         }
         
         
@@ -100,7 +94,7 @@ public class GuiRomanSteve extends GuiScreen {
         text.add("§9"+"QUEST INFORMATION" +"§f"+ "\nSelect a Quest below. Follow the instruction manuals given by Roman Steve."
         		+ " Completing the activitys will reward you with achievements and points that can be used to purchase items to gain more points."
         		+ " Points can also be used to buy Teleporter Tokens that will take you to other Islands.\n\n"
-        		+ "Roman Steve has 3 Quests available. The Build Quest will require Pier Marking / Review."
+        		+ "Roman Steve has 3 Quests available. The Build Quest will require Peer Marking / Review."
         				+ "\n\nMore help on quests can be found in the individual manuals given by Roman Steve."); 
      
         drawTooltip(text, mouseX, mouseY, centerX +155, centerY +5, 15, 15);
@@ -128,7 +122,7 @@ public class GuiRomanSteve extends GuiScreen {
 		buttonList.add(button2alt = new GuiButton(BUTTON2alt, (width / 2), centerY + 59, 80, 20, "Claim Reward"));
 		
 		
-		if (TileEntityPointsBlock.thirdscomplete == false) {
+		if (TileEntityRomanQuest.allfound == false) {
 			buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) + 40, centerY + 83, 36, 20, "Select"));
 		}
 		buttonList.add(button3alt = new GuiButton(BUTTON3alt, (width / 2), centerY + 83, 80, 20, "Claim Reward"));
@@ -156,9 +150,9 @@ public class GuiRomanSteve extends GuiScreen {
       }
         }
         
-        //Third 
-        if(TileEntityPointsBlock.thirdsclaimed == false){
-      if(TileEntityPointsBlock.thirdscomplete == true){
+        //Relic Quest
+        if(TileEntityRomanQuest.relicrewardclaimed == false){
+      if(TileEntityRomanQuest.allfound == true){
     	  button3alt.visible=true;
       }
         }
@@ -170,13 +164,7 @@ public class GuiRomanSteve extends GuiScreen {
       }
         }
         
-        if(TileEntityPointsBlock.xyzclaimed == false){
-            if(TileEntityCoordinatesQuest.allfound == true){
-          	  button5alt.visible=true;
-            }
-              }
-     
-       
+  
         super.initGui();
     }
     
@@ -199,30 +187,31 @@ public class GuiRomanSteve extends GuiScreen {
             	// Build Quest
         		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
         		TileEntityPointsBlock.playerScore +=50;
+        		TileEntityPointsBlock.playerScore += TileEntityRomanQuest.scorecard;
+        		TileEntityRomanQuest.scorecard=0;
         		button2alt.visible=false;
         		questnumber = 0;
         		TileEntityRomanQuest.buildrewardclaimed = true;
+        		TileEntityRomanQuest.buildmodedone = false;
             	break;
             	
             	
-            	
-            	
-            case BUTTON3://Thirds
+            case BUTTON3://Relics
             	questnumber = 2;
         		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-        		if(TileEntityPointsBlock.fractionmanualgive == false){
-            		Maw79Mod.NETWORK.sendToServer(new FractionsManualMessage(mc.player));
-            		TileEntityPointsBlock.fractionmanualgive = true;
+        		if(TileEntityRomanQuest.relicquestbookgive == false){
+            		Maw79Mod.NETWORK.sendToServer(new RomanQuestMessage(mc.player));
+            		TileEntityRomanQuest.relicquestbookgive = true;
             	}
             	break;
             	
             case BUTTON3alt:
-            	// Thirds
+            	// Relics
         		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
         		TileEntityPointsBlock.playerScore +=50;
         		button3alt.visible=false;
         		questnumber = 0;
-        		TileEntityPointsBlock.thirdsclaimed = true;
+        		TileEntityRomanQuest.relicrewardclaimed = true;
             	break;
             	
             	

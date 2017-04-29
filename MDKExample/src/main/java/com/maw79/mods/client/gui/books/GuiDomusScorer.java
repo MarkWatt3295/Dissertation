@@ -15,7 +15,7 @@ import java.io.IOException;
 
 
 public class GuiDomusScorer extends GuiScreen {
-
+	
     final ResourceLocation texture = new ResourceLocation(Reference.MOD_ID, "textures/gui/book2.png");
     int guiWidth = 175;
     int guiHeight = 228;
@@ -157,95 +157,98 @@ public class GuiDomusScorer extends GuiScreen {
         }
        	 else if (parButton == buttonWindows)	{
            Utils.getLogger().info("Button Windows");
-           TileEntityPointsBlock.playerScore+=20;
+           TileEntityRomanQuest.scorecard+=20;
            TileEntityRomanQuest.windowsbutton=true;
            buttonWindows.enabled=false;
     }
        	 else if (parButton == buttonPaintings)	{
              Utils.getLogger().info("Button Paintings");
-             TileEntityPointsBlock.playerScore+=20;
+             TileEntityRomanQuest.scorecard+=20;
              TileEntityRomanQuest.Paintings=true;
              buttonPaintings.enabled=false;
       }
        	 else if (parButton == buttonMultiplefloors)	{
              Utils.getLogger().info("Button Multiple Floors");
-             TileEntityPointsBlock.playerScore+=20;
+             TileEntityRomanQuest.scorecard+=20;
              TileEntityRomanQuest.Multiplefloors=true;
              buttonMultiplefloors.enabled=false;
       }
      	 else if (parButton == buttonPool)	{
              Utils.getLogger().info("Button Pool");
-             TileEntityPointsBlock.playerScore+=20;
+             TileEntityRomanQuest.scorecard+=20;
              TileEntityRomanQuest.Pool=true;
              buttonPool.enabled=false;
       }
      	 else if (parButton == buttonMultipleRooms)	{
              Utils.getLogger().info("Button Multiple Rooms");
-             TileEntityPointsBlock.playerScore+=20;
+             TileEntityRomanQuest.scorecard+=20;
              TileEntityRomanQuest.MultipleRooms=true;
              buttonMultipleRooms.enabled=false;
       }
     	 else if (parButton == buttonMainBedroom)	{
              Utils.getLogger().info("Button Main Bedroom");
-             TileEntityPointsBlock.playerScore+=20;
+             TileEntityRomanQuest.scorecard+=20;
              TileEntityRomanQuest.MainBedroom=true;
              buttonMainBedroom.enabled=false;
       }
     	 else if (parButton == buttonCouches)	{
              Utils.getLogger().info("Button Couches");
+             TileEntityRomanQuest.scorecard+=20;
+             TileEntityRomanQuest.Couches=true;
+             buttonCouches.enabled=false;
       }
     	 else if (parButton == buttonCulina)	{
              Utils.getLogger().info("Button Culina");
-             TileEntityPointsBlock.playerScore+=20;
+             TileEntityRomanQuest.scorecard+=20;
              TileEntityRomanQuest.Culina=true;
              buttonCulina.enabled=false;
       }
     	 else if (parButton == buttonStudy)	{
              Utils.getLogger().info("Button Study");
-             TileEntityPointsBlock.playerScore+=20;
+             TileEntityRomanQuest.scorecard+=20;
              TileEntityRomanQuest.Study=true;
              buttonStudy.enabled=false;
       }
     	 else if (parButton == buttonAtrium)	{
              Utils.getLogger().info("Button Atrium");
-             TileEntityPointsBlock.playerScore+=20;
+             TileEntityRomanQuest.scorecard+=20;
              TileEntityRomanQuest.Atrium=true;
              buttonAtrium.enabled=false;
       }
     	 else if (parButton == buttonGarden)	{
              Utils.getLogger().info("Button Garden");
-             TileEntityPointsBlock.playerScore+=20;
+             TileEntityRomanQuest.scorecard+=20;
              TileEntityRomanQuest.Garden=true;
              buttonGarden.enabled=false;
       } 
     	 else if (parButton == buttonSecretPassage)	{
           Utils.getLogger().info("Button Secret Passage");
-          TileEntityPointsBlock.playerScore+=20;
+          TileEntityRomanQuest.scorecard+=20;
           TileEntityRomanQuest.SecretPassage=true;
           buttonSecretPassage.enabled=false;
    }
         
     else if (parButton == buttonBed)	{
            Utils.getLogger().info("Button Bed");
-           TileEntityPointsBlock.playerScore+=20;
+           TileEntityRomanQuest.scorecard+=20;
            TileEntityRomanQuest.Bed=true;
            buttonBed.enabled=false;
     }
     else if (parButton == buttonTriclinium)	{
         Utils.getLogger().info("Button Triclinium");
-        TileEntityPointsBlock.playerScore+=20;
+        TileEntityRomanQuest.scorecard+=20;
         TileEntityRomanQuest.Triclinium=true;
         buttonTriclinium.enabled=false;
  }
     else if (parButton == buttonImpluvium)	{
         Utils.getLogger().info("Button Impluvium");
-        TileEntityPointsBlock.playerScore+=20;
+        TileEntityRomanQuest.scorecard+=20;
         TileEntityRomanQuest.Impluvium=true;
         buttonImpluvium.enabled=false;
  }
     else if (parButton == buttonPosticum)	{
         Utils.getLogger().info("Button Posticum");
-        TileEntityPointsBlock.playerScore+=20;
+        TileEntityRomanQuest.scorecard+=20;
         TileEntityRomanQuest.Posticum=true;
         buttonPosticum.enabled=false;
  }

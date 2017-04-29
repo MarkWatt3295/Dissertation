@@ -41,9 +41,9 @@ public class RomanQuestPacketHandler implements IMessageHandler<RomanQuestMessag
 					player.sendMessage(new TextComponentString("§c"+"Player Given Builder Quest Items"));
 				}
 				else if(GuiRomanSteve.questnumber == 2){
-					EntityItem item1 = new EntityItem(world, x, y, z, new ItemStack(ModItems.EVEN_BOOK));
+					EntityItem item1 = new EntityItem(world, x, y, z, new ItemStack(ModItems.ROMAN_ARTIFACTS_MANUAL));
 					world.spawnEntity(item1);
-					player.sendMessage(new TextComponentString("§d"+"Player Given Even Quest Manual"));
+					player.sendMessage(new TextComponentString("§c"+"Player Given Relic Hunter Quest Items"));
 				}
 				else if(GuiRomanSteve.questnumber == 3){
 					EntityItem item1 = new EntityItem(world, x, y, z, new ItemStack(ModItems.ODD_BOOK));

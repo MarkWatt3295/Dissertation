@@ -66,25 +66,25 @@ public class GuiRomanQuest extends GuiContainer {
 		
     	
 		//Default Strings
-		String s = ("Roman Quests"); 
-		String s2 = ("Return Items Here");
+		String s = ("Roman Artifact Quest"); 
+		String s2 = ("Insert Roman Artifacts Here");
 		String s3 = "";
 		String s4 = "";
 		String s5 = "";
 		String s6 = "";
-		String findnums = "Items Left To find : "+"§a"+TileEntityRomanQuest.itemsleft;
+		String findnums = "Artifacts Left To find : "+"§a"+TileEntityRomanQuest.itemsleft;
 		
 		if(TileEntityRomanQuest.itemsleft == 0){
-			findnums = "§a"+"All Items Found";
+			findnums = "§a"+"All Artifact Have Been Found";
 		}
 		
 		if(help == true){
-			 s = ("Roman Quest Help");
+			 s = ("Roman Artifact Quest Help");
 			 findnums ="";
-			 s2 = ("Head to a coordinates location");
-			 s3 = ("You will need to dig to reach them");
-			 s4 = ("Read the Coordinates Manual");
-			 s5 = ("For more help with this Quest");
+			 s2 = ("Search Chests for Roman Artifacts");
+			 s3 = ("Place Artifacts in this Block");
+			 s4 = ("You need to find all 10 Artifacts");
+			 s5 = ("To compete this Quest");
 			 s6 = ("");
 			
 		}
