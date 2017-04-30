@@ -12,7 +12,7 @@ public class ModCrafting {
 		GameRegistry.addShapedRecipe(new ItemStack(ModBlocks.rubyblock), "RRR", "RRR", "RRR", 'R', ModItems.ruby);
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.ruby), Items.EMERALD, Items.REDSTONE);
 		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.ruby), Items.EMERALD, new ItemStack(Blocks.WOOL, 1,0)); //Quantity folllowed by metadata
-		
+		GameRegistry.addShapelessRecipe(new ItemStack(ModItems.obsidianingot), ModItems.ARTIFACT1);
 		//GameRegistry.addShapelessRecipe(new ItemStack(ModItems.ruby), new ItemStack(Blocks.DIRT), new ItemStack(Blocks.DIRT)); Testing making com.maw79.mods.items
 		//1f = 1 XP
 		

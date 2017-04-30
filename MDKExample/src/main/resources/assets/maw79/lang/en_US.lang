@@ -1,12 +1,25 @@
 //Creative Menu Tabs
 itemGroup.maw79 blocks=Maw79 Blocks
 itemGroup.maw79 items=Maw79 Items
+itemGroup.maw79 history items=Maw79 History Items
 itemGroup.maw79 mathsblocks=Maw79 Maths Blocks
 itemGroup.maw79 debug=Maw79 Debug Tools
 itemGroup.maw79 unused=Maw79 Unused
 itemGroup.maw79 scratch blocks=Maw79 Scratch Blocks
 
 //Items
+item.artifact_amulet.name=Amulet
+item.artifact_ankh.name=Ankh
+item.artifact_pyramidion.name=Pyramidion
+item.artifact_canopic_jar.name=Canopic Jar
+item.artifact_papyrus.name=Papyrus
+item.artifact_scarab.name=Scarab
+item.artifact_sarcophagus.name=Sarcophagus
+item.artifact_senet.name=Senet
+item.artifact_sphinx.name=Sphinx
+item.artifact_falsedoor.name=False Door
+item.artifact_funerary.name=Funerary
+item.artifact_mummy.name=Mummy
 item.builders_coin_debug.name=Builder Coin Debug
 item.domus_builder.name=Domus Builder Manual
 item.gravity_booster.name=Gravity Booster
@@ -52,8 +65,38 @@ item.coordinates_quest_item_8.name=Coordinates Quest Item 8
 item.coordinates_quest_manual.name=Coordinates Quest Manual
 
 //HISTORY ITEMS
-item.artifact1.name=Artifact 1
-item.artifact2.name=Artifact 2
+item.artifact1.name=Unknown Artifact
+item.artifact2.name=Unknown Artifact
+item.artifact3.name=Unknown Artifact
+item.artifact4.name=Unknown Artifact
+item.artifact5.name=Unknown Artifact
+item.artifact6.name=Unknown Artifact
+item.artifact7.name=Unknown Artifact
+item.artifact8.name=Unknown Artifact
+item.artifact9.name=Unknown Artifact
+item.artifact10.name=Unknown Artifact
+item.artifact11.name=Unknown Artifact
+item.artifact12.name=Unknown Artifact
+item.artifact13.name=Unknown Artifact
+item.artifact14.name=Unknown Artifact
+item.artifact15.name=Unknown Artifact
+item.artifact16.name=Unknown Artifact
+item.artifact17.name=Unknown Artifact
+item.artifact18.name=Unknown Artifact
+item.artifact19.name=Unknown Artifact
+item.artifact20.name=Unknown Artifact
+item.artifact21.name=Unknown Artifact
+
+item.fragment1.name=Fragment 1
+item.fragment2.name=Fragment 2
+item.fragment3.name=Fragment 3
+item.fragment4.name=Fragment 4
+item.fragment5.name=Fragment 5
+item.fragment6.name=Fragment 6
+item.fragment7.name=Fragment 7
+item.fragment8.name=Fragment 8
+item.fragment9.name=Fragment 9
+
 item.roman_artifact1.name=Roman Artifact 1 (Hunt Cup)
 item.roman_artifact2.name=Roman Artifact 2 (Tombstone)
 item.roman_artifact3.name=Roman Artifact 3 (Actors Mask)
@@ -312,6 +355,21 @@ gui.block_breaker.enchanted_book.tooltip=Enchanted book goes here
 gui.guisciencete.button3.tooltip=Maw79 KS2 Mod Configuration
 
 //TOOL TIPS
+maw79.amulet.tooltip=The Ancient Egyptians believed wearing Amulets and Talismans would bring them luck and protect them from HArm and Danger.
+maw79.ankh.tooltip=The Ankh is an Ancient Egyptian Hieroglyphic that means Life.
+maw79.canopic.tooltip=Canopic jars were used by the ancient Egyptians during the mummificaton process to store and preserve the Organs of their owner for the afterlife. They were commonly either carved from limestone or were made of pottery.
+maw79.falsedoor.tooltip=The Ancient Egyptians believed that the false door was a threshold between the worlds of the living and the dead and through which a deity or the spirit of the deceased could enter and exit.
+maw79.cone.tooltip=Funerary cones were small cones made from clay that were placed in Ancient Egyptian tombs. Prayers would be inscribed on the cones.
+maw79.mummy.tooltip=Ancient Egyptians would mummifie there deceased. They would do this as they believed it would preserve the deceaseds body for the afterlife.
+maw79.papyrus.tooltip=Papyrus is first known to have been used in ancient Egypt. It was an early form of paper and was used to document and inscribe events creating books, pictures and documents.
+maw79.pstone.tooltip=Also known as a Benben stone. It is the uppermost piece in an Ancient Egyptian Pyramid (Pyramids Point). It would be inscribed with the tomb owners names and religious symbols.
+maw79.sarco.tooltip=The Stone coffins which mummified bodys where placed in. The Sarcophagus was heavily detailed and often sculpted in the shape of the deceased, Gods or Sacred Animals.
+maw79.scarab.tooltip=The Scarab was conciderd a Sacred Insect in Ancient Egypt.
+maw79.senet.tooltip=is one of the oldest known board games. This board game would have been played in Ancient Egypt.
+maw79.sphinx.tooltip=A Sphinx is a mythical creature with the head of a human and the body of a lion.
+
+maw79.fragment.tooltip=Place all 9 Fragment Pieces in the crafting table in order to rebuild the Relic.
+maw79.artifact.tooltip=Place the Unknown Artifact in a Crafting Table to Analyse the Artifact.
 maw79.jumpbooster.tooltip=This Item increases Player Jump Height. For Maximum effect use it at a Jumps Peak. Good for 2 Jumps!
 maw79.romanartifactsmanual.tooltip=This Book tracks the Roman Artifacts you need to find.
 maw79.domusbuilderbook.tooltip=This book gives information on the Building Quest.

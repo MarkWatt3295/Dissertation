@@ -107,6 +107,7 @@ public  class EntityRomanSteve extends EntityCreature {
 	@Override
 	public boolean processInteract(EntityPlayer entity, EnumHand hand) {
 		super.processInteract(entity, hand);
+		entity.playSound(ModSoundHandler.MAWSOUND_PAGETURN, 3.0F, 1.0F);
 		int i = (int) this.posX;
 		int j = (int) this.posY;
 		int k = (int) this.posZ;

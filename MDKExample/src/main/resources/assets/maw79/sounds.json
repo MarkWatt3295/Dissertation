@@ -120,4 +120,16 @@
         "subtitle": "mawsound.chime",
         "sounds": [ { "name": "maw79:mawsound/chime", "stream": true } ]
     }
+      ,
+      "mawsound.warp": {
+        "category": "block",
+        "subtitle": "mawsound.warp",
+        "sounds": [ { "name": "maw79:mawsound/warp", "stream": true } ]
+    }
+      ,
+      "mawsound.drill": {
+        "category": "block",
+        "subtitle": "mawsound.drill",
+        "sounds": [ { "name": "maw79:mawsound/drill", "stream": true } ]
+    }
 }

@@ -32,6 +32,8 @@ public class ModSoundHandler {
 	public static SoundEvent MAWSOUND_INCORRECT;
 	public static SoundEvent MAWSOUND_RUSTLE;
 	public static SoundEvent MAWSOUND_CHIME;
+	public static SoundEvent MAWSOUND_WARP;
+	public static SoundEvent MAWSOUND_DRILL;
 	
 	
 	
@@ -60,7 +62,8 @@ public class ModSoundHandler {
 		MAWSOUND_INCORRECT = register("mawsound.incorrect");
 		MAWSOUND_RUSTLE = register("mawsound.rustle");
 		MAWSOUND_CHIME = register("mawsound.chime");
-		
+		MAWSOUND_DRILL = register("mawsound.drill");
+		MAWSOUND_WARP = register("mawsound.warp");
 	}
 	
 	public static SoundEvent register(String name) {

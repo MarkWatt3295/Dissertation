@@ -35,7 +35,7 @@ import com.maw79.mods.blocks.mathsblocks.BlockMathsDivisionBlock;
 import com.maw79.mods.blocks.mathsblocks.BlockMathsQuestionBlock;
 import com.maw79.mods.blocks.mathsblocks.BlockMathsQuizBlock;
 import com.maw79.mods.blocks.mathsblocks.BlockMathsSubtractionBlock;
-import com.maw79.mods.blocks.mathsblocks.mcreator_testBlock;
+import com.maw79.mods.blocks.mathsblocks.Block_testBlock;
 import com.maw79.mods.blocks.mathsblocks.coordinatesquest.BlockCoordinatesQuest;
 import com.maw79.mods.blocks.mathsblocks.questblock.BlockMathsQuest;
 import com.maw79.mods.blocks.mathsblocks.recycler.BlockRecycler;
@@ -223,7 +223,7 @@ public class ModBlocks {
 		//MATHS BLOCKS
 		mathblock1 = new BlockBasicBlock("math_block_1");
 		mathblock2 = new BlockBasicBlock("math_block_2");
-		newtestblock = new mcreator_testBlock("newtestblock");
+		newtestblock = new Block_testBlock("newtestblock");
 		mathsquestionblock = new BlockMathsQuestionBlock("maths_question_block");
 		mathsquestionblock2 = new BlockMathsQuestionBlock("maths_question_block2");
 		mathsquizblock = new BlockMathsQuizBlock("maths_quiz1");

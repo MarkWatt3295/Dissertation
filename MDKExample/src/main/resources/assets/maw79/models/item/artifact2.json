@@ -1,7 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "maw79:items/artifact2"
+        "layer0": "maw79:items/artifact0"
      },
       
     "display": {

@@ -14,12 +14,14 @@ import com.maw79.mods.render.RenderFarmerJoeFactory;
 import com.maw79.mods.render.RenderHomerFactory;
 import com.maw79.mods.render.RenderHumanFactory;
 import com.maw79.mods.render.RenderMathsShopkeeperFactory;
+import com.maw79.mods.render.RenderMummyFactory;
 import com.maw79.mods.render.RenderNumberHunterFactory;
 import com.maw79.mods.render.RenderRomanSteveFactory;
 import com.maw79.mods.render.RenderScarecrowFactory;
 import com.maw79.mods.render.RenderTestFactory;
 import com.maw79.mods.render.RenderTokenShopkeeper;
 import com.maw79.mods.render.RenderTourGuideFactory;
+import com.maw79.mods.render.RenderWanderingExplorerFactory;
 import com.maw79.mods.render.RenderWanderingInfoRomanFactory;
 import com.maw79.mods.render.RenderWanderingRomanFactory;
 import com.maw79.mods.util.Utils;
@@ -57,6 +59,16 @@ public class EntitiesLivingHandler {
 		createRomanGuide(EntityRomanGuide.class, "Roman Guide", 789, 567, 15);
 		createWanderingRoman(EntityWanderingRoman.class, "Wandering Roman", 789, 567, 16);
 		createWanderingInfoRoman(EntityWanderingInfoRoman.class, "Wandering Info Roman", 789, 567, 17);
+		createWanderingExplorer(EntityWanderingExplorer.class, "Wandering Explorer", 4334, 1234, 18);
+		createMummy(EntityMummy.class, "Mummy", 7829, 2567, 19);
+	}
+	private static void createMummy(Class entityClass, String entityName, int solidColor, int spotColor, int id){
+		Utils.getLogger().info("EntitiesLivingHandler: createMummy");
+		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, entityName, id, Maw79Mod.instance, 64, 1, true, solidColor, spotColor);
+	}
+	private static void createWanderingExplorer(Class entityClass, String entityName, int solidColor, int spotColor, int id){
+		Utils.getLogger().info("EntitiesLivingHandler: createWanderingExplorer");
+		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, entityName, id, Maw79Mod.instance, 64, 1, true, solidColor, spotColor);
 	}
 	private static void createWanderingInfoRoman(Class entityClass, String entityName, int solidColor, int spotColor, int id){
 		Utils.getLogger().info("EntitiesLivingHandler: createWanderingInfoRoman");
@@ -159,6 +171,8 @@ public class EntitiesLivingHandler {
 		registerRomanSteve(EntityRomanSteve.class, RenderRomanSteveFactory.INSTANCE);
 		registerWanderingRoman(EntityWanderingRoman.class, RenderWanderingRomanFactory.INSTANCE);
 		registerWanderingInfoRoman(EntityWanderingInfoRoman.class, RenderWanderingInfoRomanFactory.INSTANCE);
+		registerWanderingExplorer(EntityWanderingExplorer.class, RenderWanderingExplorerFactory.INSTANCE);
+		registerMummy(EntityMummy.class, RenderMummyFactory.INSTANCE);
 	}
 	
 	
@@ -270,6 +284,18 @@ public class EntitiesLivingHandler {
 	private static <T extends EntityCreature> void registerWanderingInfoRoman(Class<T> entity, IRenderFactory<? super T> renderFactory3)
 	{
 		Utils.getLogger().info("EntitiesLivingHandler: registerWanderingInfoRoman");
+		
+		RenderingRegistry.registerEntityRenderingHandler(entity, renderFactory3);
+	}
+	private static <T extends EntityCreature> void registerWanderingExplorer(Class<T> entity, IRenderFactory<? super T> renderFactory3)
+	{
+		Utils.getLogger().info("EntitiesLivingHandler: registerWanderingExplorer");
+		
+		RenderingRegistry.registerEntityRenderingHandler(entity, renderFactory3);
+	}
+	private static <T extends EntityCreature> void registerMummy(Class<T> entity, IRenderFactory<? super T> renderFactory3)
+	{
+		Utils.getLogger().info("EntitiesLivingHandler: registerMummy");
 		
 		RenderingRegistry.registerEntityRenderingHandler(entity, renderFactory3);
 	}

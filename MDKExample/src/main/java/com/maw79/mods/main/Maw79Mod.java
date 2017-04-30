@@ -9,6 +9,7 @@ import com.maw79.mods.commands.MawStandard;
 import com.maw79.mods.config.Maw79Config;
 import com.maw79.mods.creativetabs.Maw79BlocksTab;
 import com.maw79.mods.creativetabs.Maw79DebugTab;
+import com.maw79.mods.creativetabs.Maw79HistoryItemsTab;
 import com.maw79.mods.creativetabs.Maw79ItemsTab;
 import com.maw79.mods.creativetabs.Maw79MathsBlocksTab;
 import com.maw79.mods.creativetabs.Maw79ScratchBlocksTab;
@@ -102,6 +103,7 @@ public class Maw79Mod {
 	public static final CreativeTabs blocks = new Maw79BlocksTab();
 	public static final CreativeTabs debug = new Maw79DebugTab();
 	public static final CreativeTabs items = new Maw79ItemsTab();
+	public static final CreativeTabs historyitems = new Maw79HistoryItemsTab();
 	public static final CreativeTabs mathsblocks = new Maw79MathsBlocksTab();
 	public static final CreativeTabs mathsscratchblocks = new Maw79ScratchBlocksTab();
 	public static final CreativeTabs unused = new Maw79UnusedTab();

@@ -81,8 +81,8 @@ public class GuiRomanQuest extends GuiContainer {
 		if(help == true){
 			 s = ("Roman Artifact Quest Help");
 			 findnums ="";
-			 s2 = ("Search Chests for Roman Artifacts");
-			 s3 = ("Place Artifacts in this Block");
+			 s2 = ("Search Chests for the Artifacts");
+			 s3 = ("Place Artifacts in this Block.");
 			 s4 = ("You need to find all 10 Artifacts");
 			 s5 = ("To compete this Quest");
 			 s6 = ("");

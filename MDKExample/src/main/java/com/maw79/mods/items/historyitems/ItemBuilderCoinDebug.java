@@ -8,6 +8,7 @@ import com.maw79.mods.client.gui.GuiNotif;
 import com.maw79.mods.client.gui.books.GuiNumberSequence;
 import com.maw79.mods.client.gui.books.GuiOddManual;
 import com.maw79.mods.handlers.ModEventHandler;
+import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.util.Utils;
 
@@ -33,9 +34,8 @@ public class ItemBuilderCoinDebug extends Item{
 	
 	@Override
 	public  ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
+		player.playSound(ModSoundHandler.MAWSOUND_DRILL, 2.0F, 1.0F);
 		if(!player.world.isRemote){
-			//ModEventHandler.romandomus = true;
-			//ModEventHandler.adminmode = false;
 			TileEntityRomanQuest.buildmodedone=true;
 			player.inventory.getCurrentItem().damageItem(2, player );
 			GuiNotif.xyztrack = "";

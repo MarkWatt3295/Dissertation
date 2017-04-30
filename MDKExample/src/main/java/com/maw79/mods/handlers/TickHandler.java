@@ -16,9 +16,13 @@ public class TickHandler {
 
 public static boolean npcwait = false;
 public static boolean npcwait2 = false;
+public static boolean wandererwait = false;
+public static boolean mummywait = false;
+public static int mummytick = 0;
 public static int ticker = 0;
 public static int npcticker = 0;
 public static int npcticker2 = 0;
+public static int wandererticker=0;
 public static String ticktime = "";
 
 @SubscribeEvent
@@ -107,6 +111,36 @@ public void romanInfo(PlayerTickEvent handler){
 			Utils.getLogger().info("Npc Wait Over");
 			npcwait2 =false;
 			npcticker2 = 0;
+		}
+}
+}
+
+@SubscribeEvent
+public void explorertick(PlayerTickEvent handler){
+	if(wandererwait == true){
+		if (this.wandererticker < 350){
+			wandererticker++;
+			System.out.println("Wander Ticker Ticker Ticks executed:" + wandererticker);
+	}
+		if(wandererticker == 350){
+			Utils.getLogger().info("WanderTicker Wait Over");
+			wandererwait =false;
+			wandererticker = 0;
+		}
+}
+}
+
+@SubscribeEvent
+public void mummyticks(PlayerTickEvent handler){
+	if(mummywait == true){
+		if (this.mummytick < 350){
+			mummytick++;
+			System.out.println("Mummy Ticker Ticks executed:" + mummytick);
+	}
+		if(mummytick == 350){
+			Utils.getLogger().info("Mummy Wait Over");
+			mummywait =false;
+			mummytick = 0;
 		}
 }
 }
