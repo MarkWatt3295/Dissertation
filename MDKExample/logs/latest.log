@@ -1,39 +1,39 @@
-[17:19:54] [Client thread/INFO]: Setting user: Player90
-[17:20:01] [Client thread/WARN]: Skipping bad option: lastServer:
-[17:20:01] [Client thread/INFO]: LWJGL Version: 2.9.2
-[17:20:07] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Teaching Keystage 2 Via Minecraft
-[17:20:11] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[17:20:12] [Thread-6/INFO]: Initializing LWJGL OpenAL
-[17:20:12] [Thread-6/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[17:20:12] [Thread-6/INFO]: OpenAL initialized.
-[17:20:12] [Sound Library Loader/INFO]: Sound engine started
-[17:20:15] [Client thread/INFO]: Created: 16x16 textures-atlas
-[17:20:16] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Teaching Keystage 2 Via Minecraft
-[17:20:18] [Client thread/INFO]: SoundSystem shutting down...
-[17:20:19] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
-[17:20:19] [Sound Library Loader/INFO]: Starting up SoundSystem...
-[17:20:19] [Thread-8/INFO]: Initializing LWJGL OpenAL
-[17:20:19] [Thread-8/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
-[17:20:19] [Thread-8/INFO]: OpenAL initialized.
-[17:20:19] [Sound Library Loader/INFO]: Sound engine started
-[17:20:21] [Client thread/INFO]: Created: 1024x512 textures-atlas
-[17:20:23] [Client thread/WARN]: Skipping bad option: lastServer:
-[17:20:25] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
-[17:20:33] [Server thread/INFO]: Starting integrated minecraft server version 1.11.2
-[17:20:33] [Server thread/INFO]: Generating keypair
-[17:20:34] [Server thread/INFO]: Preparing start region for level 0
-[17:20:35] [Server thread/INFO]: Preparing spawn area: 11%
-[17:20:36] [Server thread/INFO]: Changing view distance to 14, from 10
-[17:20:37] [Server thread/INFO]: Player90[local:E:6700f13b] logged in with entity id 33 at (55.72769248891086, 66.0, 178.85406994740208)
-[17:20:37] [Server thread/INFO]: Player90 joined the game
-[17:20:37] [Server thread/INFO]: [STDOUT]: Player Joined Called
-[17:20:39] [Client thread/INFO]: [CHAT] §aThank you, Player90, for downloading my KS2 MOD!
-[17:20:39] [Server thread/INFO]: Saving and pausing game...
-[17:20:39] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
-[17:20:39] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
-[17:20:39] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
-[17:20:39] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2716ms behind, skipping 54 tick(s)
-[17:20:39] [pool-2-thread-1/WARN]: Couldn't look up profile properties for com.mojang.authlib.GameProfile@6a5f73a8[id=e5bad5ae-87fa-3676-b10f-8a571200822c,name=Player90,properties={},legacy=false]
+[02:06:49] [Client thread/INFO]: Setting user: Player536
+[02:06:56] [Client thread/WARN]: Skipping bad option: lastServer:
+[02:06:56] [Client thread/INFO]: LWJGL Version: 2.9.2
+[02:07:00] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Teaching Keystage 2 Via Minecraft
+[02:07:03] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[02:07:04] [Thread-6/INFO]: Initializing LWJGL OpenAL
+[02:07:04] [Thread-6/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[02:07:04] [Thread-6/INFO]: OpenAL initialized.
+[02:07:04] [Sound Library Loader/INFO]: Sound engine started
+[02:07:07] [Client thread/INFO]: Created: 16x16 textures-atlas
+[02:07:08] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Teaching Keystage 2 Via Minecraft
+[02:07:09] [Client thread/INFO]: SoundSystem shutting down...
+[02:07:10] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[02:07:10] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[02:07:10] [Thread-8/INFO]: Initializing LWJGL OpenAL
+[02:07:10] [Thread-8/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[02:07:10] [Thread-8/INFO]: OpenAL initialized.
+[02:07:10] [Sound Library Loader/INFO]: Sound engine started
+[02:07:12] [Client thread/INFO]: Created: 1024x512 textures-atlas
+[02:07:14] [Client thread/WARN]: Skipping bad option: lastServer:
+[02:07:15] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
+[02:07:22] [Server thread/INFO]: Starting integrated minecraft server version 1.11.2
+[02:07:22] [Server thread/INFO]: Generating keypair
+[02:07:22] [Server thread/INFO]: Preparing start region for level 0
+[02:07:23] [Server thread/INFO]: Preparing spawn area: 5%
+[02:07:24] [Server thread/INFO]: Changing view distance to 14, from 10
+[02:07:26] [Server thread/INFO]: Player536[local:E:83785846] logged in with entity id 28 at (60.30584567678699, 66.0, 174.794482765378)
+[02:07:26] [Server thread/INFO]: Player536 joined the game
+[02:07:26] [Server thread/INFO]: [STDOUT]: Player Joined Called
+[02:07:28] [Server thread/INFO]: Saving and pausing game...
+[02:07:28] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[02:07:28] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[02:07:28] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[02:07:28] [Client thread/INFO]: [CHAT] §aThank you, Player536, for downloading my KS2 MOD!
+[02:07:28] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2452ms behind, skipping 49 tick(s)
+[02:07:28] [pool-2-thread-1/WARN]: Couldn't look up profile properties for com.mojang.authlib.GameProfile@38ab97dc[id=8cfc5391-e37d-328f-a689-9b5f6c4663f5,name=Player536,properties={},legacy=false]
 com.mojang.authlib.exceptions.AuthenticationException: The client has sent too many requests within a certain amount of time
 	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.makeRequest(YggdrasilAuthenticationService.java:79) ~[YggdrasilAuthenticationService.class:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.fillGameProfile(YggdrasilMinecraftSessionService.java:180) [YggdrasilMinecraftSessionService.class:?]
@@ -55,7 +55,27 @@ com.mojang.authlib.exceptions.AuthenticationException: The client has sent too m
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142) [?:1.8.0_121]
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617) [?:1.8.0_121]
 	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_121]
-[17:20:40] [Server thread/INFO]: Saving and pausing game...
-[17:20:40] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
-[17:20:40] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
-[17:20:40] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[02:07:30] [Client thread/INFO]: [STDOUT]: Printing from Shopkeeper mob
+[02:07:31] [Server thread/INFO]: [STDOUT]: Printing from Shopkeeper mob
+[02:08:14] [Client thread/INFO]: [STDOUT]: Printing from Shopkeeper mob
+[02:08:14] [Server thread/INFO]: [STDOUT]: Printing from Shopkeeper mob
+[02:08:41] [Client thread/INFO]: [STDOUT]: Printing from Shopkeeper mob
+[02:08:42] [Server thread/INFO]: [STDOUT]: Printing from Shopkeeper mob
+[02:08:51] [Client thread/INFO]: [STDOUT]: Printing from Shopkeeper mob
+[02:08:51] [Server thread/INFO]: [STDOUT]: Printing from Shopkeeper mob
+[02:09:52] [Server thread/INFO]: Saving and pausing game...
+[02:09:52] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[02:09:52] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[02:09:52] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[02:09:54] [Server thread/INFO]: Stopping server
+[02:09:54] [Server thread/INFO]: Saving players
+[02:09:54] [Server thread/INFO]: Player536 lost connection: TextComponent{text='Disconnected', siblings=[], style=Style{hasParent=false, color=null, bold=null, italic=null, underlined=null, obfuscated=null, clickEvent=null, hoverEvent=null, insertion=null}}
+[02:09:54] [Server thread/INFO]: Player536 left the game
+[02:09:54] [Server thread/INFO]: Stopping singleplayer server as player logged out
+[02:09:54] [Server thread/INFO]: Saving worlds
+[02:09:54] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Overworld
+[02:09:54] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/Nether
+[02:09:54] [Server thread/INFO]: Saving chunks for level 'Maw79 Mod MCedit V3'/The End
+[02:10:03] [Client thread/INFO]: Stopping!
+[02:10:03] [Client thread/INFO]: SoundSystem shutting down...
+[02:10:04] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com

@@ -82,6 +82,32 @@ public class TileEntityRomanQuest extends TileEntity implements ITickable, ICapa
 	private boolean foundsound = false;
 	private boolean questrunning = false;
 	
+	//Variables For Quiz
+	public static boolean button1pressed = false;
+	public static boolean button1enabled = false;
+	public static boolean button2pressed = false;
+	public static boolean button2enabled = false;
+	public static boolean button3pressed = false;
+	public static boolean button3enabled = false;
+	public static boolean button4pressed = false;
+	public static boolean button4enabled = false;
+	public static boolean button5pressed = false;
+	public static boolean button5enabled = false;
+	
+	public static boolean right1tpressed = false;
+	public static boolean right1tenabled = false;
+	public static boolean right2tpressed = false;
+	public static boolean right2tenabled = false;
+	public static boolean right3tpressed = false;
+	public static boolean right3tenabled = false;
+	public static boolean right4tpressed = false;
+	public static boolean right4tenabled = false;
+	public static boolean right5tpressed = false;
+	public static boolean right5tenabled = false;
+	
+	public static boolean allpressed = false;
+	public static boolean quizrewardclaimed = false;
+	public static boolean quizrunning = false;
 
 	/**
 	 * Initializes our variables. MUST NOT HAVE ANY PARAMETERS
@@ -263,6 +289,18 @@ public class TileEntityRomanQuest extends TileEntity implements ITickable, ICapa
 			}
 			
 			
+			}
+			
+			if(quizrunning==false){
+				if(button1pressed==true && button2pressed==true && button3pressed==true && button4pressed==true && button5pressed==true
+						&& right1tpressed==true && right2tpressed==true && right3tpressed==true && right4tpressed==true && right5tpressed==true){
+					Utils.getLogger().info("All Buttons Pressed");
+					allpressed= true;
+					player.playSound(ModSoundHandler.MAWSOUND_TADA, 3.0F, 1.0F);
+					Utils.getLogger().info("TileEntityRoman : quizrunning - TaDa : line 300");
+					TileEntityRomanQuest.romanquiztitle = TileEntityPointsBlock.questcomplete;
+					quizrunning=true;
+				}
 			}
 		}
 		}

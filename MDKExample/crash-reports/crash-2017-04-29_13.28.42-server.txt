@@ -1,0 +1,79 @@
+---- Minecraft Crash Report ----
+// Shall we play a game?
+
+Time: 4/29/17 1:28 PM
+Description: Ticking block entity
+
+java.lang.NullPointerException: Ticking block entity
+	at com.maw79.mods.blocks.historyblocks.romanquests.TileEntityRomanQuest.update(TileEntityRomanQuest.java:262)
+	at net.minecraft.world.World.updateEntities(World.java:1949)
+	at net.minecraft.world.WorldServer.updateEntities(WorldServer.java:648)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:795)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:699)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:156)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:548)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at com.maw79.mods.blocks.historyblocks.romanquests.TileEntityRomanQuest.update(TileEntityRomanQuest.java:262)
+
+-- Block entity being ticked --
+Details:
+	Name: maw79:roman_quest // com.maw79.mods.blocks.historyblocks.romanquests.TileEntityRomanQuest
+	Block type: ID #372 (tile.domus_scorer // com.maw79.mods.blocks.historyblocks.romanquests.BlockDomusScorer)
+	Block data value: 0 / 0x0 / 0b0000
+	Block location: World: (59,66,178), Chunk: (at 11,4,2 in 3,11; contains blocks 48,0,176 to 63,255,191), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Actual block type: ID #372 (tile.domus_scorer // com.maw79.mods.blocks.historyblocks.romanquests.BlockDomusScorer)
+	Actual block data value: 0 / 0x0 / 0b0000
+Stacktrace:
+	at net.minecraft.world.World.updateEntities(World.java:1949)
+	at net.minecraft.world.WorldServer.updateEntities(WorldServer.java:648)
+
+-- Affected level --
+Details:
+	Level name: Maw79 Mod MCedit V3
+	All players: 1 total; [EntityPlayerMP['Player586'/89243, l='Maw79 Mod MCedit V3', x=26.50, y=63.00, z=-63.50]]
+	Chunk stats: ServerChunkCache: 844 Drop: 0
+	Level seed: -5032577977843402752
+	Level generator: ID 00 - default, ver 1. Features enabled: true
+	Level generator options: 
+	Level spawn location: World: (34,63,-58), Chunk: (at 2,3,6 in 2,-4; contains blocks 32,0,-64 to 47,255,-49), Region: (0,-1; contains chunks 0,-32 to 31,-1, blocks 0,0,-512 to 511,255,-1)
+	Level time: 814805 game time, 2673 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 11935 (now: false), thunder time: 20520 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:795)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:699)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:156)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:548)
+	at java.lang.Thread.run(Thread.java:745)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.11.2
+	Operating System: Mac OS X (x86_64) version 10.12.5
+	Java Version: 1.8.0_121, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 2718270288 bytes (2592 MB) / 4067950592 bytes (3879 MB) up to 4067950592 bytes (3879 MB)
+	JVM Flags: 2 total; -Xmx4G -Xms4G
+	IntCache: cache: 0, tcache: 0, allocated: 12, tallocated: 94
+	FML: MCP 9.38 Powered by Forge 13.20.0.2228 5 mods loaded, 5 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAAAAAAA	minecraft{1.11.2} [Minecraft] (minecraft.jar) 
+	UCHIJAAAAAAAAA	mcp{9.19} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAAAAAAA	FML{8.0.99.99} [Forge Mod Loader] (forgeSrc-1.11.2-13.20.0.2228.jar) 
+	UCHIJAAAAAAAAA	forge{13.20.0.2228} [Minecraft Forge] (forgeSrc-1.11.2-13.20.0.2228.jar) 
+	UCHIJAAAAAAAAA	maw79{0.40 mathsbuild - Alpha} [Teaching Keystage 2 Via Minecraft] (bin) 
+	Loaded coremods (and transformers): 
+	Profiler Position: N/A (disabled)
+	Player Count: 1 / 8; [EntityPlayerMP['Player586'/89243, l='Maw79 Mod MCedit V3', x=26.50, y=63.00, z=-63.50]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'

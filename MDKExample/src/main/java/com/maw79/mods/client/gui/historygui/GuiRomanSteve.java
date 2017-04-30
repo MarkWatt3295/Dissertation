@@ -128,7 +128,7 @@ public class GuiRomanSteve extends GuiScreen {
 		buttonList.add(button3alt = new GuiButton(BUTTON3alt, (width / 2), centerY + 83, 80, 20, "Claim Reward"));
 
 		
-		if (TileEntityPointsBlock.quarterscomplete == false) {
+		if (TileEntityRomanQuest.allpressed == false) {
 		buttonList.add(button4 = new GuiButton(BUTTON4, (width / 2) + 40, centerY + 109, 36, 20, "Select"));
 		}
 		buttonList.add(button4alt = new GuiButton(BUTTON4alt, (width / 2), centerY + 109, 80, 20, "Claim Reward"));
@@ -157,9 +157,9 @@ public class GuiRomanSteve extends GuiScreen {
       }
         }
         
-        //Quarter 
-        if(TileEntityPointsBlock.quartersclaimed == false){
-      if(TileEntityPointsBlock.quarterscomplete == true){
+        //Quiz 
+        if(TileEntityRomanQuest.quizrewardclaimed == false){
+      if(TileEntityRomanQuest.allpressed == true){
     	  button4alt.visible=true;
       }
         }
@@ -217,13 +217,10 @@ public class GuiRomanSteve extends GuiScreen {
             	
             	
             	
-            case BUTTON4: //Quarters 
+            case BUTTON4: //Quiz
             	questnumber = 3;
         		mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-        		if(TileEntityPointsBlock.fractionmanualgive == false){
-            		Maw79Mod.NETWORK.sendToServer(new FractionsManualMessage(mc.player));
-            		TileEntityPointsBlock.fractionmanualgive = true;
-            	}
+        		Minecraft.getMinecraft().displayGuiScreen(new GuiRomanQuiz());
             	break;
             	
             case BUTTON4alt:
@@ -232,7 +229,7 @@ public class GuiRomanSteve extends GuiScreen {
         		TileEntityPointsBlock.playerScore +=50;
         		button4alt.visible=false;
         		questnumber = 0;
-        		TileEntityPointsBlock.quartersclaimed = true;
+        		TileEntityRomanQuest.quizrewardclaimed = true;
             	break;
             	
             	

@@ -115,8 +115,7 @@ public  class EntityRomanGuide extends EntityCreature {
 			System.out.println("Printing from Roman Shopkeeper");
 			 if (this.world.isRemote)
 		        {
-		            int basicID = this.getEntityId();
-		           // entity.openGui(Maw79Mod.instance, GuiHandler.STORE_GUI, this.world, basicID, 0, 0);
+		          
 		            Minecraft.getMinecraft().displayGuiScreen(new GuiRomanStore());
 		            
 		           

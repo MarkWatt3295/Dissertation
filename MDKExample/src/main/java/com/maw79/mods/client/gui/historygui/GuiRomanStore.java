@@ -13,6 +13,7 @@ import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.network.store.FarmerCoinsMessage;
 import com.maw79.mods.network.store.MathsStore1Message;
+import com.maw79.mods.network.store.RomanStoreMessage;
 import com.maw79.mods.network.store.StoreItem1Message;
 
 import net.minecraft.client.Minecraft;
@@ -101,7 +102,7 @@ public class GuiRomanStore extends GuiScreen {
         button5.drawButton(mc, mouseX, mouseY);
         ItemStack icon = new ItemStack(ModItems.LEVITATION_DUST2);
         ItemStack icon2 = new ItemStack(ModItems.BUILDER_COIN);
-        ItemStack icon3 = new ItemStack(Items.POTIONITEM);
+        ItemStack icon3 = new ItemStack(ModItems.JUMP_BOOSTER);
         ItemStack icon4 = new ItemStack(Blocks.CHEST);
         ItemStack icon5 = new ItemStack(ModItems.HISTORYBOOK);
         
@@ -201,7 +202,7 @@ public class GuiRomanStore extends GuiScreen {
             	if(TileEntityPointsBlock.playerScore >= 40){
             		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
             		buttonvalue = 1;
-            		Maw79Mod.NETWORK.sendToServer(new FarmerCoinsMessage(mc.player));
+            		Maw79Mod.NETWORK.sendToServer(new RomanStoreMessage(mc.player));
             		TileEntityPointsBlock.playerScore -= 40;
             	}
             	else {
@@ -216,7 +217,7 @@ public class GuiRomanStore extends GuiScreen {
             	if(TileEntityPointsBlock.playerScore >= 500){
             		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
             		buttonvalue = 2;
-            		Maw79Mod.NETWORK.sendToServer(new FarmerCoinsMessage(mc.player));
+            		Maw79Mod.NETWORK.sendToServer(new RomanStoreMessage(mc.player));
             		TileEntityPointsBlock.playerScore -= 500;
             	}
             	else {
@@ -231,7 +232,7 @@ public class GuiRomanStore extends GuiScreen {
             	if(TileEntityPointsBlock.playerScore >= 30){
             		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
             		buttonvalue = 3;
-            		Maw79Mod.NETWORK.sendToServer(new FarmerCoinsMessage(mc.player));
+            		Maw79Mod.NETWORK.sendToServer(new RomanStoreMessage(mc.player));
             		TileEntityPointsBlock.playerScore -= 30;
             	}
             	else {
@@ -246,7 +247,7 @@ public class GuiRomanStore extends GuiScreen {
             	if(TileEntityPointsBlock.playerScore >= 5){
             		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
             		buttonvalue = 4;
-            		Maw79Mod.NETWORK.sendToServer(new FarmerCoinsMessage(mc.player));
+            		Maw79Mod.NETWORK.sendToServer(new RomanStoreMessage(mc.player));
             		TileEntityPointsBlock.playerScore -= 5;
             	}
             	else {
@@ -261,7 +262,7 @@ public class GuiRomanStore extends GuiScreen {
             	if(TileEntityPointsBlock.playerScore >= 30){
             		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
             		buttonvalue = 5;
-            		Maw79Mod.NETWORK.sendToServer(new FarmerCoinsMessage(mc.player));
+            		Maw79Mod.NETWORK.sendToServer(new RomanStoreMessage(mc.player));
             		TileEntityPointsBlock.playerScore -= 30;
             	}
             	else {

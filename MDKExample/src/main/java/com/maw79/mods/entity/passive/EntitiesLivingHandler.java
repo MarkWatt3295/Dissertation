@@ -8,6 +8,7 @@ import com.maw79.mods.render.RenderDaveFactory;
 import com.maw79.mods.render.RenderElkFactory;
 import com.maw79.mods.render.RenderEntityTokenShopkeeper;
 import com.maw79.mods.render.RenderEntityTourGuide;
+import com.maw79.mods.render.RenderEntityWanderingRoman;
 import com.maw79.mods.render.RenderFarmerCoinsFactory;
 import com.maw79.mods.render.RenderFarmerJoeFactory;
 import com.maw79.mods.render.RenderHomerFactory;
@@ -19,6 +20,8 @@ import com.maw79.mods.render.RenderScarecrowFactory;
 import com.maw79.mods.render.RenderTestFactory;
 import com.maw79.mods.render.RenderTokenShopkeeper;
 import com.maw79.mods.render.RenderTourGuideFactory;
+import com.maw79.mods.render.RenderWanderingInfoRomanFactory;
+import com.maw79.mods.render.RenderWanderingRomanFactory;
 import com.maw79.mods.util.Utils;
 
 import net.minecraft.entity.Entity;
@@ -43,7 +46,6 @@ public class EntitiesLivingHandler {
 		createElk(Elk.class, "Elk", 0x73388, 0x247480, 4);
 		createBeetle(EntityBeetle.class, "Beetle", 0x1111, 0x12830, 5);
 		createTourGuide(EntityTourGuide.class, "Tour Guide", 789, 567, 6);
-		createRomanGuide(EntityRomanGuide.class, "Roman Guide", 789, 567, 6);
 		createShopkeeper(EntityTokenShopKeeper.class, "Shopkeeper", 439, 127, 7);
 		createHomer(EntityHomer.class, "Homer", 439, 127, 8);
 		createNumberHunter(EntityNumberHunter.class, "Number Hunter", 222, 555, 9);
@@ -52,6 +54,17 @@ public class EntitiesLivingHandler {
 		createScarecrow(EntityScarecrow.class, "Scarecrow", 555, 999, 12);
 		createFarmerCoins(EntityFarmerCoins.class, "Farmer Coins", 0xa444, 0xed8215, 13);
 		createRomanSteve(EntityRomanSteve.class, "Roman Steve", 0xff3245, 0xed2215, 14);
+		createRomanGuide(EntityRomanGuide.class, "Roman Guide", 789, 567, 15);
+		createWanderingRoman(EntityWanderingRoman.class, "Wandering Roman", 789, 567, 16);
+		createWanderingInfoRoman(EntityWanderingInfoRoman.class, "Wandering Info Roman", 789, 567, 17);
+	}
+	private static void createWanderingInfoRoman(Class entityClass, String entityName, int solidColor, int spotColor, int id){
+		Utils.getLogger().info("EntitiesLivingHandler: createWanderingInfoRoman");
+		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, entityName, id, Maw79Mod.instance, 64, 1, true, solidColor, spotColor);
+	}
+	private static void createWanderingRoman(Class entityClass, String entityName, int solidColor, int spotColor, int id){
+		Utils.getLogger().info("EntitiesLivingHandler: createWanderingRoman");
+		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, entityName, id, Maw79Mod.instance, 64, 1, true, solidColor, spotColor);
 	}
 	private static void createRomanSteve(Class entityClass, String entityName, int solidColor, int spotColor, int id){
 		Utils.getLogger().info("EntitiesLivingHandler: createRomanSteve");
@@ -144,6 +157,8 @@ public class EntitiesLivingHandler {
 		registerScarecrow(EntityScarecrow.class, RenderScarecrowFactory.INSTANCE);
 		registerFarmerCoins(EntityFarmerCoins.class, RenderFarmerCoinsFactory.INSTANCE);
 		registerRomanSteve(EntityRomanSteve.class, RenderRomanSteveFactory.INSTANCE);
+		registerWanderingRoman(EntityWanderingRoman.class, RenderWanderingRomanFactory.INSTANCE);
+		registerWanderingInfoRoman(EntityWanderingInfoRoman.class, RenderWanderingInfoRomanFactory.INSTANCE);
 	}
 	
 	
@@ -243,6 +258,18 @@ public class EntitiesLivingHandler {
 	private static <T extends EntityCreature> void registerRomanSteve(Class<T> entity, IRenderFactory<? super T> renderFactory3)
 	{
 		Utils.getLogger().info("EntitiesLivingHandler: registerRomanSteve");
+		
+		RenderingRegistry.registerEntityRenderingHandler(entity, renderFactory3);
+	}
+	private static <T extends EntityCreature> void registerWanderingRoman(Class<T> entity, IRenderFactory<? super T> renderFactory3)
+	{
+		Utils.getLogger().info("EntitiesLivingHandler: registerWanderingRoman");
+		
+		RenderingRegistry.registerEntityRenderingHandler(entity, renderFactory3);
+	}
+	private static <T extends EntityCreature> void registerWanderingInfoRoman(Class<T> entity, IRenderFactory<? super T> renderFactory3)
+	{
+		Utils.getLogger().info("EntitiesLivingHandler: registerWanderingInfoRoman");
 		
 		RenderingRegistry.registerEntityRenderingHandler(entity, renderFactory3);
 	}

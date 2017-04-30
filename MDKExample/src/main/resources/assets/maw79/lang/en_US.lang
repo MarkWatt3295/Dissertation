@@ -312,7 +312,7 @@ gui.block_breaker.enchanted_book.tooltip=Enchanted book goes here
 gui.guisciencete.button3.tooltip=Maw79 KS2 Mod Configuration
 
 //TOOL TIPS
-maw79.jumpbooster.tooltip=This Item increases player Jump Height.
+maw79.jumpbooster.tooltip=This Item increases Player Jump Height. For Maximum effect use it at a Jumps Peak. Good for 2 Jumps!
 maw79.romanartifactsmanual.tooltip=This Book tracks the Roman Artifacts you need to find.
 maw79.domusbuilderbook.tooltip=This book gives information on the Building Quest.
 maw79.buildercoin.tooltip=Use this cool to Enable Build Mode

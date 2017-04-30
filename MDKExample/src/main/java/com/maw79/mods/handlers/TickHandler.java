@@ -14,8 +14,11 @@ import net.minecraftforge.fml.common.gameevent.TickEvent.WorldTickEvent;
 
 public class TickHandler {
 
-
+public static boolean npcwait = false;
+public static boolean npcwait2 = false;
 public static int ticker = 0;
+public static int npcticker = 0;
+public static int npcticker2 = 0;
 public static String ticktime = "";
 
 @SubscribeEvent
@@ -76,6 +79,35 @@ if(ModEventHandler.romandomus ==true){
 	}
 
 
+}
+}
+
+@SubscribeEvent
+public void onPlayerTick2(PlayerTickEvent handler){
+	if(npcwait == true){
+		if (this.npcticker < 500){
+			npcticker++;
+			System.out.println("NPC-wait Ticker Ticks executed:" + npcticker);
+	}
+		if(npcticker == 500){
+			Utils.getLogger().info("Npc Wait Over");
+			npcwait =false;
+			npcticker = 0;
+		}
+}
+}
+@SubscribeEvent
+public void romanInfo(PlayerTickEvent handler){
+	if(npcwait2 == true){
+		if (this.npcticker2 < 350){
+			npcticker2++;
+			System.out.println("NPC-wait Ticker Ticks executed:" + npcticker2);
+	}
+		if(npcticker2 == 350){
+			Utils.getLogger().info("Npc Wait Over");
+			npcwait2 =false;
+			npcticker2 = 0;
+		}
 }
 }
 }

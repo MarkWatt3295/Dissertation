@@ -39,7 +39,7 @@ public class RomanStorePacketHandler implements IMessageHandler<RomanStoreMessag
 				double y = player.posY;
 				double z = player.posZ;
 
-				if (GuiFarmerCoins.buttonvalue == 1){
+				if (GuiRomanStore.buttonvalue == 1){
 					EntityItem item1 = new EntityItem(world, x, y, z, new ItemStack(ModItems.LEVITATION_DUST2));
 					world.spawnEntity(item1);
 				}
