@@ -42,6 +42,7 @@ import com.maw79.mods.items.historyitems.ItemFuneraryCone;
 import com.maw79.mods.items.historyitems.ItemHistoryBook;
 import com.maw79.mods.items.historyitems.ItemMummy;
 import com.maw79.mods.items.historyitems.ItemPapyrus;
+import com.maw79.mods.items.historyitems.ItemPharoh;
 import com.maw79.mods.items.historyitems.ItemPyramidionStone;
 import com.maw79.mods.items.historyitems.ItemRomanArtifactsManual;
 import com.maw79.mods.items.historyitems.ItemSarcophagus;
@@ -203,6 +204,7 @@ public class ModItems {
 	public static ItemArtifact ARTIFACT19 = new ItemArtifact("artifact19");
 	public static ItemArtifact ARTIFACT20 = new ItemArtifact("artifact20");
 	public static ItemArtifact ARTIFACT21 = new ItemArtifact("artifact21");
+	public static ItemPharoh PHAROH = new ItemPharoh("pharoh");
 	
 	public static ItemFragment FRAGMENT1 = new ItemFragment("fragment1");
 	public static ItemFragment FRAGMENT2 = new ItemFragment("fragment2");
@@ -328,6 +330,7 @@ public class ModItems {
 		registerItem(ARTIFACT19);
 		registerItem(ARTIFACT20);
 		registerItem(ARTIFACT21);
+		registerItem(PHAROH);
 		
 		registerItem(FRAGMENT1);
 		registerItem(FRAGMENT2);
@@ -561,6 +564,8 @@ public class ModItems {
 		registerRender(ARTIFACT19);
 		registerRender(ARTIFACT20);
 		registerRender(ARTIFACT21);
+		registerRender(PHAROH);
+		PHAROH.setCreativeTab(Maw79Mod.historyitems);
 		ARTIFACT1.setCreativeTab(Maw79Mod.historyitems);
 		ARTIFACT2.setCreativeTab(Maw79Mod.historyitems);
 		ARTIFACT3.setCreativeTab(Maw79Mod.historyitems);

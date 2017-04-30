@@ -112,6 +112,7 @@ item.roman_artifacts_manual.name=Roman Artifact Manual
 item.history_book.name=History Book
 item.builders_coin.name=Builders Coin
 item.jump_booster.name=Jump Booster
+item.pharoh.name=Tutankhamun Burial Mask
 
 //Science Items
 item.fire_element.name=Fire Element
@@ -367,6 +368,7 @@ maw79.sarco.tooltip=The Stone coffins which mummified bodys where placed in. The
 maw79.scarab.tooltip=The Scarab was conciderd a Sacred Insect in Ancient Egypt.
 maw79.senet.tooltip=is one of the oldest known board games. This board game would have been played in Ancient Egypt.
 maw79.sphinx.tooltip=A Sphinx is a mythical creature with the head of a human and the body of a lion.
+maw79.pharoh.tooltip=The Golden Burial Mask of the Pharoh Tutankhamun.
 
 maw79.fragment.tooltip=Place all 9 Fragment Pieces in the crafting table in order to rebuild the Relic.
 maw79.artifact.tooltip=Place the Unknown Artifact in a Crafting Table to Analyse the Artifact.
