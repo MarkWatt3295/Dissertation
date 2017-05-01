@@ -19,7 +19,10 @@ public class TileEntityPointsBlock extends TileEntity implements ITickable, ICap
 
 	
 	public static int playerScore = 0;
-	
+	public static double playerX=0;
+	public static double playerY=0;
+	public static double playerZ=0;
+	public static boolean spawnIsSet=false;
 	
 	public static int halfscorrect = 5;
 	public static int thirdscorrect = 5;

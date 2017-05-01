@@ -124,14 +124,14 @@ public  class EntityMummy extends EntityCreature {
 					String[] egyptiansayings = {
 							"These Bandages are Itchy",
 							"Smells like old socks in these bandages",
-							" Most Ancient Egyptian pyramids were built as tombs for pharaohs and their families. To date, over 130 pyramids have been discovered in Egypt",
+							"Most Ancient Egyptian pyramids were built as tombs for pharaohs and their families. To date, over 130 pyramids have been discovered in Egypt",
 							"A Pharaoh is the ruler of Egypt. Kind of like the King or Emporer",
 							"The afterlife was incredibly important to the Egyptians. They believed that by preserving a dead person’s body. Which they did through the process of mummification",
-							" The Pyramid of Khufu at Giza is the largest Egyptian pyramid. This incredible structure weighs as much as 16 Empire State buildings!",
+							"The Pyramid of Khufu at Giza is the largest Egyptian pyramid. This incredible structure weighs as much as 16 Empire State buildings!",
 							"Both Egyptian men and women wore make-up. The eye-paint was usually green (made from copper) or black (made from lead). As well as offering protection from the sun, the Egyptians believed make-up had magical healing powers, too!",
 							"Unwrapped, the bandages of an Ancient Egyptian mummy could stretch for 1.6km",
 							"The Egyptian alphabet contained more than 700 hieroglyphs!",
-							" Ancient Egyptians believed in more than 2,000 deities! They had gods for everything, from dangers to chores! Each had different responsibilities and needed to be worshipped so that life could be kept in balance",
+							"Ancient Egyptians believed in more than 2,000 deities! They had gods for everything, from dangers to chores! Each had different responsibilities and needed to be worshipped so that life could be kept in balance",
 							"Cats were considered to be a sacred animal by the Ancient Egyptians. It’s thought that most families kept a cat as a pet, which they believed would bring the household good luck!",
 							"The Ancient Egyptians invented lots of things we still use today, such as paper, pens, locks and keys and – believe it or not – toothpaste!"
 					};
@@ -141,6 +141,7 @@ public  class EntityMummy extends EntityCreature {
 				 entity.sendMessage(new TextComponentString("§6"+"Facts Mummy: \n\n"+"§6"+"\""+ "§f"+ egyptiantalk+"§6"+"\""));
 				 entity.sendMessage(new TextComponentString(" "));
 		         TickHandler.mummywait = true;
+		         TickHandler.npcchats -=1;
 		            
 		        }
 			}

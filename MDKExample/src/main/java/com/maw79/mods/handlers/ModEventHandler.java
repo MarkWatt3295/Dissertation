@@ -13,6 +13,7 @@ import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
 import com.google.common.base.Stopwatch;
+import com.maw79.mods.blocks.pointsblocks.TileEntityPointsBlock;
 import com.maw79.mods.blocks.scienceblocks.BlockScienceWool;
 import com.maw79.mods.client.gui.GuiNotif;
 import com.maw79.mods.init.ModBlocks;
@@ -63,7 +64,7 @@ public static boolean romandomus = false;
     	
     	player.fallDistance = 0.0F;
     	
-    	
+    
     	ItemStack hand = player.inventory.getCurrentItem();
     	Item blocky = Item.getItemFromBlock(Blocks.SANDSTONE);
     	if(romandomus==false){
@@ -117,7 +118,7 @@ public static boolean romandomus = false;
     	{
     	Utils.getLogger().info("OnDeath Event Called");
     	EntityPlayer player = (EntityPlayer) event.getEntity();
-    	
+    	TileEntityPointsBlock.playerScore-=300;
     	
     	}
     }
@@ -185,6 +186,21 @@ public static boolean romandomus = false;
         	//player.addStat(AchievementHandler.achievementNewIngot);
         }
 
+    }
+    
+    @SubscribeEvent
+    public void PlayerRespawn(EntityJoinWorldEvent event) {
+    	if(!(event.getEntity() instanceof EntityPlayer)) {
+    		return;
+    	}
+    	EntityPlayer player = (EntityPlayer) event.getEntity();
+    	if(!event.getEntity().getEntityWorld().isRemote) {
+    		Utils.getLogger().info("Respawn Fired!");
+    		if(TileEntityPointsBlock.spawnIsSet==true){
+    		//player.attemptTeleport(TileEntityPointsBlock.playerX, TileEntityPointsBlock.playerY, TileEntityPointsBlock.playerZ);
+    			 
+    		}
+    	}
     }
 
 

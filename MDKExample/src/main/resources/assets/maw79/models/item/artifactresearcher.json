@@ -1,6 +1,6 @@
  { 
     "parent": "block/cube_all",
         "textures": {
-            "all": "maw79:blocks/artifactresearcher"
+            "all": "maw79:blocks/egypt_quest_block"
       }
    }

@@ -8,6 +8,7 @@ itemGroup.maw79 unused=Maw79 Unused
 itemGroup.maw79 scratch blocks=Maw79 Scratch Blocks
 
 //Items
+item.egyptmanual.name=Egypt Artifact Hunt Manual
 item.artifact_amulet.name=Amulet
 item.artifact_ankh.name=Ankh
 item.artifact_pyramidion.name=Pyramidion
@@ -306,7 +307,7 @@ tile.artifact_ore.name=Artifact Ore
 tile.artifact_ore.overworld.name=Artifact Ore
 tile.artifact_ore.end.name=End Artifact Ore
 tile.artifact_ore.nether.name=Nether Artifact Ore
-tile.artifactresearcher.name=Artifact Researcher
+tile.artifactresearcher.name=Egypt Quest Block
 tile.bright_sandstone.name=Bright Sandstone
 	
 

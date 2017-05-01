@@ -24,6 +24,7 @@ public static int npcticker = 0;
 public static int npcticker2 = 0;
 public static int wandererticker=0;
 public static String ticktime = "";
+public static int npcchats = 6;
 
 @SubscribeEvent
 public void onWorldTick(WorldTickEvent handler){

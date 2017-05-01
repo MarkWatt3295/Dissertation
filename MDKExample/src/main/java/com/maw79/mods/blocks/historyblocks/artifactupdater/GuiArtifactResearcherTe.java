@@ -2,6 +2,8 @@ package com.maw79.mods.blocks.historyblocks.artifactupdater;
 
 
 import java.io.IOException;
+
+import com.maw79.mods.client.gui.GuiMathsQuestGive;
 import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.main.Reference;
 import net.minecraft.client.gui.GuiButton;
@@ -14,7 +16,6 @@ import net.minecraft.util.SoundEvent;
 import net.minecraftforge.items.CapabilityItemHandler;
 
 /**
- * The {@link BlockBreaker}'s gui
  * @author Mark Watt
  *
  */
@@ -25,12 +26,12 @@ public class GuiArtifactResearcherTe extends GuiContainer {
 	 */
 	private TileEntityArtifactResearcher te;
 	private IInventory playerInv;
-	GuiButton button1, button2, button3, button4, button5;
-	final int BUTTON1= 1, BUTTON2 = 2, BUTTON3 = 3, BUTTON4 = 4, BUTTON5 = 5;
+	GuiButton button1, button3, button4, button5, reward;
+	final int BUTTON1= 1, BUTTON3 = 3, BUTTON4 = 4, BUTTON5 = 5;
+	
+	
 
 	public boolean help = false;
-	
-	
 	
 	public GuiArtifactResearcherTe(IInventory playerInv, TileEntityArtifactResearcher te) {
 		super(new ContainerArtifactResearcher(playerInv, te));
@@ -49,10 +50,10 @@ public class GuiArtifactResearcherTe extends GuiContainer {
 	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
 		GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F); //Grey background
 		if(help == true){
-			mc.getTextureManager().bindTexture(new ResourceLocation(Reference.MOD_ID, "textures/gui/container/insulatorcalculatorhelp.png"));
+			mc.getTextureManager().bindTexture(new ResourceLocation(Reference.MOD_ID, "textures/gui/container/mathsquesthelp.png"));
 		}
 		else{
-		this.mc.getTextureManager().bindTexture(new ResourceLocation(Reference.MOD_ID, "textures/gui/container/insulatorcalculator.png"));
+		this.mc.getTextureManager().bindTexture(new ResourceLocation(Reference.MOD_ID, "textures/gui/container/mathsquest.png"));
 		}//Binds the texture for rendering
 		this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize); //Draws our texture
 	}
@@ -62,27 +63,41 @@ public class GuiArtifactResearcherTe extends GuiContainer {
 	 */
 	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-		String s = ("Insulator Calculator"); 
-		String s1 = "";
 		
-		String s2 = ("Insert Insulation Blocks");
+    	
+		//Default Strings
+		String s = ("Egypt Artifact Quest"); 
+		String s2 = ("Insert Found Artifacts Here");
 		String s3 = "";
 		String s4 = "";
+		String s5 = "";
+		String s6 = "";
+		String findnums = "Artifacts Left To find : "+"§a"+TileEntityArtifactResearcher.itemsleft;
 		
+		if(TileEntityArtifactResearcher.itemsleft == 0){
+			findnums = "§a"+"All Artifact Have Been Found";
+		}
 		
-		 if(help == true){
-			 s = ("Insulator Calculator Help");
-			 s2 = ("Insulator Block Inputs");
-			 s3 = ("Put Insulator Blocks");
-			 s4 = ("in order of best Insulator");
+		if(help == true){
+			 s = ("Egypt Artifact Quest Help");
+			 findnums ="";
+			 s2 = ("Search Chests for the Artifacts");
+			 s3 = ("Place Artifacts in this Block.");
+			 s4 = ("You need to find all 13 Artifacts");
+			 s5 = ("To compete this Quest");
+			 s6 = ("");
 			
 		}
-	
+		
+			
 	//DECIMAL COLOUR VALUES
-		this.mc.fontRendererObj.drawString(s, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s) / 2, 6, 30000); //Draws the block breaker name in the center on the top of the gui
-		this.mc.fontRendererObj.drawString(s2, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s2) / 2, 22, 4210752);
-		this.mc.fontRendererObj.drawString(s3, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s3) / 2, 82, 4210752);
-		this.mc.fontRendererObj.drawString(s4, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s4) / 2, 92, 4210752);
+		this.mc.fontRendererObj.drawString(s, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s) / 2, 6, 65372); 
+		this.mc.fontRendererObj.drawString(s2, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s2) / 2, 22, 6029262);
+		this.mc.fontRendererObj.drawString(s3, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s3) / 2, 58, 6029262);
+		this.mc.fontRendererObj.drawString(s4, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s4) / 2, 72, 6029262);
+		this.mc.fontRendererObj.drawString(s5, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s5) / 2, 82, 6029262);
+		this.mc.fontRendererObj.drawString(s6, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s6) / 2, 92, 6029262);
+		this.mc.fontRendererObj.drawString(findnums, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(findnums) / 2, 62, 30000);
 		
 		 
 		int actualMouseX = mouseX - ((this.width - this.xSize) / 2);
@@ -93,17 +108,14 @@ public class GuiArtifactResearcherTe extends GuiContainer {
 	}
 	@Override
     public void initGui() {
-    	
-        buttonList.clear();												//+120 -100
-       // buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) + 80 / 2, (height/2) -5, 30, 20, "Help"));
-       // buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) - 170 / 2, (height/2) -5, 40, 20, "Reset"));
+    
         buttonList.add(button1 = new GuiButton(BUTTON1, (width / 2) + 80 / 2, (height/2) -50, 30, 20, "Back"));
-        buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) -5 / 2, (height/2) -5, 40, 20, "Help"));
-        buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) -95 / 2, (height/2) -5, 40, 20, "Submit"));
+        buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) - 20 , (height/2) -5, 40, 20, "Help"));
       
       
         super.initGui();
         button1.visible = false;
+       
         
     }
 	  @Override
@@ -123,30 +135,20 @@ public class GuiArtifactResearcherTe extends GuiContainer {
 	            	button1.visible = false;
 	            	drawGuiContainerBackgroundLayer(zLevel, BUTTON1, BUTTON1);
 	            	button3.visible = true;
-	            	button2.visible = true;
-	            	
 	            	
 	            	break;
 	            	
-	            case BUTTON2: //submit
-				
-	            	mc.player.playSound(SoundEvent.REGISTRY.getObject(new ResourceLocation(("entity.chicken.egg"))), 1.0F, 1.0F);
-	            	onEvent();
-	            	
-	      
-	            	break;
+	          
 	            	
 	            case BUTTON3: //help
-	            	
-	            	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-	            	
+
 	            	help = true;
 	            	button3.visible = false;
-	            	button2.visible = false;
 	            	drawGuiContainerBackgroundLayer(zLevel, BUTTON3, BUTTON3);
 	            	button1.visible = true;
 	            	
 	            	break;
+	          
 	            	
 	        }
 	      
@@ -154,12 +156,7 @@ public class GuiArtifactResearcherTe extends GuiContainer {
 	      
 	    }
 	
-	 
-
 	
-	 private void onEvent() {
-		
-	}
 
 	@Override
 	    protected void mouseClicked(int mouseX, int mouseY, int mouseButton) throws IOException {

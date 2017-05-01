@@ -33,6 +33,8 @@ import com.maw79.mods.init.ModNumberBlocks;
 import com.maw79.mods.init.ModTools;
 import com.maw79.mods.network.AdminCommandMessage;
 import com.maw79.mods.network.AdminCommandPacketHandler;
+import com.maw79.mods.network.EgyptQuestMessage;
+import com.maw79.mods.network.EgyptQuestPacketHandler;
 import com.maw79.mods.network.FractionsManualMessage;
 import com.maw79.mods.network.FractionsManualPacketHandler;
 import com.maw79.mods.network.GuiInventoryMessage;
@@ -189,6 +191,7 @@ public class Maw79Mod {
 		 NETWORK.registerMessage(XYZPacketHandler.class, XYZMessage.class, 18, Side.SERVER);
 		 NETWORK.registerMessage(RomanQuestPacketHandler.class, RomanQuestMessage.class, 19, Side.SERVER);
 		 NETWORK.registerMessage(RomanStorePacketHandler.class, RomanStoreMessage.class, 20, Side.SERVER);
+		 NETWORK.registerMessage(EgyptQuestPacketHandler.class, EgyptQuestMessage.class, 21, Side.SERVER);
 	
 		 
 	}

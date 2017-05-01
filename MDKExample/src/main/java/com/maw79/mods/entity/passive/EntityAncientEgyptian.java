@@ -1,17 +1,14 @@
 package com.maw79.mods.entity.passive;
 
-import java.util.Random;
-
+import com.maw79.mods.client.gui.historygui.GuiEgyptianQuests;
+import com.maw79.mods.client.gui.mathsgui.GuiScarecrow;
 import com.maw79.mods.handlers.ModSoundHandler;
-import com.maw79.mods.handlers.TickHandler;
-import com.maw79.mods.util.Utils;
-
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAISwimming;
-import net.minecraft.entity.ai.EntityAIWander;
+import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -20,20 +17,16 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
-public  class EntityWanderingExplorer extends EntityCreature {
+public  class EntityAncientEgyptian extends EntityCreature {
 	
 	public final ItemStackHandler handler;
-	
-	
-	
 
-	public EntityWanderingExplorer(World var1) {
+	public EntityAncientEgyptian(World var1) {
 		super(var1);
 		this.handler = new ItemStackHandler(9);
 		world = var1;
@@ -42,11 +35,9 @@ public  class EntityWanderingExplorer extends EntityCreature {
 		this.enablePersistence();
 		setNoAI(!true);
 		this.tasks.addTask(0, new EntityAISwimming(this));
-		this.tasks.addTask(6, new EntityAIWander(this, 1.0D));
-		this.tasks.addTask(8, new EntityAILookIdle(this));
-		this.tasks.addTask(1, new EntityAIWander(this, 0.8D));
-		this.tasks.addTask(1, new EntityAILookIdle(this));
-		setCustomNameTag("Explorer");
+		this.tasks.addTask(1, new EntityAIWatchClosest(this, EntityPlayer.class, 10.0F));
+		this.tasks.addTask(2, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
+		setCustomNameTag("Pyramid Steve");
 		setAlwaysRenderNameTag(true);
 
 	}
@@ -123,43 +114,18 @@ public  class EntityWanderingExplorer extends EntityCreature {
 	@Override
 	public boolean processInteract(EntityPlayer entity, EnumHand hand) {
 		super.processInteract(entity, hand);
-		//entity.playSound(ModSoundHandler.MAWSOUND_CHACHING, 3.0F, 1.0F);
-		
+		entity.playSound(ModSoundHandler.MAWSOUND_PAGETURN, 3.0F, 1.0F);
+		int i = (int) this.posX;
+		int j = (int) this.posY;
+		int k = (int) this.posZ;
+
 		if (true) {
-			if(TickHandler.wandererwait==false){
-			System.out.println("Printing from Wandering Explorer");
+			System.out.println("Printing from Ancient Egyptian");
 			 if (this.world.isRemote)
 			 {
-				 String egyptiantalk;
-					String[] egyptiansayings = {
-							"I love Exploring",
-							"Did you know that Over 130 pyramids have been discovered in Egypt.",
-							"Have you been to Roman Island yet?",
-							"The first Egyptian pyramid is believed to be the Pyramid of Djoser, it was built in Saqqara around 4650 years ago (2640 BC).",
-							"The Great Pyramid of Giza is the oldest and largest of three pyramids in the Giza Necropolis",
-							"For over 3800 years, the Great Pyramid of Giza was the tallest man made structure in the world.",
-							"Nearly all Egyptian Pyramids are located on the west bank of the Nile.",
-							"It sure is hot here!",
-							"Egyptian Pyramids often contain multiple chambers and passages.",
-							"Bodies placed in the tombs were preserved by mummification",
-							"Egyptians buried their dead with burial goods that ranged from everyday items they believed would useful in the afterlife to more expensive items such as jewelry.",
-							"One tomb that was left largely intact was that of Tutankhamun in the Valley of the Kings. Rediscovered in 1922 by Howard Carter, this famous tomb is best known for the solid gold funerary mask of Tutankhamun.",
-							"Tutankhamun was a Pharaoh from 1332 BC to 1323 BC.",
-							"Tutankhamun died when he was only 18, and his body was mummified, which is how the ancient Egyptians preserved their dead.",
-							"Along with a golden burial mask, King Tut’s sandals were also found in the tomb. These had paintings of his enemies on the soles, so everywhere the king went, he trampled all over his foes!",
-							"Tutankhamun was nicknamed the Boy King because he began his reign when he was only nine years old!",
-							"The afterlife was incredibly important to the Egyptians. They believed that by preserving a dead person’s body, which they did through the process of mummification, their soul would live on in the after-life forever."
-							
-					};
-					Random rand = new Random();
-					egyptiantalk = egyptiansayings [rand.nextInt( egyptiansayings.length)];
-				 entity.sendMessage(new TextComponentString(" "));
-				 entity.sendMessage(new TextComponentString("§6"+"Pyramid Explorer: \n\n"+"§6"+"\""+ "§f"+ egyptiantalk+"§6"+"\""));
-				 entity.sendMessage(new TextComponentString(" "));
-		         TickHandler.wandererwait = true;
-		         TickHandler.npcchats -=1;
+		            Minecraft.getMinecraft().displayGuiScreen(new GuiEgyptianQuests());
+		            
 		        }
-			}
 			
 		}
 		//if(!entity.hasAchievement(AchievementHandler.achievementNiceTo)){
@@ -168,7 +134,6 @@ public  class EntityWanderingExplorer extends EntityCreature {
 
 		return true;
 	}
-		
 	
 	
 	@Override

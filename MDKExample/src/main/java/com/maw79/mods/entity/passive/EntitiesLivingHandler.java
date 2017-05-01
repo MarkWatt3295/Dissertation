@@ -5,6 +5,7 @@ import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.render.RenderBeetleFactory;
 import com.maw79.mods.render.RenderDaveFactory;
+import com.maw79.mods.render.RenderEgyptianFactory;
 import com.maw79.mods.render.RenderElkFactory;
 import com.maw79.mods.render.RenderEntityTokenShopkeeper;
 import com.maw79.mods.render.RenderEntityTourGuide;
@@ -61,6 +62,11 @@ public class EntitiesLivingHandler {
 		createWanderingInfoRoman(EntityWanderingInfoRoman.class, "Wandering Info Roman", 789, 567, 17);
 		createWanderingExplorer(EntityWanderingExplorer.class, "Wandering Explorer", 4334, 1234, 18);
 		createMummy(EntityMummy.class, "Mummy", 7829, 2567, 19);
+		createEgyptian(EntityAncientEgyptian.class, "Egyptian", 7829, 2567, 20);
+	}
+	private static void createEgyptian(Class entityClass, String entityName, int solidColor, int spotColor, int id){
+		Utils.getLogger().info("EntitiesLivingHandler: createMummy");
+		EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, entityName, id, Maw79Mod.instance, 64, 1, true, solidColor, spotColor);
 	}
 	private static void createMummy(Class entityClass, String entityName, int solidColor, int spotColor, int id){
 		Utils.getLogger().info("EntitiesLivingHandler: createMummy");
@@ -173,6 +179,7 @@ public class EntitiesLivingHandler {
 		registerWanderingInfoRoman(EntityWanderingInfoRoman.class, RenderWanderingInfoRomanFactory.INSTANCE);
 		registerWanderingExplorer(EntityWanderingExplorer.class, RenderWanderingExplorerFactory.INSTANCE);
 		registerMummy(EntityMummy.class, RenderMummyFactory.INSTANCE);
+		registerEgyptian(EntityAncientEgyptian.class, RenderEgyptianFactory.INSTANCE);
 	}
 	
 	
@@ -296,6 +303,12 @@ public class EntitiesLivingHandler {
 	private static <T extends EntityCreature> void registerMummy(Class<T> entity, IRenderFactory<? super T> renderFactory3)
 	{
 		Utils.getLogger().info("EntitiesLivingHandler: registerMummy");
+		
+		RenderingRegistry.registerEntityRenderingHandler(entity, renderFactory3);
+	}
+	private static <T extends EntityCreature> void registerEgyptian(Class<T> entity, IRenderFactory<? super T> renderFactory3)
+	{
+		Utils.getLogger().info("EntitiesLivingHandler: registerEgyyptian");
 		
 		RenderingRegistry.registerEntityRenderingHandler(entity, renderFactory3);
 	}

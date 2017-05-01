@@ -2,11 +2,13 @@ package com.maw79.mods.blocks;
 
 import java.util.List;
 
+import com.maw79.mods.blocks.pointsblocks.TileEntityPointsBlock;
 import com.maw79.mods.main.Reference;
 import com.maw79.mods.util.Utils;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -19,7 +21,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class BlockSpawnSetter extends Block {
-	
+
 	/**
 	 * Default constructor which sets the hardness and resistance
 	 * @param unlocalizedName The unlocalized name
@@ -40,8 +42,14 @@ public class BlockSpawnSetter extends Block {
 	 @Override
 		public void onEntityWalk(World world, BlockPos pos, Entity entityIn) {
 			if (true) {
-				world.setSpawnPoint(pos);
+			TileEntityPointsBlock.playerX = entityIn.posX;
+			TileEntityPointsBlock.playerY = entityIn.posY;
+			TileEntityPointsBlock.playerZ = entityIn.posZ;
+			TileEntityPointsBlock.spawnIsSet=true;
 				Utils.getLogger().info("Spaw Point set to : "+pos);
+				Utils.getLogger().info("Given point X : "+ entityIn.posX);
+				Utils.getLogger().info("Given point Y : "+ entityIn.posY);
+				Utils.getLogger().info("Given point Z : "+ entityIn.posZ);
 			//if (entityIn instanceof EntityLivingBase)
 			//	((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(MobEffects.LEVITATION, 100, 0));
 			super.onEntityWalk(world, pos, entityIn);

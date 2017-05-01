@@ -36,6 +36,8 @@ import com.maw79.mods.items.historyitems.ItemArtifact;
 import com.maw79.mods.items.historyitems.ItemBuilderCoin;
 import com.maw79.mods.items.historyitems.ItemBuilderCoinDebug;
 import com.maw79.mods.items.historyitems.ItemCanopicJar;
+import com.maw79.mods.items.historyitems.ItemEgyptArtifactsManual;
+import com.maw79.mods.items.historyitems.ItemEgyptQuestDebug;
 import com.maw79.mods.items.historyitems.ItemFalseDoor;
 import com.maw79.mods.items.historyitems.ItemFragment;
 import com.maw79.mods.items.historyitems.ItemFuneraryCone;
@@ -205,7 +207,7 @@ public class ModItems {
 	public static ItemArtifact ARTIFACT20 = new ItemArtifact("artifact20");
 	public static ItemArtifact ARTIFACT21 = new ItemArtifact("artifact21");
 	public static ItemPharoh PHAROH = new ItemPharoh("pharoh");
-	
+	public static ItemEgyptArtifactsManual EGYPT_MANUAL = new ItemEgyptArtifactsManual("egyptmanual");
 	public static ItemFragment FRAGMENT1 = new ItemFragment("fragment1");
 	public static ItemFragment FRAGMENT2 = new ItemFragment("fragment2");
 	public static ItemFragment FRAGMENT3 = new ItemFragment("fragment3");
@@ -230,7 +232,7 @@ public class ModItems {
 	public static ItemMummy ARTIFACT_MUMMY = new ItemMummy("artifact_mummy");
 	
 	
-	
+	public static ItemEgyptQuestDebug QUEST_DEBUG = new ItemEgyptQuestDebug("egypt_quest_debug");
 	
 	public static ItemHistoryBook HISTORYBOOK = new ItemHistoryBook("history_book");
 	public static ItemBuilderCoin BUILDER_COIN = new ItemBuilderCoin("builders_coin");
@@ -331,6 +333,8 @@ public class ModItems {
 		registerItem(ARTIFACT20);
 		registerItem(ARTIFACT21);
 		registerItem(PHAROH);
+		registerItem(QUEST_DEBUG);
+		registerItem(EGYPT_MANUAL);
 		
 		registerItem(FRAGMENT1);
 		registerItem(FRAGMENT2);
@@ -518,6 +522,7 @@ public class ModItems {
 		registerRender(DOMUS_BUILDER);
 		registerRender(ROMAN_ARTIFACTS_MANUAL);
 		registerRender(JUMP_BOOSTER);
+		registerRender(EGYPT_MANUAL);
 		
 		registerRender(COORDINATES_QUEST_ITEM_1);
 		registerRender(COORDINATES_QUEST_ITEM_2);
@@ -565,6 +570,8 @@ public class ModItems {
 		registerRender(ARTIFACT20);
 		registerRender(ARTIFACT21);
 		registerRender(PHAROH);
+		registerRender(QUEST_DEBUG);
+		QUEST_DEBUG.setCreativeTab(Maw79Mod.debug);
 		PHAROH.setCreativeTab(Maw79Mod.historyitems);
 		ARTIFACT1.setCreativeTab(Maw79Mod.historyitems);
 		ARTIFACT2.setCreativeTab(Maw79Mod.historyitems);

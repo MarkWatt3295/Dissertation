@@ -1,24 +1,14 @@
 package com.maw79.mods.blocks.historyblocks.artifactupdater;
 
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
-
-import com.maw79.mods.init.ModBlocks;
+import com.maw79.mods.blocks.pointsblocks.TileEntityPointsBlock;
+import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.init.ModItems;
 import com.maw79.mods.util.Utils;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.inventory.IInventory;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.NetworkManager;
-import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
@@ -31,28 +21,84 @@ import net.minecraftforge.items.ItemStackHandler;
 
 public class TileEntityArtifactResearcher extends TileEntity implements ITickable, ICapabilityProvider {
 
-	/**
-	 * New 1.9.4 onwards. Using forge capabilities instead of {@link IInventory}
-	 */
-	public  ItemStackHandler handler;
+	public static boolean artifactquestcompleted = false;
+	public static String artifacthunttitle ="Artifact Hunt";
+	public static String egyptquiztitle = "Quiz";
+	public static String questcomplete = "§a" + "Completed";
+	public static boolean relicquestbookgive = false;
+	public static boolean artifactqueststart = false;
+	public static boolean relicrewardclaimed = false;
 	
 	
 	
-	public ArrayList<ItemStack>insulators = new ArrayList<ItemStack>();
+	public static String itemnotfound1 = "Item Not Yet Found";
+	public static String itemnotfound2 = "Item Not Yet Found";
+	public static String itemnotfound3 = "Item Not Yet Found";
+	public static String itemnotfound4 = "Item Not Yet Found";
+	public static String itemnotfound5 = "Item Not Yet Found";
+	public static String itemnotfound6 = "Item Not Yet Found";
+	public static String itemnotfound7 = "Item Not Yet Found";
+	public static String itemnotfound8 = "Item Not Yet Found";
+	public static String itemnotfound9 = "Item Not Yet Found";
+	public static String itemnotfound10 = "Item Not Yet Found";
+	public static String itemnotfound11 = "Item Not Yet Found";
+	public static String itemnotfound12 = "Item Not Yet Found";
+	public static String itemnotfound13 = "Item Not Yet Found";
+	public static String itemfound = "§a"+"Item Found";
+	public ItemStackHandler handler;
 	
+	public static int itemsleft = 13;
+	private  boolean founditem1 = false;
+	private  boolean founditem2 = false;
+	private  boolean founditem3 = false;
+	private  boolean founditem4 = false;
+	private  boolean founditem5 = false;
+	private  boolean founditem6 = false;
+	private  boolean founditem7 = false;
+	private  boolean founditem8 = false;
+	private  boolean founditem9 = false;
+	private  boolean founditem10 = false;
+	private  boolean founditem11 = false;
+	private  boolean founditem12 = false;
+	private  boolean founditem13 = false;
+	public static  boolean allfound = false;
+	public static boolean ArtifactManualgive = false;
+	private boolean questrunning = false;
 	
+	//Variables For Quiz
+	public static boolean button1pressed = false;
+	public static boolean button1enabled = false;
+	public static boolean button2pressed = false;
+	public static boolean button2enabled = false;
+	public static boolean button3pressed = false;
+	public static boolean button3enabled = false;
+	public static boolean button4pressed = false;
+	public static boolean button4enabled = false;
+	public static boolean button5pressed = false;
+	public static boolean button5enabled = false;
 	
+	public static boolean right1tpressed = false;
+	public static boolean right1tenabled = false;
+	public static boolean right2tpressed = false;
+	public static boolean right2tenabled = false;
+	public static boolean right3tpressed = false;
+	public static boolean right3tenabled = false;
+	public static boolean right4tpressed = false;
+	public static boolean right4tenabled = false;
+	public static boolean right5tpressed = false;
+	public static boolean right5tenabled = false;
 	
+	public static boolean allpressed = false;
+	public static boolean quizrewardclaimed = false;
+	public static boolean quizrunning = false;
+
 	/**
 	 * Initializes our variables. MUST NOT HAVE ANY PARAMETERS
 	 */
 	public TileEntityArtifactResearcher() {
 		this.handler = new ItemStackHandler(10);
-		
-		
-	}
 
-	
+	}
 	/**
 	 * New 1.9.4 onwards. Capability system
 	 */
@@ -73,7 +119,6 @@ public class TileEntityArtifactResearcher extends TileEntity implements ITickabl
 		return super.hasCapability(capability, facing);
 	}
 
-	
 	public boolean isUseableByPlayer(EntityPlayer player) {
 		return this.world.getTileEntity(this.getPos()) == this
 				&& player.getDistanceSq(this.pos.add(0.5, 0.5, 0.5)) <= 64;
@@ -90,29 +135,191 @@ public class TileEntityArtifactResearcher extends TileEntity implements ITickabl
 
 	@Override
 	public void update() {
-		//Utils.getLogger().info("[X] HEAT LEVEL = "+heatlevel);
 		
+		if(artifactquestcompleted == true){
+			artifacthunttitle = questcomplete;
+		}
+
 		if (!world.isRemote) {
-		IBlockState currentState = this.world.getBlockState(pos);
-		EntityPlayer player = Minecraft.getMinecraft().player;
-		
-		
-		
-		//COPPER BLOCK
-		if(handler.getStackInSlot(4).isItemEqual(new ItemStack(ModBlocks.copper))) {
-			
-		}
-			
-			
-			
-		}
-	
-	}
-	
-	
-	
-	}
+			IBlockState currentState = this.world.getBlockState(pos);
+			EntityPlayer player = Minecraft.getMinecraft().player;
 
-	
-
+			if(questrunning == false){
+			if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.PHAROH))) {
+				Utils.getLogger().info("Pharoh detected");
+				handler.extractItem(4, 1, false);
+				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
+				TileEntityPointsBlock.playerScore += 50;
+				itemnotfound1 = itemfound;
+				founditem1 = true;
+				itemsleft -=1;
+			}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.ARTIFACT_AMULET))) {
+				Utils.getLogger().info("Amulet detected");
+				handler.extractItem(4, 1, false);
+				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
+				TileEntityPointsBlock.playerScore += 50;
+				itemnotfound2 = itemfound;
+				founditem2 = true;
+				itemsleft -=1;
+			}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.ARTIFACT_ANKH))) {
+				Utils.getLogger().info("Ankh detected");
+				handler.extractItem(4, 1, false);
+				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
+				TileEntityPointsBlock.playerScore += 50;
+				itemnotfound3 = itemfound;
+				founditem3 = true;
+				itemsleft -=1;
+			}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.ARTIFACT_PYRAMIDION))) {
+				Utils.getLogger().info("Pyramidion detected");
+				handler.extractItem(4, 1, false);
+				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
+				TileEntityPointsBlock.playerScore += 50;
+				itemnotfound4 = itemfound;
+				founditem4 = true;
+				itemsleft -=1;
+			}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.ARTIFACT_CANOPIC_JAR))) {
+				Utils.getLogger().info("Canopic Jar detected");
+				handler.extractItem(4, 1, false);
+				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
+				TileEntityPointsBlock.playerScore += 50;
+				itemnotfound5 = itemfound;
+				founditem5 = true;
+				itemsleft -=1;
+			}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.ARTIFACT_PAPYRUS))) {
+				Utils.getLogger().info("Papyrus detected");
+				handler.extractItem(4, 1, false);
+				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
+				TileEntityPointsBlock.playerScore += 50;
+				itemnotfound6 = itemfound;
+				founditem6 = true;
+				itemsleft -=1;
+			}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.ARTIFACT_SCARAB))) {
+				Utils.getLogger().info("Scarab detected");
+				handler.extractItem(4, 1, false);
+				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
+				TileEntityPointsBlock.playerScore += 50;
+				itemnotfound7 = itemfound;
+				founditem7 = true;
+				itemsleft -=1;
+			}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.ARTIFACT_SARCOPHAGUS))) {
+				Utils.getLogger().info("Sarcophagus detected");
+				handler.extractItem(4, 1, false);
+				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
+				TileEntityPointsBlock.playerScore += 50;
+				itemnotfound8 = itemfound;
+				founditem8 = true;
+				itemsleft -=1;
+			}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.ARTIFACT_SENET))) {
+				Utils.getLogger().info("Senet detected");
+				handler.extractItem(4, 1, false);
+				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
+				TileEntityPointsBlock.playerScore += 50;
+				itemnotfound9 = itemfound;
+				founditem9 = true;
+				itemsleft -=1;
+			}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.ARTIFACT_FALSEDOOR))) {
+				Utils.getLogger().info("False Door detected");
+				handler.extractItem(4, 1, false);
+				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
+				TileEntityPointsBlock.playerScore += 50;
+				itemnotfound10 = itemfound;
+				founditem10 = true;
+				itemsleft -=1;
+			}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.ARTIFACT_FUNERARY))) {
+				Utils.getLogger().info("Funerary detected");
+				handler.extractItem(4, 1, false);
+				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
+				TileEntityPointsBlock.playerScore += 50;
+				itemnotfound11 = itemfound;
+				founditem11 = true;
+				itemsleft -=1;
+			}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.ARTIFACT_MUMMY))) {
+				Utils.getLogger().info("Mummy detected");
+				handler.extractItem(4, 1, false);
+				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
+				TileEntityPointsBlock.playerScore += 50;
+				itemnotfound12 = itemfound;
+				founditem12 = true;
+				itemsleft -=1;
+			}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.ARTIFACT_SPHINX))) {
+				Utils.getLogger().info("Sphinx detected");
+				handler.extractItem(4, 1, false);
+				player.playSound(ModSoundHandler.MAWSOUND_CHIME, 1.0F, 1.0F);
+				TileEntityPointsBlock.playerScore += 50;
+				itemnotfound13 = itemfound;
+				founditem13 = true;
+				itemsleft -=1;
+			}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.QUEST_DEBUG))) {
+				Utils.getLogger().info("Egypt Quest Debug Detected");
+				handler.extractItem(4, 1, false);
+				itemnotfound13 = itemfound;
+				founditem13 = true;
+				itemnotfound12 = itemfound;
+				founditem12 = true;
+				itemnotfound11 = itemfound;
+				founditem11 = true;
+				itemnotfound10 = itemfound;
+				founditem10 = true;
+				itemnotfound9 = itemfound;
+				founditem9 = true;
+				itemnotfound8 = itemfound;
+				founditem8 = true;
+				itemnotfound7 = itemfound;
+				founditem7 = true;
+				itemnotfound6 = itemfound;
+				founditem6 = true;
+				itemnotfound5 = itemfound;
+				founditem5 = true;
+				itemnotfound4 = itemfound;
+				founditem4 = true;
+				itemnotfound3 = itemfound;
+				founditem3 = true;
+				itemnotfound2 = itemfound;
+				founditem2 = true;
+				itemnotfound1 = itemfound;
+				founditem1 = true;
+				itemsleft -=13;
+			}
+			
+			else if(founditem1 == true && founditem2 == true && founditem3 == true && founditem4 == true
+					&& founditem5 == true && founditem6 == true && founditem7 == true && founditem8 == true
+					&& founditem9 == true && founditem10 == true && founditem11 == true && founditem12 == true 
+					&& founditem13 == true){
+				player.playSound(ModSoundHandler.MAWSOUND_TADA, 3.0F, 1.0F);
+				Utils.getLogger().info("TileEntityArtifactResearcher : allfound - TaDa");
+				allfound = true;
+				questrunning=true;
+				TileEntityArtifactResearcher.artifacthunttitle = TileEntityPointsBlock.questcomplete;
+			}
+			
+			
+			}
+			
+			if(quizrunning==false){
+				if(button1pressed==true && button2pressed==true && button3pressed==true && button4pressed==true && button5pressed==true
+						&& right1tpressed==true && right2tpressed==true && right3tpressed==true && right4tpressed==true && right5tpressed==true){
+					Utils.getLogger().info("All Buttons Pressed");
+					allpressed= true;
+					player.playSound(ModSoundHandler.MAWSOUND_TADA, 3.0F, 1.0F);
+					Utils.getLogger().info("TileEntityArtifactResearcher : quizrunning - TaDa : line 300");
+					TileEntityArtifactResearcher.egyptquiztitle = TileEntityPointsBlock.questcomplete;
+					quizrunning=true;
+				}
+			}
+		}
+		}
+	}
 
