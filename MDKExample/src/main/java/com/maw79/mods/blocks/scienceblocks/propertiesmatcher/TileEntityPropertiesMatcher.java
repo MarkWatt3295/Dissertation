@@ -129,6 +129,158 @@ public class TileEntityPropertiesMatcher extends TileEntity implements ITickable
 				labelType="Tough";
 				Minecraft.getMinecraft().displayGuiScreen(new GuiSciencePropertyMatcher());
 		}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.LABELFERROUS))) {
+				Utils.getLogger().info("Label Ferrous");
+				labelName =handler.getStackInSlot(4).getDisplayName();
+				handler.extractItem(4, 1, false);
+				propertyType="Metal";
+				labelType="Ferrous";
+				Minecraft.getMinecraft().displayGuiScreen(new GuiSciencePropertyMatcher());
+		}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.LABELNONFERROUS))) {
+				Utils.getLogger().info("Label Non Ferrous");
+				labelName =handler.getStackInSlot(4).getDisplayName();
+				handler.extractItem(4, 1, false);
+				propertyType="Metal";
+				labelType="Non Ferrous";
+				Minecraft.getMinecraft().displayGuiScreen(new GuiSciencePropertyMatcher());
+		}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.LABELMAGNETIC))) {
+				Utils.getLogger().info("Label Magnetic");
+				labelName =handler.getStackInSlot(4).getDisplayName();
+				handler.extractItem(4, 1, false);
+				propertyType="Metal";
+				labelType="Magnetic";
+				Minecraft.getMinecraft().displayGuiScreen(new GuiSciencePropertyMatcher());
+		}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.LABELLUSTROUS))) {
+				Utils.getLogger().info("Label Lustrous");
+				labelName =handler.getStackInSlot(4).getDisplayName();
+				handler.extractItem(4, 1, false);
+				propertyType="Metal";
+				labelType="Lustrous";
+				Minecraft.getMinecraft().displayGuiScreen(new GuiSciencePropertyMatcher());
+		}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.LABELHIGHDENSITY))) {
+				Utils.getLogger().info("Label High Density");
+				labelName =handler.getStackInSlot(4).getDisplayName();
+				handler.extractItem(4, 1, false);
+				propertyType="Metal";
+				labelType="High Density";
+				Minecraft.getMinecraft().displayGuiScreen(new GuiSciencePropertyMatcher());
+		}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.LABELFRAGILE))) {
+				Utils.getLogger().info("Label Fragile");
+				labelName =handler.getStackInSlot(4).getDisplayName();
+				handler.extractItem(4, 1, false);
+				propertyType="Glass";
+				labelType="Fragile";
+				Minecraft.getMinecraft().displayGuiScreen(new GuiSciencePropertyMatcher());
+		}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.LABELTRANSPARENT))) {
+				Utils.getLogger().info("Label Transparent");
+				labelName =handler.getStackInSlot(4).getDisplayName();
+				handler.extractItem(4, 1, false);
+				propertyType="Glass";
+				labelType="Transparent";
+				Minecraft.getMinecraft().displayGuiScreen(new GuiSciencePropertyMatcher());
+		}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.LABELSPECTACLES))) {
+				Utils.getLogger().info("Label Spectacles");
+				labelName =handler.getStackInSlot(4).getDisplayName();
+				handler.extractItem(4, 1, false);
+				propertyType="Glass";
+				labelType="Spectacles";
+				Minecraft.getMinecraft().displayGuiScreen(new GuiSciencePropertyMatcher());
+		}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.LABELWINDOWS))) {
+				Utils.getLogger().info("Label Windows");
+				labelName =handler.getStackInSlot(4).getDisplayName();
+				handler.extractItem(4, 1, false);
+				propertyType="Glass";
+				labelType="Windows";
+				Minecraft.getMinecraft().displayGuiScreen(new GuiSciencePropertyMatcher());
+		}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.LABELBAGS))) {
+				Utils.getLogger().info("Label Bags");
+				labelName =handler.getStackInSlot(4).getDisplayName();
+				handler.extractItem(4, 1, false);
+				propertyType="Plastic";
+				labelType="Bags";
+				Minecraft.getMinecraft().displayGuiScreen(new GuiSciencePropertyMatcher());
+		}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.LABELWATERPROOF))) {
+				Utils.getLogger().info("Label Waterproof");
+				labelName =handler.getStackInSlot(4).getDisplayName();
+				handler.extractItem(4, 1, false);
+				propertyType="Plastic";
+				labelType="Waterproof";
+				Minecraft.getMinecraft().displayGuiScreen(new GuiSciencePropertyMatcher());
+		}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.LABELTOXICITY))) {
+				Utils.getLogger().info("Label Toxicity");
+				labelName =handler.getStackInSlot(4).getDisplayName();
+				handler.extractItem(4, 1, false);
+				propertyType="Plastic";
+				labelType="Tocicity";
+				Minecraft.getMinecraft().displayGuiScreen(new GuiSciencePropertyMatcher());
+		}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.LABELACRYLIC))) {
+				Utils.getLogger().info("Label Acrylic");
+				labelName =handler.getStackInSlot(4).getDisplayName();
+				handler.extractItem(4, 1, false);
+				propertyType="Plastic";
+				labelType="Acrylic";
+				Minecraft.getMinecraft().displayGuiScreen(new GuiSciencePropertyMatcher());
+		}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.LABELPVC))) {
+				Utils.getLogger().info("Label PVC");
+				labelName =handler.getStackInSlot(4).getDisplayName();
+				handler.extractItem(4, 1, false);
+				propertyType="Plastic";
+				labelType="PVC";
+				Minecraft.getMinecraft().displayGuiScreen(new GuiSciencePropertyMatcher());
+		}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.LABELCELLOPHANE))) {
+				Utils.getLogger().info("Label Cellophane");
+				labelName =handler.getStackInSlot(4).getDisplayName();
+				handler.extractItem(4, 1, false);
+				propertyType="Plastic";
+				labelType="Cellophane";
+				Minecraft.getMinecraft().displayGuiScreen(new GuiSciencePropertyMatcher());
+		}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.LABELPOLYTHENE))) {
+				Utils.getLogger().info("Label Polythene");
+				labelName =handler.getStackInSlot(4).getDisplayName();
+				handler.extractItem(4, 1, false);
+				propertyType="Plastic";
+				labelType="Polythene";
+				Minecraft.getMinecraft().displayGuiScreen(new GuiSciencePropertyMatcher());
+		}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.LABELANTISTATIC))) {
+				Utils.getLogger().info("Label Antistatic");
+				labelName =handler.getStackInSlot(4).getDisplayName();
+				handler.extractItem(4, 1, false);
+				propertyType="Ceramic";
+				labelType="Antistatic";
+				Minecraft.getMinecraft().displayGuiScreen(new GuiSciencePropertyMatcher());
+		}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.LABELPOTTERY))) {
+				Utils.getLogger().info("Label Pottery");
+				labelName =handler.getStackInSlot(4).getDisplayName();
+				handler.extractItem(4, 1, false);
+				propertyType="Ceramic";
+				labelType="Pottery";
+				Minecraft.getMinecraft().displayGuiScreen(new GuiSciencePropertyMatcher());
+		}
+			else if (handler.getStackInSlot(4).isItemEqual(new ItemStack(ModItems.LABELMUGS))) {
+				Utils.getLogger().info("Label Mugs");
+				labelName =handler.getStackInSlot(4).getDisplayName();
+				handler.extractItem(4, 1, false);
+				propertyType="Ceramic";
+				labelType="Mugs";
+				Minecraft.getMinecraft().displayGuiScreen(new GuiSciencePropertyMatcher());
+		}
 			
 			
 			}
