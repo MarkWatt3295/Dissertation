@@ -44,6 +44,7 @@ import com.maw79.mods.blocks.scienceblocks.BlockLablerBlock;
 import com.maw79.mods.blocks.scienceblocks.BlockScienceWool;
 import com.maw79.mods.blocks.scienceblocks.insulatorblocks.BlockInsulatorMainTE;
 import com.maw79.mods.blocks.scienceblocks.insulatorblockscalculator.BlockInsulatorCalculatorTE;
+import com.maw79.mods.blocks.scienceblocks.propertiesmatcher.BlockPropertiesMatcher;
 import com.maw79.mods.blocks.scienceblocks.sciencewool.BlockScienceWoolP;
 import com.maw79.mods.blocks.scienceblocks.sciencewool.ItemScienceWool;
 import com.maw79.mods.blocks.scienceblocks.tileentityscience.BlockScienceTE;
@@ -112,6 +113,7 @@ public class ModBlocks {
 	public static Block coordinatesquest;
 	public static Block spawnsetter;
 	public static Block romanquest;
+	public static Block propertiesmatcher;
 	
 	//MATHS BLOCKS
 	public static Block mathblock1;
@@ -219,6 +221,7 @@ public class ModBlocks {
 		spawnsetter = new BlockSpawnSetter("spawn_setter");
 		romanquest = new BlockRomanQuest("roman_quest");
 		domusscorer = new BlockDomusScorer("domus_scorer");
+		propertiesmatcher = new BlockPropertiesMatcher("properties_matcher");
 		
 		//MATHS BLOCKS
 		mathblock1 = new BlockBasicBlock("math_block_1");
@@ -329,6 +332,7 @@ public class ModBlocks {
 		registerBlock(profiler);
 		registerBlock(newtestblock);
 		registerBlock(romanquest);
+		registerBlock(propertiesmatcher);
 		//MATHS BLOCKS
 		
 		registerBlock(mathsdivisionblock);
@@ -391,7 +395,6 @@ public class ModBlocks {
 		registerBlock(mathtextblockwhite);
 		mathtextblockwhite.setCreativeTab(Maw79Mod.mathsscratchblocks);
 		
-		
 		registerBlock(mathtextblockblack);
 		mathtextblockblack.setCreativeTab(Maw79Mod.mathsscratchblocks);
 		registerBlock(mathtextblockgold);
@@ -446,6 +449,7 @@ public class ModBlocks {
 	}
 	
 	public static void registerRenders(){
+		registerRender(propertiesmatcher);
 		registerRender(domusscorer);
 		registerRender(spawnsetter);
 		registerRender(coordinatesquest);

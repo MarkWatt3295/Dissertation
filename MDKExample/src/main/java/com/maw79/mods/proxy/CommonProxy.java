@@ -3,6 +3,7 @@ package com.maw79.mods.proxy;
 import com.maw79.mods.blocks.scienceblocks.TileEntityInventoryBasic;
 import com.maw79.mods.blocks.scienceblocks.insulatorblocks.TileEntityInsulator;
 import com.maw79.mods.blocks.scienceblocks.insulatorblockscalculator.TileEntityInsulatorCalculator;
+import com.maw79.mods.blocks.scienceblocks.propertiesmatcher.TileEntityPropertiesMatcher;
 import com.maw79.mods.blocks.scienceblocks.tileentityscience.TileEntityScience;
 import com.maw79.mods.blocks.tileentityattempt.TileEntityCustom2;
 import com.maw79.mods.client.gui.GuiHandler;
@@ -51,6 +52,7 @@ public class CommonProxy {
 		GameRegistry.registerTileEntity(TileEntityPointsBlock.class, Reference.MOD_ID + ":points_block");
 		GameRegistry.registerTileEntity(TileEntityCoordinatesQuest.class, Reference.MOD_ID + ":coordinates_quest");
 		GameRegistry.registerTileEntity(TileEntityRomanQuest.class, Reference.MOD_ID + ":roman_quest");
+		GameRegistry.registerTileEntity(TileEntityPropertiesMatcher.class, Reference.MOD_ID + ":properties_matcher");
 	}
 	
 	/**

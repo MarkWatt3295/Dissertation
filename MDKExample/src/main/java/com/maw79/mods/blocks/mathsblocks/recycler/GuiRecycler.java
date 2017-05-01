@@ -2,7 +2,6 @@ package com.maw79.mods.blocks.mathsblocks.recycler;
 
 
 import java.io.IOException;
-import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.main.Reference;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -10,7 +9,6 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
 import net.minecraftforge.items.CapabilityItemHandler;
 
 /**
@@ -25,13 +23,9 @@ public class GuiRecycler extends GuiContainer {
 	 */
 	private TileEntityRecycler te;
 	private IInventory playerInv;
-	GuiButton button1, button2, button3, button4, button5;
-	final int BUTTON1= 1, BUTTON2 = 2, BUTTON3 = 3, BUTTON4 = 4, BUTTON5 = 5;
+	GuiButton button1, button3;
+	final int BUTTON1= 1;
 
-	public boolean help = false;
-	
-	
-	
 	public GuiRecycler(IInventory playerInv, TileEntityRecycler te) {
 		super(new ContainerRecycler(playerInv, te));
 		
@@ -48,12 +42,9 @@ public class GuiRecycler extends GuiContainer {
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
 		GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F); //Grey background
-		if(help == true){
-			mc.getTextureManager().bindTexture(new ResourceLocation(Reference.MOD_ID, "textures/gui/container/recyclerhelp.png"));
-		}
-		else{
+		
 		this.mc.getTextureManager().bindTexture(new ResourceLocation(Reference.MOD_ID, "textures/gui/container/recycler.png"));
-		}//Binds the texture for rendering
+		
 		this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize); //Draws our texture
 	}
 	
@@ -63,25 +54,15 @@ public class GuiRecycler extends GuiContainer {
 	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
 		String s = ("Block Recycler"); 
-		String s1 = "";
+		String s3 = ("Insert Blocks and Items");
+		String s4 = ("Recycle For Points");
 		
 		
-		String s3 = "";
-		String s4 = "";
 		
-		
-		 if(help == true){
-			 s = ("Block Recycler Help");
-			
-			 s3 = ("Insert Blocks and Items");
-			 s4 = ("To be Recycled");
-			
-		}
-	
 	//DECIMAL COLOUR VALUES
 		this.mc.fontRendererObj.drawString(s, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s) / 2, 6, 30000); //Draws the block breaker name in the center on the top of the gui
-		this.mc.fontRendererObj.drawString(s3, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s3) / 2, 82, 4210752);
-		this.mc.fontRendererObj.drawString(s4, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s4) / 2, 92, 4210752);
+		this.mc.fontRendererObj.drawString(s3, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s3) / 2, 82, 30000);
+		this.mc.fontRendererObj.drawString(s4, this.xSize / 2 - this.mc.fontRendererObj.getStringWidth(s4) / 2, 92, 30000);
 		
 		 
 		int actualMouseX = mouseX - ((this.width - this.xSize) / 2);
@@ -93,18 +74,15 @@ public class GuiRecycler extends GuiContainer {
 	@Override
     public void initGui() {
     	
-        buttonList.clear();												//+120 -100
-       // buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) + 80 / 2, (height/2) -5, 30, 20, "Help"));
-       // buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) - 170 / 2, (height/2) -5, 40, 20, "Reset"));
+        buttonList.clear();												
         buttonList.add(button1 = new GuiButton(BUTTON1, (width / 2) + 80 / 2, (height/2) -50, 30, 20, "Back"));
-        buttonList.add(button3 = new GuiButton(BUTTON3, (width / 2) -5 / 2, (height/2) -5, 40, 20, "Help"));
-        buttonList.add(button2 = new GuiButton(BUTTON2, (width / 2) -95 / 2, (height/2) -5, 40, 20, "Submit"));
-      
       
         super.initGui();
         button1.visible = false;
-        
+       
     }
+	
+	
 	  @Override
 	    public boolean doesGuiPauseGame() {
 	        return false;
@@ -118,47 +96,19 @@ public class GuiRecycler extends GuiContainer {
 	    	
 	        switch (button.id) {
 	            case BUTTON1: //back
-	            	help = false;
 	            	button1.visible = false;
 	            	drawGuiContainerBackgroundLayer(zLevel, BUTTON1, BUTTON1);
 	            	button3.visible = true;
-	            	button2.visible = true;
-	            	
-	            	
+	            
 	            	break;
 	            	
-	            case BUTTON2: //submit
-				
-	            	mc.player.playSound(SoundEvent.REGISTRY.getObject(new ResourceLocation(("entity.chicken.egg"))), 1.0F, 1.0F);
-	            	onEvent();
-	            	
-	      
-	            	break;
-	            	
-	            case BUTTON3: //help
-	            	
-	            	mc.player.playSound(ModSoundHandler.STEEL_BUTTON_CLICK_OFF, 1.0f, 1.0f);
-	            	
-	            	help = true;
-	            	button3.visible = false;
-	            	button2.visible = false;
-	            	drawGuiContainerBackgroundLayer(zLevel, BUTTON3, BUTTON3);
-	            	button1.visible = true;
-	            	
-	            	break;
+	       
 	            	
 	        }
 	      
 	        super.actionPerformed(button);
 	      
 	    }
-	
-	 
-
-	
-	 private void onEvent() {
-		
-	}
 
 	@Override
 	    protected void mouseClicked(int mouseX, int mouseY, int mouseButton) throws IOException {

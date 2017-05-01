@@ -290,10 +290,7 @@ public class GuiMathsQuestTe extends GuiContainer {
 	      
 	    }
 	
-	 
-	 private void onEvent() {
-		
-	}
+	
 
 	@Override
 	    protected void mouseClicked(int mouseX, int mouseY, int mouseButton) throws IOException {

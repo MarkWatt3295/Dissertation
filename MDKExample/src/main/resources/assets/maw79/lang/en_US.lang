@@ -124,6 +124,26 @@ item.label_tough.name=Tough
 item.label_flexible.name=Flexible
 item.label_durable.name=Durable
 
+item.label_ferrous.name=Ferrous
+item.label_nonferrous.name=Non Ferrous
+item.label_magnetic.name=Magnetic
+item.label_lustrous.name=Lustrous
+item.label_high_density.name=High Density
+item.label_fragile.name=Fragile
+item.label_transparent.name=Transparent
+item.label_spectacles.name=Spectacles
+item.label_windows.name=Windows
+item.label_bags.name=Bags
+item.label_waterproof.name=Waterproof
+item.label_toxicity.name=Tocicity
+item.label_acrylic.name=Acrylic
+item.label_pvc.name=PVC
+item.label_cellophane.name=Cellophane
+item.label_polythene.name=Polythene
+item.label_antistatic.name=Anti-Static
+item.label_pottery.name=Pottery
+item.label_mugs.name=Mugs
+
 
 //MATHS ITEMS
 item.fractions_book.name=Fractions Book
@@ -167,6 +187,7 @@ item.burntloaf.name=Burnt Loaf
 
 
 //Blocks
+tile.properties_matcher.name=Properties Matcher Block
 tile.domus_scorer.name=Domus Score Block
 tile.spawn_setter.name=Spawn Setter
 tile.fakefractionsblock.name=Fake Fractions Block

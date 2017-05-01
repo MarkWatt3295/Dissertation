@@ -118,8 +118,12 @@ public static boolean romandomus = false;
     	{
     	Utils.getLogger().info("OnDeath Event Called");
     	EntityPlayer player = (EntityPlayer) event.getEntity();
+    	if(!(TileEntityPointsBlock.playerScore <=0)){
     	TileEntityPointsBlock.playerScore-=300;
-    	
+    	if(TileEntityPointsBlock.playerScore <0){
+    		TileEntityPointsBlock.playerScore = 0;
+    	}
+    	}
     	}
     }
     	

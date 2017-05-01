@@ -11,6 +11,7 @@ import com.maw79.mods.init.ModItems;
 import com.maw79.mods.init.ModTools;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
+import com.maw79.mods.network.store.EgyptStoreMessage;
 import com.maw79.mods.network.store.FarmerCoinsMessage;
 import com.maw79.mods.network.store.MathsStore1Message;
 import com.maw79.mods.network.store.RomanStoreMessage;
@@ -85,10 +86,10 @@ public class GuiEgyptStore extends GuiScreen {
             GlStateManager.scale(1.4, 1.4, 1.4);
            
             fontRendererObj.drawString("40 Points", (-23), (20), 0xffffff); //Levitation Dust
-    		fontRendererObj.drawString("500 Points", (-23), (40), 0xffffff); //Build Coin
+    		fontRendererObj.drawString("55 Points", (-23), (40), 0xffffff); //G Boots
     		fontRendererObj.drawString("30 Points", (-23), (56), 0xffffff);//Jump Potion
     		fontRendererObj.drawString("5 Points", (-23), (74), 0xffffff);//Chest
-    		fontRendererObj.drawString("30 Points", (-23), (90), 0xffffff);//History Book
+    		fontRendererObj.drawString("400 Points", (-23), (90), 0xffffff);//Elytra
     		
         }
         GlStateManager.popMatrix();
@@ -154,10 +155,10 @@ public class GuiEgyptStore extends GuiScreen {
        
         
         String s1 =icon.getDisplayName(); //Levitation Dust
-        String s2 = icon2.getDisplayName();//Builders Coin
-        String s3 = icon3.getDisplayName(); //Jump Potion
+        String s2 = icon2.getDisplayName();//Boots
+        String s3 = icon3.getDisplayName(); //Booster
         String s4 = icon4.getDisplayName(); //Chest
-        String s5 = icon5.getDisplayName(); //History Book
+        String s5 = icon5.getDisplayName(); //Elytra
         drawTooltip(s1, mouseX, mouseY, centerX +10, centerY + 33, 22, 22);
         drawTooltip(s2, mouseX, mouseY, centerX +10, centerY + 58, 22, 22);
         drawTooltip(s3, mouseX, mouseY, centerX +10, centerY + 83, 22, 22);
@@ -202,7 +203,7 @@ public class GuiEgyptStore extends GuiScreen {
             	if(TileEntityPointsBlock.playerScore >= 40){
             		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
             		buttonvalue = 1;
-            		Maw79Mod.NETWORK.sendToServer(new RomanStoreMessage(mc.player));
+            		Maw79Mod.NETWORK.sendToServer(new EgyptStoreMessage(mc.player));
             		TileEntityPointsBlock.playerScore -= 40;
             	}
             	else {
@@ -214,15 +215,15 @@ public class GuiEgyptStore extends GuiScreen {
             	
             case BUTTON2:
             	
-            	if(TileEntityPointsBlock.playerScore >= 500){
+            	if(TileEntityPointsBlock.playerScore >= 55){
             		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
             		buttonvalue = 2;
-            		Maw79Mod.NETWORK.sendToServer(new RomanStoreMessage(mc.player));
-            		TileEntityPointsBlock.playerScore -= 500;
+            		Maw79Mod.NETWORK.sendToServer(new EgyptStoreMessage(mc.player));
+            		TileEntityPointsBlock.playerScore -= 55;
             	}
             	else {
             		mc.player.playSound(ModSoundHandler.MAWSOUND_ERRORNOISE, 1.0f, 1.0f);
-            		System.out.println("Not Enough Points (for 2 - Builder Coin 500) :( ");
+            		System.out.println("Not Enough Points (for 2 - Gold Boots) :( ");
             	}
             	
             	break;
@@ -232,7 +233,7 @@ public class GuiEgyptStore extends GuiScreen {
             	if(TileEntityPointsBlock.playerScore >= 30){
             		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
             		buttonvalue = 3;
-            		Maw79Mod.NETWORK.sendToServer(new RomanStoreMessage(mc.player));
+            		Maw79Mod.NETWORK.sendToServer(new EgyptStoreMessage(mc.player));
             		TileEntityPointsBlock.playerScore -= 30;
             	}
             	else {
@@ -247,7 +248,7 @@ public class GuiEgyptStore extends GuiScreen {
             	if(TileEntityPointsBlock.playerScore >= 5){
             		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
             		buttonvalue = 4;
-            		Maw79Mod.NETWORK.sendToServer(new RomanStoreMessage(mc.player));
+            		Maw79Mod.NETWORK.sendToServer(new EgyptStoreMessage(mc.player));
             		TileEntityPointsBlock.playerScore -= 5;
             	}
             	else {
@@ -259,15 +260,15 @@ public class GuiEgyptStore extends GuiScreen {
             	
             case BUTTON5:
             	
-            	if(TileEntityPointsBlock.playerScore >= 30){
+            	if(TileEntityPointsBlock.playerScore >= 400){
             		mc.player.playSound(ModSoundHandler.MAWSOUND_COINDROP, 1.0f, 1.0f);
             		buttonvalue = 5;
-            		Maw79Mod.NETWORK.sendToServer(new RomanStoreMessage(mc.player));
-            		TileEntityPointsBlock.playerScore -= 30;
+            		Maw79Mod.NETWORK.sendToServer(new EgyptStoreMessage(mc.player));
+            		TileEntityPointsBlock.playerScore -= 400;
             	}
             	else {
             		mc.player.playSound(ModSoundHandler.MAWSOUND_ERRORNOISE, 1.0f, 1.0f);
-            		System.out.println("Not Enough Points (for 5 - History Book 30) :( ");
+            		System.out.println("Not Enough Points (for 5 - Elytra 400) :( ");
             	}
             	
             	break;

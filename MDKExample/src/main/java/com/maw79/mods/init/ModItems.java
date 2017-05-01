@@ -180,6 +180,30 @@ public class ModItems {
 	public static final Item LABELDURABLE = new ItemPropertyLabel("label_durable");
 	public static final Item LABELTOUGH = new ItemPropertyLabel("label_tough");
 	
+	public static final Item LABELFERROUS = new ItemPropertyLabel("label_ferrous");
+	public static final Item LABELNONFERROUS = new ItemPropertyLabel("label_nonferrous");
+	public static final Item LABELMAGNETIC = new ItemPropertyLabel("label_magnetic");
+	public static final Item LABELLUSTROUS = new ItemPropertyLabel("label_lustrous");
+	public static final Item LABELHIGHDENSITY = new ItemPropertyLabel("label_high_density");
+	
+	public static final Item LABELFRAGILE = new ItemPropertyLabel("label_fragile");
+	public static final Item LABELTRANSPARENT = new ItemPropertyLabel("label_transparent");
+	public static final Item LABELSPECTACLES = new ItemPropertyLabel("label_spectacles");
+	public static final Item LABELWINDOWS = new ItemPropertyLabel("label_windows");
+	
+	public static final Item LABELBAGS= new ItemPropertyLabel("label_bags");
+	public static final Item LABELWATERPROOF = new ItemPropertyLabel("label_waterproof");
+	public static final Item LABELTOXICITY = new ItemPropertyLabel("label_toxicity");
+	public static final Item LABELACRYLIC = new ItemPropertyLabel("label_acrylic");
+	public static final Item LABELPVC = new ItemPropertyLabel("label_pvc");
+	public static final Item LABELCELLOPHANE = new ItemPropertyLabel("label_cellophane");
+	public static final Item LABELPOLYTHENE = new ItemPropertyLabel("label_polythene");
+	
+	public static final Item LABELANTISTATIC = new ItemPropertyLabel("label_antistatic");
+	public static final Item LABELPOTTERY = new ItemPropertyLabel("label_pottery");
+	public static final Item LABELMUGS = new ItemPropertyLabel("label_mugs");
+	
+	
 	public static ItemScoreDebug SCOREDEBUG = new ItemScoreDebug("scoredebug");
 	public static ItemCalculator CALCULATOR = new ItemCalculator("calculator");
 	public static ItemGameTypeSetter GAMETYPE = new ItemGameTypeSetter("gamesetter");
@@ -419,6 +443,31 @@ public class ModItems {
 		registerItem(LABELDURABLE);
 		registerItem(LABELTOUGH);
 		
+		
+		registerItem(LABELFERROUS);
+		registerItem(LABELNONFERROUS);
+		registerItem(LABELMAGNETIC); 
+		registerItem(LABELLUSTROUS);
+		registerItem(LABELHIGHDENSITY);
+		
+		registerItem(LABELFRAGILE);
+		registerItem(LABELTRANSPARENT);
+		registerItem(LABELSPECTACLES);
+		registerItem(LABELWINDOWS);
+		
+		registerItem(LABELBAGS);
+		registerItem(LABELWATERPROOF);
+		registerItem(LABELTOXICITY);
+		registerItem(LABELACRYLIC);
+		registerItem(LABELPVC);
+		registerItem(LABELCELLOPHANE);
+		registerItem(LABELPOLYTHENE);
+		
+		registerItem(LABELANTISTATIC);
+		registerItem(LABELPOTTERY);
+		registerItem(LABELMUGS);
+		
+		
 		registerItem(SCOREDEBUG);
 		registerItem(CALCULATOR);
 		CALCULATOR.setCreativeTab(Maw79Mod.unused);
@@ -541,6 +590,29 @@ public class ModItems {
 		registerRender(LABELDURABLE);
 		registerRender(LABELFLEXIBLE);
 		registerRender(LABELTOUGH);
+		
+		registerRender(LABELFERROUS);
+		registerRender(LABELNONFERROUS);
+		registerRender(LABELMAGNETIC); 
+		registerRender(LABELLUSTROUS);
+		registerRender(LABELHIGHDENSITY);
+		
+		registerRender(LABELFRAGILE);
+		registerRender(LABELTRANSPARENT);
+		registerRender(LABELSPECTACLES);
+		registerRender(LABELWINDOWS);
+		
+		registerRender(LABELBAGS);
+		registerRender(LABELWATERPROOF);
+		registerRender(LABELTOXICITY);
+		registerRender(LABELACRYLIC);
+		registerRender(LABELPVC);
+		registerRender(LABELCELLOPHANE);
+		registerRender(LABELPOLYTHENE);
+		
+		registerRender(LABELANTISTATIC);
+		registerRender(LABELPOTTERY);
+		registerRender(LABELMUGS);
 		
 		registerRender(SCOREDEBUG);
 		SCOREDEBUG.setCreativeTab(Maw79Mod.debug);

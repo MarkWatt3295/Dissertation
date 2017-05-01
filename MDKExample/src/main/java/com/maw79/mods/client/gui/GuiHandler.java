@@ -27,6 +27,9 @@ import com.maw79.mods.blocks.scienceblocks.insulatorblocks.TileEntityInsulator;
 import com.maw79.mods.blocks.scienceblocks.insulatorblockscalculator.ContainerInsulatorCalculator;
 import com.maw79.mods.blocks.scienceblocks.insulatorblockscalculator.GuiInsulatorCalculatorTe;
 import com.maw79.mods.blocks.scienceblocks.insulatorblockscalculator.TileEntityInsulatorCalculator;
+import com.maw79.mods.blocks.scienceblocks.propertiesmatcher.ContainerPropertiesMatcher;
+import com.maw79.mods.blocks.scienceblocks.propertiesmatcher.GuiPropertiesMatcher;
+import com.maw79.mods.blocks.scienceblocks.propertiesmatcher.TileEntityPropertiesMatcher;
 import com.maw79.mods.blocks.scienceblocks.tileentityscience.ContainerScience;
 import com.maw79.mods.blocks.scienceblocks.tileentityscience.GuiScienceTe;
 import com.maw79.mods.blocks.scienceblocks.tileentityscience.TileEntityScience;
@@ -67,6 +70,7 @@ public class GuiHandler implements IGuiHandler{
 	public static final int POINTS_BLOCK = 13;
 	public static final int COORDINATES_QUEST = 14;
 	public static final int ROMAN_QUEST = 15;
+	public static final int PROPERTIES_MATCHER = 16;
 	
 	/**
 	 * Should return the container for that gui. This is called server side because servers handle items in guis
@@ -146,6 +150,12 @@ public class GuiHandler implements IGuiHandler{
 			
 			return new ContainerRomanQuest(player.inventory, (TileEntityRomanQuest) world.getTileEntity(new BlockPos(x, y, z)));
 		}
+		if(ID==PROPERTIES_MATCHER){
+			
+			
+			return new ContainerPropertiesMatcher(player.inventory, (TileEntityPropertiesMatcher) world.getTileEntity(new BlockPos(x, y, z)));
+		}
+		
 		
 		
 		return null;
@@ -226,9 +236,13 @@ Utils.getLogger().info("GuiHandler: getClientGuiElement");
 			
 			return new GuiCoordinatesQuest(player.inventory, (TileEntityCoordinatesQuest) world.getTileEntity(new BlockPos(x, y, z)));
 		}
-if(ID==ROMAN_QUEST){
+		if(ID==ROMAN_QUEST){
 			
 			return new GuiRomanQuest(player.inventory, (TileEntityRomanQuest) world.getTileEntity(new BlockPos(x, y, z)));
+		}
+		if(ID==PROPERTIES_MATCHER){
+			
+			return new GuiPropertiesMatcher(player.inventory, (TileEntityPropertiesMatcher) world.getTileEntity(new BlockPos(x, y, z)));
 		}
 		
 		return null;
