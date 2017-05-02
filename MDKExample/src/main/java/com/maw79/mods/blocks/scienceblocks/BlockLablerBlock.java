@@ -3,6 +3,7 @@ package com.maw79.mods.blocks.scienceblocks;
 import com.maw79.mods.handlers.ModSoundHandler;
 import com.maw79.mods.main.Maw79Mod;
 import com.maw79.mods.main.Reference;
+import com.maw79.mods.network.LablerBlockMessage;
 import com.maw79.mods.network.MathsMessage;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -37,8 +38,8 @@ public class BlockLablerBlock extends Block {
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer player,
 			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 	
-		worldIn.playSound(player, pos, ModSoundHandler.MAWSOUND_OPEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
-		 if(!player.world.isRemote)Maw79Mod.NETWORK.sendToServer(new MathsMessage(player));
+		worldIn.playSound(player, pos, ModSoundHandler.MAWSOUND_POPCORK, SoundCategory.BLOCKS, 3.0F, 1.0F);
+		 if(!player.world.isRemote)Maw79Mod.NETWORK.sendToServer(new LablerBlockMessage(player));
   
 		
 		return true; 

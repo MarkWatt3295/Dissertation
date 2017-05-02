@@ -24,7 +24,7 @@ public class mathsPacketHandler implements IMessageHandler<MathsMessage, IMessag
 	public IMessage onMessage(MathsMessage message, MessageContext ctx) { 
 		System.out.println("Maths message recieved");
 
-		int max = 5; 
+		int max = 8; //was 5
 		int min = 1;
 		Random rand = new Random();
 		int randomNum = rand.nextInt(( max - min)+1)+min;

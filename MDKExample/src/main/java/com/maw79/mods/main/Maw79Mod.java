@@ -41,6 +41,8 @@ import com.maw79.mods.network.GuiInventoryMessage;
 import com.maw79.mods.network.GuiInventoryPacketHandler;
 import com.maw79.mods.network.LabelMessage;
 import com.maw79.mods.network.LabelPacketHandler;
+import com.maw79.mods.network.LablerBlockMessage;
+import com.maw79.mods.network.LablerBlockPacketHandler;
 import com.maw79.mods.network.MathsMessage;
 import com.maw79.mods.network.MathsQuestManualMessage;
 import com.maw79.mods.network.MathsQuestManualPacketHandler;
@@ -198,6 +200,7 @@ public class Maw79Mod {
 		 NETWORK.registerMessage(EgyptQuestPacketHandler.class, EgyptQuestMessage.class, 21, Side.SERVER);
 		 NETWORK.registerMessage(EgyptStorePacketHandler.class, EgyptStoreMessage.class, 22, Side.SERVER);
 		 NETWORK.registerMessage(LabelPacketHandler.class, LabelMessage.class, 23, Side.SERVER);
+		 NETWORK.registerMessage(LablerBlockPacketHandler.class, LablerBlockMessage.class, 24, Side.SERVER);
 	
 		 
 	}
