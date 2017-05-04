@@ -66,7 +66,7 @@ public static boolean romandomus = false;
     	
     
     	ItemStack hand = player.inventory.getCurrentItem();
-    	Item blocky = Item.getItemFromBlock(Blocks.SANDSTONE);
+    	Item sandstone = Item.getItemFromBlock(Blocks.SANDSTONE);
     	if(romandomus==false){
     	if(adminmode == false){
     	if(hand != null)
@@ -77,12 +77,14 @@ public static boolean romandomus = false;
     		}
     		
     		
-    		else if(hand.getItem() == blocky ){
+    		else if(hand.getItem() == sandstone ){
     			//Utils.getLogger().info("Player holding block : " + adminmode);
     			player.setGameType(GameType.SURVIVAL);
     		}
     		
-    			
+    		else if(hand.getItem() == ModTools.glassSpade ){
+    			player.setGameType(GameType.SURVIVAL);
+    		}
     		
     		else{
     			//Utils.getLogger().info("Im the else : " + adminmode);
